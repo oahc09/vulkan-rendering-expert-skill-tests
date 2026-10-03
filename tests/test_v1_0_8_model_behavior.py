@@ -20,8 +20,31 @@ def common(text):
     assert "未验证" in text
 
 def section(text, heading):
-    m = re.search(rf"^##\\s+{re.escape(heading)}\\s*$([\\s\\S]*?)(?=^##\\s+|\\Z)", text, re.M)
-    return m.group(1) if m else ""
+    lines = text.splitlines()
+    start = None
+    level = None
+    for i, line in enumerate(lines):
+        stripped = line.lstrip()
+        if not stripped.startswith("#"):
+            continue
+        hashes = len(stripped) - len(stripped.lstrip("#"))
+        title = stripped[hashes:].strip()
+        if 2 <= hashes <= 4 and title == heading:
+            start = i + 1
+            level = hashes
+            break
+    if start is None:
+        return ""
+    end = len(lines)
+    for i in range(start, len(lines)):
+        stripped = lines[i].lstrip()
+        if not stripped.startswith("#"):
+            continue
+        hashes = len(stripped) - len(stripped.lstrip("#"))
+        if 2 <= hashes <= level:
+            end = i
+            break
+    return "\n".join(lines[start:end])
 
 def test_repository_map_behavior():
     text = read("tc11_01_repository_map.md")
