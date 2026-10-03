@@ -1,0 +1,39 @@
+你正在使用 vulkan-rendering-expert-skill v1.0.8。要在下面已有 Vulkan 引擎中增加一个 compute blur pass。优先复用现有架构，不要另起第二套 Vulkan 管理系统。
+
+[src/ResourceManager.cpp]
+ImageHandle ResourceManager::createImage(const ImageDesc& desc);
+BufferHandle ResourceManager::createBuffer(const BufferDesc& desc);
+void ResourceManager::retire(ResourceHandle h, uint64_t completedFrame);
+
+[src/DescriptorAllocator.cpp]
+DescriptorSet DescriptorAllocator::allocate(const DescriptorLayout& layout);
+void DescriptorAllocator::update(DescriptorSet set, Span<DescriptorWrite> writes);
+
+[src/PipelineManager.cpp]
+PipelineHandle PipelineManager::getGraphics(const GraphicsPipelineDesc& desc);
+PipelineHandle PipelineManager::getCompute(const ComputePipelineDesc& desc);
+
+[src/FrameContext.h]
+struct FrameContext {
+    VkCommandPool pool;
+    VkCommandBuffer graphicsCmd;
+    VkCommandBuffer computeCmd;
+    VkFence fence;
+};
+
+[src/CommandContext.cpp]
+void CommandContext::begin(VkCommandBuffer cmd);
+void CommandContext::imageBarrier(VkCommandBuffer cmd, const ImageBarrierDesc& desc);
+void CommandContext::dispatch(VkCommandBuffer cmd, uint32_t x, uint32_t y, uint32_t z);
+
+[src/Queue.cpp]
+void Queue::submitGraphics(...);
+void Queue::submitCompute(...);
+
+要求：
+1. 给 [CODE] Evidence Map 和当前 Architecture Map。
+2. 指出应该复用哪些现有子系统。
+3. 给 Files To Modify 与 Dependency Order。
+4. 明确 compute write → fragment read 的同步/layout 设计。
+5. 列出 Must Change / Should Change / Can Defer / Do Not Change。
+6. 给 Risks、Rollback、DoD、Verification Gate。
