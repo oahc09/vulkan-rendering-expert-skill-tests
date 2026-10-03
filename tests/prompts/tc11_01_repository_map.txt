@@ -1,0 +1,48 @@
+你正在使用 vulkan-rendering-expert-skill v1.0.8。下面是一个陌生 Vulkan Renderer 的最小源码证据。先诊断当前架构并给 Architecture Map，不要先提重构建议，也不要根据未给出的文件名猜测。
+
+[src/VulkanContext.cpp]
+VulkanContext::init() {
+    app.apiVersion = VK_API_VERSION_1_2;
+    vkCreateInstance(...);
+    vkCreateDevice(..., &device);
+    vkGetDeviceQueue(device, graphicsFamily, 0, &graphicsQueue);
+    vkGetDeviceQueue(device, presentFamily, 0, &presentQueue);
+}
+
+[src/Renderer.cpp]
+Renderer::drawFrame() {
+    vkWaitForFences(device, 1, &frame.fence, VK_TRUE, UINT64_MAX);
+    vkAcquireNextImageKHR(device, swapchain, UINT64_MAX, frame.imageAvailable, VK_NULL_HANDLE, &imageIndex);
+    record(frame.cmd, imageIndex);
+    vkQueueSubmit(graphicsQueue, 1, &submitInfo, frame.fence);
+    vkQueuePresentKHR(presentQueue, &presentInfo);
+}
+
+[src/RenderPassCache.cpp]
+RenderPassCache::create(...) {
+    return vkCreateRenderPass(device, &info, nullptr, &renderPass);
+}
+
+[src/PipelineCache.cpp]
+PipelineCache::createGraphics(const Key& key) {
+    info.renderPass = key.renderPass;
+    return vkCreateGraphicsPipelines(device, cache, 1, &info, nullptr, &pipeline);
+}
+
+[src/ResourceManager.cpp]
+ResourceManager::createImage(...) {
+    return vmaCreateImage(allocator, &imageInfo, &allocInfo, &image, &allocation, nullptr);
+}
+
+[src/DescriptorManager.cpp]
+DescriptorManager::allocateMaterialSet(MaterialId id) {
+    vkAllocateDescriptorSets(device, &allocInfo, &set);
+    vkUpdateDescriptorSets(device, writeCount, writes, 0, nullptr);
+}
+
+要求：
+1. 给 [CODE] Evidence Map。
+2. 给 Architecture Map。
+3. 明确哪些层已经确认、哪些层未验证。
+4. 不要把 Dynamic Rendering / RenderGraph / Bindless 当成默认改造建议。
+5. 最后给 Verification Gate 状态。
