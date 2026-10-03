@@ -13,6 +13,34 @@
 | pipeline 依赖 renderPass | [CODE] `src/Pipeline.cpp::create`：`ci.renderPass = desc.renderPass` | 若未来迁 Dynamic Rendering，会传播到 pipeline key / creation |
 | Android gate 只要求 1.1 | [CODE] `src/AndroidVulkan.cpp::supportsRequiredVersion` | 提升基线时必须同步 |
 
+## Architecture Map
+
+```text
+Application / Android capability
+  ├─ AndroidVulkan::supportsRequiredVersion
+  │    └─ current gate: Vulkan 1.1
+  ↓
+VulkanContext
+  ├─ appInfo.apiVersion = 1.1
+  ├─ VkDeviceCreateInfo
+  └─ vkCreateDevice
+  ↓
+Submission
+  └─ Queue::submit
+       └─ VkSubmitInfo + vkQueueSubmit
+  ↓
+Rendering
+  └─ RenderPass::create
+       └─ VkRenderPass
+            ↓
+       Pipeline::create
+            └─ VkGraphicsPipelineCreateInfo.renderPass
+```
+
+已确认：版本声明、Android version gate、legacy submit、传统 RenderPass、pipeline 对 RenderPass 的依赖。[CODE]
+
+未验证：PhysicalDevice 选择策略、`vkEnumerateInstanceVersion` / device apiVersion 查询位置、feature query / pNext chain、Swapchain、frame loop、Android Surface lifecycle。升级计划不能假设这些层已经支持 Vulkan 1.3。
+
 ## Change Impact
 
 ### Must Change
