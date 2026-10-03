@@ -1,0 +1,44 @@
+你正在使用 vulkan-rendering-expert-skill v1.0.8。下面是 Android 横竖屏后 crash 的最小代码证据。把通用 swapchain / Android lifecycle 排错流程映射到具体源码，不要只给通用建议。
+
+[app/RenderSurface.java]
+public void surfaceCreated(SurfaceHolder holder) {
+    nativeSetSurface(holder.getSurface());
+}
+public void surfaceDestroyed(SurfaceHolder holder) {
+    nativeSetSurface(null);
+}
+
+[native/JniBridge.cpp]
+JNIEXPORT void nativeSetSurface(JNIEnv* env, jobject, jobject surface) {
+    ANativeWindow* window = surface ? ANativeWindow_fromSurface(env, surface) : nullptr;
+    gRenderer->setWindow(window);
+}
+
+[native/Renderer.cpp]
+void Renderer::setWindow(ANativeWindow* newWindow) {
+    if (window) ANativeWindow_release(window);
+    window = newWindow;
+    if (window) createSurfaceAndSwapchain();
+}
+
+void Renderer::drawFrame() {
+    // render thread keeps running even if window == nullptr
+    vkAcquireNextImageKHR(device, swapchain, UINT64_MAX, imageAvailable, VK_NULL_HANDLE, &imageIndex);
+    vkQueueSubmit(queue, 1, &submit, frameFence);
+    vkQueuePresentKHR(queue, &present);
+}
+
+void Renderer::createSurfaceAndSwapchain() {
+    vkCreateAndroidSurfaceKHR(instance, &surfaceInfo, nullptr, &surface);
+    vkCreateSwapchainKHR(device, &swapInfo, nullptr, &swapchain);
+    createSwapchainImageViews();
+    createDepthImages();
+    createFramebuffers();
+}
+
+要求：
+1. 给 [CODE] Evidence Map 和 Android 生命周期链。
+2. 排出最可能根因并说明证据。
+3. 区分 Workaround / Minimal Fix / Structural Fix。
+4. 给 Must Change / Should Change / Can Defer / Do Not Change。
+5. 给回归验证和 Verification Gate。
