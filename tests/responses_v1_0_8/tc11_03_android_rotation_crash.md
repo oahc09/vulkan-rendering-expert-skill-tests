@@ -36,6 +36,38 @@ SurfaceView.surfaceCreated
 → render thread resume
 ```
 
+## Architecture Map
+
+```text
+Android UI lifecycle
+  └─ RenderSurface.surfaceCreated / surfaceDestroyed
+       ↓
+JNI bridge
+  └─ nativeSetSurface
+       ↓
+ANativeWindow ownership
+  └─ Renderer::setWindow
+       ├─ release old ANativeWindow
+       └─ createSurfaceAndSwapchain when new window != null
+            ↓
+Vulkan WSI
+  ├─ VkSurfaceKHR
+  ├─ VkSwapchainKHR
+  ├─ Swapchain ImageViews
+  ├─ Depth Images
+  └─ Framebuffers
+       ↓
+Render thread
+  └─ Renderer::drawFrame
+       ├─ vkAcquireNextImageKHR
+       ├─ vkQueueSubmit
+       └─ vkQueuePresentKHR
+```
+
+已确认：Java Surface event → JNI → ANativeWindow → Surface/Swapchain create → render-thread acquire/submit/present 主链。[CODE]
+
+未验证：旧 `VkSurfaceKHR` / `VkSwapchainKHR` 的销毁函数、swapchain-dependent resource teardown、`setWindow` 与 render thread 的锁/消息队列、frame fence 等待顺序、Surface generation tracking。
+
 ## 最可能根因排序
 
 1. **Surface 无效后仍调用 `vkAcquireNextImageKHR` / `vkQueuePresentKHR`**。[CODE]
