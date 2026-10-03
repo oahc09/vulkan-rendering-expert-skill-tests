@@ -1057,3 +1057,68 @@ FAILED tests/test_hygiene.py::TC8_2_no_temp_files_in_root
 6. **TC9 AI 不确定性**: 子 Agent 响应具有随机性，验收标准关注结构性要素（格式、关键词、反模式）而非具体措辞；FAIL 结果建议人工复核
 7. **TC9 执行成本**: 12 个 Agent 调用消耗较多 token，建议分批执行（先 P0 后 P1），单次超时 120 秒
 8. **TC9 上下文注入**: 技能上下文约 3000-4000 tokens，需确保不超出模型上下文窗口
+
+
+---
+
+## 9. v1.0.8 Project Diagnosis 行为测试
+
+v1.0.8 新增两层测试：
+
+1. **确定性结构回归**：`test_v1_0_8_project_diagnosis.py`
+   - version / routing
+   - `[CODE]` 标签
+   - Project Diagnosis Workflow 模板
+   - source-level impact categories
+   - Integration Test 8~11
+   - ClawHub ≤200 文件限制
+
+2. **模型行为测试**：`test_v1_0_8_model_behavior.py`
+   - 陌生仓库 Architecture Map
+   - Vulkan 1.1 → 1.3 升级影响面
+   - Android rotation crash 源码映射
+   - 已有引擎新增 Compute Pass
+   - 检查 Evidence Map、Architecture Map、未验证项、影响面分类、同步细节与反模式
+
+默认行为测试读取：
+
+```text
+tests/responses_v1_0_8/
+```
+
+这些文件是实际模型加载 v1.0.8 Skill 后生成的行为快照。
+
+### 实时模型重跑
+
+`run_live_model_behavior.py` 不绑定具体模型供应商。外部模型命令只需要满足：
+
+```text
+stdin  = 完整 Skill Context + User Prompt
+stdout = 模型回答
+```
+
+示例：
+
+```bash
+export VULKAN_SKILL_MODEL_CMD="my-model-wrapper"
+python tests/run_live_model_behavior.py --check
+```
+
+脚本会：
+
+```text
+读取目标 Skill 仓库
+→ 注入 v1.0.8 核心规则
+→ 执行 tc11_01 ~ tc11_04
+→ 写入 tests/responses_v1_0_8_live/
+→ 用同一套 pytest 行为 Gate 自动验收
+```
+
+也可以让行为测试检查其他模型输出目录：
+
+```bash
+VULKAN_BEHAVIOR_RESPONSE_DIR=/path/to/responses \
+pytest -q tests/test_v1_0_8_model_behavior.py
+```
+
+这样可以对不同模型 / Agent / Skill 版本使用完全相同的行为验收标准。
