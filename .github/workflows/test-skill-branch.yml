@@ -1,0 +1,41 @@
+name: Test Vulkan Skill Branch
+
+on:
+  push:
+    branches:
+      - feat/v1.0.8-project-diagnosis-tests
+  workflow_dispatch:
+    inputs:
+      skill_ref:
+        description: "vulkan-rendering-expert-skill ref to test"
+        required: true
+        default: "feat/v1.0.8-project-diagnosis"
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout test repository
+        uses: actions/checkout@v4
+        with:
+          path: vulkan-rendering-expert-skill-tests
+
+      - name: Checkout skill repository
+        uses: actions/checkout@v4
+        with:
+          repository: oahc09/vulkan-rendering-expert-skill
+          ref: ${{ github.event.inputs.skill_ref || 'feat/v1.0.8-project-diagnosis' }}
+          path: vulkan-rendering-expert-skill
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install test dependencies
+        run: python -m pip install --upgrade pytest pyyaml
+
+      - name: Run pytest suite
+        working-directory: vulkan-rendering-expert-skill-tests/tests
+        run: pytest -q
