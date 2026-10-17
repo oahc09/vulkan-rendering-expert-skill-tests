@@ -63,14 +63,12 @@ def test_no_placeholder_content_in_non_templates():
 
 # TC8.5 release_checklist 条目可操作
 def test_release_checklist_items_are_actionable():
-    path = SKILL_DIR / "07_integration_pack" / "release_checklist.md"
-    if not path.is_file():
-        pytest.skip("release_checklist.md not found")
+    # v1.0.6 consolidated the checklist; absence must fail rather than skip.
+    path = SKILL_DIR / "07_integration_pack" / "maintenance_release_token_policy.md"
+    assert path.is_file(), "Consolidated maintenance/release policy missing"
     text = path.read_text(encoding="utf-8")
-    non_actionable = []
-    for idx, line in enumerate(text.splitlines(), 1):
-        if line.strip().startswith("- ["):
-            content = re.sub(r"- \[[ xX]\]\s*", "", line).strip()
-            if not content:
-                non_actionable.append((idx, line))
-    assert not non_actionable, "Empty checklist items in release_checklist.md"
+    match = re.search(r"^## Part 2\. Release Checklist[^\n]*\n(.*?)(?=^## |\Z)", text, re.M | re.S)
+    assert match, "Part 2 Release Checklist section missing"
+    checkboxes = re.findall(r"^\s*- \[[ xX]\](.*)$", match.group(1), re.M)
+    assert checkboxes, "Release Checklist must contain actionable checkbox items"
+    assert all(item.strip() for item in checkboxes), "Empty Release Checklist checkbox"

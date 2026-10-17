@@ -1,0 +1,4 @@
+ssssssssssss                                                             [100%]
+=========================== short test summary info ============================
+SKIPPED [12] vulkan-109/tests/tests/test_live_model_behavior.py:31: No live run configured; historical snapshots are not live evidence
+12 skipped, 98 deselected in 0.04s

@@ -1,0 +1,1 @@
+请给 Apple Silicon 与 Intel Mac 的 Vulkan 工具可用性矩阵，分开 hardware、OS、loader/ICD（MoltenVK）、SDK version、Vulkan Configurator、vkprofiles、capture/replay 和 validation。安装 SDK 是否证明每个工具在所有 Mac 都可用？未知项必须标待验证，引用官方版本证据。

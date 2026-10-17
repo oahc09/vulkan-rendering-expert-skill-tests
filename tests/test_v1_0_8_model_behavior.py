@@ -1,13 +1,15 @@
 """v1.0.8 Project Diagnosis model behavior snapshot tests."""
 
+import pytest
+
+pytestmark = pytest.mark.snapshot
+
 import os
 import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
-RESP = Path(
-    os.environ.get("VULKAN_BEHAVIOR_RESPONSE_DIR", str(BASE / "responses_v1_0_8"))
-).resolve()
+RESP = (BASE / "responses_v1_0_8").resolve()
 
 def read(name):
     path = RESP / name

@@ -1,0 +1,125 @@
+{
+  "basis": "Manual comparison of cited claim to current normative VUID text. Snapshot before concurrent corrections.",
+  "findings": {
+    "VUID-VkDescriptorSetLayoutCreateInfo-flags-00280": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 173,
+        "context": "- `VUID-VkDescriptorSetLayoutCreateInfo-flags-00280`：`PUSH_DESCRIPTOR_BIT_KHR` 与其他 flag 的兼容性。",
+        "registry_text": "If <code>flags</code> contains <a href=\"#VkDescriptorSetLayoutCreateFlagBits\">VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT</a>, then all elements of <code>pBindings</code> <strong class=\"purple\">must</strong> not have a <code>descriptorType</code> of <a href=\"#VkDescriptorType\">VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC</a> or <a href=\"#VkDescriptorType\">VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC</a>"
+      }
+    ],
+    "VUID-VkDescriptorSetLayoutCreateInfo-flags-03000": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 217,
+        "context": "- `VUID-VkDescriptorSetLayoutCreateInfo-flags-03000`：binding flag 与 feature bit 对应。",
+        "registry_text": "If any binding has the <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT</a> bit set, <code>flags</code> <strong class=\"purple\">must</strong> include <a href=\"#VkDescriptorSetLayoutCreateFlagBits\">VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT</a>"
+      }
+    ],
+    "VUID-VkDescriptorUpdateTemplateCreateInfo-templateType-00350": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 177,
+        "context": "- `VUID-VkDescriptorUpdateTemplateCreateInfo-templateType-00350`：push template 字段。",
+        "registry_text": "If <code>templateType</code> is <a href=\"#VkDescriptorUpdateTemplateTypeKHR\">VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET</a>, <code>descriptorSetLayout</code> <strong class=\"purple\">must</strong> be a valid <code>VkDescriptorSetLayout</code> handle"
+      }
+    ],
+    "VUID-VkDeviceCreateInfo-pNext-02829": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 190,
+        "context": "- `VUID-VkDeviceCreateInfo-pNext-02829`：maintenance feature 与扩展启用一致性。[SPEC]",
+        "registry_text": "If the <code>pNext</code> chain includes a <a href=\"#VkPhysicalDeviceVulkan11Features\">VkPhysicalDeviceVulkan11Features</a> structure, then it <strong class=\"purple\">must</strong> not include a <a href=\"#VkPhysicalDevice16BitStorageFeatures\">VkPhysicalDevice16BitStorageFeatures</a>, <a href=\"#VkPhysicalDeviceMultiviewFeatures\">VkPhysicalDeviceMultiviewFeatures</a>, <a href=\"#VkPhysicalDeviceVariablePointersFeatures\">VkPhysicalDeviceVariablePointersFeatures</a>, <a href=\"#VkPhysicalDeviceProtectedMemoryFeatures\">VkPhysicalDeviceProtectedMemoryFeatures</a>, <a href=\"#VkPhysicalDeviceSamplerYcbcrConversionFeatures\">VkPhysicalDeviceSamplerYcbcrConversionFeatures</a>, or <a href=\"#VkPhysicalDeviceShaderDrawParametersFeatures\">VkPhysicalDeviceShaderDrawParametersFeatures</a> structure"
+      }
+    ],
+    "VUID-VkImageMemoryBarrier-oldLayout-01208": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 134,
+        "context": "- `VUID-VkImageMemoryBarrier-oldLayout-01208`：oldLayout 必须与当前 layout 匹配（或为 UNDEFINED / PREINITIALIZED）。",
+        "registry_text": "If <a href=\"#synchronization-image-barrier-ignored-layout\">layouts are not ignored</a>, <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT</a> usage flag set"
+      }
+    ],
+    "VUID-VkImageMemoryBarrier-subresourceRange-01486": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 136,
+        "context": "- `VUID-VkImageMemoryBarrier-subresourceRange-01486`：aspect mask 与 image format 一致性。",
+        "registry_text": "<code>subresourceRange.baseMipLevel</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created"
+      }
+    ],
+    "VUID-VkSubmitInfo2-semaphore-03882": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/synchronization2.md",
+        "line": 145,
+        "context": "- `VUID-VkSubmitInfo2-semaphore-03882`：wait semaphore 必须处于合法状态。",
+        "registry_text": "If the <code>semaphore</code> member of any element of <code>pSignalSemaphoreInfos</code> is a timeline semaphore, the <code>value</code> member of that element <strong class=\"purple\">must</strong> have a value greater than the current value of the semaphore when the <a href=\"#synchronization-semaphores-signaling\">semaphore signal operation</a> is executed"
+      }
+    ],
+    "VUID-vkCmdDrawIndirect-buffer-02708": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 212,
+        "context": "1. `VkBuffer.usage` 漏写 `INDIRECT_BUFFER_BIT`，validation 报 `VUID-vkCmdDrawIndirect-buffer-02708`。[TOOL]",
+        "registry_text": "If <code>buffer</code> is non-sparse then it <strong class=\"purple\">must</strong> be bound completely and contiguously to a single <code>VkDeviceMemory</code> object"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 230,
+        "context": "- `VUID-vkCmdDrawIndirect-buffer-02708`：buffer 缺少 `INDIRECT_BUFFER_BIT`。",
+        "registry_text": "If <code>buffer</code> is non-sparse then it <strong class=\"purple\">must</strong> be bound completely and contiguously to a single <code>VkDeviceMemory</code> object"
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier-bufferMemoryBarrierCount-01178": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+        "line": 126,
+        "context": "- `VUID-vkCmdPipelineBarrier-bufferMemoryBarrierCount-01178`：family index 合法性。",
+        "registry_text": "If <code>vkCmdPipelineBarrier</code> is called within a render pass instance using a <a href=\"#VkRenderPass\">VkRenderPass</a> object, it <strong class=\"purple\">must</strong> not include any buffer memory barriers"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/pipeline_barrier.md",
+        "line": 129,
+        "context": "- `VUID-vkCmdPipelineBarrier-bufferMemoryBarrierCount-01178`：buffer barrier 的 queue family index 规则。",
+        "registry_text": "If <code>vkCmdPipelineBarrier</code> is called within a render pass instance using a <a href=\"#VkRenderPass\">VkRenderPass</a> object, it <strong class=\"purple\">must</strong> not include any buffer memory barriers"
+      }
+    ],
+    "VUID-vkMapMemory-memory-00683": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 180,
+        "context": "- `VUID-vkMapMemory-memory-00683`：map 非 host-visible memory（VMA 通常先返回错误，但若绕过仍会触发）。",
+        "registry_text": "<code>memory</code> <strong class=\"purple\">must</strong> not have been allocated with multiple instances"
+      }
+    ],
+    "VUID-vkQueueSubmit-pCommandBuffers-00072": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer_lifetime.md",
+        "line": 151,
+        "context": "- `VUID-vkQueueSubmit-pCommandBuffers-00072`：command buffer 必须处于 executable 状态。",
+        "registry_text": "Any <a href=\"#commandbuffers-secondary\">secondary command buffers recorded</a> into any element of the <code>pCommandBuffers</code> member of any element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>"
+      }
+    ],
+    "VUID-vkQueueSubmit-pWaitSemaphores-00068": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/fence_semaphore.md",
+        "line": 174,
+        "context": "- `VUID-vkQueueSubmit-pWaitSemaphores-00068`：wait semaphore 必须已 signaled 或可被 timeline 满足。[SPEC]",
+        "registry_text": "When a semaphore wait operation referring to a binary semaphore defined by any element of the <code>pWaitSemaphores</code> member of any element of <code>pSubmits</code> executes on <code>queue</code>, there <strong class=\"purple\">must</strong> be no other queues waiting on the same semaphore"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 241,
+        "context": "- `VUID-vkQueueSubmit-pWaitSemaphores-00068`：wait semaphore 必须 signaled 或 timeline 可满足。[SPEC]",
+        "registry_text": "When a semaphore wait operation referring to a binary semaphore defined by any element of the <code>pWaitSemaphores</code> member of any element of <code>pSubmits</code> executes on <code>queue</code>, there <strong class=\"purple\">must</strong> be no other queues waiting on the same semaphore"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/semaphore.md",
+        "line": 150,
+        "context": "- `VUID-vkQueueSubmit-pWaitSemaphores-00068`：wait semaphore 必须已被 signal 或处于 pending signal 状态。",
+        "registry_text": "When a semaphore wait operation referring to a binary semaphore defined by any element of the <code>pWaitSemaphores</code> member of any element of <code>pSubmits</code> executes on <code>queue</code>, there <strong class=\"purple\">must</strong> be no other queues waiting on the same semaphore"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+同事推荐 VK_PIPELINE_STAGE_2_DESCRIPTOR_HEAP_WRITE_BIT_EXT 和 VK_ACCESS_2_DESCRIPTOR_HEAP_WRITE_BIT_EXT 来同步 descriptor heap。请直接给可编译 barrier；若枚举不存在，请明确指出，不能自行创造。说明应如何核实并区分描述符写入与 GPU 资源访问同步。

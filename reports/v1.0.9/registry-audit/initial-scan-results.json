@@ -1,0 +1,2968 @@
+{
+  "generated_utc": "2026-10-17T13:56:51.085405+00:00",
+  "target": {
+    "schema version": 2,
+    "api version": "1.4.365",
+    "comment": "from git branch: github-main commit: 8c9361ba8180c1f4164c0bf79de2f6e817770b0d",
+    "date": "2026-10-02 01:41:26Z"
+  },
+  "scope": "Read-only lexical existence scan; no semantic proof, no type inference for unqualified/local-variable fields, no extension/version feature legality proof. Missing VUIDs may be obsolete; matching VUID existence does not validate the prose interpretation.",
+  "counts": {
+    "files": 69,
+    "symbol_occurrences": 4026,
+    "vuid_occurrences": 217,
+    "qualified_member_occurrences": 112
+  },
+  "source_sha256": {
+    "evidence/vk.xml": "4ab953836756807a93cee72bc3c63554826b445af43003e0d7d7e876818428ca",
+    "evidence/registry-audit/vulkan_core.h": "f331fc8209888d4a6b24d23a6a7baef94d534491ecd3aa0493e4583e505578f0",
+    "evidence/registry-audit/validusage.json": "e3fe93781fe69c4eda8f4b5464b6aed9a1b7e961e1c6ccd0959e8a9afca4f1e4"
+  },
+  "input_sha256": {
+    "skill/references/03_api_manual/01_instance_device_queue/instance.md": "5d76a49d0dacac1e94a961acf65d3e52e89b82d4f5bdafbe2d0adc64ceebd85b",
+    "skill/references/03_api_manual/01_instance_device_queue/logical_device.md": "2b8e6e16ca4f6d6c9584ae18f212d2e4cdd02142f5c71bded157ad070d630d95",
+    "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md": "2862e7462ab69ba3769008ed6dbcb979cb2c5cdff32510e5fc7a94eed28567fb",
+    "skill/references/03_api_manual/01_instance_device_queue/physical_device.md": "2d9f869eb3613c285323d09d9978f0f13809704d6087c5431727bcb866b6d7d9",
+    "skill/references/03_api_manual/02_surface_swapchain/desktop_windowing.md": "0cc6f20db35354627880cee50e42441bdf1e0023ee716cb47d337a9ddad19d06",
+    "skill/references/03_api_manual/02_surface_swapchain/surface.md": "ee3eced86f9a091f9baa9b5b0f54721fcd247d86ed10cdb7352698386f45add3",
+    "skill/references/03_api_manual/02_surface_swapchain/swapchain.md": "1edd801c26b1949c4f026b36405eff07b876a56c8d62500f214ba82910ae4284",
+    "skill/references/03_api_manual/02_surface_swapchain/swapchain_recreate.md": "7e1cb9721c3b4347233f666b3ea286c4f24b393fc650e8a1f3abb2614c3c690b",
+    "skill/references/03_api_manual/03_command_buffer/command_buffer.md": "e329e504083e645ef07632636436ddea173fd7ef26d92a3b52e787a620cefe90",
+    "skill/references/03_api_manual/03_command_buffer/command_buffer_lifetime.md": "be9bf07de3718a9c8c3ef1cd2984f67a72a3656edeae677cbb57246cf20f5ae6",
+    "skill/references/03_api_manual/03_command_buffer/fence_semaphore.md": "fc8a410e6c858957384b2d1b9177cf4dd4a326a91333100509098bb917fb4d46",
+    "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md": "7fd83f65848621b90800e6145bbdb2531f2259b1e9d554aaf0d11719db79727d",
+    "skill/references/03_api_manual/03_command_buffer/indirect_commands.md": "8eac79a3dfa932475cc6b8bd37031bfcc7a02af8bf31de94e0df478ae275d5e1",
+    "skill/references/03_api_manual/03_command_buffer/queue_submit.md": "f5aa5e47c425f01dec45c060fe18c8866be695cc9ac263088da4bc99e4a560b7",
+    "skill/references/03_api_manual/04_buffer_image_memory/buffer.md": "5a050485a794350b427685ac81195f56d9331cd91877d27393e194cf9b2748c6",
+    "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md": "f2feb296c583c52dcc0cbfe81bc015f2f65df419172325affa2bc164f8069abf",
+    "skill/references/03_api_manual/04_buffer_image_memory/framebuffer.md": "9585b6158d4c6183f9a92f86a877e6971859e097549766033d1b687bd2f881c6",
+    "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md": "b57a6b28a3d9ef7d2279ff0436cc21409798a55c8491dcc5287d5ffd70edfec0",
+    "skill/references/03_api_manual/04_buffer_image_memory/image.md": "4f7b57c8f067a18c864141ddb5e985c01b0dedc36404c2e9f8094d81f6c922a8",
+    "skill/references/03_api_manual/04_buffer_image_memory/image_layout.md": "562fd10b10b9a7e8f323406499271da4083cd041d5691dc766230396fdac16fa",
+    "skill/references/03_api_manual/04_buffer_image_memory/image_view.md": "8f2c670c3af38e2a003e37869063e69ca86438311af1a13b369a7d6eea8b8107",
+    "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md": "35337b745e50f2dd963fa13078427bc7b2480604a7c5d0748f1328aaab46149c",
+    "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md": "6e083fbbfe6ccaed1d7dca2ba255dce0e7695ca7845afc935e423dd484722d52",
+    "skill/references/03_api_manual/04_buffer_image_memory/sampler.md": "21deef865641c3d66a335a4b30f31fca2d0030c13c12a2c2598485f7f35692a9",
+    "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md": "31de67c93a8daa1e3009c71b39a3563a926c38b1e0510a3a346e4bc9e348ea2f",
+    "skill/references/03_api_manual/05_descriptor/descriptor_buffer.md": "2b73d3ab08b74eb600a77fcd49b74e9abd322d1ec7aebb6bade6a75bcad1c791",
+    "skill/references/03_api_manual/05_descriptor/descriptor_heap.md": "3359e4fa3d712f5d11b5a8117bba3011165e6ef86b6ebf198e8231a58b42d87c",
+    "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md": "9c539d31946991f2cb47b2be1d45c01a8086c53ab6887a23d96daa5d3600c190",
+    "skill/references/03_api_manual/05_descriptor/descriptor_pool.md": "75b6a77a90b9b16453a0f784e84ae92ceadbbc8310ebcaeacf5f3c358e9e1dac",
+    "skill/references/03_api_manual/05_descriptor/descriptor_set.md": "2c0cf2cd183fd260d3db73d03203767eabd0c5763f3c9516c9fe3df62f20a18d",
+    "skill/references/03_api_manual/05_descriptor/descriptor_set_layout.md": "dca8a2e6dc81b8be1dcc402d54f46f0a16e9e4ec3ba94d31850f4e8a25b78d61",
+    "skill/references/03_api_manual/05_descriptor/descriptor_update.md": "ca0aebc27d3d65555441190719c468521ba22ecf7617c21210a321905ad56a04",
+    "skill/references/03_api_manual/05_descriptor/push_descriptor.md": "73ea4a50ceab9daf3ca21b82f58020a073ac8cb8ef4bf7eea107d27cba27bd22",
+    "skill/references/03_api_manual/05_descriptor/sampled_image_descriptor.md": "e45407c4b7274228377c2e162b9b8f15dccb13a1c2cfdf33f2ff0629f6d52699",
+    "skill/references/03_api_manual/05_descriptor/storage_buffer_image_descriptor.md": "9eb6b6a9f84b563bf51a4f5daf621a6b20b3e0f4f8a14bf2b9d68eb58cf3a91f",
+    "skill/references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md": "6560b379de6e0e9160164124d73ff42397e8b59aaf857b9056b3846019e610c0",
+    "skill/references/03_api_manual/06_pipeline/compute_pipeline.md": "3a098836c4b9debb6d3cdbc6541cb91c45493fd9c50a0738bc388c4c7dc5bd6c",
+    "skill/references/03_api_manual/06_pipeline/dynamic_state.md": "ff2f8cc16359e3185f3acf090728b962164433dc1ac5fcf8fab690ca1ff8f364",
+    "skill/references/03_api_manual/06_pipeline/graphics_pipeline.md": "93af25f35e64c98dbf19c98f85aa4d65581da210297107f4d05176a8e7df0b43",
+    "skill/references/03_api_manual/06_pipeline/graphics_pipeline_library.md": "3d406a2df8f13df232721fcde5ac5f7a7d9e4690144e3d346c4c41ad26d586cb",
+    "skill/references/03_api_manual/06_pipeline/mesh_shader.md": "ebeb7bc46e3393bf0c3fe2fc1a11cb09d677ae2666157a5c3e53a76273f4bb50",
+    "skill/references/03_api_manual/06_pipeline/pipeline.md": "28bee9f73fc35979e4ab8bc71401d1954ef7c0e3d110ab8ef75012b96e6213b3",
+    "skill/references/03_api_manual/06_pipeline/pipeline_cache.md": "f1a528165f87a91eb21d046eeeb88f8baf4a34346eea5ad8e74cbaad987d396a",
+    "skill/references/03_api_manual/06_pipeline/pipeline_layout.md": "3bbfc1d52fef89ee1f99d3f815c32ff25fcd225996f418ebe94cf582638c567a",
+    "skill/references/03_api_manual/06_pipeline/shader_module.md": "49e51d6e613db6f78aaef61395de6fe0b01349237b329f1f8535053e1fd033df",
+    "skill/references/03_api_manual/06_pipeline/specialization_constants.md": "5b994b75059445c44d8378f0d34e77273a2a7bcaae451a366436d2f5da63afdd",
+    "skill/references/03_api_manual/07_rendering/attachment_load_store.md": "b38d6df3933f39b04c488c2bc9439888fdd852351fe2a240f838d6d175ea356a",
+    "skill/references/03_api_manual/07_rendering/dynamic_rendering.md": "765a25bd5d83e9cc047fbcd6cdd06c10d1f83b4d396cca64600701a8b2b8edf1",
+    "skill/references/03_api_manual/07_rendering/render_pass.md": "41e5120387616b8d10d04ef014e23d4b1b561b991377d01b3502c1f42800d8b9",
+    "skill/references/03_api_manual/07_rendering/render_target_layout.md": "9b2482ed3cfb6139d1ff2b353482c09c03a65db964e96e0dbaa91b91db0bae24",
+    "skill/references/03_api_manual/08_synchronization/buffer_memory_barrier.md": "9612ad3747a941da9b61d3a6dabfdfd59fa7d15a4f3e7caafc62324db058754d",
+    "skill/references/03_api_manual/08_synchronization/event.md": "398a10ca4c139d0b81302f369fae0a44c59b204bd897278d39e527b39ca3d069",
+    "skill/references/03_api_manual/08_synchronization/fence.md": "9ddd844394cba34ae50ac0d29116d4804dbc995a054202838e31384767afa208",
+    "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md": "7cd57ac064a0df10cb3a725d320c143ed31fb07b7ddc00f5a1fa36cb98d8e392",
+    "skill/references/03_api_manual/08_synchronization/pipeline_barrier.md": "42e8b9081a35bbef75e4a069fff4e5d5498a34d879e6b8cd14158a0e95ad001e",
+    "skill/references/03_api_manual/08_synchronization/semaphore.md": "a07043c0568c5708667510bbe31e7f06ddd855687ce472cbfa343aceb8f92027",
+    "skill/references/03_api_manual/08_synchronization/synchronization2.md": "582e6581866e57a6dcd5d346799041fdfd9bdc25fd68668bcc772d0830a08217",
+    "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md": "3f95b867a0276739b672b974444e8721ff3a8497c35ee5ae8ce80c8aa117fc9d",
+    "skill/references/03_api_manual/09_debug_validation/debug_utils.md": "fbf654039eb673ff729dee4033197277416db9eaa139e14d34f3f23ce8dde405",
+    "skill/references/03_api_manual/09_debug_validation/validation_layer.md": "81a0c73d166451bdca32d9bb37a0d68e0b463298a122c748909afbd4cac3971a",
+    "skill/references/03_api_manual/09_debug_validation/vuid_decode.md": "5891a9ef1b30cdf6afa2febd990ea0afef875e9a8317b948e78efa09336f3c3a",
+    "skill/references/03_api_manual/10_android_platform/anativewindow.md": "2dd7cf8fa6a9a9d8ffcef23acafa1a61e4232c85c28e5fe44b0eaf3c5a609d87",
+    "skill/references/03_api_manual/10_android_platform/android_surface.md": "ce22dc00522183c5dc3b51c128f4a0b4cced3e96db065ca398691c161883f5b1",
+    "skill/references/03_api_manual/README.md": "0b98d3e67f34d7e93c9301c5b1326d9987b929fbe8d751a4b7194bb23db6c6a2",
+    "skill/references/03_api_manual/api_card_template.md": "f430cdf67a0878a790c12a1d2588fab8818875b92a7c994620dafa10a713a7e2",
+    "skill/references/03_api_manual/api_card_writing_rules.md": "9afc1c5f855e9810e77c337155a02f31dbdbaeed4531ee1ef439a9a3bf1deba4",
+    "skill/references/03_api_manual/api_index.md": "b57e5b8413fcf72bfd456bb2a1ffac7c6a19a2c26c16f8e9335183d938470d47",
+    "skill/references/03_api_manual/error_index.md": "b017203b20b7dda2c3ffa2195c2c43d047d428dd5d76b14e2b4463f4ec6f3d0b",
+    "skill/references/03_api_manual/lifecycle_index.md": "9fbb03fddfbc746541d38adc154ddce928f76643ffa8ffe384a9c00c49604539"
+  },
+  "unknown_symbols": {
+    "VK_ERROR_INVALID_VALUE": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 131,
+        "context": "| `VkSemaphoreSignalInfo.value` | CPU signal 目标值；必须严格大于当前 counter。[SPEC] | signal 一个 ≤ 当前 counter 的 value → `VK_ERROR_INVALID_VALUE` 或 VUID 触发。[TOOL] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 166,
+        "context": "3. `vkSignalSemaphore` 一个 ≤ 当前 counter 的 value，触发 `VK_ERROR_INVALID_VALUE` 或 VUID。[TOOL]"
+      }
+    ],
+    "VK_EXT_extended_dynamic_state2_additional": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 112,
+        "context": "- `VK_EXT_extended_dynamic_state2`、`VK_EXT_extended_dynamic_state2_additional`（部分 `logicOp`、`rasterizationSamples` 需 additional feature）。"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 316,
+        "context": "5. `VK_EXT_extended_dynamic_state2_additional` 中 `logicOp`、`rasterizationSamples` 的额外限制。"
+      }
+    ],
+    "VK_EXT_non_uniform_qualifier": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 92,
+        "context": "- `VK_EXT_non_uniform_qualifier`：早期使 `nonuniformEXT` 可用的扩展（已被 descriptor_indexing + Vulkan 1.2 取代）。"
+      }
+    ],
+    "VK_EXT_performance_query": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 75,
+        "context": "- `VK_KHR_performance_query` / `VK_EXT_performance_query`：性能计数器查询（厂商 / Counter-based profiling）。[SPEC]"
+      }
+    ],
+    "VK_FEATURE_LINE_RASTER": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 314,
+        "context": "3. `vkCmdSetViewportWithCount` / `vkCmdSetScissorWithCount` 与 `VK_FEATURE_LINE_RASTER` 等其它 feature 的交互。"
+      }
+    ],
+    "VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 28,
+        "context": "→ VkImage（创建时 flags 含 VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT）"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 42,
+        "context": "- `VkImage` 创建时 `flags` 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 57,
+        "context": "- `VkImage`（创建时 `flags` 含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`）"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 93,
+        "context": "   VkImageCreateInfo.flags |= VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 178,
+        "context": "| `flags` | 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC] | 漏掉 flag 后调用 host copy API 触发 validation error。[TOOL] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 196,
+        "context": "- [ ] `VkImageCreateInfo.flags` 是否含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`？[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 217,
+        "context": "1. `VkImageCreateInfo.flags` 缺少 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`，调用 host copy API 触发 validation error。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 234,
+        "context": "- `VUID-VkImageCreateInfo-flags-09203`：使用 host copy API 时 image flags 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 259,
+        "context": "- Image 创建时必须设 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT` flag，事后无法补加。[SPEC]"
+      }
+    ],
+    "VK_IMAGE_LAYOUT_HOST_COPY_ALIGNMENT_PLAN_": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 101,
+        "context": "     newLayout = VK_IMAGE_LAYOUT_HOST_COPY_ALIGNMENT_PLAN_... 或 General"
+      }
+    ],
+    "VK_KHR_maintenance": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 96,
+        "context": "→ vkEnumerateDeviceExtensionProperties 检查 VK_KHR_maintenance* / VK_EXT_swapchain_maintenance1"
+      }
+    ],
+    "VK_KHR_xxx": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 87,
+        "context": "- `VK_KHR_xxx`"
+      }
+    ],
+    "VK_LAYER_KHRONOS_validation": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/instance.md",
+        "line": 68,
+        "context": "- 常见 instance layers：`VK_LAYER_KHRONOS_validation`。"
+      },
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+        "line": 36,
+        "context": "- Instance layer 名称列表（如 `VK_LAYER_KHRONOS_validation`）。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+        "line": 74,
+        "context": "- `VK_LAYER_KHRONOS_validation`：Khronos 官方验证层，推荐优先使用。[GUIDE]"
+      },
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+        "line": 84,
+        "context": "编译期/启动期选择 layer 名称（VK_LAYER_KHRONOS_validation）"
+      },
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+        "line": 242,
+        "context": "优先使用 `VK_LAYER_KHRONOS_validation` 单一 layer，而不是过时的 `VK_LAYER_LUNARG_standard_validation` 组合；使用 `VK_EXT_debug_utils` 替代 `VK_EXT_debug_report`。在回调中只做日志/断点/统计，不做 Vulkan API 调用；为不同构建类型配置 severity mask：DEBUG 全开，PROFILE 仅 `WARNING`/`ERROR`，RELEASE 彻底关闭。"
+      }
+    ],
+    "VK_LAYER_LUNARG_standard_validation": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+        "line": 242,
+        "context": "优先使用 `VK_LAYER_KHRONOS_validation` 单一 layer，而不是过时的 `VK_LAYER_LUNARG_standard_validation` 组合；使用 `VK_EXT_debug_utils` 替代 `VK_EXT_debug_report`。在回调中只做日志/断点/统计，不做 Vulkan API 调用；为不同构建类型配置 severity mask：DEBUG 全开，PROFILE 仅 `WARNING`/`ERROR`，RELEASE 彻底关闭。"
+      }
+    ],
+    "VK_PIPELINE_STAGE_2_DESCRIPTOR_INDEXING_BIT": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_buffer.md",
+        "line": 61,
+        "context": "- 把 descriptor indexing 当作 pipeline stage。`VK_PIPELINE_STAGE_2_DESCRIPTOR_INDEXING_BIT` 不是 Vulkan 枚举，不能用于 barrier。"
+      }
+    ],
+    "VK_SUBPASS_SHADER_STAGE_": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/compute_pipeline.md",
+        "line": 279,
+        "context": "5. Subpass 内 compute shader 使用的限制（如 `VK_SUBPASS_SHADER_STAGE_*` 相关扩展）。"
+      }
+    ],
+    "VkBindIndexBufferIndirectCommand": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 60,
+        "context": "- `VkBindIndexBufferIndirectCommand` 等关联结构（按需）"
+      }
+    ],
+    "VkDrawMeshTasksIndirectCountEXT": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 63,
+        "context": "- `VkDrawMeshTasksIndirectCountEXT`（`VK_EXT_mesh_shader`，count 也来自 GPU）"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 388,
+        "context": "4. `VK_EXT_mesh_shader` 中 `VkDrawMeshTasksIndirectCommandEXT` / `VkDrawMeshTasksIndirectCountEXT` 结构与 `groupCountX/Y/Z` 上限。"
+      }
+    ],
+    "VkExternalSemaphoreTypeCreateInfo": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 321,
+        "context": "1. `VkSemaphoreTypeCreateInfo` 在 `pNext` 链中与 `VkExternalSemaphoreTypeCreateInfo`、`VkExportMetalObjectCreateInfoEXT` 等扩展结构体的共存规则。[SPEC]"
+      }
+    ],
+    "VkImageToImageCopyEXT": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 58,
+        "context": "- `VkMemoryToImageCopyEXT` / `VkImageToMemoryCopyEXT` / `VkImageToImageCopyEXT`"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 160,
+        "context": "### VkImageToImageCopyEXT"
+      }
+    ],
+    "VkMemoryAllocator": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 49,
+        "context": "- 决定 `VkMemoryAllocator` 类工具能否实现\"先查后建\"的资源创建路径。[ENGINE]"
+      }
+    ],
+    "VkPhysicalDeviceDynamicRenderingLocalReadPropertiesKHR": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 260,
+        "context": "- depth/stencil aspect 与 MSAA attachment 的 local read 受 `VkPhysicalDeviceVulkan14Properties.dynamicRenderingLocalReadDepthStencilAttachments` / `dynamicRenderingLocalReadMultisampledAttachments` 两个独立字段限制，需运行时查询（不存在独立的 `VkPhysicalDeviceDynamicRenderingLocalReadPropertiesKHR` 结构）。"
+      }
+    ],
+    "VkPhysicalDeviceExtendedDynamicState": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 124,
+        "context": "   VkPhysicalDeviceExtendedDynamicState*FeaturesEXT)"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 207,
+        "context": "- 检查 feature 启用：`VkPhysicalDeviceVulkan13Features`、`VkPhysicalDeviceExtendedDynamicState*FeaturesEXT`。"
+      }
+    ],
+    "VkPhysicalDeviceImageFormatProperties2": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 294,
+        "context": "- 移动端 GPU 对 `VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT`、`BLOCK_TEXEL_VIEW_COMPATIBLE_BIT` 等支持度参差，启用前查询 `VkPhysicalDeviceImageFormatProperties2`。[ANDROID]"
+      }
+    ],
+    "VkPhysicalDeviceMaintenance": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 58,
+        "context": "- `VkPhysicalDeviceMaintenance*Properties` / `VkPhysicalDeviceVulkan13Features`（含 maintenance4）/ `VkPhysicalDeviceVulkan14Features`（含 maintenance5 / maintenance6）/ 独立 `VkPhysicalDeviceMaintenance4Features` / `Maintenance5Features` / `Maintenance6Features`"
+      }
+    ],
+    "VkSurfacePresentModeCapabilitiesEXT": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 178,
+        "context": "8. `VkSwapchainPresentModesCreateInfoEXT` 切换到未在 `VkSurfacePresentModeCapabilitiesEXT` 列表中的 mode。[TOOL]"
+      },
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 271,
+        "context": "- Android 上 swapchain_maintenance1 支持度与 GPU 厂商驱动版本强相关，部分旧驱动仅支持 `VK_PRESENT_MODE_FIFO_KHR`；切换到 `MAILBOX_KHR` / `IMMEDIATE_KHR` 前必须查询 `VkSurfacePresentModeCapabilitiesEXT`。[ANDROID]"
+      },
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 346,
+        "context": "6. swapchain_maintenance1 中 `VkSwapchainPresentModesCreateInfoEXT` 与 `VkSurfacePresentModeCapabilitiesEXT` 的查询路径与合法切换组合。[SPEC]"
+      }
+    ],
+    "VkSurfacePresentModesEXT": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 136,
+        "context": "| `VkSwapchainPresentModesCreateInfoEXT` | swapchain_maintenance1 | 在 `vkQueuePresentKHR` 时通过 `pNext` 传入新 present mode，实现运行时切换。[SPEC] | 切换到未在 `VkSurfacePresentModesEXT` 查询列表中的 mode。[TOOL] |"
+      }
+    ],
+    "VkWriteDescriptorSet2": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 54,
+        "context": "- `VkWriteDescriptorSet` / `VkWriteDescriptorSet2`"
+      }
+    ],
+    "VkXXX": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+        "line": 94,
+        "context": "| `VUID-VkXXX-vkCmdYYY-zzzzz` | 对象-命令-子对象-数字结构。[SPEC] | 只看数字忽略结构，导致检索困难。[TOOL] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 17,
+        "context": "| Vulkan 对象 | `VkXXX` |"
+      },
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 73,
+        "context": "- `VkXXX`"
+      }
+    ],
+    "VkXXXCreateInfo": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 74,
+        "context": "- `VkXXXCreateInfo`"
+      }
+    ],
+    "VkXXXFlagBits": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 75,
+        "context": "- `VkXXXFlagBits`"
+      }
+    ],
+    "VkXXXUsageFlags": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 76,
+        "context": "- `VkXXXUsageFlags`"
+      }
+    ],
+    "vkBind": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 29,
+        "context": "→ vkBind*Memory"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 88,
+        "context": "→ vkBind*Memory(resource, memory, offset)"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 178,
+        "context": "- VMA 透传 `vkCreateBuffer` / `vkCreateImage` / `vkAllocateMemory` / `vkBind*Memory`，所有相关 VUID 仍生效。[TOOL]"
+      }
+    ],
+    "vkBufferCreateInfo": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 99,
+        "context": "   vmaCreateBuffer(allocator, &vkBufferCreateInfo, &vmaAllocCreateInfo,"
+      }
+    ],
+    "vkCmd": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 10,
+        "context": "| 常用 API | `vkAllocateCommandBuffers` / `vkFreeCommandBuffers` / `vkResetCommandBuffer` / `vkBeginCommandBuffer` / `vkEndCommandBuffer` / `vkCmd*` |"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 29,
+        "context": "→ Record Commands (vkCmd*)"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 69,
+        "context": "| `vkCmd*` | 各类录制命令：draw、dispatch、barrier、copy、pipeline bind 等。[SPEC] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 85,
+        "context": "→ 录制 vkCmd* 命令"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 140,
+        "context": "8. 在 recording 状态的 command buffer 上调用除 `vkCmd*` / `vkEndCommandBuffer` 之外的 API。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 19,
+        "context": "Indirect Commands 是把 draw / dispatch 的参数从 CPU 端的 `vkCmd*` 调用搬到 GPU 端的 buffer 读取，是 GPU-driven rendering 的核心机制——draw count、vertex count、instance count、index offset、dispatch 维度等参数由 GPU 在执行期间从 `VkBuffer` 中读取，从而让 compute shader 在 GPU 上动态生成绘制命令。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 27,
+        "context": "→ vkCmd{Copy,Blit,Resolve,Fill}* 命令"
+      }
+    ],
+    "vkCmdBind": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 30,
+        "context": "→ vkCmdBind* / shader access"
+      }
+    ],
+    "vkCmdDrawIndirectFirstInstance": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 234,
+        "context": "- `VUID-vkCmdDrawIndirectFirstInstance-*`：`drawIndirectFirstInstance` 未启用。"
+      }
+    ],
+    "vkCmdSet": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 19,
+        "context": "Dynamic state 是 Vulkan 中将部分 pipeline 状态从“创建时烘焙”改为“command buffer 录制时设置”的机制，目的是减少 `VkPipeline` 变体数量；代价是每条 `vkCmdSet*` 命令增加 command buffer 录制开销与少量 GPU 状态切换开销。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 29,
+        "context": "→ vkCmdSet* (draw 前设置当前值)"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 41,
+        "context": "- 每条 `vkCmdSet*` 设置的值在 command buffer 内持续有效，直到下一次同类型 `vkCmdSet*` 覆盖或 command buffer reset。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 52,
+        "context": "- 各 `vkCmdSet*` 命令"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 143,
+        "context": "| `VkPipelineDynamicStateCreateInfo::pDynamicStates` | 必须列出所有要动态设置的状态；与 `vkCmdSet*` 命令一一对应。[SPEC] | 想动态设置但未列入；列入但实际未调用对应 `vkCmdSet*`。[TOOL] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 147,
+        "context": "| extended dynamic state feature 位 | 每个子能力对应独立 feature 位（尤其 eds3）。[SPEC] | 启用 extension 但未启用 feature，或未查询就调用 `vkCmdSet*` 导致 validation/未定义行为。[TOOL] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 148,
+        "context": "| `vkCmdSet*` 调用时机 | 必须在 pipeline bind 之后、draw 之前；rendering inner 状态需在 `vkCmdBeginRendering` 之后。[SPEC] | 在 render pass / dynamic rendering 之外设置 only-rendering-inner 状态。[TOOL] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 178,
+        "context": "1. 在 `VkPipelineDynamicStateCreateInfo` 中声明了某状态，但 draw 前从未调用对应 `vkCmdSet*`，validation 报 `VUID-vkCmdDraw-None-07833` 类错误。[TOOL]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 181,
+        "context": "4. eds3 的某个 `vkCmdSet*` 未查询对应 sub-feature 就调用，部分驱动静默忽略或 validation 报错。[TOOL][VENDOR]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 195,
+        "context": "- `VUID-vkCmdSetViewport-*` / `VUID-vkCmdSetScissor-*` 等：`vkCmdSet*` 参数合法性。"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 206,
+        "context": "- 检查 `VkPipelineDynamicStateCreateInfo.pDynamicStates` 与实际 `vkCmdSet*` 调用列表是否对应。"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 208,
+        "context": "- 检查 `vkCmdSet*` 是否在 render pass / dynamic rendering 内、draw 之前。"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 220,
+        "context": "- `vkCmdSet*` 在 command buffer 录制时调用；设置的值在 command buffer 内持续到下次覆盖或 reset。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 229,
+        "context": "- `vkCmdSet*` 设置的值是 command buffer 内状态，不持有资源，无 in-flight 销毁风险。"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 238,
+        "context": "- `vkCmdSet*` 是 command buffer 录制命令，本身不涉及 CPU-GPU 同步。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 256,
+        "context": "- 移动端 GPU 对每条 `vkCmdSet*` 的开销通常低于多 pipeline 变体带来的 cache miss + 内存占用，但需结合 AGI counter 验证。[ANDROID][AGI]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 268,
+        "context": "- 但每条 `vkCmdSet*` 增加 command buffer 录制开销；高频切换需权衡。[ENGINE]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 273,
+        "context": "- 大多数 `vkCmdSet*` 在 GPU 侧开销可忽略（寄存器写入）。[VENDOR]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 313,
+        "context": "2. eds3 每个 `vkCmdSet*` 对应的 feature 位（`VkPhysicalDeviceExtendedDynamicState3FeaturesEXT` 字段众多，必须逐条核对）。"
+      }
+    ],
+    "vkCmdSetDepthClampEnable": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 10,
+        "context": "| 常用 API | `vkCmdSetViewport` / `vkCmdSetScissor` / `vkCmdSetBlendConstants` / `vkCmdSetStencilReference` / `vkCmdSetDepthBias` / `vkCmdSetRasterizerDiscardEnable` / `vkCmdSetDepthClampEnable` |"
+      }
+    ],
+    "vkCmdXXX": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 82,
+        "context": "- `vkCmdXXX`"
+      }
+    ],
+    "vkCmdYYY": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+        "line": 94,
+        "context": "| `VUID-VkXXX-vkCmdYYY-zzzzz` | 对象-命令-子对象-数字结构。[SPEC] | 只看数字忽略结构，导致检索困难。[TOOL] |"
+      }
+    ],
+    "vkCreate": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+        "line": 147,
+        "context": "- 关注 `VUID-vkCreate*SurfaceKHR-*` 相关错误。"
+      },
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+        "line": 158,
+        "context": "- 检查 `vkCreate*SurfaceKHR` 返回值。"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 140,
+        "context": "- [ ] `vmaCreateBuffer` / `vmaCreateImage` 的 `VkBufferCreateInfo` / `VkImageCreateInfo` 字段是否合法（VMA 不校验，透传给 `vkCreate*`）？[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline.md",
+        "line": 80,
+        "context": "→ vkCreate*Pipelines（传入 pipeline cache）"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_cache.md",
+        "line": 19,
+        "context": "`VkPipelineCache` 是 `vkCreate*Pipelines` 的内部缓存容器，用于复用之前编译的 pipeline 中间数据，显著降低重复创建与后续启动的 CPU 耗时。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_cache.md",
+        "line": 177,
+        "context": "- `vkGetPipelineCacheData` 与 `vkCreate*Pipelines` 不应并发；需 CPU 侧同步。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/specialization_constants.md",
+        "line": 74,
+        "context": "→ vkCreate*Pipelines"
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/specialization_constants.md",
+        "line": 143,
+        "context": "- Pipeline 创建时传入；数据在 `vkCreate*Pipelines` 调用期间需有效。[SPEC]"
+      }
+    ],
+    "vkCreateXXX": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 80,
+        "context": "- `vkCreateXXX`"
+      },
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 402,
+        "context": "- `vkCreateXXX`"
+      }
+    ],
+    "vkCreateXxxSurfaceKHR": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+        "line": 82,
+        "context": "→ vkCreateXxxSurfaceKHR"
+      }
+    ],
+    "vkDestroy": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 153,
+        "context": "- [ ] 是否用 `vmaDestroyBuffer` / `vmaDestroyImage` 而非裸 `vkDestroy*`？[GUIDE]"
+      }
+    ],
+    "vkDestroyXXX": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 81,
+        "context": "- `vkDestroyXXX`"
+      },
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 403,
+        "context": "- `vkDestroyXXX`"
+      }
+    ],
+    "vkGet": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 10,
+        "context": "| 常用 API | `vkAllocateMemory` / `vkFreeMemory` / `vkMapMemory` / `vkUnmapMemory` / `vkFlushMappedMemoryRanges` / `vkInvalidateMappedMemoryRanges` / `vkGet*MemoryRequirements` |"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 27,
+        "context": "→ vkGet*MemoryRequirements"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 80,
+        "context": "→ vkGet*MemoryRequirements(resource, &memReq)"
+      }
+    ],
+    "vkGetPhysicalDevice": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+        "line": 227,
+        "context": "- 查询 API（`vkGetPhysicalDevice*`）为同步 CPU 调用，不涉及 GPU 同步。[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+        "line": 257,
+        "context": "- 查询 API 调用次数应集中在初始化阶段，避免每帧调用 `vkGetPhysicalDevice*`。[ENGINE]"
+      }
+    ],
+    "vkGetPhysicalDeviceHostImageCopyPropertiesEXT": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 72,
+        "context": "| `vkGetPhysicalDeviceHostImageCopyPropertiesEXT` | 查询该设备支持 host copy 的 format / layout 组合。[SPEC] |"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 197,
+        "context": "- [ ] image 的 format / usage / tiling 组合是否被 host image copy 支持？（查询 `vkGetPhysicalDeviceHostImageCopyPropertiesEXT`）[SPEC]"
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 381,
+        "context": "5. `vkGetPhysicalDeviceHostImageCopyPropertiesEXT` 返回的 supported format / layout 组合的完整解释。"
+      }
+    ],
+    "vkGetXXX": [
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 83,
+        "context": "- `vkGetXXX`"
+      }
+    ],
+    "vkXXX": [
+      {
+        "path": "skill/references/03_api_manual/README.md",
+        "line": 7,
+        "context": "它不复制官方 Vulkan Spec，也不按字母表罗列所有 `vkXXX` API，而是按 Vulkan 工程链路组织 API 卡片。"
+      },
+      {
+        "path": "skill/references/03_api_manual/api_card_template.md",
+        "line": 18,
+        "context": "| 常用 API | `vkXXX` |"
+      }
+    ]
+  },
+  "unknown_qualified_members": [
+    {
+      "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+      "line": 179,
+      "context": "- [ ] `VkBuffer.usage` 是否包含 `INDIRECT_BUFFER_BIT`？[SPEC]",
+      "symbol": "VkBuffer.usage",
+      "category": "handle"
+    },
+    {
+      "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+      "line": 212,
+      "context": "1. `VkBuffer.usage` 漏写 `INDIRECT_BUFFER_BIT`，validation 报 `VUID-vkCmdDrawIndirect-buffer-02708`。[TOOL]",
+      "symbol": "VkBuffer.usage",
+      "category": "handle"
+    },
+    {
+      "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+      "line": 132,
+      "context": "| `VkSemaphoreWaitInfo.semaphores` / `pValues` | 多 semaphore 等待时的 value 数组与 semaphore 数组必须按索引对齐。[SPEC] | 数组顺序错位导致等待错误的目标 value。[TOOL] |",
+      "symbol": "VkSemaphoreWaitInfo.semaphores",
+      "category": "struct"
+    }
+  ],
+  "unknown_vuids": {
+    "VUID-VkAndroidSurfaceCreateInfoKHR-window-01223": [
+      {
+        "path": "skill/references/03_api_manual/10_android_platform/android_surface.md",
+        "line": 132,
+        "context": "- `VUID-VkAndroidSurfaceCreateInfoKHR-window-01223`：`window` 必须指向有效 `ANativeWindow`。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkCmdSetViewport-firstViewport-01223",
+            "text": "The sum of <code>firstViewport</code> and <code>viewportCount</code> <strong class=\"purple\">must</strong> be between <code>1</code> and <code>VkPhysicalDeviceLimits</code>::<code>maxViewports</code>, inclusive"
+          }
+        ]
+      }
+    ],
+    "VUID-VkAttachmentDescription-layout-03077": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 172,
+        "context": "2. 在未启用 maintenance2 的情况下使用 `VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL`，触发 Validation Error `VUID-VkAttachmentDescription-layout-03077` 类报错。[TOOL]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkAttachmentReference-layout-03077",
+            "text": "If <code>attachment</code> is not <a href=\"#VK_ATTACHMENT_UNUSED\">VK_ATTACHMENT_UNUSED</a>, <code>layout</code>     <strong class=\"purple\">must</strong> not be <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_UNDEFINED</a>, <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT</a>,     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PREINITIALIZED</a>, or     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PRESENT_SRC_KHR</a>"
+          },
+          {
+            "vuid": "VUID-VkAttachmentReference2-layout-03077",
+            "text": "If <code>attachment</code> is not <a href=\"#VK_ATTACHMENT_UNUSED\">VK_ATTACHMENT_UNUSED</a>, <code>layout</code>     <strong class=\"purple\">must</strong> not be <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_UNDEFINED</a>, <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT</a>,     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PREINITIALIZED</a>, or     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PRESENT_SRC_KHR</a>"
+          }
+        ]
+      },
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 196,
+        "context": "- `VUID-VkAttachmentDescription-layout-03077` 等：maintenance2 layout 合法性。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkAttachmentReference-layout-03077",
+            "text": "If <code>attachment</code> is not <a href=\"#VK_ATTACHMENT_UNUSED\">VK_ATTACHMENT_UNUSED</a>, <code>layout</code>     <strong class=\"purple\">must</strong> not be <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_UNDEFINED</a>, <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT</a>,     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PREINITIALIZED</a>, or     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PRESENT_SRC_KHR</a>"
+          },
+          {
+            "vuid": "VUID-VkAttachmentReference2-layout-03077",
+            "text": "If <code>attachment</code> is not <a href=\"#VK_ATTACHMENT_UNUSED\">VK_ATTACHMENT_UNUSED</a>, <code>layout</code>     <strong class=\"purple\">must</strong> not be <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_UNDEFINED</a>, <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT</a>,     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PREINITIALIZED</a>, or     <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_PRESENT_SRC_KHR</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-VkAttachmentDescription-loadOp-": [
+      {
+        "path": "skill/references/03_api_manual/07_rendering/attachment_load_store.md",
+        "line": 126,
+        "context": "- `VUID-VkAttachmentDescription-loadOp-*` 等：op 与 format 的合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkBufferCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/buffer.md",
+        "line": 150,
+        "context": "- `VUID-VkBufferCreateInfo-*`：size / usage / sharing mode 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkBufferMemoryBarrier-": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+        "line": 125,
+        "context": "- `VUID-VkBufferMemoryBarrier-*`：offset/size 对齐、queue family index 规则。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkBufferMemoryBarrier-size-01309": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+        "line": 127,
+        "context": "- `VUID-VkBufferMemoryBarrier-size-01309`：size 与 offset 对齐。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkGetPhysicalDeviceWin32PresentationSupportKHR-queueFamilyIndex-01309",
+            "text": "<code>queueFamilyIndex</code> <strong class=\"purple\">must</strong> be less than <code>pQueueFamilyPropertyCount</code> returned by <code>vkGetPhysicalDeviceQueueFamilyProperties</code> for the given <code>physicalDevice</code>"
+          }
+        ]
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/pipeline_barrier.md",
+        "line": 130,
+        "context": "- `VUID-VkBufferMemoryBarrier-size-01309`：size 与 offset 对齐。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkGetPhysicalDeviceWin32PresentationSupportKHR-queueFamilyIndex-01309",
+            "text": "<code>queueFamilyIndex</code> <strong class=\"purple\">must</strong> be less than <code>pQueueFamilyPropertyCount</code> returned by <code>vkGetPhysicalDeviceQueueFamilyProperties</code> for the given <code>physicalDevice</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-VkComputePipelineCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/compute_pipeline.md",
+        "line": 152,
+        "context": "- `VUID-VkComputePipelineCreateInfo-*`：stage、layout 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline.md",
+        "line": 135,
+        "context": "- `VUID-VkGraphicsPipelineCreateInfo-*` / `VUID-VkComputePipelineCreateInfo-*`：创建参数合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDescriptorBufferInfo-offset-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/storage_buffer_image_descriptor.md",
+        "line": 155,
+        "context": "- `VUID-VkDescriptorBufferInfo-offset-*`：storage buffer offset 对齐。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md",
+        "line": 131,
+        "context": "- `VUID-VkDescriptorBufferInfo-offset-*`：offset 对齐。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDescriptorBufferInfo-range-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md",
+        "line": 132,
+        "context": "- `VUID-VkDescriptorBufferInfo-range-*`：range 限制。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDescriptorSetAllocateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_set.md",
+        "line": 143,
+        "context": "- `VUID-VkDescriptorSetAllocateInfo-*`：pool capacity / layout 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDescriptorSetLayoutBindingFlagsCreateInfo-bindingCount-03004": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 218,
+        "context": "- `VUID-VkDescriptorSetLayoutBindingFlagsCreateInfo-bindingCount-03004`：bindingCount 与 layout 一致。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkDescriptorSetLayoutBindingFlagsCreateInfo-pBindingFlags-03004",
+            "text": "If an element of <code>pBindingFlags</code> includes <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT</a>, then it <strong class=\"purple\">must</strong> be the element with the highest <code>binding</code> number"
+          }
+        ]
+      }
+    ],
+    "VUID-VkDescriptorSetLayoutCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_set_layout.md",
+        "line": 137,
+        "context": "- `VUID-VkDescriptorSetLayoutCreateInfo-*`：binding / type / count / stage 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDescriptorSetLayoutCreateInfo-pNext-03071": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 219,
+        "context": "- `VUID-VkDescriptorSetLayoutCreateInfo-pNext-03071`：variable count binding 必须在最后。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDeviceBufferMemoryRequirements-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 194,
+        "context": "- `VUID-VkDeviceBufferMemoryRequirements-*` / `VUID-VkDeviceImageMemoryRequirements-*`：maintenance4 查询入口合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDeviceCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/logical_device.md",
+        "line": 140,
+        "context": "- `VUID-VkDeviceCreateInfo-*`：queue family、features、extensions 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDeviceCreateInfo-pEnabledFeatures-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+        "line": 179,
+        "context": "- `VUID-VkDeviceCreateInfo-pEnabledFeatures-*`：启用的 feature 在该 physical device 上是否支持。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDeviceCreateInfo-ppEnabledExtensionNames-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+        "line": 180,
+        "context": "- `VUID-VkDeviceCreateInfo-ppEnabledExtensionNames-*`：扩展依赖与可用性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkDeviceImageMemoryRequirements-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 194,
+        "context": "- `VUID-VkDeviceBufferMemoryRequirements-*` / `VUID-VkDeviceImageMemoryRequirements-*`：maintenance4 查询入口合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkFramebufferCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/framebuffer.md",
+        "line": 131,
+        "context": "- `VUID-VkFramebufferCreateInfo-*`：attachment 数量、顺序、兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkGraphicsPipelineCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/graphics_pipeline.md",
+        "line": 173,
+        "context": "- `VUID-VkGraphicsPipelineCreateInfo-*`：各状态指针与字段合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline.md",
+        "line": 135,
+        "context": "- `VUID-VkGraphicsPipelineCreateInfo-*` / `VUID-VkComputePipelineCreateInfo-*`：创建参数合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkGraphicsPipelineCreateInfo-pDynamicStates-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 193,
+        "context": "- `VUID-VkGraphicsPipelineCreateInfo-pDynamicStates-*`：dynamic state 与 feature 一致性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkGraphicsPipelineCreateInfo-pStages-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/mesh_shader.md",
+        "line": 150,
+        "context": "- `VUID-VkGraphicsPipelineCreateInfo-pStages-*`：stage 组合非法（含 vertex stage 与 mesh stage 共存等）。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkGraphicsPipelineLibraryCreateInfoEXT-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/graphics_pipeline_library.md",
+        "line": 127,
+        "context": "- `VUID-VkGraphicsPipelineLibraryCreateInfoEXT-*`：library flags 与状态子集。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkImageCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image.md",
+        "line": 155,
+        "context": "- `VUID-VkImageCreateInfo-*`：format / usage / tiling / samples / extent 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkImageCreateInfo-flags-00688": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 195,
+        "context": "- `VUID-VkImageCreateInfo-flags-00688` 等：`VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT` / `BLOCK_TEXEL_VIEW_COMPATIBLE_BIT` 合法性。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkImageCreateInfo-flags-09203": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 234,
+        "context": "- `VUID-VkImageCreateInfo-flags-09203`：使用 host copy API 时 image flags 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkCmdDraw-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexed-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMultiEXT-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMultiIndexedEXT-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirect2KHR-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirect-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectCount2KHR-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectCount-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirect2KHR-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirect-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirectCount2KHR-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirectCount-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectByteCount2EXT-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          },
+          {
+            "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-None-09203",
+            "text": "If     there is a shader object bound to the <a href=\"#VkShaderStageFlagBits\">VK_SHADER_STAGE_VERTEX_BIT</a>     stage or     the bound graphics pipeline state was created with the     <a href=\"#VkDynamicState\">VK_DYNAMIC_STATE_VERTEX_INPUT_EXT</a> dynamic state enabled     and <a href=\"#VkVertexInputAttributeDescription2EXT\">VkVertexInputAttributeDescription2EXT</a>::<code>format</code> has a     64-bit component, then all <code>Input</code> variables at the corresponding     <code>Location</code> in the <code>Vertex</code> <code>Execution</code> <code>Model</code> <code>OpEntryPoint</code>     <strong class=\"purple\">must</strong> not use components that are not present in the format"
+          }
+        ]
+      }
+    ],
+    "VUID-VkImageMemoryBarrier-srcQueueFamilyIndex-01213": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 135,
+        "context": "- `VUID-VkImageMemoryBarrier-srcQueueFamilyIndex-01213` / `dstQueueFamilyIndex-01214`：queue family transfer 规则。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkImageMemoryBarrier2-oldLayout-01213",
+            "text": "If <a href=\"#synchronization-image-barrier2-ignored-layout\">layouts are not ignored</a>, <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_TRANSFER_DST_BIT</a> usage flag set"
+          },
+          {
+            "vuid": "VUID-VkImageMemoryBarrier-oldLayout-01213",
+            "text": "If <a href=\"#synchronization-image-barrier-ignored-layout\">layouts are not ignored</a>, <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_TRANSFER_DST_BIT</a> usage flag set"
+          },
+          {
+            "vuid": "VUID-VkHostImageLayoutTransitionInfo-oldLayout-01213",
+            "text": "If  <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_TRANSFER_DST_BIT</a> usage flag set"
+          }
+        ]
+      }
+    ],
+    "VUID-VkImageViewCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image_view.md",
+        "line": 146,
+        "context": "- `VUID-VkImageViewCreateInfo-*`：image / format / viewType / subresourceRange 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkInstanceCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/instance.md",
+        "line": 133,
+        "context": "- `VUID-VkInstanceCreateInfo-*`：layer/extension 名称、apiVersion 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkMemoryBarrier2-srcStageMask-03851": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/synchronization2.md",
+        "line": 144,
+        "context": "- `VUID-VkMemoryBarrier2-srcStageMask-03851` / `dstStageMask-03852`：stage / access 组合合法性。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkBufferMemoryBarrier2-srcStageMask-03851",
+            "text": "If either <code>srcStageMask</code> or <code>dstStageMask</code> includes <a href=\"#VkPipelineStageFlagBits2KHR\">VK_PIPELINE_STAGE_2_HOST_BIT</a>, <code>srcQueueFamilyIndex</code> and <code>dstQueueFamilyIndex</code> <strong class=\"purple\">must</strong> be equal"
+          }
+        ]
+      }
+    ],
+    "VUID-VkMemoryMapInfoKHR-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 192,
+        "context": "- `VUID-VkMemoryMapInfoKHR-*`：maintenance6 内存映射结构合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPipelineCacheCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_cache.md",
+        "line": 130,
+        "context": "- `VUID-VkPipelineCacheCreateInfo-*`：initial data 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPipelineLayoutCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_layout.md",
+        "line": 136,
+        "context": "- `VUID-VkPipelineLayoutCreateInfo-*`：set layout / push constant range 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPipelineLibraryCreateInfoKHR-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/graphics_pipeline_library.md",
+        "line": 128,
+        "context": "- `VUID-VkPipelineLibraryCreateInfoKHR-*`：library 兼容性与完整性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPipelineRenderingCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/07_rendering/dynamic_rendering.md",
+        "line": 136,
+        "context": "- `VUID-VkPipelineRenderingCreateInfo-*`：pipeline 创建时 format 与 view mask 规则。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPipelineShaderStageCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/shader_module.md",
+        "line": 140,
+        "context": "- `VUID-VkPipelineShaderStageCreateInfo-*`：stage、pName、module 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPipelineShaderStageCreateInfo-pSpecializationInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/specialization_constants.md",
+        "line": 125,
+        "context": "- `VUID-VkPipelineShaderStageCreateInfo-pSpecializationInfo-*`：specialization info 与 shader 兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkPushDescriptorSetInfo-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 175,
+        "context": "- `VUID-VkPushDescriptorSetInfo-*`：Vulkan 1.4 路径的字段合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkQueryPoolCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 199,
+        "context": "- `VUID-VkQueryPoolCreateInfo-*`：queryType / queryCount / pipelineStatistics 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkRenderPassBeginInfo-clearValueCount-": [
+      {
+        "path": "skill/references/03_api_manual/07_rendering/attachment_load_store.md",
+        "line": 127,
+        "context": "- `VUID-VkRenderPassBeginInfo-clearValueCount-*`：clear value 数量检查。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkRenderPassCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/07_rendering/render_pass.md",
+        "line": 147,
+        "context": "- `VUID-VkRenderPassCreateInfo-*`：attachment/subpass/dependency 的合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSamplerCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/sampler.md",
+        "line": 133,
+        "context": "- `VUID-VkSamplerCreateInfo-*`：feature、字段组合合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSemaphoreSignalInfo-value-03255": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 182,
+        "context": "- `VUID-VkSemaphoreSignalInfo-value-03255`：signal value 必须大于当前 counter。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkGetSemaphoreCounterValue-semaphore-03255",
+            "text": "<code>semaphore</code> <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkSemaphoreType\">VkSemaphoreType</a> of <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_TIMELINE</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-VkShaderModuleCreateInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/shader_module.md",
+        "line": 139,
+        "context": "- `VUID-VkShaderModuleCreateInfo-*`：codeSize、pCode 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSpecializationInfo-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/specialization_constants.md",
+        "line": 124,
+        "context": "- `VUID-VkSpecializationInfo-*`：map entry 合法性、offset/size 范围。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSubmitInfo-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/queue_submit.md",
+        "line": 158,
+        "context": "- `VUID-VkSubmitInfo-*`：wait / signal semaphore、stage mask 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSwapchainCreateInfoKHR-": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/swapchain.md",
+        "line": 165,
+        "context": "- `VUID-VkSwapchainCreateInfoKHR-*`：创建参数合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSwapchainCreateInfoKHR-imageExtent-01274": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/desktop_windowing.md",
+        "line": 140,
+        "context": "- `VUID-VkSwapchainCreateInfoKHR-imageExtent-01274`：extent 越界（resize / 最小化期间常见）。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkSwapchainPresentModesCreateInfoEXT-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 193,
+        "context": "- `VUID-VkSwapchainPresentModesCreateInfoEXT-*`：present mode 切换合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkWriteDescriptorSet-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image_view.md",
+        "line": 147,
+        "context": "- `VUID-VkWriteDescriptorSet-*`：descriptor image view 是否有效。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_update.md",
+        "line": 146,
+        "context": "- `VUID-VkWriteDescriptorSet-*`：dstSet / dstBinding / type / count / info 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/sampled_image_descriptor.md",
+        "line": 135,
+        "context": "- `VUID-VkWriteDescriptorSet-*`：descriptor type、image view、sampler 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/storage_buffer_image_descriptor.md",
+        "line": 153,
+        "context": "- `VUID-VkWriteDescriptorSet-*`：descriptor type 与资源兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-VkXXX-vkCmdYYY-zzzzz": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+        "line": 94,
+        "context": "| `VUID-VkXXX-vkCmdYYY-zzzzz` | 对象-命令-子对象-数字结构。[SPEC] | 只看数字忽略结构，导致检索困难。[TOOL] |",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-undefined": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+        "line": 132,
+        "context": "8. 不重视 `VUID-undefined`，它通常表示 validation layer 无法给出精确 VUID。[TOOL]",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+        "line": 222,
+        "context": "建立项目级 VUID 忽略/处理清单（allowlist/denylist）：对已知误报或已接受的警告登记在册，避免每次重构后重复调查。在回调中按 VUID 聚合计数，优先处理高频 ERROR。对 `VUID-undefined` 和实现内部 ID，结合调用栈与 object handle 人工定位。将 VUID 与代码提交关联，形成知识库。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkAcquireNextImageKHR-": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/desktop_windowing.md",
+        "line": 142,
+        "context": "- `VUID-vkAcquireNextImageKHR-*` / `VUID-vkQueuePresentKHR-*`：返回码处理与 semaphore 配对。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/swapchain.md",
+        "line": 166,
+        "context": "- `VUID-vkAcquireNextImageKHR-*`：acquire 与 semaphore / fence 状态。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkAcquireNextImageKHR-semaphore-01282": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 243,
+        "context": "- `VUID-vkAcquireNextImageKHR-semaphore-01282`：acquire semaphore 不能在 unsignaled 状态被复用。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkDestroySwapchainKHR-swapchain-01282",
+            "text": "All uses of presentable images acquired from <code>swapchain</code> <strong class=\"purple\">must</strong> have completed execution"
+          }
+        ]
+      }
+    ],
+    "VUID-vkAcquireNextImageKHR-semaphore-01782": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/semaphore.md",
+        "line": 152,
+        "context": "- `VUID-vkAcquireNextImageKHR-semaphore-01782`：acquire semaphore 必须 unsignaled。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkAcquireNextImageInfoKHR-semaphore-01782",
+            "text": "<code>semaphore</code> and <code>fence</code> <strong class=\"purple\">must</strong> not both be equal to <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkAcquireNextImageKHR-surface-": [
+      {
+        "path": "skill/references/03_api_manual/error_index.md",
+        "line": 39,
+        "context": "| `VUID-vkAcquireNextImageKHR-surface-*` | surface 无效或已改变 | `../04_debug_playbooks/05_android_specific/android_surface_lifecycle.md` | `02_surface_swapchain/surface.md` |",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkAllocateDescriptorSets-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_pool.md",
+        "line": 135,
+        "context": "- `VUID-vkAllocateDescriptorSets-*`：pool 容量、layout 兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkBeginCommandBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 148,
+        "context": "- `VUID-vkBeginCommandBuffer-*`：command buffer 状态、flags、inheritance info。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkBindBufferMemory-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 149,
+        "context": "- `VUID-vkBindBufferMemory-*` / `VUID-vkBindImageMemory-*`：memory type、offset、alignment。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 179,
+        "context": "- `VUID-vkBindBufferMemory-*` / `VUID-vkBindImageMemory-*`：memory type / offset / alignment（VMA 自动满足，但 custom pool 配置错误时仍可能触发）。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkBindImageMemory-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 149,
+        "context": "- `VUID-vkBindBufferMemory-*` / `VUID-vkBindImageMemory-*`：memory type、offset、alignment。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 179,
+        "context": "- `VUID-vkBindBufferMemory-*` / `VUID-vkBindImageMemory-*`：memory type / offset / alignment（VMA 自动满足，但 custom pool 配置错误时仍可能触发）。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBeginQuery-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 200,
+        "context": "- `VUID-vkCmdBeginQuery-*` / `VUID-vkCmdEndQuery-*`：query 类型 / index / 是否在合法上下文。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBeginRenderPass-renderPass-00904": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/framebuffer.md",
+        "line": 132,
+        "context": "- `VUID-vkCmdBeginRenderPass-renderPass-00904`：framebuffer 与 render pass 兼容。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkRenderPassBeginInfo-renderPass-00904",
+            "text": "<code>renderPass</code> <strong class=\"purple\">must</strong> be <a href=\"#renderpass-compatibility\">compatible</a> with the <code>renderPass</code> member of the <a href=\"#VkFramebufferCreateInfo\">VkFramebufferCreateInfo</a> structure specified when creating <code>framebuffer</code>"
+          }
+        ]
+      },
+      {
+        "path": "skill/references/03_api_manual/07_rendering/render_pass.md",
+        "line": 148,
+        "context": "- `VUID-vkCmdBeginRenderPass-renderPass-00904`：framebuffer 与 render pass 兼容。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkRenderPassBeginInfo-renderPass-00904",
+            "text": "<code>renderPass</code> <strong class=\"purple\">must</strong> be <a href=\"#renderpass-compatibility\">compatible</a> with the <code>renderPass</code> member of the <a href=\"#VkFramebufferCreateInfo\">VkFramebufferCreateInfo</a> structure specified when creating <code>framebuffer</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdBeginRendering-": [
+      {
+        "path": "skill/references/03_api_manual/07_rendering/dynamic_rendering.md",
+        "line": 135,
+        "context": "- `VUID-vkCmdBeginRendering-*`：feature、attachment、layout 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBindDescriptorSets-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_set.md",
+        "line": 145,
+        "context": "- `VUID-vkCmdBindDescriptorSets-*`：pipeline layout 兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_set_layout.md",
+        "line": 138,
+        "context": "- `VUID-vkCmdBindDescriptorSets-*`：layout 兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_layout.md",
+        "line": 137,
+        "context": "- `VUID-vkCmdBindDescriptorSets-*`：pipeline layout 兼容性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBindDescriptorSets-pDynamicOffsets-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md",
+        "line": 133,
+        "context": "- `VUID-vkCmdBindDescriptorSets-pDynamicOffsets-*`：dynamic offset 数量与顺序。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBindIndexBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/buffer.md",
+        "line": 151,
+        "context": "- `VUID-vkCmdBindVertexBuffers-*` / `VUID-vkCmdBindIndexBuffer-*`：buffer 与 pipeline 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBindIndexBuffer2-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 191,
+        "context": "- `VUID-vkCmdBindIndexBuffer2-*`：maintenance5 index buffer 绑定合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBindPipeline-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/compute_pipeline.md",
+        "line": 153,
+        "context": "- `VUID-vkCmdBindPipeline-*`：bind point 与 pipeline 类型匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 196,
+        "context": "- `VUID-vkCmdBindPipeline-*`：pipeline bind 后 dynamic state 命令顺序。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/graphics_pipeline.md",
+        "line": 174,
+        "context": "- `VUID-vkCmdBindPipeline-*`：bind point 与 pipeline 类型匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline.md",
+        "line": 136,
+        "context": "- `VUID-vkCmdBindPipeline-*`：bind point 与 pipeline 类型匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBindVertexBuffers-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/buffer.md",
+        "line": 151,
+        "context": "- `VUID-vkCmdBindVertexBuffers-*` / `VUID-vkCmdBindIndexBuffer-*`：buffer 与 pipeline 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdBlitImage-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 223,
+        "context": "- `VUID-vkCmdBlitImage-*`：格式兼容性 / filter 限制 / sample count。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdCopyBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 222,
+        "context": "- `VUID-vkCmdCopyImage-*` / `VUID-vkCmdCopyBuffer-*`：usage / layout / 对齐 / 越界。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdCopyBufferToImage-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 226,
+        "context": "- `VUID-vkCmdCopyBufferToImage-*` / `VUID-vkCmdCopyImageToBuffer-*`：bufferOffset 对齐 / aspectMask。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdCopyImage-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 222,
+        "context": "- `VUID-vkCmdCopyImage-*` / `VUID-vkCmdCopyBuffer-*`：usage / layout / 对齐 / 越界。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdCopyImageToBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 226,
+        "context": "- `VUID-vkCmdCopyBufferToImage-*` / `VUID-vkCmdCopyImageToBuffer-*`：bufferOffset 对齐 / aspectMask。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDispatch-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 152,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：pipeline / descriptor / vertex buffer / layout 状态。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/buffer.md",
+        "line": 152,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：descriptor buffer 与 shader 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image.md",
+        "line": 156,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：image layout / descriptor imageLayout 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/storage_buffer_image_descriptor.md",
+        "line": 154,
+        "context": "- `VUID-vkCmdDispatch-*-imageLayout-*`：storage image 必须处于 `GENERAL`。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/compute_pipeline.md",
+        "line": 154,
+        "context": "- `VUID-vkCmdDispatch-*`：group count 非零、descriptor 可访问。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_layout.md",
+        "line": 138,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：descriptor set / push constant 可访问性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDispatchIndirect-x-00417": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 235,
+        "context": "- `VUID-vkCmdDispatchIndirect-x-00417`：dispatch 维度超限。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkDispatchIndirectCommand-x-00417",
+            "text": "<code>x</code> <strong class=\"purple\">must</strong> be less than or equal to <code>VkPhysicalDeviceLimits</code>::<code>maxComputeWorkGroupCount</code>[0]"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdDraw-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 152,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：pipeline / descriptor / vertex buffer / layout 状态。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/buffer.md",
+        "line": 152,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：descriptor buffer 与 shader 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image.md",
+        "line": 156,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：image layout / descriptor imageLayout 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image_layout.md",
+        "line": 128,
+        "context": "- `VUID-vkCmdDraw-*-imageLayout-*`：layout 与使用场景不匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image_view.md",
+        "line": 148,
+        "context": "- `VUID-vkCmdDraw-*`：descriptor image layout 与实际 layout 是否匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_update.md",
+        "line": 148,
+        "context": "- `VUID-vkCmdDraw-*`：descriptor image layout 与实际 layout 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/sampled_image_descriptor.md",
+        "line": 136,
+        "context": "- `VUID-vkCmdDraw-*-imageLayout-*`：采样时 image layout 检查。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/compute_pipeline.md",
+        "line": 155,
+        "context": "- `VUID-vkCmdDraw-*` / dispatch hazard：synchronization hazard 提示。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/graphics_pipeline.md",
+        "line": 175,
+        "context": "- `VUID-vkCmdDraw-*`：render pass / pipeline 兼容性、scissor、dynamic state。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline.md",
+        "line": 137,
+        "context": "- `VUID-vkCmdDraw-*`：pipeline 状态、scissor、dynamic state。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_layout.md",
+        "line": 138,
+        "context": "- `VUID-vkCmdDraw-*` / `VUID-vkCmdDispatch-*`：descriptor set / push constant 可访问性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/07_rendering/render_target_layout.md",
+        "line": 132,
+        "context": "- `VUID-vkCmdDraw-*-imageLayout-*`：layout 与使用场景不匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDraw-None-02674": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+        "line": 78,
+        "context": "→ 提取 message ID / VUID（如 VUID-vkCmdDraw-None-02674）",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkAcquireFullScreenExclusiveModeEXT-swapchain-02674",
+            "text": "<code>swapchain</code> <strong class=\"purple\">must</strong> not be in the retired state"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdDraw-None-02695": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 222,
+        "context": "- `VUID-vkCmdDraw-None-02695`：non-uniform indexing feature 未启用。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkCmdDraw-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexed-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMultiEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMultiIndexedEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirect2KHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirect-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectCount2KHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectCount-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirect2KHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirect-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirectCount2KHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirectCount-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectByteCount2EXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndirectByteCountEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksNV-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectNV-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirect2EXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectCount2EXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawClusterHUAWEI-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawClusterIndirectHUAWEI-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatch-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchIndirect2KHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchIndirect-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchBase-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchTileQCOM-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdSubpassShadingHUAWEI-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdExecuteGeneratedCommandsNV-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdExecuteGeneratedCommandsEXT-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdTraceRaysKHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdTraceRaysIndirectKHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdTraceRaysIndirect2KHR-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdTraceRaysNV-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchGraphAMDX-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchGraphIndirectAMDX-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          },
+          {
+            "vuid": "VUID-vkCmdDispatchGraphIndirectCountAMDX-filterCubicMinmax-02695",
+            "text": "Any <a href=\"#VkImageView\">VkImageView</a> being sampled with <a href=\"#VkFilter\">VK_FILTER_CUBIC_EXT</a> with a reduction mode of either <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MIN</a> or <a href=\"#VkSamplerReductionModeEXT\">VK_SAMPLER_REDUCTION_MODE_MAX</a> as a result of this command <strong class=\"purple\">must</strong> have a <a href=\"#VkImageViewType\">VkImageViewType</a> and format that supports cubic filtering together with minmax filtering, as specified by <a href=\"#VkFilterCubicImageViewImageFormatPropertiesEXT\">VkFilterCubicImageViewImageFormatPropertiesEXT</a>::<code>filterCubicMinmax</code> returned by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdDraw-None-07833": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 178,
+        "context": "1. 在 `VkPipelineDynamicStateCreateInfo` 中声明了某状态，但 draw 前从未调用对应 `vkCmdSet*`，validation 报 `VUID-vkCmdDraw-None-07833` 类错误。[TOOL]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 194,
+        "context": "- `VUID-vkCmdDraw-None-07833` 系列：draw 时 dynamic state 未设置。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDrawIndirect-stride-02715": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 233,
+        "context": "- `VUID-vkCmdDrawIndirect-stride-02715` / `02716`：stride 不合法。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkCmdDrawIndirectCount-countBuffer-02715",
+            "text": "<code>countBuffer</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkBufferUsageFlagBits\">VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT</a> usage flag set"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawIndexedIndirectCount-countBuffer-02715",
+            "text": "<code>countBuffer</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkBufferUsageFlagBits\">VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT</a> usage flag set"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountNV-countBuffer-02715",
+            "text": "<code>countBuffer</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkBufferUsageFlagBits\">VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT</a> usage flag set"
+          },
+          {
+            "vuid": "VUID-vkCmdDrawMeshTasksIndirectCountEXT-countBuffer-02715",
+            "text": "<code>countBuffer</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkBufferUsageFlagBits\">VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT</a> usage flag set"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdDrawIndirectFirstInstance-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 234,
+        "context": "- `VUID-vkCmdDrawIndirectFirstInstance-*`：`drawIndirectFirstInstance` 未启用。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDrawMeshTasksEXT-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/mesh_shader.md",
+        "line": 151,
+        "context": "- `VUID-vkCmdDrawMeshTasksEXT-*`：groupCount 超限 / feature 未启用。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDrawMeshTasksIndirectCountEXT-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/mesh_shader.md",
+        "line": 152,
+        "context": "- `VUID-vkCmdDrawMeshTasksIndirectEXT-*` / `VUID-vkCmdDrawMeshTasksIndirectCountEXT-*`：间接命令 buffer usage / stride / 对齐问题（同 indirect draw 规则）。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdDrawMeshTasksIndirectEXT-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 236,
+        "context": "- `VUID-vkCmdDrawMeshTasksIndirectEXT-*`：mesh shader 间接命令相关。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/mesh_shader.md",
+        "line": 152,
+        "context": "- `VUID-vkCmdDrawMeshTasksIndirectEXT-*` / `VUID-vkCmdDrawMeshTasksIndirectCountEXT-*`：间接命令 buffer usage / stride / 对齐问题（同 indirect draw 规则）。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdEndQuery-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 200,
+        "context": "- `VUID-vkCmdBeginQuery-*` / `VUID-vkCmdEndQuery-*`：query 类型 / index / 是否在合法上下文。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdEndRenderPass-02608": [
+      {
+        "path": "skill/references/03_api_manual/07_rendering/render_pass.md",
+        "line": 149,
+        "context": "- `VUID-vkCmdEndRenderPass-02608` 等：subpass 状态与 dependency 检查。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkCmdEndTransformFeedbackEXT-counterBufferCount-02608",
+            "text": "If <code>counterBufferCount</code> is not <code>0</code>, and <code>pCounterBuffers</code> is not <code>NULL</code>, <code>pCounterBuffers</code> <strong class=\"purple\">must</strong> be a valid pointer to an array of <code>counterBufferCount</code> <code>VkBuffer</code> handles that are either valid or <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdFillBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 225,
+        "context": "- `VUID-vkCmdFillBuffer-*`：offset / size 对齐。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image.md",
+        "line": 157,
+        "context": "- `VUID-vkCmdPipelineBarrier-*`：barrier subresource range / oldLayout / newLayout。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier-dependencyFlags-01188": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/pipeline_barrier.md",
+        "line": 128,
+        "context": "- `VUID-vkCmdPipelineBarrier-dependencyFlags-01188`：`BY_REGION_BIT` 使用限制。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkBufferMemoryBarrier2-size-01188",
+            "text": "If <code>size</code> is not equal to <a href=\"#VK_WHOLE_SIZE\">VK_WHOLE_SIZE</a>, <code>size</code> <strong class=\"purple\">must</strong> be greater than <code>0</code>"
+          },
+          {
+            "vuid": "VUID-VkBufferMemoryBarrier-size-01188",
+            "text": "If <code>size</code> is not equal to <a href=\"#VK_WHOLE_SIZE\">VK_WHOLE_SIZE</a>, <code>size</code> <strong class=\"purple\">must</strong> be greater than <code>0</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier-srcStageMask-04990": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/pipeline_barrier.md",
+        "line": 127,
+        "context": "- `VUID-vkCmdPipelineBarrier-srcStageMask-04990` 等：stage / access 组合合法性。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier-srcStageMask-4098": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 137,
+        "context": "- `VUID-vkCmdPipelineBarrier-srcStageMask-4098` 等：stage / access / layout 组合合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdPushDescriptorSetKHR-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 174,
+        "context": "- `VUID-vkCmdPushDescriptorSetKHR-*`：layout / set / pipeline bind point / binding 数量。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdPushDescriptorSetWithTemplate2-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 176,
+        "context": "- `VUID-vkCmdPushDescriptorSetWithTemplate2-*`：template 与 layout 一致性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdResetQueryPool-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 202,
+        "context": "- `VUID-vkCmdResetQueryPool-*`：是否在 render pass 内调用、index 范围。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdResolveImage-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "line": 224,
+        "context": "- `VUID-vkCmdResolveImage-*`：src / dst samples 一致性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdSetEvent-stageMask-01183": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/event.md",
+        "line": 133,
+        "context": "- `VUID-vkCmdSetEvent-stageMask-01183`：stage mask 合法性。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdSetScissor-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 195,
+        "context": "- `VUID-vkCmdSetViewport-*` / `VUID-vkCmdSetScissor-*` 等：`vkCmdSet*` 参数合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdSetViewport-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+        "line": 195,
+        "context": "- `VUID-vkCmdSetViewport-*` / `VUID-vkCmdSetScissor-*` 等：`vkCmdSet*` 参数合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdWaitEvents-": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/event.md",
+        "line": 132,
+        "context": "- `VUID-vkCmdWaitEvents-*`：event 状态、stage/access、barrier 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCmdWriteTimestamp-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 201,
+        "context": "- `VUID-vkCmdWriteTimestamp-*`：pipelineStage 是否合法。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCopyImageToImageEXT-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 237,
+        "context": "- `VUID-vkCopyImageToImageEXT-*`：src/dst 格式兼容性 / aspectMask / region 对齐。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCopyMemoryToImageEXT-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 235,
+        "context": "- `VUID-vkCopyMemoryToImageEXT-*`：host pointer 对齐 / region 对齐 / layout 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreate": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+        "line": 147,
+        "context": "- 关注 `VUID-vkCreate*SurfaceKHR-*` 相关错误。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreateAndroidSurfaceKHR-instance-01292": [
+      {
+        "path": "skill/references/03_api_manual/10_android_platform/android_surface.md",
+        "line": 133,
+        "context": "- `VUID-vkCreateAndroidSurfaceKHR-instance-01292`：instance extension 已启用。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkQueuePresentKHR-pSwapchains-01292",
+            "text": "Each element of <code>pSwapchains</code> member of <code>pPresentInfo</code> <strong class=\"purple\">must</strong> be a swapchain that is created for a surface for which presentation is supported from <code>queue</code> as determined using a call to <code>vkGetPhysicalDeviceSurfaceSupportKHR</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCreateComputePipelines-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/shader_module.md",
+        "line": 141,
+        "context": "- `VUID-vkCreateGraphicsPipelines-*` / `VUID-vkCreateComputePipelines-*`：shader stage 组合与入口点。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreateDevice-physicalDevice-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+        "line": 178,
+        "context": "- `VUID-vkCreateDevice-physicalDevice-*`：physical device 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreateGraphicsPipelines-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/shader_module.md",
+        "line": 141,
+        "context": "- `VUID-vkCreateGraphicsPipelines-*` / `VUID-vkCreateComputePipelines-*`：shader stage 组合与入口点。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreateGraphicsPipelines-pipelineCache-": [
+      {
+        "path": "skill/references/03_api_manual/06_pipeline/pipeline_cache.md",
+        "line": 131,
+        "context": "- `VUID-vkCreateGraphicsPipelines-pipelineCache-*`：cache handle 有效性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreateInstance-ppEnabledLayerNames-01377": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/instance.md",
+        "line": 134,
+        "context": "- `VUID-vkCreateInstance-ppEnabledLayerNames-01377` 等。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkCreateSwapchainKHR-surface-01270": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/swapchain_recreate.md",
+        "line": 156,
+        "context": "- `VUID-vkCreateSwapchainKHR-surface-01270`：surface 仍被旧 swapchain 使用。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkSwapchainCreateInfoKHR-surface-01270",
+            "text": "<code>surface</code> <strong class=\"purple\">must</strong> be a surface that is supported by the device as determined using <a href=\"#vkGetPhysicalDeviceSurfaceSupportKHR\">vkGetPhysicalDeviceSurfaceSupportKHR</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkCreateWin32SurfaceKHR-": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/desktop_windowing.md",
+        "line": 141,
+        "context": "- `VUID-vkCreateWin32SurfaceKHR-*`：句柄 / 扩展启用问题。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkDestroyDescriptorPool-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_set.md",
+        "line": 146,
+        "context": "- `VUID-vkDestroyDescriptorPool-*`：pool 仍被 pending command buffer 引用。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkEndCommandBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 149,
+        "context": "- `VUID-vkEndCommandBuffer-*`：recording 是否完整、render pass 是否结束。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkFreeDescriptorSets-": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_pool.md",
+        "line": 136,
+        "context": "- `VUID-vkFreeDescriptorSets-*`：pool 是否启用 free bit。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkGetDeviceQueue-queueFamilyIndex-": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+        "line": 181,
+        "context": "- `VUID-vkGetDeviceQueue-queueFamilyIndex-*`：queue family 索引越界。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkGetQueryPoolResults-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+        "line": 203,
+        "context": "- `VUID-vkGetQueryPoolResults-*`：flags / stride / dataSize 一致性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkMapMemory-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 150,
+        "context": "- `VUID-vkMapMemory-*`：memory 是否 HOST_VISIBLE。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkQueuePresentKHR-": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/desktop_windowing.md",
+        "line": 142,
+        "context": "- `VUID-vkAcquireNextImageKHR-*` / `VUID-vkQueuePresentKHR-*`：返回码处理与 semaphore 配对。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/swapchain.md",
+        "line": 167,
+        "context": "- `VUID-vkQueuePresentKHR-*`：present 与 swapchain / semaphore 匹配。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkQueuePresentKHR-pImageIndices-01296": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image_layout.md",
+        "line": 130,
+        "context": "- `VUID-vkQueuePresentKHR-pImageIndices-01296`：present 前 layout。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/07_rendering/render_target_layout.md",
+        "line": 134,
+        "context": "- `VUID-vkQueuePresentKHR-pImageIndices-01296`：present 前 layout 检查。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkQueuePresentKHR-surface-": [
+      {
+        "path": "skill/references/03_api_manual/error_index.md",
+        "line": 40,
+        "context": "| `VUID-vkQueuePresentKHR-surface-*` | present 时 surface/swapchain 状态不匹配 | `../04_debug_playbooks/02_crash_hang/swapchain_recreate_crash.md` | `02_surface_swapchain/swapchain.md` |",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkQueueSubmit-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 150,
+        "context": "- `VUID-vkQueueSubmit-*`：command buffer 是否处于 executable 状态。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/queue_submit.md",
+        "line": 157,
+        "context": "- `VUID-vkQueueSubmit-*`：command buffer 状态、semaphore 状态、fence 状态。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkQueueSubmit2-fence-03863": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/synchronization2.md",
+        "line": 146,
+        "context": "- `VUID-vkQueueSubmit2-fence-03863`：fence 不能处于 pending 状态。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkCmdWriteTimestamp2-timestampValidBits-03863",
+            "text": "The command pool&#8217;s queue family <strong class=\"purple\">must</strong> support a non-zero <code>timestampValidBits</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkQueueSubmit2-pSignalSemaphoreInfos-03212": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 183,
+        "context": "- `VUID-vkQueueSubmit2-pSignalSemaphoreInfos-03212`：timeline signal value 必须严格大于之前 signal 的值。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkRenderPassBeginInfo-framebuffer-03212",
+            "text": "If <code>framebuffer</code> was created with a <a href=\"#VkFramebufferCreateInfo\">VkFramebufferCreateInfo</a>::<code>flags</code> value that included <a href=\"#VkFramebufferCreateFlagBits\">VK_FRAMEBUFFER_CREATE_IMAGELESS_BIT</a>, each element of the <code>pAttachments</code> member of a <a href=\"#VkRenderPassAttachmentBeginInfo\">VkRenderPassAttachmentBeginInfo</a> structure included in the <code>pNext</code> chain <strong class=\"purple\">must</strong> be a <a href=\"#VkImageView\">VkImageView</a> with a height equal to the <code>height</code> member of the corresponding element of <a href=\"#VkFramebufferAttachmentsCreateInfo\">VkFramebufferAttachmentsCreateInfo</a>::<code>pAttachmentImageInfos</code> used to create <code>framebuffer</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkQueueSubmit2-pWaitSemaphoreInfos-03243": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 184,
+        "context": "- `VUID-vkQueueSubmit2-pWaitSemaphoreInfos-03243`：wait value 必须可被满足（≤ 已 signal 或 pending signal 的 value）。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkSubmitInfo-pWaitSemaphores-03243",
+            "text": "For each element of <code>pWaitSemaphores</code> created with a <a href=\"#VkSemaphoreType\">VkSemaphoreType</a> of <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_TIMELINE</a> the corresponding element of <a href=\"#VkTimelineSemaphoreSubmitInfo\">VkTimelineSemaphoreSubmitInfo</a>::<code>pWaitSemaphoreValues</code> <strong class=\"purple\">must</strong> have a value which does not differ from the current value of the semaphore or the value of any outstanding semaphore wait or signal operation on that semaphore by more than <a href=\"#limits-maxTimelineSemaphoreValueDifference\"><code>maxTimelineSemaphoreValueDifference</code></a>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkResetCommandBuffer-": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+        "line": 151,
+        "context": "- `VUID-vkResetCommandBuffer-*`：command buffer 不在 pending 状态。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkResetFences-pFences-01122": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/fence_semaphore.md",
+        "line": 176,
+        "context": "- `VUID-vkResetFences-pFences-01122`：reset 前 fence 必须不在 pending submit 中。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkDestroyFence-fence-01122",
+            "text": "If no <code>VkAllocationCallbacks</code> were provided when <code>fence</code> was created, <code>pAllocator</code> <strong class=\"purple\">must</strong> be <code>NULL</code>"
+          }
+        ]
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 240,
+        "context": "- `VUID-vkResetFences-pFences-01122`：reset 前 fence 不在 pending submit 中。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkDestroyFence-fence-01122",
+            "text": "If no <code>VkAllocationCallbacks</code> were provided when <code>fence</code> was created, <code>pAllocator</code> <strong class=\"purple\">must</strong> be <code>NULL</code>"
+          }
+        ]
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/fence.md",
+        "line": 132,
+        "context": "- `VUID-vkResetFences-pFences-01122`：reset 时 fence 不能处于未 signal 的 pending 状态。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkDestroyFence-fence-01122",
+            "text": "If no <code>VkAllocationCallbacks</code> were provided when <code>fence</code> was created, <code>pAllocator</code> <strong class=\"purple\">must</strong> be <code>NULL</code>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkSetDebugUtilsObjectNameEXT-": [
+      {
+        "path": "skill/references/03_api_manual/09_debug_validation/debug_utils.md",
+        "line": 146,
+        "context": "- 检查 `VUID-vkSetDebugUtilsObjectNameEXT-*` 等合法性。[SPEC]",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkSignalSemaphore-value-03255": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 185,
+        "context": "- `VUID-vkSignalSemaphore-value-03255`：CPU signal value 必须严格大于当前 counter。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-vkGetSemaphoreCounterValue-semaphore-03255",
+            "text": "<code>semaphore</code> <strong class=\"purple\">must</strong> have been created with a <a href=\"#VkSemaphoreType\">VkSemaphoreType</a> of <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_TIMELINE</a>"
+          }
+        ]
+      }
+    ],
+    "VUID-vkSignalSemaphore-value-03258": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/fence_semaphore.md",
+        "line": 177,
+        "context": "- `VUID-vkSignalSemaphore-value-03258`：timeline semaphore signal value 必须大于当前值。[SPEC]",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkSemaphoreSignalInfo-value-03258",
+            "text": "<code>value</code> <strong class=\"purple\">must</strong> have a value greater than the current value of the semaphore"
+          }
+        ]
+      }
+    ],
+    "VUID-vkTransitionImageLayoutEXT-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+        "line": 236,
+        "context": "- `VUID-vkTransitionImageLayoutEXT-*`：oldLayout / newLayout / subresourceRange 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkUpdateDescriptorSets-": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/sampler.md",
+        "line": 134,
+        "context": "- `VUID-vkUpdateDescriptorSets-*`：sampler 与 descriptor type 兼容。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_set.md",
+        "line": 144,
+        "context": "- `VUID-vkUpdateDescriptorSets-*`：binding / type / resource 合法性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_update.md",
+        "line": 147,
+        "context": "- `VUID-vkUpdateDescriptorSets-*`：descriptor set 状态、资源有效性。",
+        "kind": "partial_or_placeholder",
+        "same_numeric_suffix": []
+      }
+    ],
+    "VUID-vkWaitForFences-fence-03283": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/fence.md",
+        "line": 134,
+        "context": "- `VUID-vkWaitForFences-fence-03283` 等：fence 必须有效且状态正确。",
+        "kind": "concrete_numeric",
+        "same_numeric_suffix": [
+          {
+            "vuid": "VUID-VkAttachmentDescription-format-03283",
+            "text": "If <code>format</code> is a depth/stencil format, <code>finalLayout</code> <strong class=\"purple\">must</strong> not be <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</a>"
+          },
+          {
+            "vuid": "VUID-VkAttachmentDescription2-format-03283",
+            "text": "If <code>format</code> is a depth/stencil format, <code>finalLayout</code> <strong class=\"purple\">must</strong> not be <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</a>"
+          }
+        ]
+      }
+    ]
+  },
+  "matched_vuids_for_semantic_review": {
+    "VUID-VkDescriptorSetAllocateInfo-pSetLayouts-03044": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 220,
+        "context": "- `VUID-VkDescriptorSetAllocateInfo-pSetLayouts-03044`：update-after-bind layout 与 pool flag 不匹配。",
+        "registry_text": "If any element of <code>pSetLayouts</code> was created with the <a href=\"#VkDescriptorSetLayoutCreateFlagBits\">VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT</a> bit set, <code>descriptorPool</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkDescriptorPoolCreateFlagBits\">VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT</a> flag set"
+      }
+    ],
+    "VUID-VkDescriptorSetLayoutCreateInfo-flags-00280": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 173,
+        "context": "- `VUID-VkDescriptorSetLayoutCreateInfo-flags-00280`：`PUSH_DESCRIPTOR_BIT_KHR` 与其他 flag 的兼容性。",
+        "registry_text": "If <code>flags</code> contains <a href=\"#VkDescriptorSetLayoutCreateFlagBits\">VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT</a>, then all elements of <code>pBindings</code> <strong class=\"purple\">must</strong> not have a <code>descriptorType</code> of <a href=\"#VkDescriptorType\">VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC</a> or <a href=\"#VkDescriptorType\">VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC</a>"
+      }
+    ],
+    "VUID-VkDescriptorSetLayoutCreateInfo-flags-03000": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 217,
+        "context": "- `VUID-VkDescriptorSetLayoutCreateInfo-flags-03000`：binding flag 与 feature bit 对应。",
+        "registry_text": "If any binding has the <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT</a> bit set, <code>flags</code> <strong class=\"purple\">must</strong> include <a href=\"#VkDescriptorSetLayoutCreateFlagBits\">VK_DESCRIPTOR_SET_LAYOUT_CREATE_UPDATE_AFTER_BIND_POOL_BIT</a>"
+      }
+    ],
+    "VUID-VkDescriptorUpdateTemplateCreateInfo-templateType-00350": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+        "line": 177,
+        "context": "- `VUID-VkDescriptorUpdateTemplateCreateInfo-templateType-00350`：push template 字段。",
+        "registry_text": "If <code>templateType</code> is <a href=\"#VkDescriptorUpdateTemplateTypeKHR\">VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET</a>, <code>descriptorSetLayout</code> <strong class=\"purple\">must</strong> be a valid <code>VkDescriptorSetLayout</code> handle"
+      }
+    ],
+    "VUID-VkDeviceCreateInfo-pNext-02829": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+        "line": 190,
+        "context": "- `VUID-VkDeviceCreateInfo-pNext-02829`：maintenance feature 与扩展启用一致性。[SPEC]",
+        "registry_text": "If the <code>pNext</code> chain includes a <a href=\"#VkPhysicalDeviceVulkan11Features\">VkPhysicalDeviceVulkan11Features</a> structure, then it <strong class=\"purple\">must</strong> not include a <a href=\"#VkPhysicalDevice16BitStorageFeatures\">VkPhysicalDevice16BitStorageFeatures</a>, <a href=\"#VkPhysicalDeviceMultiviewFeatures\">VkPhysicalDeviceMultiviewFeatures</a>, <a href=\"#VkPhysicalDeviceVariablePointersFeatures\">VkPhysicalDeviceVariablePointersFeatures</a>, <a href=\"#VkPhysicalDeviceProtectedMemoryFeatures\">VkPhysicalDeviceProtectedMemoryFeatures</a>, <a href=\"#VkPhysicalDeviceSamplerYcbcrConversionFeatures\">VkPhysicalDeviceSamplerYcbcrConversionFeatures</a>, or <a href=\"#VkPhysicalDeviceShaderDrawParametersFeatures\">VkPhysicalDeviceShaderDrawParametersFeatures</a> structure"
+      }
+    ],
+    "VUID-VkImageMemoryBarrier-oldLayout-01208": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 134,
+        "context": "- `VUID-VkImageMemoryBarrier-oldLayout-01208`：oldLayout 必须与当前 layout 匹配（或为 UNDEFINED / PREINITIALIZED）。",
+        "registry_text": "If <a href=\"#synchronization-image-barrier-ignored-layout\">layouts are not ignored</a>, <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT</a> usage flag set"
+      }
+    ],
+    "VUID-VkImageMemoryBarrier-oldLayout-01213": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/image_layout.md",
+        "line": 129,
+        "context": "- `VUID-VkImageMemoryBarrier-oldLayout-01213` 等：transition 合法性。",
+        "registry_text": "If <a href=\"#synchronization-image-barrier-ignored-layout\">layouts are not ignored</a>, <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_TRANSFER_DST_BIT</a> usage flag set"
+      },
+      {
+        "path": "skill/references/03_api_manual/07_rendering/render_target_layout.md",
+        "line": 133,
+        "context": "- `VUID-VkImageMemoryBarrier-oldLayout-01213` 等：layout transition 合法性。",
+        "registry_text": "If <a href=\"#synchronization-image-barrier-ignored-layout\">layouts are not ignored</a>, <code>oldLayout</code> or <code>newLayout</code> is <a href=\"#VkImageLayout\">VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</a> then <code>image</code> <strong class=\"purple\">must</strong> have been created with the <a href=\"#VkImageUsageFlagBits\">VK_IMAGE_USAGE_TRANSFER_DST_BIT</a> usage flag set"
+      }
+    ],
+    "VUID-VkImageMemoryBarrier-subresourceRange-01486": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "line": 136,
+        "context": "- `VUID-VkImageMemoryBarrier-subresourceRange-01486`：aspect mask 与 image format 一致性。",
+        "registry_text": "<code>subresourceRange.baseMipLevel</code> <strong class=\"purple\">must</strong> be less than the <code>mipLevels</code> specified in <a href=\"#VkImageCreateInfo\">VkImageCreateInfo</a> when <code>image</code> was created"
+      }
+    ],
+    "VUID-VkSemaphoreTypeCreateInfo-semaphoreType-03279": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/semaphore.md",
+        "line": 153,
+        "context": "- Timeline semaphore 相关 VUID：`VUID-VkSemaphoreTypeCreateInfo-semaphoreType-03279` 等。",
+        "registry_text": "If <code>semaphoreType</code> is <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_BINARY</a>, <code>initialValue</code> <strong class=\"purple\">must</strong> be zero"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "line": 181,
+        "context": "- `VUID-VkSemaphoreTypeCreateInfo-semaphoreType-03279`：`semaphoreType` 必须与启用的 feature 一致。[SPEC]",
+        "registry_text": "If <code>semaphoreType</code> is <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_BINARY</a>, <code>initialValue</code> <strong class=\"purple\">must</strong> be zero"
+      }
+    ],
+    "VUID-VkSubmitInfo2-semaphore-03882": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/synchronization2.md",
+        "line": 145,
+        "context": "- `VUID-VkSubmitInfo2-semaphore-03882`：wait semaphore 必须处于合法状态。",
+        "registry_text": "If the <code>semaphore</code> member of any element of <code>pSignalSemaphoreInfos</code> is a timeline semaphore, the <code>value</code> member of that element <strong class=\"purple\">must</strong> have a value greater than the current value of the semaphore when the <a href=\"#synchronization-semaphores-signaling\">semaphore signal operation</a> is executed"
+      }
+    ],
+    "VUID-vkBeginCommandBuffer-commandBuffer-00049": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer_lifetime.md",
+        "line": 150,
+        "context": "- `VUID-vkBeginCommandBuffer-commandBuffer-00049`：只能从 INITIAL 或 EXECUTABLE（若允许 reset）状态开始。",
+        "registry_text": "<code>commandBuffer</code> <strong class=\"purple\">must</strong> not be in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      }
+    ],
+    "VUID-vkCmdDrawIndirect-buffer-02708": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 212,
+        "context": "1. `VkBuffer.usage` 漏写 `INDIRECT_BUFFER_BIT`，validation 报 `VUID-vkCmdDrawIndirect-buffer-02708`。[TOOL]",
+        "registry_text": "If <code>buffer</code> is non-sparse then it <strong class=\"purple\">must</strong> be bound completely and contiguously to a single <code>VkDeviceMemory</code> object"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 230,
+        "context": "- `VUID-vkCmdDrawIndirect-buffer-02708`：buffer 缺少 `INDIRECT_BUFFER_BIT`。",
+        "registry_text": "If <code>buffer</code> is non-sparse then it <strong class=\"purple\">must</strong> be bound completely and contiguously to a single <code>VkDeviceMemory</code> object"
+      }
+    ],
+    "VUID-vkCmdDrawIndirect-drawCount-02718": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 232,
+        "context": "- `VUID-vkCmdDrawIndirect-drawCount-02718` / `02719`：`multiDrawIndirect` 未启用。",
+        "registry_text": "If the <a href=\"#features-multiDrawIndirect\"><code>multiDrawIndirect</code></a> feature is not enabled, <code>drawCount</code> <strong class=\"purple\">must</strong> be <code>0</code> or <code>1</code>"
+      }
+    ],
+    "VUID-vkCmdDrawIndirect-offset-02710": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 165,
+        "context": "| `offset` | `VkDeviceSize`，必须 4 字节对齐。[SPEC] | 错误对齐，触发 `VUID-vkCmdDrawIndirect-offset-02710` 类错误。[TOOL] |",
+        "registry_text": "<code>offset</code> <strong class=\"purple\">must</strong> be a multiple of <code>4</code>"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "line": 231,
+        "context": "- `VUID-vkCmdDrawIndirect-offset-02710`：offset 对齐错误。",
+        "registry_text": "<code>offset</code> <strong class=\"purple\">must</strong> be a multiple of <code>4</code>"
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier-bufferMemoryBarrierCount-01178": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+        "line": 126,
+        "context": "- `VUID-vkCmdPipelineBarrier-bufferMemoryBarrierCount-01178`：family index 合法性。",
+        "registry_text": "If <code>vkCmdPipelineBarrier</code> is called within a render pass instance using a <a href=\"#VkRenderPass\">VkRenderPass</a> object, it <strong class=\"purple\">must</strong> not include any buffer memory barriers"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/pipeline_barrier.md",
+        "line": 129,
+        "context": "- `VUID-vkCmdPipelineBarrier-bufferMemoryBarrierCount-01178`：buffer barrier 的 queue family index 规则。",
+        "registry_text": "If <code>vkCmdPipelineBarrier</code> is called within a render pass instance using a <a href=\"#VkRenderPass\">VkRenderPass</a> object, it <strong class=\"purple\">must</strong> not include any buffer memory barriers"
+      }
+    ],
+    "VUID-vkCmdPipelineBarrier2-synchronization2-03848": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/synchronization2.md",
+        "line": 143,
+        "context": "- `VUID-vkCmdPipelineBarrier2-synchronization2-03848`：必须启用 synchronization2。",
+        "registry_text": "The <a href=\"#features-synchronization2\"><code>synchronization2</code></a> feature <strong class=\"purple\">must</strong> be enabled"
+      }
+    ],
+    "VUID-vkCreateDevice-ppEnabledExtensionNames-01387": [
+      {
+        "path": "skill/references/03_api_manual/01_instance_device_queue/logical_device.md",
+        "line": 141,
+        "context": "- `VUID-vkCreateDevice-ppEnabledExtensionNames-01387` 等。",
+        "registry_text": "All <a href=\"#extendingvulkan-extensions-extensiondependencies\">required device extensions</a> for each extension in the <a href=\"#VkDeviceCreateInfo\">VkDeviceCreateInfo</a>::<code>ppEnabledExtensionNames</code> list <strong class=\"purple\">must</strong> also be present in that list"
+      }
+    ],
+    "VUID-vkDestroyDescriptorPool-descriptorPool-00303": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_pool.md",
+        "line": 137,
+        "context": "- `VUID-vkDestroyDescriptorPool-descriptorPool-00303`：pool 仍在使用时的销毁检查。",
+        "registry_text": "All submitted commands that refer to <code>descriptorPool</code> (via any allocated descriptor sets) <strong class=\"purple\">must</strong> have completed execution"
+      }
+    ],
+    "VUID-vkDestroyFence-fence-01120": [
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/fence.md",
+        "line": 133,
+        "context": "- `VUID-vkDestroyFence-fence-01120`：销毁时 fence 不能仍被 pending queue 使用。",
+        "registry_text": "All <a href=\"#devsandqueues-submission\">queue submission</a> commands that refer to <code>fence</code> <strong class=\"purple\">must</strong> have completed execution"
+      }
+    ],
+    "VUID-vkDestroySurfaceKHR-surface-01266": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+        "line": 148,
+        "context": "- 关注 `VUID-vkDestroySurfaceKHR-surface-01266`（surface 仍被 swapchain 使用）。[SPEC]",
+        "registry_text": "All <code>VkSwapchainKHR</code> objects created for <code>surface</code> <strong class=\"purple\">must</strong> have been destroyed prior to destroying <code>surface</code>"
+      }
+    ],
+    "VUID-vkDestroySwapchainKHR-swapchain-01282": [
+      {
+        "path": "skill/references/03_api_manual/02_surface_swapchain/swapchain_recreate.md",
+        "line": 157,
+        "context": "- `VUID-vkDestroySwapchainKHR-swapchain-01282`：swapchain 仍被 command buffer 引用。",
+        "registry_text": "All uses of presentable images acquired from <code>swapchain</code> <strong class=\"purple\">must</strong> have completed execution"
+      }
+    ],
+    "VUID-vkFreeCommandBuffers-pCommandBuffers-00047": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer_lifetime.md",
+        "line": 149,
+        "context": "- `VUID-vkFreeCommandBuffers-pCommandBuffers-00047`：free 的 command buffer 不能处于 pending 状态。",
+        "registry_text": "All elements of <code>pCommandBuffers</code> <strong class=\"purple\">must</strong> not be in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      }
+    ],
+    "VUID-vkFreeMemory-memory-00677": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "line": 151,
+        "context": "- `VUID-vkFreeMemory-memory-00677`：memory 仍被 resource 使用。",
+        "registry_text": "All submitted commands that refer to <code>memory</code> (via images or buffers) <strong class=\"purple\">must</strong> have completed execution"
+      }
+    ],
+    "VUID-vkMapMemory-memory-00683": [
+      {
+        "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+        "line": 180,
+        "context": "- `VUID-vkMapMemory-memory-00683`：map 非 host-visible memory（VMA 通常先返回错误，但若绕过仍会触发）。",
+        "registry_text": "<code>memory</code> <strong class=\"purple\">must</strong> not have been allocated with multiple instances"
+      }
+    ],
+    "VUID-vkQueuePresentKHR-pWaitSemaphores-03267": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/fence_semaphore.md",
+        "line": 175,
+        "context": "- `VUID-vkQueuePresentKHR-pWaitSemaphores-03267`：present wait semaphore 必须有效。[SPEC]",
+        "registry_text": "All elements of the <code>pWaitSemaphores</code> member of <code>pPresentInfo</code> <strong class=\"purple\">must</strong> be created with a <a href=\"#VkSemaphoreType\">VkSemaphoreType</a> of <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_BINARY</a>"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 242,
+        "context": "- `VUID-vkQueuePresentKHR-pWaitSemaphores-03267`：present wait semaphore 必须有效。[SPEC]",
+        "registry_text": "All elements of the <code>pWaitSemaphores</code> member of <code>pPresentInfo</code> <strong class=\"purple\">must</strong> be created with a <a href=\"#VkSemaphoreType\">VkSemaphoreType</a> of <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_BINARY</a>"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/semaphore.md",
+        "line": 151,
+        "context": "- `VUID-vkQueuePresentKHR-pWaitSemaphores-03267`：present 等待的 semaphore 必须有效。",
+        "registry_text": "All elements of the <code>pWaitSemaphores</code> member of <code>pPresentInfo</code> <strong class=\"purple\">must</strong> be created with a <a href=\"#VkSemaphoreType\">VkSemaphoreType</a> of <a href=\"#VkSemaphoreTypeKHR\">VK_SEMAPHORE_TYPE_BINARY</a>"
+      }
+    ],
+    "VUID-vkQueueSubmit-pCommandBuffers-00072": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer_lifetime.md",
+        "line": 151,
+        "context": "- `VUID-vkQueueSubmit-pCommandBuffers-00072`：command buffer 必须处于 executable 状态。",
+        "registry_text": "Any <a href=\"#commandbuffers-secondary\">secondary command buffers recorded</a> into any element of the <code>pCommandBuffers</code> member of any element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>"
+      }
+    ],
+    "VUID-vkQueueSubmit-pWaitSemaphores-00068": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/fence_semaphore.md",
+        "line": 174,
+        "context": "- `VUID-vkQueueSubmit-pWaitSemaphores-00068`：wait semaphore 必须已 signaled 或可被 timeline 满足。[SPEC]",
+        "registry_text": "When a semaphore wait operation referring to a binary semaphore defined by any element of the <code>pWaitSemaphores</code> member of any element of <code>pSubmits</code> executes on <code>queue</code>, there <strong class=\"purple\">must</strong> be no other queues waiting on the same semaphore"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 241,
+        "context": "- `VUID-vkQueueSubmit-pWaitSemaphores-00068`：wait semaphore 必须 signaled 或 timeline 可满足。[SPEC]",
+        "registry_text": "When a semaphore wait operation referring to a binary semaphore defined by any element of the <code>pWaitSemaphores</code> member of any element of <code>pSubmits</code> executes on <code>queue</code>, there <strong class=\"purple\">must</strong> be no other queues waiting on the same semaphore"
+      },
+      {
+        "path": "skill/references/03_api_manual/08_synchronization/semaphore.md",
+        "line": 150,
+        "context": "- `VUID-vkQueueSubmit-pWaitSemaphores-00068`：wait semaphore 必须已被 signal 或处于 pending signal 状态。",
+        "registry_text": "When a semaphore wait operation referring to a binary semaphore defined by any element of the <code>pWaitSemaphores</code> member of any element of <code>pSubmits</code> executes on <code>queue</code>, there <strong class=\"purple\">must</strong> be no other queues waiting on the same semaphore"
+      }
+    ],
+    "VUID-vkResetCommandBuffer-commandBuffer-00045": [
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/command_buffer_lifetime.md",
+        "line": 148,
+        "context": "- `VUID-vkResetCommandBuffer-commandBuffer-00045`：command buffer 不能处于 pending 状态。",
+        "registry_text": "<code>commandBuffer</code> <strong class=\"purple\">must</strong> not be in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 169,
+        "context": "| `vkResetCommandBuffer` 时机 | 必须在 `vkWaitForFences` 之后调用。[SPEC] | 未等 fence 就 reset，触发 `VUID-vkResetCommandBuffer-commandBuffer-00045`。[TOOL] |",
+        "registry_text": "<code>commandBuffer</code> <strong class=\"purple\">must</strong> not be in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      },
+      {
+        "path": "skill/references/03_api_manual/03_command_buffer/frames_in_flight.md",
+        "line": 239,
+        "context": "- `VUID-vkResetCommandBuffer-commandBuffer-00045`：command buffer 不能处于 PENDING 状态（说明 fence 未 wait）。[SPEC]",
+        "registry_text": "<code>commandBuffer</code> <strong class=\"purple\">must</strong> not be in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      }
+    ],
+    "VUID-vkUpdateDescriptorSets-None-03047": [
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+        "line": 221,
+        "context": "- `VUID-vkUpdateDescriptorSets-None-03047`：已绑定未完成的普通 descriptor set 被更新。",
+        "registry_text": "The <code>dstSet</code> member of each element of <code>pDescriptorWrites</code> or <code>pDescriptorCopies</code> for bindings which were created without the <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT</a> or <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT</a> bits set <strong class=\"purple\">must</strong> not be used by any command that was recorded to a command buffer which is in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      },
+      {
+        "path": "skill/references/03_api_manual/05_descriptor/sampled_image_descriptor.md",
+        "line": 137,
+        "context": "- `VUID-vkUpdateDescriptorSets-None-03047`：image view 与 descriptor type 兼容。",
+        "registry_text": "The <code>dstSet</code> member of each element of <code>pDescriptorWrites</code> or <code>pDescriptorCopies</code> for bindings which were created without the <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT</a> or <a href=\"#VkDescriptorBindingFlagBitsEXT\">VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT</a> bits set <strong class=\"purple\">must</strong> not be used by any command that was recorded to a command buffer which is in the <a href=\"#commandbuffers-lifecycle\">pending state</a>"
+      }
+    ]
+  }
+}

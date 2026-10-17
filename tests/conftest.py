@@ -5,11 +5,14 @@ assert against the skill repo (vulkan-rendering-expert-skill), which must sit
 next to this repo on disk.
 """
 
+import os
 import pytest
 from pathlib import Path
 
 TESTS_REPO_ROOT = Path(__file__).resolve().parent.parent
-PROJECT_ROOT = TESTS_REPO_ROOT.parent / "vulkan-rendering-expert-skill"
+PROJECT_ROOT = Path(os.environ.get("VULKAN_SKILL_ROOT", TESTS_REPO_ROOT.parent / "skill")).resolve()
+if not PROJECT_ROOT.is_dir() and "VULKAN_SKILL_ROOT" not in os.environ:
+    PROJECT_ROOT = (TESTS_REPO_ROOT.parent / "vulkan-rendering-expert-skill").resolve()
 if not PROJECT_ROOT.is_dir():
     raise RuntimeError(
         f"Skill repo not found at {PROJECT_ROOT}. "
@@ -44,3 +47,10 @@ def all_md_files():
 @pytest.fixture
 def module_dirs():
     return {m: SKILL_DIR / m for m in MODULES}
+
+def pytest_collection_modifyitems(items):
+    """Every test belongs to one evidence layer; historical responses stay snapshots."""
+    for item in items:
+        if item.get_closest_marker("live") or item.get_closest_marker("snapshot"):
+            continue
+        item.add_marker(pytest.mark.static)

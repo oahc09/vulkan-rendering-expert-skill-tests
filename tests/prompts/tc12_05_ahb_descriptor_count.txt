@@ -1,0 +1,1 @@
+Android AHardwareBuffer 导入 externalFormat 图像并创建 YCbCr conversion。combined image sampler 的 descriptor pool 预算能否每张纹理固定计 1？请解释 combinedImageSamplerDescriptorCount 的查询和计数，并列出 AHB 外部格式、format features、专用内存及导入生命周期验证。

@@ -1,0 +1,1 @@
+旧 CI 用 vulkaninfo --json 得到设备 JSON，然后 vkconfig 的 Profiles 配置。升级 SDK 后想直接换成 vkprofiles。请区分 Vulkan Profiles 定义/能力查询、vkprofiles 工具与 Vulkan Configurator，给按具体 SDK 工具版本核对参数和 JSON schema 的迁移及回滚步骤。不要凭空给保证可用的 CLI flag。
