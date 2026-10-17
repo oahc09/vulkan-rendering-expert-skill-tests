@@ -1,0 +1,1 @@
+Validation 输出 0 errors，画面偶发闪烁，GPU timestamp 比旧版高 20%。可以宣布功能正确且性能提升并关闭 bug 吗？请分开 API validation、同步覆盖、图像正确性、生命周期压力和性能测量，列出尚未验证的证据。

@@ -30,11 +30,16 @@ def _resolve_backtick_refs(text: str, source: Path):
     return refs
 
 
-def test_v1_0_8_version_and_entry_routing():
+def test_current_version_and_preserved_project_diagnosis_routing():
     skill = _read(PROJECT_ROOT / "SKILL.md")
-    assert re.search(r"^\s*version:\s*1\.0\.8\s*$", skill, re.M)
-    assert "project_diagnosis.md" in skill
-    assert "[CODE]" in skill
+    assert re.search(r"^\s*version:\s*1\.0\.9\s*$", skill, re.M)
+    # The compact entry delegates task routes; do not require duplicate routing tables.
+    routing = _read(SKILL_DIR / "07_integration_pack" / "task_routing_rules.md")
+    assert "task_routing_rules.md" in skill
+    assert "project_diagnosis.md" in routing
+    workflow = _read(SKILL_DIR / "05_workflows" / "01_renderer_setup" / "project_diagnosis.md")
+    assert "[CODE]" in workflow
+    assert "Architecture Map" in workflow
 
 
 def test_project_diagnosis_workflow_exists_and_follows_template():

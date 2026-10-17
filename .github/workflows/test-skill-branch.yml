@@ -1,41 +1,45 @@
-name: Test Vulkan Skill Branch
-
+name: Vulkan Skill Static and Snapshot
 on:
   push:
-    branches:
-      - feat/v1.0.8-project-diagnosis-tests
+    branches: [main, 'feat/v1.0.9-*']
+  pull_request:
   workflow_dispatch:
     inputs:
       skill_ref:
-        description: "vulkan-rendering-expert-skill ref to test"
+        description: 'Skill commit SHA or paired branch to test (read-only checkout)'
         required: true
-        default: "feat/v1.0.8-project-diagnosis"
-
+        default: 'main'
+permissions:
+  contents: read
 jobs:
   pytest:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout test repository
         uses: actions/checkout@v4
         with:
-          path: vulkan-rendering-expert-skill-tests
-
-      - name: Checkout skill repository
+          path: tests
+          persist-credentials: false
+      - name: Checkout paired skill revision
         uses: actions/checkout@v4
         with:
           repository: oahc09/vulkan-rendering-expert-skill
-          ref: ${{ github.event.inputs.skill_ref || 'feat/v1.0.8-project-diagnosis' }}
-          path: vulkan-rendering-expert-skill
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+          ref: ${{ inputs.skill_ref || (github.ref == 'refs/heads/main' && 'main' || '7c167d1b27e112c48219c0ebcd57e4d209a926db') }}
+          path: skill
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Record exact revisions
+        run: |
+          git -C tests rev-parse HEAD
+          git -C skill rev-parse HEAD
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-
+          python-version: '3.13'
       - name: Install test dependencies
-        run: python -m pip install --upgrade pytest pyyaml
-
-      - name: Run pytest suite
-        working-directory: vulkan-rendering-expert-skill-tests/tests
-        run: pytest -q
+        run: python -m pip install pytest pyyaml
+      - name: Static
+        run: python -m pytest -q -m static tests/tests
+      - name: Snapshot (historical v1.0.8, not live evidence)
+        run: python -m pytest -q -m snapshot tests/tests
+      - name: Live availability (no model credentials in PR jobs)
+        run: python tests/tests/run_live_model_behavior.py --output-dir /tmp/vulkan-live-status

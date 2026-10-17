@@ -1,0 +1,1 @@
+我看到 Blender 的 Vulkan descriptor heap proposal/设计任务，能否写进发布说明说 Blender 稳定版已全面采用 VK_EXT_descriptor_heap，并据此要求我们的 Android 渲染器迁移？请区分 proposal、实现提交、合并、release notes、运行时默认启用和设备支持，缺证据应怎么表述？

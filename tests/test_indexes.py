@@ -3,23 +3,26 @@
 import re
 from pathlib import Path
 
-import pytest
+from test_v1_0_1_regression import _is_api_card
 
 from conftest import SKILL_DIR
 
 
 def _resolve_md_ref(ref: str, base_dir: Path) -> Path:
     ref = ref.split("#")[0]
-    ref = ref.replace("/", Path.sep)
     if Path(ref).is_absolute():
         return Path(ref)
     return (base_dir / ref).resolve()
 
 
 def _extract_md_links(text: str):
-    """Extract all internal .md link targets from markdown text."""
+    """Extract internal Markdown links and backtick paths used by index tables."""
     for match in re.finditer(r"\[([^\]]+)\]\(([^)]+\.md(?:#[^)]+)?)\)", text):
-        yield match.group(2)
+        if not match.group(2).startswith(("https://", "http://")):
+            yield match.group(2)
+    for match in re.finditer(r"`([^`\s]+\.md(?:#[^`\s]*)?)`", text):
+        if not match.group(1).startswith(("https://", "http://")):
+            yield match.group(1)
 
 
 # TC7.1 api_index.md 条目与实际文件匹配（双向）
@@ -40,15 +43,14 @@ def test_api_index_matches_actual_files():
     api_dir = SKILL_DIR / "03_api_manual"
     actual = set()
     for path in api_dir.rglob("*.md"):
-        if "template" in path.name.lower() or path.name.endswith("_index.md"):
+        if not _is_api_card(path):
             continue
         actual.add(path.resolve())
     not_indexed = actual - indexed
-    if not_indexed:
-        pytest.skip(
-            "Some API cards are not in api_index.md (may be intentional): "
-            + ", ".join(str(p.relative_to(SKILL_DIR)) for p in sorted(not_indexed)[:10])
-        )
+    assert not not_indexed, (
+        "API cards missing from api_index.md:\n"
+        + "\n".join(str(p.relative_to(SKILL_DIR)) for p in sorted(not_indexed))
+    )
 
 
 # TC7.2 debug_priority_index.md 条目存在

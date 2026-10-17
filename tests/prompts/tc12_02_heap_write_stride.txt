@@ -1,0 +1,1 @@
+VK_EXT_descriptor_heap：设备查询的 descriptor 写入数据大小为 8 bytes，shader heapArrayStride 为 16 bytes。我要更新第 i 项。是不是 memcpy(dst + i * 8, src, 16)？请算地址偏移、实际写入字节数，并说明查询值、对齐、heap 绑定和 shader ABI 的区别。不要假定所有 descriptor 类型固定 8 bytes。

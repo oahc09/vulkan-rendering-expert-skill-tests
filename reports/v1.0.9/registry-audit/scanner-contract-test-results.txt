@@ -1,0 +1,3 @@
+PASS real root: 69 Markdown files, paths relative to exact Skill root
+PASS wrong parent root: nonzero exit, no output artifact
+PASS empty manual directory: nonzero exit, no output artifact

@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-10-17T14:08:57.715196+00:00",
+  "skill_sha": "7c167d1b27e112c48219c0ebcd57e4d209a926db",
+  "skill_tree": "9198caf667ed4d63684d7ece5836500bab84a98e",
+  "baseline_skill_sha": "1bad967c8e6880c3eecdaa6a946901cbc5c1f060",
+  "baseline_tests_sha": "41a5748b0948b2ab0b9589d37bfdfc073128bb19",
+  "static_passed": 94,
+  "snapshot_passed": 4,
+  "live_skipped": 12,
+  "live_status": "infrastructure_blocked_before_model_invocation",
+  "actual_model_input_token_reduction": null,
+  "hardware_tests": "not_run",
+  "packaged_skill_files": 200,
+  "knowledge_modules": 8,
+  "new_knowledge_files": 1,
+  "bootstrap_only_proxy": {
+    "metric": "utf8_bytes_not_model_tokens",
+    "old": 42050,
+    "new": 11222,
+    "excluded": "selected-route/task reads and host/model overhead"
+  },
+  "files_sha256": {
+    "README.md": "9aea22690d746e424ff0662a65c4d2aab667d12ac3a0cf905223714be5b8ba62",
+    "final-live.txt": "966ed9fe97e58221f3a6f22abaa66f661c42c8707de45b30f3d14e6765dab113",
+    "final-pytest.txt": "c7736f7e68aa53af48d4029a2f2deb0b735d7712052f556834ecfbf74561d12b",
+    "final-snapshot.txt": "bb92fc1a7c3a3bc77b041f600788325cc727d6e1735cad99f8d5fa71595f52a8",
+    "final-static.txt": "b4d9cfdc7b484ee803bdc78640c2b5d42afbaab0ceca149b07802cb0bd74db57",
+    "frozen-v108-baseline.txt": "2a999ceb7d1b60b302b41f7c06d38bc9498016b67e180c5714e96a2dd3487210",
+    "live-cli-smoke.stderr": "8e3330eeb312ddb37b9da73c3ece4a8aa7e2ade4b7bb255573aa487bc89f0f58",
+    "registry-audit/README.md": "d35cce09a6c6d09ef14f625e3c0cdfb15d5234bcf6d18afa0430900a9a2afb86",
+    "registry-audit/confirmed-vuid-mismatches.json": "2e25da338103d1155011ebd3c109f578535e3db11831eb76c2a27983f2cb4b47",
+    "registry-audit/final-scan-results.json": "b7b302862c579baa4e025b4a11b4eea79bdf3b474e0c24ae4a9b1efbd9142fd6",
+    "registry-audit/final-summary.json": "ef4905b860d5d3f919739467e55c555790b26e6e65e03b2533d8ae188d8f56f0",
+    "registry-audit/final-symbol-dispositions.json": "8eb6f3002f0adf8e9e0dd4eda3e2f861eba17258e611e70f0b6477ede60b9709",
+    "registry-audit/initial-scan-results.json": "83289393dce18c363cb4959d9722ca4d89588e40731823d1c2ec9cf4195360c0",
+    "registry-audit/scan_registry.py": "55b820bb89fdd8c7eeba67b07cf71b4c79ae798d0ad665f15b0b45d8222dcf67",
+    "registry-audit/scanner-contract-test-results.txt": "5afe3f6ab5df29eb78910e2e89409aebf5fdf346b2a60617df6a2a0c9bce46d4",
+    "registry-audit/symbol-dispositions.json": "0de89d8d9b20ab019753fd821b2f196de8e526b52ea4e056e6e67ec6c2a3d1b9",
+    "registry-audit/test_scan_registry.py": "dc67c438607d511de7a9af5ed999954dbcdd98ae9d6bfaf83351238bb62fa10e"
+  }
+}

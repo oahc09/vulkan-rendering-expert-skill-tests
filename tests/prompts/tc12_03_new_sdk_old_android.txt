@@ -1,0 +1,1 @@
+我们把桌面 Vulkan SDK 更新到 1.4，旧 Android 设备仍是 Vulkan 1.1 driver。是否可以直接启用所有 1.4 功能并删除扩展 fallback？请给运行时查询、feature enable、Android API level 与设备/driver 支持边界和降级路径。

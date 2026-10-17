@@ -1,0 +1,891 @@
+{
+  "basis": "Manual contextual triage of initial and current scan. Correction agent may change later contexts. No automatic replacements authorized or performed.",
+  "symbols": [
+    {
+      "symbol": "VK_ERROR_INVALID_VALUE",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such VkResult. Invalid application use does not imply a defined error return; describe valid usage and validation diagnostics.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+          "line": 131,
+          "context": "| `VkSemaphoreSignalInfo.value` | CPU signal 目标值；必须严格大于当前 counter。[SPEC] | signal 一个 ≤ 当前 counter 的 value → `VK_ERROR_INVALID_VALUE` 或 VUID 触发。[TOOL] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+          "line": 166,
+          "context": "3. `vkSignalSemaphore` 一个 ≤ 当前 counter 的 value，触发 `VK_ERROR_INVALID_VALUE` 或 VUID。[TOOL]"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_EXT_extended_dynamic_state2_additional",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such extension. Separate extendedDynamicState2LogicOp/extendedDynamicState2PatchControlPoints feature fields and EXT_extended_dynamic_state3 states.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 112,
+          "context": "- `VK_EXT_extended_dynamic_state2`、`VK_EXT_extended_dynamic_state2_additional`（部分 `logicOp`、`rasterizationSamples` 需 additional feature）。"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 316,
+          "context": "5. `VK_EXT_extended_dynamic_state2_additional` 中 `logicOp`、`rasterizationSamples` 的额外限制。"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_EXT_non_uniform_qualifier",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Confuses GLSL GL_EXT_nonuniform_qualifier with a Vulkan extension; Vulkan capability uses descriptor indexing feature checks.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/05_descriptor/descriptor_indexing.md",
+          "line": 92,
+          "context": "- `VK_EXT_non_uniform_qualifier`：早期使 `nonuniformEXT` 可用的扩展（已被 descriptor_indexing + Vulkan 1.2 取代）。"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_EXT_performance_query",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such EXT extension. VK_KHR_performance_query exists; other vendor query extensions are distinct.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/query_pool.md",
+          "line": 75,
+          "context": "- `VK_KHR_performance_query` / `VK_EXT_performance_query`：性能计数器查询（厂商 / Counter-based profiling）。[SPEC]"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_FEATURE_LINE_RASTER",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Fabricated feature identifier; cite actual feature members if relevant.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 314,
+          "context": "3. `vkCmdSetViewportWithCount` / `vkCmdSetScissorWithCount` 与 `VK_FEATURE_LINE_RASTER` 等其它 feature 的交互。"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Wrong enum category and spelling. Host image copying requires VK_IMAGE_USAGE_HOST_TRANSFER_BIT_EXT (or promoted core name), plus feature and format/layout prerequisites.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 28,
+          "context": "→ VkImage（创建时 flags 含 VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT）"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 42,
+          "context": "- `VkImage` 创建时 `flags` 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 57,
+          "context": "- `VkImage`（创建时 `flags` 含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`）"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 93,
+          "context": "   VkImageCreateInfo.flags |= VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 178,
+          "context": "| `flags` | 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC] | 漏掉 flag 后调用 host copy API 触发 validation error。[TOOL] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 196,
+          "context": "- [ ] `VkImageCreateInfo.flags` 是否含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`？[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 217,
+          "context": "1. `VkImageCreateInfo.flags` 缺少 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`，调用 host copy API 触发 validation error。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 234,
+          "context": "- `VUID-VkImageCreateInfo-flags-09203`：使用 host copy API 时 image flags 必须含 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT`。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 259,
+          "context": "- Image 创建时必须设 `VK_IMAGE_CREATE_HOST_IMAGE_COPY_BIT_EXT` flag，事后无法补加。[SPEC]"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_IMAGE_LAYOUT_HOST_COPY_ALIGNMENT_PLAN_",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Not a registered layout or registered wildcard family. Query supported host-copy layouts; do not invent a layout.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 101,
+          "context": "     newLayout = VK_IMAGE_LAYOUT_HOST_COPY_ALIGNMENT_PLAN_... 或 General"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_KHR_maintenance",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 96,
+          "context": "→ vkEnumerateDeviceExtensionProperties 检查 VK_KHR_maintenance* / VK_EXT_swapchain_maintenance1"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_KHR_xxx",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 87,
+          "context": "- `VK_KHR_xxx`"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_LAYER_KHRONOS_validation",
+      "disposition": "layer_name_outside_vk_xml",
+      "rationale": "Loader layer name, outside Vulkan API registry namespace; not a missing Vulkan API symbol. Historical layer name appears in deprecation guidance.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/instance.md",
+          "line": 68,
+          "context": "- 常见 instance layers：`VK_LAYER_KHRONOS_validation`。"
+        },
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+          "line": 36,
+          "context": "- Instance layer 名称列表（如 `VK_LAYER_KHRONOS_validation`）。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+          "line": 74,
+          "context": "- `VK_LAYER_KHRONOS_validation`：Khronos 官方验证层，推荐优先使用。[GUIDE]"
+        },
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+          "line": 84,
+          "context": "编译期/启动期选择 layer 名称（VK_LAYER_KHRONOS_validation）"
+        },
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+          "line": 242,
+          "context": "优先使用 `VK_LAYER_KHRONOS_validation` 单一 layer，而不是过时的 `VK_LAYER_LUNARG_standard_validation` 组合；使用 `VK_EXT_debug_utils` 替代 `VK_EXT_debug_report`。在回调中只做日志/断点/统计，不做 Vulkan API 调用；为不同构建类型配置 severity mask：DEBUG 全开，PROFILE 仅 `WARNING`/`ERROR`，RELEASE 彻底关闭。"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_LAYER_LUNARG_standard_validation",
+      "disposition": "layer_name_outside_vk_xml",
+      "rationale": "Loader layer name, outside Vulkan API registry namespace; not a missing Vulkan API symbol. Historical layer name appears in deprecation guidance.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/validation_layer.md",
+          "line": 242,
+          "context": "优先使用 `VK_LAYER_KHRONOS_validation` 单一 layer，而不是过时的 `VK_LAYER_LUNARG_standard_validation` 组合；使用 `VK_EXT_debug_utils` 替代 `VK_EXT_debug_report`。在回调中只做日志/断点/统计，不做 Vulkan API 调用；为不同构建类型配置 severity mask：DEBUG 全开，PROFILE 仅 `WARNING`/`ERROR`，RELEASE 彻底关闭。"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_PIPELINE_STAGE_2_DESCRIPTOR_INDEXING_BIT",
+      "disposition": "explicit_negative_example",
+      "rationale": "No such stage. Latest context explicitly warns that it does not exist: retain as a negative example.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/05_descriptor/descriptor_buffer.md",
+          "line": 61,
+          "context": "- 把 descriptor indexing 当作 pipeline stage。`VK_PIPELINE_STAGE_2_DESCRIPTOR_INDEXING_BIT` 不是 Vulkan 枚举，不能用于 barrier。"
+        }
+      ]
+    },
+    {
+      "symbol": "VK_SUBPASS_SHADER_STAGE_",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Not a registered enum family. Wildcard disguises a fabricated symbol family; revise actual subpass compute constraints.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/compute_pipeline.md",
+          "line": 279,
+          "context": "5. Subpass 内 compute shader 使用的限制（如 `VK_SUBPASS_SHADER_STAGE_*` 相关扩展）。"
+        }
+      ]
+    },
+    {
+      "symbol": "VkBindIndexBufferIndirectCommand",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No unqualified struct. Distinct VkBindIndexBufferIndirectCommandEXT and VkBindIndexBufferIndirectCommandNV exist for device-generated commands; not generic maintenance support.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 60,
+          "context": "- `VkBindIndexBufferIndirectCommand` 等关联结构（按需）"
+        }
+      ]
+    },
+    {
+      "symbol": "VkDrawMeshTasksIndirectCountEXT",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such struct. vkCmdDrawMeshTasksIndirectCountEXT is a command consuming VkDrawMeshTasksIndirectCommandEXT records and separate count buffer.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+          "line": 63,
+          "context": "- `VkDrawMeshTasksIndirectCountEXT`（`VK_EXT_mesh_shader`，count 也来自 GPU）"
+        },
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+          "line": 388,
+          "context": "4. `VK_EXT_mesh_shader` 中 `VkDrawMeshTasksIndirectCommandEXT` / `VkDrawMeshTasksIndirectCountEXT` 结构与 `groupCountX/Y/Z` 上限。"
+        }
+      ]
+    },
+    {
+      "symbol": "VkExternalSemaphoreTypeCreateInfo",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such struct. VkSemaphoreTypeCreateInfo selects timeline/binary; VkExportSemaphoreCreateInfo specifies external handle types.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/08_synchronization/timeline_semaphore.md",
+          "line": 321,
+          "context": "1. `VkSemaphoreTypeCreateInfo` 在 `pNext` 链中与 `VkExternalSemaphoreTypeCreateInfo`、`VkExportMetalObjectCreateInfoEXT` 等扩展结构体的共存规则。[SPEC]"
+        }
+      ]
+    },
+    {
+      "symbol": "VkImageToImageCopyEXT",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such region struct. VkImageCopy2 and VkCopyImageToImageInfoEXT are registered; check pRegions type.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 58,
+          "context": "- `VkMemoryToImageCopyEXT` / `VkImageToMemoryCopyEXT` / `VkImageToImageCopyEXT`"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 160,
+          "context": "### VkImageToImageCopyEXT"
+        }
+      ]
+    },
+    {
+      "symbol": "VkMemoryAllocator",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Not a Vulkan type nor VMA type spelling (VmaAllocator). Could describe an engine abstraction only if explicitly declared.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 49,
+          "context": "- 决定 `VkMemoryAllocator` 类工具能否实现\"先查后建\"的资源创建路径。[ENGINE]"
+        }
+      ]
+    },
+    {
+      "symbol": "VkPhysicalDeviceDynamicRenderingLocalReadPropertiesKHR",
+      "disposition": "explicit_negative_example",
+      "rationale": "Explicit absence statement, not an attempted API use. Valid negative example; preserve.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/08_synchronization/image_memory_barrier.md",
+          "line": 260,
+          "context": "- depth/stencil aspect 与 MSAA attachment 的 local read 受 `VkPhysicalDeviceVulkan14Properties.dynamicRenderingLocalReadDepthStencilAttachments` / `dynamicRenderingLocalReadMultisampledAttachments` 两个独立字段限制，需运行时查询（不存在独立的 `VkPhysicalDeviceDynamicRenderingLocalReadPropertiesKHR` 结构）。"
+        }
+      ]
+    },
+    {
+      "symbol": "VkPhysicalDeviceExtendedDynamicState",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 124,
+          "context": "   VkPhysicalDeviceExtendedDynamicState*FeaturesEXT)"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 207,
+          "context": "- 检查 feature 启用：`VkPhysicalDeviceVulkan13Features`、`VkPhysicalDeviceExtendedDynamicState*FeaturesEXT`。"
+        }
+      ]
+    },
+    {
+      "symbol": "VkPhysicalDeviceImageFormatProperties2",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such type. VkImageFormatProperties2 is the output of vkGetPhysicalDeviceImageFormatProperties2.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 294,
+          "context": "- 移动端 GPU 对 `VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT`、`BLOCK_TEXEL_VIEW_COMPATIBLE_BIT` 等支持度参差，启用前查询 `VkPhysicalDeviceImageFormatProperties2`。[ANDROID]"
+        }
+      ]
+    },
+    {
+      "symbol": "VkPhysicalDeviceMaintenance",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 58,
+          "context": "- `VkPhysicalDeviceMaintenance*Properties` / `VkPhysicalDeviceVulkan13Features`（含 maintenance4）/ `VkPhysicalDeviceVulkan14Features`（含 maintenance5 / maintenance6）/ 独立 `VkPhysicalDeviceMaintenance4Features` / `Maintenance5Features` / `Maintenance6Features`"
+        }
+      ]
+    },
+    {
+      "symbol": "VkSurfacePresentModeCapabilitiesEXT",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such structure. VkSurfacePresentModeCompatibilityEXT and VkSurfacePresentScalingCapabilitiesEXT have distinct roles.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 178,
+          "context": "8. `VkSwapchainPresentModesCreateInfoEXT` 切换到未在 `VkSurfacePresentModeCapabilitiesEXT` 列表中的 mode。[TOOL]"
+        },
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 271,
+          "context": "- Android 上 swapchain_maintenance1 支持度与 GPU 厂商驱动版本强相关，部分旧驱动仅支持 `VK_PRESENT_MODE_FIFO_KHR`；切换到 `MAILBOX_KHR` / `IMMEDIATE_KHR` 前必须查询 `VkSurfacePresentModeCapabilitiesEXT`。[ANDROID]"
+        },
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 346,
+          "context": "6. swapchain_maintenance1 中 `VkSwapchainPresentModesCreateInfoEXT` 与 `VkSurfacePresentModeCapabilitiesEXT` 的查询路径与合法切换组合。[SPEC]"
+        }
+      ]
+    },
+    {
+      "symbol": "VkSurfacePresentModesEXT",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such type. vkGetPhysicalDeviceSurfacePresentModesKHR queries modes; compatibility queries use VkSurfacePresentModeCompatibilityEXT.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+          "line": 136,
+          "context": "| `VkSwapchainPresentModesCreateInfoEXT` | swapchain_maintenance1 | 在 `vkQueuePresentKHR` 时通过 `pNext` 传入新 present mode，实现运行时切换。[SPEC] | 切换到未在 `VkSurfacePresentModesEXT` 查询列表中的 mode。[TOOL] |"
+        }
+      ]
+    },
+    {
+      "symbol": "VkWriteDescriptorSet2",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such type; use VkWriteDescriptorSet (vkCmdPushDescriptorSet2KHR command is a separate API).",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/05_descriptor/push_descriptor.md",
+          "line": 54,
+          "context": "- `VkWriteDescriptorSet` / `VkWriteDescriptorSet2`"
+        }
+      ]
+    },
+    {
+      "symbol": "VkXXX",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+          "line": 94,
+          "context": "| `VUID-VkXXX-vkCmdYYY-zzzzz` | 对象-命令-子对象-数字结构。[SPEC] | 只看数字忽略结构，导致检索困难。[TOOL] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 17,
+          "context": "| Vulkan 对象 | `VkXXX` |"
+        },
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 73,
+          "context": "- `VkXXX`"
+        }
+      ]
+    },
+    {
+      "symbol": "VkXXXCreateInfo",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 74,
+          "context": "- `VkXXXCreateInfo`"
+        }
+      ]
+    },
+    {
+      "symbol": "VkXXXFlagBits",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 75,
+          "context": "- `VkXXXFlagBits`"
+        }
+      ]
+    },
+    {
+      "symbol": "VkXXXUsageFlags",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 76,
+          "context": "- `VkXXXUsageFlags`"
+        }
+      ]
+    },
+    {
+      "symbol": "vkBind",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+          "line": 29,
+          "context": "→ vkBind*Memory"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+          "line": 88,
+          "context": "→ vkBind*Memory(resource, memory, offset)"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+          "line": 178,
+          "context": "- VMA 透传 `vkCreateBuffer` / `vkCreateImage` / `vkAllocateMemory` / `vkBind*Memory`，所有相关 VUID 仍生效。[TOOL]"
+        }
+      ]
+    },
+    {
+      "symbol": "vkBufferCreateInfo",
+      "disposition": "local_variable",
+      "rationale": "Example address-of local variable, not a command/type reference.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+          "line": 99,
+          "context": "   vmaCreateBuffer(allocator, &vkBufferCreateInfo, &vmaAllocCreateInfo,"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmd",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+          "line": 10,
+          "context": "| 常用 API | `vkAllocateCommandBuffers` / `vkFreeCommandBuffers` / `vkResetCommandBuffer` / `vkBeginCommandBuffer` / `vkEndCommandBuffer` / `vkCmd*` |"
+        },
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+          "line": 29,
+          "context": "→ Record Commands (vkCmd*)"
+        },
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+          "line": 69,
+          "context": "| `vkCmd*` | 各类录制命令：draw、dispatch、barrier、copy、pipeline bind 等。[SPEC] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+          "line": 85,
+          "context": "→ 录制 vkCmd* 命令"
+        },
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/command_buffer.md",
+          "line": 140,
+          "context": "8. 在 recording 状态的 command buffer 上调用除 `vkCmd*` / `vkEndCommandBuffer` 之外的 API。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+          "line": 19,
+          "context": "Indirect Commands 是把 draw / dispatch 的参数从 CPU 端的 `vkCmd*` 调用搬到 GPU 端的 buffer 读取，是 GPU-driven rendering 的核心机制——draw count、vertex count、instance count、index offset、dispatch 维度等参数由 GPU 在执行期间从 `VkBuffer` 中读取，从而让 compute shader 在 GPU 上动态生成绘制命令。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+          "line": 27,
+          "context": "→ vkCmd{Copy,Blit,Resolve,Fill}* 命令"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmdBind",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+          "line": 30,
+          "context": "→ vkCmdBind* / shader access"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmdDrawIndirectFirstInstance",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Fabricated command embedded in a VUID prefix. drawIndirectFirstInstance is a device feature; choose a real command VUID.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/03_command_buffer/indirect_commands.md",
+          "line": 234,
+          "context": "- `VUID-vkCmdDrawIndirectFirstInstance-*`：`drawIndirectFirstInstance` 未启用。"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmdSet",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 19,
+          "context": "Dynamic state 是 Vulkan 中将部分 pipeline 状态从“创建时烘焙”改为“command buffer 录制时设置”的机制，目的是减少 `VkPipeline` 变体数量；代价是每条 `vkCmdSet*` 命令增加 command buffer 录制开销与少量 GPU 状态切换开销。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 29,
+          "context": "→ vkCmdSet* (draw 前设置当前值)"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 41,
+          "context": "- 每条 `vkCmdSet*` 设置的值在 command buffer 内持续有效，直到下一次同类型 `vkCmdSet*` 覆盖或 command buffer reset。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 52,
+          "context": "- 各 `vkCmdSet*` 命令"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 143,
+          "context": "| `VkPipelineDynamicStateCreateInfo::pDynamicStates` | 必须列出所有要动态设置的状态；与 `vkCmdSet*` 命令一一对应。[SPEC] | 想动态设置但未列入；列入但实际未调用对应 `vkCmdSet*`。[TOOL] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 147,
+          "context": "| extended dynamic state feature 位 | 每个子能力对应独立 feature 位（尤其 eds3）。[SPEC] | 启用 extension 但未启用 feature，或未查询就调用 `vkCmdSet*` 导致 validation/未定义行为。[TOOL] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 148,
+          "context": "| `vkCmdSet*` 调用时机 | 必须在 pipeline bind 之后、draw 之前；rendering inner 状态需在 `vkCmdBeginRendering` 之后。[SPEC] | 在 render pass / dynamic rendering 之外设置 only-rendering-inner 状态。[TOOL] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 178,
+          "context": "1. 在 `VkPipelineDynamicStateCreateInfo` 中声明了某状态，但 draw 前从未调用对应 `vkCmdSet*`，validation 报 `VUID-vkCmdDraw-None-07833` 类错误。[TOOL]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 181,
+          "context": "4. eds3 的某个 `vkCmdSet*` 未查询对应 sub-feature 就调用，部分驱动静默忽略或 validation 报错。[TOOL][VENDOR]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 195,
+          "context": "- `VUID-vkCmdSetViewport-*` / `VUID-vkCmdSetScissor-*` 等：`vkCmdSet*` 参数合法性。"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 206,
+          "context": "- 检查 `VkPipelineDynamicStateCreateInfo.pDynamicStates` 与实际 `vkCmdSet*` 调用列表是否对应。"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 208,
+          "context": "- 检查 `vkCmdSet*` 是否在 render pass / dynamic rendering 内、draw 之前。"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 220,
+          "context": "- `vkCmdSet*` 在 command buffer 录制时调用；设置的值在 command buffer 内持续到下次覆盖或 reset。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 229,
+          "context": "- `vkCmdSet*` 设置的值是 command buffer 内状态，不持有资源，无 in-flight 销毁风险。"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 238,
+          "context": "- `vkCmdSet*` 是 command buffer 录制命令，本身不涉及 CPU-GPU 同步。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 256,
+          "context": "- 移动端 GPU 对每条 `vkCmdSet*` 的开销通常低于多 pipeline 变体带来的 cache miss + 内存占用，但需结合 AGI counter 验证。[ANDROID][AGI]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 268,
+          "context": "- 但每条 `vkCmdSet*` 增加 command buffer 录制开销；高频切换需权衡。[ENGINE]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 273,
+          "context": "- 大多数 `vkCmdSet*` 在 GPU 侧开销可忽略（寄存器写入）。[VENDOR]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 313,
+          "context": "2. eds3 每个 `vkCmdSet*` 对应的 feature 位（`VkPhysicalDeviceExtendedDynamicState3FeaturesEXT` 字段众多，必须逐条核对）。"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmdSetDepthClampEnable",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "Missing EXT suffix; vkCmdSetDepthClampEnableEXT is registered in target.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/dynamic_state.md",
+          "line": 10,
+          "context": "| 常用 API | `vkCmdSetViewport` / `vkCmdSetScissor` / `vkCmdSetBlendConstants` / `vkCmdSetStencilReference` / `vkCmdSetDepthBias` / `vkCmdSetRasterizerDiscardEnable` / `vkCmdSetDepthClampEnable` |"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmdXXX",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 82,
+          "context": "- `vkCmdXXX`"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCmdYYY",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/09_debug_validation/vuid_decode.md",
+          "line": 94,
+          "context": "| `VUID-VkXXX-vkCmdYYY-zzzzz` | 对象-命令-子对象-数字结构。[SPEC] | 只看数字忽略结构，导致检索困难。[TOOL] |"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCreate",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+          "line": 147,
+          "context": "- 关注 `VUID-vkCreate*SurfaceKHR-*` 相关错误。"
+        },
+        {
+          "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+          "line": 158,
+          "context": "- 检查 `vkCreate*SurfaceKHR` 返回值。"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+          "line": 140,
+          "context": "- [ ] `vmaCreateBuffer` / `vmaCreateImage` 的 `VkBufferCreateInfo` / `VkImageCreateInfo` 字段是否合法（VMA 不校验，透传给 `vkCreate*`）？[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/pipeline.md",
+          "line": 80,
+          "context": "→ vkCreate*Pipelines（传入 pipeline cache）"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/pipeline_cache.md",
+          "line": 19,
+          "context": "`VkPipelineCache` 是 `vkCreate*Pipelines` 的内部缓存容器，用于复用之前编译的 pipeline 中间数据，显著降低重复创建与后续启动的 CPU 耗时。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/pipeline_cache.md",
+          "line": 177,
+          "context": "- `vkGetPipelineCacheData` 与 `vkCreate*Pipelines` 不应并发；需 CPU 侧同步。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/specialization_constants.md",
+          "line": 74,
+          "context": "→ vkCreate*Pipelines"
+        },
+        {
+          "path": "skill/references/03_api_manual/06_pipeline/specialization_constants.md",
+          "line": 143,
+          "context": "- Pipeline 创建时传入；数据在 `vkCreate*Pipelines` 调用期间需有效。[SPEC]"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCreateXXX",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 80,
+          "context": "- `vkCreateXXX`"
+        },
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 402,
+          "context": "- `vkCreateXXX`"
+        }
+      ]
+    },
+    {
+      "symbol": "vkCreateXxxSurfaceKHR",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/02_surface_swapchain/surface.md",
+          "line": 82,
+          "context": "→ vkCreateXxxSurfaceKHR"
+        }
+      ]
+    },
+    {
+      "symbol": "vkDestroy",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+          "line": 153,
+          "context": "- [ ] 是否用 `vmaDestroyBuffer` / `vmaDestroyImage` 而非裸 `vkDestroy*`？[GUIDE]"
+        }
+      ]
+    },
+    {
+      "symbol": "vkDestroyXXX",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 81,
+          "context": "- `vkDestroyXXX`"
+        },
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 403,
+          "context": "- `vkDestroyXXX`"
+        }
+      ]
+    },
+    {
+      "symbol": "vkGet",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+          "line": 10,
+          "context": "| 常用 API | `vkAllocateMemory` / `vkFreeMemory` / `vkMapMemory` / `vkUnmapMemory` / `vkFlushMappedMemoryRanges` / `vkInvalidateMappedMemoryRanges` / `vkGet*MemoryRequirements` |"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+          "line": 27,
+          "context": "→ vkGet*MemoryRequirements"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+          "line": 80,
+          "context": "→ vkGet*MemoryRequirements(resource, &memReq)"
+        }
+      ]
+    },
+    {
+      "symbol": "vkGetPhysicalDevice",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+          "line": 227,
+          "context": "- 查询 API（`vkGetPhysicalDevice*`）为同步 CPU 调用，不涉及 GPU 同步。[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/01_instance_device_queue/physical_device.md",
+          "line": 257,
+          "context": "- 查询 API 调用次数应集中在初始化阶段，避免每帧调用 `vkGetPhysicalDevice*`。[ENGINE]"
+        }
+      ]
+    },
+    {
+      "symbol": "vkGetPhysicalDeviceHostImageCopyPropertiesEXT",
+      "disposition": "confirmed_inaccurate_as_positive_api_reference",
+      "rationale": "No such command. Chain VkPhysicalDeviceHostImageCopyPropertiesEXT to vkGetPhysicalDeviceProperties2.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 72,
+          "context": "| `vkGetPhysicalDeviceHostImageCopyPropertiesEXT` | 查询该设备支持 host copy 的 format / layout 组合。[SPEC] |"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 197,
+          "context": "- [ ] image 的 format / usage / tiling 组合是否被 host image copy 支持？（查询 `vkGetPhysicalDeviceHostImageCopyPropertiesEXT`）[SPEC]"
+        },
+        {
+          "path": "skill/references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+          "line": 381,
+          "context": "5. `vkGetPhysicalDeviceHostImageCopyPropertiesEXT` 返回的 supported format / layout 组合的完整解释。"
+        }
+      ]
+    },
+    {
+      "symbol": "vkGetXXX",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 83,
+          "context": "- `vkGetXXX`"
+        }
+      ]
+    },
+    {
+      "symbol": "vkXXX",
+      "disposition": "intentional_placeholder_or_family",
+      "rationale": "Template token or wildcard family shorthand; not an API declaration. Keep visibly illustrative.",
+      "occurrences": [
+        {
+          "path": "skill/references/03_api_manual/README.md",
+          "line": 7,
+          "context": "它不复制官方 Vulkan Spec，也不按字母表罗列所有 `vkXXX` API，而是按 Vulkan 工程链路组织 API 卡片。"
+        },
+        {
+          "path": "skill/references/03_api_manual/api_card_template.md",
+          "line": 18,
+          "context": "| 常用 API | `vkXXX` |"
+        }
+      ]
+    }
+  ]
+}
