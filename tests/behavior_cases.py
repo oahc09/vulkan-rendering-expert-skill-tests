@@ -37,3 +37,51 @@ CASES = {
   'required': ['proposal|提案', 'release notes|发布说明', '不能|不应|不足以', '设备|device', '未验证|未确认|待核实|缺乏'],
   'rubric': 'Proposal is not shipped adoption. Require repository/merge/release/runtime evidence for the exact version, and independently check Android/device capability before migration.'},
 }
+
+# Normalized from the 2026-10-25 directed cases; never injected into model context.
+TARGETED_CASES = {'tc13_01_version_features': {'prompt': '设备 apiVersion 要和哪个 1.4 '
+                                        '宏比较？scalarBlockLayout、sync2、timelineSemaphore 分别在哪个 '
+                                        'feature struct 启用？',
+                              'required': ['VK_API_VERSION_1_4',
+                                           'Vulkan12Features',
+                                           'Vulkan13Features',
+                                           '启用'],
+                              'rubric': 'Use the numeric API version macro; distinguish support, '
+                                        'promotion, query and enablement. scalarBlockLayout and '
+                                        'timelineSemaphore belong to Vulkan12Features, '
+                                        'synchronization2 to Vulkan13Features, not '
+                                        'Vulkan14Features.'},
+ 'tc13_02_frame_exceptions': {'prompt': '帧开始 wait 后立刻 reset fence，acquire 返回 OUT_OF_DATE 就 '
+                                        'return；SUBOPTIMAL 也 return，可以吗？',
+                              'required': ['OUT_OF_DATE',
+                                           'SUBOPTIMAL',
+                                           'submit|提交',
+                                           '恢复|recovery',
+                                           'fence'],
+                              'rubric': 'Explain the unsignaled fence deadlock on early return '
+                                        'without submit. Reset adjacent to actual submission after '
+                                        'recording succeeds; distinguish acquired SUBOPTIMAL image '
+                                        'obligations and submit failure recovery; WaitIdle alone '
+                                        'is not a repair.'},
+ 'tc13_03_present_retirement': {'prompt': '2 个 frame slot、3 个 swapchain image，renderFinished 按 '
+                                          'frame slot 分配；frame fence 结束后能复用或随旧 swapchain 释放吗？',
+                                'required': ['imageIndex|图像索引',
+                                             'present|呈现',
+                                             'fence',
+                                             '退役|retire',
+                                             '不能|不足|不等于'],
+                                'rubric': 'Separate frame slot and image index, use per-image '
+                                          'present wait semaphores or equivalent completion proof. '
+                                          'Submission fence completion alone does not prove '
+                                          'presentation retirement. Do not acquire from an already '
+                                          'retired swapchain; distinguish extension and fallback '
+                                          'paths.'},
+ 'tc13_04_verification_bounds': {'prompt': '只解释 barrier2 的 srcStageMask；另给一个未运行的同步方案，能否宣布运行验证通过？',
+                                 'required': ['srcStageMask', '未运行|未验证', '规范|SPEC', '不能|不可以|不得'],
+                                 'rubric': 'Answer the API question with specification and scope '
+                                           'without demanding every runtime gate. Separate static '
+                                           'reasoning from executed evidence, explicitly mark the '
+                                           'proposal untested; actual implementation completion '
+                                           'still requires all applicable verification gates, not '
+                                           'only clean validation.'}}
+CASES.update(TARGETED_CASES)

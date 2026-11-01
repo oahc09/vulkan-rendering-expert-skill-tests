@@ -42,13 +42,14 @@ def test_no_model_records_skip_without_responses(tmp_path, monkeypatch):
 def setup_case(tmp_path):
     root = tmp_path / 'skill'; root.mkdir()
     (root / 'SKILL.md').write_text('# Skill\nRead rules as needed.\n')
-    (root / 'rules.md').write_text('## Relevant\nneeded\n## Irrelevant\nnot needed\n')
+    (root / 'references').mkdir()
+    (root / 'references/rules.md').write_text('## Relevant\nneeded\n## Irrelevant\nnot needed\n')
     return root
 
 
 def test_progressive_reads_and_exact_transcript_hashes(tmp_path, monkeypatch):
     root = setup_case(tmp_path)
-    replies = [{'read': [{'path': 'rules.md', 'section': 'Relevant'}]}, {'answer': 'MOCK UNIT TEST ONLY'}]
+    replies = [{'read': [{'path': 'references/rules.md', 'section': 'Relevant'}]}, {'answer': 'MOCK UNIT TEST ONLY'}]
     seen = []
     def fake(command, prompt, timeout):
         seen.append(prompt)
@@ -81,7 +82,7 @@ def test_failures_are_retained_not_rewritten(tmp_path, monkeypatch, failure):
             raise subprocess.TimeoutExpired(command, timeout, output=b'partial unit output', stderr=b'unit timeout')
         if failure in ('nonzero', 'empty'):
             return subprocess.CompletedProcess(command, 3 if failure == 'nonzero' else 0, b'', b'unit failure')
-        response = {'read': [{'path': 'SKILL.md'}]} if failure == 'duplicate' else {'read': [{'path': 'rules.md'}]}
+        response = {'read': [{'path': 'SKILL.md'}]} if failure == 'duplicate' else {'read': [{'path': 'references/rules.md'}]}
         envelope = {'model': 'wrong' if failure == 'wrong-model' else 'unit-mock', 'parameters': {}, 'usage': {'input_tokens': 100, 'output_tokens': 20}, 'response': response}
         if failure == 'missing-usage':
             envelope.pop('usage')
@@ -105,11 +106,46 @@ def test_failures_are_retained_not_rewritten(tmp_path, monkeypatch, failure):
 
 
 def test_stable_anchor_and_path_anchor_reads(tmp_path):
-    (tmp_path / 'entry.md').write_text('<a id="route-api"></a>\n## API route\nneeded\n## Other\nnot needed\n')
-    selected, record = runner.read_context(tmp_path, 'entry.md#route-api')
+    (tmp_path / 'references').mkdir()
+    (tmp_path / 'references/entry.md').write_text('<a id="route-api"></a>\n## API route\nneeded\n## Other\nnot needed\n')
+    selected, record = runner.read_context(tmp_path, 'references/entry.md#route-api')
     assert 'needed' in selected and 'Other' not in selected
     assert record['section'] == '#route-api'
-    same, _ = runner.read_context(tmp_path, 'entry.md', '#route-api')
+    same, _ = runner.read_context(tmp_path, 'references/entry.md', '#route-api')
     assert same == selected
     with pytest.raises(ValueError):
-        runner.read_context(tmp_path, 'entry.md#route-api', 'API route')
+        runner.read_context(tmp_path, 'references/entry.md#route-api', 'API route')
+
+@pytest.mark.parametrize('path', [
+    'references/07_integration_pack/behavior_evaluation.md',
+    'references/07_integration_pack/integration_test_plan.md',
+    'tests/behavior_cases.md', 'reports/history/answer.md',
+    'references/expected_fix.md', 'references/rubric.md',
+    'references/../references/rules.md'])
+def test_model_cannot_read_evaluation_material(tmp_path, path):
+    target = tmp_path / path
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text('SECRET EVALUATION MATERIAL')
+    with pytest.raises(ValueError):
+        runner.read_context(tmp_path, path)
+
+
+def test_reference_symlink_cannot_alias_answers(tmp_path):
+    (tmp_path/'references').mkdir()
+    (tmp_path/'answers.md').write_text('secret')
+    (tmp_path/'references/innocent.md').symlink_to(tmp_path/'answers.md')
+    with pytest.raises(ValueError):
+        runner.read_context(tmp_path, 'references/innocent.md')
+
+
+def test_audit_rejects_denied_read_even_before_transcript_checks(tmp_path):
+    chunk = 'unit skill'
+    record = dict(status='generated', reads=[
+        dict(path='SKILL.md', round=0, content_file='read.txt', content_sha256=runner.digest(chunk), bytes=len(chunk)),
+        dict(path='references/07_integration_pack/integration_test_plan.md')])
+    (tmp_path/'read.txt').write_text(chunk)
+    (tmp_path/'user-task.txt').write_text('unit fixture')
+    record['user_task_sha256'] = runner.digest('unit fixture')
+    (tmp_path/'record.json').write_text(json.dumps(record))
+    with pytest.raises(ValueError, match='Disallowed evaluation context'):
+        runner.audit_case(tmp_path, {})

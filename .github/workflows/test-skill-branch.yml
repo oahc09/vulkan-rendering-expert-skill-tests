@@ -1,14 +1,9 @@
 name: Vulkan Skill Static and Snapshot
 on:
   push:
-    branches: [main, 'feat/v1.0.9-*']
+    branches: [main, 'feat/v1.0.10-*']
   pull_request:
   workflow_dispatch:
-    inputs:
-      skill_ref:
-        description: 'Skill commit SHA or paired branch to test (read-only checkout)'
-        required: true
-        default: 'main'
 permissions:
   contents: read
 jobs:
@@ -20,11 +15,21 @@ jobs:
         with:
           path: tests
           persist-credentials: false
+      - name: Resolve reviewed paired candidate (no fallback)
+        id: candidate
+        run: |
+          python - <<'PYCODE'
+          import json, os, re
+          c = json.load(open('tests/release-contract.json'))
+          assert re.fullmatch('[0-9a-f]{40}', c['skill_sha']), 'Reviewed full SHA required'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write('sha=' + c['skill_sha'] + '\n')
+          PYCODE
       - name: Checkout paired skill revision
         uses: actions/checkout@v4
         with:
           repository: oahc09/vulkan-rendering-expert-skill
-          ref: ${{ inputs.skill_ref || (github.ref == 'refs/heads/main' && 'main' || '7c167d1b27e112c48219c0ebcd57e4d209a926db') }}
+          ref: ${{ steps.candidate.outputs.sha }}
           path: skill
           fetch-depth: 0
           persist-credentials: false
@@ -37,6 +42,15 @@ jobs:
           python-version: '3.13'
       - name: Install test dependencies
         run: python -m pip install pytest pyyaml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Skill source and safety contracts (same pinned candidate)
+        working-directory: skill
+        run: |
+          node scripts/check-skill.mjs
+          python scripts/host_contract.py
+          python -m unittest discover -s scripts -p 'test_*.py'
       - name: Static
         run: python -m pytest -q -m static tests/tests
       - name: Snapshot (historical v1.0.8, not live evidence)

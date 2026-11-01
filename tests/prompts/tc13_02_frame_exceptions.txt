@@ -1,0 +1,1 @@
+帧开始 wait 后立刻 reset fence，acquire 返回 OUT_OF_DATE 就 return；SUBOPTIMAL 也 return，可以吗？

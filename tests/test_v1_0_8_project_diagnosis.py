@@ -1,5 +1,6 @@
 """TC11: v1.0.8 Project Diagnosis regression tests."""
 
+import json
 import re
 import subprocess
 from pathlib import Path
@@ -32,7 +33,8 @@ def _resolve_backtick_refs(text: str, source: Path):
 
 def test_current_version_and_preserved_project_diagnosis_routing():
     skill = _read(PROJECT_ROOT / "SKILL.md")
-    assert re.search(r"^\s*version:\s*1\.0\.9\s*$", skill, re.M)
+    expected = json.loads((Path(__file__).parent.parent / "release-contract.json").read_text())["expected_version"]
+    assert re.search(r"^\s*version:\s*" + re.escape(expected) + r"\s*$", skill, re.M)
     # The compact entry delegates task routes; do not require duplicate routing tables.
     routing = _read(SKILL_DIR / "07_integration_pack" / "task_routing_rules.md")
     assert "task_routing_rules.md" in skill
@@ -139,17 +141,11 @@ def test_module_summary_matches_project_diagnosis_file_count():
     assert actual == 46
 
 
-def test_clawhub_tracked_file_limit():
-    try:
-        output = subprocess.check_output(
-            ["git", "-C", str(PROJECT_ROOT), "ls-files"],
-            text=True,
-            stderr=subprocess.STDOUT,
-        )
-        tracked = [line for line in output.splitlines() if line.strip()]
-        count = len(tracked)
-    except Exception:
-        # Fallback for materialized/non-git test environments.
-        count = sum(1 for p in PROJECT_ROOT.rglob("*") if p.is_file())
-
-    assert count <= 200, f"ClawHub tracked file limit exceeded: {count}/200"
+def test_source_inventory_separate_from_runtime_budget():
+    # This suite targets the Agensi website profile, not a ClawHub upload.
+    # The runtime manifest and clean-tree safety are tested by the paired packer contract.
+    tracked = subprocess.check_output(
+        ["git", "-C", str(PROJECT_ROOT), "ls-files"], text=True).splitlines()
+    assert 'SKILL.md' in tracked and 'LICENSE' in tracked
+    assert 'scripts/agensi_audit_and_pack.py' in tracked
+    assert len(tracked) == len(set(tracked))

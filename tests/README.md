@@ -151,3 +151,34 @@ produces null, not pass. Single-run retrieval_context_target_met is a separate
 context-loading proxy and must never be presented as the release's live input-
 token target. Token savings do not waive semantic/rubric review or allow edited
 outputs. Provider caching/billing and output-token cost are separate metrics.
+
+## v1.0.10 paired release contract
+
+`../release-contract.json` pins the reviewed full skill SHA and exact expected
+version. CI fails closed if that pin is missing; it never substitutes `main` or
+an older PR. Static release checks invoke the skill's actual whitelist packer,
+including its clean-tree, path, CRC and per-file hash checks. Source tracked
+count, runtime package count (internal ceiling 196) and delivered context are
+separate measurements. Pin changes require renewed review and evidence.
+
+The live suite now runs 16 cases: the unchanged original 12 plus four directed
+version/feature, fence exception, presentation retirement and verification-scope
+cases. Rubric regexes are smoke checks only; human semantic review remains a
+separate release gate. Model reads are confined to SKILL.md and runtime reference
+Markdown; historical evaluation, integration test plans, answers and rubrics
+are mechanically denied (including symlink aliases). Historical raw evaluation
+is preserved byte-for-byte in `reports/history/v1.0.9/` with source SHA and hash.
+
+A real release invocation requires `--expected-skill-sha FULL_SHA` and clean
+skill/tests checkouts. The manifest records both revisions. Missing wrapper/model
+credentials means Live BLOCKED/unmeasured, not expert behavior PASS. Mock harness
+unit tests are never model evidence. Real host discovery/loading and GPU tests
+remain separate, unverified gates until actually executed.
+
+`measure_context.py --baseline-run ... --candidate-run ... --candidate-sha ...`
+uses the fixed v1.0.8 baseline and ONLY the original 12 prompts for the 30% provider
+input-token target, even when a run includes 16 cases. The extra four require
+separate semantic scoring. `--comparison v109-regression` instead pins the
+v1.0.9 baseline, reports non-regression and deliberately has no 30% target.
+Historical Snapshot artifacts and previous reports are unchanged and are not
+current candidate evidence.

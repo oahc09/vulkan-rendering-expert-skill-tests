@@ -1,0 +1,1 @@
+只解释 barrier2 的 srcStageMask；另给一个未运行的同步方案，能否宣布运行验证通过？

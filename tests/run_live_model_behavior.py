@@ -16,8 +16,8 @@ TEST_REPO = BASE.parent
 SKILL_REPO = Path(os.environ.get('VULKAN_SKILL_ROOT', TEST_REPO.parent / 'skill'))
 if not SKILL_REPO.is_dir() and "VULKAN_SKILL_ROOT" not in os.environ:
     SKILL_REPO = TEST_REPO.parent / 'vulkan-rendering-expert-skill'
-DEFAULT_OUT = BASE / 'responses_v1_0_9_live'
-CASES = [
+DEFAULT_OUT = BASE / 'responses_v1_0_10_live'
+ORIGINAL_CASES = [
     'tc11_01_repository_map', 'tc11_02_vulkan_13_upgrade',
     'tc11_03_android_rotation_crash', 'tc11_04_add_compute_pass',
     'tc12_01_invented_sync_enum', 'tc12_02_heap_write_stride',
@@ -25,6 +25,9 @@ CASES = [
     'tc12_05_ahb_descriptor_count', 'tc12_06_apple_tool_matrix',
     'tc12_07_validation_not_correctness', 'tc12_08_blender_proposal',
 ]
+from behavior_cases import TARGETED_CASES
+CASES = ORIGINAL_CASES + list(TARGETED_CASES)
+REGRESSION_BASELINE_SHA = '102c5d721dcb43a23e12d77927f2703d56c63a11'
 BASELINE_SHA = '1bad967c8e6880c3eecdaa6a946901cbc5c1f060'
 # Historical v1.0.8 loading policy, retained ONLY for measured comparison.
 BASELINE_CONTEXT_FILES = [
@@ -79,6 +82,20 @@ def select_section(text, section=None):
     return ''.join(lines[start:end]), start + 1, end
 
 
+DENIED_CONTEXT = {'references/07_integration_pack/behavior_evaluation.md',
+                  'references/07_integration_pack/integration_test_plan.md'}
+
+
+def validate_context_path(relative):
+    """Only runtime knowledge; exclude evaluation answers and grading material."""
+    path = Path(relative)
+    if (path.is_absolute() or '..' in path.parts or path.as_posix() != relative
+            or path.suffix != '.md' or relative in DENIED_CONTEXT
+            or (relative != 'SKILL.md' and not relative.startswith('references/'))
+            or any(word in path.name.lower() for word in ('rubric', 'expected', 'answer', 'evaluation', 'test_plan'))):
+        raise ValueError(f'Disallowed evaluation context: {relative}')
+
+
 def read_context(root, relative, section=None):
     root = root.resolve()
     if '#' in relative:
@@ -86,7 +103,11 @@ def read_context(root, relative, section=None):
         if section is not None:
             raise ValueError('Specify either path#anchor or section, not both')
         section = '#' + anchor
+    validate_context_path(relative)
     path = (root / relative).resolve()
+    validate_context_path(path.relative_to(root).as_posix()) if path.is_relative_to(root) else None
+    if (root / relative).is_symlink() or any(p.is_symlink() for p in (root / relative).parents if p != root):
+        raise ValueError('Symlink context is not allowed')
     if not path.is_relative_to(root) or path.suffix != '.md' or not path.is_file():
         raise ValueError(f'Invalid skill read: {relative}')
     raw = path.read_bytes()
@@ -199,6 +220,7 @@ def audit_case(folder, manifest):
     assert reads and reads[0]['path'] == 'SKILL.md' and reads[0]['round'] == 0
     chunks = []
     for read in reads:
+        validate_context_path(read['path'])
         chunk = (folder / read['content_file']).read_bytes()
         assert digest(chunk) == read['content_sha256']
         assert len(chunk) == read['bytes']
@@ -249,6 +271,7 @@ def main(argv=None):
     parser.add_argument('--parameters', default=os.environ.get('VULKAN_SKILL_MODEL_PARAMETERS', '{}'))
     parser.add_argument('--skill-root', type=Path, default=SKILL_REPO)
     parser.add_argument('--output-dir', type=Path, default=DEFAULT_OUT)
+    parser.add_argument('--expected-skill-sha', required=False)
     parser.add_argument('--case', choices=CASES, action='append')
     parser.add_argument('--require-live', action='store_true')
     parser.add_argument('--check', action='store_true')
@@ -273,7 +296,13 @@ def main(argv=None):
             raise ValueError('--parameters must be a JSON object')
         sha = subprocess.check_output(['git', '-C', str(args.skill_root), 'rev-parse', 'HEAD'], text=True).strip()
         dirty = subprocess.check_output(['git', '-C', str(args.skill_root), 'status', '--porcelain'], text=True)
-        manifest.update(skill_sha=sha, skill_dirty=bool(dirty), model=args.model, parameters=parameters,
+        if not args.expected_skill_sha or not re.fullmatch('[0-9a-f]{40}', args.expected_skill_sha) or sha != args.expected_skill_sha:
+            raise ValueError('Explicit full matching --expected-skill-sha is required')
+        tests_sha = subprocess.check_output(['git', '-C', str(TEST_REPO), 'rev-parse', 'HEAD'], text=True).strip()
+        tests_dirty = subprocess.check_output(['git', '-C', str(TEST_REPO), 'status', '--porcelain'], text=True)
+        if dirty or tests_dirty:
+            raise ValueError('Clean skill and tests checkouts are required for live release evidence')
+        manifest.update(tests_sha=tests_sha, tests_dirty=False, read_policy='runtime-knowledge-only-v1', skill_sha=sha, skill_dirty=bool(dirty), model=args.model, parameters=parameters,
                         command_sha256=digest(args.command), adapter_executable=Path(shlex.split(args.command)[0]).name, max_rounds=args.max_rounds, timeout=args.timeout)
         for case in args.case or CASES:
             manifest['cases'].append(case)
@@ -283,7 +312,10 @@ def main(argv=None):
         end_sha = subprocess.check_output(['git', '-C', str(args.skill_root), 'rev-parse', 'HEAD'], text=True).strip()
         end_dirty = subprocess.check_output(['git', '-C', str(args.skill_root), 'status', '--porcelain'], text=True)
         manifest.update(skill_end_sha=end_sha, skill_end_dirty=bool(end_dirty))
-        if end_sha != sha or end_dirty != dirty:
+        tests_end_sha = subprocess.check_output(['git', '-C', str(TEST_REPO), 'rev-parse', 'HEAD'], text=True).strip()
+        tests_end_dirty = subprocess.check_output(['git', '-C', str(TEST_REPO), 'status', '--porcelain'], text=True)
+        manifest.update(tests_end_sha=tests_end_sha, tests_end_dirty=bool(tests_end_dirty))
+        if end_sha != sha or end_dirty != dirty or tests_end_sha != tests_sha or tests_end_dirty:
             raise RuntimeError('Skill checkout changed during live run; retained evidence is not a consistent release run')
         manifest['status'] = 'generated'  # Never equate generation with correctness.
         write_json(manifest_path, manifest)
