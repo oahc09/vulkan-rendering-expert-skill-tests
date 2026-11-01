@@ -16,3 +16,5 @@ if [ -n "${VULKAN_SDK_PREFIX:-}" ]; then
 else
  "$CXX" -std=c++17 -O2 -Wall -Wextra -Wno-missing-field-initializers "$HERE/main.cpp" -lvulkan -o "$OUT/engine_scale_lab"
 fi
+"$CXX" -std=c++17 -O2 -Wall -Wextra "$HERE/host_contracts.cpp" -o "$OUT/host_contracts"
+python3 "$HERE/verify_spirv.py" "$OUT" > "$OUT/shader-manifest.json"

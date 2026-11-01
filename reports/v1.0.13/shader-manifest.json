@@ -1,0 +1,62 @@
+{
+  "layer": "ShaderUnit",
+  "status": "PASS",
+  "target_vulkan": "vulkan1.2",
+  "target_spirv": "1.5",
+  "compiler": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n",
+  "compiler_options": [
+    "-V",
+    "--target-env",
+    "vulkan1.2",
+    "-Ishaders"
+  ],
+  "includeDependencyHashes": {
+    "common.glsl": "df82422b9598f4a0e80cb20123230c0a2213bb792f15123cbc5240c7a1cfae2a"
+  },
+  "shaders": [
+    {
+      "source": "cull.comp",
+      "sourceHash": "bf4539c055e3ff5c77cc35b842759035c34a4afde47abc522ed0b9021186b2c2",
+      "bytecodeHash": "a62efc48c17f1494d93ae79b8fd55ea9a3f6395fd3094e8f16abc3003c3bf817",
+      "entryPoint": "main",
+      "stage": "comp"
+    },
+    {
+      "source": "finalize.comp",
+      "sourceHash": "5d57b68c15e32aeebd62db20927ae6e799600dccc20a3817b5e2267395e8f846",
+      "bytecodeHash": "8fb66824e135b38971cd38344ba788a3e230a98b0b02725230c9280565b781a7",
+      "entryPoint": "main",
+      "stage": "comp"
+    },
+    {
+      "source": "hiz.comp",
+      "sourceHash": "59b7a43b26609810eed4bd27c5ef05f5e1a2946d6d05024c6536c91fdf3a2271",
+      "bytecodeHash": "f08f89962bd703c5bd9c8e32ae5c2bf67697aa125cc61a02aa4c3b154de8f221",
+      "entryPoint": "main",
+      "stage": "comp"
+    },
+    {
+      "source": "scene.frag",
+      "sourceHash": "6cf9f024d53b124438945958f26ba7b82020c33087aa54f1e90e6e600104d8ba",
+      "bytecodeHash": "2f7fd249c078722ba973d8f49e48a96042013e12308051c7263fa72174d57372",
+      "entryPoint": "main",
+      "stage": "frag"
+    },
+    {
+      "source": "scene.vert",
+      "sourceHash": "06ffb163471e8c6a3041b1c3e1067edc882f7b7f6fb3a2e061a297bc25a7f923",
+      "bytecodeHash": "8f79404ba14b1619ded5fe121c1b4de2548cea3c1b10f4cfcb6906e9d644fa89",
+      "entryPoint": "main",
+      "stage": "vert"
+    },
+    {
+      "source": "update.comp",
+      "sourceHash": "26570cfb0e8ab151648d93f22e02edc5939b4799e2bec1530f6511b014468ac2",
+      "bytecodeHash": "8ae8f01b748824094f7f3580d0dc68752e41a762d7d145e0ffe2df43ca5d5947",
+      "entryPoint": "main",
+      "stage": "comp"
+    }
+  ],
+  "interfaceContract": "Object std430 offsets0/16 stride32; Push offsets0..44; Draw stride16",
+  "limitations": "No full descriptor-schema/stage-interface reflection or device compatibility certification"
+}

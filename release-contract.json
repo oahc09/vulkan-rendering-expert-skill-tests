@@ -1,6 +1,6 @@
 {
   "expected_version": "1.0.13",
-  "skill_sha": "UNPUBLISHABLE_UNTIL_REVIEWED_CANDIDATE_PINNED",
+  "skill_sha": "d4965f77365b4cd78692e60d048929040ba65c8b",
   "knowledge_baseline_sha": "d049afefaec8539cecca5f8e37c4cd66ec9da728",
   "max_runtime_files": 200,
   "allowed_new_knowledge": []

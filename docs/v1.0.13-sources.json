@@ -4,6 +4,10 @@
     {
       "name": "content-sources.json",
       "sha256": "430e5c1313a6017c81b141f2cb0825c38617e18220b8a57d77735f7fffbd3066"
+    },
+    {
+      "name": "gpu-sources.json",
+      "sha256": "f19cda1e8020e71597376bdbe83aa1222e3b3412ee92a474fb99209cb6506f79"
     }
   ],
   "sources": [
@@ -178,15 +182,148 @@
       ],
       "affected_cohort": "ENG13-01..12",
       "research_group": "content"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/drawing.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "37ef0859a8c66ac07949291bd09f76411b2d70847f10ce6a9b740e0b58189542",
+      "bytes": 119261,
+      "status": "source_read",
+      "reviewed_scope": "non-Count zero/one stride and Count indexed range, drawing.adoc 1520-1548,1770-1803,1920-1937; transform-feedback bytecount section",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/drawing.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/03_api_manual/03_command_buffer/indirect_commands.md#indirect-capability-fallback",
+        "references/03_api_manual/03_command_buffer/indirect_commands.md#indirect-capacity-safety"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/dispatch.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "3994c246d7997101be82292b3e06ae92c03155d370c9c2d33bf6b91254d607df",
+      "bytes": 31228,
+      "status": "source_read",
+      "reviewed_scope": "per-axis maxComputeWorkGroupCount dispatch.adoc 151-171",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/dispatch.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/03_api_manual/03_command_buffer/indirect_commands.md#indirect-capacity-safety"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/synchronization.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "bytes": 393598,
+      "status": "source_read",
+      "reviewed_scope": "DRAW_INDIRECT and CLEAR stage semantics synchronization.adoc 341-352,410-422,574-576",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/synchronization.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md#gpu-produced-draw-sync"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/clears.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "2c9cadb003bb38969dbc6cc3e3710e5e9a40c78f399a6cf81af550bc96dd55be",
+      "bytes": 37721,
+      "status": "source_read",
+      "reviewed_scope": "vkCmdFillBuffer offset/size/TRANSFER_DST clears.adoc 658-713",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/clears.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md#gpu-produced-draw-sync"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/appendices/VK_EXT_mesh_shader.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "fce4b65ed9743537c2f70b1f01979465aa7b11554e0ed2d950539565c7e74493",
+      "bytes": 2917,
+      "status": "source_read",
+      "reviewed_scope": "EXT mesh/task alternative programmable primitive shading; extension description and dependency cross-check registry",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/b94f8bd2d004d2949469d8a5071ee10eb7d23566/appendices/VK_EXT_mesh_shader.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/mesh_shader.md#mesh-path-fallback"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
+    },
+    {
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/commonvalidity/draw_indirect_count_common.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "575348c5735dcc5c1ce53ca5dd694b49011f88d3c292ed5b386b27afcc9090a3",
+      "bytes": 1218,
+      "status": "source_read",
+      "reviewed_scope": "count-buffer independent usage/offset/stored count<=limit/feature, complete small commonvalidity file",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/commonvalidity/draw_indirect_count_common.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/03_api_manual/03_command_buffer/indirect_commands.md#indirect-capacity-safety"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
+    },
+    {
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/commonvalidity/draw_indirect_drawcount.adoc",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "sha256": "9efe060a5a639527d70f511e71727274cad4a58ab922c9cc79032ae019283e2e",
+      "bytes": 525,
+      "status": "source_read",
+      "reviewed_scope": "non-Count multiDrawIndirect and drawCount limit, complete small commonvalidity file",
+      "retrieved_on": "2026-11-01",
+      "runtime_executed": false,
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/b94f8bd2d004d2949469d8a5071ee10eb7d23566/chapters/commonvalidity/draw_indirect_drawcount.adoc",
+      "verification": "source_read",
+      "mapped_skill_paths": [
+        "references/03_api_manual/03_command_buffer/indirect_commands.md#indirect-capability-fallback"
+      ],
+      "affected_cohort": "ENG13-13..24",
+      "research_group": "gpu",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN"
     }
   ],
   "limits": [
     "Knowledge-only source verification, no shader/toolchain build or GPU run in this worker",
     "Sources do not imply optional feature support on target devices",
-    "No third-party source/model assets copied into runtime package"
+    "No third-party source/model assets copied into runtime package",
+    "Fixed source text review, not compile SDK/device execution. Hi-Z conservative policy is original ENGINE reasoning tested separately; not a Vulkan specification algorithm.",
+    "Pinned documentation/Registry revisions are not the lab compiler/SDK revision; record actual lab tool versions separately."
   ],
-  "pending": [
-    "C4/C5 fixed spec source bundle",
-    "Lab toolchain/implementation evidence remains separate"
-  ]
+  "pending": []
 }

@@ -1,0 +1,271 @@
+{"pipeline_build_and_cache_roundtrip_ms":19.286,"cache_bytes":32,"speedup_claimed":false}
+{"device":"llvmpipe (LLVM 19.1.7, 256 bits)","apiVersion":4210993,"deviceType":4,"validation":1,"firstInstance":0,"multiDrawIndirect":0,"drawIndirectCount":0,"allocated_bytes":164104}
+{"gpu_timestamps_ms":{"update":2.41344,"wall_depth_readback":16.0885,"hiz":0.21632,"cull_finalize":0.426683,"draw":1.85728,"readback":0.360504}}
+{"mode":"cpu","flags":0,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":24.259}
+{"gpu_timestamps_ms":{"update":0.499729,"wall_depth_readback":0.81287,"hiz":0.274975,"cull_finalize":1.17939,"draw":2.8966,"readback":0.223678}}
+{"mode":"fixed","flags":0,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":14.1433}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":2.17066,"wall_depth_readback":3.53042,"hiz":0.18094,"cull_finalize":0.559459,"draw":3.16475,"readback":0.259097}}
+{"mode":"count","flags":0,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":17.3144}
+{"gpu_timestamps_ms":{"update":0.54692,"wall_depth_readback":0.717978,"hiz":0.141037,"cull_finalize":0.004815,"draw":1.11784,"readback":0.229099}}
+{"mode":"none","flags":0,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":4.95785}
+{"gpu_timestamps_ms":{"update":0.873281,"wall_depth_readback":1.16535,"hiz":0.383886,"cull_finalize":0.005192,"draw":1.24254,"readback":0.223079}}
+{"mode":"cpu","flags":1,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":5.35509}
+{"gpu_timestamps_ms":{"update":0.400458,"wall_depth_readback":1.29519,"hiz":0.286903,"cull_finalize":0.361384,"draw":2.08638,"readback":0.182219}}
+{"mode":"fixed","flags":1,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":11.6696}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.48887,"wall_depth_readback":0.585469,"hiz":0.281652,"cull_finalize":0.944045,"draw":2.29738,"readback":0.240247}}
+{"mode":"count","flags":1,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":12.5378}
+{"gpu_timestamps_ms":{"update":0.748398,"wall_depth_readback":0.609752,"hiz":0.498843,"cull_finalize":0.00416,"draw":1.39577,"readback":0.218745}}
+{"mode":"cpu","flags":2,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":6.84306}
+{"gpu_timestamps_ms":{"update":0.52907,"wall_depth_readback":0.540078,"hiz":2.09183,"cull_finalize":0.618792,"draw":3.85555,"readback":0.315921}}
+{"mode":"fixed","flags":2,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":16.2408}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":1.17384,"wall_depth_readback":8.41251,"hiz":5.66019,"cull_finalize":3.0676,"draw":4.69741,"readback":0.257093}}
+{"mode":"count","flags":2,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":35.3}
+{"gpu_timestamps_ms":{"update":0.67375,"wall_depth_readback":7.99051,"hiz":1.09674,"cull_finalize":0.06285,"draw":2.4422,"readback":1.40906}}
+{"mode":"none","flags":2,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":16.0376}
+{"gpu_timestamps_ms":{"update":0.785183,"wall_depth_readback":4.95714,"hiz":1.70839,"cull_finalize":0.006642,"draw":3.04693,"readback":0.430072}}
+{"mode":"cpu","flags":3,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":13.1932}
+{"gpu_timestamps_ms":{"update":0.72126,"wall_depth_readback":0.985056,"hiz":4.23954,"cull_finalize":0.849233,"draw":2.3733,"readback":0.200945}}
+{"mode":"fixed","flags":3,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":24.0524}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.587694,"wall_depth_readback":1.08136,"hiz":3.45508,"cull_finalize":0.679847,"draw":2.45864,"readback":0.200014}}
+{"mode":"count","flags":3,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":23.0479}
+{"gpu_timestamps_ms":{"update":0.447078,"wall_depth_readback":0.719225,"hiz":0.270436,"cull_finalize":0.012862,"draw":1.27859,"readback":0.627531}}
+{"mode":"none","flags":3,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":6.59106}
+{"gpu_timestamps_ms":{"update":0.54834,"wall_depth_readback":1.00885,"hiz":0.236734,"cull_finalize":0.00404,"draw":4.09025,"readback":0.57631}}
+{"mode":"cpu","flags":4,"viewX":0,"instances":1000,"visible":800,"overflow":0,"host_wall_ms_with_readbacks":7.8698}
+{"gpu_timestamps_ms":{"update":1.33874,"wall_depth_readback":0.666211,"hiz":0.421822,"cull_finalize":3.83016,"draw":3.78028,"readback":0.430665}}
+{"mode":"fixed","flags":4,"viewX":0,"instances":1000,"visible":800,"overflow":0,"host_wall_ms_with_readbacks":17.2758}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.667499,"wall_depth_readback":0.591636,"hiz":0.407542,"cull_finalize":0.718395,"draw":5.3129,"readback":0.770371}}
+{"mode":"count","flags":4,"viewX":0,"instances":1000,"visible":800,"overflow":0,"host_wall_ms_with_readbacks":22.736}
+{"gpu_timestamps_ms":{"update":0.578565,"wall_depth_readback":3.47317,"hiz":0.706694,"cull_finalize":0.006951,"draw":1.93531,"readback":0.538992}}
+{"mode":"cpu","flags":8,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":14.5649}
+{"gpu_timestamps_ms":{"update":0.412828,"wall_depth_readback":1.57307,"hiz":0.765102,"cull_finalize":0.598352,"draw":2.85961,"readback":0.415802}}
+{"mode":"fixed","flags":8,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":15.0377}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.392414,"wall_depth_readback":0.821504,"hiz":1.09695,"cull_finalize":2.77108,"draw":5.05819,"readback":1.51654}}
+{"mode":"count","flags":8,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":20.6234}
+{"gpu_timestamps_ms":{"update":0.591385,"wall_depth_readback":2.43325,"hiz":0.202026,"cull_finalize":0.004503,"draw":1.26086,"readback":0.363371}}
+{"mode":"cpu","flags":10,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":6.62017}
+{"gpu_timestamps_ms":{"update":0.765419,"wall_depth_readback":0.9703,"hiz":2.52679,"cull_finalize":0.312894,"draw":6.05874,"readback":0.181792}}
+{"mode":"fixed","flags":10,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":18.6522}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.617815,"wall_depth_readback":0.77593,"hiz":6.32871,"cull_finalize":36.7939,"draw":4.52459,"readback":0.579581}}
+{"mode":"count","flags":10,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":67.2193}
+{"gpu_timestamps_ms":{"update":0.644494,"wall_depth_readback":2.48931,"hiz":0.305513,"cull_finalize":0.003275,"draw":1.6425,"readback":0.881115}}
+{"mode":"none","flags":10,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":7.97075}
+{"gpu_timestamps_ms":{"update":0.67,"wall_depth_readback":0.778721,"hiz":0.439345,"cull_finalize":0.003782,"draw":1.35662,"readback":0.160869}}
+{"mode":"cpu","flags":11,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":4.79278}
+{"gpu_timestamps_ms":{"update":0.428586,"wall_depth_readback":0.783665,"hiz":1.30535,"cull_finalize":0.364804,"draw":1.56635,"readback":0.339975}}
+{"mode":"fixed","flags":11,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":11.7789}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.524007,"wall_depth_readback":0.810154,"hiz":2.06332,"cull_finalize":0.569048,"draw":2.08546,"readback":0.570931}}
+{"mode":"count","flags":11,"viewX":0,"instances":1000,"visible":649,"overflow":0,"host_wall_ms_with_readbacks":16.1558}
+{"gpu_timestamps_ms":{"update":1.11364,"wall_depth_readback":1.92711,"hiz":0.359746,"cull_finalize":0.003027,"draw":1.56841,"readback":0.700423}}
+{"mode":"none","flags":11,"viewX":0,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":7.16866}
+{"gpu_timestamps_ms":{"update":0.379053,"wall_depth_readback":1.50551,"hiz":0.365347,"cull_finalize":0.003883,"draw":1.12307,"readback":0.226054}}
+{"mode":"cpu","flags":0,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":5.47135}
+{"gpu_timestamps_ms":{"update":0.71442,"wall_depth_readback":0.934233,"hiz":0.240825,"cull_finalize":0.598667,"draw":2.91724,"readback":0.458733}}
+{"mode":"fixed","flags":0,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":16.729}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.374398,"wall_depth_readback":0.745223,"hiz":0.245119,"cull_finalize":0.393368,"draw":2.4627,"readback":0.335519}}
+{"mode":"count","flags":0,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":12.4274}
+{"gpu_timestamps_ms":{"update":0.732186,"wall_depth_readback":0.953548,"hiz":0.2855,"cull_finalize":0.003688,"draw":1.28692,"readback":0.200424}}
+{"mode":"none","flags":0,"viewX":0.75,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":5.14963}
+{"gpu_timestamps_ms":{"update":0.653716,"wall_depth_readback":5.12798,"hiz":0.539384,"cull_finalize":0.006415,"draw":2.57931,"readback":0.917186}}
+{"mode":"cpu","flags":1,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":11.7637}
+{"gpu_timestamps_ms":{"update":0.606519,"wall_depth_readback":3.43593,"hiz":0.340395,"cull_finalize":1.14776,"draw":2.10357,"readback":0.331415}}
+{"mode":"fixed","flags":1,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":19.9674}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.33652,"wall_depth_readback":2.48079,"hiz":1.21878,"cull_finalize":0.849078,"draw":2.57566,"readback":0.535035}}
+{"mode":"count","flags":1,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":17.0609}
+{"gpu_timestamps_ms":{"update":0.519004,"wall_depth_readback":0.773933,"hiz":0.230991,"cull_finalize":0.006632,"draw":0.900739,"readback":0.350474}}
+{"mode":"cpu","flags":2,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":4.95398}
+{"gpu_timestamps_ms":{"update":0.435234,"wall_depth_readback":1.2376,"hiz":0.989889,"cull_finalize":0.387588,"draw":1.38444,"readback":0.30873}}
+{"mode":"fixed","flags":2,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":11.5506}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.421736,"wall_depth_readback":0.643649,"hiz":1.09915,"cull_finalize":0.530464,"draw":2.46106,"readback":0.46617}}
+{"mode":"count","flags":2,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":13.7932}
+{"gpu_timestamps_ms":{"update":0.482104,"wall_depth_readback":1.74223,"hiz":0.877776,"cull_finalize":0.004517,"draw":1.64228,"readback":0.194349}}
+{"mode":"none","flags":2,"viewX":0.75,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":7.35071}
+{"gpu_timestamps_ms":{"update":0.350208,"wall_depth_readback":1.28928,"hiz":0.299057,"cull_finalize":0.005391,"draw":0.855424,"readback":0.371487}}
+{"mode":"cpu","flags":3,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":4.79456}
+{"gpu_timestamps_ms":{"update":0.381549,"wall_depth_readback":0.725339,"hiz":1.37418,"cull_finalize":0.894585,"draw":1.5221,"readback":1.84598}}
+{"mode":"fixed","flags":3,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":12.891}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.993317,"wall_depth_readback":1.39548,"hiz":2.33801,"cull_finalize":0.794612,"draw":1.66261,"readback":0.584295}}
+{"mode":"count","flags":3,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":15.0441}
+{"gpu_timestamps_ms":{"update":0.75603,"wall_depth_readback":2.14456,"hiz":0.26303,"cull_finalize":0.004695,"draw":1.50288,"readback":0.43945}}
+{"mode":"none","flags":3,"viewX":0.75,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":7.37588}
+{"gpu_timestamps_ms":{"update":1.20987,"wall_depth_readback":0.99659,"hiz":0.365042,"cull_finalize":0.024181,"draw":1.12436,"readback":0.285184}}
+{"mode":"cpu","flags":4,"viewX":0.75,"instances":1000,"visible":461,"overflow":0,"host_wall_ms_with_readbacks":5.16084}
+{"gpu_timestamps_ms":{"update":0.681304,"wall_depth_readback":0.772532,"hiz":0.331442,"cull_finalize":0.325164,"draw":1.53104,"readback":0.215066}}
+{"mode":"fixed","flags":4,"viewX":0.75,"instances":1000,"visible":461,"overflow":0,"host_wall_ms_with_readbacks":10.4114}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.663362,"wall_depth_readback":0.621231,"hiz":0.383232,"cull_finalize":0.387281,"draw":1.73652,"readback":0.351395}}
+{"mode":"count","flags":4,"viewX":0.75,"instances":1000,"visible":461,"overflow":0,"host_wall_ms_with_readbacks":9.99511}
+{"gpu_timestamps_ms":{"update":0.88106,"wall_depth_readback":4.36864,"hiz":0.3774,"cull_finalize":0.004084,"draw":9.25524,"readback":1.06549}}
+{"mode":"cpu","flags":8,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":21.5734}
+{"gpu_timestamps_ms":{"update":1.47568,"wall_depth_readback":6.77721,"hiz":1.82397,"cull_finalize":0.401326,"draw":1.63619,"readback":0.190854}}
+{"mode":"fixed","flags":8,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":20.0087}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.49073,"wall_depth_readback":0.821904,"hiz":0.443018,"cull_finalize":0.340305,"draw":2.41005,"readback":0.46682}}
+{"mode":"count","flags":8,"viewX":0.75,"instances":1000,"visible":569,"overflow":0,"host_wall_ms_with_readbacks":11.5752}
+{"gpu_timestamps_ms":{"update":0.485623,"wall_depth_readback":0.60334,"hiz":0.259451,"cull_finalize":0.004437,"draw":2.58067,"readback":0.407855}}
+{"mode":"cpu","flags":10,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":6.3966}
+{"gpu_timestamps_ms":{"update":0.64216,"wall_depth_readback":1.72204,"hiz":1.36632,"cull_finalize":0.860511,"draw":2.59089,"readback":0.594518}}
+{"mode":"fixed","flags":10,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":15.494}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.492297,"wall_depth_readback":2.04466,"hiz":1.72835,"cull_finalize":1.05333,"draw":1.50788,"readback":0.266994}}
+{"mode":"count","flags":10,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":17.1409}
+{"gpu_timestamps_ms":{"update":0.413845,"wall_depth_readback":1.11735,"hiz":0.23356,"cull_finalize":0.007164,"draw":1.22834,"readback":0.179983}}
+{"mode":"none","flags":10,"viewX":0.75,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":4.65645}
+{"gpu_timestamps_ms":{"update":0.440384,"wall_depth_readback":0.745405,"hiz":0.472688,"cull_finalize":0.007675,"draw":3.89398,"readback":0.340343}}
+{"mode":"cpu","flags":11,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":8.38891}
+{"gpu_timestamps_ms":{"update":0.503999,"wall_depth_readback":0.654721,"hiz":1.12216,"cull_finalize":0.332605,"draw":1.27482,"readback":0.398783}}
+{"mode":"fixed","flags":11,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":10.7935}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.462382,"wall_depth_readback":0.746252,"hiz":2.75776,"cull_finalize":3.5465,"draw":1.3543,"readback":0.340776}}
+{"mode":"count","flags":11,"viewX":0.75,"instances":1000,"visible":318,"overflow":0,"host_wall_ms_with_readbacks":16.129}
+{"gpu_timestamps_ms":{"update":0.658529,"wall_depth_readback":1.17947,"hiz":0.340616,"cull_finalize":0.004534,"draw":5.62154,"readback":1.01376}}
+{"mode":"none","flags":11,"viewX":0.75,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":10.3587}
+{"gpu_timestamps_ms":{"update":0.49428,"wall_depth_readback":1.53449,"hiz":2.47026,"cull_finalize":0.097651,"draw":2.35737,"readback":1.86873}}
+{"mode":"cpu","flags":0,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":10.605}
+{"gpu_timestamps_ms":{"update":1.05561,"wall_depth_readback":0.827602,"hiz":1.84792,"cull_finalize":0.439933,"draw":2.41263,"readback":0.209422}}
+{"mode":"fixed","flags":0,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":13.3629}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.920742,"wall_depth_readback":5.37787,"hiz":4.79089,"cull_finalize":1.66003,"draw":3.06401,"readback":1.5606}}
+{"mode":"count","flags":0,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":27.5841}
+{"gpu_timestamps_ms":{"update":0.87882,"wall_depth_readback":0.815876,"hiz":1.07817,"cull_finalize":0.003957,"draw":4.38082,"readback":0.530524}}
+{"mode":"none","flags":0,"viewX":1.8,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":9.65029}
+{"gpu_timestamps_ms":{"update":1.05404,"wall_depth_readback":1.27207,"hiz":0.397203,"cull_finalize":0.005174,"draw":0.725176,"readback":0.302257}}
+{"mode":"cpu","flags":1,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":5.03822}
+{"gpu_timestamps_ms":{"update":0.37703,"wall_depth_readback":0.651026,"hiz":0.364511,"cull_finalize":0.323271,"draw":4.68537,"readback":3.18708}}
+{"mode":"fixed","flags":1,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":16.7938}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.442565,"wall_depth_readback":0.720206,"hiz":0.948279,"cull_finalize":0.738516,"draw":2.03821,"readback":0.224118}}
+{"mode":"count","flags":1,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":12.873}
+{"gpu_timestamps_ms":{"update":0.605759,"wall_depth_readback":0.888752,"hiz":0.383979,"cull_finalize":0.004833,"draw":1.35608,"readback":0.185322}}
+{"mode":"cpu","flags":2,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":5.00769}
+{"gpu_timestamps_ms":{"update":0.365778,"wall_depth_readback":0.957578,"hiz":1.41492,"cull_finalize":0.302754,"draw":2.07786,"readback":0.242269}}
+{"mode":"fixed","flags":2,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":11.9895}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.631533,"wall_depth_readback":0.709826,"hiz":1.12295,"cull_finalize":1.98785,"draw":3.14751,"readback":0.214761}}
+{"mode":"count","flags":2,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":15.2969}
+{"gpu_timestamps_ms":{"update":0.584243,"wall_depth_readback":1.84954,"hiz":0.680711,"cull_finalize":0.005949,"draw":3.42656,"readback":0.83699}}
+{"mode":"none","flags":2,"viewX":1.8,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":9.12389}
+{"gpu_timestamps_ms":{"update":1.73957,"wall_depth_readback":3.42781,"hiz":0.417812,"cull_finalize":0.005003,"draw":3.51244,"readback":2.68923}}
+{"mode":"cpu","flags":3,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":13.4624}
+{"gpu_timestamps_ms":{"update":1.57649,"wall_depth_readback":4.89102,"hiz":1.10507,"cull_finalize":1.10697,"draw":1.0256,"readback":0.348008}}
+{"mode":"fixed","flags":3,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":17.3566}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.819842,"wall_depth_readback":1.34185,"hiz":2.29723,"cull_finalize":0.429222,"draw":1.13277,"readback":0.69784}}
+{"mode":"count","flags":3,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":14.2303}
+{"gpu_timestamps_ms":{"update":0.401623,"wall_depth_readback":0.861422,"hiz":0.807804,"cull_finalize":0.005551,"draw":1.33023,"readback":0.21989}}
+{"mode":"none","flags":3,"viewX":1.8,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":5.80932}
+{"gpu_timestamps_ms":{"update":1.0343,"wall_depth_readback":1.40156,"hiz":0.24351,"cull_finalize":0.005236,"draw":1.27882,"readback":0.228228}}
+{"mode":"cpu","flags":4,"viewX":1.8,"instances":1000,"visible":111,"overflow":0,"host_wall_ms_with_readbacks":5.77074}
+{"gpu_timestamps_ms":{"update":5.15234,"wall_depth_readback":0.734995,"hiz":0.297968,"cull_finalize":0.301429,"draw":2.15472,"readback":0.380382}}
+{"mode":"fixed","flags":4,"viewX":1.8,"instances":1000,"visible":111,"overflow":0,"host_wall_ms_with_readbacks":17.7025}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.991899,"wall_depth_readback":0.790157,"hiz":0.437254,"cull_finalize":0.660057,"draw":1.02891,"readback":0.223763}}
+{"mode":"count","flags":4,"viewX":1.8,"instances":1000,"visible":111,"overflow":0,"host_wall_ms_with_readbacks":10.8189}
+{"gpu_timestamps_ms":{"update":0.346871,"wall_depth_readback":0.659639,"hiz":0.285493,"cull_finalize":0.005483,"draw":0.798357,"readback":0.194965}}
+{"mode":"cpu","flags":8,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":3.86128}
+{"gpu_timestamps_ms":{"update":0.368817,"wall_depth_readback":0.975598,"hiz":0.326306,"cull_finalize":0.436701,"draw":1.18835,"readback":0.212365}}
+{"mode":"fixed","flags":8,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":9.92013}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.497821,"wall_depth_readback":1.06923,"hiz":0.516958,"cull_finalize":0.566389,"draw":2.18942,"readback":0.256087}}
+{"mode":"count","flags":8,"viewX":1.8,"instances":1000,"visible":142,"overflow":0,"host_wall_ms_with_readbacks":11.7131}
+{"gpu_timestamps_ms":{"update":0.403181,"wall_depth_readback":0.699821,"hiz":0.348227,"cull_finalize":0.004824,"draw":0.586206,"readback":0.16922}}
+{"mode":"cpu","flags":10,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":3.73742}
+{"gpu_timestamps_ms":{"update":0.40979,"wall_depth_readback":0.843488,"hiz":1.22104,"cull_finalize":0.487518,"draw":1.22812,"readback":0.207516}}
+{"mode":"fixed","flags":10,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":11.4954}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.411874,"wall_depth_readback":0.702846,"hiz":1.11982,"cull_finalize":0.356924,"draw":1.01906,"readback":0.1652}}
+{"mode":"count","flags":10,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":10.4752}
+{"gpu_timestamps_ms":{"update":0.5132,"wall_depth_readback":0.639107,"hiz":0.945387,"cull_finalize":0.005855,"draw":1.24793,"readback":0.303829}}
+{"mode":"none","flags":10,"viewX":1.8,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":5.1026}
+{"gpu_timestamps_ms":{"update":0.317933,"wall_depth_readback":0.850246,"hiz":0.224493,"cull_finalize":0.004279,"draw":0.836847,"readback":0.257448}}
+{"mode":"cpu","flags":11,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":3.85851}
+{"gpu_timestamps_ms":{"update":0.354969,"wall_depth_readback":1.13279,"hiz":2.11059,"cull_finalize":0.394258,"draw":1.29534,"readback":0.196232}}
+{"mode":"fixed","flags":11,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":13.8858}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.440353,"wall_depth_readback":0.78382,"hiz":1.34668,"cull_finalize":0.974378,"draw":1.16399,"readback":0.620427}}
+{"mode":"count","flags":11,"viewX":1.8,"instances":1000,"visible":57,"overflow":0,"host_wall_ms_with_readbacks":12.5947}
+{"gpu_timestamps_ms":{"update":0.700036,"wall_depth_readback":1.38458,"hiz":0.315281,"cull_finalize":0.077497,"draw":0.973278,"readback":0.186424}}
+{"mode":"none","flags":11,"viewX":1.8,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":5.40448}
+{"gpu_timestamps_ms":{"update":0.489497,"wall_depth_readback":0.850593,"hiz":0.289175,"cull_finalize":0.00595,"draw":0.416891,"readback":0.225373}}
+{"mode":"cpu","flags":0,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":3.41959}
+{"gpu_timestamps_ms":{"update":0.416462,"wall_depth_readback":0.821827,"hiz":0.325113,"cull_finalize":0.645732,"draw":0.89145,"readback":0.204911}}
+{"mode":"fixed","flags":0,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":10.1959}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.350981,"wall_depth_readback":0.980744,"hiz":0.249618,"cull_finalize":0.398614,"draw":0.792995,"readback":0.477816}}
+{"mode":"count","flags":0,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":10.0221}
+{"gpu_timestamps_ms":{"update":0.577248,"wall_depth_readback":1.15896,"hiz":0.401881,"cull_finalize":0.0034,"draw":0.741257,"readback":0.274615}}
+{"mode":"none","flags":0,"viewX":2.5,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":5.16355}
+{"gpu_timestamps_ms":{"update":0.457917,"wall_depth_readback":2.08657,"hiz":0.678658,"cull_finalize":0.00376,"draw":0.755178,"readback":0.469319}}
+{"mode":"cpu","flags":1,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":6.09396}
+{"gpu_timestamps_ms":{"update":0.40119,"wall_depth_readback":1.36071,"hiz":2.84994,"cull_finalize":0.353608,"draw":0.977385,"readback":0.222871}}
+{"mode":"fixed","flags":1,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":12.4047}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":1.34813,"wall_depth_readback":1.40737,"hiz":0.237758,"cull_finalize":0.669528,"draw":0.681464,"readback":0.260416}}
+{"mode":"count","flags":1,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":11.622}
+{"gpu_timestamps_ms":{"update":0.956962,"wall_depth_readback":1.05011,"hiz":0.300376,"cull_finalize":0.004021,"draw":0.543514,"readback":0.583547}}
+{"mode":"cpu","flags":2,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":6.10811}
+{"gpu_timestamps_ms":{"update":0.370815,"wall_depth_readback":1.00477,"hiz":1.11552,"cull_finalize":0.296412,"draw":0.812505,"readback":0.211973}}
+{"mode":"fixed","flags":2,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":12.0878}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.842211,"wall_depth_readback":1.3509,"hiz":2.38704,"cull_finalize":3.61217,"draw":0.847459,"readback":0.159617}}
+{"mode":"count","flags":2,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":16.5989}
+{"gpu_timestamps_ms":{"update":1.37708,"wall_depth_readback":1.53018,"hiz":0.264067,"cull_finalize":0.007756,"draw":1.28928,"readback":1.08352}}
+{"mode":"none","flags":2,"viewX":2.5,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":8.63075}
+{"gpu_timestamps_ms":{"update":0.43467,"wall_depth_readback":1.54367,"hiz":0.589382,"cull_finalize":0.004468,"draw":0.567888,"readback":0.213532}}
+{"mode":"cpu","flags":3,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":4.90578}
+{"gpu_timestamps_ms":{"update":0.600054,"wall_depth_readback":0.634228,"hiz":1.62943,"cull_finalize":0.394551,"draw":1.0925,"readback":0.247021}}
+{"mode":"fixed","flags":3,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":11.2749}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.429178,"wall_depth_readback":0.786834,"hiz":2.01887,"cull_finalize":0.372403,"draw":0.687437,"readback":0.381271}}
+{"mode":"count","flags":3,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":11.8859}
+{"gpu_timestamps_ms":{"update":0.712202,"wall_depth_readback":1.24251,"hiz":0.612674,"cull_finalize":0.004148,"draw":1.05068,"readback":0.323827}}
+{"mode":"none","flags":3,"viewX":2.5,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":9.05133}
+{"gpu_timestamps_ms":{"update":0.83734,"wall_depth_readback":0.913179,"hiz":0.293288,"cull_finalize":0.004133,"draw":0.721998,"readback":0.222307}}
+{"mode":"cpu","flags":4,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":6.19643}
+{"gpu_timestamps_ms":{"update":1.88947,"wall_depth_readback":1.07198,"hiz":0.436216,"cull_finalize":0.686812,"draw":0.858525,"readback":0.571154}}
+{"mode":"fixed","flags":4,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":12.6232}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.95307,"wall_depth_readback":0.891477,"hiz":0.281785,"cull_finalize":0.575069,"draw":1.12301,"readback":0.216714}}
+{"mode":"count","flags":4,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":12.6216}
+{"gpu_timestamps_ms":{"update":0.499366,"wall_depth_readback":0.830842,"hiz":0.911482,"cull_finalize":0.004914,"draw":2.02195,"readback":0.313445}}
+{"mode":"cpu","flags":8,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":6.04241}
+{"gpu_timestamps_ms":{"update":5.3051,"wall_depth_readback":0.695327,"hiz":0.419926,"cull_finalize":0.363044,"draw":1.20645,"readback":0.361256}}
+{"mode":"fixed","flags":8,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":15.6627}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":1.7656,"wall_depth_readback":1.22536,"hiz":0.332767,"cull_finalize":0.572608,"draw":1.13389,"readback":0.235054}}
+{"mode":"count","flags":8,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":13.7423}
+{"gpu_timestamps_ms":{"update":0.811255,"wall_depth_readback":1.42803,"hiz":0.386256,"cull_finalize":0.004362,"draw":0.561069,"readback":0.182774}}
+{"mode":"cpu","flags":10,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":5.07981}
+{"gpu_timestamps_ms":{"update":0.725309,"wall_depth_readback":3.94782,"hiz":1.26584,"cull_finalize":0.404551,"draw":1.39801,"readback":0.249986}}
+{"mode":"fixed","flags":10,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":15.1095}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":1.11765,"wall_depth_readback":1.77594,"hiz":1.25523,"cull_finalize":0.467109,"draw":0.769025,"readback":0.28195}}
+{"mode":"count","flags":10,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":12.4451}
+{"gpu_timestamps_ms":{"update":0.44166,"wall_depth_readback":1.76785,"hiz":0.348336,"cull_finalize":0.005226,"draw":1.38787,"readback":0.893084}}
+{"mode":"none","flags":10,"viewX":2.5,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":7.25838}
+{"gpu_timestamps_ms":{"update":0.775588,"wall_depth_readback":1.37825,"hiz":0.513393,"cull_finalize":0.005297,"draw":0.911256,"readback":0.195553}}
+{"mode":"cpu","flags":11,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":5.19279}
+{"gpu_timestamps_ms":{"update":0.401816,"wall_depth_readback":1.15923,"hiz":1.25499,"cull_finalize":0.427852,"draw":0.778118,"readback":0.28008}}
+{"mode":"fixed","flags":11,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":10.377}
+{"fallback":"Count unavailable -> fixed slots"}
+{"gpu_timestamps_ms":{"update":0.39145,"wall_depth_readback":0.752956,"hiz":1.05704,"cull_finalize":0.306973,"draw":0.792675,"readback":0.249408}}
+{"mode":"count","flags":11,"viewX":2.5,"instances":1000,"visible":0,"overflow":0,"host_wall_ms_with_readbacks":10.6301}
+{"gpu_timestamps_ms":{"update":0.63864,"wall_depth_readback":2.3954,"hiz":0.670729,"cull_finalize":0.005253,"draw":1.73203,"readback":0.727383}}
+{"mode":"none","flags":11,"viewX":2.5,"instances":1000,"visible":1000,"overflow":0,"host_wall_ms_with_readbacks":8.87596}
+{"gpu_timestamps_ms":{"update":1.52046,"wall_depth_readback":0.911759,"hiz":0.666698,"cull_finalize":0.004093,"draw":2.92865,"readback":0.198322}}
+{"mode":"cpu","flags":4,"viewX":0,"instances":1000,"visible":687,"overflow":0,"host_wall_ms_with_readbacks":8.61751}
+{"gpu_timestamps_ms":{"update":0.643844,"wall_depth_readback":0.588487,"hiz":0.397868,"cull_finalize":0.004604,"draw":2.06957,"readback":0.328673}}
+{"mode":"cpu","flags":4,"viewX":0,"instances":1000,"visible":687,"overflow":0,"host_wall_ms_with_readbacks":6.29709}
+{"status":"PASS","seed":24301,"instances":1000,"validation_errors":0,"scope":"offscreen Vulkan correctness, not mobile performance"}

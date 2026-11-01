@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "layer": "Live",
+  "started_at": "2026-11-01T12:06:08.510528+00:00",
+  "status": "skipped",
+  "baseline_sha": "1bad967c8e6880c3eecdaa6a946901cbc5c1f060",
+  "cases": [],
+  "model_identity_source": "wrapper-attested; not independently provider-verified",
+  "reason": "No model command configured; no live inference performed",
+  "finished_at": "2026-11-01T12:06:08.510554+00:00"
+}

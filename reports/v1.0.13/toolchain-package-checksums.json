@@ -1,0 +1,133 @@
+{
+  "checked": "2026-11-01",
+  "install_scope": "rootless workspace extraction; no system installation",
+  "package_index_sha256": "7778d3e3f303b7ddb8ce0fe7c8d57473a076c6bf2e8f241f75421d2396352498",
+  "packages": [
+    {
+      "package": "clang-format-19",
+      "version": "1:19.1.7-3+b1",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/clang-format-19_19.1.7-3+b1_amd64.deb",
+      "sha256": "25c849491d8cddc1d65e6f5f67d188a4406c5cdb8c78c490bef08c9477a4e150",
+      "index_sha256_match": true
+    },
+    {
+      "package": "glslang-tools",
+      "version": "15.1.0+1.4.309.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/g/glslang/glslang-tools_15.1.0+1.4.309.0-1_amd64.deb",
+      "sha256": "c3025c4af63244296bc9d466746763c809d3f3f126408fc2c7b07070886a7759",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libclang-cpp19",
+      "version": "1:19.1.7-3+b1",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/libclang-cpp19_19.1.7-3+b1_amd64.deb",
+      "sha256": "a7d2b6df51050834f6ea5c0d5e34869c2298b0bcdaa91eff17ba3db2cd545c47",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libdrm-amdgpu1",
+      "version": "2.4.124-2",
+      "url": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-amdgpu1_2.4.124-2_amd64.deb",
+      "sha256": "c1d97a5e32e2bc68e833b8abeae026b6306198e87ee4396a7ffecd4779caefbf",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libdrm-intel1",
+      "version": "2.4.124-2",
+      "url": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-intel1_2.4.124-2_amd64.deb",
+      "sha256": "188ab1fd74c838b3c8055d62107351e16a4bb7a25d39c30bbb9aac30ddd37238",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libdrm-nouveau2",
+      "version": "2.4.124-2",
+      "url": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-nouveau2_2.4.124-2_amd64.deb",
+      "sha256": "634dcb46487fb2ca267850261291463845ada90b81d16a926ca40d333ce57180",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libdrm-radeon1",
+      "version": "2.4.124-2",
+      "url": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm-radeon1_2.4.124-2_amd64.deb",
+      "sha256": "7a82b1c88b45235e314a15b71781b47ed472dafbbf697481ec8427079840fc32",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libdrm2",
+      "version": "2.4.124-2",
+      "url": "https://deb.debian.org/debian/pool/main/libd/libdrm/libdrm2_2.4.124-2_amd64.deb",
+      "sha256": "fe2276901c7cd7b8079de63072d37fe1cbeb4eb001a3bc1f1d662ad89aa0890e",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libelf1t64",
+      "version": "0.192-4",
+      "url": "https://deb.debian.org/debian/pool/main/e/elfutils/libelf1t64_0.192-4_amd64.deb",
+      "sha256": "94497b7e17b6f574a0605b380d454e20d3f01a9c63b70c2a2263f679d30053e1",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libllvm19",
+      "version": "1:19.1.7-3+b1",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/libllvm19_19.1.7-3+b1_amd64.deb",
+      "sha256": "db0d614d61345ca710fb73e75105f1ec6e38898fa7b3aa99fa7eb7d8b0a11d57",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libvulkan-dev",
+      "version": "1.4.309.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/v/vulkan-loader/libvulkan-dev_1.4.309.0-1_amd64.deb",
+      "sha256": "8d329d465e16168afff58b1bd0dd6db46aac2cc3f56054a481b25a04e90b345a",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libvulkan1",
+      "version": "1.4.309.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/v/vulkan-loader/libvulkan1_1.4.309.0-1_amd64.deb",
+      "sha256": "f47da79cd140264fe21cceb08bc87a71bc7fec05819e4a421f3f518d21101a37",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libxshmfence1",
+      "version": "1.3.3-1",
+      "url": "https://deb.debian.org/debian/pool/main/libx/libxshmfence/libxshmfence1_1.3.3-1_amd64.deb",
+      "sha256": "7b339e9e5b2349723d35af4df89bcc7aa456bbdf8ba1754358f9b44c3fe1f964",
+      "index_sha256_match": true
+    },
+    {
+      "package": "libzstd1",
+      "version": "1.5.7+dfsg-1",
+      "url": "https://deb.debian.org/debian/pool/main/libz/libzstd/libzstd1_1.5.7+dfsg-1_amd64.deb",
+      "sha256": "2f6a2aeacfc925eba8b00ac9139bc4bfccf8cacb09eb93de067074b26948eef9",
+      "index_sha256_match": true
+    },
+    {
+      "package": "mesa-vulkan-drivers",
+      "version": "25.0.7-2+deb13u1",
+      "url": "https://deb.debian.org/debian/pool/main/m/mesa/mesa-vulkan-drivers_25.0.7-2+deb13u1_amd64.deb",
+      "sha256": "caf2f7d296b7522efe74e40a74bce762a3ce84c33b53b5e54e1248ac2e0a13a5",
+      "index_sha256_match": true
+    },
+    {
+      "package": "spirv-tools",
+      "version": "2025.1~rc1-1",
+      "url": "https://deb.debian.org/debian/pool/main/s/spirv-tools/spirv-tools_2025.1~rc1-1_amd64.deb",
+      "sha256": "2cc272ef1340cf0b47de6c5fcccaf91574d7a8f4061abb718d6c639463e85aab",
+      "index_sha256_match": true
+    },
+    {
+      "package": "vulkan-tools",
+      "version": "1.4.304.0+dfsg1-1",
+      "url": "https://deb.debian.org/debian/pool/main/v/vulkan-tools/vulkan-tools_1.4.304.0+dfsg1-1_amd64.deb",
+      "sha256": "742d1cd78c333a94b8214e21ba455d47884dc32f110016ffe6998cf88f2a2f94",
+      "index_sha256_match": true
+    },
+    {
+      "package": "vulkan-validationlayers",
+      "version": "1.4.309.0-1",
+      "url": "https://deb.debian.org/debian/pool/main/v/vulkan-validationlayers/vulkan-validationlayers_1.4.309.0-1_amd64.deb",
+      "sha256": "ff7e18ef011ff448ac799daf16134a676ccf9c5987e1a9f4b779611ed5fc3b0d",
+      "index_sha256_match": true
+    }
+  ]
+}

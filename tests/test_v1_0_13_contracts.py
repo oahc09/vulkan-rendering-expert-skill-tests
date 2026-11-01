@@ -137,3 +137,16 @@ def test_binary_section_preserves_empty_info_positive_case_and_capture_condition
         assert token in text
     assert re.search(r'binaryCount[^\n]{0,80}(?:0|零)',text)
     assert re.search(r'独立|另一个|单独|或设置',text)
+
+
+def test_engine_sources_bind_fixed_revisions_to_readable_authority_sections():
+    report=json.loads((ROOT/'docs/v1.0.13-sources.json').read_text())
+    assert len(report['sources'])==16 and len(report['bundles'])==2
+    for source in report['sources']:
+        assert source['verification']=='source_read'
+        assert re.fullmatch('[0-9a-f]{40}',source['revision'])
+        assert source['build']=='NOT_RUN' and source['device']=='NOT_RUN'
+        assert source['source_url'].startswith('https://')
+        for mapping in source['mapped_skill_paths']:
+            path,anchor=mapping.split('#')
+            assert select_section((PROJECT_ROOT/path).read_text(),'#'+anchor)[0].strip()

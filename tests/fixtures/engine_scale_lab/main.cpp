@@ -8,6 +8,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <numeric>
@@ -49,6 +50,8 @@ struct Image {
   VkImageView view{};
 };
 static uint32_t validationErrors = 0;
+static std::string artifactDirectory;
+static uint32_t artifactSequence = 0;
 VKAPI_ATTR VkBool32 VKAPI_CALL
 debug(VkDebugUtilsMessageSeverityFlagBitsEXT severity,
       VkDebugUtilsMessageTypeFlagsEXT,
@@ -84,7 +87,9 @@ struct Vulkan {
   VkPipeline update{}, hiz{}, cull{}, finalize{}, graphics{}, additive{},
       alpha{}, graphicsReverse{}, additiveReverse{}, alphaReverse{};
   VkQueryPool queries{};
+  VkPipelineCache pipelineCache{};
   bool timestamps = false;
+  uint32_t timestampBits = 0;
   uint32_t width = 65, height = 49, levels = 1, n;
   uint64_t allocated = 0;
   std::string shaders;
@@ -138,6 +143,7 @@ struct Vulkan {
         if ((qs[i].queueFlags & 3) == 3) {
           physical = pd;
           family = i;
+          timestampBits = qs[i].timestampValidBits;
           break;
         }
       if (physical)
@@ -147,7 +153,8 @@ struct Vulkan {
       throw std::runtime_error("BLOCKED: no graphics+compute queue");
     vkGetPhysicalDeviceProperties(physical, &properties);
     vkGetPhysicalDeviceMemoryProperties(physical, &mem);
-    timestamps = properties.limits.timestampComputeAndGraphics;
+    timestamps =
+        properties.limits.timestampComputeAndGraphics && timestampBits > 0;
     if (properties.apiVersion < VK_API_VERSION_1_2)
       throw std::runtime_error(
           "Fixture requires Vulkan1.2; engine baseline need not");
@@ -177,6 +184,12 @@ struct Vulkan {
     dc.pQueueCreateInfos = &qi;
     VK(vkCreateDevice(physical, &dc, nullptr, &device));
     vkGetDeviceQueue(device, family, 0, &queue);
+    if (properties.limits.maxPerStageDescriptorStorageBuffers < 7 ||
+        properties.limits.maxDescriptorSetStorageBuffers < 7 ||
+        properties.limits.maxPerStageResources < 8 ||
+        properties.limits.maxComputeWorkGroupSize[0] < 64)
+      throw std::runtime_error("BLOCKED: fixture descriptor/workgroup limits "
+                               "unsupported; not an engine baseline");
     if ((n + 63) / 64 > properties.limits.maxComputeWorkGroupCount[0] ||
         64 > properties.limits.maxComputeWorkGroupInvocations)
       throw std::runtime_error("Scale exceeds compute limits");
@@ -317,6 +330,10 @@ struct Vulkan {
     qc.queryCount = 8;
     if (timestamps)
       VK(vkCreateQueryPool(device, &qc, nullptr, &queries));
+    VkPipelineCacheCreateInfo cacheInfo{
+        VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO};
+    VK(vkCreatePipelineCache(device, &cacheInfo, nullptr, &pipelineCache));
+    auto pipelineStart = std::chrono::steady_clock::now();
     update = compute("update.comp");
     hiz = compute("hiz.comp");
     cull = compute("cull.comp");
@@ -327,6 +344,23 @@ struct Vulkan {
     graphicsReverse = graphicsPipeline(0, true);
     additiveReverse = graphicsPipeline(1, true);
     alphaReverse = graphicsPipeline(2, true);
+    size_t cacheBytes = 0;
+    VK(vkGetPipelineCacheData(device, pipelineCache, &cacheBytes, nullptr));
+    std::vector<uint8_t> cacheData(cacheBytes);
+    VK(vkGetPipelineCacheData(device, pipelineCache, &cacheBytes,
+                              cacheData.data()));
+    cacheInfo.initialDataSize = cacheBytes;
+    cacheInfo.pInitialData = cacheData.data();
+    VkPipelineCache warmCache{};
+    VK(vkCreatePipelineCache(device, &cacheInfo, nullptr, &warmCache));
+    VK(vkMergePipelineCaches(device, pipelineCache, 1, &warmCache));
+    vkDestroyPipelineCache(device, warmCache, nullptr);
+    std::cout << "{\"pipeline_build_and_cache_roundtrip_ms\":"
+              << std::chrono::duration<double, std::milli>(
+                     std::chrono::steady_clock::now() - pipelineStart)
+                     .count()
+              << ",\"cache_bytes\":" << cacheBytes
+              << ",\"speedup_claimed\":false}\n";
     std::cout << "{\"device\":\"" << properties.deviceName
               << "\",\"apiVersion\":" << properties.apiVersion
               << ",\"deviceType\":" << properties.deviceType
@@ -427,7 +461,7 @@ struct Vulkan {
     ci.layout = layout;
     VkPipeline p;
     VkResult result =
-        vkCreateComputePipelines(device, VK_NULL_HANDLE, 1, &ci, nullptr, &p);
+        vkCreateComputePipelines(device, pipelineCache, 1, &ci, nullptr, &p);
     vkDestroyShaderModule(device, sm, nullptr);
     VK(result);
     pipelines.push_back(p);
@@ -535,7 +569,7 @@ struct Vulkan {
     ci.renderPass = clearPass;
     VkPipeline p;
     VkResult result =
-        vkCreateGraphicsPipelines(device, VK_NULL_HANDLE, 1, &ci, nullptr, &p);
+        vkCreateGraphicsPipelines(device, pipelineCache, 1, &ci, nullptr, &p);
     vkDestroyShaderModule(device, vs, nullptr);
     vkDestroyShaderModule(device, fs, nullptr);
     VK(result);
@@ -625,6 +659,7 @@ struct Vulkan {
       vkDestroyQueryPool(device, queries, nullptr);
     for (auto p : pipelines)
       vkDestroyPipeline(device, p, nullptr);
+    vkDestroyPipelineCache(device, pipelineCache, nullptr);
     vkDestroyFramebuffer(device, framebuffer, nullptr);
     vkDestroyRenderPass(device, clearPass, nullptr);
     vkDestroyRenderPass(device, loadPass, nullptr);
@@ -773,9 +808,9 @@ struct Result {
 };
 Result run(Vulkan &v, const std::vector<Object> &scene, Push p,
            std::string mode, bool standardAlpha = false,
-           uint32_t capacity = 0) {
+           uint32_t capacity = UINT32_MAX) {
   auto started = std::chrono::steady_clock::now();
-  p.capacity = capacity ? capacity : v.n;
+  p.capacity = capacity == UINT32_MAX ? v.n : capacity;
   p.level = v.levels - 1;
   p.width = v.width;
   p.height = v.height;
@@ -803,7 +838,9 @@ Result run(Vulkan &v, const std::vector<Object> &scene, Push p,
     }
   }
   v.barrier(VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT, VK_ACCESS_SHADER_WRITE_BIT,
-            VK_PIPELINE_STAGE_VERTEX_SHADER_BIT | VK_PIPELINE_STAGE_HOST_BIT,
+            VK_PIPELINE_STAGE_VERTEX_SHADER_BIT |
+                VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT |
+                VK_PIPELINE_STAGE_HOST_BIT,
             VK_ACCESS_SHADER_READ_BIT | VK_ACCESS_HOST_READ_BIT);
   v.stamp(1);
   v.startPass(false, p.flags & 8);
@@ -1002,13 +1039,18 @@ Result run(Vulkan &v, const std::vector<Object> &scene, Push p,
                              VK_QUERY_RESULT_64_BIT |
                                  VK_QUERY_RESULT_WAIT_BIT));
     double scale = v.properties.limits.timestampPeriod / 1e6;
-    std::cout << "{\"gpu_timestamps_ms\":{\"update\":"
-              << (ts[1] - ts[0]) * scale
-              << ",\"wall_depth_readback\":" << (ts[2] - ts[1]) * scale
-              << ",\"hiz\":" << (ts[4] - ts[3]) * scale
-              << ",\"cull_finalize\":" << (ts[5] - ts[4]) * scale
-              << ",\"draw\":" << (ts[6] - ts[5]) * scale
-              << ",\"readback\":" << (ts[7] - ts[6]) * scale << "}}\n";
+    uint64_t mask = v.timestampBits == 64
+                        ? UINT64_MAX
+                        : ((uint64_t(1) << v.timestampBits) - 1);
+    auto elapsed = [&](int start, int end) {
+      return ((ts[end] - ts[start]) & mask) * scale;
+    };
+    std::cout << "{\"gpu_timestamps_ms\":{\"update\":" << elapsed(0, 1)
+              << ",\"wall_depth_readback\":" << elapsed(1, 2)
+              << ",\"hiz\":" << elapsed(3, 4)
+              << ",\"cull_finalize\":" << elapsed(4, 5)
+              << ",\"draw\":" << elapsed(5, 6)
+              << ",\"readback\":" << elapsed(6, 7) << "}}\n";
   }
   Result result;
   result.image.assign((uint8_t *)v.buffers[7].map,
@@ -1050,6 +1092,22 @@ Result run(Vulkan &v, const std::vector<Object> &scene, Push p,
     }
   } else
     result.ids = expectedIds;
+  if (!artifactDirectory.empty()) {
+    std::string stem = artifactDirectory + "/" +
+                       std::to_string(artifactSequence++) + "-" + mode;
+    std::ofstream imageFile(stem + ".rgba", std::ios::binary);
+    imageFile.write(reinterpret_cast<const char *>(result.image.data()),
+                    result.image.size());
+    std::ofstream idsFile(stem + ".ids", std::ios::binary);
+    idsFile.write(reinterpret_cast<const char *>(result.ids.data()),
+                  result.ids.size() * sizeof(uint32_t));
+    std::ofstream meta(stem + ".json");
+    meta << "{\"width\":" << v.width << ",\"height\":" << v.height
+         << ",\"format\":\"RGBA8_UNORM\",\"id_format\":\"uint32-native-"
+            "endian\",\"mode\":\""
+         << mode << "\",\"flags\":" << p.flags << ",\"viewX\":" << p.viewX
+         << ",\"zoom\":" << p.zoom << ",\"capacity\":" << p.capacity << "}";
+  }
   result.wallMs = std::chrono::duration<double, std::milli>(
                       std::chrono::steady_clock::now() - started)
                       .count();
@@ -1082,7 +1140,12 @@ int main(int argc, char **argv) {
         n = std::stoul(argv[++i]);
       else if (arg == "--shaders" && i + 1 < argc)
         shaders = argv[++i];
-      else if (arg == "--force-low")
+      else if (arg == "--artifacts" && i + 1 < argc) {
+        artifactDirectory = argv[++i];
+        if (std::filesystem::exists(artifactDirectory))
+          throw std::runtime_error("Refuse existing artifact directory");
+        std::filesystem::create_directories(artifactDirectory);
+      } else if (arg == "--force-low")
         low = true;
       else
         throw std::runtime_error(
@@ -1095,8 +1158,9 @@ int main(int argc, char **argv) {
     Push p{};
     p.zoom = 1;
     p.tick = 1;
-    for (float view : {0.f, .75f, 2.5f}) {
+    for (float view : {0.f, .75f, 1.8f, 2.5f}) {
       p.viewX = view;
+      p.zoom = view == 0.f ? .8f : 1.f;
       for (uint32_t flags : {0u, 1u, 2u, 3u, 4u, 8u, 10u, 11u}) {
         p.flags = flags;
         auto cpu = run(vk, scene, p, "cpu");
@@ -1117,6 +1181,9 @@ int main(int argc, char **argv) {
     compare(alphaA, alphaB);
     if (vk.countEnabled) {
       p.flags = 0;
+      auto zeroCapacity = run(vk, scene, p, "count", false, 0);
+      if (!zeroCapacity.overflow || !zeroCapacity.ids.empty())
+        throw std::runtime_error("Zero capacity must remain bounded");
       auto overflow = run(vk, scene, p, "count", false, 8);
       if (!overflow.overflow)
         throw std::runtime_error("Expected bounded overflow");

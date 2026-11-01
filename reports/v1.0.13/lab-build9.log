@@ -1,0 +1,6 @@
+<workspace>/vulkan-v113-tests/tests/fixtures/engine_scale_lab/shaders/cull.comp
+<workspace>/vulkan-v113-tests/tests/fixtures/engine_scale_lab/shaders/finalize.comp
+<workspace>/vulkan-v113-tests/tests/fixtures/engine_scale_lab/shaders/hiz.comp
+<workspace>/vulkan-v113-tests/tests/fixtures/engine_scale_lab/shaders/update.comp
+<workspace>/vulkan-v113-tests/tests/fixtures/engine_scale_lab/shaders/scene.vert
+<workspace>/vulkan-v113-tests/tests/fixtures/engine_scale_lab/shaders/scene.frag
