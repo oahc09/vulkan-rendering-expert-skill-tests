@@ -1,0 +1,3 @@
+第一 Surface 支持 HDR，另一输出不支持，可以复用第一份 format/colorSpace 吗？
+对照变体：旋转/换显示器后原 HDR 组合消失，怎么重新选择并验证 SDR fallback？
+请分别说明前提、实现/失败边界和需要的验证证据。

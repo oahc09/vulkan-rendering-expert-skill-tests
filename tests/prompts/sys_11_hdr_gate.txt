@@ -1,0 +1,3 @@
+能枚举 VK_GOOGLE_hdr_smpte_st_209450_metadata，但未启用 feature，也没查当前 Surface，能调用吗？
+对照变体：如果依赖、feature enable 与 Surface support 都满足，附加 metadata 就能代替 tone mapping 或宣布色准通过吗？
+请分别说明前提、实现/失败边界和需要的验证证据。

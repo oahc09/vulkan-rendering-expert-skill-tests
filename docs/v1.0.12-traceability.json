@@ -1,0 +1,106 @@
+{
+  "requirements": [
+    {
+      "requirement": "C1",
+      "cases": [
+        "SYS-01",
+        "SYS-02",
+        "SYS-03",
+        "SYS-04"
+      ],
+      "files": [
+        "android_surface_swapchain_lifecycle.md#multi-instance-ownership",
+        "handle_android_lifecycle.md#multi-surface-lifecycle",
+        "integrate_surfaceview_anativewindow.md#android-host-contract",
+        "android_surface.md#surface-host-boundaries"
+      ],
+      "static_tests": [
+        "tests/test_v1_0_12_system.py",
+        "tests/test_media_surface_lab.py",
+        "tests/test_context_measurement.py"
+      ],
+      "static": "FINAL_CANDIDATE_STATIC_PASS",
+      "live": "BLOCKED",
+      "device": "NOT RUN"
+    },
+    {
+      "requirement": "C2",
+      "cases": [
+        "SYS-05",
+        "SYS-06",
+        "SYS-07",
+        "SYS-08"
+      ],
+      "files": [
+        "external_resource_interop.md#android-media-frame-contract",
+        "sampled_image_descriptor.md#android-media-ycbcr",
+        "add_texture_sampling_pass.md#android-media-sampling",
+        "case_sync_layout.md#android-media-early-return"
+      ],
+      "static_tests": [
+        "tests/test_v1_0_12_system.py",
+        "tests/test_media_surface_lab.py",
+        "tests/test_context_measurement.py"
+      ],
+      "static": "FINAL_CANDIDATE_STATIC_PASS",
+      "live": "BLOCKED",
+      "device": "NOT RUN"
+    },
+    {
+      "requirement": "C3",
+      "cases": [
+        "SYS-09",
+        "SYS-10",
+        "SYS-11",
+        "SYS-12"
+      ],
+      "files": [
+        "render_target_model.md#color-output-contract",
+        "swapchain.md#android-color-presentation",
+        "add_postprocess_pass.md#color-output-workflow"
+      ],
+      "static_tests": [
+        "tests/test_v1_0_12_system.py",
+        "tests/test_media_surface_lab.py",
+        "tests/test_context_measurement.py"
+      ],
+      "static": "FINAL_CANDIDATE_STATIC_PASS",
+      "live": "BLOCKED",
+      "device": "NOT RUN"
+    },
+    {
+      "requirement": "M3",
+      "cases": [
+        "SYS-01",
+        "SYS-02",
+        "SYS-03",
+        "SYS-04",
+        "SYS-05",
+        "SYS-06",
+        "SYS-07",
+        "SYS-08",
+        "SYS-09",
+        "SYS-10",
+        "SYS-11",
+        "SYS-12"
+      ],
+      "files": [
+        "task_routing_rules.md",
+        "release-contract.json",
+        "tests/media_surface_lab.py"
+      ],
+      "static_tests": [
+        "tests/test_v1_0_12_system.py",
+        "tests/test_media_surface_lab.py",
+        "tests/test_context_measurement.py"
+      ],
+      "static": "FINAL_CANDIDATE_STATIC_PASS",
+      "live": "BLOCKED",
+      "device": "NOT RUN"
+    }
+  ],
+  "evidence_boundary": "Source/static candidates only; final reports bind both clean SHAs. No inherited Live/Device PASS.",
+  "skill_sha": "5c53ec2a600c96d57399a942236640b7061c43fe",
+  "tested_code_sha": "e346b3a824f139ab630a6632848a523f34e2f065",
+  "evidence": "reports/v1.0.12/result.json"
+}

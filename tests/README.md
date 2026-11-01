@@ -214,3 +214,12 @@ means BLOCKED. Device checks require actual target hardware/source/APK/tool
 identities, input/visual correctness, failure cleanup, fixed scene and thermal
 conditions; no fabricated counters, performance percentages, fault injection or
 paid/cloud device access is authorized by this implementation.
+
+## v1.0.12 system cohort
+
+The default Live selector now contains 40 cases; the first 28 prompt bytes are frozen
+in `v1.0.11-cohort.json`. SYS-01–12 each include contrasting conditions; review rubrics
+are never part of model inputs. Use `measure_context.py --system-run RUN --candidate-sha SHA`
+for separate usage accounting, not the original-12 token target. `media_surface_lab.py`
+is a deterministic isolated state simulation, **not** Android/Vulkan/Camera evidence.
+See `../docs/v1.0.12-acceptance.md` for blocked Live/Device gates and final pin procedure.

@@ -1,0 +1,12 @@
+{
+  "layer": "Static",
+  "implementation": "isolated Python state fixture",
+  "gpu_executed": false,
+  "android_executed": false,
+  "rebuilds": 100,
+  "dual_consumer_frames": 1000,
+  "peak_leases": 1,
+  "outstanding_leases": 0,
+  "returned": 1000,
+  "claims": "State transition simulation only; no device/runtime/performance evidence"
+}

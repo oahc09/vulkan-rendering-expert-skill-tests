@@ -1,0 +1,3 @@
+两输出共享 queue 且帧节奏不同，A 遭遇 Surface lost，B 如何继续？
+对照变体：改为 shared-device DEVICE_LOST 后，能否仅重建 A swapchain？
+请分别说明前提、实现/失败边界和需要的验证证据。

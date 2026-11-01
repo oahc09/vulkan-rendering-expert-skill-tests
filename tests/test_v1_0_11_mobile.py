@@ -18,7 +18,7 @@ NEW_PATHS = {
 
 
 def test_exact_mobile_release_scope():
-    contract=json.loads((Path(__file__).parent.parent/'release-contract.json').read_text())
+    contract=json.loads((Path(__file__).parent.parent/'docs/v1.0.11-release-contract.json').read_text())
     assert contract['expected_version']=='1.0.11'
     assert contract['max_runtime_files']==200
     assert set(contract['allowed_new_knowledge'])=={'references/'+p for p in NEW_PATHS}
@@ -26,7 +26,7 @@ def test_exact_mobile_release_scope():
 
 
 def test_mobile_cases_are_registered_without_changing_old_cohorts():
-    assert len(MOBILE_CASES)==12 and len(CASES)==28 and len(LEGACY_CASES)==16 and len(ORIGINAL_CASES)==12
+    assert len(MOBILE_CASES)==12 and len(CASES)==40 and len(LEGACY_CASES)==16 and len(ORIGINAL_CASES)==12
     assert set(MOBILE_CASES).isdisjoint(LEGACY_CASES)
     assert CASES[:16]==LEGACY_CASES
     for case,spec in MOBILE_CASES.items():

@@ -1,0 +1,3 @@
+旧 Surface destroy/resize 回调晚于新 Surface 创建，只用全局 paused 标志够吗？
+对照变体：如果 destroy 回调确实对应当前 generation，怎样在回调返回前停止访问，同时避免 UI/render thread 互相等待？
+请分别说明前提、实现/失败边界和需要的验证证据。

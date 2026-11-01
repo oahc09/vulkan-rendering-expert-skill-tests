@@ -1,0 +1,63 @@
+{
+  "skill_sha": "5c53ec2a600c96d57399a942236640b7061c43fe",
+  "skill_tree": "30e41c8f06efe8ec0900396e7aa44c0f6e9ddd6e",
+  "tests_code_sha": "e346b3a824f139ab630a6632848a523f34e2f065",
+  "tests_code_tree": "d3e030577dd29f49df1b7e9e4bb2495d345eea81",
+  "checked_at": "2026-11-01",
+  "static": {
+    "status": "PASS",
+    "passed": 166
+  },
+  "snapshot": {
+    "status": "PASS",
+    "passed": 4,
+    "scope": "Historical fixtures only"
+  },
+  "live": {
+    "status": "BLOCKED",
+    "skipped": 40,
+    "reason": "No authorized model command configured; no inference performed",
+    "availability_manifest_is_candidate_acceptance": false
+  },
+  "device": {
+    "status": "NOT RUN",
+    "reason": "No actual Android/HDR target; state simulation is not GPU/Java/JNI execution"
+  },
+  "simulation": {
+    "status": "PASS",
+    "rebuilds": 100,
+    "dual_consumer_frames": 1000,
+    "scope": "Isolated Python state machine and CPU alpha math only"
+  },
+  "skill_safety_unit_tests": {
+    "status": "PASS",
+    "passed": 24
+  },
+  "package": {
+    "status": "PASS",
+    "runtime_files": 200,
+    "new_runtime_knowledge_files": 0,
+    "zip_bytes": 918951,
+    "zip_sha256": "fb9d9b8e590420f02c2a5177ec89a1dc9b563b9514651bc66f48622814400e98",
+    "two_builds_identical": true,
+    "crc_verified": true
+  },
+  "token_usage": {
+    "status": "UNMEASURED",
+    "original12_denominator": "unchanged frozen v1.0.8",
+    "system12": "separate no reduction target"
+  },
+  "report_only_commit": "This report commit is not the tests_code_sha; executable tests and contract remain identical.",
+  "files": {
+    "live-availability.json": "0e516be2a5cb91040241d97088b602416403a1d9972125fd907ed304a6e2324a",
+    "package-a.json": "8402c9726f47766e5e638861b883de0daff52a7fd23a0d9001cbfb2e6b5f06af",
+    "static.log": "5abb08baa339b5a7fb810d08e55868c27e18f05ecbc7ca4d80bfdc7c861feb6c",
+    "live.log": "2ddfc5d5c9a804e9c980228bad758570c4567a81003c70ab97065ec750ca07d7",
+    "media-surface-lab.json": "6cb77c07dba303198b991309d8a6b757d25ad5f19bc88ae78d407fb3da2f308c",
+    "skill-unit.txt": "b202bbe50f4733d041fdc229e328de0abc9b27d68d191325d0095996f706c11f",
+    "skill-check.txt": "bc5706d28a2abe70b0bda323f786803019f80f6d59bfe1b2acb32d9c547e6372",
+    "snapshot.log": "1570b627c4d9db5bbd5a411ef4c9dc93fbc2de1ee977c73c0eba9b3cc4002786",
+    "package-b.json": "3ac497d8f4f089efa94a95aa8d8b8799a152a63a4ab432babe340675108ee25b",
+    "host-contract.txt": "7024d08ce1837f3bdd28d963a22e59d26dd2a0baaa8f916be27463fa4a8bca8e"
+  }
+}

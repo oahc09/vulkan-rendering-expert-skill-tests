@@ -1,0 +1,3 @@
+两个 Wallpaper Engine 共享 VkDevice；关闭预览后真实壁纸也黑屏。
+对照变体：若两个 Engine 使用独立 VkDevice，局部销毁方案哪些边界不同？
+请分别说明前提、实现/失败边界和需要的验证证据。

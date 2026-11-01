@@ -12,7 +12,7 @@ import statistics
 import re
 from pathlib import Path
 
-from run_live_model_behavior import BASELINE_CONTEXT_FILES, BASELINE_SHA, SKILL_REPO, digest, read_context, CASES, ORIGINAL_CASES, LEGACY_CASES, MOBILE_CASES, REGRESSION_BASELINE_SHA, audit_case
+from run_live_model_behavior import BASELINE_CONTEXT_FILES, BASELINE_SHA, SKILL_REPO, digest, read_context, CASES, ORIGINAL_CASES, LEGACY_CASES, MOBILE_CASES, SYSTEM_CASES, V111_CASES, REGRESSION_BASELINE_SHA, audit_case
 
 
 def measure(root, encoding_name, run=None):
@@ -39,7 +39,7 @@ def measure(root, encoding_name, run=None):
         manifest = json.loads((run / 'manifest.json').read_text())
         if manifest['status'] not in ('generated', 'gate_passed', 'gate_failed'):
             raise ValueError('Cannot measure an incomplete or skipped live run')
-        if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(CASES)):
+        if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(V111_CASES), set(CASES)):
             raise ValueError('Retrieval target requires all 12 unique cases')
         cases = []
         for case in ORIGINAL_CASES:
@@ -79,7 +79,7 @@ def compare_runs(baseline_run, candidate_run, candidate_sha, *, comparison="v108
                 raise ValueError('Run is not complete')
             if manifest['skill_sha'] != sha or manifest['skill_dirty']:
                 raise ValueError('Each run must use the exact clean pinned skill revision')
-            if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(CASES)):
+            if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(V111_CASES), set(CASES)):
                 raise ValueError('Both runs must contain exactly the same 12 unique cases')
             counts = {}
             for case in ORIGINAL_CASES:
@@ -126,8 +126,8 @@ def measure_mobile_run(run, candidate_sha):
                 or manifest.get('tests_dirty') is not False or not re.fullmatch('[0-9a-f]{40}', manifest.get('tests_sha',''))):
             raise ValueError('Complete clean SHA-bound Live evidence required')
         cases = manifest['cases']
-        if len(cases) != len(set(cases)) or set(cases) not in (set(MOBILE_CASES), set(CASES)):
-            raise ValueError('All twelve mobile cases required, alone or within all 28')
+        if len(cases) != len(set(cases)) or set(cases) not in (set(MOBILE_CASES), set(V111_CASES), set(CASES)):
+            raise ValueError('All twelve mobile cases required, alone or within all 28/40')
         rows = []
         for case in MOBILE_CASES:
             record = audit_case(run/case, manifest)
@@ -143,6 +143,36 @@ def measure_mobile_run(run, candidate_sha):
         return dict(unavailable, reason=f'Invalid mobile evidence: {type(exc).__name__}: {exc}')
 
 
+def measure_system_run(run, candidate_sha):
+    """Audited system usage only; no baseline or inherited 30% target."""
+    unavailable = dict(status='unmeasured', cohort='system-12', target_reduction=None,
+                       actual_model_input_target_met=None)
+    if not run or not candidate_sha or not re.fullmatch('[0-9a-f]{40}', candidate_sha):
+        return dict(unavailable, reason='System run and explicit full candidate SHA required')
+    try:
+        manifest = json.loads((run/'manifest.json').read_text())
+        if (manifest.get('layer') != 'Live' or manifest.get('status') not in ('generated', 'gate_passed', 'gate_failed')
+                or manifest.get('skill_sha') != candidate_sha or manifest.get('skill_dirty') is not False
+                or manifest.get('tests_dirty') is not False or not re.fullmatch('[0-9a-f]{40}', manifest.get('tests_sha',''))):
+            raise ValueError('Complete clean SHA-bound Live evidence required')
+        cases = manifest['cases']
+        if len(cases) != len(set(cases)) or set(cases) not in (set(SYSTEM_CASES), set(CASES)):
+            raise ValueError('All twelve system cases required, alone or within all 40')
+        rows = []
+        for case in SYSTEM_CASES:
+            record = audit_case(run/case, manifest)
+            tokens = sum(step['usage']['input_tokens'] for step in record['rounds'])
+            if tokens <= 0:
+                raise ValueError('Positive provider input usage required')
+            rows.append(dict(case=case, input_tokens=tokens, rounds=len(record['rounds']),
+                             delivered_context_bytes=sum(read['bytes'] for read in record['reads'])))
+        return dict(unavailable, status='measured', skill_sha=candidate_sha, tests_sha=manifest['tests_sha'],
+                    model=manifest['model'], parameters=manifest['parameters'], cases=rows,
+                    semantic_acceptance='Separate human review required; no device or performance acceptance')
+    except (OSError, ValueError, KeyError, AssertionError, TypeError) as exc:
+        return dict(unavailable, reason=f'Invalid system evidence: {type(exc).__name__}: {exc}')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--skill-root', type=Path, default=SKILL_REPO)
@@ -152,9 +182,12 @@ if __name__ == '__main__':
     parser.add_argument('--candidate-run', type=Path)
     parser.add_argument('--candidate-sha')
     parser.add_argument('--mobile-run', type=Path)
+    parser.add_argument('--system-run', type=Path)
     parser.add_argument('--comparison', choices=['v108-target','v109-regression'], default='v108-target')
     args = parser.parse_args()
-    if args.mobile_run:
+    if args.system_run:
+        result = measure_system_run(args.system_run, args.candidate_sha)
+    elif args.mobile_run:
         result = measure_mobile_run(args.mobile_run, args.candidate_sha)
     elif args.baseline_run or args.candidate_run:
         result = compare_runs(args.baseline_run, args.candidate_run, args.candidate_sha, comparison=args.comparison)

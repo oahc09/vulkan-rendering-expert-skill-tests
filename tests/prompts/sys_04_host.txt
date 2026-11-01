@@ -1,0 +1,3 @@
+想让普通桌面 AppWidget/RemoteViews 直接放任意 Vulkan SurfaceView，有公开支持吗？
+对照变体：若改成应用内自有 SurfaceView 或正常 WallpaperService，合法实现路线如何变化？
+请分别说明前提、实现/失败边界和需要的验证证据。
