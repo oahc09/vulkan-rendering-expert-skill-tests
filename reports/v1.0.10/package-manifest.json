@@ -1,0 +1,802 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "zip": {
+    "path": "/workspace/scratch/62d43a81bbde/vulkan-update-evidence-20261101/final/skill-a.zip",
+    "size_bytes": 858091,
+    "sha256": "cc150ca79d1d84f5f17ee41e89f56afadee80b7910839aab32691c7a8f6790ef",
+    "crc_verified": true
+  },
+  "scope": "Offline committed-text pattern/structure scan; not a security guarantee, platform approval, remote accuracy or Agent/GPU validation",
+  "revision": "030ba7c3d12843f1d05f2b702f4237bfb0db3a46",
+  "tracked_files": 208,
+  "package_files": 196,
+  "package_characters": 1492854,
+  "findings": [],
+  "files": [
+    {
+      "path": "LICENSE",
+      "sha256": "f448691d44b165a34d79953400b2c8dd8ff313a9d88fec1bb00eb046eb2c1a13"
+    },
+    {
+      "path": "README_EN.md",
+      "sha256": "17cc5f65d850256dc6828fdafd6d7bd172dad8308749936574d8e71c8afa2cd0"
+    },
+    {
+      "path": "SKILL.md",
+      "sha256": "9de84727d0d0fc2eb4fed5d4d4c4a1d4dfeee46cabd896111ec2f3a4aa4673cb"
+    },
+    {
+      "path": "references/00_expert_entry/README.md",
+      "sha256": "6fcfd0f86d864606b20f86a64be3f11f5d9d6253069d4331b25f4d0d69297eca"
+    },
+    {
+      "path": "references/00_expert_entry/accuracy_check.md",
+      "sha256": "d615d378bd1e7f8322b77ac147fad763d7b7607ca63e36eb1012886c29dd0293"
+    },
+    {
+      "path": "references/00_expert_entry/change_log.md",
+      "sha256": "67a89728c5ad6a0cfb0386c02322dd0317c98f974a254257c799c43d27382d6c"
+    },
+    {
+      "path": "references/00_expert_entry/debug_priority.md",
+      "sha256": "a30ae5e7336a903eabf7a4ea02ca7687aedd06c7437f1c92d8f248aff2460ad0"
+    },
+    {
+      "path": "references/00_expert_entry/hard_rules.md",
+      "sha256": "84ef24c919305311364369f41393cefeb98e291e8124dcc77d15c8b9f23d9ebf"
+    },
+    {
+      "path": "references/00_expert_entry/performance_priority.md",
+      "sha256": "07906c49de4fcf691ee76a6e759ee2d0f2b7505467a61f1ece6260f9b57bcff2"
+    },
+    {
+      "path": "references/00_expert_entry/progressive_retrieval.md",
+      "sha256": "dc50408929fcdb22568b8830e837081f8d4d746d4d0f0e063a1c1c024dddad59"
+    },
+    {
+      "path": "references/00_expert_entry/response_formats.md",
+      "sha256": "6ca676ffe7f0b55e7543f22df44d86e32ef8a26d3583b5f8d785913801c894f3"
+    },
+    {
+      "path": "references/00_expert_entry/role.md",
+      "sha256": "46c31026035ddb5811fa023aff4abbb331e7a0c0765ce31b9f509515527fd8d6"
+    },
+    {
+      "path": "references/00_expert_entry/task_classifier.md",
+      "sha256": "8bbd0de9e6bfee4c9b7ca3094a10933fbbe78037793b58d3d4d530f55722559f"
+    },
+    {
+      "path": "references/00_expert_entry/verification_gate.md",
+      "sha256": "16992eec7e7627af44e245a7ab9c525059c78c346910f9548c0f45c8ee1cb65b"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/README.md",
+      "sha256": "b3ecaa7f4bac7e3e5297069a700e821ade87f45d288cb89f08d7467062c87058"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/api_card_template.md",
+      "sha256": "bc1f8cb05abd907271dda1fc8afd200d6e6bd5e23df3316a5a2c9c378c9073cf"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/api_manual_design.md",
+      "sha256": "b09d978f5887b38f04b81a22f75b42d8a018d8b8ac96f84088ebf02edc9b3fe9"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/citation_rules.md",
+      "sha256": "773382197779814c77493c2a3deb81e8e36484f9d6421e4790b2c39439b69f7a"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/source_priority.md",
+      "sha256": "a96e2e0689f626bb900b78b4777fdb35c7a96d28bbe8e100b26962e6b5e18459"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/source_tags.md",
+      "sha256": "3f63e1244a24f55dd9ddca8b89a0f7ef06985d502e44b5d2725a570b936dc2f2"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/trusted_sources.md",
+      "sha256": "761bbe6e0af44a433a7161316d8319dd82e3ba1db9662bf477bfea48fe3f2c8c"
+    },
+    {
+      "path": "references/01_source_map_and_api_manual_strategy/update_policy.md",
+      "sha256": "768a56d47226ff28f46380f799fb34c7a33f2239045a205571b5bbc341b608bd"
+    },
+    {
+      "path": "references/02_core_mental_model/README.md",
+      "sha256": "1ad675818fef3b7e6683d3710b18951d4aa36d155a71ca0379dcf6e28dc97e3c"
+    },
+    {
+      "path": "references/02_core_mental_model/android_surface_swapchain_lifecycle.md",
+      "sha256": "dff11f0fe7a2d42745d5eec1d10515d0c78d8a80903c4576645abc237e042b48"
+    },
+    {
+      "path": "references/02_core_mental_model/common_misconceptions.md",
+      "sha256": "25930cde584d963648405423647807a4d8d550a0b844aaa3668c5cc09e33b1d3"
+    },
+    {
+      "path": "references/02_core_mental_model/compute_graphics_relationship.md",
+      "sha256": "768e3b89ccc70a49b76a74cbb51e6adf1c9fd64682be0b2fce58d31f5995df5a"
+    },
+    {
+      "path": "references/02_core_mental_model/engine_architecture.md",
+      "sha256": "4e67593cf68567e86d2973f0217674702d187c447f8bc8318a76ac0046d88bd0"
+    },
+    {
+      "path": "references/02_core_mental_model/frame_lifecycle.md",
+      "sha256": "5e58ac58ada47fc08df209b255556320c38875fcdba0b00cace6e926f3f39d88"
+    },
+    {
+      "path": "references/02_core_mental_model/mental_model_checklist.md",
+      "sha256": "0e1bd5fd7ffe4c351bf33998867f1e7606ed4bc4683813fa4fa2bc9842119a58"
+    },
+    {
+      "path": "references/02_core_mental_model/modern_patterns.md",
+      "sha256": "39626ef4e0610b6ad6c98255e61e1a66d4c99b2b80666f3766f11226e2b631ee"
+    },
+    {
+      "path": "references/02_core_mental_model/pipeline_descriptor_relationship.md",
+      "sha256": "c9b0a238a3b093b2c4080c0092ba5407e5e31bf7a906b2fbe31fb795b213c68a"
+    },
+    {
+      "path": "references/02_core_mental_model/regression_reasoning.md",
+      "sha256": "97f0f862c31772c3b018729dd2c558435cd826f6b13ff06bae0ae64f26b0eb2a"
+    },
+    {
+      "path": "references/02_core_mental_model/render_graph_resource_lifetime.md",
+      "sha256": "18f94693770c854d1981b212e3f9e083afa0bea45242b595fe774f8d54294fa1"
+    },
+    {
+      "path": "references/02_core_mental_model/render_target_model.md",
+      "sha256": "0d9cef17772f87dadc389207c738c6c36cc569782bd6dbe6b5a8752f832e076c"
+    },
+    {
+      "path": "references/02_core_mental_model/resource_lifecycle.md",
+      "sha256": "70628884c4d4ad9ed77ea1ce84549691e0c3be43f753e1f66ffd8f9c1b9002ab"
+    },
+    {
+      "path": "references/02_core_mental_model/synchronization_lifecycle.md",
+      "sha256": "00df9064c2d3c1022688222fbe76362ee558a3f648b84a6f8a4fb7c8abbbc556"
+    },
+    {
+      "path": "references/02_core_mental_model/vulkan_1_4_overview.md",
+      "sha256": "4656d8083dc0b516c7c0845497e355f2f807047273dfd9a46abf7a0617f96020"
+    },
+    {
+      "path": "references/02_core_mental_model/vulkan_object_chain.md",
+      "sha256": "fdfef8f381e4c715be43db94635d2ddfbffb311409bd8a888493bedacb3e8e79"
+    },
+    {
+      "path": "references/03_api_manual/01_instance_device_queue/instance.md",
+      "sha256": "ee26babf8a7dc8789056d6321298a8df9f470772bf748a3a9c5c2bf8db81013f"
+    },
+    {
+      "path": "references/03_api_manual/01_instance_device_queue/logical_device.md",
+      "sha256": "43a0fa691a46eeca83db1dea705b147644d95e970f0c6ae81ea56bbdf86749b0"
+    },
+    {
+      "path": "references/03_api_manual/01_instance_device_queue/maintenance_extensions.md",
+      "sha256": "45e8664bcd1c719d84ea66b699e642b6ebdf8084aec10cfc39eed2e335091b36"
+    },
+    {
+      "path": "references/03_api_manual/01_instance_device_queue/physical_device.md",
+      "sha256": "8b3aca3db2bbe75fb4c08f13846c350320fc4799eb6f380968c5dd031ab85ed7"
+    },
+    {
+      "path": "references/03_api_manual/02_surface_swapchain/desktop_windowing.md",
+      "sha256": "75b000de82b989c9d5382fec00d72aba84ad35c8441c84991065aac6a77fe85f"
+    },
+    {
+      "path": "references/03_api_manual/02_surface_swapchain/surface.md",
+      "sha256": "ee3eced86f9a091f9baa9b5b0f54721fcd247d86ed10cdb7352698386f45add3"
+    },
+    {
+      "path": "references/03_api_manual/02_surface_swapchain/swapchain.md",
+      "sha256": "1edd801c26b1949c4f026b36405eff07b876a56c8d62500f214ba82910ae4284"
+    },
+    {
+      "path": "references/03_api_manual/02_surface_swapchain/swapchain_recreate.md",
+      "sha256": "59a238516d4ff4f742c166ecc3851024ad3dce93123fa6233db5f425e0eb45e7"
+    },
+    {
+      "path": "references/03_api_manual/03_command_buffer/command_buffer.md",
+      "sha256": "e329e504083e645ef07632636436ddea173fd7ef26d92a3b52e787a620cefe90"
+    },
+    {
+      "path": "references/03_api_manual/03_command_buffer/command_buffer_lifetime.md",
+      "sha256": "a9af376a18bf930fa09c86f2f4571aa43e48968b7c5728fe65b6db5826e4558b"
+    },
+    {
+      "path": "references/03_api_manual/03_command_buffer/fence_semaphore.md",
+      "sha256": "1833eaa65b5724453e8c8c480a3538ecfeb9e7a9df47e50a19f3bf0bb558abaa"
+    },
+    {
+      "path": "references/03_api_manual/03_command_buffer/frames_in_flight.md",
+      "sha256": "77cc058bc2ff504e08655dcfcc5730b76c40a8d6adaee9b73668a5a797139aa6"
+    },
+    {
+      "path": "references/03_api_manual/03_command_buffer/indirect_commands.md",
+      "sha256": "7dcd773304abaee227d17a779d663edaf3c1bf74f6b00d83e348b5583e5ce12d"
+    },
+    {
+      "path": "references/03_api_manual/03_command_buffer/queue_submit.md",
+      "sha256": "489238ac8667848b02cffb47fad22c469cac4f78567937d499492bd2577fd1c7"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/buffer.md",
+      "sha256": "5a050485a794350b427685ac81195f56d9331cd91877d27393e194cf9b2748c6"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+      "sha256": "f2feb296c583c52dcc0cbfe81bc015f2f65df419172325affa2bc164f8069abf"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/framebuffer.md",
+      "sha256": "74ac92730043ff425bc9d74837615cc4df041927ebb2799daf789a025d01f6bf"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/host_image_copy.md",
+      "sha256": "ea3b57f52e52eb0db7143480434821e0ead3f75604021621396006a308c143da"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/image.md",
+      "sha256": "4f7b57c8f067a18c864141ddb5e985c01b0dedc36404c2e9f8094d81f6c922a8"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/image_layout.md",
+      "sha256": "4367f8b4d5a0f37b46493254e877b4fe90888b6c06fc7b214705ea164fec4e9b"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/image_view.md",
+      "sha256": "8f2c670c3af38e2a003e37869063e69ca86438311af1a13b369a7d6eea8b8107"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+      "sha256": "35337b745e50f2dd963fa13078427bc7b2480604a7c5d0748f1328aaab46149c"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/query_pool.md",
+      "sha256": "96ba0ca5b7118f7826d592c0fcc085b03dc4290ee28b90b6fc70813b7910d5a1"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/sampler.md",
+      "sha256": "21deef865641c3d66a335a4b30f31fca2d0030c13c12a2c2598485f7f35692a9"
+    },
+    {
+      "path": "references/03_api_manual/04_buffer_image_memory/vma_usage.md",
+      "sha256": "e638bdf91e7b8de3190dec588b3042afcf550f1672c1e773bf732e469564d65a"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_buffer.md",
+      "sha256": "c214a8d7751f014206314437eff927e524c28a0216c845435630b96b634b4e2c"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_heap.md",
+      "sha256": "f00de7e22f1115d60a3ed63cf48daf965af4b2aaa139fb7f251fd958005db9f3"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_indexing.md",
+      "sha256": "94775066751aa0150730f6af5579fa7dff3232ac5212c01382e9219342713043"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_pool.md",
+      "sha256": "75b6a77a90b9b16453a0f784e84ae92ceadbbc8310ebcaeacf5f3c358e9e1dac"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_set.md",
+      "sha256": "2c0cf2cd183fd260d3db73d03203767eabd0c5763f3c9516c9fe3df62f20a18d"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_set_layout.md",
+      "sha256": "dca8a2e6dc81b8be1dcc402d54f46f0a16e9e4ec3ba94d31850f4e8a25b78d61"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_update.md",
+      "sha256": "ca0aebc27d3d65555441190719c468521ba22ecf7617c21210a321905ad56a04"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/push_descriptor.md",
+      "sha256": "657563ff81aeaa385b8d21f1242b9910bef60bae74c390abfea884d6008210ff"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/sampled_image_descriptor.md",
+      "sha256": "2d2aabff7800676526fc00031c8e63731303bc429aa543c9126b54d4d9c1706d"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/storage_buffer_image_descriptor.md",
+      "sha256": "9eb6b6a9f84b563bf51a4f5daf621a6b20b3e0f4f8a14bf2b9d68eb58cf3a91f"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md",
+      "sha256": "6560b379de6e0e9160164124d73ff42397e8b59aaf857b9056b3846019e610c0"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/compute_pipeline.md",
+      "sha256": "7a157edd5d0d54773159194323c7a09a8af82b90eeba5e2e0001757c7598b2f7"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/dynamic_state.md",
+      "sha256": "26994716bddc9dfa9c4cb0169a5355f11f721afac43f169bb719ddad70452e52"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/graphics_pipeline.md",
+      "sha256": "93af25f35e64c98dbf19c98f85aa4d65581da210297107f4d05176a8e7df0b43"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/graphics_pipeline_library.md",
+      "sha256": "3d406a2df8f13df232721fcde5ac5f7a7d9e4690144e3d346c4c41ad26d586cb"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/mesh_shader.md",
+      "sha256": "ebeb7bc46e3393bf0c3fe2fc1a11cb09d677ae2666157a5c3e53a76273f4bb50"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/pipeline.md",
+      "sha256": "28bee9f73fc35979e4ab8bc71401d1954ef7c0e3d110ab8ef75012b96e6213b3"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/pipeline_cache.md",
+      "sha256": "f1a528165f87a91eb21d046eeeb88f8baf4a34346eea5ad8e74cbaad987d396a"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/pipeline_layout.md",
+      "sha256": "3bbfc1d52fef89ee1f99d3f815c32ff25fcd225996f418ebe94cf582638c567a"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/shader_module.md",
+      "sha256": "49e51d6e613db6f78aaef61395de6fe0b01349237b329f1f8535053e1fd033df"
+    },
+    {
+      "path": "references/03_api_manual/06_pipeline/specialization_constants.md",
+      "sha256": "5b994b75059445c44d8378f0d34e77273a2a7bcaae451a366436d2f5da63afdd"
+    },
+    {
+      "path": "references/03_api_manual/07_rendering/attachment_load_store.md",
+      "sha256": "b38d6df3933f39b04c488c2bc9439888fdd852351fe2a240f838d6d175ea356a"
+    },
+    {
+      "path": "references/03_api_manual/07_rendering/dynamic_rendering.md",
+      "sha256": "9711ed5b70d5eb27cbd057c15244c0dea339c9b3d58ddb896aad744510f06ad1"
+    },
+    {
+      "path": "references/03_api_manual/07_rendering/render_pass.md",
+      "sha256": "c6520f75906299f6795c4732e33261553cc37842fae109a6d53dc3a652d3afa7"
+    },
+    {
+      "path": "references/03_api_manual/07_rendering/render_target_layout.md",
+      "sha256": "a8bec8cbda44976f4962bee9b4eec31bff7058cc9c2592b8ef72baf83934c634"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+      "sha256": "22430db589f03f81cfbfe7188c210fec1fdd646785693b1ca1e5e802498a7eca"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/event.md",
+      "sha256": "028e0d52aff4614613c9931e0cce9aef691a2b5768d2fc4a87e57766fed5e01e"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/fence.md",
+      "sha256": "9fa75938b023f51f62c2380cae69af8d362d5590d5bc5bea1a813f5dcf26b0d9"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/image_memory_barrier.md",
+      "sha256": "63b3dc8ad9f2a112af3b0a6ad93ffe43e23f4c2d73cb588e9b21376fd2dac666"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/pipeline_barrier.md",
+      "sha256": "48da671aa9add458ada705016fc58068e065ae618cb387dfcba3d24b31e2f848"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/semaphore.md",
+      "sha256": "72d4ceb4b2e35cb1881add915f0cd5916809eb8ca59a02e54b8a6f7fb5d8bea2"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/synchronization2.md",
+      "sha256": "437ce48648cae6354ebb344972d433f923cbc20bad453f18389d970592ed48e0"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/timeline_semaphore.md",
+      "sha256": "ebc6f33e4ee20a559cda1fa6db9d0ff54555c2faf7a693827ed6708d7b839325"
+    },
+    {
+      "path": "references/03_api_manual/09_debug_validation/debug_utils.md",
+      "sha256": "fbf654039eb673ff729dee4033197277416db9eaa139e14d34f3f23ce8dde405"
+    },
+    {
+      "path": "references/03_api_manual/09_debug_validation/validation_layer.md",
+      "sha256": "b398223fbf7ae0486ef5a79372b7f5214c44d2716c2105ba5757c96143b26939"
+    },
+    {
+      "path": "references/03_api_manual/09_debug_validation/vuid_decode.md",
+      "sha256": "4903f9748df9bc8d1479f583102ced9947c661aeb92cf7c82ff1b43732cf41df"
+    },
+    {
+      "path": "references/03_api_manual/10_android_platform/anativewindow.md",
+      "sha256": "2dd7cf8fa6a9a9d8ffcef23acafa1a61e4232c85c28e5fe44b0eaf3c5a609d87"
+    },
+    {
+      "path": "references/03_api_manual/10_android_platform/android_surface.md",
+      "sha256": "5d1272419a490cbdcbe825e832960a5d96d06489723f8c89bc1d9cd6bc6565d8"
+    },
+    {
+      "path": "references/03_api_manual/README.md",
+      "sha256": "8c15df8f88ea6a5c5b16c9d94511f38e86a50cb7a32a51717241a5c0d5d31ab6"
+    },
+    {
+      "path": "references/03_api_manual/api_card_template.md",
+      "sha256": "aadb26e6dbe82f9edbd58357c9164775a9286fa2c1407a17650df061dd35b5ca"
+    },
+    {
+      "path": "references/03_api_manual/api_card_writing_rules.md",
+      "sha256": "9afc1c5f855e9810e77c337155a02f31dbdbaeed4531ee1ef439a9a3bf1deba4"
+    },
+    {
+      "path": "references/03_api_manual/api_index.md",
+      "sha256": "bf48eb07b762c795348192a7e1fae74b179b5f74519fc155bc1d88bb80006ed1"
+    },
+    {
+      "path": "references/03_api_manual/error_index.md",
+      "sha256": "98adae442285d26cfce8b07348e5203d731bfcaf98a329cdcf00ec8d67f1dcfd"
+    },
+    {
+      "path": "references/03_api_manual/lifecycle_index.md",
+      "sha256": "c344ef3f7c01756a834ec743d417edbef8e2570b9833f129744d7d2d9cf4dc9f"
+    },
+    {
+      "path": "references/04_debug_playbooks/01_visual_issues/black_screen.md",
+      "sha256": "964dc5e785e77c5796decd70c0de9024a7dad031da9e7c9b64867a8b4d650bc3"
+    },
+    {
+      "path": "references/04_debug_playbooks/01_visual_issues/depth_test_wrong.md",
+      "sha256": "8262fff7c0aadb7eba205ffa26fc72ce1aa7a1e0afe1468c7fb5431d814c2c78"
+    },
+    {
+      "path": "references/04_debug_playbooks/01_visual_issues/flickering.md",
+      "sha256": "b00b60bf958b53d1a313ce6c8a7f6d6655acad665af82b8726c2075fac2a0544"
+    },
+    {
+      "path": "references/04_debug_playbooks/02_crash_hang/device_lost.md",
+      "sha256": "458a16e237c6647e363e1eb3145bdc8a396194334a184b7c880913d6b0dca1ed"
+    },
+    {
+      "path": "references/04_debug_playbooks/02_crash_hang/gpu_hang.md",
+      "sha256": "438bebd61612adeb5ab0a769c9b29fc8d12f7d7df169f783fbb6f9311af8a95c"
+    },
+    {
+      "path": "references/04_debug_playbooks/02_crash_hang/swapchain_recreate_crash.md",
+      "sha256": "06e26692f784985c8eae17ecd137abe23d33fa2187bd3209d3a26dd5b76983e9"
+    },
+    {
+      "path": "references/04_debug_playbooks/03_validation_errors/descriptor_pipeline_layout_errors.md",
+      "sha256": "bc2c036ed228b2fbbf22ec3e97139777ca17f93ed12f5dbbd65648a69d0190cc"
+    },
+    {
+      "path": "references/04_debug_playbooks/03_validation_errors/layout_sync_hazard_errors.md",
+      "sha256": "d1053bab0aef754b58ad97a04a510401727c0d73917bec4f3e465658f71eafdb"
+    },
+    {
+      "path": "references/04_debug_playbooks/03_validation_errors/memory_leak.md",
+      "sha256": "672500cca1cac48e74efc208cdf1e048cc3bc7271536b2073975c92ed885964d"
+    },
+    {
+      "path": "references/04_debug_playbooks/03_validation_errors/validation_error_decode.md",
+      "sha256": "5ae548682a364a2168b995eff684412ab58d1c3788c14fa9ffdae3033a2e4b1f"
+    },
+    {
+      "path": "references/04_debug_playbooks/04_resource_sync/compute_graphics_sync_error.md",
+      "sha256": "4252559759b2805191b38fba5a8096b519b4b79398aff17cbd272bff3b435456"
+    },
+    {
+      "path": "references/04_debug_playbooks/04_resource_sync/compute_no_output.md",
+      "sha256": "3a75f6cc18529e9e03409a3940dad02fcac761dce6646702c5d1762564ab328a"
+    },
+    {
+      "path": "references/04_debug_playbooks/05_android_specific/android_surface_lifecycle.md",
+      "sha256": "f6894f9951022f203172c1d4143008ca8cc48d8cd8a95bede556dc8cc2038f97"
+    },
+    {
+      "path": "references/04_debug_playbooks/06_performance_symptoms/bandwidth_fullscreen_cost.md",
+      "sha256": "f41e6b5ffd30434d923a7405a83bd8016ed7475525dbb3c9e650d788e5139c1a"
+    },
+    {
+      "path": "references/04_debug_playbooks/06_performance_symptoms/barrier_draw_call_stall.md",
+      "sha256": "6bbd863680e457c582ecf223c0312a1b263e916c3265cfba916a609814f22db0"
+    },
+    {
+      "path": "references/04_debug_playbooks/06_performance_symptoms/cpu_overhead_symptoms.md",
+      "sha256": "a0d5e8bb8f6dee60c840de853f4dbd18e047cd72e8425be5a3e5c778229479ed"
+    },
+    {
+      "path": "references/04_debug_playbooks/06_performance_symptoms/gpu_frame_time_high.md",
+      "sha256": "7cd7fd5d45b5893c4b612b5746b24f3fac4ef4f162c80f42c53b2e6fd762f71f"
+    },
+    {
+      "path": "references/04_debug_playbooks/06_performance_symptoms/pipeline_startup_stutter.md",
+      "sha256": "154616030e21f0c345a9459a3adc558b67ec811429748d6c69533de446b5756c"
+    },
+    {
+      "path": "references/04_debug_playbooks/README.md",
+      "sha256": "129009e04871da673cc6df79a227b1b5f66c5e24c9c7235378129a4023308b49"
+    },
+    {
+      "path": "references/04_debug_playbooks/debug_playbook_template.md",
+      "sha256": "24d88fa6ef4a950f3396db8f3cf5ab5e23ecb4f770f89091260893aa4a0129ca"
+    },
+    {
+      "path": "references/04_debug_playbooks/debug_priority_index.md",
+      "sha256": "7b206b32310a56e1a3c6dbe6fdc42321ff52c397fdc95c3dc193af39bef694f6"
+    },
+    {
+      "path": "references/04_debug_playbooks/tool_usage.md",
+      "sha256": "926ece924f2baac9d634bc74d13250a3a0cdf22ded184c3fe8cfd3c8f6b43b9f"
+    },
+    {
+      "path": "references/05_workflows/01_renderer_setup/create_renderer_from_scratch.md",
+      "sha256": "18cf38e7525d3fba1f106ce922bff552632fac0d6b3254c9b004f5d0edc4277f"
+    },
+    {
+      "path": "references/05_workflows/01_renderer_setup/project_diagnosis.md",
+      "sha256": "44367d7476bea44caf487233fc6854d0ab7fc84f926e27ab6d2bd8a7ba9bd642"
+    },
+    {
+      "path": "references/05_workflows/01_renderer_setup/setup_frame_loop.md",
+      "sha256": "3d9bfc89f8ebea4d04160764437c1107238e7b691d96d458f30f0091edad854c"
+    },
+    {
+      "path": "references/05_workflows/01_renderer_setup/setup_instance_device_queue.md",
+      "sha256": "f896fdd061425989c0678dd55f8e50eb4d537b8ecb4097c96a13b8f0a0f4d191"
+    },
+    {
+      "path": "references/05_workflows/01_renderer_setup/setup_swapchain.md",
+      "sha256": "48d8168b0337529703b116738d19c84f4c18691934a93317cf4a17b929b01195"
+    },
+    {
+      "path": "references/05_workflows/01_renderer_setup/setup_validation_debug.md",
+      "sha256": "16382552a704d7de81ced1eff43c462a5a919723286a8204cf134270570bedb1"
+    },
+    {
+      "path": "references/05_workflows/02_render_pass_effects/add_depth_pass.md",
+      "sha256": "ef1dcc4bea7ce8c46054455ccb2e2240fea61aa86692b91452f3898a387a9a8e"
+    },
+    {
+      "path": "references/05_workflows/02_render_pass_effects/add_dynamic_rendering_pass.md",
+      "sha256": "96e8019552ba5f9988f706e1a6cfe2949f7f29021dae9d3c7eb2d595eebaef85"
+    },
+    {
+      "path": "references/05_workflows/02_render_pass_effects/add_fullscreen_pass.md",
+      "sha256": "2010a09df567a0cb352b23df1010c6e4528759b6c0963966b2b3a9aa8dc2a8c9"
+    },
+    {
+      "path": "references/05_workflows/02_render_pass_effects/add_offscreen_render_pass.md",
+      "sha256": "1c13ec4f17c3cb4991f42dfe25695480e4e9161048f76df427a676c85cbf318c"
+    },
+    {
+      "path": "references/05_workflows/02_render_pass_effects/add_postprocess_pass.md",
+      "sha256": "52e1bd708bfa644fdd23f7df5f91843d2d48b5ad5186909d67c82788acd88c6f"
+    },
+    {
+      "path": "references/05_workflows/02_render_pass_effects/add_texture_sampling_pass.md",
+      "sha256": "0d6873d13b97ce7491a25b95c0e7ecd5442b50ca74d7d5d76fc8f1d5b11b68ca"
+    },
+    {
+      "path": "references/05_workflows/03_compute_workflows/add_compute_pass.md",
+      "sha256": "8c6fc30dda4d7548382bb321e2a248f0617f18945fe2dc8c05c414c11245638f"
+    },
+    {
+      "path": "references/05_workflows/03_compute_workflows/compute_blur_pass.md",
+      "sha256": "0f0cd9419747a49cb89301fcd2cf4b2e34d3be2b11bed6e788d95c17725e7866"
+    },
+    {
+      "path": "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md",
+      "sha256": "0626c69bb1db760b414ba673ec31bb9a7e2ed05e502729b261542d5507821b29"
+    },
+    {
+      "path": "references/05_workflows/03_compute_workflows/compute_write_storage_buffer.md",
+      "sha256": "e1e8bd331a0fe4902e7adbf0b86e9575d4133cfb374e768d334ca6a7548dd8b9"
+    },
+    {
+      "path": "references/05_workflows/03_compute_workflows/compute_write_storage_image.md",
+      "sha256": "6bfe965f99060d488a9fed799aab0bedb7bd4e5e3542b7b58e509123af9db1eb"
+    },
+    {
+      "path": "references/05_workflows/04_android_integration/android_validation_agi_workflow.md",
+      "sha256": "9079f89ca85571407951a11977f61bc1482fe866e8c074a896422d1107c47c63"
+    },
+    {
+      "path": "references/05_workflows/04_android_integration/handle_android_lifecycle.md",
+      "sha256": "cecb445b3096f14713d31b3ef1496beb423bebafc1fd2d4334d257937853faf3"
+    },
+    {
+      "path": "references/05_workflows/04_android_integration/handle_swapchain_recreate.md",
+      "sha256": "87eb956c9b6fddb5c6a9e11ebcc79fe0e558c93ca58fd29a5d6c8768ec27524b"
+    },
+    {
+      "path": "references/05_workflows/04_android_integration/integrate_surfaceview_anativewindow.md",
+      "sha256": "2d6b9f23fdae3d5986e6802b3bd502cac2f6dfd2118aca3d900275b91324e2e3"
+    },
+    {
+      "path": "references/05_workflows/04_android_integration/pause_resume_render_thread.md",
+      "sha256": "779364c88cdac551822e7f8e42cb5c7f9b63b273ab6dd8fca4b0535bbc801cea"
+    },
+    {
+      "path": "references/05_workflows/05_resource_management/add_offscreen_image.md",
+      "sha256": "4d6311d8a9511a39607c06054392b70d48c45f97093b4aaae2d8cc19a7e5afe2"
+    },
+    {
+      "path": "references/05_workflows/05_resource_management/add_storage_buffer.md",
+      "sha256": "c5c0d7ce9156ad7982a62419ba15771c236625ac1b0543a18ccf25cc78230f81"
+    },
+    {
+      "path": "references/05_workflows/05_resource_management/add_texture_resource.md",
+      "sha256": "d7a430e7b918ab0e6282dfa325d9867a482e01bd9e27e6a0dde97e75a5e0e97d"
+    },
+    {
+      "path": "references/05_workflows/05_resource_management/add_uniform_buffer.md",
+      "sha256": "359f9abd6efd13b85b63c8f889dce05e930c2688ee757d7af6d8e1eaa5732b32"
+    },
+    {
+      "path": "references/05_workflows/05_resource_management/manage_frame_resources.md",
+      "sha256": "785e0bc332aba6fd2cf8487bbfd60df49ec5f44594bfa4e16417279da42c139e"
+    },
+    {
+      "path": "references/05_workflows/05_resource_management/manage_resource_lifetime.md",
+      "sha256": "eb31f087b9a8047594537a3e7ff77f1467a292c983631302cfb60df6d115f37c"
+    },
+    {
+      "path": "references/05_workflows/06_pipeline_descriptor/add_compute_pipeline.md",
+      "sha256": "c1d376da1cbc98d4eb5f1e355b99c6c92413c71551f354f4f367d32fc7049287"
+    },
+    {
+      "path": "references/05_workflows/06_pipeline_descriptor/add_descriptor_set.md",
+      "sha256": "bb022e3608ad1905a09acfc7812b9212630f81b39c755e0b79e991cf359f6ecb"
+    },
+    {
+      "path": "references/05_workflows/06_pipeline_descriptor/add_graphics_pipeline.md",
+      "sha256": "298962a939c2a24e5856e1294241c3f0438cf1bf43712aae6b8eaa322a99624c"
+    },
+    {
+      "path": "references/05_workflows/06_pipeline_descriptor/add_pipeline_layout.md",
+      "sha256": "95e13dbf9ab3e671e26ff76c0697d5b3efb84013a1cfe6863de58d0cbb8c6a2b"
+    },
+    {
+      "path": "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md",
+      "sha256": "4d67bb99a720c9a8b08839b86512bf666269bd88d02868e461310822b5e96b6d"
+    },
+    {
+      "path": "references/05_workflows/07_optimization/optimize_barriers.md",
+      "sha256": "3d2c5ab12e4ef86c13ae80e5a5ff9319761797f647e455f7e4484b0d5c557a15"
+    },
+    {
+      "path": "references/05_workflows/07_optimization/optimize_descriptor_updates.md",
+      "sha256": "39515b000bbba2c67c647be11435b27af7a6f249034687adf773549e2ed0bfa9"
+    },
+    {
+      "path": "references/05_workflows/07_optimization/optimize_frame_time.md",
+      "sha256": "f8b64ea32223a8711bfd42adadbefd0d00a03b42ae94d4cf199a49eb77a59cab"
+    },
+    {
+      "path": "references/05_workflows/07_optimization/optimize_fullscreen_pass.md",
+      "sha256": "7083914ce38f330e200f73187188eb376a5baa5728ca22e54a4e0e8132b6fb5e"
+    },
+    {
+      "path": "references/05_workflows/07_optimization/optimize_mobile_bandwidth.md",
+      "sha256": "27fbf63c86cef4350d56f881a3309b3b051dc1dc38e4a22a09e38fd8d92896fd"
+    },
+    {
+      "path": "references/05_workflows/07_optimization/reduce_pipeline_creation_stutter.md",
+      "sha256": "73407be565f957ae6ec4110bdc09d4bfd451946f4da64f215086666c972a88dd"
+    },
+    {
+      "path": "references/05_workflows/08_migration/convert_single_pass_to_render_graph.md",
+      "sha256": "a2276836714a6d5bc17a7b9f97eba4b565afbc493ab7220bf8ec8917744f88b8"
+    },
+    {
+      "path": "references/05_workflows/08_migration/port_glsl_effect_to_vulkan_android.md",
+      "sha256": "359b3edb049c9374899390d8d1c1d780fe3fd980d8c23a36ceb4708e5ece9c9e"
+    },
+    {
+      "path": "references/05_workflows/08_migration/port_opengl_to_vulkan.md",
+      "sha256": "c010d5f92ab98a6db039920973623e1d010e6e5aef0e10b55c8033f46258d2dc"
+    },
+    {
+      "path": "references/05_workflows/08_migration/port_shadertoy_to_vulkan.md",
+      "sha256": "1563cf1fd79a7c9f43dfaef5deff330ebff2d0d139e8b614b02f34bc9dcf2d9f"
+    },
+    {
+      "path": "references/05_workflows/README.md",
+      "sha256": "13229ac3ccde96aff88b9287b1a561a4c271e4f0c7d93fdfb20d03aad4cbe82a"
+    },
+    {
+      "path": "references/05_workflows/workflow_index.md",
+      "sha256": "192364f9f2fa30a70af0241f5a40517e658a62db7563e0a79bb4f0e3e52db568"
+    },
+    {
+      "path": "references/05_workflows/workflow_template.md",
+      "sha256": "83539ce379e80c54fa849cb542ac7712dfaa50033bb369dd367f822211ac9642"
+    },
+    {
+      "path": "references/06_cases/01_black_screen/case_black_screen.md",
+      "sha256": "f59a591b0b01355014132f62fb999491467a0b0a4eb5e10a3ccf15ecf6f11bc6"
+    },
+    {
+      "path": "references/06_cases/02_descriptor_pipeline/case_descriptor_pipeline.md",
+      "sha256": "de34edb530db0e559fdd3ce9e653b79d169eb1f0f2d6874e54b96a654c643bb3"
+    },
+    {
+      "path": "references/06_cases/03_sync_layout/case_sync_layout.md",
+      "sha256": "9d8367f1378cf7e0872a171a022abe7762c757fb1c922ab81558aca87e32df09"
+    },
+    {
+      "path": "references/06_cases/04_swapchain_android/case_swapchain_android.md",
+      "sha256": "8234f21341d5e963b5303bf324f0230ce84d7fd5e2579a7632d205d2cdb8dcff"
+    },
+    {
+      "path": "references/06_cases/05_compute/case_compute.md",
+      "sha256": "86bffdaceac4567b5a0fe2911316ddaf815782d0ebe611190617fd3c3591e348"
+    },
+    {
+      "path": "references/06_cases/06_performance/case_performance.md",
+      "sha256": "4284ec0c99e33f56b8046b9568088a6334e2869a0744c37b0eb183303777da49"
+    },
+    {
+      "path": "references/06_cases/07_engine_architecture/case_engine_architecture.md",
+      "sha256": "373888d101ccf70873fb766611e3fcb7aa94763ab0f5f3aa5378fb40f9aaaced"
+    },
+    {
+      "path": "references/06_cases/README.md",
+      "sha256": "08155afd1b27badff3bafa1864643f3118ec1d83bce5710fa48f7372ed154366"
+    },
+    {
+      "path": "references/06_cases/case_index.md",
+      "sha256": "0725f44a7cc94bdb70d66890ccccd2fe16a6f56157e8e258647671b4e6811f6c"
+    },
+    {
+      "path": "references/06_cases/case_tags.md",
+      "sha256": "3f2d11564b7f1da15eacd741ad1dbb430ae7589de67e80739109d68a371444c5"
+    },
+    {
+      "path": "references/06_cases/case_template.md",
+      "sha256": "d6345b53635378e3295e79001ddabda6d8a39915214e0d1a4b8e5ce9c0257a57"
+    },
+    {
+      "path": "references/07_integration_pack/README.md",
+      "sha256": "48e850467e4e62fdd6827aa39c4cb8e2cb2dd9d091f9e2dd4fd745b0b785235b"
+    },
+    {
+      "path": "references/07_integration_pack/behavior_evaluation.md",
+      "sha256": "8a2812707b3f71c4846fd6d830f353e4bed1f89ab9c66bf3e1f7fd7f21f66470"
+    },
+    {
+      "path": "references/07_integration_pack/integration_test_plan.md",
+      "sha256": "1ae4b05e7dcdc337918d922878b3577c1917d4571dbd43ca166a6b134a457eff"
+    },
+    {
+      "path": "references/07_integration_pack/maintenance_release_token_policy.md",
+      "sha256": "a5522dcf6469735199c5f4a135c6ad84d6c96a697f6fa7db4cd0d73427061e34"
+    },
+    {
+      "path": "references/07_integration_pack/module_dependency_map.md",
+      "sha256": "9ede8da7e4ca0162b90675313ae1697bde7a377d4fd9304a4992fb4b9c700d94"
+    },
+    {
+      "path": "references/07_integration_pack/regression_checklist.md",
+      "sha256": "9ca7361309865cd3a59daaa5a43fb58dff85ff3c096c42bc8528fb6fbb5c588c"
+    },
+    {
+      "path": "references/07_integration_pack/retrieval_policy.md",
+      "sha256": "b41536533909b4aa0d5ab2aba33d799525977ebf846fcfbe183821c24564bb89"
+    },
+    {
+      "path": "references/07_integration_pack/task_routing_rules.md",
+      "sha256": "7d814537d9bc6448d21f63dd8e1e9b6d5d210e7150ec5a396bc1ee229b9206a4"
+    },
+    {
+      "path": "references/MODULE_SUMMARY.md",
+      "sha256": "2f23f72c7d97be79ce08a0cb99aea6e1d993e6a39d4db23a1a10521b8d30441f"
+    },
+    {
+      "path": "references/README.md",
+      "sha256": "a3f8fc6d0bde43c5de4abf5a6b94381b8442a136a6d3eed75cb4785fd37ace3d"
+    }
+  ]
+}
