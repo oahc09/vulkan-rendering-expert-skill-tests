@@ -1,0 +1,3 @@
+先fill清零count，再cull、compact、draw；只在最后加command barrier，shader barrier能覆盖全部dispatch和count依赖吗？
+对照变体：若合并成一个dispatch，workgroup之间或跨queue仍有哪些不能靠barrier()保证？
+请分别说明合法条件、失败与回退、可验证证据；不要把未执行的验证说成通过。

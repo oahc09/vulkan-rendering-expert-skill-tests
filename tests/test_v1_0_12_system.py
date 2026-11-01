@@ -25,10 +25,10 @@ TOPICS = {
 
 def test_system_release_contract_has_zero_new_runtime_knowledge():
     contract=json.loads((ROOT/'release-contract.json').read_text())
-    assert contract['expected_version']=='1.0.12'
+    assert contract['expected_version']=='1.0.13'
     assert contract['allowed_new_knowledge']==[]
     assert contract['max_runtime_files']==200
-    assert contract['knowledge_baseline_sha']=='1f85b8b752e7008c73bc3af9a3c1f56969680bef'
+    assert contract['knowledge_baseline_sha']=='d049afefaec8539cecca5f8e37c4cd66ec9da728'
 
 
 def test_all_28_historical_prompts_and_original_denominator_frozen():
@@ -41,8 +41,8 @@ def test_all_28_historical_prompts_and_original_denominator_frozen():
 
 
 def test_system_selector_contains_paired_inputs_but_not_rubrics():
-    assert len(CASES)==40 and len(SYSTEM_CASES)==12
-    assert CASES[28:]==list(SYSTEM_CASES)
+    assert len(CASES)==64 and len(SYSTEM_CASES)==12
+    assert CASES[28:40]==list(SYSTEM_CASES)
     assert {s['id'] for s in SYSTEM_CASES.values()}=={f'SYS-{n:02d}' for n in range(1,13)}
     for case,spec in SYSTEM_CASES.items():
         prompt=(ROOT/'tests/prompts'/f'{case}.txt').read_text().strip()

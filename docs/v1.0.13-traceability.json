@@ -1,0 +1,160 @@
+{
+  "scope": "Implementation traceability; not release acceptance",
+  "skill_baseline": "d049afefaec8539cecca5f8e37c4cd66ec9da728",
+  "tests_baseline": "9278d9be3a7a4d4e919ac36927ee165a433450a9",
+  "skill_candidate_sha": "d4965f77365b4cd78692e60d048929040ba65c8b",
+  "plan": "update-plan-v1.0.13.md",
+  "plan_hash_manifest": "v1.0.13-plan-source.json",
+  "milestones": {
+    "M0": {
+      "status": "Implemented; acceptance evidence and limitations in reports/v1.0.13/README.md",
+      "files": [
+        "docs/update-plan-v1.0.13.md",
+        "docs/v1.0.13-plan-source.json",
+        "tests/v112-cohort.json",
+        "tests/engine_cases.py"
+      ],
+      "tests": [
+        "test_exact_plan_and_zero_net_new_knowledge_contract",
+        "test_original_forty_prompts_and_twelve_denominator_unchanged"
+      ]
+    },
+    "M1": {
+      "status": "Implemented; acceptance evidence and limitations in reports/v1.0.13/README.md",
+      "capabilities": "C1 Shader / C2 Pipeline / C3 streaming",
+      "files": [
+        "references/03_api_manual/06_pipeline/shader_module.md",
+        "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md",
+        "references/03_api_manual/06_pipeline/specialization_constants.md",
+        "references/03_api_manual/06_pipeline/pipeline_cache.md",
+        "references/05_workflows/07_optimization/reduce_pipeline_creation_stutter.md",
+        "references/05_workflows/05_resource_management/add_texture_resource.md",
+        "references/05_workflows/05_resource_management/manage_resource_lifetime.md",
+        "references/03_api_manual/04_buffer_image_memory/vma_usage.md"
+      ],
+      "tests": [
+        "ENG13-01..12",
+        "test_core_contracts_survive_section_only_loading"
+      ],
+      "experiment": "Final source 3dd7a63 clean; four software Vulkan runs PASS, six GLSL compiled/validated. See lab-manifest.json and ShaderUnit report; not native mobile.",
+      "host_fixture_files": [
+        "tests/engine_host_contracts.py",
+        "tests/test_v1_0_13_host_unit.py"
+      ]
+    },
+    "M2": {
+      "status": "Implemented; acceptance evidence and limitations in reports/v1.0.13/README.md",
+      "capabilities": "C4 real GPU fixed-slot/compact/count",
+      "files": [
+        "references/02_core_mental_model/compute_graphics_relationship.md",
+        "references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md",
+        "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md"
+      ],
+      "tests": [
+        "ENG13-13..20",
+        "test_core_contracts_survive_section_only_loading"
+      ],
+      "experiment": "Final source 3dd7a63 clean; four software Vulkan runs PASS, six GLSL compiled/validated. See lab-manifest.json and ShaderUnit report; not native mobile."
+    },
+    "M3": {
+      "status": "Implemented; acceptance evidence and limitations in reports/v1.0.13/README.md",
+      "capabilities": "C5 LOD/current-frame Hi-Z/particles/multiview/Mesh/async",
+      "files": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md",
+        "references/03_api_manual/06_pipeline/mesh_shader.md",
+        "references/05_workflows/07_optimization/optimize_frame_time.md"
+      ],
+      "tests": [
+        "ENG13-21..24",
+        "test_core_contracts_survive_section_only_loading"
+      ],
+      "experiment": "Final source 3dd7a63 clean; four software Vulkan runs PASS, six GLSL compiled/validated. See lab-manifest.json and ShaderUnit report; not native mobile."
+    },
+    "M4": {
+      "status": "Implemented; acceptance evidence and limitations in reports/v1.0.13/README.md",
+      "files": [
+        "release-contract.json",
+        "tests/run_live_model_behavior.py",
+        "tests/measure_context.py",
+        "tests/pytest.ini"
+      ],
+      "tests": [
+        "Static",
+        "Host/Shader Unit",
+        "Snapshot",
+        "Live64",
+        "Vulkan Integration",
+        "Mobile/Scale"
+      ]
+    }
+  },
+  "authority_sections": {
+    "references/03_api_manual/06_pipeline/shader_module.md": [
+      "shader-artifact-contract"
+    ],
+    "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md": [
+      "shader-interface-validation",
+      "shader-hot-reload"
+    ],
+    "references/03_api_manual/06_pipeline/specialization_constants.md": [
+      "variant-cost-boundary"
+    ],
+    "references/03_api_manual/06_pipeline/pipeline_cache.md": [
+      "cache-compatibility",
+      "pipeline-binary-path"
+    ],
+    "references/05_workflows/07_optimization/reduce_pipeline_creation_stutter.md": [
+      "pipeline-build-scheduler"
+    ],
+    "references/05_workflows/05_resource_management/add_texture_resource.md": [
+      "texture-streaming-residency"
+    ],
+    "references/05_workflows/05_resource_management/manage_resource_lifetime.md": [
+      "geometry-streaming-retirement"
+    ],
+    "references/03_api_manual/04_buffer_image_memory/vma_usage.md": [
+      "streaming-budget-policy"
+    ],
+    "references/02_core_mental_model/compute_graphics_relationship.md": [
+      "gpu-scene-contract"
+    ],
+    "references/03_api_manual/03_command_buffer/indirect_commands.md": [
+      "indirect-capability-fallback",
+      "indirect-capacity-safety"
+    ],
+    "references/05_workflows/03_compute_workflows/add_compute_pass.md": [
+      "gpu-driven-rendering",
+      "gpu-lod-residency",
+      "hiz-occlusion",
+      "multi-view-culling"
+    ],
+    "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md": [
+      "gpu-produced-draw-sync"
+    ],
+    "references/03_api_manual/06_pipeline/mesh_shader.md": [
+      "mesh-path-fallback"
+    ],
+    "references/05_workflows/07_optimization/optimize_frame_time.md": [
+      "scaled-rendering-ab"
+    ]
+  },
+  "cohorts": {
+    "original_token_target": 12,
+    "legacy_regression": 40,
+    "eng13": 24,
+    "full_live": 64,
+    "paired_variants_per_eng13": 2
+  },
+  "evidence_layers": {
+    "Static": "PASS 213 tests on pinned candidate; reports/v1.0.13/README.md",
+    "Host/Shader Unit": "34 Python CPU contract tests; 10 actual C++ host cases; 6 GLSL/SPIR-V actual compile/validation. Separate scopes, not a production manager.",
+    "Snapshot": "historical fixtures only",
+    "Live Model": "BLOCKED: actual require-live availability exit 2, no model command configured; 64 pytest skipped",
+    "Vulkan Integration": "PASS four llvmpipe CPU-ICD runs: 1k/10k/100k/forced-low; validation and sync-validation errors 0. No mobile/performance claim.",
+    "Mobile/Scale": "UNVERIFIED; no Adreno/Mali evidence"
+  },
+  "report_provenance": "Record skill/tests SHA/tree, clean state and report-only commits separately. Preserve raw failed/skipped output; static/model results never establish device correctness.",
+  "rollback": "Revert reviewed commits; preserve CPU/fixed-slot/Count/LOD/Hi-Z/Mesh/async switches and historical evidence.",
+  "source_ledger": "v1.0.13-sources.json"
+}

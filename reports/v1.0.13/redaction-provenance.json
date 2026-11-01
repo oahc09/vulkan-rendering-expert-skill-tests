@@ -1,0 +1,30 @@
+{
+  "scope": "Public disclosure-safe derivatives; original artifacts remain in private execution inputs and archived evidence. No original artifact hash is relabeled as a public-file hash.",
+  "files": [
+    {
+      "public_path": "reports/v1.0.13/lab-build9.log",
+      "original_sha256": "17928ce0c58a2e3a63674c9dae3ad028168cfc9363df9a7f5330f722dd124d04",
+      "public_sha256": "60a65710384b1484c0518d9152e177edaebcd56fa4b441be447e77c96526f192",
+      "operation": "Replace private absolute execution-root prefix with <workspace>/; preserve remaining relative path and all measurement values."
+    },
+    {
+      "public_path": "reports/v1.0.13/lab-manifest.json",
+      "original_sha256": "5f3474452cb263170f884799f0edc125b36158adebf98f9ecbc7a13cb61f4530",
+      "public_sha256": "dd183360fc94c1dd1d807be5fa66f0ae88979eff66f4a8de28283985a8f768a1",
+      "operation": "Replace private absolute execution-root prefix with <workspace>/; preserve remaining relative path and all measurement values."
+    },
+    {
+      "public_path": "reports/v1.0.13/package-a.json",
+      "original_sha256": "af6cfa6c27463d8c6f651c1d7cf9917298e2b18b019e3350a3e0c2584366134a",
+      "public_sha256": "013df91433389bc315d3eee85484898a8b3c6d323ec991d44606a35c904044a1",
+      "operation": "Replace private absolute execution-root prefix with <workspace>/; preserve remaining relative path and all measurement values."
+    },
+    {
+      "public_path": "reports/v1.0.13/package-b.json",
+      "original_sha256": "739fae2bdf48ad475c0a068447067dc6eeaa19f9d7ddb890b72429bb9dd97d2a",
+      "public_sha256": "90420658e0615e99d8d3aebf9e1e25c0b3547783afd6906a09973040ce45505a",
+      "operation": "Replace private absolute execution-root prefix with <workspace>/; preserve remaining relative path and all measurement values."
+    }
+  ],
+  "lab_manifest_hash_semantics": "fixture_files/artifacts/stdout_sha256/stderr_sha256 retain hashes of original executed source and raw artifacts. Public-manifest own hash is recorded here; verify each against the appropriate original or public representation."
+}

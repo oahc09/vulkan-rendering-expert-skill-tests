@@ -1,0 +1,3 @@
+Compute与Graphics是同family不同VkQueue，是否天然有序？跨family exclusive buffer只加semaphore就足够吗？
+对照变体：若使用同queue或concurrent sharing，哪些ownership步骤可省，哪些执行/内存依赖仍必须存在？
+请分别说明合法条件、失败与回退、可验证证据；不要把未执行的验证说成通过。

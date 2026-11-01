@@ -1,0 +1,12 @@
+#version 450
+#extension GL_GOOGLE_include_directive : require
+#include "common.glsl"
+layout(local_size_x=64) in;
+void main(){uint i=gl_GlobalInvocationID.x;uint w=mipWidth(p.level),h=mipHeight(p.level);if(i>=w*h)return;
+ uint x=i%w,y=i/w;float d=((p.flags&8u)!=0u)?1.0:0.0;
+ if(p.level==0u)d=texelFetch(depthTex,ivec2(x,y),0).r;
+ else {uint pw=mipWidth(p.level-1u),ph=mipHeight(p.level-1u),off=mipOffset(p.level-1u);
+  for(uint yy=0u;yy<2u;yy++)for(uint xx=0u;xx<2u;xx++){
+   uint sx=x*2u+xx,sy=y*2u+yy;if(sx<pw&&sy<ph){float v=hiz[off+sy*pw+sx];d=((p.flags&8u)!=0u)?min(d,v):max(d,v);}}}
+ hiz[mipOffset(p.level)+i]=d;
+}

@@ -1,0 +1,8 @@
+{
+  "archive": "lab-final-v9-evidence.zip",
+  "sha256": "478225052f6f70b8006c37fbeacf55c13d6fdb3e4e8184426f8397710345d3b2",
+  "bytes": 9875349,
+  "archived_artifacts": 1462,
+  "storage": "Full raw evidence separately archived; Git contains full textual reports/manifests and three representative raw images/ID arrays encoded base64. Manifest hashes do not imply all raw artifacts are in Git.",
+  "verification": "All artifact hashes and current fixture byte hashes checked before report integration."
+}

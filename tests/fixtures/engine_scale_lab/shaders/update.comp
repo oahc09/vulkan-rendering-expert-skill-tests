@@ -1,0 +1,8 @@
+#version 450
+#extension GL_GOOGLE_include_directive : require
+#include "common.glsl"
+layout(local_size_x=64) in;
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.n)return;Object o=source[i];
+ if((p.flags&4u)!=0u){o.sphere.x+=float(int(p.tick%7u)-3)*0.004; o.meta.w=(i%5u==p.tick%5u)?0u:1u;}
+ obj[i]=o;
+}

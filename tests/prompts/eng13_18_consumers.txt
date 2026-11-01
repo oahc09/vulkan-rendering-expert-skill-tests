@@ -1,0 +1,3 @@
+compute同时生成indirect command、visible-ID SSBO、vertex stream和index stream，只加DRAW_INDIRECT/INDIRECT_COMMAND_READ够吗？
+对照变体：若实际只生成command/count、不写vertex或SSBO，怎样按真实消费者缩小同步而不机械ALL_COMMANDS？
+请分别说明合法条件、失败与回退、可验证证据；不要把未执行的验证说成通过。
