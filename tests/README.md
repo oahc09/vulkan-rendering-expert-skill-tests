@@ -223,3 +223,41 @@ are never part of model inputs. Use `measure_context.py --system-run RUN --candi
 for separate usage accounting, not the original-12 token target. `media_surface_lab.py`
 is a deterministic isolated state simulation, **not** Android/Vulkan/Camera evidence.
 See `../docs/v1.0.12-acceptance.md` for blocked Live/Device gates and final pin procedure.
+
+## v1.0.13 ENG13 and evidence layers
+
+The full live registry is **64**: the byte-frozen previous40 plus ENG13-01..24.
+Each ENG13 prompt contains two contrasting input conditions; these are 24 paired
+scenarios, not 48 independently completed runs. Private rubrics remain in tests,
+never runtime/model context. `tests/v112-cohort.json` freezes all previous40;
+`original-cohort.json` still freezes the original12 token-target denominator.
+
+`measure_context.py --eng13-run PATH --candidate-sha FULL_SHA` reports the audited
+24-case cohort separately, with no 30% target and no GPU verdict. A complete64 run
+may supply those cases; partial/duplicate/inconsistent evidence is rejected.
+`--comparison v112-regression` compares the frozen v1.0.12 skill main and the
+same old40 prompts, with **no renewed30% target**. Original v1.0.8 target and
+v1.0.9 regression modes remain separate; no64-case mixed median replaces them.
+
+The version contract requires **zero** new runtime knowledge paths and ≤200 actual
+whitelist package files. Exact planned authority anchors, old40 prompt bytes,
+paired input registration, section-only core contracts, known invalid stage
+counterexamples and test/experiment read isolation are checked independently.
+
+Pytest evidence markers preserve static/snapshot/live and additionally recognize:
+`host_unit` (CPU contracts only), `shader_unit` (actual compiler/validator),
+`vulkan_integration` (real Vulkan draw/dispatch on the named implementation), and
+`mobile_scale` (actual target hardware). Those marked layers are not auto-tagged
+Static. Existing mock harness tests test the harness, not model understanding.
+Actual Engine Scale Lab instructions and raw output live under its fixture and
+versioned reports. Never promote Python state simulations to GPU execution,
+software Vulkan to Adreno/Mali performance, or an unsupported optional Mesh/async
+path to an executed native pass. Preserve failures and attempted scale settings.
+
+Final evidence must bind clean skill/tests SHA/tree, source/tool versions,
+compiled artifacts, model/read/provider usage when available, scene seed/config,
+implementation/device/driver/features and real output checks. Shader compile,
+SPIR-V validation, ABI contract, pipeline creation and rendered correctness are
+separate verdicts. Live/host/phone availability can remain BLOCKED/UNVERIFIED;
+this does not authorize fabricated metrics, fault injection, credentials, paid
+cloud devices, deployment, marketplace release or main merge.

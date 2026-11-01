@@ -1,0 +1,192 @@
+{
+  "scope": "Source reading only, not toolchain/GPU execution",
+  "bundles": [
+    {
+      "name": "content-sources.json",
+      "sha256": "430e5c1313a6017c81b141f2cb0825c38617e18220b8a57d77735f7fffbd3066"
+    }
+  ],
+  "sources": [
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/pipelines.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "cache-compatibility",
+        "pipeline-binary-path",
+        "pipeline-build-scheduler",
+        "variant-cost-boundary"
+      ],
+      "support_boundary": "Cache flags/merge and binary keys/capture/consumption, specialization and pipeline creation; no speed guarantee",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/pipeline_cache.md#cache-compatibility",
+        "references/03_api_manual/06_pipeline/pipeline_cache.md#pipeline-binary-path",
+        "references/05_workflows/07_optimization/reduce_pipeline_creation_stutter.md#pipeline-build-scheduler",
+        "references/03_api_manual/06_pipeline/specialization_constants.md#variant-cost-boundary"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/descriptorsets.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "shader-interface-validation",
+        "shader-hot-reload"
+      ],
+      "support_boundary": "Dynamic buffer descriptor policy, layout consistency/superset limits and push constant stage/range rules; reflection not sole schema",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md#shader-interface-validation",
+        "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md#shader-hot-reload"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/features.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "shader-artifact-contract"
+      ],
+      "support_boundary": "Arithmetic/storage/stage-I/O features checked separately; support not enablement",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/shader_module.md#shader-artifact-contract"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/shaders.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "shader-artifact-contract"
+      ],
+      "support_boundary": "Shader module creation and lifetime; compilation not execution proof",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/shader_module.md#shader-artifact-contract"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/interfaces.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "shader-interface-validation"
+      ],
+      "support_boundary": "Block layout/stride and stage interfaces",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md#shader-interface-validation"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/resources.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "texture-streaming-residency",
+        "geometry-streaming-retirement"
+      ],
+      "support_boundary": "Image/Buffer Device ownership and resource lifecycle; ordinary images not dependent on Surface",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/05_resource_management/add_texture_resource.md#texture-streaming-residency",
+        "references/05_workflows/05_resource_management/manage_resource_lifetime.md#geometry-streaming-retirement"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/d38733398a4bec673bd5d24c904d4739a45f020d/chapters/copies.adoc",
+      "revision": "d38733398a4bec673bd5d24c904d4739a45f020d",
+      "tag": "v1.4.328",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "texture-streaming-residency"
+      ],
+      "support_boundary": "Format-specific copy/block and blit rules; no unconditional mip blit",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/05_resource_management/add_texture_resource.md#texture-streaming-residency"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator/blob/1d8f600fd424278486eade7ed3e877c99f0846b1/include/vk_mem_alloc.h",
+      "revision": "1d8f600fd424278486eade7ed3e877c99f0846b1",
+      "tag": "v3.3.0",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "streaming-budget-policy"
+      ],
+      "support_boundary": "Budget estimates/within-budget allocation flag, explicit flush/invalidate, actual defragmentation API; policy thresholds are ENGINE not specification",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/04_buffer_image_memory/vma_usage.md#streaming-budget-policy"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/KTX-Software/blob/beef80159525d9fb7abb8645ea85f4c4f6842e8f/lib/basis_transcode.cpp",
+      "revision": "beef80159525d9fb7abb8645ea85f4c4f6842e8f",
+      "tag": "v4.4.0",
+      "checked_at": "2026-11-01",
+      "anchors": [
+        "texture-streaming-residency"
+      ],
+      "support_boundary": "Container/transcoding vs output format; not a benchmark or universal format support assertion",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/05_resource_management/add_texture_resource.md#texture-streaming-residency"
+      ],
+      "affected_cohort": "ENG13-01..12",
+      "research_group": "content"
+    }
+  ],
+  "limits": [
+    "Knowledge-only source verification, no shader/toolchain build or GPU run in this worker",
+    "Sources do not imply optional feature support on target devices",
+    "No third-party source/model assets copied into runtime package"
+  ],
+  "pending": [
+    "C4/C5 fixed spec source bundle",
+    "Lab toolchain/implementation evidence remains separate"
+  ]
+}

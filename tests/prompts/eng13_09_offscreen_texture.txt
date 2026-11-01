@@ -1,0 +1,3 @@
+没有Surface或swapchain，但有效VkDevice支持纹理format/usage，能创建普通离屏image并上传吗？
+对照变体：若项目初始化顺序强依赖Surface，或资源是外部AHB，怎样区分引擎约束与API/导入合同？
+请分别说明合法条件、失败与回退、可验证证据；不要把未执行的验证说成通过。

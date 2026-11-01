@@ -1,0 +1,3 @@
+多个线程共享VkPipelineCache，能以Vulkan内部同步为理由无锁调用所有cache命令吗？
+对照变体：若使用EXTERNALLY_SYNCHRONIZED标志，或改每线程cache后merge，检查与同步责任怎样变化？
+请分别说明合法条件、失败与回退、可验证证据；不要把未执行的验证说成通过。

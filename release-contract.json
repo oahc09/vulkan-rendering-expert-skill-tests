@@ -1,7 +1,7 @@
 {
-  "expected_version": "1.0.12",
-  "skill_sha": "5c53ec2a600c96d57399a942236640b7061c43fe",
-  "knowledge_baseline_sha": "1f85b8b752e7008c73bc3af9a3c1f56969680bef",
+  "expected_version": "1.0.13",
+  "skill_sha": "UNPUBLISHABLE_UNTIL_REVIEWED_CANDIDATE_PINNED",
+  "knowledge_baseline_sha": "d049afefaec8539cecca5f8e37c4cd66ec9da728",
   "max_runtime_files": 200,
   "allowed_new_knowledge": []
 }

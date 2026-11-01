@@ -12,7 +12,7 @@ import statistics
 import re
 from pathlib import Path
 
-from run_live_model_behavior import BASELINE_CONTEXT_FILES, BASELINE_SHA, SKILL_REPO, digest, read_context, CASES, ORIGINAL_CASES, LEGACY_CASES, MOBILE_CASES, SYSTEM_CASES, V111_CASES, REGRESSION_BASELINE_SHA, audit_case
+from run_live_model_behavior import BASELINE_CONTEXT_FILES, BASELINE_SHA, SKILL_REPO, digest, read_context, CASES, ORIGINAL_CASES, LEGACY_CASES, MOBILE_CASES, SYSTEM_CASES, ENG13_CASES, V111_CASES, V112_CASES, REGRESSION_BASELINE_SHA, audit_case
 
 
 def measure(root, encoding_name, run=None):
@@ -39,7 +39,7 @@ def measure(root, encoding_name, run=None):
         manifest = json.loads((run / 'manifest.json').read_text())
         if manifest['status'] not in ('generated', 'gate_passed', 'gate_failed'):
             raise ValueError('Cannot measure an incomplete or skipped live run')
-        if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(V111_CASES), set(CASES)):
+        if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(V111_CASES), set(V112_CASES), set(CASES)):
             raise ValueError('Retrieval target requires all 12 unique cases')
         cases = []
         for case in ORIGINAL_CASES:
@@ -59,10 +59,11 @@ def measure(root, encoding_name, run=None):
 
 
 def compare_runs(baseline_run, candidate_run, candidate_sha, *, comparison="v108-target"):
-    """Paired real-provider input usage for the unchanged original twelve prompts."""
-    baseline_sha = BASELINE_SHA if comparison == "v108-target" else REGRESSION_BASELINE_SHA
-    if comparison not in ("v108-target", "v109-regression"):
+    """Paired provider usage for the explicitly selected frozen historical cohort."""
+    baseline_sha = BASELINE_SHA if comparison == "v108-target" else ('d049afefaec8539cecca5f8e37c4cd66ec9da728' if comparison == "v112-regression" else REGRESSION_BASELINE_SHA)
+    if comparison not in ("v108-target", "v109-regression", "v112-regression"):
         raise ValueError("Unknown comparison cohort")
+    cohort = V112_CASES if comparison == "v112-regression" else ORIGINAL_CASES
     unavailable = {'status': 'unmeasured', 'actual_model_input_target_met': None}
     if not baseline_run or not candidate_run:
         return dict(unavailable, reason='Two complete real model runs are required')
@@ -79,10 +80,14 @@ def compare_runs(baseline_run, candidate_run, candidate_sha, *, comparison="v108
                 raise ValueError('Run is not complete')
             if manifest['skill_sha'] != sha or manifest['skill_dirty']:
                 raise ValueError('Each run must use the exact clean pinned skill revision')
-            if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(V111_CASES), set(CASES)):
-                raise ValueError('Both runs must contain exactly the same 12 unique cases')
+            if len(manifest['cases']) != len(set(manifest['cases'])) or set(manifest['cases']) not in (set(ORIGINAL_CASES), set(LEGACY_CASES), set(V111_CASES), set(V112_CASES), set(CASES)):
+                raise ValueError('Run must contain a complete supported unique case cohort')
+            if not set(cohort) <= set(manifest['cases']):
+                raise ValueError('Comparison cohort missing from run')
+            if comparison == 'v112-regression' and (manifest.get('tests_dirty') is not False or not re.fullmatch('[0-9a-f]{40}', manifest.get('tests_sha',''))):
+                raise ValueError('v1.0.12 regression requires clean tests provenance')
             counts = {}
-            for case in ORIGINAL_CASES:
+            for case in cohort:
                 record = audit_case(root / case, manifest)
                 counts[case] = sum(step['usage']['input_tokens'] for step in record['rounds'])
                 if counts[case] <= 0:
@@ -90,8 +95,8 @@ def compare_runs(baseline_run, candidate_run, candidate_sha, *, comparison="v108
             totals.append(counts)
         if manifests[0]['model'] != manifests[1]['model'] or manifests[0]['parameters'] != manifests[1]['parameters']:
             raise ValueError('Model and inference parameters must match exactly')
-        frozen = json.loads((Path(__file__).parent/'original-cohort.json').read_text())['cases']
-        for case in ORIGINAL_CASES:
+        frozen = json.loads((Path(__file__).parent/('v112-cohort.json' if comparison == 'v112-regression' else 'original-cohort.json')).read_text())['cases']
+        for case in cohort:
             old = json.loads((baseline_run / case / 'record.json').read_text())
             new = json.loads((candidate_run / case / 'record.json').read_text())
             if old['user_task_sha256'] != new['user_task_sha256'] or old['user_task_sha256'] != frozen[case]:
@@ -100,7 +105,9 @@ def compare_runs(baseline_run, candidate_run, candidate_sha, *, comparison="v108
         reduction = 1 - new_median / old_median
         return {'status': 'measured', 'metric': 'median_total_provider_input_tokens_per_case_all_rounds',
                 'baseline_sha': baseline_sha, 'candidate_sha': candidate_sha, 'comparison': comparison,
-                'cohort': ORIGINAL_CASES, 'targeted_cases': 'Separate semantic cohort; excluded from token target',
+                'baseline_tests_sha': manifests[0].get('tests_sha'), 'candidate_tests_sha': manifests[1].get('tests_sha'),
+                'cohort': cohort, 'targeted_cases': 'Separate semantic cohort; excluded from token target',
+                'eng13_cases': 'Independent 24-case usage; excluded from previous cohort denominators',
                 'mobile_cases': 'Separate mobile cohort; excluded from original 12 denominator',
                 'model': manifests[0]['model'], 'parameters': manifests[0]['parameters'],
                 'baseline_median': old_median, 'candidate_median': new_median,
@@ -126,8 +133,8 @@ def measure_mobile_run(run, candidate_sha):
                 or manifest.get('tests_dirty') is not False or not re.fullmatch('[0-9a-f]{40}', manifest.get('tests_sha',''))):
             raise ValueError('Complete clean SHA-bound Live evidence required')
         cases = manifest['cases']
-        if len(cases) != len(set(cases)) or set(cases) not in (set(MOBILE_CASES), set(V111_CASES), set(CASES)):
-            raise ValueError('All twelve mobile cases required, alone or within all 28/40')
+        if len(cases) != len(set(cases)) or set(cases) not in (set(MOBILE_CASES), set(V111_CASES), set(V112_CASES), set(CASES)):
+            raise ValueError('All twelve mobile cases required, alone or within a complete supported release cohort/40')
         rows = []
         for case in MOBILE_CASES:
             record = audit_case(run/case, manifest)
@@ -156,8 +163,8 @@ def measure_system_run(run, candidate_sha):
                 or manifest.get('tests_dirty') is not False or not re.fullmatch('[0-9a-f]{40}', manifest.get('tests_sha',''))):
             raise ValueError('Complete clean SHA-bound Live evidence required')
         cases = manifest['cases']
-        if len(cases) != len(set(cases)) or set(cases) not in (set(SYSTEM_CASES), set(CASES)):
-            raise ValueError('All twelve system cases required, alone or within all 40')
+        if len(cases) != len(set(cases)) or set(cases) not in (set(SYSTEM_CASES), set(V112_CASES), set(CASES)):
+            raise ValueError('All twelve system cases required, alone or within a complete supported release cohort')
         rows = []
         for case in SYSTEM_CASES:
             record = audit_case(run/case, manifest)
@@ -173,6 +180,36 @@ def measure_system_run(run, candidate_sha):
         return dict(unavailable, reason=f'Invalid system evidence: {type(exc).__name__}: {exc}')
 
 
+def measure_eng13_run(run, candidate_sha):
+    """Audited ENG13 usage only; no baseline or inherited 30% target."""
+    unavailable = dict(status='unmeasured', cohort='eng13-24', target_reduction=None,
+                       actual_model_input_target_met=None)
+    if not run or not candidate_sha or not re.fullmatch('[0-9a-f]{40}', candidate_sha):
+        return dict(unavailable, reason='ENG13 run and explicit full candidate SHA required')
+    try:
+        manifest = json.loads((run/'manifest.json').read_text())
+        if (manifest.get('layer') != 'Live' or manifest.get('status') not in ('generated', 'gate_passed', 'gate_failed')
+                or manifest.get('skill_sha') != candidate_sha or manifest.get('skill_dirty') is not False
+                or manifest.get('tests_dirty') is not False or not re.fullmatch('[0-9a-f]{40}', manifest.get('tests_sha',''))):
+            raise ValueError('Complete clean SHA-bound Live evidence required')
+        cases = manifest['cases']
+        if len(cases) != len(set(cases)) or set(cases) not in (set(ENG13_CASES), set(CASES)):
+            raise ValueError('All 24 ENG13 cases required, alone or within all 64')
+        rows = []
+        for case in ENG13_CASES:
+            record = audit_case(run/case, manifest)
+            tokens = sum(step['usage']['input_tokens'] for step in record['rounds'])
+            if tokens <= 0:
+                raise ValueError('Positive provider input usage required')
+            rows.append(dict(case=case, input_tokens=tokens, rounds=len(record['rounds']),
+                             delivered_context_bytes=sum(read['bytes'] for read in record['reads'])))
+        return dict(unavailable, status='measured', skill_sha=candidate_sha, tests_sha=manifest['tests_sha'],
+                    model=manifest['model'], parameters=manifest['parameters'], cases=rows,
+                    semantic_acceptance='Separate human review required; no device or performance acceptance')
+    except (OSError, ValueError, KeyError, AssertionError, TypeError) as exc:
+        return dict(unavailable, reason=f'Invalid ENG13 evidence: {type(exc).__name__}: {exc}')
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--skill-root', type=Path, default=SKILL_REPO)
@@ -183,9 +220,12 @@ if __name__ == '__main__':
     parser.add_argument('--candidate-sha')
     parser.add_argument('--mobile-run', type=Path)
     parser.add_argument('--system-run', type=Path)
-    parser.add_argument('--comparison', choices=['v108-target','v109-regression'], default='v108-target')
+    parser.add_argument('--eng13-run', type=Path)
+    parser.add_argument('--comparison', choices=['v108-target','v109-regression','v112-regression'], default='v108-target')
     args = parser.parse_args()
-    if args.system_run:
+    if args.eng13_run:
+        result = measure_eng13_run(args.eng13_run, args.candidate_sha)
+    elif args.system_run:
         result = measure_system_run(args.system_run, args.candidate_sha)
     elif args.mobile_run:
         result = measure_mobile_run(args.mobile_run, args.candidate_sha)

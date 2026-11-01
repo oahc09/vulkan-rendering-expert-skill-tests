@@ -1,0 +1,44 @@
+{
+  "scope": "Planned matrix; not execution evidence",
+  "targets": [
+    {
+      "target": "Adreno target",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null
+    },
+    {
+      "target": "Mali target",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null
+    },
+    {
+      "target": "advanced-feature-disabled fallback",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null
+    },
+    {
+      "target": "Mesh/task/Binary/async capable target",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null
+    }
+  ],
+  "required_metadata": [
+    "renderer source SHA",
+    "binary/APK hash",
+    "GPU/driver/OS",
+    "enabled features",
+    "scene seed/config",
+    "1k/10k/100k attempted and completed scales",
+    "output size/quality",
+    "validation versus performance mode",
+    "complete CPU/GPU timings",
+    "visible ID/image/overflow differences",
+    "allocation/staging/retired peaks",
+    "thermal duration and stop conditions"
+  ],
+  "limits": "Software Vulkan, CPU reference, compilation and unit mocks are not mobile performance. No paid device or deliberate fault injection authorized."
+}

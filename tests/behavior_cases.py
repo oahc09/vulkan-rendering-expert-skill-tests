@@ -240,3 +240,7 @@ CASES.update(MOBILE_CASES)
 # v1.0.12 separate system cohort.
 from system_cases import SYSTEM_CASES
 CASES.update(SYSTEM_CASES)
+
+# v1.0.13 independent engine-scale cohort.
+from engine_cases import ENG13_CASES
+CASES.update(ENG13_CASES)

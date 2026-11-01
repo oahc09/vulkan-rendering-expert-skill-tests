@@ -1,0 +1,160 @@
+{
+  "scope": "Implementation traceability; not release acceptance",
+  "skill_baseline": "d049afefaec8539cecca5f8e37c4cd66ec9da728",
+  "tests_baseline": "9278d9be3a7a4d4e919ac36927ee165a433450a9",
+  "skill_candidate_sha": "PENDING_REVIEWED_FINAL_COMMIT",
+  "plan": "update-plan-v1.0.13.md",
+  "plan_hash_manifest": "v1.0.13-plan-source.json",
+  "milestones": {
+    "M0": {
+      "status": "scope and old40 frozen; candidate validation pending",
+      "files": [
+        "docs/update-plan-v1.0.13.md",
+        "docs/v1.0.13-plan-source.json",
+        "tests/v112-cohort.json",
+        "tests/engine_cases.py"
+      ],
+      "tests": [
+        "test_exact_plan_and_zero_net_new_knowledge_contract",
+        "test_original_forty_prompts_and_twelve_denominator_unchanged"
+      ]
+    },
+    "M1": {
+      "status": "implementation under integration",
+      "capabilities": "C1 Shader / C2 Pipeline / C3 streaming",
+      "files": [
+        "references/03_api_manual/06_pipeline/shader_module.md",
+        "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md",
+        "references/03_api_manual/06_pipeline/specialization_constants.md",
+        "references/03_api_manual/06_pipeline/pipeline_cache.md",
+        "references/05_workflows/07_optimization/reduce_pipeline_creation_stutter.md",
+        "references/05_workflows/05_resource_management/add_texture_resource.md",
+        "references/05_workflows/05_resource_management/manage_resource_lifetime.md",
+        "references/03_api_manual/04_buffer_image_memory/vma_usage.md"
+      ],
+      "tests": [
+        "ENG13-01..12",
+        "test_core_contracts_survive_section_only_loading"
+      ],
+      "experiment": "tests/fixtures/engine_scale_lab: real worker report pending; CPU simulation cannot satisfy GPU layer",
+      "host_fixture_files": [
+        "tests/engine_host_contracts.py",
+        "tests/test_v1_0_13_host_unit.py"
+      ]
+    },
+    "M2": {
+      "status": "implementation under integration",
+      "capabilities": "C4 real GPU fixed-slot/compact/count",
+      "files": [
+        "references/02_core_mental_model/compute_graphics_relationship.md",
+        "references/03_api_manual/03_command_buffer/indirect_commands.md",
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md",
+        "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md"
+      ],
+      "tests": [
+        "ENG13-13..20",
+        "test_core_contracts_survive_section_only_loading"
+      ],
+      "experiment": "tests/fixtures/engine_scale_lab: real worker report pending; CPU simulation cannot satisfy GPU layer"
+    },
+    "M3": {
+      "status": "implementation under integration",
+      "capabilities": "C5 LOD/current-frame Hi-Z/particles/multiview/Mesh/async",
+      "files": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md",
+        "references/03_api_manual/06_pipeline/mesh_shader.md",
+        "references/05_workflows/07_optimization/optimize_frame_time.md"
+      ],
+      "tests": [
+        "ENG13-21..24",
+        "test_core_contracts_survive_section_only_loading"
+      ],
+      "experiment": "tests/fixtures/engine_scale_lab: real worker report pending; CPU simulation cannot satisfy GPU layer"
+    },
+    "M4": {
+      "status": "pending final pinned evidence",
+      "files": [
+        "release-contract.json",
+        "tests/run_live_model_behavior.py",
+        "tests/measure_context.py",
+        "tests/pytest.ini"
+      ],
+      "tests": [
+        "Static",
+        "Host/Shader Unit",
+        "Snapshot",
+        "Live64",
+        "Vulkan Integration",
+        "Mobile/Scale"
+      ]
+    }
+  },
+  "authority_sections": {
+    "references/03_api_manual/06_pipeline/shader_module.md": [
+      "shader-artifact-contract"
+    ],
+    "references/05_workflows/06_pipeline_descriptor/shader_binding_workflow.md": [
+      "shader-interface-validation",
+      "shader-hot-reload"
+    ],
+    "references/03_api_manual/06_pipeline/specialization_constants.md": [
+      "variant-cost-boundary"
+    ],
+    "references/03_api_manual/06_pipeline/pipeline_cache.md": [
+      "cache-compatibility",
+      "pipeline-binary-path"
+    ],
+    "references/05_workflows/07_optimization/reduce_pipeline_creation_stutter.md": [
+      "pipeline-build-scheduler"
+    ],
+    "references/05_workflows/05_resource_management/add_texture_resource.md": [
+      "texture-streaming-residency"
+    ],
+    "references/05_workflows/05_resource_management/manage_resource_lifetime.md": [
+      "geometry-streaming-retirement"
+    ],
+    "references/03_api_manual/04_buffer_image_memory/vma_usage.md": [
+      "streaming-budget-policy"
+    ],
+    "references/02_core_mental_model/compute_graphics_relationship.md": [
+      "gpu-scene-contract"
+    ],
+    "references/03_api_manual/03_command_buffer/indirect_commands.md": [
+      "indirect-capability-fallback",
+      "indirect-capacity-safety"
+    ],
+    "references/05_workflows/03_compute_workflows/add_compute_pass.md": [
+      "gpu-driven-rendering",
+      "gpu-lod-residency",
+      "hiz-occlusion",
+      "multi-view-culling"
+    ],
+    "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md": [
+      "gpu-produced-draw-sync"
+    ],
+    "references/03_api_manual/06_pipeline/mesh_shader.md": [
+      "mesh-path-fallback"
+    ],
+    "references/05_workflows/07_optimization/optimize_frame_time.md": [
+      "scaled-rendering-ab"
+    ]
+  },
+  "cohorts": {
+    "original_token_target": 12,
+    "legacy_regression": 40,
+    "eng13": 24,
+    "full_live": 64,
+    "paired_variants_per_eng13": 2
+  },
+  "evidence_layers": {
+    "Static": "pending final pin",
+    "Host/Shader Unit": "CPU fixture host_unit tests separately counted; shader compilation requires lab actual compiler reports. Host fixture invariants are not production-manager or GPU validation.",
+    "Snapshot": "historical fixtures only",
+    "Live Model": "BLOCKED unless authorized observable wrapper/model exists",
+    "Vulkan Integration": "worker real build/run pending",
+    "Mobile/Scale": "UNVERIFIED; no Adreno/Mali evidence"
+  },
+  "report_provenance": "Record skill/tests SHA/tree, clean state and report-only commits separately. Preserve raw failed/skipped output; static/model results never establish device correctness.",
+  "rollback": "Revert reviewed commits; preserve CPU/fixed-slot/Count/LOD/Hi-Z/Mesh/async switches and historical evidence.",
+  "source_ledger": "v1.0.13-sources.json"
+}

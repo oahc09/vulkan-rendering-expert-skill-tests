@@ -1,0 +1,3 @@
+设备支持Indirect Count但没启用drawIndirectFirstInstance，能用非零firstInstance映射object ID并默认有DrawID/BDA吗？
+对照变体：若multiDrawIndirect、firstInstance、shader draw parameters分别可用，怎样逐项选路径和低能力回退？
+请分别说明合法条件、失败与回退、可验证证据；不要把未执行的验证说成通过。
