@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "scope": "Static knowledge/harness candidate acceptance only; not full release or mobile runtime acceptance",
+  "recorded_at": "2026-11-01T08:42:33.586939+00:00",
+  "skill_sha": "f32a77b6cb8406a2883112dfc44ac46c3df26c70",
+  "skill_tree": "fadaf4976680e277c987340cac167a7ba22bbc89",
+  "skill_dirty": false,
+  "tests_code_sha": "f0b3a50a35894b033ec9a1f0da9d26f29ef4d5a4",
+  "tests_code_tree": "1e5d8b0d15406c9d52446e9c05ab835801eeeadb",
+  "tests_code_dirty": false,
+  "tests_baseline": "75630ee590f30e05011512720ac2348b8adc832f",
+  "layers": {
+    "Static": {
+      "passed": 128,
+      "failed": 0
+    },
+    "Snapshot": {
+      "passed": 4,
+      "failed": 0,
+      "scope": "historical checker contracts, not candidate model behavior"
+    },
+    "Live": {
+      "skipped": 28,
+      "status": "BLOCKED",
+      "reason": "Model command and exact model ID not configured; no inference performed"
+    },
+    "Device": {
+      "status": "UNVERIFIED",
+      "reason": "No APK/device run; planned matrix only"
+    },
+    "Host": {
+      "status": "UNVERIFIED",
+      "reason": "Static host contract cannot establish actual host discovery/loading"
+    },
+    "Token": {
+      "status": "UNMEASURED",
+      "actual_model_input_target_met": null,
+      "original_cohort": 12,
+      "mobile_cohort": 12,
+      "mobile_target_reduction": null
+    }
+  },
+  "availability_manifest_scope": "No-command early exit occurs before SHA resolution. live-availability.json proves missing adapter only, not SHA-bound Live acceptance.",
+  "source_manifest": "docs/v1.0.11-sources.json",
+  "source_manifest_sha256": "37a145ea2649228d29f8a8e5f01f69531abac15b23d3393c3bb95dfdf55485e9",
+  "source_records": 34,
+  "log_sha256": {
+    "live-availability.json": "5cad908b9ead85350a0b93879e1a7b3b210720ed5766505223136d4c86a2f077",
+    "live.txt": "0d348be54506c1e2c0a12124bca6ba21957cbaa726b98185b566b26e1210a823",
+    "package-a.json": "0ff6eb6c30777162074cbd207d2b1b42c0b828f1b65b0c1a9bb00d5b7945a116",
+    "snapshot.txt": "55c7390d3f79bd415a83aaa9030c1353cf77267631bbde30e6929b34c5833990",
+    "skill-unit.txt": "e95afd2072a094eb359bd9128744630fa601c4b2f55e448a2237830386e16668",
+    "skill-check.txt": "f951f41d97c45ffa8349d58eb299d89c86e7540a4dd45e6d7322dd7506bf0575",
+    "package-b.json": "94d8fdba8a205f7b971a6b69f812e9f64b2d01db9c84d2fa6827ce0e2eacc274",
+    "static.txt": "6b60182c69b600d089fa4f56125c8c1a87f7f4e6ba659b04cefa25af92023ef5",
+    "host-contract.txt": "7024d08ce1837f3bdd28d963a22e59d26dd2a0baaa8f916be27463fa4a8bca8e"
+  },
+  "changed_files": [
+    ".github/workflows/test-skill-branch.yml",
+    ".gitignore",
+    "docs/update-plan-v1.0.11.md",
+    "docs/v1.0.11-acceptance.md",
+    "docs/v1.0.11-device-matrix.json",
+    "docs/v1.0.11-plan-source.json",
+    "docs/v1.0.11-sources.json",
+    "docs/v1.0.11-traceability.json",
+    "release-contract.json",
+    "tests/README.md",
+    "tests/behavior_cases.py",
+    "tests/measure_context.py",
+    "tests/prompts/mobile_01_tools_trace.txt",
+    "tests/prompts/mobile_02_sustained_pacing.txt",
+    "tests/prompts/mobile_03_local_read_limits.txt",
+    "tests/prompts/mobile_04_tile_fallback.txt",
+    "tests/prompts/mobile_05_interop_uuid.txt",
+    "tests/prompts/mobile_06_fd_payload.txt",
+    "tests/prompts/mobile_07_ahb_camera.txt",
+    "tests/prompts/mobile_08_fault_generation.txt",
+    "tests/prompts/mobile_09_fault_api.txt",
+    "tests/prompts/mobile_10_neural_emulation.txt",
+    "tests/prompts/mobile_11_neural_multidevice.txt",
+    "tests/prompts/mobile_12_filament_release.txt",
+    "tests/run_live_model_behavior.py",
+    "tests/test_context_measurement.py",
+    "tests/test_live_model_behavior.py",
+    "tests/test_references.py",
+    "tests/test_source_tags.py",
+    "tests/test_v1_0_11_mobile.py",
+    "tests/test_v1_0_8_project_diagnosis.py",
+    "tests/test_v1_0_9_regression.py"
+  ],
+  "report_commit_policy": "This report references tested code commit/tree above. Report-only commit is subsequent; no circular claim that report commit was the code execution SHA.",
+  "limitations": [
+    "No SDK build or third-party sample execution",
+    "No real model output or provider usage",
+    "No target phone GPU/counter/latency/thermal measurements",
+    "No paid device, deliberate fault injection, private trace upload or marketplace publication"
+  ],
+  "package": {
+    "revision": "f32a77b6cb8406a2883112dfc44ac46c3df26c70",
+    "tracked_files": 212,
+    "package_files": 200,
+    "package_characters": 1539817,
+    "zip_sha256": "f0e45ed4b4760f38b67e62550466c67165ed628458a5031d20d0812d57e045d8",
+    "zip_size_bytes": 896329,
+    "deterministic": true,
+    "crc_verified": true,
+    "files_manifest": "package-a.json",
+    "scope": "Offline deterministic packaging, not platform upload acceptance"
+  },
+  "skill_local_contracts": {
+    "unit_tests_passed": 24,
+    "node_check": "PASS",
+    "host_contract": "PASS static only"
+  }
+}

@@ -27,10 +27,10 @@ def live_run():
     assert not manifest['skill_dirty'] and not manifest['tests_dirty']
     assert re.fullmatch('[0-9a-f]{40}', manifest['tests_sha'])
     assert manifest['read_policy'] == 'runtime-knowledge-only-v1'
-    assert len(manifest['cases']) == 16
+    assert len(manifest['cases']) == len(CASES)
     assert manifest['model']
     assert isinstance(manifest['parameters'], dict)
-    assert set(manifest['cases']) == set(CASES), 'Full live gate requires all 16 cases'
+    assert set(manifest['cases']) == set(CASES), 'Full live gate requires all 28 cases'
     return root, manifest
 
 

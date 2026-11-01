@@ -1,0 +1,70 @@
+{
+  "layer": "Device",
+  "scope": "Planned target matrix; no APK or device execution performed",
+  "targets": [
+    {
+      "target": "Adreno",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "required_checks": [
+        "standard rendering",
+        "trace",
+        "cross-API round trip",
+        "optional QCOM tile or fallback"
+      ]
+    },
+    {
+      "target": "Mali/Immortalis",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "required_checks": [
+        "standard rendering",
+        "tool availability",
+        "fault capability and address-generation logging or generic fallback"
+      ]
+    },
+    {
+      "target": "Native neural SDK capable device",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "required_checks": [
+        "resource inputs",
+        "history reset",
+        "pacing and latency",
+        "sustained heat and visual quality"
+      ]
+    },
+    {
+      "target": "Multi-Engine/Multi-Surface",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "required_checks": [
+        "resource isolation",
+        "shared versus independent VkDevice",
+        "SDK context/global state",
+        "background/foreground"
+      ]
+    }
+  ],
+  "required_provenance": [
+    "device model",
+    "GPU",
+    "OS build",
+    "driver",
+    "API/extensions/features enabled",
+    "SDK and shader/model versions",
+    "skill SHA",
+    "tests SHA",
+    "APK/source SHA",
+    "tool version",
+    "scene/resolution/quality/refresh",
+    "duration/thermal state",
+    "capture overhead"
+  ],
+  "optional_measures": "Bandwidth, power and input latency only when reliably observable",
+  "stop_conditions": "Respect thermal protection; stop on unsafe heat, instability, resource errors or user request. No fault injection without separate isolated-device authorization."
+}

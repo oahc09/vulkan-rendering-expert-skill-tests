@@ -1,0 +1,1 @@
+新手机API版本1.4但没有ARM tensor/data graph能力，SDK只在PC仿真层跑过。是否能宣称原生神经渲染和移动端性能验收通过？

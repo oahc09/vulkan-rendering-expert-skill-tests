@@ -1,0 +1,1 @@
+为了优化，我把同一个sync FD连续复用很多帧，还将optimal image直接导入通用opaque FD路径。内存和同步的owner、layout及失败回收怎么处理？

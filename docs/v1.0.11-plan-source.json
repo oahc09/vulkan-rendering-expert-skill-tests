@@ -1,0 +1,8 @@
+{
+  "sha256": "ff8049e31e0f1533ec3d6c8b8e6b79ab67536eafdf64dd87bd16e05d95edae5d",
+  "bytes": 37540,
+  "source": "user supplied exact Vulkan_Expert_Skill_v1.0.11_移动端能力扩展计划_2026-11-01.md",
+  "skill_baseline": "349dc35bd769ca6174afa5714450a4aa9f4cecf8",
+  "tests_baseline": "75630ee590f30e05011512720ac2348b8adc832f",
+  "status": "implementation plan, not acceptance evidence"
+}

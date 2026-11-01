@@ -1,0 +1,1091 @@
+{
+  "scope": "Source-read evidence only; no builds, Device tests, model calls or third-party full-text copies",
+  "checked_at": "2026-11-01",
+  "research_bundle_hashes": [
+    {
+      "name": "diagnostics-sources.json",
+      "sha256": "ef3794106fb97a080c0077d109b6bb2274156268523a906116124f9b4e78dd88",
+      "bytes": 9830
+    },
+    {
+      "name": "interop-sources.json",
+      "sha256": "48dfa960f707b661600949e978fbf970191d47560c740f6de75cbd2260be7f6e",
+      "bytes": 7557
+    },
+    {
+      "name": "neural-sources.json",
+      "sha256": "9c8bbc33c1ac3ec53ae10ad0f4037691de236eb95ad2ccffd49cb272a52654bb",
+      "bytes": 12235
+    }
+  ],
+  "sources": [
+    {
+      "id": "S01",
+      "source_url": "https://developer.arm.com/community/arm-community-blogs/b/mobile-graphics-and-gaming-blog/posts/diagnosing-vk-error-device-lost-on-mali-gpus-with-vk-ext-device-fault",
+      "published_at": "2026-10-05",
+      "event_at": "2026-10-05",
+      "checked_at": "2026-11-01",
+      "change_kind": "tutorial",
+      "commit": null,
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "include",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "id": "S07",
+      "source_url": "https://developer.android.com/tools/agents/android-cli/release-notes",
+      "published_at": "2026-10",
+      "event_at": "2026-10",
+      "checked_at": "2026-11-01",
+      "change_kind": "release",
+      "commit": null,
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/tool_usage.md#mobile-profiler-contract"
+      ],
+      "affected_tests": [
+        "MOBILE-01"
+      ],
+      "adoption": "include",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "release_tag": "1.1.16717390",
+      "research_group": "diagnostics",
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_01_tools_trace"
+      ]
+    },
+    {
+      "id": "S08",
+      "source_url": "https://developer.android.com/blog/posts/android-dev-summit-26-developer-tools-performance",
+      "published_at": "2026-10-28",
+      "event_at": "2026-10-28",
+      "checked_at": "2026-11-01",
+      "change_kind": "tutorial",
+      "commit": null,
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/android_validation_agi_workflow.md#mobile-capture-loop"
+      ],
+      "affected_tests": [
+        "MOBILE-01"
+      ],
+      "adoption": "include",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_01_tools_trace"
+      ]
+    },
+    {
+      "id": "S14",
+      "source_url": "https://developer.android.com/games/optimize/adpf",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "existing_documentation",
+      "commit": null,
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/05_workflows/07_optimization/optimize_frame_time.md#sustained-mobile-performance"
+      ],
+      "affected_tests": [
+        "MOBILE-01",
+        "MOBILE-02"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_01_tools_trace",
+        "mobile_02_sustained_pacing"
+      ]
+    },
+    {
+      "id": "S15",
+      "source_url": "https://developer.android.com/games/sdk/frame-pacing",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "existing_documentation",
+      "commit": null,
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/05_workflows/07_optimization/optimize_frame_time.md#sustained-mobile-performance"
+      ],
+      "affected_tests": [
+        "MOBILE-01",
+        "MOBILE-02"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_01_tools_trace",
+        "mobile_02_sustained_pacing"
+      ]
+    },
+    {
+      "id": "S16",
+      "source_url": "https://developer.android.com/android-performance-analyzer/release-notes",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "existing_documentation",
+      "commit": null,
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/05_workflows/07_optimization/optimize_frame_time.md#sustained-mobile-performance"
+      ],
+      "affected_tests": [
+        "MOBILE-01",
+        "MOBILE-02"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_01_tools_trace",
+        "mobile_02_sustained_pacing"
+      ]
+    },
+    {
+      "id": "VK_KHR_device_fault",
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VK_KHR_device_fault.html",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "spec",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "id": "vkGetDeviceFaultReportsKHR",
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/vkGetDeviceFaultReportsKHR.html",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "spec",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "id": "vkGetDeviceFaultDebugInfoKHR",
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/vkGetDeviceFaultDebugInfoKHR.html",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "spec",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "id": "vkGetDeviceFaultInfoEXT",
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/vkGetDeviceFaultInfoEXT.html",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "spec",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "id": "VkPhysicalDeviceFaultFeaturesKHR",
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkPhysicalDeviceFaultFeaturesKHR.html",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "spec",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "id": "VkPhysicalDeviceAddressBindingReportFeaturesEXT",
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkPhysicalDeviceAddressBindingReportFeaturesEXT.html",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "spec",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "mapped_skill_path": [
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md#mobile-fault-evidence"
+      ],
+      "affected_tests": [
+        "MOBILE-08",
+        "MOBILE-09"
+      ],
+      "adoption": "background",
+      "capability_requirements": "Query actual target device, driver and enabled features; no device execution in this task",
+      "recheck_trigger": "upstream release / driver / API / tool channel change",
+      "research_group": "diagnostics",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "runner_cases": [
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ]
+    },
+    {
+      "source_url": "https://github.com/qualcomm/qhwi",
+      "upstream_repo": "qualcomm/qhwi",
+      "commit": "b12d782344643252ba38ee864f8bcb20cd8d6949",
+      "published_at": "2026-10-08",
+      "event_at": "2026-10-08",
+      "checked_at": "2026-11-01",
+      "change_kind": "tutorial/reference",
+      "source_files": [
+        "README.md",
+        "examples/qcom_tile_shading/src/qcom_tile_shading.cpp",
+        "examples/qcom_tile_memory_heap/src/qcom_tile_memory_heap.cpp",
+        "examples/vk_custom_resolve/src/vk_custom_resolve.cpp"
+      ],
+      "mapped_skill_path": [
+        "references/03_api_manual/07_rendering/mobile_tile_rendering.md#qhwi-sample-lessons"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "notes": "Source inspected; custom resolve branches EXT then QCOM then standard. Tile sample config is not universal capability proof. README CI build-only. Article event date is not extension introduction date.",
+      "recheck_trigger": "upstream API/header or target driver changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-03",
+        "MOBILE-04"
+      ],
+      "runner_cases": [
+        "mobile_03_local_read_limits",
+        "mobile_04_tile_fallback"
+      ]
+    },
+    {
+      "source_url": "https://github.com/SnapdragonGameStudios/adreno-gpu-vulkan-code-sample-framework",
+      "upstream_repo": "SnapdragonGameStudios/adreno-gpu-vulkan-code-sample-framework",
+      "commit": "60a13ff4bfa2eb4e5b293babbeccb9be9e4bfc4f",
+      "published_at": "2026-10-22",
+      "event_at": "2026-10-22",
+      "checked_at": "2026-11-01",
+      "change_kind": "tutorial/reference",
+      "source_files": [
+        "samples/opencl_interop/code/main/interop_common.cpp",
+        "samples/opencl_interop/code/main/interop_buffer.cpp",
+        "samples/opencl_interop/code/main/application.cpp"
+      ],
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/vulkan_opencl_interop.md#interop-workflow"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "notes": "Device+driver UUID and memory/semaphore handle checks; examples not production error-handling proof.",
+      "recheck_trigger": "upstream API/header or target driver changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/OpenCL-Docs",
+      "upstream_repo": "KhronosGroup/OpenCL-Docs",
+      "commit": "0027b7f1a5e97b1bf5256888757479e012a5cb59",
+      "published_at": null,
+      "event_at": null,
+      "checked_at": "2026-11-01",
+      "change_kind": "existing_standard",
+      "source_files": [
+        "api/opencl_runtime_layer.asciidoc",
+        "api/cl_khr_external_memory.asciidoc",
+        "api/cl_khr_external_memory_opaque_fd.asciidoc",
+        "api/cl_khr_external_semaphore_sync_fd.asciidoc"
+      ],
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#interop-lifetime-contract"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "notes": "POSIX FD successful imports transfer ownership to OpenCL implementation; no further app fd operations. Registry website inaccessible, verified official GitHub source instead.",
+      "recheck_trigger": "upstream API/header or target driver changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VK_KHR_dynamic_rendering_local_read.html",
+      "upstream_repo": "KhronosGroup/Vulkan-Docs",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "checked_at": "2026-11-01",
+      "published_at": null,
+      "event_at": null,
+      "change_kind": "existing_standard",
+      "mapped_skill_path": [
+        "references/03_api_manual/07_rendering/mobile_tile_rendering.md#tile-capability-matrix"
+      ],
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "adoption": "include",
+      "recheck_trigger": "spec or target capability changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-03",
+        "MOBILE-04"
+      ],
+      "runner_cases": [
+        "mobile_03_local_read_limits",
+        "mobile_04_tile_fallback"
+      ]
+    },
+    {
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VK_QCOM_tile_memory_heap.html",
+      "upstream_repo": "KhronosGroup/Vulkan-Docs",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "checked_at": "2026-11-01",
+      "published_at": null,
+      "event_at": null,
+      "change_kind": "existing_standard",
+      "mapped_skill_path": [
+        "references/03_api_manual/07_rendering/mobile_tile_rendering.md#tile-lifetime-contract"
+      ],
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "adoption": "include",
+      "recheck_trigger": "spec or target capability changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-03",
+        "MOBILE-04"
+      ],
+      "runner_cases": [
+        "mobile_03_local_read_limits",
+        "mobile_04_tile_fallback"
+      ]
+    },
+    {
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkImportMemoryFdInfoKHR.html",
+      "upstream_repo": "KhronosGroup/Vulkan-Docs",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "checked_at": "2026-11-01",
+      "published_at": null,
+      "event_at": null,
+      "change_kind": "existing_standard",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#interop-lifetime-contract"
+      ],
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "adoption": "include",
+      "recheck_trigger": "spec or target capability changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkImportSemaphoreFdInfoKHR.html",
+      "upstream_repo": "KhronosGroup/Vulkan-Docs",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "checked_at": "2026-11-01",
+      "published_at": null,
+      "event_at": null,
+      "change_kind": "existing_standard",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#interop-handle-matrix"
+      ],
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "adoption": "include",
+      "recheck_trigger": "spec or target capability changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/vkGetSemaphoreFdKHR.html",
+      "upstream_repo": "KhronosGroup/Vulkan-Docs",
+      "commit": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "checked_at": "2026-11-01",
+      "published_at": null,
+      "event_at": null,
+      "change_kind": "existing_standard",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#interop-lifetime-contract"
+      ],
+      "verification": "source_read",
+      "build_tested": false,
+      "device_tested": false,
+      "adoption": "include",
+      "recheck_trigger": "spec or target capability changes",
+      "research_group": "interop",
+      "release_tag": null,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://www.qualcomm.com/developer/blog/2026/10/how-to-share-vulkan-opencl-workloads-android-adreno-gpus",
+      "published_at": "2026-10-22",
+      "event_at": "2026-10-22",
+      "checked_at": "2026-11-01",
+      "change_kind": "tutorial",
+      "verification": "source_read",
+      "adoption": "include",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#interop-handle-matrix"
+      ],
+      "notes": "Opaque FD focused; full AHB interop deferred by article; capabilities driver-dependent.",
+      "research_group": "interop",
+      "commit": null,
+      "release_tag": null,
+      "build_tested": false,
+      "device_tested": false,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "recheck_trigger": "Specification, upstream SDK, target driver, tool channel or resource contract changes",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://www.qualcomm.com/developer/blog/2026/10/build-portable-rendering-systems-across-vulkan-directx12-with-qhwi",
+      "published_at": "2026-10-08",
+      "event_at": "2026-10-08",
+      "checked_at": "2026-11-01",
+      "change_kind": "tutorial",
+      "verification": "source_read",
+      "mapped_skill_path": [
+        "references/03_api_manual/07_rendering/mobile_tile_rendering.md#qhwi-sample-lessons"
+      ],
+      "adoption": "include",
+      "notes": "Thin abstraction and optional vendor capability design, not mandatory replacement RHI.",
+      "research_group": "interop",
+      "commit": null,
+      "release_tag": null,
+      "build_tested": false,
+      "device_tested": false,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "recheck_trigger": "Specification, upstream SDK, target driver, tool channel or resource contract changes",
+      "affected_tests": [
+        "MOBILE-03",
+        "MOBILE-04"
+      ],
+      "runner_cases": [
+        "mobile_03_local_read_limits",
+        "mobile_04_tile_fallback"
+      ]
+    },
+    {
+      "source_url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkSemaphoreGetFdInfoKHR.html",
+      "checked_at": "2026-11-01",
+      "change_kind": "existing_standard",
+      "verification": "source_read",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#interop-handle-matrix"
+      ],
+      "adoption": "include",
+      "notes": "Binary copy payload export, no pending queue wait, submitted signal dependency chain.",
+      "research_group": "interop",
+      "published_at": null,
+      "event_at": null,
+      "commit": null,
+      "release_tag": null,
+      "build_tested": false,
+      "device_tested": false,
+      "mobile_relevance": "See mapped capability contract and research notes",
+      "capability_requirements": "Query selected target driver, extensions, enabled features and handle/path compatibility; source reading alone is not support evidence",
+      "recheck_trigger": "Specification, upstream SDK, target driver, tool channel or resource contract changes",
+      "affected_tests": [
+        "MOBILE-05",
+        "MOBILE-06",
+        "MOBILE-07"
+      ],
+      "runner_cases": [
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/releases/tag/v1.1.1",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": "2026-10-30T02:06:02Z",
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md#neural-capability-contract"
+      ],
+      "mobile_relevance": "Optional NSS/NFRU integration, ABI changes and dataset diagnostics",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/docs/compatibility_matrix.md",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md"
+      ],
+      "mobile_relevance": "Capability, resource/history/coordinates, process-global backend, migration and separate licensing",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/docs/migration_note.md",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md"
+      ],
+      "mobile_relevance": "Capability, resource/history/coordinates, process-global backend, migration and separate licensing",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/docs/NSS/NSS.md",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md"
+      ],
+      "mobile_relevance": "Capability, resource/history/coordinates, process-global backend, migration and separate licensing",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/docs/NFRU/NFRU.md",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md"
+      ],
+      "mobile_relevance": "Capability, resource/history/coordinates, process-global backend, migration and separate licensing",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/README.md",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md"
+      ],
+      "mobile_relevance": "Capability, resource/history/coordinates, process-global backend, migration and separate licensing",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/google/filament/releases/tag/v1.79.0",
+      "upstream_repo": "google/filament",
+      "published_at": "2026-10-26T23:44:28Z",
+      "event_at": "2026-10-26",
+      "release_tag": "v1.79.0",
+      "commit": "a854ad6ac9045d211001ba597831ff878490a1de",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/06_cases/07_engine_architecture/case_engine_architecture.md#mobile-sdk-framework-contracts"
+      ],
+      "mobile_relevance": "Cross-frame TransformManager Instance invalidation and material/Java/native compatibility",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/google/filament/blob/a854ad6ac9045d211001ba597831ff878490a1de/RELEASE_NOTES.md",
+      "upstream_repo": "google/filament",
+      "published_at": null,
+      "event_at": "2026-10-26",
+      "release_tag": "v1.79.0",
+      "commit": "a854ad6ac9045d211001ba597831ff878490a1de",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/06_cases/07_engine_architecture/case_engine_architecture.md#mobile-sdk-framework-contracts"
+      ],
+      "mobile_relevance": "Fixed release notes; does not turn a main-branch heading into a release",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/qualcomm/qhwi/blob/b12d782344643252ba38ee864f8bcb20cd8d6949/README.md",
+      "upstream_repo": "qualcomm/qhwi",
+      "published_at": null,
+      "event_at": null,
+      "release_tag": null,
+      "commit": "b12d782344643252ba38ee864f8bcb20cd8d6949",
+      "change_kind": "merged_change",
+      "mapped_skill_path": [
+        "references/06_cases/07_engine_architecture/case_engine_architecture.md#mobile-sdk-framework-contracts"
+      ],
+      "mobile_relevance": "Thin capability exposure, optional vendor paths and build-only CI boundary",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/sdk/src/backends/vk/vk_wrapper.cpp",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md#neural-engine-lifetime"
+      ],
+      "mobile_relevance": "LoadVulkanFunctions requires surface/swapchain entrypoints; singleton table and first-success initialization have no per-Device indexing or load lock",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "source_path": "sdk/src/backends/vk/vk_wrapper.cpp",
+      "blob_sha": "b0ac118eed7df0f12adbaf7a4adddc69c2fbfb45",
+      "source_lines": [
+        [
+          71,
+          86
+        ],
+        [
+          168,
+          175
+        ],
+        [
+          223,
+          254
+        ]
+      ],
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    },
+    {
+      "source_url": "https://github.com/arm/neural-graphics-sdk-for-game-engines/blob/019e99a62ea3a331fe112516190d77befc779a53/sdk/src/backends/vk/ffx_vk.cpp",
+      "upstream_repo": "arm/neural-graphics-sdk-for-game-engines",
+      "published_at": null,
+      "event_at": "2026-10-30",
+      "release_tag": "v1.1.1",
+      "commit": "019e99a62ea3a331fe112516190d77befc779a53",
+      "change_kind": "release",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md#neural-engine-lifetime"
+      ],
+      "mobile_relevance": "DestroyBackendContextVK clears per-context resources but does not reset the singleton function table",
+      "checked_at": "2026-11-01",
+      "capability_requirements": "Query target driver/selected path and explicit feature enablement; no universal device guarantee",
+      "affected_tests": [
+        "MOBILE-10",
+        "MOBILE-11",
+        "MOBILE-12"
+      ],
+      "adoption": "include",
+      "verification": "source_read",
+      "recheck_trigger": "SDK/framework/driver/model/shader/ABI change",
+      "source_path": "sdk/src/backends/vk/ffx_vk.cpp",
+      "blob_sha": "407ad0f53fd3ceadd42da9f66ae78f0fbabe2bad",
+      "source_lines": [
+        [
+          2889,
+          2972
+        ]
+      ],
+      "research_group": "neural",
+      "build_tested": false,
+      "device_tested": false,
+      "runner_cases": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ]
+    }
+  ],
+  "limits": [
+    "No SDK build, no GPU/device run, no model weights downloaded",
+    "Software MIT does not cover Developer Guide (CC BY-ND 4.0) or VGF models (separate Arm AI Model Community License)",
+    "Arm LICENSE root query returned404; correct license separation read in fixed README"
+  ],
+  "classification_note": "Existing-standard/documentation classifications retained explicitly; not falsely relabeled as new releases or spec deltas."
+}

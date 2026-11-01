@@ -1,0 +1,1 @@
+一台 Vulkan 1.4 手机要使用 depth/stencil 和 multisampled dynamic rendering local read，是否只检查 apiVersion 就足够？
