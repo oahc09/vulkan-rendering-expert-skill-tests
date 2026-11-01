@@ -1,12 +1,7 @@
 {
-  "expected_version": "1.0.11",
-  "skill_sha": "f32a77b6cb8406a2883112dfc44ac46c3df26c70",
-  "knowledge_baseline_sha": "349dc35bd769ca6174afa5714450a4aa9f4cecf8",
+  "expected_version": "1.0.12",
+  "skill_sha": "5c53ec2a600c96d57399a942236640b7061c43fe",
+  "knowledge_baseline_sha": "1f85b8b752e7008c73bc3af9a3c1f56969680bef",
   "max_runtime_files": 200,
-  "allowed_new_knowledge": [
-    "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md",
-    "references/03_api_manual/07_rendering/mobile_tile_rendering.md",
-    "references/05_workflows/04_android_integration/vulkan_opencl_interop.md",
-    "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md"
-  ]
+  "allowed_new_knowledge": []
 }

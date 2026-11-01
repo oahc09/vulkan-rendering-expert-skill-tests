@@ -1,0 +1,3 @@
+半透明边缘发黑，输入已经 premultiplied，shader 又乘一次 alpha。可以只提高曝光吗？
+对照变体：若输入是 straight alpha，或宿主只支持 OPAQUE，blend/compositeAlpha 与可行回退分别怎样选？
+请分别说明前提、实现/失败边界和需要的验证证据。

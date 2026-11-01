@@ -120,3 +120,37 @@ def test_mobile_metrics_separate_usage_from_device_or_token_target(tmp_path, mon
     manifest['cases']=list(MOBILE_CASES)[:-1];path.write_text(json.dumps(manifest))
     assert metrics.measure_mobile_run(root,'a'*40)['status']=='unmeasured'
     assert metrics.measure_mobile_run(None,None)['status']=='unmeasured'
+
+
+def test_system_usage_is_audited_separate_and_rejects_incomplete_or_dirty(tmp_path, monkeypatch):
+    from run_live_model_behavior import SYSTEM_CASES
+    monkeypatch.setattr(metrics,'audit_case',lambda folder,manifest: json.loads((folder/'record.json').read_text()))
+    root=synthetic_run(tmp_path/'system','a'*40,777)
+    path=root/'manifest.json'; manifest=json.loads(path.read_text())
+    manifest.update(tests_sha='b'*40,tests_dirty=False,cases=list(SYSTEM_CASES))
+    for case in SYSTEM_CASES:
+        p=root/case/'record.json'; record=json.loads(p.read_text()); record['reads']=[dict(bytes=123)]
+        p.write_text(json.dumps(record))
+    path.write_text(json.dumps(manifest))
+    result=metrics.measure_system_run(root,'a'*40)
+    assert result['status']=='measured' and len(result['cases'])==12
+    assert result['cohort']=='system-12' and result['target_reduction'] is None
+    assert result['actual_model_input_target_met'] is None
+    assert all(row['input_tokens']==777 and row['delivered_context_bytes']==123 for row in result['cases'])
+    for changes in [dict(cases=list(SYSTEM_CASES)[:-1]),dict(cases=list(SYSTEM_CASES)*2),
+                    dict(tests_dirty=True),dict(skill_dirty=True),dict(layer='Snapshot'),
+                    dict(status='skipped'),dict(tests_sha=''),dict(skill_sha='c'*40)]:
+        path.write_text(json.dumps(dict(manifest,**changes)))
+        assert metrics.measure_system_run(root,'a'*40)['status']=='unmeasured'
+    assert metrics.measure_system_run(None,None)['status']=='unmeasured'
+
+
+def test_historical_28_run_remains_valid_for_original_target(tmp_path, monkeypatch):
+    from run_live_model_behavior import V111_CASES
+    monkeypatch.setattr(metrics, 'audit_case', lambda folder, manifest: json.loads((folder/'record.json').read_text()))
+    old=synthetic_run(tmp_path/'old28',BASELINE_SHA,100)
+    new=synthetic_run(tmp_path/'new40','a'*40,70)
+    p=old/'manifest.json'; manifest=json.loads(p.read_text());manifest['cases']=V111_CASES;p.write_text(json.dumps(manifest))
+    result=metrics.compare_runs(old,new,'a'*40)
+    assert result['actual_model_input_target_met'] is True
+    assert len(result['candidate_case_input_tokens'])==12

@@ -30,7 +30,7 @@ def live_run():
     assert len(manifest['cases']) == len(CASES)
     assert manifest['model']
     assert isinstance(manifest['parameters'], dict)
-    assert set(manifest['cases']) == set(CASES), 'Full live gate requires all 28 cases'
+    assert set(manifest['cases']) == set(CASES), 'Full live gate requires all 40 cases'
     return root, manifest
 
 

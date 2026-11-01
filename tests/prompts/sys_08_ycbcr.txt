@@ -1,0 +1,3 @@
+Camera externalFormat 的 YCbCr 参数缺失，能直接当 RGBA 纹理并用普通 separate sampler 吗？
+对照变体：若实际查询得到可采样普通 RGB VkFormat，哪些 conversion/descriptor 条件不再需要？
+请分别说明前提、实现/失败边界和需要的验证证据。

@@ -236,3 +236,7 @@ MOBILE_CASES = {'mobile_01_tools_trace': {'prompt': '新 Android CLI 可以录 s
                                           'main release-note heading does not establish a released '
                                           'v1.80 artifact; pin release/tag and source evidence.'}}
 CASES.update(MOBILE_CASES)
+
+# v1.0.12 separate system cohort.
+from system_cases import SYSTEM_CASES
+CASES.update(SYSTEM_CASES)

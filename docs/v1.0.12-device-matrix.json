@@ -1,0 +1,131 @@
+{
+  "status": "NOT RUN",
+  "simulation_is_not_device": true,
+  "targets": [
+    {
+      "gpu_family": "Adreno",
+      "display": "HDR",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "paths": [
+        "Activity dual Surface",
+        "Wallpaper multi Engine",
+        "local video",
+        "authorized foreground camera"
+      ],
+      "required_evidence": [
+        "APK/source SHA",
+        "Android API/NDK",
+        "driver/extension/features",
+        "per-output capabilities",
+        "FD/AHB memory convergence",
+        "100 rebuilds",
+        "1000 shared frames",
+        "15 minute sustained",
+        "known-pattern offscreen and actual compositor checks"
+      ]
+    },
+    {
+      "gpu_family": "Adreno",
+      "display": "SDR",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "paths": [
+        "Activity dual Surface",
+        "Wallpaper multi Engine",
+        "local video",
+        "authorized foreground camera"
+      ],
+      "required_evidence": [
+        "APK/source SHA",
+        "Android API/NDK",
+        "driver/extension/features",
+        "per-output capabilities",
+        "FD/AHB memory convergence",
+        "100 rebuilds",
+        "1000 shared frames",
+        "15 minute sustained",
+        "known-pattern offscreen and actual compositor checks"
+      ]
+    },
+    {
+      "gpu_family": "Mali",
+      "display": "HDR",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "paths": [
+        "Activity dual Surface",
+        "Wallpaper multi Engine",
+        "local video",
+        "authorized foreground camera"
+      ],
+      "required_evidence": [
+        "APK/source SHA",
+        "Android API/NDK",
+        "driver/extension/features",
+        "per-output capabilities",
+        "FD/AHB memory convergence",
+        "100 rebuilds",
+        "1000 shared frames",
+        "15 minute sustained",
+        "known-pattern offscreen and actual compositor checks"
+      ]
+    },
+    {
+      "gpu_family": "Mali",
+      "display": "SDR",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "paths": [
+        "Activity dual Surface",
+        "Wallpaper multi Engine",
+        "local video",
+        "authorized foreground camera"
+      ],
+      "required_evidence": [
+        "APK/source SHA",
+        "Android API/NDK",
+        "driver/extension/features",
+        "per-output capabilities",
+        "FD/AHB memory convergence",
+        "100 rebuilds",
+        "1000 shared frames",
+        "15 minute sustained",
+        "known-pattern offscreen and actual compositor checks"
+      ]
+    },
+    {
+      "gpu_family": "PowerVR/other",
+      "display": "unavailable",
+      "status": "UNVERIFIED",
+      "device_identity": null,
+      "measurements": null,
+      "paths": [
+        "Activity dual Surface",
+        "Wallpaper multi Engine",
+        "local video",
+        "authorized foreground camera"
+      ],
+      "required_evidence": [
+        "APK/source SHA",
+        "Android API/NDK",
+        "driver/extension/features",
+        "per-output capabilities",
+        "FD/AHB memory convergence",
+        "100 rebuilds",
+        "1000 shared frames",
+        "15 minute sustained",
+        "known-pattern offscreen and actual compositor checks"
+      ]
+    }
+  ],
+  "limits": [
+    "No authorized Android device",
+    "No HDR panel/calibration evidence",
+    "No private camera content or protected readback"
+  ]
+}

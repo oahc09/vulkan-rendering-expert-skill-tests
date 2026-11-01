@@ -25,9 +25,10 @@ ORIGINAL_CASES = [
     'tc12_05_ahb_descriptor_count', 'tc12_06_apple_tool_matrix',
     'tc12_07_validation_not_correctness', 'tc12_08_blender_proposal',
 ]
-from behavior_cases import TARGETED_CASES, MOBILE_CASES
+from behavior_cases import TARGETED_CASES, MOBILE_CASES, SYSTEM_CASES
 LEGACY_CASES = ORIGINAL_CASES + list(TARGETED_CASES)
-CASES = LEGACY_CASES + list(MOBILE_CASES)
+V111_CASES = LEGACY_CASES + list(MOBILE_CASES)
+CASES = V111_CASES + list(SYSTEM_CASES)
 REGRESSION_BASELINE_SHA = '102c5d721dcb43a23e12d77927f2703d56c63a11'
 BASELINE_SHA = '1bad967c8e6880c3eecdaa6a946901cbc5c1f060'
 # Historical v1.0.8 loading policy, retained ONLY for measured comparison.

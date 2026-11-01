@@ -1,0 +1,3 @@
+acquire sync FD 导入失败；能用普通 VkFence handle 直接回交 AImage_deleteAsync 吗？
+对照变体：外部 semaphore 路径不可用，或返回 acquire FD=-1，正确等待、失败清理和回退分别是什么？
+请分别说明前提、实现/失败边界和需要的验证证据。

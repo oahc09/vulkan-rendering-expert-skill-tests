@@ -1,0 +1,491 @@
+{
+  "scope": "C1/C2/C3 official source-only; no Android/GPU execution",
+  "sources": [
+    {
+      "id": "C2-NDK-IMAGE",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/754a4310b132681592fa9ed8d449b9953795056b/media/ndk/include/media/NdkImage.h",
+      "revision": "754a4310b132681592fa9ed8d449b9953795056b",
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "API26 AHB handle borrowed; explicit acquire/release and buffer-removed listener; deleteAsync makes image invalid but release fence guards buffer reuse",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Fixed commit read; blob 62b8624265b710a215f6183637e8d7526154029d; no source copied.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-NDK-MEDIA",
+      "url": "https://developer.android.com/ndk/reference/group/media",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract;android-media-sampling",
+      "support": "Async readiness -1 or sync FD, maxImages exhaustion, latest >=2 acquisition margin, API availability; producer API contracts",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official generated docs checked on date, no immutable page revision asserted.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract",
+        "references/05_workflows/02_render_pass_effects/add_texture_sampling_pass.md#android-media-sampling"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-AOSP-READER",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/refs/heads/main/media/ndk/NdkImageReader.cpp",
+      "revision": "blob:889ddad7394113a5ea4006156aeaa4ffe18e85a2",
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "acquire returns duplicated fence FD; releaseImageLocked wraps FD in Fence then releases buffer; invalid reader state not retry-safe",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Read main HTML and observed exact blob. Main commit page resolved e2f098935447ca4945946de5cb69db843fe3f003 (2025-03-26), but fixed-commit file URL was unavailable to web tool; do not claim fixed URL retrieval. Normal valid path only; >0 implementation condition is not permission to treat FD0 as absent.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-CAMERA",
+      "url": "https://developer.android.com/ndk/reference/group/camera",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-sampling",
+      "support": "Separate camera stream/session configuration and capability adapter",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable reference checked; no camera session executed.",
+      "mapped_skill_path": [
+        "references/05_workflows/02_render_pass_effects/add_texture_sampling_pass.md#android-media-sampling"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VK_ANDROID_external_memory_android_hardware_buffer",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VK_ANDROID_external_memory_android_hardware_buffer.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "Extension dependencies including FOREIGN, external format versus ordinary format",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkImportAndroidHardwareBufferInfoANDROID",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkImportAndroidHardwareBufferInfoANDROID.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "Successful import retains AHB reference, failed import does not",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkMemoryAllocateInfo",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkMemoryAllocateInfo.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "AHB allocationSize/memoryTypeIndex and image dedicated allocation VUID02383/02384/02385",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkAndroidHardwareBufferFormatPropertiesANDROID",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkAndroidHardwareBufferFormatPropertiesANDROID.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-ycbcr",
+      "support": "Suggested model/range/offsets are defaults not truth; external format features not ordinary format features",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/05_descriptor/sampled_image_descriptor.md#android-media-ycbcr"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkExternalFormatANDROID",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkExternalFormatANDROID.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-ycbcr",
+      "support": "External format must be queried value, no invented format",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/05_descriptor/sampled_image_descriptor.md#android-media-ycbcr"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkSamplerYcbcrConversionCreateInfo",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkSamplerYcbcrConversionCreateInfo.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-ycbcr",
+      "support": "External conversion format UNDEFINED, matching external format, chroma filter/offset feature constraints",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/05_descriptor/sampled_image_descriptor.md#android-media-ycbcr"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkSamplerYcbcrConversionInfo",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkSamplerYcbcrConversionInfo.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-ycbcr",
+      "support": "samplerYcbcrConversion enabled; traditional combined immutable sampler path",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/05_descriptor/sampled_image_descriptor.md#android-media-ycbcr"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkSamplerCreateInfo",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkSamplerCreateInfo.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-ycbcr",
+      "support": "Conversion sampler addressing/anisotropy/normalized coordinate restrictions",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/05_descriptor/sampled_image_descriptor.md#android-media-ycbcr"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-VkImageViewCreateInfo",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkImageViewCreateInfo.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-ycbcr",
+      "support": "Identically defined conversion and identity swizzle for conversion view",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/05_descriptor/sampled_image_descriptor.md#android-media-ycbcr"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-vkImportSemaphoreFdKHR",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/vkImportSemaphoreFdKHR.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "FD transfer only successful import and no pending semaphore queue commands",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official latest page read 2026-11-01; no independent immutable page revision. Parent may map to release source freeze only after confirming relevant clauses.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C2-VK-AHB-MEMORY",
+      "url": "https://docs.vulkan.org/spec/latest/chapters/memory.html#memory-external-android-hardware-buffer",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-media-frame-contract",
+      "support": "Camera/codec hardware buffer foreign devices except matching GLES/Vulkan UUID contexts; AHB reference and external formats",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Official mutable specification page read; no device verification.",
+      "mapped_skill_path": [
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md#android-media-frame-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C1-CALLBACK",
+      "url": "https://developer.android.com/reference/android/view/SurfaceHolder.Callback",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "multi-surface-lifecycle;surface-host-boundaries",
+      "support": "surfaceDestroyed returns only after render thread stops touching Surface; Surface reference is not valid access permission",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/handle_android_lifecycle.md#multi-surface-lifecycle",
+        "references/03_api_manual/10_android_platform/android_surface.md#surface-host-boundaries"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C1-WALLPAPER",
+      "url": "https://developer.android.com/reference/android/service/wallpaper/WallpaperService#onCreateEngine()",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "multi-instance-ownership;android-host-contract",
+      "support": "Multiple live Engine instances allowed, preview and active example; no fixed cardinality/order",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/02_core_mental_model/android_surface_swapchain_lifecycle.md#multi-instance-ownership",
+        "references/05_workflows/04_android_integration/integrate_surfaceview_anativewindow.md#android-host-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C1-REMOTE-VIEWS",
+      "url": "https://developer.android.com/reference/android/widget/RemoteViews",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-host-contract",
+      "support": "Supported RemoteViews host classes are not arbitrary SurfaceView/native views",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/integrate_surfaceview_anativewindow.md#android-host-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C1-WAIT-IDLE",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/vkDeviceWaitIdle.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "multi-surface-lifecycle",
+      "support": "No timeout parameter; queue host synchronization and device-lost error are distinct from surface lifecycle",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/handle_android_lifecycle.md#multi-surface-lifecycle"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C1-WSI",
+      "url": "https://docs.vulkan.org/guide/latest/swapchain_semaphore_reuse.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "multi-surface-lifecycle;multi-instance-ownership",
+      "support": "Submit fence not proof of present semaphore retirement; per-image semaphore and WSI completion protocol",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/handle_android_lifecycle.md#multi-surface-lifecycle",
+        "references/02_core_mental_model/android_surface_swapchain_lifecycle.md#multi-instance-ownership"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C1-GRAPHICS-RELEASE",
+      "url": "https://developer.android.com/jetpack/androidx/releases/graphics",
+      "revision": null,
+      "published_at": "2026-10-07",
+      "checked_at": "2026-11-01",
+      "anchor": "android-host-contract",
+      "support": "graphics-core1.1.0-beta01 release: GL teardown/transform/surface recreate lessons, not Vulkan backend implementation",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/05_workflows/04_android_integration/integrate_surfaceview_anativewindow.md#android-host-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-MEDIA3-P3",
+      "url": "https://developer.android.com/jetpack/androidx/releases/media3#1.12.0-alpha01",
+      "revision": null,
+      "published_at": "2026-10-21",
+      "checked_at": "2026-11-01",
+      "anchor": "color-output-contract",
+      "support": "1.12.0-alpha01 adds Display P3 metadata mappings, not Vulkan/HDR implementation; later alpha02 listed separately",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/02_core_mental_model/render_target_model.md#color-output-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-HDR-EXT",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VK_GOOGLE_hdr_smpte_st_209450_metadata.html",
+      "revision": null,
+      "published_at": "2026-10-08",
+      "checked_at": "2026-11-01",
+      "anchor": "android-color-presentation",
+      "support": "Exact vendor extension revision1 unratified; properties2/core1.1 plus surfacecaps2,swapchain,hdrmetadata dependencies",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/03_api_manual/02_surface_swapchain/swapchain.md#android-color-presentation"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-HDR-METADATA",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkHdrSmpteSt209450GOOGLE.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-color-presentation",
+      "support": "Enabled hdrSmpteSt209450 and per-surface hdrSmpteSt209450Supported; pNext VkHdrMetadataEXT; input bytes copied, contents not Vulkan validated",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/03_api_manual/02_surface_swapchain/swapchain.md#android-color-presentation"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-HDR-HEADERS",
+      "url": "https://github.com/KhronosGroup/Vulkan-Headers/blob/9fbc2a782ee3f8a4db64e7d991e23da75e893f44/include/vulkan/vulkan_core.h",
+      "revision": "9fbc2a782ee3f8a4db64e7d991e23da75e893f44",
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-color-presentation",
+      "support": "Exact feature and SurfaceCapabilities struct/member symbols verified in downloaded immutable header",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Raw header SHA256 7f5c0b11b139668b410ab8f180876beb0c2039d723e9932320e187808e905d8b; no third-party file vendored. Two generated per-structure pages cache-missed; symbols verified from this source, metadata prerequisites from official parent/type pages.",
+      "mapped_skill_path": [
+        "references/03_api_manual/02_surface_swapchain/swapchain.md#android-color-presentation"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-ALPHA",
+      "url": "https://docs.vulkan.org/refpages/latest/refpages/source/VkCompositeAlphaFlagBitsKHR.html",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-color-presentation;color-output-contract",
+      "support": "Opaque ignores alpha; premultiplied/postmultiplied conventions; INHERIT requires native contract",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/03_api_manual/02_surface_swapchain/swapchain.md#android-color-presentation",
+        "references/02_core_mental_model/render_target_model.md#color-output-contract"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-SURFACECONTROL",
+      "url": "https://developer.android.com/ndk/reference/group/native-activity",
+      "revision": null,
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-color-presentation",
+      "support": "Direct SurfaceControl dataspace API29 and premultiplied buffer alpha; distinct ownership from WSI swapchain",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Mutable official page checked on stated date; no immutable revision asserted.",
+      "mapped_skill_path": [
+        "references/03_api_manual/02_surface_swapchain/swapchain.md#android-color-presentation"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    },
+    {
+      "id": "C3-REGISTRY",
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/b94f8bd2d004d2949469d8a5071ee10eb7d23566/xml/vk.xml",
+      "revision": "b94f8bd2d004d2949469d8a5071ee10eb7d23566",
+      "published_at": null,
+      "checked_at": "2026-11-01",
+      "anchor": "android-color-presentation",
+      "support": "Frozen registry exact GOOGLE extension spelling and dependency expression agree with docs and headers",
+      "source_read": true,
+      "build": false,
+      "device": false,
+      "notes": "Downloaded XML SHA256 39c10c59b1c5809f1f090eeb1ca0817d51d949f66eb00c3c676c6db173b8a35d; parsed with ElementTree, not vendored.",
+      "mapped_skill_path": [
+        "references/03_api_manual/02_surface_swapchain/swapchain.md#android-color-presentation"
+      ],
+      "recheck_trigger": "Target API/driver/source revision changes or conflicting producer/Surface capability evidence"
+    }
+  ],
+  "limits": [
+    "No camera, video decoder, Android device or GPU execution",
+    "Static docs and design case only",
+    "AOSP fixed NdkImageReader.cpp retrieval unavailable; exact observed blob recorded instead"
+  ]
+}

@@ -1,0 +1,3 @@
+AHardwareBuffer_acquire 后立即 delete AImage，两个输出继续采样，为什么可能错？
+对照变体：单消费者已经实际 GPU 完成且 ownership 回交完成时，归还条件怎样简化？
+请分别说明前提、实现/失败边界和需要的验证证据。
