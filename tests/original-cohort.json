@@ -1,0 +1,17 @@
+{
+  "source_tests_sha": "f48871940b6af3c20a6fa9d108645631735512ac",
+  "cases": {
+    "tc11_01_repository_map": "b35b1138f832fc9d9f70a25efc44042699a87c60df9085fc503cd150a70d7ab4",
+    "tc11_02_vulkan_13_upgrade": "00b1abb0ad5dae89e00132ebd008452e3f46f20ff9620e16ca8bb6171611e852",
+    "tc11_03_android_rotation_crash": "9e6f7d6935182dc75a7bd19bfcd973743c6787818aac4b1d44d974d84ca8ca68",
+    "tc11_04_add_compute_pass": "792e3848af6f089e47915d6825264b52febbb32f3b21e3df5a22a572a24ebea2",
+    "tc12_01_invented_sync_enum": "673cb937b71ecaef52e15c9a14c89c73a0f6f1d1de1d26b9c8d598be61474b77",
+    "tc12_02_heap_write_stride": "5828e519c6afda0ea53f6435367ec0d5258f576ee09da85395f2ad4e9f6cf89c",
+    "tc12_03_new_sdk_old_android": "fcb46fcd1c32979e938a9429fb0616738d2db69878433d3ed2845cddb7eafc8c",
+    "tc12_04_vkprofiles_migration": "5f1665ffdb28e308443bd4afef79fbd081227aacbe9a14c5d44bcac7556189c9",
+    "tc12_05_ahb_descriptor_count": "d3fc0f38d50a763e026d4175bdc2e4586157c82122b0301e075eee1f80e27362",
+    "tc12_06_apple_tool_matrix": "8ffba37aa5b675f3f41d8e5798029163fa0b23979e67d31699402e31d5b0a933",
+    "tc12_07_validation_not_correctness": "905692a22f0d9f16e48f81f462f9699cb538fc533fcc1ddf9965326ab7fde4ef",
+    "tc12_08_blender_proposal": "108f209481fea807196aacba8b603200843630279abd8641e8ca42268d5e66cf"
+  }
+}

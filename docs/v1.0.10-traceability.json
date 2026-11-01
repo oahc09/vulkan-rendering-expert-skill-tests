@@ -1,0 +1,81 @@
+{
+  "status": "implementation candidate; not release acceptance",
+  "plan": {
+    "path": "docs/update-plan-v1.0.10.md",
+    "sha256": "a668843422083a1449db8e26f2359333b75bba07f2bc49eabf1db84987001fcf"
+  },
+  "baselines": {
+    "skill": "102c5d721dcb43a23e12d77927f2703d56c63a11",
+    "tests": "f48871940b6af3c20a6fa9d108645631735512ac",
+    "token_target": "1bad967c8e6880c3eecdaa6a946901cbc5c1f060"
+  },
+  "milestones": {
+    "M0": {
+      "files": [
+        "release-contract.json",
+        ".github/workflows/test-skill-branch.yml",
+        "tests/test_v1_0_9_regression.py",
+        "tests/test_v1_0_8_project_diagnosis.py"
+      ],
+      "evidence": "Reviewed candidate pin required; actual whitelist packer, complete references inventory, clean-tree and CRC checks; source/runtime/read budgets distinct"
+    },
+    "M1": {
+      "files": [
+        "tests/test_v1_0_10_consistency.py"
+      ],
+      "evidence": "Independent frame-summary/exception, present-retirement, feature-version and verification-scope section smoke checks; semantic review remains required"
+    },
+    "M2": {
+      "files": [
+        "reports/history/v1.0.9/manifest.json",
+        "reports/history/v1.0.9/behavior_evaluation.md",
+        "tests/run_live_model_behavior.py",
+        "tests/test_live_runner.py"
+      ],
+      "evidence": "Byte-exact archived original with source SHA; runtime read and audit deny evaluation material and symlink aliases"
+    },
+    "M3": {
+      "files": [
+        "tests/behavior_cases.py",
+        "tests/original-cohort.json",
+        "tests/measure_context.py",
+        "tests/test_context_measurement.py",
+        "tests/test_live_model_behavior.py"
+      ],
+      "evidence": "16 cases; original12 provider-token cohort frozen against original prompt hashes; extra4 separate; v109 regression distinct without 30% claim"
+    }
+  },
+  "gates": {
+    "live": {
+      "status": "BLOCKED",
+      "reason": "VULKAN_SKILL_MODEL_CMD and VULKAN_SKILL_MODEL_ID not configured; no real inference performed"
+    },
+    "host": {
+      "status": "UNVERIFIED",
+      "reason": "No actual host discovery/loading/routing trace"
+    },
+    "gpu": {
+      "status": "NOT_RUN",
+      "reason": "Documentation and harness checks are not GPU execution"
+    },
+    "provider_input_token_target": {
+      "status": "UNMEASURED",
+      "actual_model_input_target_met": null
+    },
+    "semantic_acceptance": {
+      "status": "PENDING",
+      "reason": "Regex smoke checks are not human semantic acceptance"
+    }
+  },
+  "final_evidence": "Must be regenerated after final skill/tests commits; do not inherit dirty-working-tree PASS",
+  "rollback": "Revert paired PR commits; history archive and frozen v1.0.8 snapshots remain unchanged.",
+  "environment_availability": {
+    "checked_utc": "2026-11-01T03:35:51Z",
+    "model_command_configured": false,
+    "model_id_configured": false,
+    "model_parameters_configured": false,
+    "availability_manifest_scope": "No-command check precedes SHA resolution; skipped manifest is NOT candidate-SHA validation evidence",
+    "candidate_skill_sha": "030ba7c3d12843f1d05f2b702f4237bfb0db3a46",
+    "tests_provenance": "Record code tree/hash at execution; final report commit separately, never self-reference its unknown commit SHA"
+  }
+}

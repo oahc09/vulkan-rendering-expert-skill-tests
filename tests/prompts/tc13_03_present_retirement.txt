@@ -1,0 +1,1 @@
+2 个 frame slot、3 个 swapchain image，renderFinished 按 frame slot 分配；frame fence 结束后能复用或随旧 swapchain 释放吗？

@@ -8,22 +8,39 @@ from behavior_cases import CASES as NEW_CASES
 from run_live_model_behavior import BASELINE_SHA, CASES
 
 
-def test_release_version_and_manifest_budget():
+def test_release_version_and_manifest_budget(tmp_path):
+    import json
+    import sys
+    import importlib.util
+    contract = json.loads((Path(__file__).parent.parent / 'release-contract.json').read_text())
+    sha = subprocess.check_output(['git','-C',str(PROJECT_ROOT),'rev-parse','HEAD'], text=True).strip()
+    assert re.fullmatch('[0-9a-f]{40}', contract['skill_sha']), 'Pin a reviewed full candidate SHA before release'
+    assert sha == contract['skill_sha']
     skill = (PROJECT_ROOT / 'SKILL.md').read_text()
-    assert re.search(r'^\s*version:\s*1\.0\.9\s*$', skill, re.M)
+    assert re.search(r'^\s*version:\s*' + re.escape(contract['expected_version']) + r'\s*$', skill, re.M)
+    sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
+    try:
+        spec = importlib.util.spec_from_file_location('candidate_packer', PROJECT_ROOT / 'scripts/agensi_audit_and_pack.py')
+        packer = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(packer)
+        report = packer.check(PROJECT_ROOT, tmp_path / 'candidate.zip')
+    finally:
+        sys.path.pop(0)
+    assert report['status'] == 'PASS', report
+    assert report['revision'] == sha
+    packaged = {item['path'] for item in report['files']}
     tracked = set(subprocess.check_output(['git','-C',str(PROJECT_ROOT),'ls-files'], text=True).splitlines())
-    # Include untracked prospective release files, excluding git internals.
-    extra = subprocess.check_output(['git','-C',str(PROJECT_ROOT),'ls-files','--others','--exclude-standard'], text=True).splitlines()
-    packaged = tracked | set(extra)
-    assert len(packaged) <= 200, f'{len(packaged)}/200 packaged files'
-    baseline = set(subprocess.check_output(['git','-C',str(PROJECT_ROOT),'ls-tree','-r','--name-only',BASELINE_SHA], text=True).splitlines())
-    new_knowledge = {p for p in packaged-baseline if p.startswith('references/') and p.endswith('.md')}
-    assert new_knowledge == {'references/03_api_manual/05_descriptor/descriptor_heap.md'}
+    assert report['tracked_files'] == len(tracked)
+    assert report['package_files'] == len(packaged) <= contract['max_runtime_files']
+    assert packaged == {p for p in tracked if p in packer.REQUIRED or p.startswith('references/')}
+    assert report['zip']['crc_verified']
+    baseline = set(subprocess.check_output(['git','-C',str(PROJECT_ROOT),'ls-tree','-r','--name-only',contract['knowledge_baseline_sha']], text=True).splitlines())
+    assert {p for p in tracked if p.startswith('references/')} == {p for p in baseline if p.startswith('references/')}
 
 
-def test_twelve_cases_and_eight_distinct_new_rubrics():
-    assert len(CASES) == len(set(CASES)) == 12
-    assert len(NEW_CASES) == 8
+def test_sixteen_cases_and_twelve_distinct_new_rubrics():
+    assert len(CASES) == len(set(CASES)) == 16
+    assert len(NEW_CASES) == 12
     assert set(NEW_CASES) == set(CASES[4:])
     for case in CASES:
         assert (Path(__file__).parent / 'prompts' / f'{case}.txt').is_file()

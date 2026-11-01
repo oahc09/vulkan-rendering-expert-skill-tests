@@ -1,0 +1,6 @@
+{
+  "expected_version": "1.0.10",
+  "skill_sha": "030ba7c3d12843f1d05f2b702f4237bfb0db3a46",
+  "knowledge_baseline_sha": "102c5d721dcb43a23e12d77927f2703d56c63a11",
+  "max_runtime_files": 196
+}

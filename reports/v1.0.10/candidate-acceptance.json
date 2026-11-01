@@ -1,0 +1,36 @@
+{
+  "status": "CORRECTNESS_ONLY_DRAFT; M3 BLOCKED",
+  "skill_sha": "030ba7c3d12843f1d05f2b702f4237bfb0db3a46",
+  "tested_tests_sha": "bf111ba826f8e96787bfb2bb55d02cb499f23c8e",
+  "tested_tests_tree": "60f9a4d7a3359780c9d93441757d5b5b9652a558",
+  "report_commit_scope": "This later commit adds evidence only; tested code SHA above is immutable. Re-run if skill/test code changes.",
+  "clean_checkouts_at_run": true,
+  "static_passed": 111,
+  "historical_snapshot_passed": 4,
+  "live_skipped": 16,
+  "skill_python_unit_passed": 24,
+  "node_source": "PASS",
+  "illustrative_host_contract_static": "PASS, not actual host acceptance",
+  "package": {
+    "files": 196,
+    "bytes": 858091,
+    "characters": 1492854,
+    "sha256": "cc150ca79d1d84f5f17ee41e89f56afadee80b7910839aab32691c7a8f6790ef",
+    "crc_verified": true,
+    "two_builds_byte_identical": true
+  },
+  "knowledge_file_net_delta": 0,
+  "real_live": "BLOCKED: no exact-model wrapper/provider usage configured",
+  "actual_host": "UNVERIFIED: no discovery/loading/routing execution trace",
+  "actual_input_token_reduction": null,
+  "gpu_runtime": "NOT_RUN",
+  "review": "Independent read-only synchronization review by parent and tests implementer; wait-error and per-image wording follow-ups applied. Static section tests are not semantic-model acceptance.",
+  "commands": [
+    "node scripts/check-skill.mjs",
+    "python3 scripts/host_contract.py",
+    "python3 -m unittest discover -s scripts -p 'test_*.py'",
+    "VULKAN_SKILL_ROOT=../vulkan-update-20261101 ../vulkan-test-venv/bin/python -m pytest -q tests",
+    "python3 scripts/agensi_audit_and_pack.py . --out <new outside-checkout path> (twice, cmp and sha256sum)"
+  ],
+  "skill_pr": "https://github.com/oahc09/vulkan-rendering-expert-skill/pull/6"
+}

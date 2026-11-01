@@ -1,0 +1,1 @@
+设备 apiVersion 要和哪个 1.4 宏比较？scalarBlockLayout、sync2、timelineSemaphore 分别在哪个 feature struct 启用？
