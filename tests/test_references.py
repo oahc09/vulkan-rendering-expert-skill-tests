@@ -34,8 +34,11 @@ def _iter_md_files():
 
 
 # TC3.1 反引号引用的 .md 文件存在（排除模板占位符）
+BACKTICK_MD_REF = re.compile(r"`([^`\s]+\.md(?:#[^`\s]*)?)`")
+
+
 def test_backtick_md_references_exist():
-    md_ref_pattern = re.compile(r"`([^`]*\.md(?:#[^`\s]*)?)`")
+    md_ref_pattern = BACKTICK_MD_REF
     failures = []
     for path in _iter_md_files():
         text = path.read_text(encoding="utf-8")
@@ -92,3 +95,8 @@ def test_no_placeholder_refs_in_non_templates():
         for match in placeholder_pattern.finditer(text):
             failures.append(f"{path.relative_to(SKILL_DIR)}: {match.group(0)}")
     assert not failures, "Placeholder .md references in non-template files:\n" + "\n".join(failures[:50])
+
+
+def test_backtick_reference_parser_does_not_cross_prose_or_lines():
+    text = '`symbol`\nSee [contract](../contract.md).\n`missing.md` and `real.md#anchor`'
+    assert BACKTICK_MD_REF.findall(text) == ['missing.md', 'real.md#anchor']

@@ -1,0 +1,1 @@
+把vkGetDeviceFaultInfoEXT改成vkGetDeviceFaultInfoKHR就能用KHR fault了吗？device lost之后所有API都不能调用吗？手机没有扩展又怎么办？

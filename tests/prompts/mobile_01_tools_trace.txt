@@ -1,0 +1,1 @@
+新 Android CLI 可以录 system trace，但目标手机拿不到 GPU counter。现在只有 CPU 调度和提交时间事件；如何诊断带宽并映射项目源码？

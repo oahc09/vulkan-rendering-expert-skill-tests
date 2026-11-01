@@ -1,0 +1,1 @@
+Camera通过AHardwareBuffer输入图像，我想直接套用generic opaque FD的Vulkan/OpenCL样例。格式、layout和ownership能完全照搬吗？

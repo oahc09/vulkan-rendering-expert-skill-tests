@@ -1,0 +1,1 @@
+同一后处理部署到Adreno和Mali，只有一侧具备QCOM tile能力。邻域blur能直接改成input attachment local read吗？要不要为另一侧换GPU？

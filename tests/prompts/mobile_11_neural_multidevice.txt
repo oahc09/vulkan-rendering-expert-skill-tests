@@ -1,0 +1,1 @@
+Arm Neural Graphics SDK v1.1.1接两个Engine、两个独立VkDevice，旋转或切场景后有重影。可以并行初始化然后直接归咎模型或驱动吗？

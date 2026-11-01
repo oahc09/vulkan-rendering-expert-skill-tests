@@ -138,7 +138,11 @@ def test_module_summary_matches_project_diagnosis_file_count():
 
     actual = len(list((SKILL_DIR / "05_workflows").rglob("*.md")))
     assert int(match.group(1)) == actual
-    assert actual == 46
+    contract=json.loads((Path(__file__).parent.parent/'release-contract.json').read_text())
+    baseline=subprocess.check_output(['git','-C',str(PROJECT_ROOT),'ls-tree','-r','--name-only',contract['knowledge_baseline_sha']],text=True).splitlines()
+    expected={p for p in baseline if p.startswith('references/05_workflows/') and p.endswith('.md')}
+    expected.update(p for p in contract.get('allowed_new_knowledge',[]) if p.startswith('references/05_workflows/'))
+    assert actual == len(expected)
 
 
 def test_source_inventory_separate_from_runtime_budget():

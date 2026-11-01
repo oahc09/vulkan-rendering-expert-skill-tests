@@ -1,0 +1,89 @@
+{
+  "status": "implementation candidate, not release acceptance",
+  "plan": "update-plan-v1.0.11.md",
+  "plan_hash_manifest": "v1.0.11-plan-source.json",
+  "skill_candidate_sha": "f32a77b6cb8406a2883112dfc44ac46c3df26c70",
+  "milestones": {
+    "M1": {
+      "capabilities": [
+        "C1 profiling/pacing",
+        "C2 fault/address evidence"
+      ],
+      "tests": [
+        "mobile_01_tools_trace",
+        "mobile_02_sustained_pacing",
+        "mobile_08_fault_generation",
+        "mobile_09_fault_api"
+      ],
+      "static": "test_fault_symbol_negative_example_is_not_treated_as_api_use",
+      "files": [
+        "references/04_debug_playbooks/tool_usage.md",
+        "references/04_debug_playbooks/02_crash_hang/device_lost.md",
+        "references/05_workflows/04_android_integration/android_validation_agi_workflow.md",
+        "references/05_workflows/07_optimization/optimize_frame_time.md",
+        "references/03_api_manual/09_debug_validation/debug_utils.md"
+      ]
+    },
+    "M2": {
+      "capabilities": [
+        "C3 tile-aware optional path",
+        "C4 external memory/synchronization interop"
+      ],
+      "tests": [
+        "mobile_03_local_read_limits",
+        "mobile_04_tile_fallback",
+        "mobile_05_interop_uuid",
+        "mobile_06_fd_payload",
+        "mobile_07_ahb_camera"
+      ],
+      "static": "test_new_mobile_documents_follow_template_and_have_section_routes; test_capability_contracts_include_failure_and_standard_fallback",
+      "files": [
+        "references/03_api_manual/07_rendering/mobile_tile_rendering.md",
+        "references/03_api_manual/04_buffer_image_memory/external_resource_interop.md",
+        "references/05_workflows/04_android_integration/vulkan_opencl_interop.md",
+        "references/05_workflows/07_optimization/optimize_mobile_bandwidth.md",
+        "references/05_workflows/02_render_pass_effects/add_dynamic_rendering_pass.md"
+      ]
+    },
+    "M3": {
+      "capabilities": [
+        "C5 neural resource/history/global state",
+        "framework release contracts"
+      ],
+      "tests": [
+        "mobile_10_neural_emulation",
+        "mobile_11_neural_multidevice",
+        "mobile_12_filament_release"
+      ],
+      "static": "capability and fallback contracts",
+      "files": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md",
+        "references/06_cases/07_engine_architecture/case_engine_architecture.md",
+        "references/02_core_mental_model/engine_architecture.md",
+        "references/05_workflows/01_renderer_setup/project_diagnosis.md"
+      ]
+    },
+    "M4": {
+      "files": [
+        "release-contract.json",
+        "tests/run_live_model_behavior.py",
+        "tests/measure_context.py",
+        "tests/test_v1_0_11_mobile.py",
+        "docs/v1.0.11-device-matrix.json"
+      ],
+      "evidence": "28 registered cases; exact 4 additional knowledge paths; 200 runtime package ceiling; original12 token cohort unchanged; mobile12 measured separately"
+    }
+  },
+  "gates": {
+    "Static": "Final pinned candidate test execution recorded in reports/v1.0.11; not model or device evidence",
+    "Snapshot": "Historical checker evidence only",
+    "Live": "BLOCKED: no authorized observable model adapter configured",
+    "Device": "UNVERIFIED: no target APK/phone execution",
+    "provider_token_target": "UNMEASURED; original v1.0.8 and identical12 prompt cohort retained"
+  },
+  "report_provenance": "Final skill/tests SHA and code tree must be recorded after commits. Report-only commit separate; no self-referential SHA. No-command skip manifest is availability only, not SHA-bound validation.",
+  "rollback": "Revert paired candidate commits without changing historical snapshots or prior evidence.",
+  "source_mapping": "v1.0.11-sources.json",
+  "source_record_count": 34,
+  "skill_candidate_tree": "fadaf4976680e277c987340cac167a7ba22bbc89"
+}

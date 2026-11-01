@@ -1,0 +1,1 @@
+Vulkan/OpenCL交换opaque FD，device UUID相同但driver UUID不同，可以直接导入并保证往返数据正确吗？

@@ -6,3 +6,5 @@ tests/responses_v1_0_9_live/
 !reports/history/
 !reports/history/**
 tests/responses_v1_0_10_live/
+
+tests/responses_v1_0_11_live/

@@ -85,3 +85,154 @@ TARGETED_CASES = {'tc13_01_version_features': {'prompt': '设备 apiVersion 要�
                                            'still requires all applicable verification gates, not '
                                            'only clean validation.'}}
 CASES.update(TARGETED_CASES)
+
+# v1.0.11 mobile cohort, separate from the original token-target denominator.
+MOBILE_CASES = {'mobile_01_tools_trace': {'prompt': '新 Android CLI 可以录 system trace，但目标手机拿不到 GPU counter。现在只有 CPU '
+                                     '调度和提交时间事件；如何诊断带宽并映射项目源码？',
+                           'required': ['trace', 'counter|计数器', '带宽', '源码|代码', '不能|未验证|不足'],
+                           'rubric': 'Distinguish system scheduling traces from frame resource '
+                                     'captures and GPU counters. Do not invent bandwidth or event '
+                                     'identifiers. Request the actual trace and code map, preserve '
+                                     'unavailable tooling fallback, then bind only observed events '
+                                     'to source.'},
+ 'mobile_02_sustained_pacing': {'prompt': 'GPU短测很快，但十分钟后掉帧；开启插帧后显示FPS提高而输入延迟变差。应如何验证性能改善、热状态和帧节奏？',
+                                'required': ['热|thermal',
+                                             '真实|渲染',
+                                             '生成|插帧',
+                                             '呈现|显示',
+                                             '延迟',
+                                             'pacing|节奏'],
+                                'rubric': 'Separate real rendered, generated and presented frames, '
+                                          'latency and sustained thermal state. Fix '
+                                          'scene/resolution/quality/refresh conditions, choose a '
+                                          'single pacing owner, and do not equate displayed FPS '
+                                          'with responsiveness or sustained performance.'},
+ 'mobile_03_local_read_limits': {'prompt': '一台 Vulkan 1.4 手机要使用 depth/stencil 和 multisampled '
+                                           'dynamic rendering local read，是否只检查 apiVersion 就足够？',
+                                 'required': ['properties|属性',
+                                              'depth|深度',
+                                              'MSAA|multisample|多重采样',
+                                              '不能|不足|不够',
+                                              '回退|fallback'],
+                                 'rubric': 'Core promotion is not a guarantee for every '
+                                           'depth/stencil or multisample local-read combination. '
+                                           'Query relevant feature/properties, attachment '
+                                           'format/sample support and enabled capabilities '
+                                           'independently; retain an equivalent standard rendering '
+                                           'fallback.'},
+ 'mobile_04_tile_fallback': {'prompt': '同一后处理部署到Adreno和Mali，只有一侧具备QCOM tile能力。邻域blur能直接改成input '
+                                       'attachment local read吗？要不要为另一侧换GPU？',
+                             'required': ['QCOM',
+                                          '回退|fallback|标准路径',
+                                          '邻域',
+                                          'feature|能力',
+                                          '不能|不应|不可以'],
+                             'rubric': 'Choose the vendor fast path only after actual capability '
+                                       'checks, keep standard paths on unsupported hardware '
+                                       'without GPU replacement. Distinguish same-pixel local '
+                                       'reads from arbitrary neighborhood sampling and require '
+                                       'image/performance A/B evidence.'},
+ 'mobile_05_interop_uuid': {'prompt': 'Vulkan/OpenCL交换opaque FD，device UUID相同但driver '
+                                      'UUID不同，可以直接导入并保证往返数据正确吗？',
+                            'required': ['driver|驱动',
+                                         'UUID',
+                                         '不能|不应|不足',
+                                         '兼容|compatib',
+                                         '回退|fallback'],
+                            'rubric': 'Matching device UUID alone does not establish opaque FD '
+                                      'interop compatibility when driver UUID differs. Check '
+                                      'supported handle properties and API/driver compatibility '
+                                      'before import; decline unsupported sharing and use an '
+                                      'existing Vulkan or supported copy fallback.'},
+ 'mobile_06_fd_payload': {'prompt': '为了优化，我把同一个sync FD连续复用很多帧，还将optimal image直接导入通用opaque '
+                                    'FD路径。内存和同步的owner、layout及失败回收怎么处理？',
+                          'required': ['SYNC_FD|sync FD',
+                                       '载荷|payload',
+                                       '内存|memory',
+                                       'layout|布局',
+                                       'owner|所有权',
+                                       '失败'],
+                          'rubric': 'Distinguish sync payload consumption/import from reusable '
+                                    'semaphore objects and external-memory handles. Do not treat '
+                                    'SYNC_FD as a persistent timeline handle. Verify optimal image '
+                                    'representation, ownership transfer, failure cleanup and FD '
+                                    'owner at each stage.'},
+ 'mobile_07_ahb_camera': {'prompt': 'Camera通过AHardwareBuffer输入图像，我想直接套用generic opaque '
+                                    'FD的Vulkan/OpenCL样例。格式、layout和ownership能完全照搬吗？',
+                          'required': ['AHardwareBuffer|AHB',
+                                       '外部格式|externalFormat|format',
+                                       'opaque',
+                                       '所有权|ownership',
+                                       '不能|不应|不可以'],
+                          'rubric': 'AHardwareBuffer camera input and generic opaque FD samples '
+                                    'are distinct compatibility paths. Query AHB external format '
+                                    'and usage/tiling/layout requirements and verify ownership and '
+                                    'synchronization rather than importing assumptions from an '
+                                    'opaque FD tutorial.'},
+ 'mobile_08_fault_generation': {'prompt': 'Mali出现VK_ERROR_DEVICE_LOST但Validation '
+                                          'clean，fault报告里一个GPU地址已被分配器复用。可以排除OOB/use-after-free并定位shader行吗？',
+                                'required': ['generation|代际|代次',
+                                             '提交|submission',
+                                             '地址',
+                                             '不能|不足|不应',
+                                             'OOB|越界',
+                                             'use-after-free|释放后'],
+                                'rubric': 'Validation silence cannot exclude OOB or lifetime '
+                                          'errors. Correlate fault range and address '
+                                          'binding/unbinding history with resource generation, '
+                                          'aliasing and submissions. Do not invent a shader line '
+                                          'from a reused address; report uncertain coverage and '
+                                          'collect minimal evidence.'},
+ 'mobile_09_fault_api': {'prompt': '把vkGetDeviceFaultInfoEXT改成vkGetDeviceFaultInfoKHR就能用KHR '
+                                   'fault了吗？device lost之后所有API都不能调用吗？手机没有扩展又怎么办？',
+                         'required': ['vkGetDeviceFaultReportsKHR',
+                                      'vkGetDeviceFaultDebugInfoKHR',
+                                      'vkGetDeviceFaultInfoEXT',
+                                      '回退|日志',
+                                      '规范|SPEC'],
+                         'rubric': 'Reject the invented suffix-renamed KHR API. Distinguish the '
+                                   'actual EXT query from KHR reports/debug-info interfaces and '
+                                   'legal post-loss operations. Query support and enabled '
+                                   'features, do not continue ordinary rendering, and use generic '
+                                   'diagnostic logs when unavailable.'},
+ 'mobile_10_neural_emulation': {'prompt': '新手机API版本1.4但没有ARM tensor/data '
+                                          'graph能力，SDK只在PC仿真层跑过。是否能宣称原生神经渲染和移动端性能验收通过？',
+                                'required': ['仿真|emulat',
+                                             '原生|native',
+                                             '未验证|未测试',
+                                             '回退|传统',
+                                             '不能|不可以|不得'],
+                                'rubric': 'A Vulkan version and desktop emulation do not prove ARM '
+                                          'tensor/data-graph support or native mobile performance. '
+                                          'Verify the selected SDK path and feature/format '
+                                          'requirements; distinguish emulation-only checks from '
+                                          'device results and select conventional rendering '
+                                          'fallback.'},
+ 'mobile_11_neural_multidevice': {'prompt': 'Arm Neural Graphics SDK '
+                                            'v1.1.1接两个Engine、两个独立VkDevice，旋转或切场景后有重影。可以并行初始化然后直接归咎模型或驱动吗？',
+                                  'required': ['进程|process',
+                                               'VkDevice|设备',
+                                               'history|历史',
+                                               '旋转|resize',
+                                               '输入|motion|depth',
+                                               '并发|初始化'],
+                                  'rubric': 'Check SDK process-global Vulkan function tables and '
+                                            'initialization/device-recreation constraints before '
+                                            'declaring multi-device concurrency safe. Audit '
+                                            'motion/depth/jitter inputs, ownership, history '
+                                            'invalidation at rotation/camera cut/resize and '
+                                            'pacing; do not assume model or driver is the cause.'},
+ 'mobile_12_filament_release': {'prompt': '升级Filament '
+                                          'v1.79.0时跨帧缓存TransformManager::Instance并混用旧材质包；main发布说明另有v1.80标题，能按正式v1.80兼容性处理吗？',
+                                'required': ['Instance',
+                                             '材质|material',
+                                             'v1.79',
+                                             'v1.80',
+                                             '正式|release',
+                                             '不能|不应|不足'],
+                                'rubric': 'Review released v1.79.0 instance lifetime and '
+                                          'material/native-Java binary compatibility rather than '
+                                          'assuming cached handles and old resources survive. A '
+                                          'main release-note heading does not establish a released '
+                                          'v1.80 artifact; pin release/tag and source evidence.'}}
+CASES.update(MOBILE_CASES)

@@ -1,0 +1,1 @@
+Mali出现VK_ERROR_DEVICE_LOST但Validation clean，fault报告里一个GPU地址已被分配器复用。可以排除OOB/use-after-free并定位shader行吗？

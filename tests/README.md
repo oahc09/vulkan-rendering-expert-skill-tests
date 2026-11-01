@@ -182,3 +182,35 @@ separate semantic scoring. `--comparison v109-regression` instead pins the
 v1.0.9 baseline, reports non-regression and deliberately has no 30% target.
 Historical Snapshot artifacts and previous reports are unchanged and are not
 current candidate evidence.
+
+## v1.0.11 mobile extension
+
+The full gate now requires **28** cases: unchanged original12 + v1.0.10 directed4
++ mobile12. `MOBILE_CASES` is registered in the existing runner and rubric smoke
+gate, not a parallel evaluator. Historic snapshots and original prompt hashes
+are unchanged. Keyword checks require separate semantic review; none establish
+mobile-device behavior or performance.
+
+`release-contract.json` pins exact version/candidate SHA, v1.0.10 knowledge
+baseline and exactly four allowed new knowledge paths. The runtime whitelist
+package ceiling is 200; no knowledge deletion or arbitrary extra file is allowed.
+New documents use existing full API/workflow templates and section routes; they
+are not added to fixed startup. Existing answer/rubric/report read isolation is
+preserved. `docs/v1.0.11-plan-source.json` hashes the verbatim implementation plan;
+traceability and a deliberately unverified Device matrix accompany it.
+
+Original input-token comparisons accept original12, prior16 or full28 manifests,
+but calculate ONLY the frozen original12 cohort. Mobile usage is independent:
+
+```sh
+python tests/measure_context.py --mobile-run PATH --candidate-sha FULL_SHA
+```
+
+This audits all12 mobile cases (alone or in a full28 run), reports provider input
+tokens, read bytes and rounds, and has **no 30% target**. It cannot convert model
+answers into Device PASS. Run 28 smoke cases with an authorized real adapter;
+release stability recommends three independent runs per case. Missing adapter
+means BLOCKED. Device checks require actual target hardware/source/APK/tool
+identities, input/visual correctness, failure cleanup, fixed scene and thermal
+conditions; no fabricated counters, performance percentages, fault injection or
+paid/cloud device access is authorized by this implementation.

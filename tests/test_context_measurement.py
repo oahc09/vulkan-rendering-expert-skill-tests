@@ -88,3 +88,35 @@ def test_twelve_baseline_and_sixteen_candidate_remain_comparable(tmp_path, monke
         record['user_task_sha256'] = 'same-but-not-original'
         path.write_text(json.dumps(record))
     assert metrics.compare_runs(old,new,'a'*40)['status'] == 'unmeasured'
+
+
+def test_legacy_sixteen_and_new_twenty_eight_keep_original_twelve_target(tmp_path, monkeypatch):
+    from run_live_model_behavior import LEGACY_CASES, ORIGINAL_CASES
+    monkeypatch.setattr(metrics, 'audit_case', lambda folder, manifest: json.loads((folder/'record.json').read_text()))
+    old = synthetic_run(tmp_path/'old', BASELINE_SHA, 100)
+    new = synthetic_run(tmp_path/'new', 'a'*40, 70)
+    path=old/'manifest.json'; manifest=json.loads(path.read_text())
+    manifest['cases']=LEGACY_CASES; path.write_text(json.dumps(manifest))
+    result=metrics.compare_runs(old,new,'a'*40)
+    assert result['actual_model_input_target_met'] is True
+    assert result['cohort'] == ORIGINAL_CASES
+    assert len(result['candidate_case_input_tokens']) == 12
+
+
+def test_mobile_metrics_separate_usage_from_device_or_token_target(tmp_path, monkeypatch):
+    from run_live_model_behavior import MOBILE_CASES
+    monkeypatch.setattr(metrics,'audit_case',lambda folder,manifest: json.loads((folder/'record.json').read_text()))
+    root=synthetic_run(tmp_path/'mobile','a'*40,123)
+    path=root/'manifest.json'; manifest=json.loads(path.read_text())
+    manifest.update(tests_sha='b'*40,tests_dirty=False,cases=list(MOBILE_CASES))
+    path.write_text(json.dumps(manifest))
+    for case in MOBILE_CASES:
+        p=root/case/'record.json'; record=json.loads(p.read_text());record['reads']=[dict(bytes=99)]
+        p.write_text(json.dumps(record))
+    result=metrics.measure_mobile_run(root,'a'*40)
+    assert result['status']=='measured' and len(result['cases'])==12
+    assert result['target_reduction'] is None and result['actual_model_input_target_met'] is None
+    assert all(row['input_tokens']==123 and row['delivered_context_bytes']==99 for row in result['cases'])
+    manifest['cases']=list(MOBILE_CASES)[:-1];path.write_text(json.dumps(manifest))
+    assert metrics.measure_mobile_run(root,'a'*40)['status']=='unmeasured'
+    assert metrics.measure_mobile_run(None,None)['status']=='unmeasured'

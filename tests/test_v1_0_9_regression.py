@@ -35,12 +35,13 @@ def test_release_version_and_manifest_budget(tmp_path):
     assert packaged == {p for p in tracked if p in packer.REQUIRED or p.startswith('references/')}
     assert report['zip']['crc_verified']
     baseline = set(subprocess.check_output(['git','-C',str(PROJECT_ROOT),'ls-tree','-r','--name-only',contract['knowledge_baseline_sha']], text=True).splitlines())
-    assert {p for p in tracked if p.startswith('references/')} == {p for p in baseline if p.startswith('references/')}
+    expected_knowledge = {p for p in baseline if p.startswith('references/')} | set(contract['allowed_new_knowledge'])
+    assert {p for p in tracked if p.startswith('references/')} == expected_knowledge
 
 
-def test_sixteen_cases_and_twelve_distinct_new_rubrics():
-    assert len(CASES) == len(set(CASES)) == 16
-    assert len(NEW_CASES) == 12
+def test_twenty_eight_cases_and_twenty_four_rubrics():
+    assert len(CASES) == len(set(CASES)) == 28
+    assert len(NEW_CASES) == 24
     assert set(NEW_CASES) == set(CASES[4:])
     for case in CASES:
         assert (Path(__file__).parent / 'prompts' / f'{case}.txt').is_file()

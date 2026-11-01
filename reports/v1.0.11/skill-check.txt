@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "revision": "f32a77b6cb8406a2883112dfc44ac46c3df26c70",
+  "files": 212,
+  "markdownFiles": 201,
+  "localLinks": 76,
+  "entryRoutes": 14,
+  "sourceSha256": "ea5b207655c03cba977404a6b0628141521143d7ebae9c442292694bf81289c9",
+  "fingerprintFiles": 199,
+  "scope": "Git-visible files, UTF-8, fences, inline local file links, entry routes, module counts; no YAML schema, anchor, remote URL, Vulkan runtime, or model behavior validation",
+  "errors": []
+}

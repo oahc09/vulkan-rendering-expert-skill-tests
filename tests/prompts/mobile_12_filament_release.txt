@@ -1,0 +1,1 @@
+升级Filament v1.79.0时跨帧缓存TransformManager::Instance并混用旧材质包；main发布说明另有v1.80标题，能按正式v1.80兼容性处理吗？

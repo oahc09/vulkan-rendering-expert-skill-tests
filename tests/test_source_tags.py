@@ -10,7 +10,7 @@ from conftest import SKILL_DIR
 
 def _extract_tag_set(text):
     """Extract tags like [SPEC] from source_tags.md table cells."""
-    return set(re.findall(r"\[([A-Z]{2,})\]", text))
+    return set(re.findall(r"\[([A-Z]{2,})\](?!\()", text))
 
 
 def _extract_hard_rule_sources(text):
@@ -85,7 +85,7 @@ def test_only_defined_source_tags_used_in_content():
         module_dir = SKILL_DIR / module
         for path in module_dir.rglob("*.md"):
             text = path.read_text(encoding="utf-8")
-            for tag in re.findall(r"\[([A-Z]{2,})\]", text):
+            for tag in re.findall(r"\[([A-Z]{2,})\](?!\()", text):
                 if tag not in defined_tags:
                     undefined[(path.relative_to(SKILL_DIR), tag)] += 1
     assert not undefined, "Undefined source tags used:\n" + "\n".join(
@@ -104,7 +104,7 @@ def test_defined_source_tags_are_used():
         module_dir = SKILL_DIR / module
         for path in module_dir.rglob("*.md"):
             text = path.read_text(encoding="utf-8")
-            for tag in re.findall(r"\[([A-Z]{2,})\]", text):
+            for tag in re.findall(r"\[([A-Z]{2,})\](?!\()", text):
                 if tag in defined_tags:
                     used[tag] += 1
 
@@ -113,3 +113,8 @@ def test_defined_source_tags_are_used():
         pytest.skip(
             f"Tags defined but unused (allowed as reserved): {unused}"
         )
+
+
+def test_source_tag_parser_distinguishes_markdown_labels():
+    text = '[ADPF](https://example.invalid) [SPEC][GUIDE] [INVENTED]'
+    assert re.findall(r"\[([A-Z]{2,})\](?!\()", text) == ['SPEC','GUIDE','INVENTED']
