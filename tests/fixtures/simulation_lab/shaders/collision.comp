@@ -1,0 +1,11 @@
+#version 450
+#extension GL_GOOGLE_include_directive : require
+#include "sim.glsl"
+layout(local_size_x=64) in;
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.n||state[i].x.w==0)return;
+ vec3 x=state[i].x.xyz;x.y=max(x.y,-.55); // plane
+ vec3 center=p.flags==2?vec3(clamp(x.x,-.18,.18),-.2,0):vec3(0,-.2,0);
+ vec3 d=x-center;float len=length(d),r=.14;
+ if(len<r)x=center+(len<1e-8?vec3(0,1,0):d/len)*r;
+ state[i].x.xyz=x; // analytic projection; no CCD/friction claim
+}

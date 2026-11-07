@@ -1,0 +1,13 @@
+#version 450
+#extension GL_GOOGLE_include_directive : require
+#include "sim.glsl"
+layout(local_size_x=64) in;
+void main(){uint local=gl_GlobalInvocationID.x;if(local>=p.level)return;uint i=p.base+local;
+ Edge e=edges[i];vec3 d=state[e.b].x.xyz-state[e.a].x.xyz;float len=length(d);
+ float a=e.compliance/(p.viewX*p.viewX),den=state[e.a].x.w+state[e.b].x.w+a;
+ if(len<1e-8||den<=0){if(p.mode==1){delta[2*i]=vec4(0);delta[2*i+1]=vec4(0);}return;}
+ float dl=(-(len-e.rest)-a*lambda[i])/den;lambda[i]+=dl;
+ vec3 da=-state[e.a].x.w*(d/len)*dl,db=state[e.b].x.w*(d/len)*dl;
+ if(p.mode==0){state[e.a].x.xyz+=da;state[e.b].x.xyz+=db;}
+ else {delta[2*i]=vec4(da,0);delta[2*i+1]=vec4(db,0);}
+}

@@ -26,14 +26,14 @@ def test_verbatim_plan_and_no_new_knowledge():
     meta=json.loads((ROOT/'docs/v1.0.14-plan-source.json').read_text())
     assert len(raw)==meta['bytes']==46833 and hashlib.sha256(raw).hexdigest()==meta['sha256']
     c=json.loads((ROOT/'release-contract.json').read_text())
-    assert c['expected_version']=='1.0.15' and c['max_runtime_files']==200 and c['allowed_new_knowledge']==[]
+    assert c['expected_version']=='1.0.16' and c['max_runtime_files']==200 and c['allowed_new_knowledge']==[]
 
 def test_frozen_old64_and_separate20():
     frozen=json.loads((ROOT/'tests/v113-cohort.json').read_text())
     assert frozen['source_tests_sha']=='9c4cba3a3985b709ccdbec182c79a6988bfc721e'
     assert list(frozen['cases'])==V113_CASES==CASES[:64]
     for c,h in frozen['cases'].items():assert hashlib.sha256((ROOT/'tests/prompts'/f'{c}.txt').read_bytes()).hexdigest()==h
-    assert len(CASES)==104 and len(set(CASES))==104 and len(ORIGINAL_CASES)==12
+    assert len(CASES)==120 and len(set(CASES))==120 and len(ORIGINAL_CASES)==12
     assert list(VIS14_CASES)==CASES[64:84] and len(VIS14_CASES)==20
     assert {v['id'] for v in VIS14_CASES.values()}=={f'VIS14-{i:02}' for i in range(1,21)}
     for c,v in VIS14_CASES.items():

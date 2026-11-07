@@ -1,0 +1,3 @@
+固定4个substep和8次iteration，compliance与damping怎样配置？
+对照变体：CPU等待GPU变慢，预算器把substeps从4降为1，这是否可直接上线？
+请分别分析实现合同、适用限制、回退与验证方法；未执行项明确标出。

@@ -1,0 +1,10 @@
+{
+  "source_path": "渲染后端/Vulkan_Expert_Skill_v1.0.16_GPU仿真与动态几何开发计划_2026-11-07.md",
+  "sha256": "9f945158a2fd11ae2b36d8c54e3ed836524024f5c949b35db609bc6b1154117a",
+  "bytes": 45931,
+  "skill_predecessor": "75b3dacdcb5e567c86c7ae6e97bcb248b6f46fc3",
+  "test_predecessor_local": "027b75941bd704a5862732770136474f9e10d457",
+  "test_publication": "PENDING prior evidence approval; main remains v1.0.14",
+  "publication_source_base": "26bee411429f55cf8eab50326c5f92115b851e2c",
+  "scope": "v1.0.16 source-only delta; does not republish pending v1.0.15 evidence or local supplement"
+}
