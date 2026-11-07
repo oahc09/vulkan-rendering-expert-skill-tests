@@ -1,0 +1,3 @@
+compute蒙皮写顶点→BLAS→TLAS→fragment query，每步stage/access怎么选？
+对照变体：把BLAS与依赖它的TLAS放一个multi-build数组是否自动有序，query能用RT专用stage吗？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

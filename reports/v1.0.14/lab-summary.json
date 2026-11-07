@@ -1,0 +1,21 @@
+{
+  "fixture_status": "PASS",
+  "scene_seed": 0,
+  "input_size": [
+    65,
+    49
+  ],
+  "frames": 12,
+  "motion": "current_to_previous_pixels_no_jitter_integer_pan",
+  "signal": "linear_shadow_visibility_0_1; exposure applied only in composition",
+  "query_binary": "little/native-endian float32 RGBA, 65x49",
+  "validation": "see each raw Vulkan log; feature and layer availability recorded",
+  "coverage_limits": [
+    "software Vulkan is not Android or hardware RT performance",
+    "static AS build only; no GPU update/compaction/retirement stress",
+    "query modes execute initial scene, not temporal query sequence",
+    "no OMM implementation, SDK upscaler, multiview, resize, or deformation",
+    "camera image uses analytic receiver planes; caster depth is rasterized",
+    "LOD/unload/pause lifecycle are reset triggers only, not full lifecycle tests"
+  ]
+}

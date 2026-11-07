@@ -1,0 +1,3 @@
+resize/camera cut后仍按swapchain imageIndex复用history，两Engine共用一组纹理安全吗？
+对照变体：算法支持重采样且两个View各有完成点时，如何选择reset/resample与退休？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

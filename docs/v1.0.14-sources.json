@@ -1,0 +1,314 @@
+{
+  "window": [
+    "2026-08-05",
+    "2026-11-02"
+  ],
+  "implementation_checked_at": "2026-11-07",
+  "baseline": {
+    "skill": "8d62f861b4ead27699e2ff3d80a1a9f0e72a4968",
+    "tests": "9c4cba3a3985b709ccdbec182c79a6988bfc721e"
+  },
+  "sources": [
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/accelstructures.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "83b41a8b441a480a4e361d6464be80027c47b89280dfb0c8f61df20e35984408",
+      "bytes": 302332,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "AS builds, input/scratch access and lifetime, compaction, UPDATE, micromap disable flags",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/04_buffer_image_memory/memory_allocation.md#acceleration-structure-resource-contract",
+        "references/03_api_manual/08_synchronization/pipeline_barrier.md#as-build-query-dependencies"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/synchronization.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "bytes": 393598,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "Actual shader stages, AS read/write access and execution/memory scopes",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/08_synchronization/pipeline_barrier.md#as-build-query-dependencies"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/VK_KHR_surface/wsi.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "81c0e68ede12abe986e9b482f361bac4483b50699372101ab1b453117fc9c961",
+      "bytes": 435043,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "Acquire/present binary VUIDs 03265/03267; present images",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/02_render_pass_effects/add_depth_pass.md#stable-shadow-workflow"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/fragops.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "e511720b53b7bf52470c358d9465ac4adc2c04f07b22a8ab0bd65617f6e0ddbe",
+      "bytes": 133981,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "Depth early/late test stage and depth compare semantics",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/02_render_pass_effects/add_depth_pass.md#stable-shadow-workflow"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/raytraversal.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "02212b49330231ffe49ac0e5e459befd614887fb46764afa428548e0e2d04194",
+      "bytes": 38984,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "Committed/candidate traversal, opacity, disable micromaps and undefined missing KHR execution mode",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#opacity-micromap-fallback"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/xml/vk.xml",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "d56ff7f1613c36b820998dbd8e184b79ec49dc44db63390185205fa15ebcd444",
+      "bytes": 3355319,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "ray_query/AS/BDA/spirv dependencies and KHR/EXT OMM dependencies",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/compute_pipeline.md#ray-query-capability-contract"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/appendices/VK_KHR_ray_query.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "52b6e26202cb44f0ee65878aec4207abf15864ff061a9eeca986c24187783e35",
+      "bytes": 4494,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "Query independent from dedicated RT pipeline",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/compute_pipeline.md#ray-query-capability-contract"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/appendices/VK_KHR_opacity_micromap.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "c1399dbd93ba6e35550d8ab62e5f01cc59dfe84899e0f1032ce9ff36fe73196f",
+      "bytes": 9309,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "KHR AS object/commands and OpacityMicromapIdKHR",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#opacity-micromap-fallback"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/appendices/VK_EXT_opacity_micromap.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "f2908ecf96233955046d395686177f3699dd7b48dc01db8b5526ee173aaa25cb",
+      "bytes": 6912,
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 (repository commit, not first publication)",
+      "checked_at": "2026-11-07",
+      "source_type": "SPEC/REGISTRY",
+      "reviewed_scope": "EXT VkMicromapEXT/host commands and traversal difference",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#opacity-micromap-fallback"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked; no upstream document copied into runtime package"
+    },
+    {
+      "source_url": "https://github.com/SnapdragonGameStudios/adreno-neural-fusion/blob/2f29921da1453acd2fa428cfa05db15e9ef39a85/INTEGRATION-GUIDE.md",
+      "revision": "2f29921da1453acd2fa428cfa05db15e9ef39a85",
+      "blob_sha": "4e58751c2937b824f2a87df8b3477482e653cef9",
+      "sha256": "d7e875e42fa61b8bdeeb54580d6adb56389c3f497458fba722694cbef6c02675",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-10-20 (repository commit)",
+      "checked_at": "2026-11-07",
+      "source_type": "REF/vendor",
+      "reviewed_scope": "SR jittered input and no-jitter MV; FG same-size non-jittered inputs; UI separation; no SDK execution",
+      "verification": "source_read",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/05_workflows/02_render_pass_effects/mobile_neural_graphics.md#temporal-sdk-adapters"
+      ],
+      "license_boundary": "Public guide linked; no SDK binary, model or full guide redistributed"
+    },
+    {
+      "title": "Arm Android learning path",
+      "source_url": "https://learn.arm.com/learning-paths/mobile-graphics-and-gaming/ray_tracing/",
+      "revision": null,
+      "event_date": "2026-08-24",
+      "published_at": null,
+      "updated_at": "2026-08-24",
+      "checked_at": "2026-11-02 (plan author)",
+      "source_type": "page_update",
+      "verification": "inherited_plan_not_reverified",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/06_cases/06_performance/case_performance.md#hybrid-quality-evidence"
+      ],
+      "license_boundary": "Only short attributed claim from authorized plan; no vendor document/assets copied",
+      "limitation": "Date/status inherited from exact selected plan; no present issue-state or local-performance claim"
+    },
+    {
+      "title": "AMD tetrahedral cages",
+      "source_url": "https://gpuopen.com/learn/how-tetrahedral-cages-significantly-reduce-bvh-memory-usage/",
+      "revision": null,
+      "event_date": "2026-09-17",
+      "published_at": "2026-09-17",
+      "updated_at": null,
+      "checked_at": "2026-11-02 (plan author)",
+      "source_type": "publication",
+      "verification": "inherited_plan_not_reverified",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/06_cases/06_performance/case_performance.md#hybrid-quality-evidence"
+      ],
+      "license_boundary": "Only short attributed claim from authorized plan; no vendor document/assets copied",
+      "limitation": "Date/status inherited from exact selected plan; no present issue-state or local-performance claim"
+    },
+    {
+      "title": "Qualcomm ANF announcement",
+      "source_url": "https://www.qualcomm.com/developer/blog/2026/09/introducing-adreno-neural-fusion-sdk-for-snapdragon-mobile-platforms",
+      "revision": null,
+      "event_date": "2026-09-22",
+      "published_at": "2026-09-22",
+      "updated_at": null,
+      "checked_at": "2026-11-02 (plan author)",
+      "source_type": "publication",
+      "verification": "inherited_plan_not_reverified",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/06_cases/06_performance/case_performance.md#hybrid-quality-evidence"
+      ],
+      "license_boundary": "Only short attributed claim from authorized plan; no vendor document/assets copied",
+      "limitation": "Date/status inherited from exact selected plan; no present issue-state or local-performance claim"
+    },
+    {
+      "title": "NVRHI issue 165",
+      "source_url": "https://github.com/NVIDIA-RTX/NVRHI/issues/165",
+      "revision": null,
+      "event_date": "2026-10-17",
+      "published_at": "2026-10-17",
+      "updated_at": null,
+      "checked_at": "2026-11-02 (plan author)",
+      "source_type": "issue_report",
+      "verification": "inherited_plan_not_reverified",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/06_cases/06_performance/case_performance.md#hybrid-quality-evidence"
+      ],
+      "license_boundary": "Only short attributed claim from authorized plan; no vendor document/assets copied",
+      "limitation": "Date/status inherited from exact selected plan; no present issue-state or local-performance claim"
+    },
+    {
+      "title": "Arm Moku OMM",
+      "source_url": "https://developer.arm.com/community/arm-community-blogs/b/mobile-graphics-and-gaming-blog/posts/reducing-ray-traced-shadow-costs-for-foliage-with-omm-moku-results-on-arm-mali-g2",
+      "revision": null,
+      "event_date": "2026-10-22",
+      "published_at": "2026-10-22",
+      "updated_at": null,
+      "checked_at": "2026-11-02 (plan author)",
+      "source_type": "publication",
+      "verification": "inherited_plan_not_reverified",
+      "build": "NOT_RUN",
+      "device": "NOT_RUN",
+      "live": "NOT_RUN",
+      "mapped_skill_paths": [
+        "references/06_cases/06_performance/case_performance.md#hybrid-quality-evidence"
+      ],
+      "license_boundary": "Only short attributed claim from authorized plan; no vendor document/assets copied",
+      "limitation": "Date/status inherited from exact selected plan; no present issue-state or local-performance claim"
+    }
+  ],
+  "limits": [
+    "New normative check uses newer pinned Nov6 source; not misrepresented as inside original 90-day window",
+    "Source-read is not build/device/live validation",
+    "Plan-only vendor dates not revalidated in this implementation run"
+  ]
+}

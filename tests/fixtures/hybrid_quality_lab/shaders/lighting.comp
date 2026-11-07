@@ -1,0 +1,17 @@
+#version 450
+layout(local_size_x=64) in;
+layout(push_constant) uniform Push {uint n,capacity,mode,flags,width,height,level,tick;float viewX,zoom;uint base,unused;}p;
+layout(binding=0,std430) buffer Raw {vec4 raw[];}; // visibility, depth, normal class, confidence
+layout(binding=6) uniform sampler2D shadowDepth;
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.width*p.height)return;
+ vec2 world=(vec2(i%p.width,i/p.width)+.5)/vec2(p.width,p.height)*2.-1.;world.x=world.x*.65+p.viewX;
+ // Two analytic receiver planes, one depth/normal edge. Camera image is
+ // analytically reconstructed; occluders are genuinely rasterized above.
+ float depth=world.y>.45?.65:.8;float normalClass=world.y>.45?1.:0.;
+ vec2 uv=(world+vec2(p.zoom*(.8-depth),0))*.5+.5;
+ float visibility=0.;float bias=2./float(max(p.width,p.height))*.1;
+ for(int y=-1;y<=1;y++)for(int x=-1;x<=1;x++){
+ vec2 s=uv+vec2(x,y)/vec2(p.width,p.height);
+ visibility+=any(lessThan(s,vec2(0)))||any(greaterThan(s,vec2(1)))?1.:float(depth-bias<=texture(shadowDepth,s).r);}
+ raw[i]=vec4(visibility/9.,depth,normalClass,1.);
+}

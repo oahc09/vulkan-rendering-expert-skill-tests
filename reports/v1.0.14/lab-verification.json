@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "checked_files": 224,
+  "negative_checks": [
+    "missing",
+    "extra",
+    "tampered",
+    "nan_with_updated_hash",
+    "wrong_refusal_code"
+  ]
+}

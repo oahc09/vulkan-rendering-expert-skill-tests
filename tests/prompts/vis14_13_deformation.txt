@@ -1,0 +1,3 @@
+相机静止、蒙皮人物运动，只用previous camera matrix生成MV是否足够？
+对照变体：完全静止刚体与相机都不动时，怎样用对照验证previous object/deformation而不臆造运动？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

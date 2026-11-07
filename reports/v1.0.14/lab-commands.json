@@ -1,0 +1,99 @@
+[
+  {
+    "label": "git-input",
+    "command": [
+      "git",
+      "status",
+      "--porcelain=v1"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.007997559005161747
+  },
+  {
+    "label": "git-head",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD",
+      "HEAD^{tree}"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.0037001650052843615
+  },
+  {
+    "label": "compiler-version",
+    "command": [
+      "g++",
+      "--version"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.0015223199952743016
+  },
+  {
+    "label": "glslang-version",
+    "command": [
+      "/tmp/vulkan114-sdk/root/usr/bin/glslangValidator",
+      "--version"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.03195538500585826
+  },
+  {
+    "label": "spirv-val-version",
+    "command": [
+      "/tmp/vulkan114-sdk/root/usr/bin/spirv-val",
+      "--version"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.0038091559981694445
+  },
+  {
+    "label": "build",
+    "command": [
+      "/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/build.sh",
+      "/tmp/hybrid114-clean-c320b27/build"
+    ],
+    "returncode": 0,
+    "wall_seconds": 4.827758749001077
+  },
+  {
+    "label": "vulkan-auto",
+    "command": [
+      "/tmp/hybrid114-clean-c320b27/build/hybrid_quality_lab",
+      "/tmp/hybrid114-clean-c320b27/build/shaders",
+      "/tmp/hybrid114-clean-c320b27/auto"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.16421998599980725
+  },
+  {
+    "label": "vulkan-forced-baseline",
+    "command": [
+      "/tmp/hybrid114-clean-c320b27/build/hybrid_quality_lab",
+      "/tmp/hybrid114-clean-c320b27/build/shaders",
+      "/tmp/hybrid114-clean-c320b27/baseline",
+      "--disable-query"
+    ],
+    "returncode": 0,
+    "wall_seconds": 0.11433139500149991
+  },
+  {
+    "label": "reject-existing-build",
+    "command": [
+      "/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/build.sh",
+      "/tmp/hybrid114-clean-c320b27/build"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.0035143019995302893
+  },
+  {
+    "label": "reject-existing-run",
+    "command": [
+      "/tmp/hybrid114-clean-c320b27/build/hybrid_quality_lab",
+      "/tmp/hybrid114-clean-c320b27/build/shaders",
+      "/tmp/hybrid114-clean-c320b27/auto"
+    ],
+    "returncode": 1,
+    "wall_seconds": 0.003408998003578745
+  }
+]

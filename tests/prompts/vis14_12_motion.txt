@@ -1,0 +1,3 @@
+producer输出current→previous pixel MV但consumer要求UV且不含jitter，怎样转换？
+对照变体：另一producer输出反方向或含projection jitter，能否只看motion纹理不是黑色就通过？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

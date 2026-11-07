@@ -1,0 +1,3 @@
+阴影visibility和HDR反射radiance用同一个0到1截断模糊器，为什么细节丢失？
+对照变体：如何构造非神经history rejection加depth/normal边缘感知滤波，分别衡量拖影和噪声？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

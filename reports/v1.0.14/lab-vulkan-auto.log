@@ -1,0 +1,8 @@
+{"pipeline_build_and_cache_roundtrip_ms":14.3456,"cache_bytes":32,"speedup_claimed":false}
+{"device":"llvmpipe (LLVM 19.1.7, 256 bits)","apiVersion":4210993,"deviceType":4,"validation":1,"firstInstance":0,"multiDrawIndirect":0,"drawIndirectCount":0,"allocated_bytes":356384}
+{"ray_query_extension":1,"ray_query_feature":1,"acceleration_structure":1,"buffer_device_address":1,"ray_query_execution":"SUPPORTED_PENDING_RUN","omm_execution":"UNIMPLEMENTED","omm_ext_advertised":0,"omm_khr_advertised":0}
+{"as_type":1,"as_bytes":608,"scratch_bytes":64,"scratch_alignment":8}
+{"as_type":0,"as_bytes":216,"scratch_bytes":64,"scratch_alignment":8}
+{"query_mode":"query-shadow","hit_pixels":534,"miss_pixels":2651,"oracle_mismatches":0,"execution":"PASS"}
+{"query_mode":"query-reflection","hit_pixels":528,"miss_pixels":2657,"oracle_mismatches":0,"execution":"PASS"}
+{"baseline":"PASS","frames":12,"history_accepted":21626,"history_rejected":16594,"validation_errors":0,"mobile_quality":"UNVERIFIED"}

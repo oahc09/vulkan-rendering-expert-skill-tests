@@ -1,0 +1,5 @@
+{"pipeline_build_and_cache_roundtrip_ms":14.9527,"cache_bytes":32,"speedup_claimed":false}
+{"device":"llvmpipe (LLVM 19.1.7, 256 bits)","apiVersion":4210993,"deviceType":4,"validation":1,"firstInstance":0,"multiDrawIndirect":0,"drawIndirectCount":0,"allocated_bytes":356384}
+{"ray_query_extension":1,"ray_query_feature":1,"acceleration_structure":1,"buffer_device_address":1,"ray_query_execution":"SUPPORTED_PENDING_RUN","omm_execution":"UNIMPLEMENTED","omm_ext_advertised":0,"omm_khr_advertised":0}
+{"query_execution":"SKIPPED","forced_baseline":1}
+{"baseline":"PASS","frames":12,"history_accepted":21626,"history_rejected":16594,"validation_errors":0,"mobile_quality":"UNVERIFIED"}

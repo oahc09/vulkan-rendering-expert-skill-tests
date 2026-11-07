@@ -244,3 +244,7 @@ CASES.update(SYSTEM_CASES)
 # v1.0.13 independent engine-scale cohort.
 from engine_cases import ENG13_CASES
 CASES.update(ENG13_CASES)
+
+# v1.0.14 independent visual-quality cohort.
+from visual_cases import VIS14_CASES
+CASES.update(VIS14_CASES)

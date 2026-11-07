@@ -1,0 +1,3 @@
+opaque、alpha-cutout和alpha-blend统一标opaque做query阴影会怎样？
+对照变体：单次反射要最近有效命中，能否遇到首个candidate就早停，cutout如何确认与继续？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。
