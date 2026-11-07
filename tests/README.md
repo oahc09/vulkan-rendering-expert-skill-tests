@@ -261,3 +261,26 @@ SPIR-V validation, ABI contract, pipeline creation and rendered correctness are
 separate verdicts. Live/host/phone availability can remain BLOCKED/UNVERIFIED;
 this does not authorize fabricated metrics, fault injection, credentials, paid
 cloud devices, deployment, marketplace release or main merge.
+
+## v1.0.14 VIS14 and Hybrid Quality Lab
+
+The default registry is **84**: frozen previous64 plus VIS14-01..20, each with
+primary/contrast conditions and a private semantic rubric. `v113-cohort.json`
+freezes all previous64 prompt bytes. Neither fixtures nor rubrics are model input.
+`measure_context.py --vis14-run RUN --candidate-sha FULL_SHA` reports only the
+20-case VIS14 cohort without a new 30% target. `--comparison v113-regression`
+compares the same old64 against Skill main 8d62f861; original12 v1.0.8 input-token
+and other legacy comparisons remain unchanged. A full64 historical manifest
+continues to work for its existing cohorts.
+
+Run CPU contracts with `python -m pytest -q -m host_unit tests`. Run actual GPU
+fixtures using `tests/fixtures/hybrid_quality_lab/README.md`; they reuse Engine
+Scale Lab, do not invoke a provider, and do not prove Android device performance.
+Static/Snapshot/Host Unit/Shader Unit/Vulkan Integration/Live/Android/Visual
+Quality are separate verdicts. The source ledger distinguishes new pinned
+normative reads from vendor dates inherited from the exact selected plan.
+
+Candidate evidence is under `reports/v1.0.14/`. Always use final pinned clean
+Skill/tests SHAs, generated artifact hashes, preregistered sequence/ROI criteria
+and raw logs. Missing Live/provider, host, physical phone, OMM, power or latency
+measurements remain BLOCKED/UNSUPPORTED/UNVERIFIED. No main merge or publishing.

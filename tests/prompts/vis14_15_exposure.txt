@@ -1,0 +1,3 @@
+history存linearRadiance乘exposure，曝光从1变2可以直接与current相加吗？
+对照变体：若SDK采用相反pre-exposure定义或因子非有限/为0，应怎样处理和验证HDR？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

@@ -1,0 +1,3 @@
+设备有rayQuery/AS/BDA但没有RT Pipeline；是否需要SBT和RT shader stage？
+对照变体：另一设备缺rayQuery；如何保留合法基础路径而不反复尝试初始化？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

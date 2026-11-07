@@ -1,0 +1,9 @@
+#version 450
+layout(local_size_x=64) in;
+layout(push_constant) uniform Push {uint n,capacity,mode,flags,width,height,level,tick;float viewX,zoom;uint base,unused;}p;
+layout(binding=1,std430) readonly buffer Accum {vec4 accum[];};
+layout(binding=5,std430) buffer Filtered {float filtered[];};
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.width*p.height)return;ivec2 xy=ivec2(i%p.width,i/p.width);vec4 c=accum[i];float sum=0.,weight=0.;
+ for(int y=-1;y<=1;y++)for(int x=-1;x<=1;x++){ivec2 q=clamp(xy+ivec2(x,y),ivec2(0),ivec2(p.width,p.height)-1);vec4 s=accum[q.y*int(p.width)+q.x];float w=(s.z==c.z&&abs(s.y-c.y)<.01)?exp(-float(x*x+y*y)) : 0.;sum+=s.x*w;weight+=w;}
+ filtered[i]=sum/weight;
+}

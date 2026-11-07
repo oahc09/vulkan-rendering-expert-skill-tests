@@ -1,0 +1,17 @@
+#version 450
+layout(local_size_x=64) in;
+layout(push_constant) uniform Push {uint n,capacity,mode,flags,width,height,level,tick;float viewX,zoom;uint base,unused;}p;
+layout(binding=0,std430) readonly buffer Raw {vec4 raw[];};
+layout(binding=1,std430) buffer Accum {vec4 accum[];};
+layout(binding=2,std430) readonly buffer History {vec4 history[];};
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.width*p.height)return;
+ ivec2 xy=ivec2(i%p.width,i/p.width);
+ // Current -> previous, pixels, no jitter. Host passes signed integer x motion.
+ ivec2 prev=xy+ivec2(int(p.base),0);vec4 c=raw[i];float weight=0.;float h=c.x;
+ if(p.flags==0u && all(greaterThanEqual(prev,ivec2(0))) && all(lessThan(prev,ivec2(p.width,p.height)))){
+ vec4 old=history[prev.y*int(p.width)+prev.x];
+ if(abs(c.y-old.y)<.01 && c.z==old.z && abs(c.x-old.x)<.25 && old.w>0.){weight=.8;h=old.x;}}
+ float lo=c.x,hi=c.x;
+ for(int y=-1;y<=1;y++)for(int x=-1;x<=1;x++){ivec2 q=clamp(xy+ivec2(x,y),ivec2(0),ivec2(p.width,p.height)-1);float s=raw[q.y*int(p.width)+q.x].x;lo=min(lo,s);hi=max(hi,s);}
+ accum[i]=vec4(mix(c.x,clamp(h,lo,hi),weight),c.yz,weight);
+}

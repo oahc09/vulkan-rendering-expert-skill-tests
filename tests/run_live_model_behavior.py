@@ -16,7 +16,7 @@ TEST_REPO = BASE.parent
 SKILL_REPO = Path(os.environ.get('VULKAN_SKILL_ROOT', TEST_REPO.parent / 'skill'))
 if not SKILL_REPO.is_dir() and "VULKAN_SKILL_ROOT" not in os.environ:
     SKILL_REPO = TEST_REPO.parent / 'vulkan-rendering-expert-skill'
-DEFAULT_OUT = BASE / 'responses_v1_0_13_live'
+DEFAULT_OUT = BASE / 'responses_v1_0_14_live'
 ORIGINAL_CASES = [
     'tc11_01_repository_map', 'tc11_02_vulkan_13_upgrade',
     'tc11_03_android_rotation_crash', 'tc11_04_add_compute_pass',
@@ -25,11 +25,12 @@ ORIGINAL_CASES = [
     'tc12_05_ahb_descriptor_count', 'tc12_06_apple_tool_matrix',
     'tc12_07_validation_not_correctness', 'tc12_08_blender_proposal',
 ]
-from behavior_cases import TARGETED_CASES, MOBILE_CASES, SYSTEM_CASES, ENG13_CASES
+from behavior_cases import TARGETED_CASES, MOBILE_CASES, SYSTEM_CASES, ENG13_CASES, VIS14_CASES
 LEGACY_CASES = ORIGINAL_CASES + list(TARGETED_CASES)
 V111_CASES = LEGACY_CASES + list(MOBILE_CASES)
 V112_CASES = V111_CASES + list(SYSTEM_CASES)
-CASES = V112_CASES + list(ENG13_CASES)
+V113_CASES = V112_CASES + list(ENG13_CASES)
+CASES = V113_CASES + list(VIS14_CASES)
 REGRESSION_BASELINE_SHA = '102c5d721dcb43a23e12d77927f2703d56c63a11'
 BASELINE_SHA = '1bad967c8e6880c3eecdaa6a946901cbc5c1f060'
 # Historical v1.0.8 loading policy, retained ONLY for measured comparison.

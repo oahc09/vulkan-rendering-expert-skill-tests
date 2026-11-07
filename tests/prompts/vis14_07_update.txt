@@ -1,0 +1,3 @@
+刚体只改transform、BLAS初建含ALLOW_UPDATE，必须重建全部几何吗？
+对照变体：蒙皮拓扑或primitive count变化、原build不允许UPDATE时，可以无条件update吗？
+请分别说明能力/数据/生命周期边界、失败回退与可核验证据；未执行项明确标出。

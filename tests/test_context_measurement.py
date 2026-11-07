@@ -20,7 +20,7 @@ def synthetic_run(root, sha, count):
     (root / 'manifest.json').write_text(json.dumps(manifest))
     for case in CASES:
         (root / case).mkdir()
-        prompt_hashes = json.loads((Path(__file__).parent/'v112-cohort.json').read_text())['cases']
+        prompt_hashes = json.loads((Path(__file__).parent/'v113-cohort.json').read_text())['cases']
         record = dict(user_task_sha256=prompt_hashes.get(case, 'new-targeted-unit-prompt'), rounds=[dict(usage=dict(input_tokens=count))])
         (root / case / 'record.json').write_text(json.dumps(record))
     return root
@@ -195,3 +195,46 @@ def test_v112_regression_uses_frozen_forty_without_new_thirty_percent_target(tmp
         p=root/V112_CASES[-1]/'record.json';record=json.loads(p.read_text())
         record['user_task_sha256']='both-edited';p.write_text(json.dumps(record))
     assert metrics.compare_runs(old,new,'a'*40,comparison='v112-regression')['status']=='unmeasured'
+
+
+def test_vis14_usage_is_separate_from_frozen_twelve_target(tmp_path,monkeypatch):
+    from run_live_model_behavior import VIS14_CASES
+    monkeypatch.setattr(metrics,'audit_case',lambda folder,manifest:json.loads((folder/'record.json').read_text()))
+    root=synthetic_run(tmp_path/'vis14','a'*40,333)
+    path=root/'manifest.json'; manifest=json.loads(path.read_text())
+    manifest.update(tests_sha='b'*40,tests_dirty=False,cases=list(VIS14_CASES))
+    for case in VIS14_CASES:
+        p=root/case/'record.json';record=json.loads(p.read_text());record['reads']=[dict(bytes=55)]
+        p.write_text(json.dumps(record))
+    path.write_text(json.dumps(manifest))
+    result=metrics.measure_vis14_run(root,'a'*40)
+    assert result['status']=='measured' and len(result['cases'])==20
+    assert result['cohort']=='vis14-20'
+    assert result['target_reduction'] is None and result['actual_model_input_target_met'] is None
+    assert all(row['input_tokens']==333 and row['delivered_context_bytes']==55 for row in result['cases'])
+    for changes in [dict(cases=list(VIS14_CASES)[:-1]),dict(cases=list(VIS14_CASES)*2),
+                    dict(skill_dirty=True),dict(tests_dirty=True),dict(status='skipped'),
+                    dict(tests_sha=''),dict(skill_sha='c'*40)]:
+        path.write_text(json.dumps(dict(manifest,**changes)))
+        assert metrics.measure_vis14_run(root,'a'*40)['status']=='unmeasured'
+
+
+
+
+def test_v113_regression_uses_frozen_sixty_four_without_new_thirty_percent_target(tmp_path,monkeypatch):
+    from run_live_model_behavior import V113_CASES
+    monkeypatch.setattr(metrics,'audit_case',lambda folder,manifest:json.loads((folder/'record.json').read_text()))
+    old=synthetic_run(tmp_path/'old40','8d62f861b4ead27699e2ff3d80a1a9f0e72a4968',100)
+    new=synthetic_run(tmp_path/'new64','a'*40,90)
+    p=old/'manifest.json';manifest=json.loads(p.read_text());manifest['cases']=V113_CASES;p.write_text(json.dumps(manifest))
+    result=metrics.compare_runs(old,new,'a'*40,comparison='v113-regression')
+    assert result['status']=='measured' and result['cohort']==V113_CASES
+    assert len(result['candidate_case_input_tokens'])==64
+    assert result['actual_model_input_target_met'] is None and result['target_reduction'] is None
+    assert result['input_not_regressed'] is True
+    assert metrics.compare_runs(old,new,'a'*40)['status']=='unmeasured'
+    # A matching pair of changed system prompts cannot replace the historical cohort.
+    for root in (old,new):
+        p=root/V113_CASES[-1]/'record.json';record=json.loads(p.read_text())
+        record['user_task_sha256']='both-edited';p.write_text(json.dumps(record))
+    assert metrics.compare_runs(old,new,'a'*40,comparison='v113-regression')['status']=='unmeasured'
