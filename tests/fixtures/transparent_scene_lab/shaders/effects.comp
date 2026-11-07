@@ -1,0 +1,29 @@
+#version 450
+layout(local_size_x=64) in;
+layout(set=0,binding=1,std430) readonly buffer Snapshot { vec4 snapshot[]; };
+layout(set=0,binding=2,std430) writeonly buffer Output { vec4 outputColor[]; };
+layout(set=0,binding=6) uniform sampler2D opaqueDepth;
+layout(push_constant) uniform Push { uint n;uint capacity;uint mode;uint flags;uint width;uint height;uint level;uint tick;float viewX;float zoom;uint base;uint unused; } p;
+vec4 integrate(float distance){
+ float dt=distance/float(p.n),T=1.0;vec3 scatter=vec3(0);
+ for(uint j=0;j<p.n;j++){float t=exp(-0.35*dt);scatter+=T*(1.0-t)*vec3(0.2,0.3,0.4);T*=t;}
+ return vec4(scatter,T);
+}
+void main(){
+ uint i=gl_GlobalInvocationID.x;if(i>=p.width*p.height)return;
+ ivec2 xy=ivec2(i%p.width,i/p.width);ivec2 uv=xy+ivec2(3,0);
+ // Orthographic depth maps [0,1] to [0,10] world units.
+ float depth=texelFetch(opaqueDepth,xy,0).r*10.0;
+ // Bounded single-surface refraction; reject offscreen and depth discontinuities.
+ // Conservative same-surface heuristic, NOT a general optical visibility proof.
+ if(uv.x>=int(p.width))uv=xy;
+ if(abs(texelFetch(opaqueDepth,uv,0).r*10.0-depth)>0.01)uv=xy;
+ vec3 bg=snapshot[uint(uv.y)*p.width+uint(uv.x)].rgb;
+ // Finite volume [2,6], split at particle z=3 so front fog also attenuates it.
+ vec4 front=integrate(max(0.0,min(3.0,depth)-2.0));
+ vec4 back=integrate(max(0.0,min(6.0,depth)-3.0));
+ float soft=clamp((depth-3.0)/1.5,0.0,1.0)*0.2;
+ vec3 behind=back.rgb+back.a*bg;
+ vec3 particle=vec3(0.7)*soft+(1.0-soft)*behind;
+ outputColor[i]=vec4(front.rgb+front.a*particle,front.a*back.a);
+}

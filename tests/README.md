@@ -284,3 +284,31 @@ Candidate evidence is under `reports/v1.0.14/`. Always use final pinned clean
 Skill/tests SHAs, generated artifact hashes, preregistered sequence/ROI criteria
 and raw logs. Missing Live/provider, host, physical phone, OMM, power or latency
 measurements remain BLOCKED/UNSUPPORTED/UNVERIFIED. No main merge or publishing.
+
+
+## v1.0.15 transparency, volume and Gaussian candidate
+
+Preredecessor skill `4a7ff82372648c4a9df91e76848cbc9c95de51a3` is merged v1.0.14.
+`v114-cohort.json` freezes the 84 predecessor prompt hashes. TRAN15 adds 20 paired
+primary/contrast scenarios; registry total is 104, not a count of executed models.
+Original 12-case provider-token target remains unchanged. `measure_context.py
+--tran15-run RUN --candidate-sha FULL_SHA` reports new-cohort usage separately,
+with no invented 30% target. Rubrics and CPU oracles never enter model context.
+
+- Static: `VULKAN_SKILL_ROOT=/path/skill python -m pytest -q -m static tests`
+- CPU contracts: same command with `-m host_unit`; `transparency_host_contracts.py`
+  covers FP64 composition, explicitly simulated storage, bounded overflow,
+  extinction/step invariance, profile validation, footprints and full sort keys.
+- Real shader/Vulkan experiment: see `fixtures/transparent_scene_lab/README.md`.
+  It reuses the prior scale/hybrid lab conventions and tiny offscreen resources.
+  Software Vulkan proves only the named implementation and executed path.
+- Live: all 104 cases SKIP without an authorized wrapper. Historical snapshots,
+  mocks, static host configuration and model-word smoke gates are not semantic
+  acceptance, real-host discovery or Adreno/Mali visual/performance evidence.
+- Package: immutable whitelist budget remains 200 files, zero new knowledge paths;
+  source count and ZIP count are separate. Final evidence is in reports/v1.0.15.
+
+RGBA8 128-layer low-alpha storage can exceed the fixed 0.13 quality budget in the
+CPU fixture. This is an expected failed quality tier with a mathematically bounded
+rounding error, not a reason to relax the threshold or blame a driver. CPU storage
+simulation is not a claim about every GPU's intermediate blend precision.

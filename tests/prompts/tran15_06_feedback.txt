@@ -1,0 +1,3 @@
+折射 fragment 读取已完成 scene-color snapshot，输出到另一 image，需要什么依赖？
+对照变体：若采样和 attachment 写入同一 subresource，仅改 GENERAL 或任意 barrier 能解决吗？
+请分别给出判断依据、能力与数据合同、同步/生命周期、回退和可执行验证；明确未执行项。

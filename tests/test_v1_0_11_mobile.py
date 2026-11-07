@@ -26,7 +26,7 @@ def test_exact_mobile_release_scope():
 
 
 def test_mobile_cases_are_registered_without_changing_old_cohorts():
-    assert len(MOBILE_CASES)==12 and len(CASES)==84 and len(LEGACY_CASES)==16 and len(ORIGINAL_CASES)==12
+    assert len(MOBILE_CASES)==12 and len(CASES)==104 and len(LEGACY_CASES)==16 and len(ORIGINAL_CASES)==12
     assert set(MOBILE_CASES).isdisjoint(LEGACY_CASES)
     assert CASES[:16]==LEGACY_CASES
     for case,spec in MOBILE_CASES.items():

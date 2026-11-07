@@ -1,0 +1,3 @@
+compute 只生成 indirect 参数，graphics 的消费同步怎么选？
+对照变体：compute 同时写 vertex shader 读取的 SSBO，单独 DRAW_INDIRECT barrier 是否覆盖属性？
+请分别给出判断依据、能力与数据合同、同步/生命周期、回退和可执行验证；明确未执行项。

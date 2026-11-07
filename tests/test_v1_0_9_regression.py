@@ -39,9 +39,9 @@ def test_release_version_and_manifest_budget(tmp_path):
     assert {p for p in tracked if p.startswith('references/')} == expected_knowledge
 
 
-def test_eighty_four_cases_and_eighty_rubrics():
-    assert len(CASES) == len(set(CASES)) == 84
-    assert len(NEW_CASES) == 80
+def test_registered_cases_and_rubrics():
+    assert len(CASES) == len(set(CASES)) == 104
+    assert len(NEW_CASES) == 100
     assert set(NEW_CASES) == set(CASES[4:])
     for case in CASES:
         assert (Path(__file__).parent / 'prompts' / f'{case}.txt').is_file()

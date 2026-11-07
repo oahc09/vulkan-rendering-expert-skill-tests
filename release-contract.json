@@ -1,7 +1,7 @@
 {
-  "expected_version": "1.0.14",
-  "skill_sha": "eff33ec1d8ec726c3978e47f570dd056bfd6d5d3",
-  "knowledge_baseline_sha": "8d62f861b4ead27699e2ff3d80a1a9f0e72a4968",
+  "expected_version": "1.0.15",
+  "skill_sha": "265f66f16f8c5949687555c1d0981a60436701d0",
+  "knowledge_baseline_sha": "4a7ff82372648c4a9df91e76848cbc9c95de51a3",
   "max_runtime_files": 200,
   "allowed_new_knowledge": []
 }

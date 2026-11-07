@@ -1,7 +1,7 @@
 name: Vulkan Skill Static and Snapshot
 on:
   push:
-    branches: [main, 'feat/v1.0.11-*', 'feat/v1.0.13-*', 'feat/v1.0.14-*']
+    branches: [main, 'feat/v1.0.11-*', 'feat/v1.0.13-*', 'feat/v1.0.14-*', 'feat/v1.0.15-*']
   pull_request:
   workflow_dispatch:
 permissions:
