@@ -1,0 +1,151 @@
+{
+  "status": "PARTIAL_VALIDATED_DRAFT_NOT_FULL_PLAN_ACCEPTANCE",
+  "date_utc": "2026-11-07",
+  "skill": {
+    "sha": "eff33ec1d8ec726c3978e47f570dd056bfd6d5d3",
+    "tree": "593d331c591ee1606976f472688ded79e7198611",
+    "dirty": false,
+    "baseline": "8d62f861b4ead27699e2ff3d80a1a9f0e72a4968",
+    "pr": "https://github.com/oahc09/vulkan-rendering-expert-skill/pull/10"
+  },
+  "tests_execution": {
+    "sha": "c320b27e62eee7c71923db74098f503cdca49276",
+    "tree": "ca95017be19a400fb8600ffcb7e0d06d8aff82d9",
+    "dirty": false,
+    "baseline": "9c4cba3a3985b709ccdbec182c79a6988bfc721e",
+    "pr": "https://github.com/oahc09/vulkan-rendering-expert-skill-tests/pull/7",
+    "publication": "This evidence-only follow-up changes reports only. Source execution above predates this report commit; use PR head and CI for final published SHA, without circular self-hashing."
+  },
+  "levels": {
+    "Static": {
+      "status": "PASS",
+      "count": 237
+    },
+    "Host_Unit": {
+      "status": "PASS",
+      "count": 53,
+      "scope": "CPU reference contracts only"
+    },
+    "Snapshot": {
+      "status": "PASS",
+      "count": 4,
+      "scope": "historical fixture/parser, not live model"
+    },
+    "Local_full_pytest": {
+      "passed": 294,
+      "skipped": 84,
+      "warnings": 1,
+      "warning": "external anyio pytest deprecated CallSpec2 alias"
+    },
+    "Skill_safety_packer": {
+      "status": "PASS",
+      "count": 24
+    },
+    "Shader_Unit": {
+      "status": "PASS",
+      "scope": "real glslang compilation, spirv-val and checked SPIR-V build evidence in ZIP"
+    },
+    "Vulkan_Integration": {
+      "status": "PASS_LIMITED_SCOPE",
+      "implementation": "llvmpipe (LLVM 19.1.7, 256 bits)",
+      "frames_per_path": 12,
+      "paths": [
+        "auto real raster+temporal+BLAS+TLAS+compute rayQuery",
+        "forced no-query baseline"
+      ],
+      "validation_errors": 0,
+      "full_rgba_oracle_mismatches": 0,
+      "shadow_hit_pixels": 534,
+      "reflection_hit_pixels": 528
+    },
+    "Live": {
+      "status": "BLOCKED",
+      "reason": "No configured real model command or credentials; 84 cases skipped; no provider usage, model/parameter/read evidence exists."
+    },
+    "Host_installation": {
+      "status": "UNVERIFIED",
+      "reason": "No actual target assistant host installation trial."
+    },
+    "Android_Device_Visual_Quality": {
+      "status": "UNVERIFIED"
+    },
+    "Original12_provider_token_target": {
+      "status": "UNVERIFIED"
+    },
+    "Old64_nonregression": {
+      "status": "UNVERIFIED_LIVE",
+      "prompt_bytes_frozen": true
+    },
+    "VIS14_20": {
+      "status": "REGISTERED_NOT_LIVE",
+      "new_token_reduction_target": false
+    }
+  },
+  "package": {
+    "runtime_modules": 8,
+    "knowledge_files": 197,
+    "runtime_files": 200,
+    "two_builds_identical": true,
+    "size_bytes": 958724,
+    "crc_verified": true,
+    "sha256": "45dde86c1c0e4f683d5ce91efe220afbe77eb67b31efe91a84b761c62c89da6b",
+    "per_file_manifests": [
+      "package-remote-a.json",
+      "package-remote-b.json"
+    ]
+  },
+  "independent_review": {
+    "status": "PASS_WITH_SCOPE_LIMITS",
+    "source_files_hashed": 27,
+    "artifact_files_verified": 224,
+    "negative_checks": [
+      "missing",
+      "extra",
+      "tampered",
+      "nan_with_updated_hash",
+      "wrong_refusal_code"
+    ],
+    "nan_expected_reason": "Nonfinite frame metadata",
+    "full_rgba_oracle_mismatches": 0,
+    "reset_violations": 0,
+    "old64_prompt_byte_differences": 0,
+    "source_manifest_sha256": "3d93e858567f7852abf857ad6bc48dedbabddcc4b84c736d53215318548985a8",
+    "artifact_manifest_sha256": "d7c446442bc16054038bf08ac3e7866e598f256e55f512219d412b50411a213f"
+  },
+  "source_ci": {
+    "url": "https://github.com/oahc09/vulkan-rendering-expert-skill-tests/actions/runs/42339007263",
+    "head_sha": "c320b27e62eee7c71923db74098f503cdca49276",
+    "github_pr_merge_sha": "58c82d4 (temporary PR merge ref, not branch head)",
+    "result": "success",
+    "counts": {
+      "static": 237,
+      "host_unit": 53,
+      "snapshot": 4
+    },
+    "live": "SKIPPED: no model command configured",
+    "note": "Local pytest and lab execute exact branch source SHA; PR CI runs GitHub synthetic merge and pins exact Skill SHA. Final evidence-commit CI will be linked in PR."
+  },
+  "unimplemented_or_unverified": [
+    "OMM KHR/EXT implementation and execution: neither extension advertised here. Documentation/CPU policy is not execution.",
+    "GPU AS update, compaction, retirement stress and generation/descriptor lifecycle are not exercised.",
+    "Queries execute the initial static scene, not an animated temporal query sequence.",
+    "No GPU deformation, resize, multiview, pause/resume or LOD lifecycle implementation; some are CPU/reset policies only.",
+    "Camera receivers are analytic planes; shadow caster depth really rasterizes. Constant probe fallback is not SSR or a production reflection scene.",
+    "No hardware RT or Android frames, performance, latency, power, thermal or sustained-run measurement.",
+    "No SDK upscaler/FG integration run, no quality-improvement or speedup claim. Filtering can soften stripe/contact details."
+  ],
+  "development_failures": {
+    "files": [
+      "development-failures/hybrid114-build-01.log",
+      "development-failures/hybrid114-run-04.log",
+      "development-failures/hybrid114-run-05.log"
+    ],
+    "resolution": "Initial loader link failure corrected to installed loader SONAME. Float-boundary oracle disagreements removed by choosing an unambiguous nonboundary reflection direction, then independently checking every RGBA channel. Retained raw failures are not final-run results."
+  },
+  "publication": {
+    "draft": true,
+    "merged": false,
+    "deployed": false,
+    "automatic_monitoring": false
+  }
+}

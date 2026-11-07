@@ -1,0 +1,89 @@
+{
+  "scope": "All report artifacts except this manifest itself",
+  "files": {
+    "README.md": {
+      "bytes": 2657,
+      "sha256": "a68e630353a26e13722d38630327e5e3134f2e79ccb968ce04a65e160b1b515d"
+    },
+    "acceptance.json": {
+      "bytes": 5803,
+      "sha256": "b88a09d200f93ede7976351ef7e79cd6218e2f2cb3e2b952490aff3899f109c2"
+    },
+    "development-failures/hybrid114-build-01.log": {
+      "bytes": 2407,
+      "sha256": "29b5b5da8e215b1463aa6ecfe6647c8f91f073ac180982f9431bf5eddaf3375f"
+    },
+    "development-failures/hybrid114-run-04.log": {
+      "bytes": 776,
+      "sha256": "be1c00fe999df74027ae1fa9bf584a1063231f4a3a4b508251981783e314f5b2"
+    },
+    "development-failures/hybrid114-run-05.log": {
+      "bytes": 886,
+      "sha256": "5c88682bebaf419aadb21f1b31d9d04ccff7b9c5bfbf81b15907f78d4063b5fa"
+    },
+    "hybrid-quality-lab-evidence.zip": {
+      "bytes": 117964,
+      "sha256": "d7449d7aee0cb8f3ce09f25796bcb5ce9b93c6ef7df50207259ad974567530aa"
+    },
+    "lab-commands.json": {
+      "bytes": 2384,
+      "sha256": "31361fe740b8e4bde858fd5c21cd3c7f4c962a62fb52cf749d39e3d489b8efa3"
+    },
+    "lab-compiler-version.log": {
+      "bytes": 232,
+      "sha256": "5f6798e87440f1e8b88bf6822c33bebe434f83374640a7f8ba967902ee1ea098"
+    },
+    "lab-glslang-version.log": {
+      "bytes": 308,
+      "sha256": "625bd352de44f83029feed47d4d6f2049af695d789c8d8cb6def79d2ced2a6ca"
+    },
+    "lab-source-manifest.json": {
+      "bytes": 3300,
+      "sha256": "3d93e858567f7852abf857ad6bc48dedbabddcc4b84c736d53215318548985a8"
+    },
+    "lab-spirv-val-version.log": {
+      "bytes": 465,
+      "sha256": "9141086275bff165ecd8e42834953c065be94a551a9304fb228489db06ae4450"
+    },
+    "lab-summary.json": {
+      "bytes": 870,
+      "sha256": "7cd19181d27f22a43cbf9bafdaab6417f5b52fd6300bd6a073434f3a62a0adbc"
+    },
+    "lab-verification.json": {
+      "bytes": 173,
+      "sha256": "ddb83958c4130c6dbc72564a784ac0060667451db6e32e0e4f986a833d37ee88"
+    },
+    "lab-vulkan-auto.log": {
+      "bytes": 992,
+      "sha256": "24f91a22249958618887f549fc3df771515e5d08a67496738405fdb5b880ea6e"
+    },
+    "lab-vulkan-forced-baseline.log": {
+      "bytes": 684,
+      "sha256": "84bb5a0f73258638d4881038c51deb707c6d4892dde8de80ddf0b03fdccad72a"
+    },
+    "package-remote-a.json": {
+      "bytes": 35323,
+      "sha256": "d7ffc080d6dec05c35e28e5e01774ea4cfbd7015ed9553de8214e2c35830388a"
+    },
+    "package-remote-b.json": {
+      "bytes": 35323,
+      "sha256": "df7b6fab431993f457b51927922436489c1e1270cbc5c104cab9043462f78458"
+    },
+    "pytest-remote-source.log": {
+      "bytes": 1217,
+      "sha256": "ccb192415d5a5509b25f2c0ef6d2dd67d740116b093434dc601e1329c62c6aa0"
+    },
+    "skill-check-final.json": {
+      "bytes": 475,
+      "sha256": "41e452cf4c05082233fb851bde1334e74be9f6e2cbf12a090b0b32be362fafe4"
+    },
+    "skill-unittest.log": {
+      "bytes": 123,
+      "sha256": "ec4f037a50b50ff0445d9228edf7f7c5e5f171afe40b62db6981d0329f1fbb34"
+    },
+    "vulkan-rendering-expert-skill-v1.0.14.zip": {
+      "bytes": 958724,
+      "sha256": "45dde86c1c0e4f683d5ce91efe220afbe77eb67b31efe91a84b761c62c89da6b"
+    }
+  }
+}

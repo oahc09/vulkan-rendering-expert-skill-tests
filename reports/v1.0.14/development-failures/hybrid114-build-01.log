@@ -1,0 +1,19 @@
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/../engine_scale_lab/shaders/cull.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/../engine_scale_lab/shaders/finalize.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/../engine_scale_lab/shaders/hiz.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/../engine_scale_lab/shaders/update.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/shaders/lighting.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/shaders/query.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/shaders/scene.frag
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/shaders/scene.vert
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/shaders/spatial.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/shaders/temporal.comp
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/main.cpp: In function ‘int main(int, char**)’:
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/main.cpp:40:3: warning: this ‘if’ clause does not guard... [-Wmisleading-indentation]
+   40 |   if(!shadowed||!lit|| (reset&&used))throw std::runtime_error("Shadow coverage/history reset assertion");accepted+=used;rejected+=pixels-used;
+      |   ^~
+/workspace/scratch/62d43a81bbde/vulkan-rendering-expert-skill-tests/tests/fixtures/hybrid_quality_lab/main.cpp:40:106: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   40 |   if(!shadowed||!lit|| (reset&&used))throw std::runtime_error("Shadow coverage/history reset assertion");accepted+=used;rejected+=pixels-used;
+      |                                                                                                          ^~~~~~~~
+/usr/bin/ld: cannot find -lvulkan: No such file or directory
+collect2: error: ld returned 1 exit status
