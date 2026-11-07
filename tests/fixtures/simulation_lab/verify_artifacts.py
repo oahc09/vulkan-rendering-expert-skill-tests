@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Independent readback/identity verifier. Thresholds are fixed in source."""
-import hashlib,json,math,sys
+import hashlib,importlib.util,json,math,sys
 from pathlib import Path
 
 WATER=[(17,b,e) for b in range(3) for e in (2,0)]+[(17,1,1),(17,1,3),(9,1,2)]
@@ -23,6 +23,8 @@ def verify(root,strict=True):
         require(hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,'artifact hash '+name)
     require(set(manifest['files'])=={p.name for p in root.iterdir() if p.is_file() and p.name!='manifest.json'},'unbound output files')
     build=load(root/'build-manifest.json');require(build['tests_sha']==manifest['tests_sha'],'mixed build/run source')
+    spec=importlib.util.spec_from_file_location('simulation_build_manifest',Path(__file__).with_name('build_manifest.py'));mod=importlib.util.module_from_spec(spec);spec.loader.exec_module(mod)
+    require(build['sources']==mod.source_files(Path(__file__).resolve().parent),'source changed since build')
     require(len(build['artifacts'])==16 and len(build['sources'])>=20,'build closure')
     names={f'{kind}-{method}':(2,1,1,False) for kind in ('hard','soft') for method in ('colored','jacobi')}
     names.update({f'{kind}-{method}-tick{tick}':(8 if kind=='cloth' else 32,8 if kind=='cloth' else 1,tick,False) for kind in ('cloth','rope') for method in ('colored','jacobi') for tick in range(1,9)})
