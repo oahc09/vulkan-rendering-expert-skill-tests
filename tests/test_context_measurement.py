@@ -260,3 +260,24 @@ def test_tran15_usage_is_separate_from_frozen_twelve_target(tmp_path,monkeypatch
                     dict(tests_sha=''),dict(skill_sha='c'*40)]:
         path.write_text(json.dumps(dict(manifest,**changes)))
         assert metrics.measure_tran15_run(root,'a'*40)['status']=='unmeasured'
+
+def test_sim16_usage_is_separate_from_frozen_twelve_target(tmp_path,monkeypatch):
+    from run_live_model_behavior import SIM16_CASES
+    monkeypatch.setattr(metrics,'audit_case',lambda folder,manifest:json.loads((folder/'record.json').read_text()))
+    root=synthetic_run(tmp_path/'sim16','a'*40,333)
+    path=root/'manifest.json'; manifest=json.loads(path.read_text())
+    manifest.update(tests_sha='b'*40,tests_dirty=False,cases=list(SIM16_CASES))
+    for case in SIM16_CASES:
+        p=root/case/'record.json';record=json.loads(p.read_text());record['reads']=[dict(bytes=55)]
+        p.write_text(json.dumps(record))
+    path.write_text(json.dumps(manifest))
+    result=metrics.measure_sim16_run(root,'a'*40)
+    assert result['status']=='measured' and len(result['cases'])==16
+    assert result['cohort']=='sim16-16'
+    assert result['target_reduction'] is None and result['actual_model_input_target_met'] is None
+    assert all(row['input_tokens']==333 and row['delivered_context_bytes']==55 for row in result['cases'])
+    for changes in [dict(cases=list(SIM16_CASES)[:-1]),dict(cases=list(SIM16_CASES)*2),
+                    dict(skill_dirty=True),dict(tests_dirty=True),dict(status='skipped'),
+                    dict(tests_sha=''),dict(skill_sha='c'*40)]:
+        path.write_text(json.dumps(dict(manifest,**changes)))
+        assert metrics.measure_sim16_run(root,'a'*40)['status']=='unmeasured'
