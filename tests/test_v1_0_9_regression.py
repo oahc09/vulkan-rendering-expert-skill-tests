@@ -40,8 +40,8 @@ def test_release_version_and_manifest_budget(tmp_path):
 
 
 def test_registered_cases_and_rubrics():
-    assert len(CASES) == len(set(CASES)) == 104
-    assert len(NEW_CASES) == 100
+    assert len(CASES) == len(set(CASES)) == 120
+    assert len(NEW_CASES) == 116
     assert set(NEW_CASES) == set(CASES[4:])
     for case in CASES:
         assert (Path(__file__).parent / 'prompts' / f'{case}.txt').is_file()

@@ -1,0 +1,146 @@
+{
+  "window": [
+    "2026-08-10",
+    "2026-11-07"
+  ],
+  "checked_at": "2026-11-07",
+  "sources": [
+    {
+      "id": "S1",
+      "url": "https://github.com/steampower33/XPBD-Cloth/blob/c7019d35414e75c77ede2c3500a762837bcab6a6/README.md",
+      "revision": "c7019d35414e75c77ede2c3500a762837bcab6a6",
+      "git_blob": "384057dd12093a9d1e3f4cb4352b54829a418fd2",
+      "utf8_bytes": 17736,
+      "sha256": "48b16c23cacc549b5d17250d86bc804eeb8b429d4bfbc8fe13f0eb8238ce83ab",
+      "verified": "source text read",
+      "claim": "Graph-colored stretch and atomic Jacobi are separate approaches. Neighbor reuse is approximate; empirical stabilization and RTX measurements do not prove Android acceptance.",
+      "strength": "community implementation/author report, not independently reproduced",
+      "commit_date": "2026-08-27T14:27:59Z",
+      "commit_url": "https://github.com/steampower33/XPBD-Cloth/commit/c7019d35414e75c77ede2c3500a762837bcab6a6"
+    },
+    {
+      "id": "S2",
+      "url": "https://github.com/igor-polev/textile-wave/blob/c9afe32aed360acb6e1c45092ff8b0ab3c096701/README.md",
+      "revision": "c9afe32aed360acb6e1c45092ff8b0ab3c096701",
+      "git_blob": "b7a1993198782d26d4740169cfda0b796f0fa395",
+      "utf8_bytes": 10941,
+      "sha256": "f44f3ab8f739ace5cc4917dd97acccc12f20f39b06234a7da1e9940c56604bc8",
+      "verified": "source text read",
+      "claim": "Separate GPU workload timing from CPU completion waiting; preserve October 20 commit and October 21 report-body dates. WebGPU evidence is not Vulkan device evidence.",
+      "strength": "community implementation/author report, not independently reproduced",
+      "commit_date": "2026-10-20T21:33:53Z",
+      "commit_url": "https://github.com/igor-polev/textile-wave/commit/c9afe32aed360acb6e1c45092ff8b0ab3c096701",
+      "reported_measurement_date": "2026-10-21"
+    },
+    {
+      "id": "S3",
+      "url": "https://github.com/20niship/nebula/blob/13a3f5cbd4d16713f6435b4305b029e7fdef194d/README.md",
+      "revision": "13a3f5cbd4d16713f6435b4305b029e7fdef194d",
+      "git_blob": "3d54d7361a254eacbf397272fb7eb5984b6fc41d",
+      "utf8_bytes": 23451,
+      "sha256": "13788ab3cc0763b120cb17ffc9249bab63600ac511a0e1e81abf8cb4053cd812",
+      "verified": "source text read",
+      "claim": "Vulkan simulation and headless/CPU Vulkan CI are useful validation architecture examples. Blender export demonstrations are not mobile real-time acceptance.",
+      "strength": "community implementation/author report, not independently reproduced",
+      "commit_date": "2026-11-06T13:48:05Z",
+      "commit_url": "https://github.com/20niship/nebula/commit/13a3f5cbd4d16713f6435b4305b029e7fdef194d"
+    },
+    {
+      "id": "S4",
+      "url": "https://matthias-research.github.io/pages/publications/XPBD.pdf",
+      "year": 2016,
+      "sha256": "cd96241fe2cce7816c3fa1cb2b9e862e5a610263fd38cc8560bb51b7f6ecd502",
+      "bytes": 2033540,
+      "verified": "downloaded and text inspected",
+      "strength": "historical primary research, not recent news"
+    },
+    {
+      "id": "S5",
+      "url": "https://matthias-research.github.io/pages/publications/smallsteps.pdf",
+      "year": 2019,
+      "sha256": "658cb1428a7c34af6419a59fcb1652f25dd8f6cca9472687b337ed9f2f0efca8",
+      "bytes": 8208308,
+      "verified": "downloaded and text inspected",
+      "strength": "historical primary research, not recent news"
+    },
+    {
+      "id": "S6",
+      "url": "https://matthias-research.github.io/pages/tenMinutePhysics/index.html",
+      "verified": "plan reference; not independently frozen in this implementation run",
+      "strength": "supplementary; no new-feature or performance claim derived"
+    },
+    {
+      "id": "S7",
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/shaders.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "git_blob": "cfcb2b34f77c6d878c30423a5ba29755a6327d66",
+      "utf8_bytes": 272040,
+      "sha256": "68d4ac842fdd4911d2a0589fc09bbc198ae42d0b2f87c471228386f9e4650f69",
+      "verified": "source text read",
+      "claim": "Workgroup execution/barrier scope is not whole-dispatch synchronization; inactive lanes participate correctly.",
+      "strength": "pinned normative API source"
+    },
+    {
+      "id": "S8",
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/synchronization.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "git_blob": "7b8fc732f0184ce6acc060cbea264da4150347d8",
+      "utf8_bytes": 393598,
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "verified": "source text read",
+      "claim": "Execution/memory dependency, stage/access scope and queue ownership are separate contracts.",
+      "strength": "pinned normative API source"
+    },
+    {
+      "id": "S9",
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/features.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "git_blob": "23baa33a3add02dd3e86b87f8f145c683252014a",
+      "utf8_bytes": 491443,
+      "sha256": "c3f4d376c6609c2ef14a7cc840fd0472167c2833fda0c5358d1f55e087b96ff2",
+      "verified": "source text read",
+      "claim": "Float atomic add features are storage-domain and width specific; integer or generic atomic support is insufficient.",
+      "strength": "pinned normative API source"
+    },
+    {
+      "id": "S10",
+      "url": "https://docs.vulkan.org/guide/latest/subgroups.html",
+      "verified": "plan reference; not independently frozen in this implementation run",
+      "strength": "supplementary; no new-feature or performance claim derived"
+    },
+    {
+      "id": "S11",
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/queries.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "git_blob": "30910ef4882f9fb2c7100a542b8e0756110aada3",
+      "utf8_bytes": 161056,
+      "sha256": "367c7d7058072874bc08b1eaa37505184392842884950a200a0c71f39ae4689f",
+      "verified": "source text read",
+      "claim": "Timestamp availability, queue valid bits, period and completion must be recorded; CPU wait is a separate quantity.",
+      "strength": "pinned normative API source"
+    },
+    {
+      "id": "S12",
+      "url": "https://developer.android.com/games/optimize/vulkan-reduced-precision",
+      "verified": "plan reference; not independently frozen in this implementation run",
+      "strength": "supplementary; no new-feature or performance claim derived"
+    },
+    {
+      "id": "S13",
+      "url": "https://support.arm.com/documentation/102693/2026-5/Analyze-your-frames/Analyze-shader-programs",
+      "verified": "plan reference; not independently frozen in this implementation run",
+      "strength": "supplementary; no new-feature or performance claim derived"
+    },
+    {
+      "id": "S14",
+      "url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/accelstructures.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "git_blob": "948b09a5ec55a6f7b8eec7992955e4dc74285409",
+      "utf8_bytes": 302332,
+      "sha256": "83b41a8b441a480a4e361d6464be80027c47b89280dfb0c8f61df20e35984408",
+      "verified": "source text read",
+      "claim": "AS geometry input reads use shader-read access at AS build stage; AS objects and scratch have distinct accesses.",
+      "strength": "pinned normative API source"
+    }
+  ]
+}

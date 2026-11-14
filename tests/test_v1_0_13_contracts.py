@@ -40,9 +40,9 @@ def test_exact_plan_and_zero_net_new_knowledge_contract():
     meta=json.loads((ROOT/'docs/v1.0.13-plan-source.json').read_text())
     assert len(raw)==58967 and hashlib.sha256(raw).hexdigest()==meta['sha256']=='fb37cdb63da98144cc251b97f49ffac3742b8d4e4be262ad9e264f2df4415060'
     c=json.loads((ROOT/'release-contract.json').read_text())
-    assert c['expected_version']=='1.0.15' and c['max_runtime_files']==200
+    assert c['expected_version']=='1.0.16' and c['max_runtime_files']==200
     assert c['allowed_new_knowledge']==[]
-    assert c['knowledge_baseline_sha']=='4a7ff82372648c4a9df91e76848cbc9c95de51a3'
+    assert c['knowledge_baseline_sha']=='75b3dacdcb5e567c86c7ae6e97bcb248b6f46fc3'
 
 
 def test_original_forty_prompts_and_twelve_denominator_unchanged():
@@ -55,7 +55,7 @@ def test_original_forty_prompts_and_twelve_denominator_unchanged():
 
 
 def test_twenty_four_engine_scenarios_include_contrasting_conditions():
-    assert len(CASES)==104 and len(ENG13_CASES)==24 and list(ENG13_CASES)==CASES[40:64]
+    assert len(CASES)==120 and len(ENG13_CASES)==24 and list(ENG13_CASES)==CASES[40:64]
     assert {v['id'] for v in ENG13_CASES.values()}=={f'ENG13-{n:02}' for n in range(1,25)}
     for case,spec in ENG13_CASES.items():
         prompt=(ROOT/'tests/prompts'/f'{case}.txt').read_text().strip()

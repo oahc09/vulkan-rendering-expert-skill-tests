@@ -1,0 +1,13 @@
+#version 450
+#extension GL_GOOGLE_include_directive : require
+#include "sim.glsl"
+layout(local_size_x=64) in;
+float h(int x,int y){return source[uint(clamp(y,0,int(p.height)-1))*p.width+uint(clamp(x,0,int(p.width)-1))].x.x;}
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.n)return;int x=int(i%p.width),y=int(i/p.width);
+ bool boundary=x==0||y==0||x==int(p.width)-1||y==int(p.height)-1;
+ float z=source[i].x.x,v=source[i].x.y,dx=1./float(p.width-1),dy=1./float(p.height-1);
+ float lap=(h(x-1,y)-2*z+h(x+1,y))/(dx*dx)+(h(x,y-1)-2*z+h(x,y+1))/(dy*dy);
+ v+=p.viewX*p.zoom*p.zoom*lap;if(p.flags==2){v/=1.+.1*p.viewX;if(boundary)v*=.5;}z+=p.viewX*v;
+ if(boundary&&p.flags==0){z=0;v=0;}
+ state[i].x=vec4(z,v,0,0);state[i].previous=source[i].x;
+}

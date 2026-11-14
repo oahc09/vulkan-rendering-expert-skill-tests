@@ -1,0 +1,13 @@
+#version 450
+#extension GL_GOOGLE_include_directive : require
+#include "sim.glsl"
+layout(set=0,binding=3,std430) buffer Bounds { vec4 bounds[2]; };
+layout(local_size_x=64) in;
+shared vec3 low[64];shared vec3 high[64];
+void main(){uint lane=gl_LocalInvocationID.x;vec3 lo=vec3(3.402823e38),hi=-lo;
+ for(uint i=lane;i<p.n;i+=64){vec3 x=source[i].x.xyz;if(p.mode==2)x=vec3(float(i%p.width)/float(p.width-1),float(i/p.width)/float(p.height-1),source[i].x.x);lo=min(lo,x);hi=max(hi,x);}
+ low[lane]=lo;high[lane]=hi;barrier();
+ // Inactive lanes initialize neutral values and participate in every barrier.
+ for(uint stride=32;stride>0;stride>>=1){if(lane<stride){low[lane]=min(low[lane],low[lane+stride]);high[lane]=max(high[lane],high[lane+stride]);}barrier();}
+ if(lane==0){bounds[0]=vec4(low[0],float(p.tick));bounds[1]=vec4(high[0],float(p.tick));}
+}

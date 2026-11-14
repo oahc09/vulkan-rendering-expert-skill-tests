@@ -24,16 +24,16 @@ def test_plan_original_bytes_and_current_predecessor():
     assert len(raw)==meta['bytes']==45601
     assert hashlib.sha256(raw).hexdigest()==meta['sha256']
     c=json.loads((ROOT/'release-contract.json').read_text())
-    assert c['expected_version']=='1.0.15' and c['max_runtime_files']==200 and c['allowed_new_knowledge']==[]
-    assert c['knowledge_baseline_sha']=='4a7ff82372648c4a9df91e76848cbc9c95de51a3'
+    assert c['expected_version']=='1.0.16' and c['max_runtime_files']==200 and c['allowed_new_knowledge']==[]
+    assert c['knowledge_baseline_sha']=='75b3dacdcb5e567c86c7ae6e97bcb248b6f46fc3'
 
 def test_frozen_old84_and_new20():
     f=json.loads((ROOT/'tests/v114-cohort.json').read_text())
     assert f['source_tests_sha'].startswith('f8cadd3')
     assert list(f['cases'])==V114_CASES==CASES[:84]
     for name,digest in f['cases'].items():assert hashlib.sha256((ROOT/'tests/prompts'/f'{name}.txt').read_bytes()).hexdigest()==digest
-    assert len(CASES)==len(set(CASES))==104 and len(ORIGINAL_CASES)==12
-    assert list(TRAN15_CASES)==CASES[84:] and {x['id'] for x in TRAN15_CASES.values()}=={f'TRAN15-{i:02}' for i in range(1,21)}
+    assert len(CASES)==len(set(CASES))==120 and len(ORIGINAL_CASES)==12
+    assert list(TRAN15_CASES)==CASES[84:104] and {x['id'] for x in TRAN15_CASES.values()}=={f'TRAN15-{i:02}' for i in range(1,21)}
     for name,c in TRAN15_CASES.items():
         assert (ROOT/'tests/prompts'/f'{name}.txt').read_text().strip()==c['prompt']
         assert set(c['variants'])=={'primary','contrast'} and len(set(c['variants'].values()))==2

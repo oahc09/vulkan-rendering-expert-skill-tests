@@ -312,3 +312,11 @@ RGBA8 128-layer low-alpha storage can exceed the fixed 0.13 quality budget in th
 CPU fixture. This is an expected failed quality tier with a mathematically bounded
 rounding error, not a reason to relax the threshold or blame a driver. CPU storage
 simulation is not a claim about every GPU's intermediate blend precision.
+
+## v1.0.16 candidate: GPU Simulation & Dynamic Geometry
+
+- Skill v1.0.15 PR #11 merged; paired v1.0.15 tests main/evidence publication remains pending. The exact historical plan and current prerequisite reconciliation are in docs/update-plan-v1.0.16.md and docs/v1.0.16-requirement-map.md. Do not infer both repositories merged from the skill merge.
+- Registry now preserves the previous 104 prompt bytes (tests/v115-cohort.json) and appends SIM16-01..16, totaling 120. Each has primary/contrast conditions; rubrics stay evaluation-only. Original12 provider-token target remains separate. measure_context.py --sim16-run measures only complete clean real Live records, with no inherited 30% target.
+- simulation_host_contracts.py covers clock, bounded queue/dedup history, force/impulse, XPBD, colors/Jacobi, collisions, wave stability/events and all-consumer snapshot retirement. It is host evidence, never fabricated GPU evidence.
+- fixtures/simulation_lab provides original C++/GLSL, same-algorithm FP64 references, a bounded Vulkan runner, compile/run source hashes, independent readback verification and explicit unverified scope. Build/run commands and thresholds are in its README. Set VULKAN_SIM16_RUN_DIR only for an actual current, clean-source run.
+- Without fresh model output, all 120 Live cases skip. Without a device run, the Vulkan artifact test skips. Android, host integration, thermal/mobile performance and optional async/atomic/FP16/AS paths remain unverified. CI static/host success does not close these layers.
