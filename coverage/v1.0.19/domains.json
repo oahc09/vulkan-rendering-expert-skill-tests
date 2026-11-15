@@ -384,8 +384,22 @@
     "existing_route": "[合同入口](06_pipeline/pipeline.md#ray-tracing-pipeline-contract)",
     "open_review": "全量AS/SBT/RT条件扩展，未测设备",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "ray_query_chain": {
+      "contract": "pipeline.md#delivery19-ray-query-chain",
+      "rules": "tools/ray_query19.py",
+      "evidence": "ray-query.json",
+      "scope": "one opaque triangle BLAS to identity instance TLAS to compute rayQuery hit/miss with real device build, independent geometry reference and safe invalid-create negative on CPU ICD",
+      "domain_complete": false,
+      "still_open": [
+        "ray tracing pipeline and SBT",
+        "update/compact/multiple geometries and instances",
+        "AABB, nonopaque traversal and advanced extension families",
+        "physical/mobile ray tracing hardware/performance",
+        "Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK15",

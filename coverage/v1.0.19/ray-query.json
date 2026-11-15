@@ -1,0 +1,868 @@
+{
+  "run_id": "5d296f4e-1778-4bda-9efc-54e67ffe6822",
+  "source_sha256": "6afdc307f5c3f03d5fdb6ffec16f2a9f1884d9555588abf225c2cecd29c58f12",
+  "runner_sha256": "cc19eae04512c7f80e2e3d24b4462c2872172ab90fd81d9a94b8f879b427e9f1",
+  "shader_sha256": "9dbabe83a2417f7915504368f2ef211f621766c766c9c952ba600769c1e5ea35",
+  "rules_sha256": "d4279ca7380c704f21531fa6ad9a3d00866aa200c163fbcae4e83df246298e97",
+  "binary_sha256": "4036738bfaa822be3580fe730a645331cc82d8b629749e13afc017ec2f9f16fe",
+  "spirv_sha256": "0f683acdb606f6466f565d3e7715e7335c90d07aafbec20c048857ffbac0007c",
+  "disassembly_sha256": "583a05f85ec4223eeb02737d99cc2daa5bd79e09c48351add9b0f14c84b90f47",
+  "normative_sha256": "669412b67561cf613ba8167c088128d89b5f8a880669437dea9b8223c84c1602",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "tools": {
+    "glslangValidator": {
+      "sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+    },
+    "spirv-val": {
+      "sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+    },
+    "spirv-dis": {
+      "sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+    }
+  },
+  "compile": {
+    "exit_code": 0,
+    "stdout_sha256": "f4f87a9aee3787d35d31ea3a79b1b9262af1b1f040c9bdfc8f48b2d822062723",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "validate": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "disassemble": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cases": {
+    "good": {
+      "records": [
+        {
+          "kind": "identity",
+          "apiVersion": 4210993,
+          "deviceType": 4,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "extensionsFound": 3,
+          "extensionsEnabled": 3,
+          "bdaSupported": 1,
+          "asSupported": 1,
+          "raySupported": 1,
+          "bdaEnabled": 1,
+          "asEnabled": 1,
+          "rayEnabled": 1,
+          "vertexFormatFeatures": 536870984,
+          "scratchAlignment": 8,
+          "maxPrimitiveCount": 16777215,
+          "maxGeometryCount": 16777215,
+          "maxInstanceCount": 16777215
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 0,
+          "size": 36,
+          "usage": 655360,
+          "allocationFlags": 2,
+          "requirementsSize": 36,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140084726829056
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 1,
+          "size": 64,
+          "usage": 655360,
+          "allocationFlags": 2,
+          "requirementsSize": 64,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140084726824960
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 2,
+          "size": 32,
+          "usage": 32,
+          "allocationFlags": 0,
+          "requirementsSize": 32,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 0
+        },
+        {
+          "kind": "vertices",
+          "values": [
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "geometry",
+          "vertexFormat": 106,
+          "vertexStride": 12,
+          "maxVertex": 2,
+          "indexType": 1000165000,
+          "opaque": 1,
+          "vertexAddress": 140084726829056,
+          "instanceAddress": 140084726824960
+        },
+        {
+          "kind": "build-config",
+          "index": 0,
+          "mode": 0,
+          "flags": 4,
+          "geometryCount": 1,
+          "primitiveCount": 1
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 3,
+          "size": 400,
+          "usage": 1179648,
+          "allocationFlags": 2,
+          "requirementsSize": 400,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140084726816768
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 5,
+          "size": 72,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 72,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140084726812672
+        },
+        {
+          "kind": "instance",
+          "customIndex": 7,
+          "mask": 255,
+          "blasReference": 140084726816768,
+          "transform": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "as",
+          "index": 0,
+          "type": 1,
+          "buildSize": 144,
+          "scratchSize": 64,
+          "scratchRawAddress": 140084726812672,
+          "scratchAddress": 140084726812672,
+          "scratchBufferSize": 72,
+          "storageSize": 400,
+          "createOffset": 0,
+          "asAddress": 140084726816768
+        },
+        {
+          "kind": "build-config",
+          "index": 1,
+          "mode": 0,
+          "flags": 4,
+          "geometryCount": 1,
+          "primitiveCount": 1
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 4,
+          "size": 472,
+          "usage": 1179648,
+          "allocationFlags": 2,
+          "requirementsSize": 472,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140084726808576
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 6,
+          "size": 72,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 72,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140084726804480
+        },
+        {
+          "kind": "as",
+          "index": 1,
+          "type": 0,
+          "buildSize": 216,
+          "scratchSize": 64,
+          "scratchRawAddress": 140084726804480,
+          "scratchAddress": 140084726804480,
+          "scratchBufferSize": 72,
+          "storageSize": 472,
+          "createOffset": 0,
+          "asAddress": 140084726808576
+        },
+        {
+          "kind": "descriptor",
+          "asOrdinal": 1,
+          "asBinding": 0,
+          "asCount": 1,
+          "asType": 1000150000,
+          "outputBinding": 1,
+          "outputCount": 1,
+          "outputType": 7,
+          "outputRange": 32
+        },
+        {
+          "kind": "dependency",
+          "index": 0,
+          "srcStage": 33554432,
+          "dstStage": 33554432,
+          "srcAccess": 4194304,
+          "dstAccess": 2097152
+        },
+        {
+          "kind": "dependency",
+          "index": 1,
+          "srcStage": 33554432,
+          "dstStage": 2048,
+          "srcAccess": 4194304,
+          "dstAccess": 2097152
+        },
+        {
+          "kind": "rays",
+          "origins": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              3,
+              0,
+              1
+            ]
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "tmin": 0.1,
+          "tmax": 10,
+          "groups": [
+            2,
+            1,
+            1
+          ],
+          "maxGroupX": 65535,
+          "maxInvocations": 1024,
+          "maxPushConstants": 256
+        },
+        {
+          "kind": "dependency",
+          "index": 2,
+          "srcStage": 2048,
+          "dstStage": 16384,
+          "srcAccess": 64,
+          "dstAccess": 8192
+        },
+        {
+          "kind": "readback",
+          "values": [
+            1,
+            7,
+            1065353216,
+            0,
+            0,
+            4294967295,
+            0,
+            4294967295
+          ],
+          "expectedHit": 1
+        },
+        {
+          "kind": "final",
+          "submitted": true,
+          "fenceCompleted": true,
+          "errors": 0,
+          "rc": 0
+        }
+      ],
+      "admissions": [
+        {
+          "create": {
+            "status": "CREATE_WITHIN_SCOPE",
+            "vuids": []
+          },
+          "scratch": {
+            "status": "SCRATCH_WITHIN_SCOPE",
+            "vuids": []
+          }
+        },
+        {
+          "create": {
+            "status": "CREATE_WITHIN_SCOPE",
+            "vuids": []
+          },
+          "scratch": {
+            "status": "SCRATCH_WITHIN_SCOPE",
+            "vuids": []
+          }
+        }
+      ],
+      "cpu_oracle": [
+        {
+          "hit": true,
+          "t": 1.0,
+          "primitive": 0,
+          "customIndex": 7
+        },
+        {
+          "hit": false
+        }
+      ],
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "3a7ad66af606ab031c9426f6cdb97cd564771cf706e8bf6476bb4a71775f0890",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "wrong-output": {
+      "records": [
+        {
+          "kind": "identity",
+          "apiVersion": 4210993,
+          "deviceType": 4,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "extensionsFound": 3,
+          "extensionsEnabled": 3,
+          "bdaSupported": 1,
+          "asSupported": 1,
+          "raySupported": 1,
+          "bdaEnabled": 1,
+          "asEnabled": 1,
+          "rayEnabled": 1,
+          "vertexFormatFeatures": 536870984,
+          "scratchAlignment": 8,
+          "maxPrimitiveCount": 16777215,
+          "maxGeometryCount": 16777215,
+          "maxInstanceCount": 16777215
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 0,
+          "size": 36,
+          "usage": 655360,
+          "allocationFlags": 2,
+          "requirementsSize": 36,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140267468697600
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 1,
+          "size": 64,
+          "usage": 655360,
+          "allocationFlags": 2,
+          "requirementsSize": 64,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140267468693504
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 2,
+          "size": 32,
+          "usage": 32,
+          "allocationFlags": 0,
+          "requirementsSize": 32,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 0
+        },
+        {
+          "kind": "vertices",
+          "values": [
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "geometry",
+          "vertexFormat": 106,
+          "vertexStride": 12,
+          "maxVertex": 2,
+          "indexType": 1000165000,
+          "opaque": 1,
+          "vertexAddress": 140267468697600,
+          "instanceAddress": 140267468693504
+        },
+        {
+          "kind": "build-config",
+          "index": 0,
+          "mode": 0,
+          "flags": 4,
+          "geometryCount": 1,
+          "primitiveCount": 1
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 3,
+          "size": 400,
+          "usage": 1179648,
+          "allocationFlags": 2,
+          "requirementsSize": 400,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140267468685312
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 5,
+          "size": 72,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 72,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140267468681216
+        },
+        {
+          "kind": "instance",
+          "customIndex": 7,
+          "mask": 255,
+          "blasReference": 140267468685312,
+          "transform": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "as",
+          "index": 0,
+          "type": 1,
+          "buildSize": 144,
+          "scratchSize": 64,
+          "scratchRawAddress": 140267468681216,
+          "scratchAddress": 140267468681216,
+          "scratchBufferSize": 72,
+          "storageSize": 400,
+          "createOffset": 0,
+          "asAddress": 140267468685312
+        },
+        {
+          "kind": "build-config",
+          "index": 1,
+          "mode": 0,
+          "flags": 4,
+          "geometryCount": 1,
+          "primitiveCount": 1
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 4,
+          "size": 472,
+          "usage": 1179648,
+          "allocationFlags": 2,
+          "requirementsSize": 472,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140267468677120
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 6,
+          "size": 72,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 72,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140267468673024
+        },
+        {
+          "kind": "as",
+          "index": 1,
+          "type": 0,
+          "buildSize": 216,
+          "scratchSize": 64,
+          "scratchRawAddress": 140267468673024,
+          "scratchAddress": 140267468673024,
+          "scratchBufferSize": 72,
+          "storageSize": 472,
+          "createOffset": 0,
+          "asAddress": 140267468677120
+        },
+        {
+          "kind": "descriptor",
+          "asOrdinal": 1,
+          "asBinding": 0,
+          "asCount": 1,
+          "asType": 1000150000,
+          "outputBinding": 1,
+          "outputCount": 1,
+          "outputType": 7,
+          "outputRange": 32
+        },
+        {
+          "kind": "dependency",
+          "index": 0,
+          "srcStage": 33554432,
+          "dstStage": 33554432,
+          "srcAccess": 4194304,
+          "dstAccess": 2097152
+        },
+        {
+          "kind": "dependency",
+          "index": 1,
+          "srcStage": 33554432,
+          "dstStage": 2048,
+          "srcAccess": 4194304,
+          "dstAccess": 2097152
+        },
+        {
+          "kind": "rays",
+          "origins": [
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              3,
+              0,
+              1
+            ]
+          ],
+          "direction": [
+            0,
+            0,
+            -1
+          ],
+          "tmin": 0.1,
+          "tmax": 10,
+          "groups": [
+            2,
+            1,
+            1
+          ],
+          "maxGroupX": 65535,
+          "maxInvocations": 1024,
+          "maxPushConstants": 256
+        },
+        {
+          "kind": "dependency",
+          "index": 2,
+          "srcStage": 2048,
+          "dstStage": 16384,
+          "srcAccess": 64,
+          "dstAccess": 8192
+        },
+        {
+          "kind": "readback",
+          "values": [
+            1,
+            7,
+            1065353216,
+            0,
+            0,
+            4294967295,
+            0,
+            4294967295
+          ],
+          "expectedHit": 0
+        },
+        {
+          "kind": "final",
+          "submitted": true,
+          "fenceCompleted": true,
+          "errors": 0,
+          "rc": 6
+        }
+      ],
+      "admissions": [
+        {
+          "create": {
+            "status": "CREATE_WITHIN_SCOPE",
+            "vuids": []
+          },
+          "scratch": {
+            "status": "SCRATCH_WITHIN_SCOPE",
+            "vuids": []
+          }
+        },
+        {
+          "create": {
+            "status": "CREATE_WITHIN_SCOPE",
+            "vuids": []
+          },
+          "scratch": {
+            "status": "SCRATCH_WITHIN_SCOPE",
+            "vuids": []
+          }
+        }
+      ],
+      "cpu_oracle": [
+        {
+          "hit": true,
+          "t": 1.0,
+          "primitive": 0,
+          "customIndex": 7
+        },
+        {
+          "hit": false
+        }
+      ],
+      "diagnostics": [],
+      "exit_code": 6,
+      "stdout_sha256": "0276994766ecc72c3f9c133088dc04574e3b9521a46bf0486e74fe440e63fabc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "offset": {
+      "records": [
+        {
+          "kind": "identity",
+          "apiVersion": 4210993,
+          "deviceType": 4,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "extensionsFound": 3,
+          "extensionsEnabled": 3,
+          "bdaSupported": 1,
+          "asSupported": 1,
+          "raySupported": 1,
+          "bdaEnabled": 1,
+          "asEnabled": 1,
+          "rayEnabled": 1,
+          "vertexFormatFeatures": 536870984,
+          "scratchAlignment": 8,
+          "maxPrimitiveCount": 16777215,
+          "maxGeometryCount": 16777215,
+          "maxInstanceCount": 16777215
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 0,
+          "size": 36,
+          "usage": 655360,
+          "allocationFlags": 2,
+          "requirementsSize": 36,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140261685673984
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 1,
+          "size": 64,
+          "usage": 655360,
+          "allocationFlags": 2,
+          "requirementsSize": 64,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140261685669888
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 2,
+          "size": 32,
+          "usage": 32,
+          "allocationFlags": 0,
+          "requirementsSize": 32,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 0
+        },
+        {
+          "kind": "vertices",
+          "values": [
+            -1,
+            -1,
+            0,
+            1,
+            -1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "geometry",
+          "vertexFormat": 106,
+          "vertexStride": 12,
+          "maxVertex": 2,
+          "indexType": 1000165000,
+          "opaque": 1,
+          "vertexAddress": 140261685673984,
+          "instanceAddress": 140261685669888
+        },
+        {
+          "kind": "build-config",
+          "index": 0,
+          "mode": 0,
+          "flags": 4,
+          "geometryCount": 1,
+          "primitiveCount": 1
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 3,
+          "size": 400,
+          "usage": 1179648,
+          "allocationFlags": 2,
+          "requirementsSize": 400,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140261685661696
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 5,
+          "size": 72,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 72,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140261685657600
+        },
+        {
+          "kind": "negative",
+          "offset": 1,
+          "size": 144,
+          "bufferSize": 400,
+          "result": -1000011001
+        },
+        {
+          "kind": "final",
+          "submitted": false,
+          "fenceCompleted": false,
+          "errors": 1,
+          "rc": 0
+        }
+      ],
+      "admissions": [
+        {
+          "status": "REJECTED",
+          "vuids": [
+            "VUID-VkAccelerationStructureCreateInfoKHR-offset-03734"
+          ]
+        }
+      ],
+      "cpu_oracle": [],
+      "diagnostics": [
+        "VUID-VkAccelerationStructureCreateInfoKHR-offset-03734"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e860a8740326db6983a10957b90406a77db47b423a594d66fa7bcb2bd71ec6fc",
+      "stderr_sha256": "e4f3c6647a979c1cf746923d095d3ba2eca6fabc2aa95d570f40fc3028ad97f6"
+    }
+  },
+  "status": "BOUNDED_BLAS_TLAS_RAY_QUERY_PASS",
+  "limitations": [
+    "Original CPU ICD fixture, not production bug or physical hardware evidence.",
+    "Two opaque fixed rays, one triangle/identity instance, coherent memory and one compute queue.",
+    "No ray tracing pipeline/SBT, updates, compaction, any-hit, procedural geometry or performance claim.",
+    "Offset negative callback-aborted before using handle/build/dispatch; wrong-output is oracle rejection.",
+    "Standalone cohort, not full VK14 or prior five-chain acceptance."
+  ]
+}

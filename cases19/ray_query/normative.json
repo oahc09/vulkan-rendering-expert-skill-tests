@@ -1,0 +1,74 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "entries": [
+    {
+      "owner": "VkAccelerationStructureCreateInfoKHR",
+      "condition": "core",
+      "vuid": "VUID-VkAccelerationStructureCreateInfoKHR-offset-03616",
+      "text": "The sum of <code>offset</code> and <code>size</code> <strong class=\"purple\">must</strong> be less than the size of <code>buffer</code>",
+      "page": "chapters/resources.html"
+    },
+    {
+      "owner": "VkAccelerationStructureCreateInfoKHR",
+      "condition": "core",
+      "vuid": "VUID-VkAccelerationStructureCreateInfoKHR-offset-03734",
+      "text": "<code>offset</code> <strong class=\"purple\">must</strong> be a multiple of <code>256</code> bytes",
+      "page": "chapters/resources.html"
+    },
+    {
+      "owner": "vkGetAccelerationStructureDeviceAddressKHR",
+      "condition": "core",
+      "vuid": "VUID-vkGetAccelerationStructureDeviceAddressKHR-pInfo-09542",
+      "text": "The buffer on which <code>pInfo-&gt;accelerationStructure</code> was placed <strong class=\"purple\">must</strong> have been created with the <code>VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT</code> usage flag",
+      "page": "chapters/resources.html"
+    },
+    {
+      "owner": "vkCmdBuildAccelerationStructuresKHR",
+      "condition": "core",
+      "vuid": "VUID-vkCmdBuildAccelerationStructuresKHR-pInfos-03671",
+      "text": "If <code>pInfos</code>[i].<code>mode</code> is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR</code>, all addresses between <code>pInfos</code>[i].<code>scratchData.deviceAddress</code> and <code>pInfos</code>[i].<code>scratchData.deviceAddress</code> +  N - 1 <strong class=\"purple\">must</strong> be in the buffer device address range of the same buffer, where N is given by the <code>buildScratchSize</code> member of the <a href=\"#VkAccelerationStructureBuildSizesInfoKHR\">VkAccelerationStructureBuildSizesInfoKHR</a> structure returned from a call to <a href=\"#vkGetAccelerationStructureBuildSizesKHR\">vkGetAccelerationStructureBuildSizesKHR</a> with an identical <a href=\"#VkAccelerationStructureBuildGeometryInfoKHR\">VkAccelerationStructureBuildGeometryInfoKHR</a> structure and primitive count",
+      "page": "chapters/accelstructures.html"
+    },
+    {
+      "owner": "vkCmdBuildAccelerationStructuresKHR",
+      "condition": "core",
+      "vuid": "VUID-vkCmdBuildAccelerationStructuresKHR-pInfos-03674",
+      "text": "The buffer from which the buffer device address <code>pInfos</code>[i].<code>scratchData.deviceAddress</code> is queried <strong class=\"purple\">must</strong> have been created with <code>VK_BUFFER_USAGE_STORAGE_BUFFER_BIT</code> usage flag",
+      "page": "chapters/accelstructures.html"
+    },
+    {
+      "owner": "vkCmdBuildAccelerationStructuresKHR",
+      "condition": "core",
+      "vuid": "VUID-vkCmdBuildAccelerationStructuresKHR-pInfos-03710",
+      "text": "For each element of <code>pInfos</code>, its <code>scratchData.deviceAddress</code> member <strong class=\"purple\">must</strong> be a multiple of <a href=\"#VkPhysicalDeviceAccelerationStructurePropertiesKHR\">VkPhysicalDeviceAccelerationStructurePropertiesKHR</a>::<code>minAccelerationStructureScratchOffsetAlignment</code>",
+      "page": "chapters/accelstructures.html"
+    },
+    {
+      "owner": "vkCmdBuildAccelerationStructuresIndirectKHR",
+      "condition": "core",
+      "vuid": "VUID-vkCmdBuildAccelerationStructuresIndirectKHR-pInfos-03671",
+      "text": "If <code>pInfos</code>[i].<code>mode</code> is <code>VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR</code>, all addresses between <code>pInfos</code>[i].<code>scratchData.deviceAddress</code> and <code>pInfos</code>[i].<code>scratchData.deviceAddress</code> +  N - 1 <strong class=\"purple\">must</strong> be in the buffer device address range of the same buffer, where N is given by the <code>buildScratchSize</code> member of the <a href=\"#VkAccelerationStructureBuildSizesInfoKHR\">VkAccelerationStructureBuildSizesInfoKHR</a> structure returned from a call to <a href=\"#vkGetAccelerationStructureBuildSizesKHR\">vkGetAccelerationStructureBuildSizesKHR</a> with an identical <a href=\"#VkAccelerationStructureBuildGeometryInfoKHR\">VkAccelerationStructureBuildGeometryInfoKHR</a> structure and primitive count",
+      "page": "chapters/accelstructures.html"
+    },
+    {
+      "owner": "vkCmdBuildAccelerationStructuresIndirectKHR",
+      "condition": "core",
+      "vuid": "VUID-vkCmdBuildAccelerationStructuresIndirectKHR-pInfos-03674",
+      "text": "The buffer from which the buffer device address <code>pInfos</code>[i].<code>scratchData.deviceAddress</code> is queried <strong class=\"purple\">must</strong> have been created with <code>VK_BUFFER_USAGE_STORAGE_BUFFER_BIT</code> usage flag",
+      "page": "chapters/accelstructures.html"
+    },
+    {
+      "owner": "vkCmdBuildAccelerationStructuresIndirectKHR",
+      "condition": "core",
+      "vuid": "VUID-vkCmdBuildAccelerationStructuresIndirectKHR-pInfos-03710",
+      "text": "For each element of <code>pInfos</code>, its <code>scratchData.deviceAddress</code> member <strong class=\"purple\">must</strong> be a multiple of <a href=\"#VkPhysicalDeviceAccelerationStructurePropertiesKHR\">VkPhysicalDeviceAccelerationStructurePropertiesKHR</a>::<code>minAccelerationStructureScratchOffsetAlignment</code>",
+      "page": "chapters/accelstructures.html"
+    }
+  ]
+}
