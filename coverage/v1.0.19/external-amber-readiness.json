@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "status": "FEATURE_UNAVAILABLE_NOT_RUN",
+  "candidate": "google/amber framebuffer depth/stencil barrier early-fragment-tests correction",
+  "upstream_fix": "a76118c1c79ae5615e6684bc3fa267e20c14baf2",
+  "upstream_parent": "0d349d7792e96c587ad76111d33c4e62ab2359b0",
+  "local_amber_head": "c9f1e2871ccbb0b0564c4a33e359801144f6b7c1",
+  "cts_head": "5bb4c7e83acea0fc73e3333625e4f20542e584d0",
+  "oracle_repository_path": "external/vulkancts/data/vulkan/amber/depth/ez_fs_clamp.amber",
+  "oracle_sha256": "a4f44509cfe7138e830c70f198a4c15654b8200d47149e381eae20754567e63b",
+  "device": {
+    "device": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "type": 4,
+    "api": 4210993,
+    "vendor": 65541,
+    "deviceId": 0,
+    "driver": 1,
+    "depthClampZeroOneExtension": 0,
+    "depthClampZeroOne": 0,
+    "depthClamp": 1,
+    "fragmentStoresAndAtomics": 1
+  },
+  "required_features": [
+    "DepthClampZeroOneFeatures.depthClampZeroOne",
+    "depthClamp",
+    "fragmentStoresAndAtomics"
+  ],
+  "missing_feature": "DepthClampZeroOneFeatures.depthClampZeroOne",
+  "compile_run": {
+    "probe_compiled": true,
+    "probe_exit_code": 0,
+    "amber_before_built": false,
+    "amber_after_built": false,
+    "upstream_oracle_executed": false,
+    "syncval_before_after": "NOT_RUN"
+  },
+  "scope": "Read-only capability query. Original upstream source and oracle unchanged. No claims of reproduction, correction validation, hardware performance, or external E2E acceptance.",
+  "build_assessment": {
+    "existing_amber_binary": false,
+    "existing_deqp_vk_binary": false,
+    "amber_optional_dependency_source_dirs_present": false,
+    "decision": "Do not build complete shaderc/SPIRV/CTS for unavailable required device feature."
+  },
+  "local_raw_summary_sha256": "390a2f4a2ca78fb36b9fc464524442b1770d5d91f0639cef10fdaf3e0d36555f",
+  "raw_artifact_hashes": {
+    "cap": "1bd61569e1996f3df74ce864c924800909277d84e7a6f61ea0f0860d98ec1ad2",
+    "cap.c": "5e144db5bd1f0ccfc5d9587439567412961d36eac26ae0e6c437c72156c63ca5",
+    "upstream-fix.patch": "6ab86dee279ec75eaff33c38a402a76b28978d920e5e3f7dd7c50734318a8bef",
+    "cap.jsonl": "a067b31cfa78ab0c0962b19ab614c517a773ca9786b6460069f560c0352b28ae",
+    "ez_fs_clamp.amber": "a4f44509cfe7138e830c70f198a4c15654b8200d47149e381eae20754567e63b"
+  },
+  "source": "https://github.com/google/amber/commit/a76118c1c79ae5615e6684bc3fa267e20c14baf2",
+  "evidence_kind": "OBSERVED_CAPABILITY_SCREEN_NOT_UPSTREAM_REPRODUCTION",
+  "release_status": "BLOCKED"
+}
