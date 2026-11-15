@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "scope": "Full unmodified upstream Amber runtime/CLI with original upstream test, on software Vulkan llvmpipe. Original historical bug and published fix known in advance; not blind solve, not hardware, not full CTS or full release. Shared modern dependency cohort, common forced cstdint standard header and external CMake glue. Old failure is engine output aggregation before EXPECT; new version passes all three original EXPECT. Warning retained in all runs and historical cleanup errors retained. No SyncVal proof or zero-diagnostic claim.",
+  "upstream": {
+    "before": {
+      "commit": "aaac58d5009e8f6b33e2723258dc1542854d09a4",
+      "tracked_file_count": 500
+    },
+    "after": {
+      "commit": "8c3bfef40c2387944fdc81746e2e3249e4da5566",
+      "tracked_file_count": 501
+    }
+  },
+  "dependencies": {
+    "shaderc": {
+      "commit": "301b4ede53d59b68bf55f95bb26412d9233c8187",
+      "dirty": []
+    },
+    "glslang": {
+      "commit": "83f75db6ada23801a65eed1cde4763a0a5bfbda6",
+      "dirty": []
+    },
+    "spirv-tools": {
+      "commit": "b570f00a782a7bf4006964e8284dd8c10c4c549b",
+      "dirty": []
+    },
+    "spirv-headers": {
+      "commit": "6efe5ae6b7c6ad29da3f2cc3f164b9c3d72b78b1",
+      "dirty": []
+    }
+  },
+  "libraries": {
+    "cts-build/external/glslang/src/SPIRV/libSPIRV.a": "e7456291b6868b3d1c65eb32f2f8bb938cf79990f36f32dd89db420930c6f2f9",
+    "cts-build/external/glslang/src/glslang/libglslang.a": "c64f3a335b07253cebcd45d858bb220b205afa3330d8908bbaf818110bc5c583",
+    "cts-build/external/spirv-tools/spirv-tools/source/libSPIRV-Tools.a": "82ebb091072aad9f8e2431f8dd5bc960e457fc878cd8a2c6e462458f329e9ec3",
+    "cts-build/external/spirv-tools/spirv-tools/source/opt/libSPIRV-Tools-opt.a": "c45ae43f8e22dfb385fb426d81f33bb58dde4cbf332d03f86b7a74763f0559e0",
+    "amber951-build-support/build/shaderc/libshaderc_util/libshaderc_util.a": "5e6a2727ade9dbb0eb2d7a6fa4664dd7840620600e782ab8d71ca2312a20447e",
+    "amber951-build-support/build/shaderc/libshaderc/libshaderc.a": "5aa00955b386e84b0e71fdebfcdee749d60a37c27d86231d99f4646ff357c2dd"
+  },
+  "execution_inputs": {
+    "amber951-before-build/amber/amber": "3e60f9d9c7034bea424c2c2e5299cb24a5a4970142671ba77623c1121e2fd394",
+    "amber951-after-build/amber/amber": "6d1b21830588a87ac947a209d4146b4533c283dabb78d8069fded4c991f05e68",
+    "amber951-build-support/original.amber": "a192e19956bbd352bb08f27060e2d11ee46def51054b8e1c326364a3b612a6be",
+    "amber951-build-support/wrong-expect.amber": "13ab9603b9ce59662f52ff671ad8cdaf43cb48913263aa14be26810025fc1c2b"
+  },
+  "compatibility_flags": [
+    "-include",
+    "cstdint"
+  ],
+  "local_replay_manifest_sha256": "948c2f1a10e3269b2742fa4f046a420a510e11d9a2c1cc76c0de0a7ef2fc58f7",
+  "compiler_sha256": "6b3696e4dcb85e1c949c732a02befa50e3983ecf94ce7e8e58d9d503b954b79d",
+  "headers_core_sha256": "39f358bb99f7be5206524d119de4a5b5ab5c515c329c2857ff395d37e6387b4c",
+  "interpretation": "Build recipe is portable but rebuilt binaries require new independently verified cohort; current replay accepts only recorded binary hashes."
+}

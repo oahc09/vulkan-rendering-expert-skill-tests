@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "status": "ORIGINAL_EXTERNAL_ENGINE_GPU_REPRODUCED_LOCAL",
+  "fix": "8c3bfef40c2387944fdc81746e2e3249e4da5566",
+  "parent": "aaac58d5009e8f6b33e2723258dc1542854d09a4",
+  "original_test_sha256": "a192e19956bbd352bb08f27060e2d11ee46def51054b8e1c326364a3b612a6be",
+  "dependencies": {
+    "shaderc": {
+      "commit": "301b4ede53d59b68bf55f95bb26412d9233c8187",
+      "dirty": []
+    },
+    "glslang": {
+      "commit": "83f75db6ada23801a65eed1cde4763a0a5bfbda6",
+      "dirty": []
+    },
+    "spirv-tools": {
+      "commit": "b570f00a782a7bf4006964e8284dd8c10c4c549b",
+      "dirty": []
+    },
+    "spirv-headers": {
+      "commit": "6efe5ae6b7c6ad29da3f2cc3f164b9c3d72b78b1",
+      "dirty": []
+    }
+  },
+  "device": {
+    "device": "llvmpipe (LLVM 19.1.7, 256 bits)",
+    "type": 4,
+    "vendor": 65541,
+    "deviceId": 0,
+    "api": 4210993,
+    "driver": 1,
+    "computeQueue": 0,
+    "rgba32fBufferFeatures": 536871000,
+    "minUniformAlignment": 16,
+    "minStorageAlignment": 16,
+    "minTexelAlignment": 16,
+    "maxBoundSets": 8,
+    "maxStageUniform": 1000000,
+    "maxStageStorage": 1000000,
+    "maxStageSampled": 1000000,
+    "maxStageStorageImages": 1000000,
+    "maxStageResources": 1000000,
+    "maxUniformRange": 65536,
+    "maxStorageRange": 134217728,
+    "maxTexelElements": 134217728,
+    "maxWorkgroupInvocations": 1024,
+    "shaderStorageImageExtendedFormats": 1
+  },
+  "observed_exits": {
+    "before": 1,
+    "after": 0,
+    "rollback": 1,
+    "wrong-expect": 1
+  },
+  "old_failure": "Output aggregation error before EXPECT; no old numerical mismatch claimed",
+  "after": "All three original EXPECTs passed",
+  "negative": "Explicit authored one-component wrong-EXPECT mutant rejected",
+  "diagnostics": "Common DimBuffer warning retained; old/rollback cleanup05137 retained. Not zero-diagnostic or SyncVal proof.",
+  "build_boundary": "Same contemporary dependencies, imported CMake sidecars and common -include cstdint; original tracked sources and original workload unchanged; not historical DEPS reconstruction.",
+  "local_build_manifest_sha256": "948c2f1a10e3269b2742fa4f046a420a510e11d9a2c1cc76c0de0a7ef2fc58f7",
+  "capability_screen_sha256": "31d8a5634a4b414cf0d3ccf6614c23c23e686ad0ced389352e7d9e50dc047f53",
+  "original_run_receipt_sha256": "1770a6274a54ffe5743999c188fb144f5e690d6623f90e13455fb2837eb41c5c",
+  "release_status": "BLOCKED",
+  "final_tasks": "UNVERIFIED",
+  "blind_solve": "NOT_ATTEMPTED_PUBLIC_FIX_KNOWN"
+}
