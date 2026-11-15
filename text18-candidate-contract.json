@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "candidate_version": "1.0.18",
+  "skill_sha": "c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344",
+  "tests_base_sha": "528ba9ea7b417684c1066aceabd9a79cae4cd05b",
+  "scope": "TEXT18 incremental candidate, not full v1.0.17 acceptance",
+  "previous_120_prompt_manifest": "tests/v116-cohort.json",
+  "cases": "tests/text18_cases.json",
+  "evaluator_only": "tests/text18_rubrics.json",
+  "runtime_files_limit": 200,
+  "release_status": "BLOCKED",
+  "unclosed": [
+    "CORE17 exact-pair baseline",
+    "actual platform bridges",
+    "actual Vulkan text/vector lab",
+    "visual quality",
+    "Live semantic review",
+    "actual host",
+    "target hardware"
+  ]
+}

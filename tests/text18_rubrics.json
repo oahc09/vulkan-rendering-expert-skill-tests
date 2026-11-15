@@ -1,0 +1,102 @@
+{
+  "text18_01": {
+    "must": "划分shaping/layout/provider责任",
+    "must_not": "逐code point取图就支持所有语言",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_02": {
+    "must": "每glyph/run绑定实际face与位置",
+    "must_not": "同glyphID跨face复用atlas",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_03": {
+    "must": "保留宽ID且检查各接口范围",
+    "must_not": "静默cast到UINT16或宣称系统已支持OFF新表",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_04": {
+    "must": "颜色/bitmap/run回退，不伪造轮廓",
+    "must_not": "getTextPath等价任意已shaped glyph提取",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_05": {
+    "must": "缓存失效与generation拒绝过期发布",
+    "must_not": "只改font名字即可继续用旧资源",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_06": {
+    "must": "基于质量和成本选择Bitmap/MSDF",
+    "must_not": "MSDF必然是所有字号最佳",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_07": {
+    "must": "区分数据/颜色及range解释",
+    "must_not": "调曝光修复距离场阈值",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_08": {
+    "must": "处理采样footprint、效果半径和回退",
+    "must_not": "CLAMP自动防内部相邻glyph串色",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_09": {
+    "must": "颜色/alpha责任和数值参考",
+    "must_not": "双重乘alpha或直接LCD任意背景",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_10": {
+    "must": "检查导数、raster尺度与时域稳定",
+    "must_not": "单帧截图就说明清晰且不闪",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_11": {
+    "must": "明确fill rule、受限三角化与fallback",
+    "must_not": "fan能正确处理所有字形",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_12": {
+    "must": "误差与工作预算、受控拒绝/降级",
+    "must_not": "无限细分直到看起来正常",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_13": {
+    "must": "正确scissor与mask/stencil分工",
+    "must_not": "包围矩形等于精确clip",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_14": {
+    "must": "限制挤出/bevel与拓扑预算",
+    "must_not": "所有glyph都能任意bevel",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_15": {
+    "must": "分清尺寸、深度、motion与合成位置",
+    "must_not": "所有文字一律在最后无深度绘制",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_16": {
+    "must": "page/slot代际与所有消费者完成",
+    "must_not": "CPU释放字符串就可覆写slot",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_17": {
+    "must": "GPU handle/loader隔离、CPU共享边界",
+    "must_not": "多context天然多Device安全",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_18": {
+    "must": "匹配pass并保护非目标输出",
+    "must_not": "attachmentCount强改1或默认全不受影响",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_19": {
+    "must": "批量JNI、背压、缓存/上传分项成本",
+    "must_not": "加线程/绑更多库就一定更快",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  },
+  "text18_20": {
+    "must": "处理预算、可信parser、失败与许可边界",
+    "must_not": "拒绝回退/无限内存或用demo授权推断完整库授权",
+    "evaluation": "Independent semantic review required; keyword matches alone are not PASS."
+  }
+}
