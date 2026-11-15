@@ -1,0 +1,102 @@
+{
+  "facts": {
+    "families": [
+      {
+        "family": 0,
+        "flags": 3,
+        "count": 2
+      }
+    ],
+    "created": [
+      {
+        "family": 0,
+        "index": 0
+      },
+      {
+        "family": 0,
+        "index": 1
+      }
+    ],
+    "graphics": {
+      "family": 0,
+      "index": 0
+    },
+    "compute": {
+      "family": 0,
+      "index": 1
+    },
+    "requirements": [],
+    "ordinary_single_device": true,
+    "dependency_proven": true,
+    "resource_sharing": "EXCLUSIVE",
+    "ownership_transfer_proven": false,
+    "lifetime_proven": true,
+    "baseline_no_implicit_transfer_exception": true,
+    "concurrent_families": []
+  },
+  "measurement": {
+    "baseline": {
+      "cohort": {
+        "device": "fixed",
+        "driver": "fixed",
+        "workload": "fixed",
+        "resolution": "fixed",
+        "shader": "fixed",
+        "tools": "fixed",
+        "clock_domain": "fixed",
+        "thermal_regime": "fixed",
+        "input": "fixed",
+        "warmup_protocol": "fixed",
+        "paired_run_order_protocol": "fixed"
+      },
+      "full_frame_ns": [
+        100,
+        101,
+        99
+      ],
+      "compute_pass_ns": [
+        50,
+        51,
+        49
+      ]
+    },
+    "candidate": {
+      "cohort": {
+        "device": "fixed",
+        "driver": "fixed",
+        "workload": "fixed",
+        "resolution": "fixed",
+        "shader": "fixed",
+        "tools": "fixed",
+        "clock_domain": "fixed",
+        "thermal_regime": "fixed",
+        "input": "fixed",
+        "warmup_protocol": "fixed",
+        "paired_run_order_protocol": "fixed"
+      },
+      "full_frame_ns": [
+        80,
+        81,
+        79
+      ],
+      "compute_pass_ns": [
+        40,
+        41,
+        39
+      ]
+    },
+    "paired_trials": true,
+    "full_frame_boundaries_equal": true,
+    "all_queue_completion_included": true,
+    "measurement_method": "FULL_FRAME_GPU_CLOCK",
+    "output_equal": true,
+    "source_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  "policy": {
+    "baseline_verified": true,
+    "candidate_active": true,
+    "minimum_gain_fraction": 0.05,
+    "max_observed_frame_regression_fraction": 0.0,
+    "other_objectives_satisfied": true
+  }
+}
