@@ -3,6 +3,7 @@ import importlib.util
 import math
 from pathlib import Path
 import pytest
+pytestmark = pytest.mark.host_unit
 P=Path(__file__).parent/'fixtures/text_stroke_lab'
 s=importlib.util.spec_from_file_location('stroke_host',P/'stroke.py');stroke=importlib.util.module_from_spec(s);s.loader.exec_module(stroke)
 
