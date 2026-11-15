@@ -21,7 +21,7 @@ an append-only experiment history; its early absence lists are historical.
 | C1 provider/run semantics | Actual Linux HB/FT, fixed-font fallback, bounded mixed-paragraph bidi checked against ICU, emoji VS15/VS16, variable-font experiments | Android Java/JNI and Windows DirectWrite; provider capability/fallback coverage. Finite inputs do not establish general Unicode layout; all font formats are not a new requirement. |
 | C2 representations / Scene A | Actual bitmap and color-glyph delivery, MSDF production/consumption, fixed transforms and representation controls | One same-condition multilingual/emoji/variation quality board across representations; dynamic MSDF quality remains not qualified. |
 | C3 vector/world / Scene B | Bounded fills/strokes/AA, straight-outline extrusion, world planes, near clipping fallback, second view and depth-produced hard shadow sampling | Shared complete Scene B and joint visual regression remain incomplete. Arbitrary triangulation/curve AA/bevel/general lighting are unverified boundaries, not additional mandatory product scope. |
-| C4 cache / Scene C | Real CPU cache ledger; cached products drive pending Vulkan churn; hot products drive dual offscreen outputs with active MRT, pause/destruction/rebuild | Actual packed-page capacity growth and old-UV snapshot preservation integrated with these outputs; continuous producer/GPU scheduling, sustained stress and whole-chain costs. |
+| C4 cache / Scene C | Real CPU cache ledger; resident online producer and dual offscreen outputs now integrate natural packed-page growth, pending cancel/retry, immutable old UV snapshots, active MRT and pause/destruction/rebuild | The integrated fixed 8-to-9 instance / two-page sequence is bounded; continuous locale/variation/size workloads, scale tiers, sustained stress and whole-chain costs remain incomplete. |
 | Temporal / HDR boundary | Actual scalar temporal SSBO consumed by linear HDR scene then UI, with history pollution and early-tone-map negatives | World-text motion and full-scene interface consumption remain unverified. Full RGB TAA and physical HDR-display certification are outside this bounded test, not new reimplementation requirements. |
 | Package / static | Exact pair guard, deterministic whitelist package, unchanged routing and 200-file runtime limit | Actual external host discovery and semantic model behavior. |
 
@@ -97,3 +97,15 @@ its own exact-head CI/pair checks are reported in the PR, without relabeling the
 Deterministic package verified twice in the local suite: 200 files, 1,076,029
 bytes, SHA-256 `5484d42e7a73ffa4c11073b5ef16b76cdd39e23d5e9aa98b2d36ff110ae9061e`.
 No raw evidence ZIP or font is uploaded by this audit.
+
+## Concentrated Scene C integration update
+
+The subsequent `scene_c_service_lab` implements the concentrated milestone
+identified above for a frozen finite sequence. Actual F cache production occurs
+after A pending acknowledgement; natural packed capacity grows from one to two
+pages, both are consumed within one renderpass, and old UV snapshots remain
+valid across cancellation/retry and independent output destruction/rebuild.
+See its pre-registered `criteria.md` and the latest matrix section. The earlier
+319-test frozen run and executable SHA remain historical results, not silently
+reassigned to this new implementation. Full workload/physical-device/Live
+acceptance remains incomplete; this does not create new general-product scope.
