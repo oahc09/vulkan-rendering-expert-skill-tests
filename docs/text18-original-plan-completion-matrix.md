@@ -580,3 +580,31 @@ error, but is neither an actual GPU improvement nor a full-frame/general method
 recommendation. Status remains **MEASURED_NOT_QUALIFIED**; no perceptual flicker,
 rotation/perspective, platform-hinted full quality board, target-device or Live
 qualification is implied.
+
+## Pending atlas lifecycle with surrounding scene handoff
+
+The actual single-queue pending atlas consumer now executes pre-scene, packed
+real-glyph overlay with three hard clips, and post-scene in the same command
+buffer/renderpass/submission. This is one combined execution path, not a sum of
+independent earlier experiment results. Existing pending publication/retirement
+rejection, canceled-page retention, replacement generation and controlled pending
+exception cleanup remain exercised. Each submission owns its targets, vertex
+buffer, fence and readback; immutable scene resources outlive all consumers.
+
+Independent CPU composition retains visible overlay and post-over-overlay pixels.
+Actual canceled-descriptor routing and omitted post-state rebinding are legal GPU
+negative controls; auxiliary attachments are checked even for wrong-color images.
+A stale-generation readback mutation is also rejected. Existing 1e-6 tolerance is
+unchanged. Three positive images require nine scene/overlay draws; the diagnostic
+wrong-route image adds three draws. One scene setup upload and three atlas uploads
+are separate from these four render submissions.
+
+This closes a bounded local conjunction of §7.2–7.4, not the entire M3/scene-C
+stress requirement. The gate is ALL_COMMANDS pending, not a shader already running.
+One renderpass, one queue, synthetic opaque surrounding scene and three finite
+hard clips do not establish arbitrary renderer-state restoration, depth/stencil,
+HDR/temporal reconstruction, general transparency order, allocation/device-loss
+fault safety, multithreading, real Surface behavior or target-device performance.
+Generation2 still attenuates the same glyph coverage, not a new locale run. The
+separate dynamic MSDF quality result remains MEASURED_NOT_QUALIFIED; physical
+Android/Windows/mobile GPU and semantic Live remain external unverified gates.
