@@ -1,0 +1,247 @@
+{
+  "status": "DEVELOPMENT_RESOURCE_SUITE_VERIFIED",
+  "run_id": "901c7a67-c3ce-4896-a749-e4af05381ec2",
+  "development": true,
+  "tests_head": "6fdbdb5c4583b8350cc77ed70fe808b30800bf34",
+  "skill_head": "5cb57ca98eb1a52e358f70a79ad98b6ad708a16a",
+  "source_manifest": {
+    "cases19/device_address/capability_inventory.c": "bc62cba2b07c2ab4b6bfd62b1e1a964e6fc5697adff1e997bcda34569415ed21",
+    "cases19/device_address/compute.comp": "7d211217173b1f72b910f192bc3bae3f83e11f049c8b1e97c744b5798b023775",
+    "cases19/device_address/normative.json": "de545a6eda78870e46eb21994926e99f3c6d0b3994e82e4f5153348c0e072144",
+    "cases19/device_address/probe.c": "7f031a67e351c3b03560e3e3d6d18c688ca9f2f737c8cbcfaa9506e2eb7bc96b",
+    "cases19/device_address/run.py": "8c717ac95773b851a572d2134b0a7801f93ad83a5e06478ef6040da4e12430db",
+    "cases19/headless_wsi/normative.json": "45e57eeca2b0b20155106cc9382f490cdcf7a6f16e1371fce0971ab41aa7b09f",
+    "cases19/headless_wsi/probe.c": "136dfec3db9446cc6ce3a8b10da10f056cb9d337bc60c3d53dfda59a370be81f",
+    "cases19/headless_wsi/run.py": "10b937cdd1fc5eb60c6ca89a6cb4963440d0ecfa861cb7feceb6896830b0afec",
+    "cases19/ray_query/compute.comp": "9dbabe83a2417f7915504368f2ef211f621766c766c9c952ba600769c1e5ea35",
+    "cases19/ray_query/normative.json": "669412b67561cf613ba8167c088128d89b5f8a880669437dea9b8223c84c1602",
+    "cases19/ray_query/probe.c": "6afdc307f5c3f03d5fdb6ffec16f2a9f1884d9555588abf225c2cecd29c58f12",
+    "cases19/ray_query/run.py": "cc19eae04512c7f80e2e3d24b4462c2872172ab90fd81d9a94b8f879b427e9f1",
+    "cases19/robust_buffer/compute.comp": "5370c19bbd2164de9b11e971bd46738ad01f35f986871744b713394c6b09943c",
+    "cases19/robust_buffer/normative.json": "6c8a3587af681845b07a43dd5e177e5a39d0b97acf47f5879466de00847bdb97",
+    "cases19/robust_buffer/probe.c": "69dcb09836e97c5b584f043516d8c39aabc51c70c85a39cb47d5654ae57ac5b9",
+    "cases19/robust_buffer/run.py": "f888f96bd40ecbbc40e6d59fb5360b33d1196f0903097e45ee4e538d1abd1166",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c",
+    "checks19/resource_suite19.py": "079d9024883e7cd3b33ebf15e34c1bccce7b6994f4592f02c15ab4104e5a99c7",
+    "checks19/run_resource_suite.py": "9655f6dec9509839108f46655e4bd395d993b67795df31f3194d834017782418",
+    "coverage/v1.0.19/pair.json": "faeb1878e12ac324b01960ccc2534f29ed1381aeed1e45a7efed2a543886cf2f",
+    "docs/v1.0.19-original-plan.md": "b28086a1c1b5d390ad5826c10740fbced15a7e5d3efb5628922147d0a6fa955b",
+    "tools/device_address19.py": "7f05561867b8021e35ff8a4a3cc6bc95b9d5edbca1cca6143bc3469ad01c64e4",
+    "tools/headless_wsi19.py": "d336ae960e9d30cce89c4cd110de87fed4f2000b67cf829b6bc07bc575c4df05",
+    "tools/ray_query19.py": "d4279ca7380c704f21531fa6ad9a3d00866aa200c163fbcae4e83df246298e97",
+    "tools/robust_buffer19.py": "ae7b83290a9ee643df728d464c30f9feee3f7ba95bbd6e62461288310d5abe4a"
+  },
+  "toolchain_sha256": "bad1a997442283282ca97c7dac481e5bfba0ca1d4da2aadfaa5c7a5a1155d10e",
+  "tool_scope": "Explicit compiler, interpreter, shader tools, headers, loader and ICD/layer manifests, not all transitive shared libraries.",
+  "steps": [
+    {
+      "label": "device_address",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "/workspace/scratch/62d43a81bbde/vulkan119-recovery/worktrees/tests/cases19/device_address/run.py",
+        "--include",
+        "/tmp/vulkan119-tools/root/usr/include",
+        "--loader",
+        "/lib/x86_64-linux-gnu/libvulkan.so.1",
+        "--validusage",
+        "/tmp/vulkan119-tools/root/usr/share/vulkan/registry/validusage.json",
+        "--output",
+        "/workspace/scratch/62d43a81bbde/resource-suite-dev3/device_address",
+        "--tools",
+        "/tmp/vulkan119-tools/root/usr/bin"
+      ],
+      "started_monotonic": 56857.815399169,
+      "returncode": 0,
+      "timed_out": false,
+      "cancelled": false,
+      "budget_exhausted": false,
+      "group_cleanup": {
+        "pgid": 36,
+        "term_sent": true,
+        "kill_sent": true,
+        "reaped_descendants": [],
+        "group_gone": true
+      },
+      "pid": 36,
+      "pgid": 36,
+      "unexpected_descendants": false,
+      "ended_monotonic": 56860.380930289,
+      "stdout_sha256": "7833152f8df5ee344e4a82f86212acb7a67635aa8d51b393ebf0facfd5591fd6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "ray_query",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "/workspace/scratch/62d43a81bbde/vulkan119-recovery/worktrees/tests/cases19/ray_query/run.py",
+        "--include",
+        "/tmp/vulkan119-tools/root/usr/include",
+        "--loader",
+        "/lib/x86_64-linux-gnu/libvulkan.so.1",
+        "--validusage",
+        "/tmp/vulkan119-tools/root/usr/share/vulkan/registry/validusage.json",
+        "--output",
+        "/workspace/scratch/62d43a81bbde/resource-suite-dev3/ray_query",
+        "--tools",
+        "/tmp/vulkan119-tools/root/usr/bin"
+      ],
+      "started_monotonic": 56860.663072068,
+      "returncode": 0,
+      "timed_out": false,
+      "cancelled": false,
+      "budget_exhausted": false,
+      "group_cleanup": {
+        "pgid": 116,
+        "term_sent": true,
+        "kill_sent": true,
+        "reaped_descendants": [],
+        "group_gone": true
+      },
+      "pid": 116,
+      "pgid": 116,
+      "unexpected_descendants": false,
+      "ended_monotonic": 56862.82343657,
+      "stdout_sha256": "7a5ab260c1f913f68354c89aa7f1031725d0b1733bdf06329d860bc6fd08f6b2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "robust_buffer",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "/workspace/scratch/62d43a81bbde/vulkan119-recovery/worktrees/tests/cases19/robust_buffer/run.py",
+        "--include",
+        "/tmp/vulkan119-tools/root/usr/include",
+        "--loader",
+        "/lib/x86_64-linux-gnu/libvulkan.so.1",
+        "--validusage",
+        "/tmp/vulkan119-tools/root/usr/share/vulkan/registry/validusage.json",
+        "--output",
+        "/workspace/scratch/62d43a81bbde/resource-suite-dev3/robust_buffer",
+        "--tools",
+        "/tmp/vulkan119-tools/root/usr/bin"
+      ],
+      "started_monotonic": 56863.018697266,
+      "returncode": 0,
+      "timed_out": false,
+      "cancelled": false,
+      "budget_exhausted": false,
+      "group_cleanup": {
+        "pgid": 190,
+        "term_sent": true,
+        "kill_sent": true,
+        "reaped_descendants": [],
+        "group_gone": true
+      },
+      "pid": 190,
+      "pgid": 190,
+      "unexpected_descendants": false,
+      "ended_monotonic": 56865.210659715,
+      "stdout_sha256": "348748f848d12d8b9d8728f26b2eaffb328f8282d514d51f30700574930e4e0c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "label": "headless_wsi",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "-O",
+        "/workspace/scratch/62d43a81bbde/vulkan119-recovery/worktrees/tests/cases19/headless_wsi/run.py",
+        "--include",
+        "/tmp/vulkan119-tools/root/usr/include",
+        "--loader",
+        "/lib/x86_64-linux-gnu/libvulkan.so.1",
+        "--validusage",
+        "/tmp/vulkan119-tools/root/usr/share/vulkan/registry/validusage.json",
+        "--output",
+        "/workspace/scratch/62d43a81bbde/resource-suite-dev3/headless_wsi"
+      ],
+      "started_monotonic": 56865.527556375,
+      "returncode": 0,
+      "timed_out": false,
+      "cancelled": false,
+      "budget_exhausted": false,
+      "group_cleanup": {
+        "pgid": 264,
+        "term_sent": true,
+        "kill_sent": true,
+        "reaped_descendants": [],
+        "group_gone": true
+      },
+      "pid": 264,
+      "pgid": 264,
+      "unexpected_descendants": false,
+      "ended_monotonic": 56867.283025833,
+      "stdout_sha256": "9af969c4d8efc502a5029bf1b809b9ca9df63a52080d586bd5e7428f053ee4b4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "pending": [],
+  "scope": "Four independent authored CPU ICD runs. No shared resources, cross-family causality, hardware/display/performance or full release acceptance.",
+  "family_results": [
+    {
+      "family": "device_address",
+      "cpu_identity": {
+        "deviceType": 4,
+        "apiVersion": 4210993,
+        "vendorID": 65541,
+        "deviceID": 0,
+        "driverVersion": 1,
+        "layerSpec": 4210997,
+        "layerImplementation": 1
+      },
+      "run_id": "bcf544b8-e357-4f40-936f-336c3731b1c0",
+      "status": "BOUNDED_PHYSICAL_STORAGE_ADDRESS_PASS",
+      "summary_sha256": "6751100f2f0da2dacdaf077a25698a0a8c8a0f178a6eb74323f1d3edded29b95"
+    },
+    {
+      "family": "ray_query",
+      "cpu_identity": {
+        "deviceType": 4,
+        "apiVersion": 4210993,
+        "vendorID": 65541,
+        "deviceID": 0,
+        "driverVersion": 1,
+        "layerSpec": 4210997,
+        "layerImplementation": 1
+      },
+      "run_id": "1f51d3c4-fdf7-4361-8352-01fad50367ca",
+      "status": "BOUNDED_BLAS_TLAS_RAY_QUERY_PASS",
+      "summary_sha256": "81cef921700d0d150b4f90245dfe0e838073d714470ce0f6bd8d3d7126fad70f"
+    },
+    {
+      "family": "robust_buffer",
+      "cpu_identity": {
+        "deviceType": 4,
+        "apiVersion": 4210993,
+        "vendorID": 65541,
+        "deviceID": 0,
+        "driverVersion": 1,
+        "layerSpec": 4210997,
+        "layerImplementation": 1
+      },
+      "run_id": "208b27f0-1c7a-4c90-9292-6d2b147fb25e",
+      "status": "BOUNDED_ROBUST2_BUFFER_PASS",
+      "summary_sha256": "8ce811d6c6a139a36c1051c9e02d6319e6d6f699bb5726ee944da5f7a62227ff"
+    },
+    {
+      "family": "headless_wsi",
+      "cpu_identity": {
+        "deviceType": 4,
+        "apiVersion": 4210993,
+        "vendorID": 65541,
+        "deviceID": 0,
+        "driverVersion": 1,
+        "layerSpec": 4210997,
+        "layerImplementation": 1
+      },
+      "run_id": "668729da-04d1-4124-8104-b3abc887cd93",
+      "status": "BOUNDED_HEADLESS_WSI_PASS",
+      "summary_sha256": "96df5f15510b19f9dfe76fda12100ca9cc3c1506d5f6b42109ac251a6166ac9f"
+    }
+  ],
+  "index_sha256": "a3fa170c2c9207568f1fb89f7762bce4f3da117c50063ebb66d2a632422c2a55",
+  "stage": "PREPUBLICATION development v3 evidence only; strict published pair reported separately",
+  "release_status": "BLOCKED"
+}
