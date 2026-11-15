@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `8d75091cc8041e056f050522c310bcb17642362e`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `ef447158170699da67f7c33437065696b3de8d51`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -15,14 +15,14 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §4.2 Android Java/JNI | Knowledge/contract only | External unverified: no actual Java/JNI platform invocation; not supplied by Linux HarfBuzz |
 | §4.3 DirectWrite | Knowledge/contract only | External unverified: no actual DirectWrite run/outline/bitmap |
 | §4.4 beyond-64k/new tables | Wide-ID and range contracts | Partial: real capable provider and new font format fixtures unavailable/unverified; uint32 storage is not provider support |
-| §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded pass; color glyph/emoji, variable font, MSDF/MTSDF implementation/comparison are local open, not device-only blockers |
+| §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded pass; color glyph/emoji and MSDF/MTSDF remain open; one fixed variable-font weight/width execution now has bounded evidence, not device-only blockers |
 | §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bilinear/mip bleed, fractional geometry, distance range/derivatives remain local open |
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask fallback pass; triangulation, stroke/cap/join/dash and broader topology are local open |
 | §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
 | §6.4 world/3D | Knowledge only | Local open: world labels, near-plane clipping, finite extrusion/bevel, depth/shadows/second view |
 | §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
-| §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; six-transition real run/size/direction churn added; long stress and locale/variation semantics remain open |
+| §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; six-transition real run/size/direction churn added; bounded fixed-font axis churn added; long stress and broader locale/variation semantics remain open |
 | §7.4 consumers | Two immutable sampled descriptor sets and pending timeline-gated fragment submissions; real fence status | Bounded pass; not shader-already-running, multi-queue or multi-device proof |
 | §7.4 multi-engine | CPU boundaries described | Local open: two real Vulkan devices/outputs, shared CPU cache and independent GPU handles, pause/rebuild/destruction |
 | §7.4 MRT | Active 3-color plus D32 write protection and legal wrong-output negatives; old fallback preserved | Bounded pass; stencil, actual occlusion, rendergraph/world ordering remain local open |
@@ -33,9 +33,9 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §10 M2 | Bitmap and bounded vector mask above | Partial: MSDF/color/world/mesh/clip local open |
 | §10 M3 | Current primary milestone | In progress: integration and combined stress gaps above |
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
-| §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, variable fonts, representations and transformations missing |
+| §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, comparative representations and general transformations missing; one fixed variable-font axis path tested |
 | §11B vector/world | Five generated masks, holes/curves/negative scale; hard nested shader clip | Partial: strokes, general/AA clips, world meshes/shadows/second view missing |
-| §11C churn/overlay | Combined two-page lifecycle plus six-transition real content/size/direction churn | Partial: locale/axis semantics, two engines, active outputs and long stress not run |
+| §11C churn/overlay | Combined two-page lifecycle plus six-transition real content/size/direction churn | Partial: broader locale/axis semantics, two engines, active outputs and long stress not run; fixed-font weight/width cycles are bounded |
 | §12 TEXT18-01…20 | 20 registered cases, paired controls/rubrics, static validation | Registration is not model behavior; all 20 semantic Live results unverified |
 | §12.1 old cohorts | Preserved legacy contract and separate CI | Full accepted CORE17+TEXT18 union not established; no invented final scenario count |
 | §13 layered gates | Static/CPU/shader/software-Vulkan and narrow ROI evidence | Not platform/model/device/host acceptance; see layer table below |
@@ -168,3 +168,33 @@ were inspected. Normalized area change is an aliasing diagnostic, **not a font
 quality gate**: reproducing nearest aliasing does not establish optimal filtering,
 MSDF, arbitrary-angle/perspective or temporal-transform quality. Other original
 plan gaps and device/Live/host requirements remain unchanged.
+
+## Fixed-source real variation-axis churn increment
+
+The absence of axes in the earlier local DejaVu run was a fixture limitation,
+not a permanent platform blocker. A separate **execution-only** Roboto Flex font
+was obtained from the Google Fonts organization upstream at immutable commit
+`04263028f0fe6dbb0cac9df9fc69e3dd69668b26`, under SIL OFL1.1. The1,775,480-byte
+font's Git blob identity and SHA256 were checked. The runner requires that exact
+SHA256 before parsing. No font file is installed or included in either repository.
+Earlier DejaVu evidence remains unmodified and still has no variation acceptance.
+
+`text_variation_churn_lab` adds a separate adapter, leaving the old provider bridge
+unchanged. All13 axis defaults+overrides are sent to **both** HarfBuzz and FreeType,
+then design-coordinate readbacks must match exactly. Fixed shared float32/16.16
+coordinates prevent silent quantization; unknown/nonfinite/range/bool inputs
+reject. HB weight900 paired with FT weight100 deliberately rejects before raster.
+Optical size remains explicit14, not an implicit function of20px text size.
+
+Seven configurations of Latin Ofi change wght/width, produce seven distinct actual
+coverage pages and measurable glyph advance changes, then feed six actual
+same-process Vulkan transitions (18 primary draws /13 uploads). Independent source
+pixels verify all readbacks, stale images and forged publication records reject,
+and lifecycle checks/controlled resource retirement remain in force. This is
+bounded actual variation execution, not just metadata variation. Source/tool/font
+and full axis receipts stay local; only stripped numeric outcomes publish.
+
+Remaining: locale-specific fallback/paragraph semantics, other axes/fonts/color
+formats, comparative typography/MSDF quality, arbitrary transforms, production
+multithreading and multiple devices/outputs, target-platform/device/Live/host
+acceptance. The source input's OFL license is not a platform/vendor certification.

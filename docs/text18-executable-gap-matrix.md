@@ -185,3 +185,14 @@ Actual half/unit/1.5-scale and quarter-turn bitmap sampling now has independent
 pixel-center reconstruction and valid wrong-UV rejection. Nearest aliasing is
 measured, not accepted as general font quality. Neither finite experiment supplies
 multi-device/target-platform/Live or comprehensive original-plan acceptance.
+
+## Fixed-font real axis execution
+
+A separately verified OFL Roboto Flex input now supplies actual variable axes;
+this does not relabel the earlier DejaVu no-axis run. A new adapter sends complete
+matching design coordinates to HB and FT and reads both back. Seven Latin weight/
+width configurations yield different actual coverage before six one-device
+cancel/publish/retire transitions. Independent GPU readbacks and actual provider
+mismatch negatives distinguish this from a metadata-only axis change. The font
+remains execution-side only and is hash-guarded before parsing. Other fonts/axes,
+locale semantics, general typography and real target/Live gates remain open.
