@@ -1,0 +1,174 @@
+{
+  "case_count": 11,
+  "evidence_kind": "TOKEN_MODEL_HOST_CONTROLS_NOT_GPU",
+  "implementation_sha256": {
+    "checks19/run_descriptor_update_contracts.py": "6d7d78c70b1dece4b64e216ba5dca21fb476913183c885f23780143835bf3c9d",
+    "tools/descriptor_update_contract19.py": "edc3c6132e927447cf00a89c4895fb581c36fd722b6ab8f354195b2fb4105912",
+    "tools/descriptor_update_prose19.py": "d6326bef6e92d59678c9da5a70f14faf98110f3b28c2341d4b4270df42b3d0cb",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+  },
+  "prose": {
+    "limits": [
+      "Raw prose before Valid Usage only; includes/outer conditions not expanded.",
+      "368 stageFlags/bindingFlags standalone clauses are not identified as309 VUIDs."
+    ],
+    "slices": [
+      {
+        "bytes": 2446,
+        "conditional_directives": [
+          "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+          "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]"
+        ],
+        "line_end": 3012,
+        "line_start": 2960,
+        "section": "updates",
+        "sha256": "97983dfd92a78ce494f5aa4980067c2f6c515b8fe2d972b9358766421bf34150"
+      },
+      {
+        "bytes": 1828,
+        "conditional_directives": [
+          "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+          "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+          "ifdef::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+          "endif::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+          "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]"
+        ],
+        "line_end": 3306,
+        "line_start": 3269,
+        "section": "consecutive",
+        "sha256": "8164783bfbdfca92d891d251af70a22b315c8cde51b4a2d574f11ec31642dffa"
+      },
+      {
+        "bytes": 3227,
+        "conditional_directives": [
+          "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+          "ifdef::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+          "endif::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]"
+        ],
+        "line_end": 4007,
+        "line_start": 3948,
+        "section": "copy",
+        "sha256": "4177dbc035e492899c4bea5a973cf13096626b65392c91e869c7394f7f6b0d23"
+      }
+    ],
+    "source": {
+      "api_version": "1.4.368",
+      "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "license": "CC-BY-4.0",
+      "path": "chapters/descriptorsets.adoc",
+      "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950"
+    },
+    "status": "EXACT_RAW_PROSE_SLICE_MAP"
+  },
+  "release_status": "BLOCKED",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "status": "SOURCE_PAIRED_DESCRIPTOR_UPDATE_HOST_CONTROLS",
+  "version_difference": "30900317 combines type/stage; 368 separates stage10776 and flags10777. Immutable-reference proof uses368 prose; not claimed equivalent to30900318 presence-only wording.",
+  "vuid_coordinates": [
+    {
+      "api_owner": "VkWriteDescriptorSet",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "text_html": "All consecutive bindings updated via a single <code>VkWriteDescriptorSet</code> structure, except those with a <code>descriptorCount</code> of zero, <strong class=\"purple\">must</strong> have identical <code>descriptorType</code> and <code>stageFlags</code>",
+      "vuid": "VUID-VkWriteDescriptorSet-descriptorCount-00317"
+    },
+    {
+      "api_owner": "VkWriteDescriptorSet",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "text_html": "All consecutive bindings updated via a single <code>VkWriteDescriptorSet</code> structure, except those with a <code>descriptorCount</code> of zero, <strong class=\"purple\">must</strong> all either use immutable samplers or <strong class=\"purple\">must</strong> all not use immutable samplers",
+      "vuid": "VUID-VkWriteDescriptorSet-descriptorCount-00318"
+    },
+    {
+      "api_owner": "VkWriteDescriptorSet",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "text_html": "<code>descriptorType</code> <strong class=\"purple\">must</strong> match the type of <code>dstBinding</code> within <code>dstSet</code>",
+      "vuid": "VUID-VkWriteDescriptorSet-descriptorType-00319"
+    },
+    {
+      "api_owner": "VkWriteDescriptorSet",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "text_html": "The sum of <code>dstArrayElement</code> and <code>descriptorCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of array elements in the descriptor set binding specified by <code>dstBinding</code>, and all applicable <a href=\"#descriptorsets-updates-consecutive\">consecutive bindings</a>",
+      "vuid": "VUID-VkWriteDescriptorSet-dstArrayElement-00321"
+    },
+    {
+      "api_owner": "VkCopyDescriptorSet",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "text_html": "The type of <code>dstBinding</code> within <code>dstSet</code> <strong class=\"purple\">must</strong> be equal to the type of <code>srcBinding</code> within <code>srcSet</code>",
+      "vuid": "VUID-VkCopyDescriptorSet-dstBinding-02632"
+    },
+    {
+      "api_owner": "VkCopyDescriptorSet",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "text_html": "If <code>srcSet</code> is equal to <code>dstSet</code>, then the source and destination ranges of descriptors <strong class=\"purple\">must</strong> not overlap, where the ranges <strong class=\"purple\">may</strong> include array elements from <a href=\"#descriptorsets-updates-consecutive\">consecutive bindings</a>",
+      "vuid": "VUID-VkCopyDescriptorSet-srcSet-00349"
+    }
+  ],
+  "vuid_source": {
+    "api_version": "1.4.309",
+    "file": "validusage.json",
+    "schema_version": 2,
+    "separate_from_vk_xml_api": "1.4.368",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "source_kind": "official Debian Vulkan headers registry snapshot"
+  },
+  "controls": [
+    {
+      "name": "spill-skips-zero",
+      "expected": "ROUTE_WITHIN_SCOPE"
+    },
+    {
+      "name": "consecutive-type-mismatch",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "consecutive-stages-mismatch",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "consecutive-flags-mismatch",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "immutable-references-match",
+      "expected": "ROUTE_WITHIN_SCOPE"
+    },
+    {
+      "name": "immutable-references-differ",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "insufficient-capacity",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "start-at-count-unknown",
+      "expected": "UNKNOWN"
+    },
+    {
+      "name": "all-writes-before-copies-in-order",
+      "expected": "MODELED_UPDATES"
+    },
+    {
+      "name": "cross-binding-same-set-overlap",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "destroyed-reference-copy-is-undefined",
+      "expected": "MODELED_UPDATES"
+    }
+  ],
+  "report_sha256": "16cef68b2f2cb4668bfa235614fc5f674b794b55aabbc7089240fd684a14ca13",
+  "cohort": "reviewed prepublication implementation; not final tests head"
+}

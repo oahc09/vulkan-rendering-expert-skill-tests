@@ -7,7 +7,7 @@ from tools import semantic_inventory19 as s
 OLD='b1a3f72e03c9a9621224746146e12a7d5beab81b'
 PREFIX='references/03_api_manual/05_descriptor/'
 # Exact reviewed repaired cohort, not a generic absence-of-bad-words detector.
-REPAIRED_CARD_SHA256={'references/03_api_manual/05_descriptor/descriptor_update.md': 'a7e988f7d41b9af314e82a63a001f35925f69b53b530cada5d3a44cf8b1b6626', 'references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md': '7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31', 'references/03_api_manual/05_descriptor/descriptor_indexing.md': 'b012062d106f7451c2174ed25afcca7173af7281336bf3b651d0b1806211d682'}
+REPAIRED_CARD_SHA256={'references/03_api_manual/05_descriptor/descriptor_update.md': '48f154ce3ad1ec765d840c2f812d1afb19f9367cc501f3eaec02db92e11e47c3', 'references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md': '7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31', 'references/03_api_manual/05_descriptor/descriptor_indexing.md': 'c3893c11ad1a5c3efbf12d18c391cfd55148c3e77a595600f5831cc219c3b76f'}
 def sha(b):return hashlib.sha256(b).hexdigest()
 def build(inv,skill):
  paths=[PREFIX+n for n in ('descriptor_update.md','uniform_buffer_descriptor.md','descriptor_indexing.md')]

@@ -403,6 +403,20 @@
           "Vulkan-Docs 1.4.368",
           "validusage 1.4.309 separately pinned"
         ]
+      },
+      {
+        "document": "docs/descriptor-update-contract19.md",
+        "entry": "checks19/run_descriptor_update_contracts.py",
+        "rules": "tools/descriptor_update_contract19.py",
+        "evidence": "descriptor-update-contract.json",
+        "scope": "qualified consecutive binding routes and ordinary buffer descriptor-token writes before ordered copies",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
       }
     ]
   },
