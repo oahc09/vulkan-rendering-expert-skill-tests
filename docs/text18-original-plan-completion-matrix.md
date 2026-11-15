@@ -523,3 +523,60 @@ representation switching. No rotation/perspective, platform-hinted comparison,
 unsupported-provider fallback, multilingual quality board or target-device
 performance has been established. UNUSED sentinel protection in this switching
 path is not the new active-MRT/pending joint path described above.
+
+
+## Explicit surrounding-scene state handoff (bounded)
+
+A new synthetic-coverage diagnostic executes pre-scene, coverage overlay and
+post-scene draws in one actual command buffer/renderpass/submission. The post
+draw explicitly rebinds its compatible pipeline, descriptor, vertex buffer,
+viewport and scissor after the overlay changes all five. Each omission plus
+all-five omission is a separate legal GPU negative; validation errors are not
+accepted as a successful negative. Three active color attachments retain exact
+velocity/ID sentinels. Independent CPU rectangle/nearest-sample/ordered-over
+reference and unchanged1e-6 tolerance cover visible stage-specific and overlap
+regions rather than merely checking a blank background.
+
+This is three draw stages in **one VkRenderPass**, not three renderpasses or
+cross-pass restoration. Synthetic coverage isolates binding-state correctness,
+not new font-quality evidence. Scene draws are opaque; only overlay blends.
+Push constants are explicitly set each time, but index buffers, stencil, depth,
+blend constants and every possible renderer dynamic state are not covered.
+Nor is this handoff fixture automatically combined with the earlier pending
+atlas lifecycle, despite those independent tests passing.
+
+
+The handoff positive maximum RGBA error is2.265e-8. Its visible regions are
+2705 pre-only,160 overlay-visible,8 post-over-overlay and312 other post pixels.
+The six omitted-state controls change320/320/140/124/304/480 pixels respectively
+while validation and auxiliaries remain clean. An initial build-adapter shader
+filename collided with the inherited startup shader; the dedicated final shader
+filename fixed that conflict without changing references or tolerance. The
+failed validation attempt is retained locally, not counted as accepted evidence.
+
+## Fixed-camera phase-sequence dynamic-quality diagnostic
+
+Two histories select the existing bitmap/MSDF representations through actual
+scale0.85/1.15 warmup draws. Both then hold scale1.05 while scanning17 identical
+phase positions0…1px in1/16px increments, so34 positive measured draws compare
+the same geometry without mixing scale change into the phase diagnostic. Two
+warmups and one legal wrong-representation draw are counted separately.
+Foreground/edge ROI error, worst coordinates and coverage, same-phase mode
+difference and geometry-subtracted neighboring-phase residual are measured.
+
+This reveals a larger MSDF linear4 discrepancy than the earlier short sequence:
+maximum exact-area coverage error≈0.0436968 at phase0.125, pixel(32,15).
+Maximum neighboring-phase geometry-subtracted residual≈0.0340552 occurs over
+0.625→0.6875 at(33,15). These worse observations remain visible. No algorithm or
+quality threshold was changed to conceal them. Numerical GPU sampling/over
+checks still pass; that does **not** establish dynamic-quality acceptance.
+
+The new bitmap path explicitly texelFetches already-target-pixel coverage instead
+of filtering it again; its small transport error is not improved font quality,
+and the older LINEAR bitmap experiment is unchanged. Bitmap remains generated
+from the same exact reference, whereas MSDF is compared independently to original
+polygon area. Limited CPU point resampling can help investigate approximation
+error, but is neither an actual GPU improvement nor a full-frame/general method
+recommendation. Status remains **MEASURED_NOT_QUALIFIED**; no perceptual flicker,
+rotation/perspective, platform-hinted full quality board, target-device or Live
+qualification is implied.
