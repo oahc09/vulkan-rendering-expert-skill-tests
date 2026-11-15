@@ -6,6 +6,8 @@ ROOT=Path(__file__).resolve().parents[1]
 LEGACY_PIN_ONLY=['test_v1_0_8_project_diagnosis.py::test_current_version_and_preserved_project_diagnosis_routing', 'test_v1_0_9_regression.py::test_release_version_and_manifest_budget']
 CORE_FILES=['test_v1_0_18_contracts.py','test_text18_package_pair.py','test_text18_ci.py','test_text18_pair_preflight.py']
 
+OTHER_VERSION_FILES=['test_core17_inventory.py', 'test_v1_0_17_registry.py', 'test_core17_pair.py', 'test_core17_ci.py']
+
 def select(cohort,root=ROOT):
     if cohort not in ('legacy16','text18'):raise ValueError('unknown cohort')
     name='release-contract.json' if cohort=='legacy16' else 'text18-candidate-contract.json'
@@ -18,8 +20,8 @@ def select(cohort,root=ROOT):
 
 def test_args(cohort):
     if cohort=='legacy16':
-        return ['-m','static',str(ROOT/'tests'),*[f'--ignore={ROOT}/tests/{f}' for f in CORE_FILES]]
-    if cohort=='text18':return ['-m','static',str(ROOT/'tests'),*[f'--deselect={node}' for node in LEGACY_PIN_ONLY]]
+        return ['-m','static',str(ROOT/'tests'),*[f'--ignore={ROOT}/tests/{f}' for f in CORE_FILES+OTHER_VERSION_FILES]]
+    if cohort=='text18':return ['-m','static',str(ROOT/'tests'),*[f'--deselect={node}' for node in LEGACY_PIN_ONLY],*[f'--ignore={ROOT}/tests/{f}' for f in OTHER_VERSION_FILES]]
     raise ValueError('unknown cohort')
 
 def check_pair(cohort,skill):

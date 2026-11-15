@@ -54,7 +54,12 @@ def test_actual_collection_keeps_only_the_intended_version_scope(cohort):
     assert p.returncode==0,p.stdout+p.stderr
     selected=set(line.strip() for line in p.stdout.splitlines() if '::test_' in line)
     assert selected
+    assert not any(node.startswith('test_core17_pair.py::') for node in selected)
     for node in gate.LEGACY_PIN_ONLY:assert (node in selected)==(cohort=='legacy16')
     assert 'test_v1_0_8_project_diagnosis.py::test_project_diagnosis_workflow_exists_and_follows_template' in selected
     assert 'test_v1_0_9_regression.py::test_registered_cases_and_rubrics' in selected
     assert ('test_text18_package_pair.py::test_text18_reproducible_package_and_unchanged_knowledge_budget' in selected)==(cohort=='text18')
+
+@pytest.mark.parametrize('cohort', ['legacy16','text18'])
+def test_other_version_contracts_are_isolated(cohort):
+    assert all(f'--ignore={gate.ROOT}/tests/{f}' in gate.test_args(cohort) for f in gate.OTHER_VERSION_FILES)
