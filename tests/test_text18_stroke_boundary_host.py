@@ -1,6 +1,7 @@
 import importlib.util
 from pathlib import Path
 import pytest
+pytestmark=pytest.mark.host_unit
 P=Path(__file__).parent/'fixtures'
 def load(path,name):
  s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
