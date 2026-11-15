@@ -3,6 +3,11 @@
 This follows the owner's 2026-11-08 v1.0.18 plan, sections 6, 11 and 13.
 It does not add product scope or weaken release gates.
 
+For the current full original-plan status use
+[text18-original-plan-completion-matrix.md](text18-original-plan-completion-matrix.md).
+The table and dated increments below preserve progressive evidence; later increments
+resolve only their explicitly stated earlier gaps, not the entire milestone.
+
 | Condition | Executable coverage | Remaining gap |
 |---|---|---|
 | C1 glyph/cluster/positions/lifetime | Actual Linux HarfBuzz trusted single-run tests | Android JNI, DirectWrite, full paragraph bidi/fallback |
