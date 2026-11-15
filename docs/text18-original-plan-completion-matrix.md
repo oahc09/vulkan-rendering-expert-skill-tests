@@ -751,3 +751,32 @@ portability, Android/Windows or Live. The prior GLSL constant-array compile fail
 is retained locally; fixed three-slot storage preserves COUNT-limited semantics.
 Source and stripped numerical evidence only are published. Overall Draft/BLOCKED,
 Skill/candidate pins and the non-main base/dependency chain remain unchanged.
+
+### Bounded straight-stroke exact-area AA (2026-11-15)
+
+For original-plan §5.3 coverage/opacity composition and §13.2 subpixel quality,
+`text_stroke_area_lab` adds sixteen actual Vulkan draws: horizontal/4:3 straight
+paths, butt/square caps, width 5, four quarter-pixel translations each. GPU clips
+a rectangle against the pixel box in local coordinates and computes area; CPU
+independently integrates exact rational vertical slices from the original path.
+This is a limited exact-area reference, not a supersampling match or universal
+text AA oracle. Composition keeps 1e-6; the separate 1e-6 area check was registered
+before running this bounded experiment, not invented as an original-plan global
+quality gate. No pixels are excluded. Actual premultiplied blending uses opacity
+0.75 and stored background alpha 0.5; coverage is inferred from output alpha.
+
+Sixteen outputs have maximum composition error 7.153e-8, inferred area error 0,
+and zero depth-preservation error; auxiliary MRTs are exact. Four phase groups
+retain area/reference temporal deltas. Fifteen frames have partial pixels; the
+unchanged horizontal-square phase 1 is an integer-edge binary control. Actual
+hard-center negative produces coverage error 0.502604; double-alpha negative
+produces color error 0.224832 with correct coverage. Depth and auxiliary checks
+are independent and cannot masquerade as expected negative detection.
+
+Initial inherited depth writes and tiny clipping roundoff, plus an incorrect
+all-frames-must-have-partial-pixels test expectation, are retained locally and
+documented. Fixes disable depth writes, use implicit-line intersections with
+exact clip-axis coordinates, and recognize the existing integer-edge control
+without changing case coordinates or tolerances. This is not round/join/curve AA, transparent overlapping strokes,
+MSAA or world-space/perspective qualification. Overall Draft/BLOCKED and branch
+pairing remain unchanged; target devices and semantic Live remain unverified.
