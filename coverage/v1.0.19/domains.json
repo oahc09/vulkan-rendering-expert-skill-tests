@@ -472,6 +472,20 @@
         "sample coverage and antialiasing quality",
         "physical/mobile performance, external project and Live/blind acceptance"
       ]
+    },
+    "depth_occlusion_chain": {
+      "contract": "add_depth_pass.md#delivery19-depth-occlusion-chain",
+      "entry": "cases19/depth_msaa_sample/run.py",
+      "evidence": "depth-msaa-sample.json",
+      "scope": "bounded actual depth test/write overlapping near/far draws, color MSAA resolve and fragment postprocess; whole final image oracle and legal depth-state causal control",
+      "domain_complete": false,
+      "still_open": [
+        "depth/stencil resolve and stencil testing",
+        "depth sampling/shadows, reversed Z and precision",
+        "general fragment depth precision and early/late variants",
+        "mixed sample and all dynamic state variants",
+        "physical hardware, external project and Live/blind acceptance"
+      ]
     }
   },
   {
