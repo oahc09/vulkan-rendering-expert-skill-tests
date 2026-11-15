@@ -233,3 +233,14 @@ sampling and independent outline references plus three wrong-shader/range GPU
 controls execute. Coverage max difference0.3997 is within the pre-registered
 permissive0.45 experimental bound, **not pixel identity or full typography
 quality acceptance**. MTSDF, broader quality and target/Live gates remain open.
+
+
+### MSDF subpixel coverage diagnosis
+
+The prior0.3997 A difference is attributable to corner area approximation plus
+sampled distance representation, not a demonstrated library defect. Independent
+exact A polygon clipping confirms the reference. Separate actual GPU256-sample
+binary and16-sample linear reconstructions improve fixed cases; the cheaper
+method is better against exact A area despite less same-grid reference agreement.
+The experiment is MEASURED_NOT_QUALIFIED. Neither pixel identity nor target-device
+performance is accepted; baseline thresholds and prior results are preserved.

@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `02430c28878ea0d24388cedff85e814f1fe43879`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `d17711a5cb640adf2704be4148b416bdbcd6e7fa`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -286,3 +286,38 @@ more scripts/fonts/transforms, arbitrary perspective/minification, MTSDF,
 production atlas/churn integration for this path, Android/Windows/mobileGPU and
 Live. Only adapter source/docs/stripped numbers publish; upstream source, font,
 raw builds and machine provenance remain local.
+
+
+## MSDF corner-coverage diagnosis and subpixel integration experiment
+
+The prior A maximum coverage difference0.3997 is retained as baseline evidence.
+It is not explained by a half-pixel alignment error or merely a coarse reference:
+for the native worst pixel(32,15), original16x16 reference0.96875 converges to
+0.96655 at64x64 and exact polygon clipping gives0.966512, versus GPU0.56905.
+A large-scale pixel has matching true/MSDF center-distance reconstruction but
+center-based coverage0.43024 versus exact pixel area0.81814. Thus center-distance
+to area approximation itself loses sharp-corner coverage; sampled field/pseudo-
+distance reconstruction contributes separately. No msdfgen library bug is claimed.
+
+A separate fixture preserves the old generator/atlas, cases and original gates,
+then compares actual GPU subpixel integration with independent CPU oracles:
+16x16 binary distance sign (256 texture samples/pixel) and4x4 narrow linear
+coverage (16 samples/pixel). Exact signed polygon clipping supplies an independent
+A area reference; curved O still uses the earlier sampled curve reference.
+
+The binary method closely follows the same16x16 reference, but A exact maximum
+error remains about0.0180–0.0308. The lower-cost linear method reaches about
+0.0124–0.0195 against exact A area, while agreeing less closely with the sampled
+reference. This is why same-grid agreement cannot establish pixel identity or
+rank methods by itself. Both are experimental measurements, **not** a replacement
+for full quality/performance acceptance. Target-device cost, more glyphs/curves,
+transform/perspective coverage, and production path integration remain unverified.
+
+Public status is MEASURED_NOT_QUALIFIED, not a general quality PASS. All source
+assumptions and sample costs remain explicit; old evidence is not overwritten.
+
+A preliminary CPU diagnostic attempted a spatial ROI shortcut and clipped the
+large A; that invalid diagnostic is retained locally and is not acceptance
+evidence. The candidate oracle instead uses only a same-sign/saturation test
+across all contributing bilinear texels, otherwise explicitly samples the full
+pixel footprint. Neither reference nor GPU input is cropped by a guessed ROI.
