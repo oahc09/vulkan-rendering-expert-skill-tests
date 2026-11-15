@@ -154,8 +154,28 @@
     "existing_route": "[合同入口](06_pipeline/shader_module.md#shader-artifact-contract)",
     "open_review": "全部capability/opcode/feature映射、grammar差异",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "offline_tool_pair": {
+      "contract": "shader_module.md#delivery19-offline-target--device-admission-split-bounded-l1l2",
+      "evidence": "shader-target.json",
+      "actual_tools": [
+        "GLSL to SPIR-V vulkan1.1/vulkan1.2",
+        "same-binary spirv-val target mismatch",
+        "spirv-dis Shader/Float64 and extension extraction"
+      ],
+      "cpu_only": [
+        "Shader/Float64 device feature facts admission",
+        "wrong/stale extraction and logical-device identity negative controls"
+      ],
+      "still_open": [
+        "all capability/opcode/extension mappings",
+        "pipeline interfaces/specialization/limits",
+        "device feature query/creation",
+        "actual shader dispatch",
+        "physical hardware/SC/Live/external-engine acceptance"
+      ]
+    }
   },
   {
     "id": "VK09",

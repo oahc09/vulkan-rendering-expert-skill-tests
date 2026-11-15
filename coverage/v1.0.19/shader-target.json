@@ -1,0 +1,161 @@
+{
+  "run_id": "cd608a8a-23c5-4415-a5a6-d264cba3a15d",
+  "runner_sha256": "c385df73ff8faabd5531b57e5a292875dd53aedae7be23e6060b8f3218bf14fe",
+  "tools": {
+    "glslangValidator": {
+      "binary_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+      "version_stdout_sha256": "625bd352de44f83029feed47d4d6f2049af695d789c8d8cb6def79d2ced2a6ca",
+      "version_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "spirv-val": {
+      "binary_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)",
+      "version_stdout_sha256": "9141086275bff165ecd8e42834953c065be94a551a9304fb228489db06ae4450",
+      "version_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "spirv-dis": {
+      "binary_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5",
+      "version_stdout_sha256": "4ad5febf34f7e5635ad03c724a604a95c34f679a938afc2d971f4d46a46cffe7",
+      "version_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "cases": {
+    "base11": {
+      "source": "base.comp",
+      "source_sha256": "98ba2ad9fc80674bdbf9bbb209b46c5bcedc8c95224436ee799552294674d06a",
+      "target_env": "vulkan1.1",
+      "spirv_header_version": "0x10300",
+      "spirv_sha256": "93670f681c24f593b8aa8a94c5c0027e3f4413fb71387e7d6feb4919f3b74c4b",
+      "disassembly_sha256": "61a08689a2d57072d7227cfb4195cf6bae7e0cb161ecef432c6a0dc7a425b1ee",
+      "capabilities": [
+        "Shader"
+      ],
+      "extensions": [],
+      "extraction": {
+        "artifact_sha256": "93670f681c24f593b8aa8a94c5c0027e3f4413fb71387e7d6feb4919f3b74c4b",
+        "exit_code": 0,
+        "capabilities": [
+          "Shader"
+        ],
+        "extensions": [],
+        "disassembly_sha256": "61a08689a2d57072d7227cfb4195cf6bae7e0cb161ecef432c6a0dc7a425b1ee"
+      },
+      "compile": {
+        "exit_code": 0,
+        "stdout_sha256": "e9b12556528f2044345b6a05c925cb2d0262e14f9f16050ba2f53fcf8d1c9c14",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "validate": {
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "artifact_sha256": "93670f681c24f593b8aa8a94c5c0027e3f4413fb71387e7d6feb4919f3b74c4b",
+        "target_env": "vulkan1.1"
+      },
+      "disassemble": {
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "status": "OFFLINE_TOOL_PAIR_PASS"
+    },
+    "float64_11": {
+      "source": "float64.comp",
+      "source_sha256": "f6811ec850c9c0a19ef32603f2662d0bc9e7b3a596107afd92650ac51d8d9131",
+      "target_env": "vulkan1.1",
+      "spirv_header_version": "0x10300",
+      "spirv_sha256": "e897f67e5836fe4d2ae425dfaa91e42b19049a0c837ea31d5390209d2c41f818",
+      "disassembly_sha256": "edf0bdd3a4dbc63d5406f359968c3ffe31c4deb166a08d40107c6f61424ddf2a",
+      "capabilities": [
+        "Shader",
+        "Float64"
+      ],
+      "extensions": [],
+      "extraction": {
+        "artifact_sha256": "e897f67e5836fe4d2ae425dfaa91e42b19049a0c837ea31d5390209d2c41f818",
+        "exit_code": 0,
+        "capabilities": [
+          "Shader",
+          "Float64"
+        ],
+        "extensions": [],
+        "disassembly_sha256": "edf0bdd3a4dbc63d5406f359968c3ffe31c4deb166a08d40107c6f61424ddf2a"
+      },
+      "compile": {
+        "exit_code": 0,
+        "stdout_sha256": "c06da48008eb1669de5d59323c4cf4a35edb31cab3c7870ab601d55f1ad8fcf3",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "validate": {
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "artifact_sha256": "e897f67e5836fe4d2ae425dfaa91e42b19049a0c837ea31d5390209d2c41f818",
+        "target_env": "vulkan1.1"
+      },
+      "disassemble": {
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "status": "OFFLINE_TOOL_PAIR_PASS"
+    },
+    "base12": {
+      "source": "base.comp",
+      "source_sha256": "98ba2ad9fc80674bdbf9bbb209b46c5bcedc8c95224436ee799552294674d06a",
+      "target_env": "vulkan1.2",
+      "spirv_header_version": "0x10500",
+      "spirv_sha256": "4ef38dfdb93fc0a404039768ef86aa8fb82264f0f06c25469cb661e16bc4eacd",
+      "disassembly_sha256": "81ddb2b0768f57ef67a407346fe528592150d075785a3344b22e3ef69879c67c",
+      "capabilities": [
+        "Shader"
+      ],
+      "extensions": [],
+      "extraction": {
+        "artifact_sha256": "4ef38dfdb93fc0a404039768ef86aa8fb82264f0f06c25469cb661e16bc4eacd",
+        "exit_code": 0,
+        "capabilities": [
+          "Shader"
+        ],
+        "extensions": [],
+        "disassembly_sha256": "81ddb2b0768f57ef67a407346fe528592150d075785a3344b22e3ef69879c67c"
+      },
+      "compile": {
+        "exit_code": 0,
+        "stdout_sha256": "e9b12556528f2044345b6a05c925cb2d0262e14f9f16050ba2f53fcf8d1c9c14",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "validate": {
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "artifact_sha256": "4ef38dfdb93fc0a404039768ef86aa8fb82264f0f06c25469cb661e16bc4eacd",
+        "target_env": "vulkan1.2"
+      },
+      "disassemble": {
+        "exit_code": 0,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "status": "OFFLINE_TOOL_PAIR_PASS",
+      "wrong_target": {
+        "artifact_sha256": "4ef38dfdb93fc0a404039768ef86aa8fb82264f0f06c25469cb661e16bc4eacd",
+        "target_env": "vulkan1.1",
+        "status": "EXPECTED_VERSION_REJECTION",
+        "exit_code": 1,
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "2f53bafcb21ad66c7a12cfce8fa06fa768360cfdff9eed93f58ebd3c67c41f7f",
+        "diagnostic": "error: line 0: Invalid SPIR-V binary version 1.5 for target environment SPIR-V 1.3 (under Vulkan 1.1 semantics)."
+      }
+    }
+  },
+  "scope": "Offline real compiler/validator/disassembler only; no device creation, shader dispatch, enabled feature or hardware support claim.",
+  "status": "OFFLINE_TARGET_CAPABILITY_PAIR_PASS",
+  "limitations": [
+    "Float64 capability requires separate device shaderFloat64 support query and enablement; neither is tested.",
+    "Validator acceptance does not establish runtime correctness, device support, feature enablement or rendering quality.",
+    "Target mismatch negative is validator version enforcement, not a Vulkan driver diagnostic."
+  ]
+}
