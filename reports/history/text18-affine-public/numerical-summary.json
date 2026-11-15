@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "cases": [
+    {
+      "case": "half",
+      "scale": 0.5,
+      "rotation_degrees": 0,
+      "roi_pixels": 34,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "coverage_area_error": 1.5894572058527956e-07,
+      "normalized_area_change": -0.0003430195521144652,
+      "pixel_tolerance": 1e-06,
+      "area_tolerance": 0.001
+    },
+    {
+      "case": "unit",
+      "scale": 1.0,
+      "rotation_degrees": 0,
+      "roi_pixels": 122,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "coverage_area_error": 6.937513177263099e-07,
+      "normalized_area_change": 0.0,
+      "pixel_tolerance": 1e-06,
+      "area_tolerance": 0.001
+    },
+    {
+      "case": "large",
+      "scale": 1.5,
+      "rotation_degrees": 0,
+      "roi_pixels": 285,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "coverage_area_error": 1.9073486328125e-06,
+      "normalized_area_change": 0.0015081970783445975,
+      "pixel_tolerance": 1e-06,
+      "area_tolerance": 0.001
+    },
+    {
+      "case": "quarter-turn",
+      "scale": 1.5,
+      "rotation_degrees": 90,
+      "roi_pixels": 264,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "coverage_area_error": 7.461098903149832e-07,
+      "normalized_area_change": 0.0004845831767967823,
+      "pixel_tolerance": 1e-06,
+      "area_tolerance": 0.001
+    }
+  ],
+  "negative_checks": [
+    "actual valid wrong UV draw rejected"
+  ],
+  "scope": "actual packed bitmap O quad at half/unit/1.5 scale and90-degree rotation; exact nearest pixel-center reconstruction",
+  "quality_caveat": "normalized coverage-area change is aliasing diagnostic, NOT a font-quality acceptance gate; no optimal filtering claim",
+  "unverified": [
+    "arbitrary-angle/perspective",
+    "MSDF/color/variable fonts",
+    "temporal transforms",
+    "typographic quality",
+    "target devices/performance"
+  ]
+}

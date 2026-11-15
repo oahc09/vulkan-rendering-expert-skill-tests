@@ -1,0 +1,119 @@
+{
+  "scope": "trusted single O at 12/20px, four post-hinting x phases; CPU moments and actual GPU composition",
+  "area_relative_limit": 0.05,
+  "centroid_error_limit_pixels": 0.15,
+  "cases": [
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 54,
+      "partial_pixels": 52,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 12,
+      "phase64": 0,
+      "validation_enabled": true,
+      "area_relative_drift": 0.0,
+      "centroid_error_pixels": 0.0
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 51,
+      "partial_pixels": 50,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 12,
+      "phase64": 16,
+      "validation_enabled": true,
+      "area_relative_drift": 0.0007126567844925859,
+      "centroid_error_pixels": 0.0049489501847919115
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 55,
+      "partial_pixels": 53,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 12,
+      "phase64": 32,
+      "validation_enabled": true,
+      "area_relative_drift": 0.0005701254275941978,
+      "centroid_error_pixels": 0.005441205612241262
+    },
+    {
+      "max_linear_error": 4.842877388000488e-08,
+      "max_roi_error": 4.842877388000488e-08,
+      "roi_pixels": 52,
+      "partial_pixels": 52,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 12,
+      "phase64": 48,
+      "validation_enabled": true,
+      "area_relative_drift": 0.0001425313568986463,
+      "centroid_error_pixels": 0.0032847820791612747
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 20,
+      "phase64": 0,
+      "validation_enabled": true,
+      "area_relative_drift": 0.0,
+      "centroid_error_pixels": 0.0
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 20,
+      "phase64": 16,
+      "validation_enabled": true,
+      "area_relative_drift": 4.9002793159165506e-05,
+      "centroid_error_pixels": 0.003056357130818199
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 126,
+      "partial_pixels": 88,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 20,
+      "phase64": 32,
+      "validation_enabled": true,
+      "area_relative_drift": 4.9002793159165506e-05,
+      "centroid_error_pixels": 0.003068992633256329
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 126,
+      "partial_pixels": 88,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "pixel_size": 20,
+      "phase64": 48,
+      "validation_enabled": true,
+      "area_relative_drift": 0.0001960111726368396,
+      "centroid_error_pixels": 0.00042902782418785534
+    }
+  ],
+  "unverified": [
+    "outline ground truth",
+    "other fonts/glyphs",
+    "MSDF",
+    "rotation/perspective",
+    "platform typography",
+    "display quality"
+  ]
+}

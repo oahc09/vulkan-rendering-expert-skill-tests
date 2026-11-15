@@ -1,0 +1,109 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "sample_error": 1.966953277032779e-06,
+      "roi_mae": 0.016737158336336648,
+      "edge_mae": 0.025105737504504972,
+      "max_coverage_error": 0.36143461863199866,
+      "roi_pixels": 147,
+      "edge_pixels": 98,
+      "glyph": "A",
+      "case": "small"
+    },
+    {
+      "sample_error": 1.1920928955078125e-06,
+      "roi_mae": 0.014467723939100258,
+      "edge_mae": 0.025895129079404083,
+      "max_coverage_error": 0.3997001647949219,
+      "roi_pixels": 247,
+      "edge_pixels": 138,
+      "glyph": "A",
+      "case": "native"
+    },
+    {
+      "sample_error": 2.0444393146468176e-06,
+      "roi_mae": 0.008141950982117476,
+      "edge_mae": 0.019643444845205756,
+      "max_coverage_error": 0.39006805419921875,
+      "roi_pixels": 497,
+      "edge_pixels": 206,
+      "glyph": "A",
+      "case": "large"
+    },
+    {
+      "sample_error": 1.1920928955078125e-06,
+      "roi_mae": 0.012923407972904675,
+      "edge_mae": 0.02296461704537737,
+      "max_coverage_error": 0.2636146545410156,
+      "roi_pixels": 247,
+      "edge_pixels": 139,
+      "glyph": "A",
+      "case": "phase"
+    },
+    {
+      "sample_error": 1.3709068299450067e-06,
+      "roi_mae": 0.010015724151115108,
+      "edge_mae": 0.015209062599841462,
+      "max_coverage_error": 0.04629627863566077,
+      "roi_pixels": 164,
+      "edge_pixels": 108,
+      "glyph": "O",
+      "case": "small"
+    },
+    {
+      "sample_error": 6.318092346246917e-07,
+      "roi_mae": 0.007768685510268758,
+      "edge_mae": 0.014004077827721314,
+      "max_coverage_error": 0.03694756825764978,
+      "roi_pixels": 274,
+      "edge_pixels": 152,
+      "glyph": "O",
+      "case": "native"
+    },
+    {
+      "sample_error": 2.378225324506378e-06,
+      "roi_mae": 0.006586343086932819,
+      "edge_mae": 0.01581898473557972,
+      "max_coverage_error": 0.05336078008015954,
+      "roi_pixels": 538,
+      "edge_pixels": 224,
+      "glyph": "O",
+      "case": "large"
+    },
+    {
+      "sample_error": 8.225440978337772e-07,
+      "roi_mae": 0.008648374305123288,
+      "edge_mae": 0.015735236582932646,
+      "max_coverage_error": 0.05182488759358722,
+      "roi_pixels": 262,
+      "edge_pixels": 144,
+      "glyph": "O",
+      "case": "phase"
+    }
+  ],
+  "negatives": [
+    "wrong-channel",
+    "wrong-srgb",
+    "wrong-range"
+  ],
+  "scope": "Linux trusted-font A/O outlines; official edge-colored MSDF; linear RGB software Vulkan; independent outline coverage at registered transforms",
+  "not_claimed": [
+    "MTSDF",
+    "paragraph/fallback",
+    "arbitrary perspective",
+    "optimal small-font quality",
+    "Android/Windows provider",
+    "hardware/performance"
+  ],
+  "third_party_source_bundled": false,
+  "acceptance": "bounded experimental not full quality",
+  "limits": {
+    "sample_tolerance": 0.0002,
+    "roi_mae": 0.04,
+    "edge_mae": 0.16,
+    "max_coverage_error": 0.45
+  },
+  "max_observed_coverage_error": 0.3997001647949219,
+  "mrt_scope": "UNUSED/preserve fallback, not active MRT"
+}

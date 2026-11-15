@@ -1,0 +1,33 @@
+{
+  "scope": "actual single-queue Vulkan transfer consumers; fixed-resource slot stress",
+  "generations": 64,
+  "readbacks": 128,
+  "max_readback_error": 0,
+  "final_counter": 128,
+  "validation_enabled": true,
+  "round_inventory": {
+    "image_slots": 1,
+    "buffers": 5,
+    "commands": 3,
+    "fences": 3,
+    "timeline_semaphores": 3
+  },
+  "retirement_checks": {
+    "before_A_rejected": 64,
+    "after_A_before_B_rejected": 64,
+    "after_B_allowed": 64
+  },
+  "negative_checks": [
+    "stale generation substitution rejected",
+    "early reuse event tampering rejected",
+    "actual pending generation31 abort cleanup completed",
+    "existing output refused unchanged"
+  ],
+  "cleanup_marker_seen": true,
+  "limits": [
+    "fixture handle inventory, not driver allocator leak proof",
+    "transfer consumers, not sampling/descriptor draw retirement",
+    "single queue, not hardware parallelism or real multi-engine",
+    "no exhaustive allocation/device-loss fault injection"
+  ]
+}

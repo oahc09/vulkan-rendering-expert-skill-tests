@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "active_color_attachments_per_output": 3,
+  "depth_protected_pixels_per_output": 3185,
+  "logical_devices_created": 3,
+  "peak_live_devices": 2,
+  "actual_draws": 9,
+  "rows": [
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "A-initial"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "B-initial"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 152,
+      "partial_pixels": 88,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "B-A-paused"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 253,
+      "partial_pixels": 194,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "B-A-destroyed"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 253,
+      "partial_pixels": 194,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "A-rebuilt"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "B-A-rebuilt"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 152,
+      "partial_pixels": 88,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "A-before-failure"
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 152,
+      "partial_pixels": 88,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "frame": "B-after-failure"
+    }
+  ],
+  "negative_checks": [
+    "paused output rejected without draw",
+    "legal wrong-input GPU readback rejected",
+    "controlled completed-draw failure cleaned A; B still rendered",
+    "existing output refused unchanged"
+  ],
+  "limits": [
+    "not different physical GPUs",
+    "not concurrent queues",
+    "not production memory-leak proof",
+    "failure after completed draw, not arbitrary pending/device-loss",
+    "no target hardware/Live acceptance"
+  ],
+  "scope": "serial independent logical devices using same configured software Vulkan implementation; no cross-instance physical UUID comparison",
+  "maximum_linear_error": 7.152557379708213e-08,
+  "test_count": 1
+}

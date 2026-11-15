@@ -1,0 +1,74 @@
+{
+  "status": "MEASURED_SOFTWARE_ONLY",
+  "conditions": {
+    "warmup_cycles": 5,
+    "measured_cycles": 30,
+    "first_mode_rotates": true,
+    "extent": [
+      65,
+      49
+    ],
+    "glyph": "A",
+    "scale": 1,
+    "phase": 0,
+    "validation_enabled": true,
+    "rgba_reference_tolerance": 2e-06,
+    "every_draw_readback_verified": true,
+    "statistics": "nearest-rank p50/p95/max",
+    "scope": "render-pass timestamps; no startup/compile/upload/readback inside GPU interval; not pure shader timing; not mobile"
+  },
+  "modes": {
+    "baseline": {
+      "gpu_renderpass_ns": {
+        "p50": 505453,
+        "p95": 783888,
+        "max": 1118016
+      },
+      "cpu_submit_ns": {
+        "p50": 16482,
+        "p95": 18812,
+        "max": 19509
+      },
+      "cpu_wait_ns": {
+        "p50": 702386,
+        "p95": 1033473,
+        "max": 1398531
+      }
+    },
+    "binary16": {
+      "gpu_renderpass_ns": {
+        "p50": 5076582,
+        "p95": 6470054,
+        "max": 9810607
+      },
+      "cpu_submit_ns": {
+        "p50": 20563,
+        "p95": 39273,
+        "max": 39985
+      },
+      "cpu_wait_ns": {
+        "p50": 5356765,
+        "p95": 6684319,
+        "max": 13049187
+      }
+    },
+    "linear4": {
+      "gpu_renderpass_ns": {
+        "p50": 815084,
+        "p95": 1277397,
+        "max": 1501898
+      },
+      "cpu_submit_ns": {
+        "p50": 16080,
+        "p95": 24684,
+        "max": 427724
+      },
+      "cpu_wait_ns": {
+        "p50": 1003049,
+        "p95": 1578473,
+        "max": 2211838
+      }
+    }
+  },
+  "capability_check": "timestamp support and validation verified locally; identifying capability fields omitted"
+}

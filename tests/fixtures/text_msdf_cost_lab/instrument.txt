@@ -1,0 +1,14 @@
+  VkQueryPool costQueries{};uint32_t costBits{};double costPeriod{},costGpuNs{},costSubmitNs{},costWaitNs{};
+  void costSubmit(){
+    VK(vkEndCommandBuffer(cb));VK(vkResetFences(device,1,&fence));
+    VkSubmitInfo si{VK_STRUCTURE_TYPE_SUBMIT_INFO};si.commandBufferCount=1;si.pCommandBuffers=&cb;
+    auto t0=std::chrono::steady_clock::now();VK(vkQueueSubmit(queue,1,&si,fence));auto t1=std::chrono::steady_clock::now();
+    VK(vkWaitForFences(device,1,&fence,VK_TRUE,30'000'000'000ull));auto t2=std::chrono::steady_clock::now();
+    costSubmitNs=std::chrono::duration<double,std::nano>(t1-t0).count();costWaitNs=std::chrono::duration<double,std::nano>(t2-t1).count();
+    if(costBits<64 && costSubmitNs+costWaitNs>=std::ldexp(costPeriod,int(costBits)))throw std::runtime_error("timestamp wrap ambiguity");
+    uint64_t result[4]{};VK(vkGetQueryPoolResults(device,costQueries,0,2,sizeof(result),result,2*sizeof(uint64_t),VK_QUERY_RESULT_64_BIT|VK_QUERY_RESULT_WITH_AVAILABILITY_BIT|VK_QUERY_RESULT_WAIT_BIT));
+    if(!result[1]||!result[3])throw std::runtime_error("query unavailable after fence");
+    uint64_t mask=costBits==64?~uint64_t(0):((uint64_t(1)<<costBits)-1);
+    costGpuNs=double((result[2]-result[0])&mask)*costPeriod;
+    if(costGpuNs<=0||!std::isfinite(costGpuNs))throw std::runtime_error("invalid GPU interval");
+  }

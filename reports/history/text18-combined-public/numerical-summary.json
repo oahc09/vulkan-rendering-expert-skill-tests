@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "draws": [
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "old-A"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "route-after-cancel"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 5.189110252601381e-08,
+      "max_roi_error": 5.189110252601381e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "new-B"
+    }
+  ],
+  "actual_draw_count": 4,
+  "actual_upload_count": 3,
+  "peak_atlas_pages": 2,
+  "negative_checks": [
+    "actual completed canceled descriptor route rejected",
+    "controlled pending submissions cleanup",
+    "existing output refused unchanged"
+  ],
+  "scope": "same device/queue actual packed vertex quads plus two-page cancellation/growth/retirement; generation2 scales trusted glyph coverage by0.5",
+  "limits": [
+    "controlled nonoverlapping integer nearest quads",
+    "ALL_COMMANDS gate means submission pending, not shader executing",
+    "single queue blocks candidate upload behind old draw",
+    "not full allocator/device-loss cleanup",
+    "not production packing, multidevice or target hardware"
+  ]
+}

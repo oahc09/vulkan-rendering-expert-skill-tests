@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "tolerance": 1e-06,
+  "excluded_count": 0,
+  "device_instances_per_case": 1,
+  "passes_per_case": 2,
+  "cases": {
+    "normal": {
+      "max_shadow_depth_error": 1.48512578235227e-07,
+      "max_composition_error": 2.384185793236071e-08,
+      "receiver_depth_error": 0.0,
+      "shadowed_receiver_pixels": 213,
+      "excluded_count": 0,
+      "shadow_depth_mismatch_count": 0
+    },
+    "bypass": {
+      "max_shadow_depth_error": 1.48512578235227e-07,
+      "max_composition_error": 0.600000011920929,
+      "receiver_depth_error": 0.0,
+      "shadowed_receiver_pixels": 213,
+      "excluded_count": 0,
+      "shadow_depth_mismatch_count": 0
+    },
+    "wrong-caster": {
+      "max_shadow_depth_error": 1.0,
+      "max_composition_error": 0.600000011920929,
+      "receiver_depth_error": 0.0,
+      "shadowed_receiver_pixels": 213,
+      "excluded_count": 0,
+      "shadow_depth_mismatch_count": 220
+    }
+  },
+  "glyph_ids": {
+    "positive": 47,
+    "wrong_caster": 41
+  },
+  "triangles": {
+    "L": 20,
+    "F": 36
+  },
+  "receiver_z": 10,
+  "bias": 0,
+  "scope": "fixed orthographic hard shadow, actual D32 producer sampled directly; no visible caster lighting or full Scene B"
+}

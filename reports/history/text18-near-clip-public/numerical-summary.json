@@ -1,0 +1,232 @@
+{
+  "status": "BOUNDED_REAL_NEAR_CLIP_STABLE_SAMPLING_PASS",
+  "hardware_nearest_status": "NOT_QUALIFIED",
+  "hardware_nearest_cases": [
+    {
+      "name": "cross-near",
+      "max_composition_error": 0.1482353091239929,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 479,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 167,
+      "projected_zero_hole_pixels": 300,
+      "mismatch_count": 1,
+      "first_mismatches": [
+        {
+          "x": 45,
+          "y": 10,
+          "error": 0.1482353091239929
+        }
+      ],
+      "excluded_count": 0
+    },
+    {
+      "name": "on-near",
+      "max_composition_error": 8.456847255811084e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 1761,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 1567,
+      "projected_zero_hole_pixels": 1317,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "excluded_count": 0
+    },
+    {
+      "name": "behind-near",
+      "max_composition_error": 2.384185793236071e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 0,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 0,
+      "projected_zero_hole_pixels": 0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "excluded_count": 0
+    }
+  ],
+  "uv_diagnostic": {
+    "pixel": [
+      45,
+      10
+    ],
+    "actual_uv": [
+      0.15299145877361298,
+      0.08163264393806458
+    ],
+    "actual_source_texel_coordinate": [
+      8.944444820284843,
+      2.999999552965164
+    ],
+    "exact_source_texel_coordinate": [
+      8.944444444444445,
+      3.0
+    ],
+    "exact_source_fractions": [
+      "161/18",
+      "3"
+    ],
+    "max_depth_preservation_error": 2.6490953208835322e-08,
+    "auxiliary_check": "exact",
+    "purpose": "separate actual UV readback; not a positive glyph composition"
+  },
+  "stable_sampler_max_integer_magnitude": 7754040,
+  "validation_enabled": true,
+  "tolerance": 1e-06,
+  "glyph_id": 50,
+  "source_hole_pixels": 62,
+  "cases": [
+    {
+      "name": "cross-near",
+      "max_composition_error": 8.456847255811084e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 479,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 167,
+      "projected_zero_hole_pixels": 300,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "excluded_count": 0
+    },
+    {
+      "name": "on-near",
+      "max_composition_error": 8.456847255811084e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 1761,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 1567,
+      "projected_zero_hole_pixels": 1317,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "excluded_count": 0
+    },
+    {
+      "name": "behind-near",
+      "max_composition_error": 2.384185793236071e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 0,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 0,
+      "projected_zero_hole_pixels": 0,
+      "mismatch_count": 0,
+      "first_mismatches": [],
+      "excluded_count": 0
+    }
+  ],
+  "actual_gpu_negatives": [
+    {
+      "mode": "wrong-clamp-cross",
+      "name": "cross-near",
+      "max_composition_error": 0.5999999284744263,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 479,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 167,
+      "projected_zero_hole_pixels": 300,
+      "mismatch_count": 602,
+      "first_mismatches": [
+        {
+          "x": 0,
+          "y": 0,
+          "error": 0.5999999284744263
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "error": 0.5999999284744263
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "error": 0.5999999284744263
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "error": 0.5999999284744263
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "error": 0.5999999284744263
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "error": 0.30117648243904116
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "error": 0.30117648243904116
+        },
+        {
+          "x": 7,
+          "y": 0,
+          "error": 0.30117648243904116
+        }
+      ],
+      "excluded_count": 0
+    },
+    {
+      "mode": "wrong-clamp-behind",
+      "name": "behind-near",
+      "max_composition_error": 0.014117644727230066,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 0,
+      "occluded_nonzero_pixels": 0,
+      "unoccluded_nonzero_pixels": 0,
+      "projected_zero_hole_pixels": 0,
+      "mismatch_count": 90,
+      "first_mismatches": [
+        {
+          "x": 0,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 1,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 2,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 3,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 4,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 5,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 6,
+          "y": 0,
+          "error": 0.004705885052680964
+        },
+        {
+          "x": 59,
+          "y": 0,
+          "error": 0.014117644727230066
+        }
+      ],
+      "excluded_count": 0
+    }
+  ],
+  "input_rejections_before_gpu": [
+    "nonpositive-w",
+    "nonfinite"
+  ],
+  "size_policy": "fixed world extent, same camera, cross/on/outside near-domain",
+  "scope": "fixed actual shaped O bitmap, hardware-nearest diagnosis plus integer-ray texelFetch fallback and real Vulkan clip of positive-w triangles at near1; no behind-eye/complex topology/shadow/general renderer"
+}

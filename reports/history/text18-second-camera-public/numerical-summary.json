@@ -1,0 +1,60 @@
+{
+  "status": "BOUNDED_SECOND_CAMERA_PASS",
+  "validation_enabled": true,
+  "tolerance": 1e-06,
+  "cases": [
+    {
+      "name": "A-depth",
+      "max_composition_error": 7.152557379708213e-08,
+      "max_depth_error": 2.6490953208835322e-08,
+      "hidden_nonzero_pixels": 131,
+      "visible_nonzero_pixels": 217,
+      "projected_hole_pixels": 171,
+      "excluded_count": 0
+    },
+    {
+      "name": "A-top",
+      "max_composition_error": 8.456847255811084e-08,
+      "max_depth_error": 2.6490953208835322e-08,
+      "hidden_nonzero_pixels": 131,
+      "visible_nonzero_pixels": 217,
+      "projected_hole_pixels": 171,
+      "excluded_count": 0
+    },
+    {
+      "name": "B-depth",
+      "max_composition_error": 7.152557379708213e-08,
+      "max_depth_error": 8.99673526788547e-08,
+      "hidden_nonzero_pixels": 174,
+      "visible_nonzero_pixels": 136,
+      "projected_hole_pixels": 156,
+      "excluded_count": 0
+    },
+    {
+      "name": "B-top",
+      "max_composition_error": 8.456847255811084e-08,
+      "max_depth_error": 8.99673526788547e-08,
+      "hidden_nonzero_pixels": 174,
+      "visible_nonzero_pixels": 136,
+      "projected_hole_pixels": 156,
+      "excluded_count": 0
+    }
+  ],
+  "actual_gpu_negative": {
+    "name": "B-depth",
+    "max_composition_error": 0.599999998509884,
+    "max_depth_error": 8.99673526788547e-08,
+    "hidden_nonzero_pixels": 174,
+    "visible_nonzero_pixels": 136,
+    "projected_hole_pixels": 156,
+    "excluded_count": 0
+  },
+  "device_instances": 1,
+  "world_vertex_buffers": 1,
+  "shared_atlas_images": 1,
+  "limits": [
+    "one software VkDevice serial views, not parallel surfaces",
+    "actual camera translation and yaw; world geometry/atlas unchanged",
+    "no shadow or full SceneB qualification"
+  ]
+}

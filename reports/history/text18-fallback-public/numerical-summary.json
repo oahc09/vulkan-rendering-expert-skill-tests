@@ -1,0 +1,36 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "numeric": {
+    "glyph_quads": 4,
+    "vertices": 24,
+    "max_linear_error": 7.252544687030849e-08,
+    "max_roi_error": 7.252544687030849e-08,
+    "max_background_error": 1.1920928966180355e-08,
+    "clipped_nonzero_source_pixels": 0,
+    "roi_pixels": 475,
+    "tolerance": 1e-06,
+    "sentinels": "UNCHANGED"
+  },
+  "selected_face_count": 3,
+  "run_count": 4,
+  "cjk_face_index": 2,
+  "missing_final_rejected": true,
+  "actual_wrong_route_rejected": true,
+  "actual_same_id_wrong_face_rejected": true,
+  "same_id_positive": {
+    "glyph_quads": 1,
+    "vertices": 6,
+    "max_linear_error": 7.152557379708213e-08,
+    "max_roi_error": 7.152557379708213e-08,
+    "max_background_error": 1.1920928966180355e-08,
+    "clipped_nonzero_source_pixels": 0,
+    "roi_pixels": 68,
+    "tolerance": 1e-06,
+    "sentinels": "UNCHANGED"
+  },
+  "canonical_combining_equivalent": true,
+  "scope": "fixed whole-run fallback, explicit directions and positions; not paragraph bidi or independent typography quality",
+  "wrong_route_max_composition_error": 0.599999998509884,
+  "same_id_wrong_face_max_composition_error": 0.2800000062409569
+}

@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "cases": [
+    {
+      "base": 0,
+      "line_advance": 50.859375,
+      "run_count": 4,
+      "negative_checks": [
+        "logical-order",
+        "rtl-as-ltr"
+      ],
+      "numeric": {
+        "glyph_quads": 4,
+        "vertices": 24,
+        "max_linear_error": 7.152557379708213e-08,
+        "max_roi_error": 7.152557379708213e-08,
+        "max_background_error": 1.1920928966180355e-08,
+        "clipped_nonzero_source_pixels": 0,
+        "roi_pixels": 175,
+        "tolerance": 1e-06,
+        "sentinels": "UNCHANGED"
+      },
+      "actual_negative_max_composition_error": {
+        "logical-order": 0.599999998509884,
+        "rtl-as-ltr": 0.5882352902082836
+      }
+    },
+    {
+      "base": 1,
+      "line_advance": 50.859375,
+      "run_count": 4,
+      "negative_checks": [
+        "logical-order",
+        "rtl-as-ltr"
+      ],
+      "numeric": {
+        "glyph_quads": 4,
+        "vertices": 24,
+        "max_linear_error": 7.152557379708213e-08,
+        "max_roi_error": 7.152557379708213e-08,
+        "max_background_error": 1.1920928966180355e-08,
+        "clipped_nonzero_source_pixels": 0,
+        "roi_pixels": 175,
+        "tolerance": 1e-06,
+        "sentinels": "UNCHANGED"
+      },
+      "actual_negative_max_composition_error": {
+        "logical-order": 0.599999998509884,
+        "rtl-as-ltr": 0.599999998509884
+      }
+    }
+  ],
+  "official_unicode_vectors": 2,
+  "independent_icu_map_cases": 2,
+  "scope": "fixed single BMP paragraph, two base directions; library bidi plus bounded level/script runs and whole-run fallback; no general layout certification"
+}

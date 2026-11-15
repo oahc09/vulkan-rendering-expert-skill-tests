@@ -1,0 +1,79 @@
+{
+  "status": "BOUNDED_PERSPECTIVE_WORLD_LABEL_PASS",
+  "validation_enabled": true,
+  "tolerance": 1e-06,
+  "glyph_id": 50,
+  "source_hole_pixels": 62,
+  "cases": [
+    {
+      "name": "z2.75-depth",
+      "max_composition_error": 7.152557379708213e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 348,
+      "occluded_nonzero_pixels": 131,
+      "unoccluded_nonzero_pixels": 217,
+      "projected_zero_hole_pixels": 171,
+      "excluded_count": 0
+    },
+    {
+      "name": "z2.75-top",
+      "max_composition_error": 8.456847255811084e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 348,
+      "occluded_nonzero_pixels": 131,
+      "unoccluded_nonzero_pixels": 217,
+      "projected_zero_hole_pixels": 171,
+      "excluded_count": 0
+    },
+    {
+      "name": "z3.75-depth",
+      "max_composition_error": 7.152557379708213e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 183,
+      "occluded_nonzero_pixels": 67,
+      "unoccluded_nonzero_pixels": 116,
+      "projected_zero_hole_pixels": 93,
+      "excluded_count": 0
+    },
+    {
+      "name": "z3.75-top",
+      "max_composition_error": 7.923911604645895e-08,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 183,
+      "occluded_nonzero_pixels": 67,
+      "unoccluded_nonzero_pixels": 116,
+      "projected_zero_hole_pixels": 93,
+      "excluded_count": 0
+    }
+  ],
+  "actual_gpu_negatives": [
+    {
+      "mode": "wrong-depth-policy",
+      "name": "z2.75-depth",
+      "max_composition_error": 0.5249999642372132,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 348,
+      "occluded_nonzero_pixels": 131,
+      "unoccluded_nonzero_pixels": 217,
+      "projected_zero_hole_pixels": 171,
+      "excluded_count": 0
+    },
+    {
+      "mode": "wrong-interpolation",
+      "name": "z2.75-top",
+      "max_composition_error": 0.5999999284744263,
+      "max_depth_preservation_error": 2.6490953208835322e-08,
+      "glyph_roi_pixels": 348,
+      "occluded_nonzero_pixels": 131,
+      "unoccluded_nonzero_pixels": 217,
+      "projected_zero_hole_pixels": 171,
+      "excluded_count": 0
+    }
+  ],
+  "input_rejections_before_gpu": [
+    "near-plane",
+    "nonfinite"
+  ],
+  "size_policy": "constant world extent, two distances same camera",
+  "scope": "fixed actual shaped O bitmap, nearest perspective UV, tilted worldplane, finite occluder/always-on-top policies; not nearplane clipping/shadow/general renderer"
+}
