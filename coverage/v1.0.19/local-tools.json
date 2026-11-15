@@ -1,5 +1,7 @@
 {
-  "run_id": "88863a50-ca86-4f74-a310-21a1e852e693",
+  "source_sha256": "333099cd8a80c9ebede4aef9ee6116cab1df8f41f2e85183b68e6b95f948eee8",
+  "runner_sha256": "f0b1d91c31b9aa35dced210ddcc8f58fd6c26179daa556d41e09caccfbd4331b",
+  "run_id": "23b2078c-49ac-40ab-9be2-919c4003ea5e",
   "runtime_identity": {
     "device_type": 4,
     "device_id": 0,
@@ -30,8 +32,8 @@
       "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
     }
   },
-  "trace_sha256": "51496f03dc4ec606538d85bededb8d72010c55dcfb35d4cffe7f8598d977ade2",
-  "trace_export_sha256": "07cbd317d4c1d36209a793d6607c7b6295259dd3c31b23ba5d5f8b167ca7720d",
+  "trace_sha256": "1b972c2030a090198314eca300a4e2d683dcd355c3c925811f9d03d9276ac2ed",
+  "trace_export_sha256": "f1c1a357f6d653c950416483afc51e444372348bef7835f34b52b62ebf3f5158",
   "parsed_slices": 2,
   "parsed_validation": 1,
   "limitations": [
@@ -65,6 +67,5 @@
     "missing_validation_layer_exit": 2,
     "fault_removed_mutant_exit": 5
   },
-  "source_sha256": "333099cd8a80c9ebede4aef9ee6116cab1df8f41f2e85183b68e6b95f948eee8",
-  "independent_review": "corrected assert removal, runtime identity, event identity/time and run uniqueness; rerun under python -O"
+  "independent_review": "corrected assert removal, runtime identity, event identity/time and run uniqueness; rerun under python -O; exclusive output prevents stale PASS reuse"
 }

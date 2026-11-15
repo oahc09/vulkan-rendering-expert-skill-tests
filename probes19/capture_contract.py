@@ -25,3 +25,7 @@ def trace(raw,events):
   if abs(int(row['ts'])-round(event['ts']*1000))>2000 or abs(int(row['dur'])-round(event['dur']*1000))>2000:
    raise ValueError('trace time mismatch')
  return True
+
+def reserve_output(path):
+ # Exclusive creation prevents a failed retry inheriting an old PASS summary.
+ path.mkdir(parents=True,exist_ok=False)

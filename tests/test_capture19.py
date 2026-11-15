@@ -25,3 +25,9 @@ def test_optimized_python_still_rejects():
 def test_duplicate_trace_ids():
  raw=b'id,ts,dur,track_id,name\n1,10000,2000,1,a\n1,20000,2000,1,b\n'
  with pytest.raises(ValueError):c.trace(raw,[dict(name='a',ts=10,dur=2),dict(name='b',ts=20,dur=2)])
+
+def test_output_reuse_refused(tmp_path):
+ out=tmp_path/'run';c.reserve_output(out)
+ (out/'summary.json').write_text('old PASS')
+ with pytest.raises(FileExistsError):c.reserve_output(out)
+ assert (out/'summary.json').read_text()=='old PASS'

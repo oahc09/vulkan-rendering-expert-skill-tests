@@ -25,3 +25,6 @@ Run with an empty layer directory: must fail. Build a mutant replacing
 tests, including wrong VUID, event name/time/count, duplicate IDs and python -O.
 A good path with no error callbacks is NOT a proof of correctness or warning-free
 execution; the callback subscribes only to validation ERROR severity.
+
+Output directory must not already exist. Use a new directory for every run;
+failed retries cannot inherit a previous PASS summary.

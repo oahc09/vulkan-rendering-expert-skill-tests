@@ -2,7 +2,7 @@
 import argparse,hashlib,json,os,pathlib,subprocess,sys,time,uuid
 import capture_contract
 p=argparse.ArgumentParser();p.add_argument('--probe',required=True);p.add_argument('--trace-processor',required=True);p.add_argument('--output',type=pathlib.Path,required=True);p.add_argument('--layer-manifest',type=pathlib.Path,required=True)
-a=p.parse_args();a.output.mkdir(parents=True,exist_ok=True)
+a=p.parse_args();capture_contract.reserve_output(a.output)
 sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]/'tools'))
 import evidence19
 events=[];cases={}; identities=[];run_id=str(uuid.uuid4())
@@ -28,6 +28,6 @@ scope=json.dumps(identities[0],sort_keys=True)
 records=evidence19.perfetto_csv(r.stdout,run_id,tool,scope)
 validation=evidence19.validation((a.output/'bad.json').read_bytes(),run_id,str(layer['implementation_version']),scope)
 if len(validation)!=1:raise ValueError('unexpected validation count')
-report=dict(run_id=run_id,runtime_identity=identities[0],binary_sha256=hashlib.sha256(pathlib.Path(a.probe).read_bytes()).hexdigest(),manifest_sha256=hashlib.sha256(a.layer_manifest.read_bytes()).hexdigest(),trace_processor_sha256=hashlib.sha256(pathlib.Path(a.trace_processor).read_bytes()).hexdigest(),status='PASS_LOCAL_TOOL_PIPELINE_ONLY',layer_api=layer['api_version'],layer_implementation=layer['implementation_version'],trace_processor=tool,cases=cases,trace_sha256=hashlib.sha256(trace.read_bytes()).hexdigest(),trace_export_sha256=hashlib.sha256(r.stdout).hexdigest(),parsed_slices=len(records),parsed_validation=len(validation),limitations=['authored minimal buffer probe, not real project','software ICD, not hardware/device acceptance','CPU subprocess timing, not GPU execution time','no capture-event/resource generation join','only size VUID checked; clean good case is not general correctness'])
+report=dict(source_sha256=hashlib.sha256(pathlib.Path(__file__).with_name('validation_probe.c').read_bytes()).hexdigest(),runner_sha256=hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),run_id=run_id,runtime_identity=identities[0],binary_sha256=hashlib.sha256(pathlib.Path(a.probe).read_bytes()).hexdigest(),manifest_sha256=hashlib.sha256(a.layer_manifest.read_bytes()).hexdigest(),trace_processor_sha256=hashlib.sha256(pathlib.Path(a.trace_processor).read_bytes()).hexdigest(),status='PASS_LOCAL_TOOL_PIPELINE_ONLY',layer_api=layer['api_version'],layer_implementation=layer['implementation_version'],trace_processor=tool,cases=cases,trace_sha256=hashlib.sha256(trace.read_bytes()).hexdigest(),trace_export_sha256=hashlib.sha256(r.stdout).hexdigest(),parsed_slices=len(records),parsed_validation=len(validation),limitations=['authored minimal buffer probe, not real project','software ICD, not hardware/device acceptance','CPU subprocess timing, not GPU execution time','no capture-event/resource generation join','only size VUID checked; clean good case is not general correctness'])
 (a.output/'summary.json').write_text(json.dumps(report,indent=2)+'\n')
 print(json.dumps(report,indent=2))
