@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `1ce23824050e6c927057cabeedb58bce1398e7b2`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `8d75091cc8041e056f050522c310bcb17642362e`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -17,12 +17,12 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §4.4 beyond-64k/new tables | Wide-ID and range contracts | Partial: real capable provider and new font format fixtures unavailable/unverified; uint32 storage is not provider support |
 | §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded pass; color glyph/emoji, variable font, MSDF/MTSDF implementation/comparison are local open, not device-only blockers |
 | §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bilinear/mip bleed, fractional geometry, distance range/derivatives remain local open |
-| §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: shrinking, rotation, perspective and comparative representation board local open |
+| §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask fallback pass; triangulation, stroke/cap/join/dash and broader topology are local open |
 | §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
 | §6.4 world/3D | Knowledge only | Local open: world labels, near-plane clipping, finite extrusion/bevel, depth/shadows/second view |
 | §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
-| §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; sustained real glyph/size/locale churn remains local open |
+| §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; six-transition real run/size/direction churn added; long stress and locale/variation semantics remain open |
 | §7.4 consumers | Two immutable sampled descriptor sets and pending timeline-gated fragment submissions; real fence status | Bounded pass; not shader-already-running, multi-queue or multi-device proof |
 | §7.4 multi-engine | CPU boundaries described | Local open: two real Vulkan devices/outputs, shared CPU cache and independent GPU handles, pause/rebuild/destruction |
 | §7.4 MRT | Active 3-color plus D32 write protection and legal wrong-output negatives; old fallback preserved | Bounded pass; stencil, actual occlusion, rendergraph/world ordering remain local open |
@@ -35,7 +35,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
 | §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, variable fonts, representations and transformations missing |
 | §11B vector/world | Five generated masks, holes/curves/negative scale; hard nested shader clip | Partial: strokes, general/AA clips, world meshes/shadows/second view missing |
-| §11C churn/overlay | Separate bounded packing/growth/churn/descriptor experiments | Partial: real changing glyph/size/locale/axis stream combined with two engines and active outputs not run |
+| §11C churn/overlay | Combined two-page lifecycle plus six-transition real content/size/direction churn | Partial: locale/axis semantics, two engines, active outputs and long stress not run |
 | §12 TEXT18-01…20 | 20 registered cases, paired controls/rubrics, static validation | Registration is not model behavior; all 20 semantic Live results unverified |
 | §12.1 old cohorts | Preserved legacy contract and separate CI | Full accepted CORE17+TEXT18 union not established; no invented final scenario count |
 | §13 layered gates | Static/CPU/shader/software-Vulkan and narrow ROI evidence | Not platform/model/device/host acceptance; see layer table below |
@@ -138,3 +138,33 @@ production threading/allocator/device-loss recovery, and real-device/Live gates
 remain open. Single queue means B upload waits behind gated A; no parallel GPU
 execution or mobile performance claim. Atlas page counts exclude inherited
 setup resources and do not establish driver/CPU service leak freedom.
+
+## Six-transition real-content and affine sampling increment
+
+`text_content_churn_lab` replaces the prior attenuated-coverage-only input with
+seven genuinely different shaped/rasterized run inputs (O/ffi/Arabic, sizes14/20/24,
+ltr/rtl, explicit en/ar/tr language values). Six transitions occur in one Vulkan
+process/device/queue, with18 primary draws and13 uploads. Each transition has
+pending old draw + canceled new-content upload, a real retained-old route draw,
+then fresh upload/publication/new draw and retirement. Every round releases
+completed submissions and ends with one live page object / zero submission
+objects. Independent original raster pixels verify all18 outputs; stale readback
+and publication-event mutation fail. These bounded fixture counts are not driver
+or font-service leak qualification, nor multi-engine/thermal stress.
+
+Each run is a composited bitmap packed into one padded UV quad, not newly proven
+per-glyph geometry/layout. Language is passed to HarfBuzz but locale-specific
+shape changes are **not** established. No variable axes exist in the trusted
+DejaVu input or the368 TTF/OTF files inspected in the local font directory;
+variation is **unverified for this run**, not a claim that no suitable official
+variable-font fixture could be obtained later. Full locale/fallback/variation
+semantics and target-platform execution remain open.
+
+`text_affine_quality_lab` adds actual O quads at0.5/1/1.5 scale and90-degree rotation.
+An independent inverse pixel-center nearest-sampling reference checks all color
+and ROI samples at1e-6 and accumulated coverage area at1e-3 (fixed before runs).
+Valid wrong UV and corrupted readback reject. Actual small and rotated outputs
+were inspected. Normalized area change is an aliasing diagnostic, **not a font
+quality gate**: reproducing nearest aliasing does not establish optimal filtering,
+MSDF, arbitrary-angle/perspective or temporal-transform quality. Other original
+plan gaps and device/Live/host requirements remain unchanged.

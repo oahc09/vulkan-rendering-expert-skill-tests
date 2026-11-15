@@ -170,3 +170,18 @@ This is one controlled two-page cycle using scaled original glyph coverage,
 not sustained language/variation churn, multi-device concurrency, production
 allocation recovery or the active-MRT/clip experiments combined into one frame.
 Raw failure/debug/environment evidence stays local; no target/Live claim.
+
+## Real-content six-transition and affine diagnostics
+
+A separate one-device executable now cycles seven distinct real shaped/rasterized
+content pages over six cancel/publish/retire transitions (18 primary readback draws,
+13 uploads). It releases completed submission objects each round and retains one
+live page. Inputs cover O/ffi/Arabic and sizes14/20/24, including RTL. This is a
+composited run-bitmap UV quad, not per-glyph layout. Language pass-through does not
+prove locale-specific behavior. The trusted input has no variable axes; variation
+is unverified for this run and remains a separate fixture requirement.
+
+Actual half/unit/1.5-scale and quarter-turn bitmap sampling now has independent
+pixel-center reconstruction and valid wrong-UV rejection. Nearest aliasing is
+measured, not accepted as general font quality. Neither finite experiment supplies
+multi-device/target-platform/Live or comprehensive original-plan acceptance.
