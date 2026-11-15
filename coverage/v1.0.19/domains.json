@@ -118,7 +118,23 @@
         "SC",
         "external-engine acceptance"
       ]
-    }
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/memory-binding-contract19.md",
+        "entry": "checks19/run_memory_binding_contracts.py",
+        "rules": "tools/memory_binding_contract19.py",
+        "evidence": "memory-binding-contract.json",
+        "scope": "ordinary requirements/binding, versioned dedicated allocation size, mixed adjacent-page and free lifetime obligations",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
   },
   {
     "id": "VK05",
