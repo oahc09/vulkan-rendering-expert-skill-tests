@@ -257,8 +257,24 @@
     "existing_route": "[合同入口](04_buffer_image_memory/query_pool.md#query-generation-contract)",
     "open_review": "性能query/calibrated timestamp全部扩展规则",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "timestamp_family": {
+      "contract": "query_pool.md#delivery19-timestamp-query-family",
+      "rules": "tools/query19.py",
+      "evidence": "query-timestamp.json",
+      "scope": "ordinary timestamp single-device single-queue command reset, nonwaiting availability and host result layout; software-ICD timestamps not hardware performance",
+      "domain_complete": false,
+      "still_open": [
+        "occlusion/pipeline statistics full contracts",
+        "performance/calibrated timestamp extension families",
+        "multi-queue clock correlation",
+        "host reset feature variants",
+        "physical/mobile GPU timing and overhead",
+        "external-engine/Live/blind acceptance",
+        "Vulkan SC"
+      ]
+    }
   },
   {
     "id": "VK13",
