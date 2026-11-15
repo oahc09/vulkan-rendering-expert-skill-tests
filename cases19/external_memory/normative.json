@@ -1,0 +1,53 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "entries": [
+    {
+      "owner": "VkMemoryAllocateInfo",
+      "condition": "core",
+      "vuid": "VUID-VkMemoryAllocateInfo-pNext-00639",
+      "text": "If the <code>pNext</code> chain includes a <code>VkExportMemoryAllocateInfo</code> structure, and any of the handle types specified in <code>VkExportMemoryAllocateInfo</code>::<code>handleTypes</code> require a dedicated allocation, as reported by <a href=\"#vkGetPhysicalDeviceImageFormatProperties2\">vkGetPhysicalDeviceImageFormatProperties2</a> in <code>VkExternalImageFormatProperties</code>::<code>externalMemoryProperties.externalMemoryFeatures</code>, or by <a href=\"#vkGetPhysicalDeviceExternalBufferProperties\">vkGetPhysicalDeviceExternalBufferProperties</a> in <code>VkExternalBufferProperties</code>::<code>externalMemoryProperties.externalMemoryFeatures</code>, the <code>pNext</code> chain <strong class=\"purple\">must</strong> include a <code>VkMemoryDedicatedAllocateInfo</code> or <code>VkDedicatedAllocationMemoryAllocateInfoNV</code> structure with either its <code>image</code> or <code>buffer</code> member set to a value other than <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>",
+      "page": "chapters/memory.html"
+    },
+    {
+      "owner": "VkMemoryAllocateInfo",
+      "condition": "core",
+      "vuid": "VUID-VkMemoryAllocateInfo-allocationSize-01742",
+      "text": "If the parameters define an import operation, the external handle specified was created by the Vulkan API, and the external handle type is <code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT</code>, then the values of <code>allocationSize</code> and <code>memoryTypeIndex</code> <strong class=\"purple\">must</strong> match those specified when the payload being imported was created",
+      "page": "chapters/memory.html"
+    },
+    {
+      "owner": "VkMemoryDedicatedAllocateInfo",
+      "condition": "core",
+      "vuid": "VUID-VkMemoryDedicatedAllocateInfo-buffer-01879",
+      "text": "If <code>buffer</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> and <a href=\"#VkMemoryAllocateInfo\">VkMemoryAllocateInfo</a> defines a memory import operation with handle type <code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT</code>, the memory being imported <strong class=\"purple\">must</strong> also be a dedicated buffer allocation and <code>buffer</code> <strong class=\"purple\">must</strong> be identical to the buffer associated with the imported memory",
+      "page": "chapters/memory.html"
+    },
+    {
+      "owner": "VkImportMemoryFdInfoKHR",
+      "condition": "core",
+      "vuid": "VUID-VkImportMemoryFdInfoKHR-fd-00668",
+      "text": "The memory from which <code>fd</code> was exported <strong class=\"purple\">must</strong> have been created on the same underlying physical device as <code>device</code>",
+      "page": "chapters/memory.html"
+    },
+    {
+      "owner": "VkImportMemoryFdInfoKHR",
+      "condition": "core",
+      "vuid": "VUID-VkImportMemoryFdInfoKHR-fd-01746",
+      "text": "The memory represented by <code>fd</code> <strong class=\"purple\">must</strong> have been created from a physical device and driver that is compatible with <code>device</code> and <code>handleType</code>, as described in <a href=\"#external-memory-handle-types-compatibility\">External Memory Handle Types Compatibility</a>",
+      "page": "chapters/memory.html"
+    },
+    {
+      "owner": "vkGetMemoryFdPropertiesKHR",
+      "condition": "core",
+      "vuid": "VUID-vkGetMemoryFdPropertiesKHR-handleType-00674",
+      "text": "<code>handleType</code> <strong class=\"purple\">must</strong> not be <code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT</code>",
+      "page": "chapters/memory.html"
+    }
+  ]
+}

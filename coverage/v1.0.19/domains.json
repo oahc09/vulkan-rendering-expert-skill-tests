@@ -411,8 +411,23 @@
     "existing_route": "[合同入口](04_buffer_image_memory/external_resource_interop.md#interop-handle-matrix)",
     "open_review": "各平台handle消费/权限与跨API兼容完整组合",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "memory_fd_lifecycle": {
+      "contract": "external_resource_interop.md#delivery19-memory-fd-lifecycle",
+      "rules": "tools/external_memory19.py",
+      "evidence": "external-memory.json",
+      "scope": "same-process two-instance CPU ICD Vulkan-origin OPAQUE_FD buffer allocation export/import/bind and ownership cleanup, no queue submissions or payload visibility claim",
+      "domain_complete": false,
+      "still_open": [
+        "cross-device GPU synchronization and external ownership transfer",
+        "external semaphore/fence FD unavailable on current ICD",
+        "cross-process and cross-API protocols",
+        "images, DMA_BUF, Win32, AHB and protected content",
+        "physical/mobile hardware",
+        "full VK17, Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK18",
