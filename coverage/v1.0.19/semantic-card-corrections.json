@@ -1,0 +1,56 @@
+{
+  "status": "BOUNDED_CARD_CORRECTION",
+  "source_snapshot": "Vulkan-Headers 1.4.309; separate from Registry1.4.368",
+  "records": [
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_update.md",
+      "before_commit": "b1a3f72e03c9a9621224746146e12a7d5beab81b",
+      "before_sha256": "ca0aebc27d3d65555441190719c468521ba22ecf7617c21210a321905ad56a04",
+      "historical_lines": [
+        {
+          "line": 125,
+          "text": "- [ ] 资源销毁前是否已更新 descriptor 指向新资源或等待 GPU idle？"
+        }
+      ],
+      "after_sha256": "a7e988f7d41b9af314e82a63a001f35925f69b53b530cada5d3a44cf8b1b6626",
+      "review_scope": "bounded descriptor card contradiction repair; not complete L1/L2"
+    },
+    {
+      "path": "references/03_api_manual/05_descriptor/descriptor_indexing.md",
+      "before_commit": "b1a3f72e03c9a9621224746146e12a7d5beab81b",
+      "before_sha256": "94775066751aa0150730f6af5579fa7dff3232ac5212c01382e9219342713043",
+      "historical_lines": [
+        {
+          "line": 44,
+          "text": "- 对应 feature bit 必须在 `VkPhysicalDeviceDescriptorIndexingFeatures` 中开启（`shaderSampledImageArrayNonUniformIndexing` / `shaderStorageBufferArrayNonUniformIndexing` / `descriptorBindingPartiallyBound` / `descriptorBindingUpdateAfterBind` / `descriptorBindingVariableDescriptorCount` 等）。[SPEC]"
+        },
+        {
+          "line": 83,
+          "text": "| `VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT` | binding 允许在 set 被 command buffer 引用期间继续 update。[SPEC] | `descriptorBindingUpdateAfterBind` |"
+        },
+        {
+          "line": 101,
+          "text": "       检查：descriptorBindingPartiallyBound / descriptorBindingUpdateAfterBind /"
+        },
+        {
+          "line": 112,
+          "text": "       descriptorBindingUpdateAfterBind = VK_TRUE"
+        },
+        {
+          "line": 172,
+          "text": "- [ ] 启用了 `UPDATE_AFTER_BIND` 的 binding 是否在 feature 中开启了 `descriptorBindingUpdateAfterBind`？"
+        },
+        {
+          "line": 289,
+          "text": "- 早期 Adreno 6xx 驱动可能未开启 `descriptorBindingUpdateAfterBind`，需运行期查询。[ANDROID]"
+        },
+        {
+          "line": 295,
+          "text": "- Mali Valhall / Gen5 驱动支持 descriptor indexing，但 `descriptorBindingUpdateAfterBind` 与 `descriptorBindingPartiallyBound` 的稳定性因 driver 版本差异较大。[ANDROID]"
+        }
+      ],
+      "after_sha256": "b012062d106f7451c2174ed25afcca7173af7281336bf3b651d0b1806211d682",
+      "review_scope": "bounded descriptor card contradiction repair; not complete L1/L2"
+    }
+  ]
+}
