@@ -698,3 +698,31 @@ Android/DirectWrite providers, physical target devices, semantic Live/host and
 cumulative branch integration are separate external/dependency conditions. No
 claim is made that only external conditions remain or that more finite glyph
 examples would alone complete these milestones.
+
+## Bounded opaque stroke/cap/join Vulkan path
+
+The original §6.1/§11B stroke gap now has a finite executable implementation:
+screen-pixel width for one/two straight segments; butt/square/round caps and
+bevel/miter joins. Miter ratio is tip distance divided by half-width; a value
+above the declared limit falls back to bevel. Curve/dash, unsupported join and
+invalid/over-budget inputs reject before GPU execution. Round caps use64 segments.
+
+Six generated stroke meshes are actually drawn with opaque same-color union;
+segments/caps can overlap, so this is not a nonoverlapping mesh or transparent
+stroke proof. Independent projection/distance/convex-region reference uses the
+original path and cap/join request, not emitted GPU triangles. Wrong square-cap
+and ignored-miter-limit meshes are actually drawn and rejected outside both
+predeclared boundary guards. Non-target attachment checks include negative paths.
+
+Status is BOUNDED_INTERIOR_PASS only. The predeclared .01px guard conservatively
+covers analytic primitive boundaries, including internal union edges; its bound
+exceeds the maximum r4/N64 circle sagitta plus fixed .005px raster reserve. Original
+1e-6 composition tolerance is unchanged outside that guard. All excluded pixels
+and errors are published: polyline cases retain8 excluded pixels each and full
+image error up to .8, rather than hiding hard-edge mismatch as full pixel accuracy.
+
+This is an actual authored-path GPU capability, not complete SVG or font-stroke
+support. Curved/dashed strokes, round joins, general topology, AA, transparency,
+world-coordinate widths/perspective and target-device behavior remain unsupported
+or unverified. Other original world/quality/platform/Live/dependency gaps remain
+as previously listed; this finite increment does not close the complete milestone.
