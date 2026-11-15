@@ -1,0 +1,123 @@
+{
+  "status": "BOUNDED_PASS",
+  "rows": [
+    {
+      "scale": 0.5,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 39,
+      "guard_max_error": 7.152557379708213e-08,
+      "all_mismatch_pixels": 0,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.02530560912102781
+    },
+    {
+      "scale": 0.5625,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 17,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 8,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.028468810261154213
+    },
+    {
+      "scale": 0.625,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 52,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 1,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.03163201140128092
+    },
+    {
+      "scale": 0.6875,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 47,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 28,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.03479521254141117
+    },
+    {
+      "scale": 0.75,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 31,
+      "guard_max_error": 7.152557379708213e-08,
+      "all_mismatch_pixels": 0,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.0379584136815376
+    },
+    {
+      "scale": 0.8125,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 27,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 8,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.041121614821667846
+    },
+    {
+      "scale": 0.875,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 70,
+      "guard_max_error": 7.152557379708213e-08,
+      "all_mismatch_pixels": 0,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.044284815961794545
+    },
+    {
+      "scale": 0.9375,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 65,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 41,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.04744801710192126
+    },
+    {
+      "scale": 1.0,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 86,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 3,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.050611218242051496
+    },
+    {
+      "scale": 1.0625,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 31,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 13,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.05377441938218175
+    },
+    {
+      "scale": 1.125,
+      "max_off_boundary_error": 7.152557379708213e-08,
+      "reported_guard_pixels": 88,
+      "guard_max_error": 0.599999998509884,
+      "all_mismatch_pixels": 1,
+      "vertices": 19,
+      "triangles": 17,
+      "dense_curve_error": 0.05693762052230843
+    }
+  ],
+  "negative": "actual stale-scale GPU readback rejects",
+  "draws": 11,
+  "limits": [
+    "hard center samples; boundary guard reported not hidden",
+    "dense curve diagnostic not general proof",
+    "one curve with finite affine progressive scales",
+    "no temporal antialiasing/production cache or target GPU/Live qualification"
+  ]
+}

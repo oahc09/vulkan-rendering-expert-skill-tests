@@ -321,3 +321,16 @@ large A; that invalid diagnostic is retained locally and is not acceptance
 evidence. The candidate oracle instead uses only a same-sign/saturation test
 across all contributing bilinear texels, otherwise explicitly samples the full
 pixel footprint. Neither reference nor GPU input is cropped by a guessed ROI.
+
+
+## Progressive curve mesh increment
+
+Eleven actual quadratic-cap triangle draws cover fixed scales0.5–1.125 with
+quarter-pixel phase. Each frame regenerates screen-space flattened vertices;
+19vertices/17triangles remain sufficient across this narrow interval. Dense
+analytic curve samples stay within0.125px; original analytic fill checks linear
+blend<=1e-6 outside a predeclared0.25px boundary guard. Guard counts/errors and
+all hard-edge mismatches remain reported (up to41 pixels in one frame); this
+is not pixel consistency, temporal stability or AA quality acceptance. Actual
+stale-scale readback rejects. An initial test's mistaken expectation of changing
+vertex counts was corrected without changing scales or numerical gates.
