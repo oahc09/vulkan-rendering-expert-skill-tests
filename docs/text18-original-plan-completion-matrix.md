@@ -641,3 +641,32 @@ phases. Those results are retained, not replaced by an aggregate-only claim.
 The grids imply16/64/256 texture samples per pixel, not measured GPU time, energy
 or mobile feasibility. Full glyph sets, transforms, perceptual temporal quality,
 real platform raster providers and physical device/Live gates remain open.
+
+## Exact sibling dependency execution and actual upload backpressure
+
+A fixed manifest now makes CORE17's independent tests4fc46/Skill068a pair and
+original contract/gate hashes executable dependencies of TEXT18 CI. The added
+job runs the unchanged CORE17 versioned gate and Skill17 self-checks after clean
+full-history/exact-head/ancestry checks. It does not merge the sibling branch,
+retarget either PR, rewrite the old release contract, or upgrade the six partial
+links to equivalent semantic acceptance. DEPENDENCY_STATIC_PAIR_PASS is only the
+pinned static pair; cumulative merged acceptance and Live remain unclosed.
+
+The new upload-budget fixture connects §7.6 limits to actual Vulkan submissions,
+not only a CPU budget helper. Its declared experimental capacity is one12740-byte
+65x49 R32F payload per epoch and one in-flight upload. Three cycles exercise
+18 reasoned rejections with unchanged pre/post state, including malformed input,
+overflow, epoch exhaustion and pending-capacity exhaustion. Cancel does not free
+pending capacity; a new epoch does not erase in-flight work. Real completion
+allows retry, while already-charged epoch bytes remain until the next epoch.
+Seven uploads are accepted, six actual rendered images use unchanged1e-6 oracles.
+
+On completed submissions, actual staging/readback/vertex/image/framebuffer/fence
+and command-buffer resources are released, page upload references cleared, and
+submission objects removed. Each cycle returns to one page, zero submissions and
+zero resident staging payload/handles. These are observable fixture resources,
+not total VkMemory allocation/driver VRAM or process leak measurements. It is a
+fixed-size single-owner experiment, not arbitrary allocation-failure rollback,
+production concurrency, font-service cache accounting or device-loss recovery.
+Earlier dynamic quality remains MEASURED_NOT_QUALIFIED; physical platforms,
+target-device performance, actual host and semantic Live remain unverified.

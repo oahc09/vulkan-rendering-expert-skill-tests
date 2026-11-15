@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "scope": "Independent pinned CORE17 static dependency pair; not merged TEXT18 coverage",
+  "tests_repository": "oahc09/vulkan-rendering-expert-skill-tests",
+  "tests_sha": "4fc46c4788cfaf4836037b66fa17d403970395d3",
+  "skill_repository": "oahc09/vulkan-rendering-expert-skill",
+  "skill_sha": "068a967038ce92a0d4f7c28e4dcdc70a1a3c7c4c",
+  "tests_base_sha": "528ba9ea7b417684c1066aceabd9a79cae4cd05b",
+  "contract_sha256": "e69b81208bd78b71c52bd15f39e1573c4fa2e40899e79b1761804d50913c657c",
+  "gate_sha256": "bda42ac92b51a78f65b1beca853bfc8320b57b1e25da7d45cc9e46beac812b7e",
+  "cohort": "core17",
+  "equivalent_reuse": 0,
+  "partial_legacy_links": 6,
+  "release_status": "BLOCKED"
+}

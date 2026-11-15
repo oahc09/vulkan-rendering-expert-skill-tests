@@ -1,0 +1,743 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "cycles": 3,
+  "accepted_uploads": 7,
+  "rejected_requests_or_early_completion": 18,
+  "positive_images": 6,
+  "payload_capacity_bytes": 12740,
+  "epoch_and_inflight_independent": true,
+  "actual_owned_staging_payload_at_steady": 0,
+  "actual_owned_submission_objects_at_steady": 0,
+  "rows": [
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "cycle": 0,
+      "stage": "old"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 5.189110252601381e-08,
+      "max_roi_error": 5.189110252601381e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "cycle": 0,
+      "stage": "new"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 5.189110252601381e-08,
+      "max_roi_error": 5.189110252601381e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "cycle": 1,
+      "stage": "old"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "cycle": 1,
+      "stage": "new"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "cycle": 2,
+      "stage": "old"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 5.189110252601381e-08,
+      "max_roi_error": 5.189110252601381e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "cycle": 2,
+      "stage": "new"
+    }
+  ],
+  "accounting_events": [
+    {
+      "kind": "rejection",
+      "reason": "dimension_nonfinite",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "dimension_invalid",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "payload_overflow",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "extent_unsupported",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "mask_size",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "mask_nonfinite_or_range",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 0,
+        "epoch_bytes": 0,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 0,
+        "page_objects": 0,
+        "live_pages": 0,
+        "submission_objects": 0,
+        "published": -1
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "epoch_byte_limit",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 1,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 1,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "upload_not_complete",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 1,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 1,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "inflight_upload_limit",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 2,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 2,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      }
+    },
+    {
+      "kind": "cancel_pending",
+      "cycle": 0,
+      "state": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 2,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 2,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 0
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "epoch_byte_limit",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 2,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 3,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 2
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 2,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 3,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 2
+      }
+    },
+    {
+      "kind": "steady",
+      "cycle": 0,
+      "state": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 2,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 3,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 2
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "epoch_byte_limit",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 3,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 3,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "upload_not_complete",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 3,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 3,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "inflight_upload_limit",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 4,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 4,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      }
+    },
+    {
+      "kind": "cancel_pending",
+      "cycle": 1,
+      "state": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 4,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 4,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 2
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "epoch_byte_limit",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 4,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 5,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 4
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 4,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 5,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 4
+      }
+    },
+    {
+      "kind": "steady",
+      "cycle": 1,
+      "state": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 4,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 5,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 4
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "epoch_byte_limit",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 5,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 5,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "upload_not_complete",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 5,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 5,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "inflight_upload_limit",
+      "before": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 6,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      },
+      "after": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 6,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      }
+    },
+    {
+      "kind": "cancel_pending",
+      "cycle": 2,
+      "state": {
+        "resident_staging_payload": 12740,
+        "staging_handles": 1,
+        "epoch": 6,
+        "epoch_bytes": 0,
+        "inflight_bytes": 12740,
+        "inflight_uploads": 1,
+        "accepted_uploads": 6,
+        "page_objects": 2,
+        "live_pages": 2,
+        "submission_objects": 2,
+        "published": 4
+      }
+    },
+    {
+      "kind": "rejection",
+      "reason": "epoch_byte_limit",
+      "before": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 6,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 7,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 6
+      },
+      "after": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 6,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 7,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 6
+      }
+    },
+    {
+      "kind": "steady",
+      "cycle": 2,
+      "state": {
+        "resident_staging_payload": 0,
+        "staging_handles": 0,
+        "epoch": 6,
+        "epoch_bytes": 12740,
+        "inflight_bytes": 0,
+        "inflight_uploads": 0,
+        "accepted_uploads": 7,
+        "page_objects": 1,
+        "live_pages": 1,
+        "submission_objects": 0,
+        "published": 6
+      }
+    }
+  ],
+  "limits": [
+    "payload bytes not Vulkan allocation size or VRAM",
+    "counts exclude inherited startup resources and CPU font-service caches",
+    "no allocation/device-loss fault injection",
+    "single software Vulkan queue and fixed glyph input",
+    "no product throughput/capacity promise or target-device/Live acceptance"
+  ]
+}
