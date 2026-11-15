@@ -153,6 +153,19 @@
         "concurrent queues and noncoherent visibility",
         "physical/mobile hardware and external-engine/Live/blind acceptance"
       ]
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
+      ]
     }
   },
   {
@@ -194,6 +207,19 @@
         "graphics material and presentation integration",
         "concurrent queues and noncoherent visibility",
         "physical/mobile hardware and external-engine/Live/blind acceptance"
+      ]
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
       ]
     }
   },
@@ -274,6 +300,19 @@
         "graphics material and presentation integration",
         "concurrent queues and noncoherent visibility",
         "physical/mobile hardware and external-engine/Live/blind acceptance"
+      ]
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
       ]
     }
   },
@@ -392,6 +431,19 @@
         "evidence": "secondary-draw.json",
         "not_production_repair": true
       }
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
+      ]
     }
   },
   {

@@ -1,0 +1,1044 @@
+{
+  "run_id": "9065cc1d-ae30-4e8b-a721-8db42ddd964e",
+  "source_sha256": "d4d7ce0d8297f3b90f90caa8a0a20dffb9a06c18890a780d0afa5e2d57e99fc5",
+  "runner_sha256": "2170505259d86e888f336def7de61504088b424e8b343d7b7f2e947052943f46",
+  "rules_sha256": "1f64da47c004451290e13756224daea8cb8bedaf044d2c28704d193ace1648f0",
+  "attachment_rules_sha256": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
+  "binary_sha256": "dc390bb9646f311b4c69adf97b10ae5da939a5bc03da8d3c96b426adeef44ea6",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "good": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "source_allocation": {
+          "kind": "source_allocation",
+          "memoryTypeBits": 1,
+          "selectedType": 0,
+          "selectedFlags": 15,
+          "size": 256,
+          "alignment": 64
+        },
+        "sampler": {
+          "kind": "sampler",
+          "min": 0,
+          "mag": 0,
+          "mipmap": 0,
+          "u": 2,
+          "v": 2,
+          "w": 2,
+          "minLod": 0.0,
+          "maxLod": 0.0,
+          "unnormalized": 0,
+          "compare": 0,
+          "anisotropy": 0
+        },
+        "descriptor": {
+          "kind": "descriptor",
+          "binding": 0,
+          "count": 1,
+          "type": 1,
+          "stages": 16,
+          "layout": 1,
+          "sourceOrdinal": 0,
+          "outputOrdinal": 1,
+          "distinctImages": true
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 21,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "source_contract": {
+          "kind": "source_contract",
+          "storeOp": 0,
+          "loadOp": 1,
+          "oldLayout": 1,
+          "newLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "imageIsSource": true,
+          "aspect": 1,
+          "baseMip": 0,
+          "levelCount": 1,
+          "baseLayer": 0,
+          "layerCount": 1,
+          "distinctPipelines": true,
+          "sourceViewFormat": 37,
+          "viewType": 1
+        },
+        "two_pass": {
+          "kind": "two_pass",
+          "sameSourceView": true,
+          "sourceLayout": 1,
+          "descriptorLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "srcAccess": 256,
+          "dstAccess": 32,
+          "dependencyRecorded": true,
+          "sourceHostFilled": false
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              255,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              255,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 0
+        }
+      },
+      "admission": {
+        "status": "WITHIN_SCOPE"
+      },
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "c7089d0ef0a32383605b72bd9596aa797e2a3170df71a52eaf136f69cf6a8bac",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "missing-dependency": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "source_allocation": {
+          "kind": "source_allocation",
+          "memoryTypeBits": 1,
+          "selectedType": 0,
+          "selectedFlags": 15,
+          "size": 256,
+          "alignment": 64
+        },
+        "sampler": {
+          "kind": "sampler",
+          "min": 0,
+          "mag": 0,
+          "mipmap": 0,
+          "u": 2,
+          "v": 2,
+          "w": 2,
+          "minLod": 0.0,
+          "maxLod": 0.0,
+          "unnormalized": 0,
+          "compare": 0,
+          "anisotropy": 0
+        },
+        "descriptor": {
+          "kind": "descriptor",
+          "binding": 0,
+          "count": 1,
+          "type": 1,
+          "stages": 16,
+          "layout": 1,
+          "sourceOrdinal": 0,
+          "outputOrdinal": 1,
+          "distinctImages": true
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 21,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "source_contract": {
+          "kind": "source_contract",
+          "storeOp": 0,
+          "loadOp": 1,
+          "oldLayout": 1,
+          "newLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "imageIsSource": true,
+          "aspect": 1,
+          "baseMip": 0,
+          "levelCount": 1,
+          "baseLayer": 0,
+          "layerCount": 1,
+          "distinctPipelines": true,
+          "sourceViewFormat": 37,
+          "viewType": 1
+        },
+        "two_pass": {
+          "kind": "two_pass",
+          "sameSourceView": true,
+          "sourceLayout": 1,
+          "descriptorLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "srcAccess": 256,
+          "dstAccess": 32,
+          "dependencyRecorded": false,
+          "sourceHostFilled": false
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": false,
+          "discarded": true
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "admission": {
+        "status": "MISSING_DEPENDENCY"
+      },
+      "diagnostics": [
+        "missing-dependency SYNC-HAZARD-READ-AFTER-WRITE"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e3ff28a6938ee68eef3382d73da54fc7a05295cc46bd4925927e74445b85adb8",
+      "stderr_sha256": "a8349d0ecda60ef5bf43a62401889d0f8b6358342550f37a522466b2939f1801"
+    },
+    "wrong-output": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "source_allocation": {
+          "kind": "source_allocation",
+          "memoryTypeBits": 1,
+          "selectedType": 0,
+          "selectedFlags": 15,
+          "size": 256,
+          "alignment": 64
+        },
+        "sampler": {
+          "kind": "sampler",
+          "min": 0,
+          "mag": 0,
+          "mipmap": 0,
+          "u": 2,
+          "v": 2,
+          "w": 2,
+          "minLod": 0.0,
+          "maxLod": 0.0,
+          "unnormalized": 0,
+          "compare": 0,
+          "anisotropy": 0
+        },
+        "descriptor": {
+          "kind": "descriptor",
+          "binding": 0,
+          "count": 1,
+          "type": 1,
+          "stages": 16,
+          "layout": 1,
+          "sourceOrdinal": 0,
+          "outputOrdinal": 1,
+          "distinctImages": true
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 21,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "source_contract": {
+          "kind": "source_contract",
+          "storeOp": 0,
+          "loadOp": 1,
+          "oldLayout": 1,
+          "newLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "imageIsSource": true,
+          "aspect": 1,
+          "baseMip": 0,
+          "levelCount": 1,
+          "baseLayer": 0,
+          "layerCount": 1,
+          "distinctPipelines": true,
+          "sourceViewFormat": 37,
+          "viewType": 1
+        },
+        "two_pass": {
+          "kind": "two_pass",
+          "sameSourceView": true,
+          "sourceLayout": 1,
+          "descriptorLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "srcAccess": 256,
+          "dstAccess": 32,
+          "dependencyRecorded": true,
+          "sourceHostFilled": false
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              255,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              255,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              0,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 6
+        }
+      },
+      "admission": {
+        "status": "WITHIN_SCOPE"
+      },
+      "diagnostics": [],
+      "exit_code": 6,
+      "stdout_sha256": "f522af940414a7830ba9b689ae3178210c198c19bbeff21fe0829c50a6eddaa7",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "heuristic-off": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "source_allocation": {
+          "kind": "source_allocation",
+          "memoryTypeBits": 1,
+          "selectedType": 0,
+          "selectedFlags": 15,
+          "size": 256,
+          "alignment": 64
+        },
+        "sampler": {
+          "kind": "sampler",
+          "min": 0,
+          "mag": 0,
+          "mipmap": 0,
+          "u": 2,
+          "v": 2,
+          "w": 2,
+          "minLod": 0.0,
+          "maxLod": 0.0,
+          "unnormalized": 0,
+          "compare": 0,
+          "anisotropy": 0
+        },
+        "descriptor": {
+          "kind": "descriptor",
+          "binding": 0,
+          "count": 1,
+          "type": 1,
+          "stages": 16,
+          "layout": 1,
+          "sourceOrdinal": 0,
+          "outputOrdinal": 1,
+          "distinctImages": true
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 21,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "source_contract": {
+          "kind": "source_contract",
+          "storeOp": 0,
+          "loadOp": 1,
+          "oldLayout": 1,
+          "newLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "imageIsSource": true,
+          "aspect": 1,
+          "baseMip": 0,
+          "levelCount": 1,
+          "baseLayer": 0,
+          "layerCount": 1,
+          "distinctPipelines": true,
+          "sourceViewFormat": 37,
+          "viewType": 1
+        },
+        "two_pass": {
+          "kind": "two_pass",
+          "sameSourceView": true,
+          "sourceLayout": 1,
+          "descriptorLayout": 1,
+          "srcStage": 1024,
+          "dstStage": 128,
+          "srcAccess": 256,
+          "dstAccess": 32,
+          "dependencyRecorded": false,
+          "sourceHostFilled": false
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": false,
+          "discarded": true
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 5
+        }
+      },
+      "admission": {
+        "status": "MISSING_DEPENDENCY"
+      },
+      "diagnostics": [],
+      "exit_code": 5,
+      "stdout_sha256": "27b2f12984f7a75c6b60347f9c71b4d5f7e761f7037bc02a8a3d49863afa081f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "shaders": {
+    "main.vert": {
+      "source_sha256": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0",
+      "binary_sha256": "d562f376849e441ecfb323ac0a21809d5cb7d9e5628e664d34978085ed09eae0",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "748d44114c156be8de303e05b8560b037ce9711a8adf445e56f531016bac5ba9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "43ad1d4bab39bda43a11eb37db299ef91faba4a6f9a3f39c11a84190d7a6292b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    },
+    "main.frag": {
+      "source_sha256": "8392dd1af163f6874d8c6e4c90306b02f1c5b2b716fa2fa5fa79254c0144347a",
+      "binary_sha256": "75d2c880d25a0c25bae884eaa62815d189a98dfef30be239a5646097d8abc48b",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "ecf1f20a7f6710533ef52ca6e15e0a99442576e3979c2f5d6d07349e5bb9a333",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "a5ad3e5474d3e0af567bd62484bbf22f144264940f8de3f49b2f698f843ab242",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    },
+    "post.frag": {
+      "source_sha256": "43493963105009619005552b1ae63da6bd3a5c0ee777a6bcfb0f40b2e58f0691",
+      "binary_sha256": "1a590ee5e37cd11a6ab58c29542acb380acf08b9e7aa4217bb65006dc915ab0f",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "2c4c749c6dc25314ee21e0f39e82664f751ec0eef431879e015c239904f6a5fe",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "795de7da4d2881fdcff176ba6e492c4a16e10dcede0520a8b69315b0b36c0f92",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    }
+  },
+  "normative_sha256": "ffa82cb4449bb21eb67f84605dc0df90e11a8f7a4c30710442a017118bf51140",
+  "status": "BOUNDED_RENDER_SAMPLE_PASS",
+  "limitations": [
+    "Repository-authored controlled two-pass experiment, not external production defect.",
+    "CPU coherent ICD only; single queue/mip/layer/sample RGBA8 UNORM endpoints.",
+    "Source image is GPU rendered, not host prefilled. Only final image is read back.",
+    "Shader-access heuristic ON detects RAW; OFF did not detect it and exit5 is NOT a pass. No invalid command buffer submitted.",
+    "SyncVal hazard is a tool diagnostic, not a normative VUID.",
+    "No full domain acceptance, general reflection, hardware performance or physical display claim."
+  ],
+  "validation_settings": {
+    "synchronization_validation": true,
+    "shader_accesses_heuristic": true,
+    "off_control": true
+  }
+}
