@@ -166,6 +166,20 @@
         "multi-frame/concurrent queues and physical hardware performance",
         "external-engine/Live/blind acceptance"
       ]
+    },
+    "msaa_resolve_sampling": {
+      "contract": "copy_blit_resolve.md#delivery19-msaa-resolve-sampling",
+      "rules": "tools/msaa_sample19.py",
+      "evidence": "msaa-sample.json",
+      "scope": "4x noninteger color dynamic attachment resolve to same-view fragment sampling and independent final pixels; CPU ICD authored integration",
+      "domain_complete": false,
+      "still_open": [
+        "depth/stencil resolve and testing",
+        "mixed sample and render-to-single-sampled variants",
+        "traditional renderpass and local-read",
+        "sample coverage and antialiasing quality",
+        "physical/mobile performance, external project and Live/blind acceptance"
+      ]
     }
   },
   {
@@ -443,6 +457,20 @@
         "mips/filtering/formats and depth/resolve",
         "multi-frame/concurrent queues and physical hardware performance",
         "external-engine/Live/blind acceptance"
+      ]
+    },
+    "msaa_resolve_sampling": {
+      "contract": "copy_blit_resolve.md#delivery19-msaa-resolve-sampling",
+      "rules": "tools/msaa_sample19.py",
+      "evidence": "msaa-sample.json",
+      "scope": "4x noninteger color dynamic attachment resolve to same-view fragment sampling and independent final pixels; CPU ICD authored integration",
+      "domain_complete": false,
+      "still_open": [
+        "depth/stencil resolve and testing",
+        "mixed sample and render-to-single-sampled variants",
+        "traditional renderpass and local-read",
+        "sample coverage and antialiasing quality",
+        "physical/mobile performance, external project and Live/blind acceptance"
       ]
     }
   },
