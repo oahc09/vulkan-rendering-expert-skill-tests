@@ -78,3 +78,28 @@ def test_uncommitted_resolver_rejected(monkeypatch):
 def test_development_source_hashes_explicit():
  r=cli.verify_resolver_sources(cli.ROOT,'a'*40,development=True)
  assert set(r)=={'checks19/resolve_diagnostics.py','tools/diagnostic_spec19.py'}
+def controlled_index():
+ return {'entrypoint_sha256':'e'*64,'supervisor_sha256':'a'*64,'execution_source_manifest':{'checks19/run_delivery_bundle.py':'e'*64,'checks19/process_supervisor19.py':'a'*64},'source_manifest':{'checks19/process_supervisor19.py':'a'*64},'steps':[{'pid':123,'pgid':123,'returncode':0,'timed_out':False,'cancelled':False,'budget_exhausted':False,'unexpected_descendants':False,'group_cleanup':{'pgid':123,'group_gone':True,'term_sent':True,'kill_sent':True,'reaped_descendants':[]}}]}
+def test_complete_process_control_accepted():cli.verify_process_control(controlled_index())
+@pytest.mark.parametrize('field',['supervisor_sha256','execution_source_manifest','source_manifest','steps'])
+def test_deleted_control_index_field_rejected(field):
+ d=controlled_index();del d[field]
+ with pytest.raises(ValueError):cli.verify_process_control(d)
+@pytest.mark.parametrize('field',['group_cleanup','cancelled','timed_out','budget_exhausted','unexpected_descendants','pid','pgid','returncode'])
+def test_deleted_step_control_field_rejected(field):
+ d=controlled_index();del d['steps'][0][field]
+ with pytest.raises(ValueError):cli.verify_process_control(d)
+@pytest.mark.parametrize('field',['pgid','group_gone','term_sent','kill_sent','reaped_descendants'])
+def test_deleted_cleanup_field_rejected(field):
+ d=controlled_index();del d['steps'][0]['group_cleanup'][field]
+ with pytest.raises(ValueError):cli.verify_process_control(d)
+@pytest.mark.parametrize('field',['cancelled','timed_out','budget_exhausted','unexpected_descendants'])
+def test_true_failure_flag_rejected(field):
+ d=controlled_index();d['steps'][0][field]=True
+ with pytest.raises(ValueError):cli.verify_process_control(d)
+def test_wrong_helper_source_digest_rejected():
+ d=controlled_index();d['source_manifest']['checks19/process_supervisor19.py']='b'*64
+ with pytest.raises(ValueError):cli.verify_process_control(d)
+def test_unreaped_descendant_rejected():
+ d=controlled_index();d['steps'][0]['group_cleanup']['reaped_descendants']=[456]
+ with pytest.raises(ValueError):cli.verify_process_control(d)

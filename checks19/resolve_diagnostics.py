@@ -14,6 +14,22 @@ def safe_path(base,relative):
 
 def read_json(path):return spec.parse_json(path.read_bytes())
 
+def verify_process_control(index):
+    """Required current strict schema: missing teardown data is not compatibility."""
+    helper=index.get('supervisor_sha256');entry=index.get('entrypoint_sha256')
+    if not isinstance(helper,str) or not re.fullmatch('[0-9a-f]{64}',helper):raise ValueError('missing supervisor digest')
+    expected={'checks19/run_delivery_bundle.py':entry,'checks19/process_supervisor19.py':helper}
+    if index.get('execution_source_manifest')!=expected or index.get('source_manifest',{}).get('checks19/process_supervisor19.py')!=helper:raise ValueError('missing or mismatched execution-source manifest')
+    steps=index.get('steps')
+    if not isinstance(steps,list) or not steps:raise ValueError('missing process steps')
+    for step in steps:
+        if not isinstance(step,dict) or any(step.get(k) is not False for k in ('timed_out','cancelled','budget_exhausted','unexpected_descendants')):raise ValueError('missing/failed process termination fields')
+        if type(step.get('returncode')) is not int or step['returncode']!=0:raise ValueError('unsuccessful process returncode')
+        cleanup=step.get('group_cleanup')
+        if not isinstance(cleanup,dict) or cleanup.get('group_gone') is not True or cleanup.get('reaped_descendants')!=[]:raise ValueError('missing/incomplete clean process-group result')
+        if any(type(cleanup.get(k)) is not bool for k in ('term_sent','kill_sent')) or cleanup.get('ownership_lost') or cleanup.get('direct_child_unreaped'):raise ValueError('missing or failed teardown evidence')
+        if type(step.get('pid')) is not int or step['pid']<=0 or step.get('pgid')!=step['pid'] or cleanup.get('pgid')!=step['pid']:raise ValueError('process-group identity mismatch')
+
 def verify_bundle(bundle,tests,skill):
     index_path=bundle/'delivery-index.json';index_hash=sha(index_path);index=read_json(index_path)
     if index.get('development') is not False or index.get('status')!='PASS_FIVE_BOUNDED_LOCAL_CHAINS' or index.get('entrypoint_in_declared_head') is not True:raise ValueError('not a strict completed bundle')
@@ -24,6 +40,10 @@ def verify_bundle(bundle,tests,skill):
     if committed_gate!=gatepath.read_bytes():raise ValueError('gate not at paired commit')
     for repo,head in ((tests,index['tests_head']),(skill,index['skill_head'])):
         if subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],timeout=30).decode().strip()!=head:raise ValueError('repository HEAD mismatch before gate import')
+    verify_process_control(index)
+    helper=tests/'checks19/process_supervisor19.py'
+    committed_helper=subprocess.check_output(['git','-C',str(tests),'show',index['tests_head']+':checks19/process_supervisor19.py'],timeout=30)
+    if sha(helper)!=index['supervisor_sha256'] or helper.read_bytes()!=committed_helper:raise ValueError('unverified process supervisor')
     gate_spec=importlib.util.spec_from_file_location('checked_delivery_gate',gatepath);gate=importlib.util.module_from_spec(gate_spec);gate_spec.loader.exec_module(gate)
     manifest=gate.verify_pair(tests,skill,index['tests_head'],index['skill_head'])
     if manifest!=index['source_manifest'] or set(index['chains'])!=set(gate.CHAINS):raise ValueError('source inventory/chain set mismatch')
