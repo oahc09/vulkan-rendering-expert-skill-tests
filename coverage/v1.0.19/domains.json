@@ -422,7 +422,13 @@
     "open_review": "codec全部valid usage和辅助扩展深层合同，未测codec设备",
     "depth_target": "L1/L2",
     "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "owner": "v1.0.19 C1",
+    "device_feasibility": {
+      "evidence": "device-address.json",
+      "status": "UNSUPPORTED_ON_CURRENT_CPU_ICD",
+      "scope": "explicitly queried Video queue and H264/H265/AV1 codec extension names absent; no profile/session/codec execution",
+      "domain_complete": false
+    }
   },
   {
     "id": "VK16",
@@ -430,8 +436,21 @@
     "existing_route": "[合同入口](06_pipeline/compute_pipeline.md#special-compute-contract)",
     "open_review": "optical/tensor/data graph/cooperative/地址类逐扩展差异",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "physical_storage_address": {
+      "contract": "compute_pipeline.md#delivery19-physical-storage-address",
+      "rules": "tools/device_address19.py",
+      "evidence": "device-address.json",
+      "scope": "core1.2 physical-storage pointer-table transform with full64word oracle, guards, feature/allocation/usage/alignment/lifetime and callback-aborted address query",
+      "domain_complete": false,
+      "still_open": [
+        "cooperative matrix/vector and precision/tuple rules",
+        "Video, optical flow, tensor/data graph, decompression and indirect-copy execution unavailable on current CPU ICD",
+        "capture/replay, sparse/device-group and pointer aliasing variants",
+        "physical/mobile hardware, external-engine and Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK17",
