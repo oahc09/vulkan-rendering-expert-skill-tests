@@ -19,7 +19,7 @@ an append-only experiment history; its early absence lists are historical.
 | Plan area | Implemented and evidenced bounded scope | Still incomplete |
 |---|---|---|
 | C1 provider/run semantics | Actual Linux HB/FT, fixed-font fallback, bounded mixed-paragraph bidi checked against ICU, emoji VS15/VS16, variable-font experiments | Android Java/JNI and Windows DirectWrite; provider capability/fallback coverage. Finite inputs do not establish general Unicode layout; all font formats are not a new requirement. |
-| C2 representations / Scene A | Actual bitmap/color/MSDF delivery; same-layout multilingual, emoji-fallback and two-variable-instance board with fixed scaling/phase comparisons | The finite board and high-density refinement are measured, including all seven rows in a new common square rotation output. Perspective and remaining visual-quality qualification are incomplete. |
+| C2 representations / Scene A | Actual bitmap/color/MSDF delivery; same-layout multilingual, emoji-fallback and two-variable-instance board with fixed scaling/phase comparisons | The finite board and high-density refinement are measured, including all seven rows in a new common square rotation output. One fixed bounded perspective and explicit byte-budget fallback are now measured; general perspective and remaining visual-quality qualification are incomplete. |
 | C3 vector/world / Scene B | Bounded fills/strokes/AA, straight-outline extrusion, world planes, near clipping fallback, second view and depth-produced hard shadow sampling | Shared complete Scene B and joint visual regression remain incomplete. Arbitrary triangulation/curve AA/bevel/general lighting are unverified boundaries, not additional mandatory product scope. |
 | C4 cache / Scene C | Real CPU cache ledger; resident online producer and dual offscreen outputs now integrate natural packed-page growth, pending cancel/retry, immutable old UV snapshots, active MRT and pause/destruction/rebuild | The integrated fixed 8-to-9 instance / two-page sequence is bounded; continuous locale/variation/size workloads, scale tiers, sustained stress and whole-chain costs remain incomplete. |
 | Temporal / HDR boundary | Actual scalar temporal SSBO consumed by linear HDR scene then UI, with history pollution and early-tone-map negatives | World-text motion and full-scene interface consumption remain unverified. Full RGB TAA and physical HDR-display certification are outside this bounded test, not new reimplementation requirements. |
@@ -55,8 +55,9 @@ fonts, binaries and environment/driver logs remain local and are not redistribut
 Do not automatically add more one-glyph/one-pass combinations. The concentrated
 resident Scene C service and seven-row Scene A board now have bounded executable
 evidence, not complete scene qualification. Highest-value local follow-up must
-address the board's remaining measured quality errors / unmeasured perspective
-under common conditions, or integrate original Scene B. The new common square
+address the board's remaining measured quality / reference limitations under
+common conditions, or integrate original Scene B. One fixed perspective is now
+measured; it does not certify general perspective or near-plane typography. The new common square
 output now accommodates every row's rotation; old clipping rejections remain
 historical evidence.
 Do not replace these gaps with further unrelated one-glyph examples. No general
@@ -177,3 +178,53 @@ not ROI scores. Two actual shader negatives and auxiliary preservation still
 apply. Payload capacity increases from 815,360 to 13,045,760 bytes (16x); this is
 an explicit storage/upload tradeoff, not measured VRAM or mobile throughput.
 No font, generated resource, raw environment log or image is uploaded.
+
+## Scene A compact storage, budget fallback and bounded perspective
+
+The remaining old .052734375 maximum includes geometric-reference quantization.
+At the ! bar half-phase pixel, exact rectangular area gives alpha .43560791015625,
+versus old 16x16 reference .3955078125 and GPU .4482421875. Exact local GPU error
+is .01263427734375. This reclassifies one error, not a new rendering improvement
+or permission to overwrite old metrics or relax gates.
+
+`scene_a_budget_board_lab/criteria.md` independently freezes per-glyph crop
+bounds plus three source-screen pixels, exact metadata and vertical packing.
+Full 4x MSDF sources are still freshly generated; source CPU peak/work is not
+optimized. Requested source image/upload payload now includes the actual packed
+W*H*16 header/padding. Per monochrome row it is 101,184–369,600 bytes, versus the
+prior 13,045,760-byte band capacity. This is tight storage, not adaptive density
+or measured VkMemoryRequirements/VRAM savings. Each row/budget has an independent
+logical Device, sharing its compact image across transforms.
+
+A declared 400,000-byte probe budget selects 4x for all monochrome rows. At
+200,000 bytes Chinese/ffi/bidi/variable-heavy explicitly fall back to bitmap;
+combining and variable-light retain 4x, and emoji retains color bitmap. A 4096
+budget rejects all seven rows before GPU creation. The policy consults resource
+cost only, not quality-oracle output; these are experiment inputs, not mobile
+product thresholds. Bitmap fallback is a quality tradeoff, not equivalence.
+
+The frozen 10-test selection passed in 138.42 seconds. There are 86 actual
+positive images: 72 existing conditions plus 14 new perspective cases. All 72
+match the historical full-texture GPU image for their CORRESPONDING selected
+representation (MSDF, bitmap or color) with zero float delta, not bitmap-vs-MSDF
+equivalence. All numerical gates remain 1e-6/.004, zero exclusions. Actual
+wrong-origin and wrong-affine-inverse shaders fail (.5624999285/.5999999985),
+with auxiliary preservation separately checked. The latter also worsens the
+independent geometric MAE from .00030038295 to .01772499302.
+
+Perspective uses a real projected six-vertex quad, fixed scale .75 and
+w=1+(x-32.5)/128, positive over the source. Fragment inverse homography and a
+local inverse-Jacobian AA estimate are checked against CPU inverse/finite
+differences, while separately projected source outlines provide geometric
+coverage. This does not certify hardware varying interpolation or exact
+anisotropic area. The first emoji perspective error 1.0528854150204658e-6
+failed 1e-6; fixed-camera rational texel indexing fixes cancellation without
+changing layout, reference or gate. First failure evidence remains local.
+
+High-budget perspective maximum outline-alpha error is .040109872817993164;
+low-budget bitmap fallback reaches .2594186067581177. Neither is renamed
+qualified. Curved-area references remain approximations. The earlier Scene A
+inputs, scaling, rotation, phases and this bounded perspective are now represented
+in executable comparisons; this is not complete physical-platform, general
+text quality or Live acceptance. The next concentrated local milestone should
+be chosen from original Scene B/C gaps rather than adding arbitrary glyph cases.
