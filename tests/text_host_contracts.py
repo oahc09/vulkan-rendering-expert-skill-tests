@@ -9,6 +9,15 @@ def uint(value, maximum=2**32-1):
     return value
 
 
+def canonical_option(value):
+    if type(value) in (str, int, bool, type(None)): return
+    if type(value) is float and math.isfinite(value): return
+    if type(value) is tuple:
+        for item in value: canonical_option(item)
+        return
+    raise ValueError('generation option must be finite immutable data')
+
+
 @dataclass(frozen=True)
 class GlyphKey:
     provider: str
@@ -18,11 +27,25 @@ class GlyphKey:
     variation: tuple
     representation: str
     pixel_size: int
+    synthetic_style: str = ''
+    palette: int = 0
+    subpixel_phase: tuple = (0.0, 0.0)
+    distance_range: float = 0.0
+    render_mode: str = 'default'
+    generation_options: tuple = ()
 
     def __post_init__(self):
         if not self.provider or not self.face or self.representation not in ('coverage','color','msdf','mtsdf','mesh'):
             raise ValueError('identity/representation')
-        uint(self.face_generation); uint(self.glyph); uint(self.pixel_size)
+        uint(self.face_generation); uint(self.glyph); uint(self.pixel_size); uint(self.palette)
+        if (not isinstance(self.synthetic_style, str) or not isinstance(self.render_mode, str)
+                or not self.render_mode or not isinstance(self.subpixel_phase, tuple)
+                or len(self.subpixel_phase) != 2
+                or any(not math.isfinite(v) for v in self.subpixel_phase)
+                or not math.isfinite(self.distance_range) or self.distance_range < 0
+                or not isinstance(self.generation_options, tuple)):
+            raise ValueError('render identity/options')
+        canonical_option(self.generation_options)
         if self.pixel_size == 0 or not isinstance(self.variation, tuple):
             raise ValueError('size/variation')
         axes = [a for a, v in self.variation]
@@ -50,7 +73,11 @@ class AtlasSlot:
     def prepare(self, key, device, upload_value, completed):
         if device != self.device or not self.reusable(completed):
             raise ValueError('device mismatch or slot still in use')
-        self.generation += 1; self.key=key; self.upload=uint(upload_value)
+        if not isinstance(key, GlyphKey): raise ValueError('invalid glyph key')
+        next_generation=uint(self.generation+1)
+        next_upload=uint(upload_value)
+        # Validate everything before mutation, including failed uploads/wraparound.
+        self.generation=next_generation; self.key=key; self.upload=next_upload
         self.published=False; self.consumers={}; self.snapshots=0
         return self.generation
 

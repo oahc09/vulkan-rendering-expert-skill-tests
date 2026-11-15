@@ -1,0 +1,62 @@
+{
+  "scope": "synthetic coverage; software Vulkan; separate preserved-attachment overlay fallback",
+  "image_size": [
+    65,
+    49
+  ],
+  "validation_enabled": true,
+  "frames": [
+    {
+      "frame": 0,
+      "max_linear_error": 1.907348634588857e-08,
+      "tolerance": 1e-06,
+      "hole_verified": false,
+      "sentinels": "UNCHANGED"
+    },
+    {
+      "frame": 1,
+      "max_linear_error": 3.337860099428269e-08,
+      "tolerance": 1e-06,
+      "hole_verified": true,
+      "sentinels": "UNCHANGED"
+    },
+    {
+      "frame": 2,
+      "max_linear_error": 3.337860099428269e-08,
+      "tolerance": 1e-06,
+      "hole_verified": true,
+      "sentinels": "UNCHANGED"
+    },
+    {
+      "frame": 3,
+      "max_linear_error": 3.337860099428269e-08,
+      "tolerance": 1e-06,
+      "hole_verified": true,
+      "sentinels": "UNCHANGED"
+    },
+    {
+      "frame": 4,
+      "max_linear_error": 3.337860099428269e-08,
+      "tolerance": 1e-06,
+      "hole_verified": true,
+      "sentinels": "UNCHANGED"
+    }
+  ],
+  "platform_probe": {
+    "scope": "Linux system HarfBuzz trusted-fixture single-run only",
+    "tests_passed": 6,
+    "target_android_windows": "NOT_RUN"
+  },
+  "not_verified": [
+    "actual typography quality",
+    "MSDF/MTSDF",
+    "path tessellation/extrusion/clip",
+    "active MRT independentBlend",
+    "depth/stencil sentinels",
+    "concurrent atlas churn",
+    "target devices",
+    "Live model/actual host",
+    "CORE17 closure"
+  ],
+  "raw_evidence_publication": "Withheld: automated review rejected original archive containing environment and toolchain details. Full original evidence retained locally; this report excludes paths, environment, driver identifiers and hashes."
+}

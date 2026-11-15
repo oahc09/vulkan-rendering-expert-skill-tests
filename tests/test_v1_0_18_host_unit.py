@@ -69,3 +69,33 @@ def test_each_work_limit_fails_closed(field):
     values[field]+=1;assert not checked_budget(**values)
     values[field]=-1
     with pytest.raises(ValueError):checked_budget(**values)
+
+
+@pytest.mark.parametrize('change',[
+    {'synthetic_style':'bold'}, {'palette':1}, {'subpixel_phase':(.25,0)},
+    {'distance_range':4}, {'render_mode':'hinted'}, {'generation_options':('edge-coloring-v2',)},
+])
+def test_raster_options_do_not_alias(change):
+    from dataclasses import replace
+    base=GlyphKey('provider','face',1,42,(),'coverage',16)
+    assert base != replace(base,**change)
+
+
+@pytest.mark.parametrize('bad_upload',[-1,True,2**32,'1'])
+def test_prepare_failure_is_atomic(bad_upload):
+    from copy import deepcopy
+    slot=AtlasSlot('device');before=deepcopy(slot.__dict__)
+    key=GlyphKey('provider','face',1,42,(),'coverage',16)
+    with pytest.raises(ValueError):slot.prepare(key,'device',bad_upload,{})
+    assert slot.__dict__==before
+
+def test_prepare_generation_overflow_is_atomic():
+    from copy import deepcopy
+    slot=AtlasSlot('device',2**32-1);before=deepcopy(slot.__dict__)
+    key=GlyphKey('provider','face',1,42,(),'coverage',16)
+    with pytest.raises(ValueError):slot.prepare(key,'device',1,{})
+    assert slot.__dict__==before
+
+@pytest.mark.parametrize('options',[(float('nan'),),((float('inf'),),),([],),({'a':1},)])
+def test_generation_options_reject_noncanonical(options):
+    with pytest.raises(ValueError):GlyphKey('provider','face',1,42,(),'coverage',16,generation_options=options)
