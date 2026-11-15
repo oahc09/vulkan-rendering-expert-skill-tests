@@ -51,7 +51,14 @@
     "open_review": "全部stage/access适用性和memory model交互",
     "depth_target": "L1/L2",
     "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "owner": "v1.0.19 C1",
+    "bounded_review": {
+      "scope": "single-queue fill/copy/coherent readback",
+      "route": "08_synchronization/buffer_memory_barrier.md#delivery19-transfer-contract-bounded-l1l2-fillcopyreadback",
+      "status": "BOUNDED_L1_L2_REVIEWED",
+      "evidence": "transfer-case.json",
+      "domain_complete": false
+    }
   },
   {
     "id": "VK07",
