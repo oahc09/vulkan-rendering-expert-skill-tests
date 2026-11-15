@@ -279,8 +279,24 @@
     "existing_route": "[合同入口](03_command_buffer/indirect_commands.md#device-generated-commands-contract)",
     "open_review": "DGC/transform feedback/mesh/task全部命令规则",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "generated_indirect_family": {
+      "contract": "indirect_commands.md#delivery19-generated-indirect-draw",
+      "rules": "tools/indirect_draw19.py",
+      "evidence": "indirect-draw.json",
+      "scope": "CPU ICD compute generates a single ordinary VkDrawIndirectCommand; explicit shader-write to indirect-read dependency; actual indirect draw with generated argument and independent nonconstant pixel readback",
+      "domain_complete": false,
+      "still_open": [
+        "indexed and indirectCount execution",
+        "multi-draw and arbitrary GPU-generated argument validation",
+        "mesh and EXT/NV device-generated commands",
+        "production culling/compaction/residency and multi-queue",
+        "physical/mobile GPU performance",
+        "Vulkan SC",
+        "external-engine and Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK12",
