@@ -1,0 +1,261 @@
+{
+  "status": "PASS",
+  "rounds": [
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        8077971
+      ],
+      "cold_raster_ns": [
+        284291,
+        165031
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5408267
+      ],
+      "cold_raster_ns": [
+        227161,
+        140606
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5988883
+      ],
+      "cold_raster_ns": [
+        222988,
+        151023
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5655261
+      ],
+      "cold_raster_ns": [
+        213963,
+        138413
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5386322
+      ],
+      "cold_raster_ns": [
+        215676,
+        137185
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5104345
+      ],
+      "cold_raster_ns": [
+        225042,
+        146971
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5330421
+      ],
+      "cold_raster_ns": [
+        222732,
+        141477
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        6894046
+      ],
+      "cold_raster_ns": [
+        291438,
+        177242
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5875693
+      ],
+      "cold_raster_ns": [
+        248212,
+        151215
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        6165904
+      ],
+      "cold_raster_ns": [
+        216906,
+        137715
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5238781
+      ],
+      "cold_raster_ns": [
+        310573,
+        149899
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    },
+    {
+      "cold_hb_calls": 1,
+      "cold_ft_calls": 2,
+      "hot_hb_calls": 0,
+      "hot_ft_calls": 0,
+      "entries": 2,
+      "owned_bytes": 360,
+      "cold_shape_ns": [
+        5247320
+      ],
+      "cold_raster_ns": [
+        219425,
+        138707
+      ],
+      "hot_shape_samples": 0,
+      "hot_raster_samples": 0
+    }
+  ],
+  "peak_owned_coverage_bytes": 1368,
+  "final_owned_coverage_bytes": 0,
+  "final_layout_entries": 0,
+  "final_glyph_entries": 0,
+  "timings": {
+    "shape": {
+      "count": 14,
+      "p50_ns": 5408267,
+      "p95_ns": 8077971,
+      "p99_ns": 8077971
+    },
+    "raster": {
+      "count": 28,
+      "p50_ns": 193130,
+      "p95_ns": 291438,
+      "p99_ns": 310573
+    },
+    "request": {
+      "count": 29,
+      "p50_ns": 363742,
+      "p95_ns": 7427730,
+      "p99_ns": 8611167
+    }
+  },
+  "cold_request_timings": {
+    "count": 12,
+    "p50_ns": 5864414,
+    "p95_ns": 8634697,
+    "p99_ns": 8634697
+  },
+  "hot_request_timings": {
+    "count": 12,
+    "p50_ns": 30095,
+    "p95_ns": 31989,
+    "p99_ns": 31989
+  },
+  "size_invalidation": true,
+  "locale_layout_invalidation": true,
+  "generation_invalidation": true,
+  "stale_size_negative_rejected": true,
+  "oversize_no_glyph_publish": true,
+  "eviction_reproduces": true,
+  "caller_mutation_isolated": true,
+  "unmeasured": [
+    "JNI",
+    "GPU upload",
+    "draw",
+    "total frame",
+    "native heap",
+    "power/thermal"
+  ],
+  "scope": "application cache cold/hot; CPU HB/FT only; no process/OS cold or GPU/native allocator measurement"
+}
