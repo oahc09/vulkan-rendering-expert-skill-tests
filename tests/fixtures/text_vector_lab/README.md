@@ -27,7 +27,7 @@ attachments are explicitly preserved. Velocity (.125,-.25,.5,1) and ID
 in every pixel afterward. No claim is made for active MRT independentBlend,
 depth/stencil preservation, dynamic rendering or production pass integration.
 
-The five page updates serialize with fence completion before next upload. This
+The thirteen page updates serialize with fence completion before next upload. This
 is legal repeat upload/sample/readback, not concurrent atlas generation/churn.
 No font binaries are bundled; glyph shape is self-generated and is not evidence
 of shaping, DirectWrite/Android, MSDF, arbitrary vectors or typography quality.
@@ -67,3 +67,24 @@ vector triangulation/extrusion/clip/near-plane behavior, concurrent Atlas Churn,
 actual active-MRT/depth protection, real Live semantic review and target devices.
 Pre-register fonts, providers, license/hash, quality ROIs, reference types and
 limits before those experiments. Never set passing thresholds after inspection.
+
+## Synthetic coverage quality extension (TEXT18-06/09/10, plan §14)
+
+Frames 5–8 check black, white, colored and translucent **premultiplied** linear
+backgrounds; straight text color is multiplied by coverage × opacity once.
+Opacities include 0, .25 and 1, and coverage ramps contain 0/.25/.5/.75/1.
+Alpha is checked independently, not assumed opaque. Frames 9–12 use a small
+7×7.5 pixel rectangular ring partially outside the left viewport edge, shifted
+by 0/.25/.5/.75 pixels. This tests sampled mask composition at the viewport edge,
+not Vulkan scissor/clip geometry, arbitrary vector clipping or font hinting.
+
+The C++ producer uses 4×4 subpixel occupancy. The Python oracle independently
+computes exact pixel/rectangle intersection areas from fixed geometry, and
+checks uploaded mask bytes before checking every GPU RGBA value. These quarter
+pixel aligned synthetic rectangles have exact area coverage under both methods.
+All frames retain the predefined 1e-6 linear absolute tolerance. Reports include
+nonzero-coverage ROI maximum error, fractional edge pixel count, coverage area
+and alpha error; empty background cannot dilute the ROI result. Frame sequence
+measurements do not prove animation perceptual quality or general temporal AA.
+All comparisons use raw linear RGBA floats; PNG previews encode RGB as sRGB and
+are not alpha-composited typography reference boards.

@@ -16,12 +16,28 @@ def png(path,width,height,rgb):
     rows=b''.join(b'\0'+rgb[y*width*3:(y+1)*width*3] for y in range(height))
     path.write_bytes(b'\x89PNG\r\n\x1a\n'+chunk(b'IHDR',struct.pack('>IIBBBBB',width,height,8,2,0,0,0))+chunk(b'IDAT',zlib.compress(rows))+chunk(b'IEND',b''))
 
+def reference(frame,width=65,height=49):
+    """Independent analytic pixel/rectangle intersection; no GPU mask reuse."""
+    bg=(.2,.2,.2,1);ink=(1,1,1,.8)
+    if frame==0:return [.5]*(width*height),bg,ink
+    if 5<=frame<=8:
+        bg=[(0,0,0,1),(1,1,1,1),(.1,.2,.3,.5),(.05,.15,.2,.25)][frame-5]
+        ink=(.8,.4,.2,[0,1,.25,1][frame-5])
+        return [(x%5)/4 for y in range(height) for x in range(width)],bg,ink
+    if frame<5:
+        shift=(frame-1)/4;outer=(12+shift,6,53+shift,43);hole=(22+shift,16,43+shift,33)
+    else:
+        shift=(frame-9)/4;outer=(-1.5+shift,20.25,5.5+shift,27.75);hole=(.5+shift,22.25,3.5+shift,25.75)
+        bg=(.02,.04,.08,.5);ink=(.9,.3,.1,.75)
+    def area(x,y,r):return max(0,min(x+1,r[2])-max(x,r[0]))*max(0,min(y+1,r[3])-max(y,r[1]))
+    return [area(x,y,outer)-area(x,y,hole) for y in range(height) for x in range(width)],bg,ink
+
 def verify(out):
     width,height=65,49
     rows=[json.loads(line) for line in (out/'frames/metrics.jsonl').read_text().splitlines()]
-    if len(rows)!=5 or [r['frame'] for r in rows]!=list(range(5)):raise ValueError('incomplete frame set')
+    if len(rows)!=13 or [r['frame'] for r in rows]!=list(range(13)):raise ValueError('incomplete frame set')
     findings=[]
-    for frame in range(5):
+    for frame in range(13):
         prefix=out/'frames'/f'frame-{frame}'
         def floats(ext,n):
             raw=Path(str(prefix)+ext).read_bytes()
@@ -33,21 +49,27 @@ def verify(out):
         actual=floats('.rgba32f',width*height*4)
         velocity=floats('.velocity32f',width*height*4)
         ids=floats('.id32f',width*height*4)
-        # Independent numerical reference, not the C++ reported verdict.
-        max_error=max(abs(actual[i*4+c]-(1 if c==3 else .2+mask[i]*.8*.8)) for i in range(width*height) for c in range(4))
+        expected_mask,bg,ink=reference(frame)
+        mask_error=max(abs(a-b) for a,b in zip(mask,expected_mask))
+        if mask_error>1e-7:raise ValueError('analytic coverage mismatch')
+        errors=[];roi_errors=[];alpha_errors=[]
+        for i,coverage in enumerate(expected_mask):
+            a=coverage*ink[3]
+            for c in range(4):
+                expected=(a if c==3 else ink[c]*a)+bg[c]*(1-a)
+                error=abs(actual[i*4+c]-expected);errors.append(error)
+                if coverage>0:roi_errors.append(error)
+                if c==3:alpha_errors.append(error)
+        max_error=max(errors)
         if max_error>1e-6:raise ValueError('linear reference mismatch')
         for values,expected in [(velocity,(.125,-.25,.5,1)),(ids,(37,91,12,1))]:
             if any(value!=expected[i%4] for i,value in enumerate(values)):raise ValueError('non-target sentinel changed')
-        if frame==0 and any(c!=.5 for c in mask):raise ValueError('constant reference missing')
-        if frame:
-            if mask[24*width+32]!=0 or mask[24*width+16]!=1:raise ValueError('synthetic hole/stroke lost')
-            if actual[(24*width+32)*4]>.200001:raise ValueError('hole erroneously filled')
-        # Preview explicitly sRGB encodes linear readback for ordinary viewers.
+        if 1<=frame<=4 and (mask[24*width+32]!=0 or mask[24*width+16]!=1):raise ValueError('synthetic hole/stroke lost')
         def encode(v):
             v=max(0.,min(1.,v));return round(255*(12.92*v if v<=.0031308 else 1.055*v**(1/2.4)-.055))
         rgb=bytes(encode(actual[i*4+c]) for i in range(width*height) for c in range(3))
         png(Path(str(prefix)+'.png'),width,height,rgb)
-        findings.append({'frame':frame,'max_linear_error':max_error,'tolerance':1e-6,'hole_verified':frame>0,'sentinels':'UNCHANGED'})
+        findings.append({'frame':frame,'max_linear_error':max_error,'max_roi_error':max(roi_errors),'max_alpha_error':max(alpha_errors),'analytic_coverage_error':mask_error,'coverage_area':sum(expected_mask),'roi_pixels':sum(c>0 for c in expected_mask),'fractional_edge_pixels':sum(0<c<1 for c in expected_mask),'tolerance':1e-6,'hole_verified':1<=frame<=4 or frame>=9,'sentinels':'UNCHANGED'})
     return findings
 
 def main(argv=None):
@@ -102,7 +124,7 @@ def main(argv=None):
         run('refuse-rebuild',[HERE/'build.sh',out/'build'],1)
         status='PASS'
     except Exception as exc:error=f'{type(exc).__name__}: {exc}'
-    summary={'validation_enabled': 'validation_enabled=1' in (out/'vulkan.log').read_text() if (out/'vulkan.log').exists() else False, 'status':status,'error':error,'layer':'actual Vulkan integration','size':[65,49],'scope':'synthetic coverage upload/sample/blend/readback; five serialized page updates; explicit preserved non-target overlay fallback','unverified':['system font shaping','MSDF/MTSDF','vector tessellation/extrusion','active MRT independentBlend','depth/stencil sentinel','concurrent atlas generation stress','Android/Windows hardware','sustained performance','platform typography quality']}
+    summary={'validation_enabled': 'validation_enabled=1' in (out/'vulkan.log').read_text() if (out/'vulkan.log').exists() else False, 'status':status,'error':error,'layer':'actual Vulkan integration','size':[65,49],'scope':'synthetic coverage upload/sample/blend/readback; thirteen serialized page updates; analytic coverage ROI and alpha quality checks; explicit preserved non-target overlay fallback','unverified':['system font shaping','MSDF/MTSDF','vector tessellation/extrusion','active MRT independentBlend','depth/stencil sentinel','concurrent atlas generation stress','Android/Windows hardware','sustained performance','platform typography quality']}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')
     (out/'artifact-manifest.json').write_text(json.dumps({str(p.relative_to(out)):sha(p) for p in sorted(out.rglob('*')) if p.is_file()},indent=2)+'\n')
     print(json.dumps(summary));return 0 if status=='PASS' else 1

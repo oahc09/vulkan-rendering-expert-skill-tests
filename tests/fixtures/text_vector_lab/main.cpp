@@ -67,7 +67,7 @@ struct TextLab: Vulkan {
     VkGraphicsPipelineCreateInfo pi{VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO};pi.stageCount=2;pi.pStages=stages;pi.pVertexInputState=&vi;pi.pInputAssemblyState=&ia;pi.pViewportState=&vp;pi.pRasterizationState=&rs;pi.pMultisampleState=&ms;pi.pColorBlendState=&bs;pi.layout=textLayout;pi.renderPass=textPass;
     auto result=vkCreateGraphicsPipelines(device,pipelineCache,1,&pi,nullptr,&textPipeline);vkDestroyShaderModule(device,vs,nullptr);vkDestroyShaderModule(device,fs,nullptr);VK(result);
   }
-  std::array<std::vector<float>,3> draw(const std::vector<float>& mask){
+  std::array<std::vector<float>,3> draw(const std::vector<float>& mask, const std::array<float,4>& bg, const std::array<float,4>& ink){
     if(mask.size()!=width*height)throw std::runtime_error("invalid mask dimensions");
     for(float x:mask)if(!std::isfinite(x)||x<0||x>1)throw std::runtime_error("invalid coverage");
     std::memcpy(buffers[upload].map,mask.data(),mask.size()*4);
@@ -75,11 +75,11 @@ struct TextLab: Vulkan {
     transition(coverage,VK_IMAGE_ASPECT_COLOR_BIT,VK_IMAGE_LAYOUT_UNDEFINED,VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT,0,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_WRITE_BIT);
     VkBufferImageCopy copy{};copy.imageSubresource={VK_IMAGE_ASPECT_COLOR_BIT,0,0,1};copy.imageExtent={width,height,1};vkCmdCopyBufferToImage(cb,buffers[upload].buffer,coverage.image,VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,1,&copy);
     transition(coverage,VK_IMAGE_ASPECT_COLOR_BIT,VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_WRITE_BIT,VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT,VK_ACCESS_SHADER_READ_BIT);
-    Image images[]={target,velocity,ids};float clears[3][4]={{.2f,.2f,.2f,1},{.125f,-.25f,.5f,1},{37,91,12,1}};
+    Image images[]={target,velocity,ids};float clears[3][4]={{bg[0],bg[1],bg[2],bg[3]},{.125f,-.25f,.5f,1},{37,91,12,1}};
     VkImageSubresourceRange range{VK_IMAGE_ASPECT_COLOR_BIT,0,1,0,1};
     for(int i=0;i<3;i++){transition(images[i],VK_IMAGE_ASPECT_COLOR_BIT,VK_IMAGE_LAYOUT_UNDEFINED,VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT,0,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_WRITE_BIT);VkClearColorValue clear{};std::memcpy(clear.float32,clears[i],16);vkCmdClearColorImage(cb,images[i].image,VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,&clear,1,&range);transition(images[i],VK_IMAGE_ASPECT_COLOR_BIT,VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_WRITE_BIT,VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT,VK_ACCESS_COLOR_ATTACHMENT_READ_BIT|VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT);}
     VkRenderPassBeginInfo rp{VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO};rp.renderPass=textPass;rp.framebuffer=textFramebuffer;rp.renderArea={{0,0},{width,height}};
-    vkCmdBeginRenderPass(cb,&rp,VK_SUBPASS_CONTENTS_INLINE);vkCmdBindPipeline(cb,VK_PIPELINE_BIND_POINT_GRAPHICS,textPipeline);vkCmdBindDescriptorSets(cb,VK_PIPELINE_BIND_POINT_GRAPHICS,textLayout,0,1,&textSet,0,nullptr);float rgba[]={1,1,1,.8f};vkCmdPushConstants(cb,textLayout,VK_SHADER_STAGE_FRAGMENT_BIT,0,16,rgba);vkCmdDraw(cb,3,1,0,0);vkCmdEndRenderPass(cb);
+    vkCmdBeginRenderPass(cb,&rp,VK_SUBPASS_CONTENTS_INLINE);vkCmdBindPipeline(cb,VK_PIPELINE_BIND_POINT_GRAPHICS,textPipeline);vkCmdBindDescriptorSets(cb,VK_PIPELINE_BIND_POINT_GRAPHICS,textLayout,0,1,&textSet,0,nullptr);float rgba[]={ink[0],ink[1],ink[2],ink[3]};vkCmdPushConstants(cb,textLayout,VK_SHADER_STAGE_FRAGMENT_BIT,0,16,rgba);vkCmdDraw(cb,3,1,0,0);vkCmdEndRenderPass(cb);
     size_t reads[]={readColor,readVelocity,readIds};
     for(int i=0;i<3;i++){transition(images[i],VK_IMAGE_ASPECT_COLOR_BIT,VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT|VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT|VK_ACCESS_TRANSFER_WRITE_BIT,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_READ_BIT);copyImage(images[i],VK_IMAGE_ASPECT_COLOR_BIT,buffers[reads[i]]);}
     barrier(VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_WRITE_BIT,VK_PIPELINE_STAGE_HOST_BIT,VK_ACCESS_HOST_READ_BIT);submit();
@@ -92,14 +92,31 @@ int main(int argc,char** argv){try{
   if(argc!=3)throw std::runtime_error("usage: text_vector_lab SHADERS NEW_OUTPUT");
   std::filesystem::path out=argv[2];if(!std::filesystem::create_directory(out))throw std::runtime_error("Refuse existing output directory");
   TextLab lab(argv[1]);std::cout<<"{\"driverVersion\":"<<lab.properties.driverVersion<<",\"vendorID\":"<<lab.properties.vendorID<<",\"deviceID\":"<<lab.properties.deviceID<<"}\n";std::ofstream metrics(out/"metrics.jsonl");
-  for(int frame=0;frame<5;frame++){
+  for(int frame=0;frame<13;frame++){
     std::vector<float> mask(lab.width*lab.height,.5f);
-    if(frame){float shift=(frame-1)*.25f;for(unsigned y=0;y<lab.height;y++)for(unsigned x=0;x<lab.width;x++){int samples=0;for(int sy=0;sy<4;sy++)for(int sx=0;sx<4;sx++){float px=x+(sx+.5f)/4-shift,py=y+(sy+.5f)/4;bool outer=px>=12&&px<53&&py>=6&&py<43;bool hole=px>=22&&px<43&&py>=16&&py<33;samples+=outer&&!hole;}mask[y*lab.width+x]=samples/16.f;}}
-    auto pixels=lab.draw(mask);double error=0;float sent[2][4]={{.125f,-.25f,.5f,1},{37,91,12,1}};
-    for(size_t i=0;i<mask.size();i++){for(int c=0;c<4;c++){double expected=c==3?1:.2+mask[i]*.8*.8;if(!std::isfinite(pixels[0][i*4+c]))throw std::runtime_error("nonfinite GPU color");error=std::max(error,std::abs(pixels[0][i*4+c]-expected));for(int k=0;k<2;k++)if(pixels[k+1][i*4+c]!=sent[k][c])throw std::runtime_error("non-target sentinel changed");}}
+    if(frame>0 && frame<5){float shift=(frame-1)*.25f;for(unsigned y=0;y<lab.height;y++)for(unsigned x=0;x<lab.width;x++){int samples=0;for(int sy=0;sy<4;sy++)for(int sx=0;sx<4;sx++){float px=x+(sx+.5f)/4-shift,py=y+(sy+.5f)/4;bool outer=px>=12&&px<53&&py>=6&&py<43;bool hole=px>=22&&px<43&&py>=16&&py<33;samples+=outer&&!hole;}mask[y*lab.width+x]=samples/16.f;}}
+    std::array<float,4> bg{.2f,.2f,.2f,1},ink{1,1,1,.8f};
+    if(frame>=5 && frame<=8){
+      const std::array<float,4> backgrounds[]={{0,0,0,1},{1,1,1,1},{.1f,.2f,.3f,.5f},{.05f,.15f,.2f,.25f}};
+      const float opacity[]={0,1,.25f,1};bg=backgrounds[frame-5];ink={.8f,.4f,.2f,opacity[frame-5]};
+      for(unsigned y=0;y<lab.height;y++)for(unsigned x=0;x<lab.width;x++)mask[y*lab.width+x]=(x%5)/4.f;
+    }
+    if(frame>=9){
+      float shift=(frame-9)*.25f;bg={.02f,.04f,.08f,.5f};ink={.9f,.3f,.1f,.75f};
+      for(unsigned y=0;y<lab.height;y++)for(unsigned x=0;x<lab.width;x++){
+        int samples=0;for(int sy=0;sy<4;sy++)for(int sx=0;sx<4;sx++){
+          float px=x+(sx+.5f)/4-shift,py=y+(sy+.5f)/4;
+          bool outer=px>=-1.5f&&px<5.5f&&py>=20.25f&&py<27.75f;
+          bool hole=px>=.5f&&px<3.5f&&py>=22.25f&&py<25.75f;
+          samples+=outer&&!hole;
+        }mask[y*lab.width+x]=samples/16.f;
+      }
+    }
+    auto pixels=lab.draw(mask,bg,ink);double error=0;float sent[2][4]={{.125f,-.25f,.5f,1},{37,91,12,1}};
+    for(size_t i=0;i<mask.size();i++){for(int c=0;c<4;c++){double a=mask[i]*double(ink[3]);double expected=(c==3?a:ink[c]*a)+bg[c]*(1-a);if(!std::isfinite(pixels[0][i*4+c]))throw std::runtime_error("nonfinite GPU color");error=std::max(error,std::abs(pixels[0][i*4+c]-expected));for(int k=0;k<2;k++)if(pixels[k+1][i*4+c]!=sent[k][c])throw std::runtime_error("non-target sentinel changed");}}
     if(error>1e-6)throw std::runtime_error("linear-over reference mismatch");
     auto name=std::string("frame-")+std::to_string(frame);save(out/(name+".coverage32f"),mask);save(out/(name+".rgba32f"),pixels[0]);save(out/(name+".velocity32f"),pixels[1]);save(out/(name+".id32f"),pixels[2]);metrics<<"{\"frame\":"<<frame<<",\"max_error\":"<<std::setprecision(10)<<error<<",\"tolerance\":0.000001,\"sentinels\":\"UNCHANGED\",\"status\":\"PASS\"}\n";
   }
   if(validationErrors)throw std::runtime_error("validation errors");
-  std::cout<<"TEXT18_GPU_PASS validation_enabled="<<lab.validation<<" frames=5\n";return 0;
+  std::cout<<"TEXT18_GPU_PASS validation_enabled="<<lab.validation<<" frames=13\n";return 0;
 }catch(const std::exception& e){std::cerr<<e.what()<<'\n';return 1;}}
