@@ -5,6 +5,8 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from tools import pipeline_cache_decision19 as rule,pipeline_cache_prose19 as prose
 ROOT=Path(__file__).resolve().parents[1]
+def source_paths():
+ return [ROOT/'cases19/pipeline_cost/cache_probe.c',ROOT/'cases19/pipeline_cost/noop.comp',Path(__file__).resolve(),Path(rule.__file__).resolve(),Path(prose.__file__).resolve()]
 def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def require(c,s):
  if not c:raise ValueError(s)
@@ -32,7 +34,7 @@ def main():
  a=p.parse_args();a.out.mkdir(parents=True,exist_ok=False);src=ROOT/'cases19/pipeline_cost'
  env={'PATH':'/usr/bin:/bin','LANG':'C','LC_ALL':'C','VK_DRIVER_FILES':str(a.icd.resolve()),'LD_LIBRARY_PATH':str(a.libdir.resolve()),'MESA_SHADER_CACHE_DISABLE':'true'}
  report=dict(provenance=provenance(),status='BLOCKED',run_id=str(uuid.uuid4()),steps=[],environment=env,limitations=['No queue submission, output verification, first/steady frame or GPU timestamps.','Sequential CPU API intervals not comparable cold/warm performance; implicit driver caches may apply.','No Validation layer enabled; successful calls do not certify all Vulkan validity.'])
- sources=[src/'cache_probe.c',src/'noop.comp',Path(__file__),Path(rule.__file__),Path(prose.__file__)]
+ sources=source_paths()
  before={str(x.relative_to(ROOT)):sha(x) for x in sources};report['source_sha256']=before
  toolpaths={'gcc':Path('/usr/bin/gcc'),'glslangValidator':a.tools/'glslangValidator','spirv-val':a.tools/'spirv-val','spirv-dis':a.tools/'spirv-dis','loader':a.loader,'vulkan_core.h':a.include/'vulkan/vulkan_core.h','icd_manifest':a.icd}
  icd=json.loads(a.icd.read_text())['ICD']['library_path'];icdlib=Path(icd) if Path(icd).is_absolute() else a.libdir/icd

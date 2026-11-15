@@ -67,3 +67,18 @@ def test_json_duplicate_and_nonfinite():
 def test_malformed_metric(field,value):
  m=measure();m['candidate'][field]=value
  assert r.decide(cache(),m,policy())['status']=='NEEDS_MEASUREMENT'
+
+
+def test_runner_invoked_through_symlink(tmp_path):
+ import importlib.util
+ from pathlib import Path
+ repo=Path(__file__).resolve().parents[1]
+ alias=tmp_path/'repo-alias';alias.symlink_to(repo,target_is_directory=True)
+ path=alias/'checks19/run_pipeline_cache_cost.py'
+ spec=importlib.util.spec_from_file_location('cache_cost_symlink_test',path)
+ module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+ assert all(p.is_absolute() and p.is_file() for p in module.source_paths())
+ assert [str(p.relative_to(module.ROOT)) for p in module.source_paths()]==[
+ 'cases19/pipeline_cost/cache_probe.c','cases19/pipeline_cost/noop.comp',
+ 'checks19/run_pipeline_cache_cost.py','tools/pipeline_cache_decision19.py',
+ 'tools/pipeline_cache_prose19.py']
