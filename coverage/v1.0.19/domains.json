@@ -280,6 +280,20 @@
           "Vulkan-Docs 1.4.368",
           "validusage 1.4.309 separately pinned"
         ]
+      },
+      {
+        "document": "docs/timeline-contract19.md",
+        "entry": "checks19/run_timeline_contracts.py",
+        "rules": "tools/timeline_contract19.py",
+        "evidence": "timeline-contract.json",
+        "scope": "ordinary timeline host signal bounds and ordering, snapshot ANY/ALL predicates, declared full reference retirement obligations",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
       }
     ]
   },
