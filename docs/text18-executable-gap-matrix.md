@@ -205,3 +205,12 @@ size, direction and destination; repeated groups stay stable while their two
 coverage images differ. Six actual same-device cancel/publish/retire transitions
 verify eighteen readbacks and stale-language rejection. This closes a narrow
 language-dependent path, not full locale/fallback/paragraph/platform acceptance.
+
+
+### Bounded concave mesh increment
+
+Actual ear-clipped triangle lists now cover one validated concave contour and
+its mirrored winding, with six triangles/area960 per case. Independent ray-crossing
+CPU reference, preserved sentinels and actual wrong-fan negatives pass. Holes
+explicitly reject; general topology, curves-to-mesh quality and all 3D extrusion
+features remain open. See the original-plan matrix and vector-mesh fixture scope.

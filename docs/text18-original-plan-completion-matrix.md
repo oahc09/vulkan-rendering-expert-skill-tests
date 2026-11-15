@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `1f650684475d7aa42e7540c8730be09738a1ab8b`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `92b4386f5853708810cec1a8ad6509398eb478f0`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -18,7 +18,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded pass; color glyph/emoji and MSDF/MTSDF remain open; one fixed variable-font weight/width execution now has bounded evidence, not device-only blockers |
 | §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bilinear/mip bleed, fractional geometry, distance range/derivatives remain local open |
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
-| §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask fallback pass; triangulation, stroke/cap/join/dash and broader topology are local open |
+| §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask and simple concave ear-clipped triangle pass; general hole/curve mesh quality, stroke/cap/join/dash and broader topology are local open |
 | §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
 | §6.4 world/3D | Knowledge only | Local open: world labels, near-plane clipping, finite extrusion/bevel, depth/shadows/second view |
 | §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
@@ -30,7 +30,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §7.6 budgets/security | Bounded path/work/atlas input checks, controlled failures, no redistributed system font | Partial: CPU font-service memory and complete cold/hot resource accounting; fixture handle counts are not driver leak proof |
 | §8 capability fallbacks | Explicit knowledge and CPU reject paths | Partial: each unimplemented renderer fallback needs execution before support claims |
 | §10 M1 | Single-provider host implementation above | Partial, not all platforms/languages |
-| §10 M2 | Bitmap and bounded vector mask above | Partial: MSDF/color/world/mesh/clip local open |
+| §10 M2 | Bitmap and bounded vector mask above | Partial: simple contour mesh added; MSDF/color/world/general mesh/clip remain local open |
 | §10 M3 | Current primary milestone | In progress: integration and combined stress gaps above |
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
 | §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, comparative representations and general transformations missing; one fixed variable-font axis path tested |
@@ -64,7 +64,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 2. Composition: independent linear over reference and 1e-6 ROI tolerance; do not relax after failure.
 3. Retirement: pending/final consumers and cancellation tested without illegal use-after-free.
 4. MRT: active velocity/ID/depth write protection verified; stencil/occlusion and production integration remain open.
-5. Geometry: bounded flattening and mask hole tests; no triangle/index acceptance yet.
+5. Geometry: bounded flattening/mask hole tests plus simple concave ear-clipped triangle and index/area checks; arbitrary holes/stroke/extrusion remain open.
 6. Dynamic quality: phase-only area ≤5%, centroid error ≤0.15px, blend ≤1e-6; not all transforms.
 7. Stability: fixed fixture inventories and controlled cleanup; no global allocator/driver leak claim.
 8. Performance: reliable GPU timings, thermal/power and complete p50/p95/p99 breakdown **UNMEASURED**.
@@ -217,3 +217,20 @@ This is evidence of one real language-dependent font substitution path, **not**
 all-language correctness, fallback/paragraph bidi, every locale/font/provider,
 real Android/Windows, typography quality or device/Live/host acceptance. Broader
 original-plan gaps remain visible rather than being relabeled complete.
+
+
+## Simple-contour Vulkan mesh increment
+
+`bounded_vector_mesh` supplies bounded ear clipping after existing contour
+validation, not a general triangle fan. One concave eight-vertex contour and
+its mirrored winding each emit six triangles, conserve area960 and produce
+960 covered pixels through actual vertex-buffer Vulkan draws. Independent
+CPU point-in-polygon references check linear blend <=1e-6 and preserved
+sentinels. Two actual wrong-fan draws fail; copied readback corruption rejects.
+The rendered notch was inspected. Seven selected CPU/GPU tests passed.
+
+Holes/multiple contours explicitly reject to the separately tested mask option;
+this is not an integrated production fallback or a general hole tessellator.
+Curve-to-mesh quality, strokes/caps, extrusion/bevel, world depth/shadows/second
+view, full quality board and external platform/device/Live gates remain open.
+Only source/docs and numerical summary publish.
