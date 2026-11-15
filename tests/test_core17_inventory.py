@@ -40,3 +40,19 @@ def test_symbol_protect_and_remove_are_not_silently_lost():
     assert ref['symbol_attributes']['protect']=='VK_ENABLE_BETA_EXTENSIONS'
     assert ref['symbol_attributes']['api']=='vulkan'
     assert 'VkRemoved' in e['remove_blocks'][0]
+
+def test_cli_wrong_source_does_not_create_output(tmp_path,monkeypatch):
+    import sys
+    src=tmp_path/'wrong.xml';src.write_bytes(b'<registry/>');out=tmp_path/'out'
+    monkeypatch.setattr(sys,'argv',['inventory','--xml',str(src),'--out',str(out)])
+    with pytest.raises(ValueError,match='wrong frozen'):m.main()
+    assert not out.exists()
+
+def test_cli_existing_output_is_not_overwritten(tmp_path,monkeypatch):
+    import sys,hashlib
+    raw=xml('');src=tmp_path/'fixture.xml';src.write_bytes(raw)
+    out=tmp_path/'out';out.mkdir();sentinel=out/'inventory.json';sentinel.write_bytes(b'original')
+    monkeypatch.setattr(m,'SOURCE_SHA256',hashlib.sha256(raw).hexdigest())
+    monkeypatch.setattr(sys,'argv',['inventory','--xml',str(src),'--out',str(out)])
+    with pytest.raises(FileExistsError):m.main()
+    assert sentinel.read_bytes()==b'original'

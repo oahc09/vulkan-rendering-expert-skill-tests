@@ -8,23 +8,24 @@ permissions:
   contents: read
 jobs:
   pytest:
+    strategy:
+      fail-fast: false
+      matrix:
+        cohort: [legacy16, core17]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout test repository
         uses: actions/checkout@v4
         with:
           path: tests
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           persist-credentials: false
       - name: Resolve reviewed paired candidate (no fallback)
         id: candidate
         run: |
-          python - <<'PYCODE'
-          import json, os, re
-          c = json.load(open('tests/release-contract.json'))
-          assert re.fullmatch('[0-9a-f]{40}', c['skill_sha']), 'Reviewed full SHA required'
-          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-              f.write('sha=' + c['skill_sha'] + '\n')
-          PYCODE
+          SHA=$(python tests/tests/run_versioned_gate.py --cohort '${{ matrix.cohort }}' --resolve)
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
       - name: Checkout paired skill revision
         uses: actions/checkout@v4
         with:
@@ -51,8 +52,8 @@ jobs:
           node scripts/check-skill.mjs
           python scripts/host_contract.py
           python -m unittest discover -s scripts -p 'test_*.py'
-      - name: Static
-        run: python -m pytest -q -m static tests/tests
+      - name: Version-scoped static gates (no cross-version assertion weakening)
+        run: python tests/tests/run_versioned_gate.py --cohort '${{ matrix.cohort }}' --skill skill
       - name: Host Unit (CPU contracts, not GPU execution)
         run: python -m pytest -q -m host_unit tests/tests
       - name: Snapshot (historical v1.0.8, not live evidence)

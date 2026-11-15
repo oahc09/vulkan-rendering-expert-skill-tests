@@ -73,3 +73,35 @@ old version assertions to manufacture a complete cumulative pass. New static
 classification/registration checks and inherited CPU tests are separate layers.
 No new shader/GPU coverage, Live semantic review, actual host or mobile device
 acceptance is claimed. Gate K/B/P and release remain BLOCKED.
+
+## Version-scoped CI correction and executable negatives
+
+Initial PR head `0482bab` CI run 43669169807 failed because the inherited job
+checked out the unchanged v1.0.16 release-contract SHA then ran the new CORE17
+exact-pin assertion. That failure is retained, not rewritten as success.
+
+CI now has two explicit profiles, both with read-only contents permission:
+- `legacy16`: the original Skill pin and all 275 legacy static checks; the new
+  CORE17 files are evaluated separately rather than against the wrong version.
+- `core17`: the independent Skill17 pin and all static checks except the two
+  named legacy16 version/release-pin nodes. These two unchanged tests still run
+  in legacy16. Their version/routing/package/CRC/knowledge-budget checks are
+  reproduced against the CORE17 pin, plus byte-identical double packaging.
+
+No broad old suite is dropped or assertion weakened. Executable negative tests
+reject mutable/wrong version pins, unsupported cohort fallback, dirty/hidden
+Skill state, forged release PASS, incorrect frozen XML, and output overwrite.
+The independent review confirmed the scope split and no workflow permission
+expansion. All snapshot results remain historical; Live availability is not
+semantic execution. No missing platform or GPU gate becomes PASS.
+
+Local named commands:
+```
+python tests/run_versioned_gate.py --cohort legacy16 --skill /pinned/skill16
+python tests/run_versioned_gate.py --cohort core17 --skill /pinned/skill17
+```
+Local verification before publishing: legacy16 static 275 passed;
+core17 static 305 passed (251 not selected, including the 2 legacy-pin nodes);
+each pairing Host CPU 123 passed and historical Snapshot 4 passed. Skill17
+structure and 24 pack/host-contract unit tests also pass. These local results
+are not a remote CI conclusion; PR records the later exact published result.
