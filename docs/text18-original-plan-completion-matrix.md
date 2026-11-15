@@ -1066,3 +1066,40 @@ C1-C4 and M1-M3 remain partial; M4 remains BLOCKED. Exact-head post-publication
 regression and CI receipts are recorded in PR comments; the earlier 319-test
 cumulative receipt belongs only to e130cb1, not this stage. Branch/base and
 Skill c0b62 pairing are unchanged.
+
+
+## Scene B same-pass vector integration (2026-11-15)
+
+`tests/fixtures/scene_b_vector_overlay_lab` extends the shared world executor,
+not a stitched image: one Device/light image, twelve serial camera passes,
+five real draws each. The fifth draw is a support quad with analytic hard
+pixel-center rectangular-ring/straight-stroke union, one alpha .35 composition,
+and three fragment clip layers. It is screen-space, ALWAYS/depth-write-off;
+world depth and active auxiliary outputs are independently retained.
+
+Five positive full views cover both cameras, opposite-inner nonzero/evenodd
+and same-inner nonzero/evenodd. Same-inner nonzero visibly fills the hole.
+Independent CPU oriented winding, closest-segment distance and finite-edge plus
+ray-crossing clip reference checks full composition. Seven actual negatives
+bypass each clip, fill the hole, change round to butt, bypass shadow or use
+stale label camera; depth/aux are validated before color rejection.
+
+First candidate run failed at five exact rotated-clip edge pixels because the
+new CPU reference omitted finite closed-boundary inclusion already present in
+the old clip reference and GPU shader. That reference migration defect was fixed
+and host-tested without changing rendering, coordinates, tolerance or exclusions.
+First failure and initial preflight counts remain recorded. Corrected clip
+difference counts are36/91/35, wrong-hole256, wrong-cap12.
+
+Frozen local validation: 3 host + 1 actual GPU tests passed in19.11seconds;
+positive color max8.1956387e-8, scene depth2.9702516e-7, light depth1.4851258e-7.
+Unchanged1e-6 whole-image gate, zero excluded pixels. Seven negative color errors
+range .225000024 to .600000012 while protected attachments/depth remain valid.
+Minimal report: `reports/history/text18-scene-b-vector-overlay-public/numerical-summary.json`.
+
+Still not complete Scene B: round frames, quadratic/cubic paths, more general
+controlled contours, near/negative-scale integration and remaining original
+scene combinations are not closed. No general SVG, world-space path, AA,
+perspective, real Surface/device or Live claim. Original branch dependency,
+Skill c0b62 pair and partial/BLOCKED milestones unchanged. Exact-head selected
+regression/CI receipts follow in PR comments, not inferred from this local run.
