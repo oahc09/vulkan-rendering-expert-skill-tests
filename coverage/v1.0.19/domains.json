@@ -159,7 +159,7 @@
     "existing_route": "[合同入口](05_descriptor/push_descriptor.md#push-descriptor-count-lifetime)",
     "open_review": "各binding model与pipeline layout兼容性的全量扩展合同",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
+    "status": "PARTIAL_BOUNDED",
     "owner": "v1.0.19 C1",
     "bounded_review": {
       "scope": "ordinary non-null non-sparse UBO descriptor updates",
@@ -204,6 +204,20 @@
         "validation": "ordinary Validation, NOT SyncVal/GPU-AV",
         "production_or_hardware_acceptance": false
       }
+    },
+    "dynamic_ubo_ring": {
+      "contract": "uniform_buffer_descriptor.md#delivery19-dynamic-ubo-ring",
+      "evidence": "dynamic-ubo.json",
+      "scope": "ordinary two-element dynamic UBO array, three sequential graphics frames, A/B/retired-A generation reuse, legal offset-order semantic fault and minimal repair with independent pixels",
+      "domain_complete": false,
+      "still_open": [
+        "all descriptor binding models and layout compatibility",
+        "update-after-bind, descriptor buffers and indexing",
+        "concurrent frames, multi-thread and multi-queue races",
+        "actual noncoherent visibility",
+        "physical/mobile performance",
+        "Vulkan SC and external-engine/Live/blind acceptance"
+      ]
     }
   },
   {
