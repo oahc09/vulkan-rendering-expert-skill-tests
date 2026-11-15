@@ -83,3 +83,27 @@ rejects. The rendered result was inspected. This advances the packed UV gap in
 §5/§7/§13 beyond whole-page sampling; no fractional filtering, shaped-word layout,
 MSDF or full asynchronous renderer claim follows. The priority after this bounded
 pass remains active MRT/depth protection and combined lifecycle integration.
+
+## Active MRT/depth and bounded nested clip increment
+
+These later bounded experiments advance two **local open** rows above, not the
+external platform/device gates. The historical baseline table is not rewritten.
+
+- **§7.4 / §13.1(4):** `text_active_mrt_lab` makes all three color references
+  active, queries/enables independentBlend, and uses per-output write masks.
+  An active D32 depth attachment is cleared/read back. Color changes while all
+  3185 velocity/ID/depth pixels remain exact. Two legal negative pipelines enable
+  auxiliary writes or depth writes: actual ID changes to(4,3,2,1) / depth to0 and
+  the oracle rejects. Depth compare ALWAYS with write disabled proves preservation,
+  **not occlusion**, stencil, rendergraph integration or full world-text behavior.
+- **§6.3 / §11B:** `text_clip_lab` executes three nested hard clip predicates in
+  the real fragment shader: rectangle ∩ circle ∩ rotated rectangle. The uploaded
+  synthetic coverage is not CPU-premasked. Independent CPU polygon ray crossing,
+  circle arithmetic and all-pixel linear composition reference check the result;
+  bypassing each layer in a valid GPU draw must fail. Actual image inspected.
+  This fixed pixel-center hard clip is **not** arbitrary path clipping, AA/MSAA,
+  stencil, variable-depth clip stack or a combined glyph renderer.
+- Both require enabled validation, fixed1e-6 tolerance and actual readback.
+  Software Vulkan is not Android/Windows/mobile hardware or performance evidence.
+  Combined asynchronous packed-glyph lifecycle, multiple outputs/devices,
+  world-depth ordering and the other matrix gaps remain open.

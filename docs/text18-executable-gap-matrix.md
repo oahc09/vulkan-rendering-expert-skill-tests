@@ -137,3 +137,19 @@ The initial host-event approach failed validation (VUID-vkSetEvent-event-09543),
 was not accepted and was replaced by the timeline mechanism. Raw failed evidence
 is retained locally. This remains separate from packed-UV glyph draw integration,
 multi-queue/device access and target-device qualification.
+
+## Active-output and hard-clip increments
+
+The separate active MRT fixture now uses three actual active color attachments
+plus active D32. independentBlend is explicitly queried/enabled; velocity/ID
+write masks are zero, depth writes disabled. Readback checks all sentinel pixels.
+Legal auxiliary-write/depth-write negatives change real attachments and fail
+an independent oracle. Depth compare ALWAYS does not test geometry occlusion.
+The original UNUSED/preserve fallback is unchanged.
+
+A separate bounded nested-clip fixture intersects a rectangle, circle and
+rotated rectangle directly in its fragment shader. A CPU ray-crossing polygon
+reference and circle arithmetic independently reconstruct expected coverage.
+Each layer-bypass draw must be rejected. This hard pixel-center example is not
+AA, stencil, arbitrary vector paths or production clip-stack integration.
+Combined renderer lifecycle and real target/Live acceptance remain open.
