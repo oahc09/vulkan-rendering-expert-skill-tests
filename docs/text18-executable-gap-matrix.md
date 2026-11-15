@@ -223,3 +223,13 @@ composition. Independent fixed-geometry/palette reference checks linear blend,
 sRGB decoding, and preserved sentinels, with legal wrong-color/missing-decode
 GPU negatives. Synthetic two-layer scope only; not production emoji/COLRv1 or
 independent text-opacity qualification. See fixture README and original matrix.
+
+
+### Edge-colored MSDF experimental path
+
+Actual trusted A/O outlines pass through pinned official msdfgen to a Vulkan
+RGB-distance/median/bilinear shader, eight bounded scale/phase cases. Separate
+sampling and independent outline references plus three wrong-shader/range GPU
+controls execute. Coverage max difference0.3997 is within the pre-registered
+permissive0.45 experimental bound, **not pixel identity or full typography
+quality acceptance**. MTSDF, broader quality and target/Live gates remain open.

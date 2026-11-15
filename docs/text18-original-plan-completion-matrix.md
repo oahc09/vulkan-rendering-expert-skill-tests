@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `92b4386f5853708810cec1a8ad6509398eb478f0`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `02430c28878ea0d24388cedff85e814f1fe43879`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -15,8 +15,8 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §4.2 Android Java/JNI | Knowledge/contract only | External unverified: no actual Java/JNI platform invocation; not supplied by Linux HarfBuzz |
 | §4.3 DirectWrite | Knowledge/contract only | External unverified: no actual DirectWrite run/outline/bitmap |
 | §4.4 beyond-64k/new tables | Wide-ID and range contracts | Partial: real capable provider and new font format fixtures unavailable/unverified; uint32 storage is not provider support |
-| §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded pass; color glyph/emoji and MSDF/MTSDF remain open; one fixed variable-font weight/width execution now has bounded evidence, not device-only blockers |
-| §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bilinear/mip bleed, fractional geometry, distance range/derivatives remain local open |
+| §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded bitmap, synthetic COLRv0 and A/O MSDF experimental passes; production color glyph/emoji, MTSDF and full comparative quality remain local open; fixed variable-font weight/width execution has bounded evidence |
+| §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bounded bilinear MSDF with range/derivatives tested; mip bleed, general transforms/packing and complete quality board remain local open |
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask and simple concave ear-clipped triangle pass; general hole/curve mesh quality, stroke/cap/join/dash and broader topology are local open |
 | §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
@@ -30,7 +30,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §7.6 budgets/security | Bounded path/work/atlas input checks, controlled failures, no redistributed system font | Partial: CPU font-service memory and complete cold/hot resource accounting; fixture handle counts are not driver leak proof |
 | §8 capability fallbacks | Explicit knowledge and CPU reject paths | Partial: each unimplemented renderer fallback needs execution before support claims |
 | §10 M1 | Single-provider host implementation above | Partial, not all platforms/languages |
-| §10 M2 | Bitmap and bounded vector mask above | Partial: simple contour mesh added; MSDF/world/general mesh/clip remain local open; synthetic COLRv0 bounded pass |
+| §10 M2 | Bitmap and bounded vector mask above | Partial: simple contour mesh added; world/general mesh/clip and full comparative quality remain local open; synthetic COLRv0 and A/O MSDF bounded experimental passes |
 | §10 M3 | Current primary milestone | In progress: integration and combined stress gaps above |
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
 | §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, comparative representations and general transformations missing; one fixed variable-font axis path tested |
@@ -255,3 +255,34 @@ This is a synthetic COLRv0 provider-to-GPU path, not production emoji or COLRv1
 paint-graph/SVG/bitmap-color support. Separate text opacity, arbitrary layer
 complexity, other color formats, active-MRT combination, full typography and
 Android/Windows/device/Live acceptance remain unverified.
+
+
+## Official edge-colored MSDF experimental increment
+
+The new lab extracts trusted-font A/O outlines through HarfBuzz glyph identity
+and FreeType, then uses official msdfgen core pinned to
+`1874bcf7d9624ccc85b4bc9a85d78116f690f35b` (external local dependency, not
+bundled). True edge-colored RGB distance values, not three copies of scalar
+coverage, upload into linear RGBA32F and use bilinear median reconstruction
+with derivative-based screen distance range. A=1 is padding, not MTSDF.
+
+Eight positive draws cover scale0.75/1/1.5 and0.25px phase for A/O. An independent
+CPU bilinear/median blend reference checks numerical execution; a separate
+source-outline16x16 supersampled reference checks bounded coverage. The fixed
+experimental limits were registered before first build: sampling2e-4, ROI
+MAE0.04, edge MAE0.16, maximum coverage difference0.45. Actual worst sampling
+error2.379e-6, ROI MAE0.01674, edge MAE0.02590, **maximum local coverage
+difference0.3997**. The last metric is substantial: this is NOT pixel identity,
+optimal small-text quality or complete original-plan acceptance.
+
+Actual single-channel, wrong-sRGB and wrong-range GPU negatives reject. The
+existing UNUSED/preserve sentinel path is unchanged, not an active-MRT combined
+result. Padding/clip, pinned source/hidden-index flags and pre-parser font hash
+guards are enforced. First two engineering failures (adapter count and missing
+inherited shader) remain recorded; no numerical threshold was loosened.
+
+Still open: sharper local corner agreement, complete representation comparison,
+more scripts/fonts/transforms, arbitrary perspective/minification, MTSDF,
+production atlas/churn integration for this path, Android/Windows/mobileGPU and
+Live. Only adapter source/docs/stripped numbers publish; upstream source, font,
+raw builds and machine provenance remain local.
