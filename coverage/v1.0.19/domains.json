@@ -23,8 +23,20 @@
     "existing_route": "[合同入口](03_command_buffer/command_buffer.md)",
     "open_review": "各命令host sync、secondary/inheritance、conditional rendering组合",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "joint_descriptor_command_scope": {
+      "contract": "command_buffer.md#delivery19-ordinary-descriptor--command-buffer-joint-lifecycle-bounded-l1l2",
+      "evidence": "descriptor-lifetime.json",
+      "scope": "ordinary primary command-buffer descriptor retirement/invalidation; single CPU ICD queue",
+      "not_closed": [
+        "secondary/inheritance",
+        "pool-wide reset",
+        "general command host synchronization",
+        "physical GPU",
+        "external project blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK04",

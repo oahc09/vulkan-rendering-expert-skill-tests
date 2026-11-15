@@ -6,11 +6,12 @@
 #include <stdlib.h>
 #include <string.h>
 static unsigned errors, expected;
+static const char *expected_id="VUID-vkUpdateDescriptorSets-None-03047";
 static const char *phase="setup";
 static VKAPI_ATTR VkBool32 VKAPI_CALL cb(VkDebugUtilsMessageSeverityFlagBitsEXT severity,VkDebugUtilsMessageTypeFlagsEXT type,const VkDebugUtilsMessengerCallbackDataEXT *d,void *u){
  (void)type;(void)u;
  if(!(severity&VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT))return VK_FALSE;
- errors++;if(d->pMessageIdName&&!strcmp(d->pMessageIdName,"VUID-vkUpdateDescriptorSets-None-03047"))expected++;
+ errors++;if(d->pMessageIdName&&!strcmp(d->pMessageIdName,expected_id))expected++;
  fprintf(stderr,"VUID phase=%s id=%s\n",phase,d->pMessageIdName?d->pMessageIdName:"null");
  return VK_TRUE; /* Abort the deliberately invalid update before it reaches ICD. */
 }
@@ -23,8 +24,12 @@ static void record(VkCommandBuffer cmd,VkPipeline pipeline,VkPipelineLayout layo
  vkCmdPipelineBarrier(cmd,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_PIPELINE_STAGE_HOST_BIT,0,0,NULL,1,&b,0,NULL);
 }
 int main(int argc,char **argv){
- if(argc!=3||(strcmp(argv[1],"good")&&strcmp(argv[1],"bad")&&strcmp(argv[1],"wrong-output")))return 64;
- int bad=!strcmp(argv[1],"bad"),wrong=!strcmp(argv[1],"wrong-output"),rc=2,pending=0;
+ if(argc!=3||(strcmp(argv[1],"good")&&strcmp(argv[1],"bad")&&strcmp(argv[1],"wrong-output")&&strcmp(argv[1],"pending-reset")&&strcmp(argv[1],"stale-submit")))return 64;
+ int bad=!strcmp(argv[1],"bad"),wrong=!strcmp(argv[1],"wrong-output"),resetPending=!strcmp(argv[1],"pending-reset"),stale=!strcmp(argv[1],"stale-submit"),rc=2,pending=0;
+ unsigned expectedErrors=(bad||resetPending||stale)?1u:0u;
+ if(resetPending)expected_id="VUID-vkResetCommandBuffer-commandBuffer-00045";
+ if(stale)expected_id="VUID-vkQueueSubmit-pCommandBuffers-00070";
+ VkResult rejectedCall=VK_SUCCESS;
  VkInstance instance=VK_NULL_HANDLE;VkDevice device=VK_NULL_HANDLE;VkDebugUtilsMessengerEXT messenger=VK_NULL_HANDLE;
  PFN_vkDestroyDebugUtilsMessengerEXT destroy=NULL;
  VkBuffer buffers[3]={0};VkDeviceMemory memory[3]={0};void *mapped[3]={0};
@@ -94,16 +99,30 @@ int main(int argc,char **argv){
  pendingStatus=vkGetFenceStatus(device,fence);if(pendingStatus!=VK_NOT_READY){fprintf(stderr,"fence unexpectedly ready\n");goto cleanup;}
  phase="pending-update";
  if(bad){vkUpdateDescriptorSets(device,1,writes,0,NULL);if(errors!=1||expected!=1)goto cleanup;}
+ if(resetPending){
+  phase="pending-reset";
+  rejectedCall=vkResetCommandBuffer(cmd,0);
+  if(rejectedCall!=VK_ERROR_VALIDATION_FAILED_EXT||errors!=1||expected!=1)goto cleanup;
+ }
  phase="release-and-first-readback";
  VkSemaphoreSignalInfo signal={.sType=VK_STRUCTURE_TYPE_SEMAPHORE_SIGNAL_INFO,.semaphore=timeline,.value=1};CHECK(vkSignalSemaphore(device,&signal));
  CHECK(vkWaitForFences(device,1,&fence,VK_TRUE,10000000000ULL));pending=0;first=*(uint32_t*)mapped[2];if(first!=42)goto cleanup;
  /* Completion permits ordinary update; re-record since the update invalidates the old executable command buffer. */
  phase="completed-update-rerecord";
  infos[0].buffer=buffers[1];vkUpdateDescriptorSets(device,1,writes,0,NULL);
- CHECK(vkResetCommandBuffer(cmd,0));CHECK(vkResetFences(device,1,&fence));CHECK(vkBeginCommandBuffer(cmd,&begin));record(cmd,pipeline,pipelineLayout,set,buffers[2]);CHECK(vkEndCommandBuffer(cmd));
+ CHECK(vkResetFences(device,1,&fence));
+ if(stale){
+  phase="stale-submit";
+  submit.pNext=NULL;submit.waitSemaphoreCount=0;submit.pWaitSemaphores=NULL;submit.pWaitDstStageMask=NULL;
+  rejectedCall=vkQueueSubmit(queue,1,&submit,fence);
+  if(rejectedCall!=VK_ERROR_VALIDATION_FAILED_EXT||errors!=1||expected!=1)goto cleanup;
+  if(vkGetFenceStatus(device,fence)!=VK_NOT_READY)goto cleanup;
+ }
+ phase="recovery-reset-rerecord";
+ CHECK(vkResetCommandBuffer(cmd,0));CHECK(vkBeginCommandBuffer(cmd,&begin));record(cmd,pipeline,pipelineLayout,set,buffers[2]);CHECK(vkEndCommandBuffer(cmd));
  submit.pNext=NULL;submit.waitSemaphoreCount=0;submit.pWaitSemaphores=NULL;submit.pWaitDstStageMask=NULL;
  CHECK(vkQueueSubmit(queue,1,&submit,fence));pending=1;CHECK(vkWaitForFences(device,1,&fence,VK_TRUE,10000000000ULL));pending=0;second=*(uint32_t*)mapped[2];
- rc=(second==(wrong?100u:99u)&&errors==(bad?1u:0u)&&expected==(bad?1u:0u))?0:6;
+ rc=(second==(wrong?100u:99u)&&errors==expectedErrors&&expected==expectedErrors)?0:6;
 cleanup:
  phase="cleanup";
  if(device){
@@ -123,7 +142,7 @@ cleanup:
  if(messenger&&destroy)destroy(instance,messenger,NULL);
  if(instance)vkDestroyInstance(instance,NULL);
  free(spv);
- if(rc==0&&(errors!=(bad?1u:0u)||expected!=(bad?1u:0u)))rc=9;
- printf("{\"mode\":\"%s\",\"fence_not_ready\":%s,\"first\":%u,\"second\":%u,\"errors\":%u,\"expected_vuid_count\":%u,\"exit_code\":%d}\n",argv[1],pendingStatus==VK_NOT_READY?"true":"false",first,second,errors,expected,rc);
+ if(rc==0&&(errors!=expectedErrors||expected!=expectedErrors))rc=9;
+ printf("{\"mode\":\"%s\",\"fence_not_ready\":%s,\"first\":%u,\"second\":%u,\"errors\":%u,\"expected_vuid_count\":%u,\"rejected_call_result\":%d,\"exit_code\":%d}\n",argv[1],pendingStatus==VK_NOT_READY?"true":"false",first,second,errors,expected,rejectedCall,rc);
  return rc;
 }

@@ -1,13 +1,13 @@
 {
-  "run_id": "ce21f2cd-6e56-4cd9-bdb4-0bf91bc36665",
+  "run_id": "cffe0bd4-d981-4b3e-9048-f3a9067e43c4",
   "provenance": "original deliberate fault injection; not production discovery",
   "sources": {
-    "probe.c": "67e2fe32894e905b7143905fa07ba9e497d60d6c143fa5b194461350a81911e7",
+    "probe.c": "1ac6fddeb8cfc786ec6e712338c4639a4b5530f0786b800f7b85d3829cd689bf",
     "compute.comp": "622f8bbfcd4006f80c1a206be36f5057ac4f4586e770735162861cab77402b10",
-    "run.py": "956d58c177eb3fb1d0614aeddf828614f30caf376d3d3d8f7dac2dd9e1cce835"
+    "run.py": "d9e1f7607cf40ab5f281e2db306b7dc118d03a9c7be51394d9213edcd26a5559"
   },
   "shader_sha256": "a05387e0f5d6e7ee10c0b88433e914243ab92820457107f5d461da545150ff45",
-  "binary_sha256": "8b256eba3308d1e7085fc4a9a33e2aa4607f4cfa3140e73eab19f64b23e5a447",
+  "binary_sha256": "0a8d5026843a272b4b44389b18efeeedf0684421754de532b3afe5e43f9a9b35",
   "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
   "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
   "glslang_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
@@ -26,10 +26,11 @@
         "second": 99,
         "errors": 0,
         "expected_vuid_count": 0,
+        "rejected_call_result": 0,
         "exit_code": 0
       },
       "diagnostics": [],
-      "stdout_sha256": "44c235137e0cd0fb317eb9c77d716123e690e196597c80ff5cfea8ae335215c3",
+      "stdout_sha256": "5f6a323e4a74d45bad0d5d68fe965fef49b2576f91713dcac979f95cfa0ae127",
       "stderr_sha256": "6738e38dc3021092460bf8493f53dc9853054e150c2d985bd0c7e7b3be0507f6"
     },
     "bad": {
@@ -40,12 +41,13 @@
         "second": 99,
         "errors": 1,
         "expected_vuid_count": 1,
+        "rejected_call_result": 0,
         "exit_code": 0
       },
       "diagnostics": [
         "VUID phase=pending-update id=VUID-vkUpdateDescriptorSets-None-03047"
       ],
-      "stdout_sha256": "a978d37f2ebd153dd46ee228d17d21f93405b5ab3a6453a1f9ea9e187155781d",
+      "stdout_sha256": "bac91c928695050a186ea35d2a58a5b656414e69e59e88d4069ae5a7e09edb25",
       "stderr_sha256": "9571a661c292587779314a84b9071b7b9636211d59d45cee8ca4b853b714a62f"
     },
     "wrong-output": {
@@ -56,11 +58,46 @@
         "second": 99,
         "errors": 0,
         "expected_vuid_count": 0,
+        "rejected_call_result": 0,
         "exit_code": 6
       },
       "diagnostics": [],
-      "stdout_sha256": "31d29e0239b4b941e87d8af8378b514597a56bb9af77be0582f6ae62c67ebec2",
+      "stdout_sha256": "9526d27248afeb84af186ce457ef458bd1d8ef5da4fe9c8adb5a2d94597bba51",
       "stderr_sha256": "6738e38dc3021092460bf8493f53dc9853054e150c2d985bd0c7e7b3be0507f6"
+    },
+    "pending-reset": {
+      "result": {
+        "mode": "pending-reset",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 1,
+        "expected_vuid_count": 1,
+        "rejected_call_result": -1000011001,
+        "exit_code": 0
+      },
+      "diagnostics": [
+        "VUID phase=pending-reset id=VUID-vkResetCommandBuffer-commandBuffer-00045"
+      ],
+      "stdout_sha256": "19a06b3784591d16273aaa0a044b4779a3f20d2c76abc8003a21b5bfb4aaf0c7",
+      "stderr_sha256": "d3d5dc46793dc75545622c87b7da7ab5dc923bcfc46d42c4c92f26d8a2abecab"
+    },
+    "stale-submit": {
+      "result": {
+        "mode": "stale-submit",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 1,
+        "expected_vuid_count": 1,
+        "rejected_call_result": -1000011001,
+        "exit_code": 0
+      },
+      "diagnostics": [
+        "VUID phase=stale-submit id=VUID-vkQueueSubmit-pCommandBuffers-00070"
+      ],
+      "stdout_sha256": "173610c637a7d59631eb0bfccf69ff76468c556f6a56cf36cc87452417f9a804",
+      "stderr_sha256": "0f56059e3d34ee13c4ffd74300876f56e791d4cd6eeec09e44812ebaad6d733c"
     }
   },
   "runtime_identity": {
@@ -78,7 +115,7 @@
     "CPU ICD and one queue only",
     "actual timeline wait, not render-frame latency evidence",
     "ordinary descriptor flags only; update-after-bind/indexing excluded",
-    "invalid pending update aborted by Validation; driver undefined behavior not exercised",
+    "invalid pending update/reset and stale submit aborted by Validation; driver undefined behavior not exercised",
     "uniform/storage shader with 42 then 99 only; no general shader correctness",
     "wrong-output is an authored oracle negative, not an independently discovered defect",
     "not external-project/Live-model/hardware/SC acceptance"

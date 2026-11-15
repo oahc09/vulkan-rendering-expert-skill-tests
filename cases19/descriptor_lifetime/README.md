@@ -26,3 +26,20 @@ indexing, SC execution, external-project repair or Live-model acceptance.
 
 Only ordinary Validation is enabled here, not SyncVal or GPU-AV. The wrong-output
 case is an authored oracle negative control, not independent defect discovery.
+
+Joint command lifecycle modes also retain both readbacks:
+- pending-reset resets while the timeline-gated dispatch is provably pending;
+  only `VUID-vkResetCommandBuffer-commandBuffer-00045` is permitted.
+- stale-submit updates the ordinary set after retirement, then attempts to submit
+  the now-invalid old command buffer without re-recording; only
+  `VUID-vkQueueSubmit-pCommandBuffers-00070` is permitted.
+Both invalid calls must return VK_ERROR_VALIDATION_FAILED_EXT; the callback aborts
+before driver execution. Recovery resets/re-records and obtains 99. The runner
+checks exact mode, phase, diagnostic count, abort result, fence status and values.
+Separate CPU negative tests mutate these evidence fields; they are not extra GPU
+runs. Pool-wide reset, secondary command inheritance and advanced bindings remain
+outside the experiment. Current latest reference prose may differ from the pinned
+1.4.309 Validation runtime; actual diagnostic IDs are recorded, not inferred.
+The diagnostic subscription is ERROR severity only. No additional diagnostics
+means no additional ERROR-level Validation diagnostics, not no warnings. SyncVal
+and GPU-AV are not enabled in this experiment.
