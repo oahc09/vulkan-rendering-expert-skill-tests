@@ -375,8 +375,22 @@
     "existing_route": "[合同入口](02_surface_swapchain/surface.md)",
     "open_review": "每个公开平台扩展、present timing/id/wait/maintenance组合",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "headless_present_chain": {
+      "contract": "swapchain_recreate.md#delivery19-headless-present-retirement",
+      "rules": "tools/headless_wsi19.py",
+      "evidence": "headless-wsi.json",
+      "scope": "CPU ICD headless acquire-clear-copy-present, actual maintenance1 present-fence retirement and explicit oldSwapchain generation rebuild; no physical screen or actual out-of-date event claim",
+      "domain_complete": false,
+      "still_open": [
+        "real window platforms and physical displays",
+        "actual OUT_OF_DATE/SURFACE_LOST/device-lost recovery",
+        "overlapped frames, pacing and presentation timing",
+        "protected surfaces, VRR and platform extension combinations",
+        "Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK14",
