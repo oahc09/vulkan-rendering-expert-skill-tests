@@ -11,8 +11,8 @@
   "release_status": "BLOCKED",
   "unclosed": [
     "CORE17 exact-pair baseline",
-    "actual platform bridges",
-    "actual Vulkan text/vector lab",
+    "Android/Windows platform bridges",
+    "complete typography/vector/atlas Vulkan labs",
     "visual quality",
     "Live semantic review",
     "actual host",

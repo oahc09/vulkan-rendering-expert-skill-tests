@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "evidence": "actual software Vulkan development execution; not final two-repository release acceptance",
+  "numeric": {
+    "status": "PASS",
+    "size": [
+      32,
+      24
+    ],
+    "queue_count": 1,
+    "consumer_count": 3,
+    "generations": 2,
+    "first_generation_last_consumer": 2,
+    "final_counter": 3,
+    "max_readback_error": 0,
+    "validation_enabled": true,
+    "parallel_hardware_claimed": false
+  },
+  "retirement": [
+    {
+      "phase": "both_consumers_pending",
+      "completed": 0,
+      "last_consumer": 2,
+      "reuse_allowed": false
+    },
+    {
+      "phase": "consumer_A_done_B_pending",
+      "completed": 1,
+      "last_consumer": 2,
+      "reuse_allowed": false
+    },
+    {
+      "phase": "both_consumers_done",
+      "completed": 2,
+      "last_consumer": 2,
+      "reuse_allowed": true
+    }
+  ],
+  "pending_abort_expected_exit": 1,
+  "validation_diagnostics": 0,
+  "pytest_passed": 1,
+  "pytest_skipped": 0,
+  "source_sha256": {
+    "tests/fixtures/text_inflight_lab/main.cpp": "5a016d190f7e909d0b3ee345f9f46680c2abefee7b5234f9dddf0c8c16dd3285",
+    "tests/fixtures/text_inflight_lab/run_lab.py": "5dc7fbd552ca9ecc34f67284cdf1758ea2149852030dcce70440cc28a122fbd3"
+  },
+  "limits": [
+    "single queue, multiple in-flight submissions, not multi-queue parallel hardware",
+    "transfer read consumers, not sampled draw/descriptor retirement",
+    "host-gated two-generation controlled schedule, not indefinite atlas churn",
+    "no Android/Windows target device validation or performance claim"
+  ]
+}

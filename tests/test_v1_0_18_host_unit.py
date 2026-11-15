@@ -81,7 +81,7 @@ def test_raster_options_do_not_alias(change):
     assert base != replace(base,**change)
 
 
-@pytest.mark.parametrize('bad_upload',[-1,True,2**32,'1'])
+@pytest.mark.parametrize('bad_upload',[-1,True,2**64,'1'])
 def test_prepare_failure_is_atomic(bad_upload):
     from copy import deepcopy
     slot=AtlasSlot('device');before=deepcopy(slot.__dict__)
