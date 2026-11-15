@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `d17711a5cb640adf2704be4148b416bdbcd6e7fa`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `57a1aef66efa36784bb576d2919d9843ef786dd1`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -15,7 +15,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §4.2 Android Java/JNI | Knowledge/contract only | External unverified: no actual Java/JNI platform invocation; not supplied by Linux HarfBuzz |
 | §4.3 DirectWrite | Knowledge/contract only | External unverified: no actual DirectWrite run/outline/bitmap |
 | §4.4 beyond-64k/new tables | Wide-ID and range contracts | Partial: real capable provider and new font format fixtures unavailable/unverified; uint32 storage is not provider support |
-| §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded bitmap, synthetic COLRv0 and A/O MSDF experimental passes; production color glyph/emoji, MTSDF and full comparative quality remain local open; fixed variable-font weight/width execution has bounded evidence |
+| §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded bitmap, synthetic COLRv0 and A/O MSDF experimental passes; production color glyph/emoji and full comparative quality remain local open; MTSDF is an unimplemented representation option, not an added mandatory gate; fixed variable-font weight/width execution has bounded evidence |
 | §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bounded bilinear MSDF with range/derivatives tested; mip bleed, general transforms/packing and complete quality board remain local open |
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask and simple concave ear-clipped triangle pass; general hole/curve mesh quality, stroke/cap/join/dash and broader topology are local open |
@@ -24,8 +24,8 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
 | §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; six-transition real run/size/direction churn added; bounded fixed-font axis churn added; long stress and broader locale/variation semantics remain open |
 | §7.4 consumers | Two immutable sampled descriptor sets and pending timeline-gated fragment submissions; real fence status | Bounded pass; not shader-already-running, multi-queue or multi-device proof |
-| §7.4 multi-engine | CPU boundaries described | Local open: two real Vulkan devices/outputs, shared CPU cache and independent GPU handles, pause/rebuild/destruction |
-| §7.4 MRT | Active 3-color plus D32 write protection and legal wrong-output negatives; old fallback preserved | Bounded pass; stencil, actual occlusion, rendergraph/world ordering remain local open |
+| §7.4 multi-engine | CPU boundaries described | Bounded serial dual-logical-device offscreen experiment now verifies independent GPU handles and pause/destroy/rebuild with shared immutable CPU glyph inputs; real Surfaces, concurrency and production cache ownership remain open |
+| §7.4 MRT | Active 3-color plus D32 write protection and legal wrong-output negatives; old fallback preserved | Bounded pass; bounded authored-solid depth occlusion now tested separately; stencil and general rendergraph/world ordering remain local open |
 | §7.5 temporal/HDR | Linear composition checked numerically | Local open: full temporal/HDR handoff and world-motion experiment |
 | §7.6 budgets/security | Bounded path/work/atlas input checks, controlled failures, no redistributed system font | Partial: CPU font-service memory and complete cold/hot resource accounting; fixture handle counts are not driver leak proof |
 | §8 capability fallbacks | Explicit knowledge and CPU reject paths | Partial: each unimplemented renderer fallback needs execution before support claims |
@@ -34,8 +34,8 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §10 M3 | Current primary milestone | In progress: integration and combined stress gaps above |
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
 | §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, comparative representations and general transformations missing; one fixed variable-font axis path tested |
-| §11B vector/world | Five generated masks, holes/curves/negative scale; hard nested shader clip | Partial: strokes, general/AA clips, world meshes/shadows/second view missing |
-| §11C churn/overlay | Combined two-page lifecycle plus six-transition real content/size/direction churn | Partial: broader locale/axis semantics, two engines, active outputs and long stress not run; fixed-font weight/width cycles are bounded |
+| §11B vector/world | Five generated masks, holes/curves/negative scale; hard nested shader clip | Partial: strokes, general/AA clips, shaped-font world meshes/shadows/second view missing |
+| §11C churn/overlay | Combined two-page lifecycle plus six-transition real content/size/direction churn | Partial: broader locale/axis semantics, integrated two-engine asynchronous churn, clip and long stress not run; separate dual-device active-output lifecycle now tested; fixed-font weight/width cycles are bounded |
 | §12 TEXT18-01…20 | 20 registered cases, paired controls/rubrics, static validation | Registration is not model behavior; all 20 semantic Live results unverified |
 | §12.1 old cohorts | Preserved legacy contract and separate CI | Full accepted CORE17+TEXT18 union not established; no invented final scenario count |
 | §13 layered gates | Static/CPU/shader/software-Vulkan and narrow ROI evidence | Not platform/model/device/host acceptance; see layer table below |
@@ -49,10 +49,10 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | Layer | Verified scope | Not verified |
 |---|---|---|
 | Static | CI 281 legacy /316 text18; 24 Skill unit | Complete semantic source/API audit |
-| Host Unit | CI 237 CPU; bounded lifecycle/packing contracts and GPU integration tracked separately | Production threading and full renderer integration |
+| Host Unit | CI 250 CPU; bounded lifecycle/packing contracts and GPU integration tracked separately | Production threading and full renderer integration |
 | Platform Integration | Linux trusted HarfBuzz/FreeType bridge only | Android JNI and Windows DirectWrite |
 | Shader Unit | Actual compiler/SPIR-V tools in opt-in labs | Unimplemented paths |
-| Vulkan Integration | Actual software Vulkan upload/draw/readback, packed quads, controlled pending consumers, active MRT/depth write protection and hard clips | Sustained churn/multi-device, depth occlusion/stencil/full renderer |
+| Vulkan Integration | Actual software Vulkan upload/draw/readback, packed quads, controlled pending consumers, active MRT/depth write protection and hard clips | Sustained churn/multi-device, general depth ordering/stencil/full renderer |
 | Live Model | No model command configured, explicit SKIP | All TEXT18 semantics and final cohort behavior |
 | Visual Quality | Narrow fixed ROI/phase oracle; selected rendered images inspected | Full board, independent font outline quality, display/color calibration |
 | Device | None | Adreno/Mali/Windows sustained device performance |
@@ -63,8 +63,8 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 1. Semantics: limited fixed-provider run checks only; fallback/paragraph and Live remain unverified.
 2. Composition: independent linear over reference and 1e-6 ROI tolerance; do not relax after failure.
 3. Retirement: pending/final consumers and cancellation tested without illegal use-after-free.
-4. MRT: active velocity/ID/depth write protection verified; stencil/occlusion and production integration remain open.
-5. Geometry: bounded flattening/mask hole tests plus simple concave ear-clipped triangle and index/area checks; arbitrary holes/stroke/extrusion remain open.
+4. MRT: active velocity/ID/depth write protection verified; separate bounded extrusion verifies LESS occlusion; stencil and production integration remain open.
+5. Geometry: bounded flattening/mask hole tests plus simple concave ear-clipped triangle and index/area checks; arbitrary holes/stroke/general shaped-font extrusion remain open.
 6. Dynamic quality: phase-only area ≤5%, centroid error ≤0.15px, blend ≤1e-6; not all transforms.
 7. Stability: fixed fixture inventories and controlled cleanup; no global allocator/driver leak claim.
 8. Performance: bounded software renderpass timestamps and CPU submit/wait p50/p95 measured for three MSDF modes; target-device timings, thermal/power and full p99/cold-hot allocation breakdown remain **UNMEASURED**.
@@ -365,10 +365,86 @@ draw checks full RGBA against its freshly validated preparation outside timing,
 and sentinels remain exact. CPU submit/wait costs are separate; do not sum GPU
 time and overlapping CPU wait. Unsupported capability records NOT_MEASURED.
 
-The latest recorded local65x49 A/native software Vulkan run with validation
-enabled gives GPU renderpass p50/p95 milliseconds: baseline0.505/0.784,
+The frozen prepublication local65x49 A/native software Vulkan run with validation
+enabled gave GPU renderpass p50/p95 milliseconds: baseline0.505/0.784,
 binary16 5.077/6.470, linear4 0.815/1.277. Raw samples and complete local
 provenance remain available; public report omits environment identifiers. This
 is not mobile performance, a frame budget, thermal/power result or general
 claim of production speed. Earlier two local runs remain evidence, not silently
 selected best values. No relative-speed assertion is used as a test gate.
+
+
+## Exact-head stage reconciliation
+
+At tests `57a1aef66efa36784bb576d2919d9843ef786dd1` paired with Skill
+`c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, the explicitly selected local
+software-Vulkan/CPU experiment suite ran176passed/0skipped (363.81s). This is
+not the entire original plan. CI43679678151 separately checked281legacy and
+316TEXT18 static cases,250CPU,4historical snapshot and24Skill unit tests in
+each appropriate cohort. Opt-in Vulkan labs are not exercised by that CI.
+Both semantic Live steps explicitly skipped because no model command exists.
+
+The final exact-head cost rerun was materially noisier than the frozen report:
+renderpass p50/p95 ms baseline0.502758/2.673234, binary16 5.348178/8.597959,
+linear4 0.803049/5.062994. These are separate retained runs, not a choice of the
+best tail latency. No stable production performance conclusion follows.
+
+Dependencies remain unchanged: TEXT18 testsPR9 is based on
+`feat/v1.0.16-source-review@528ba9ea7b417684c1066aceabd9a79cae4cd05b`,
+notmain. Its legacy release contract still pins Skill16
+`416f4a6c0c887dee72bcc6dca13ce9c857d7957f`; its candidate pins Skill18c0b62.
+CORE17 testsPR10 at `4fc46c4788cfaf4836037b66fa17d403970395d3` is a separate
+sibling with six partial mappings, not silently included cumulative acceptance.
+SkillPR14 and testsPR9 remain Draft/BLOCKED, without merge or base change.
+
+Original §13.1 criteria remain unchanged. Two-device/output isolation and
+combined active-MRT/clip lifecycle are local implementation gaps; actual
+Android JNI, DirectWrite, target physical GPUs, sustained device performance,
+external host discovery and semantic Live are external unverified gates.
+Neither list can be erased by passing these finite software experiments.
+
+
+### Remaining local priorities, without extra acceptance conditions
+
+1. Original§7.4/§11C two engine/output isolation with shared read-only CPU
+   inputs and independent GPU ownership, including pause/destroy/rebuild.
+2. Original§7.3 mask producer→sample dependencies and§7.4 surrounding
+   pre/overlay/post state rebind, active-output and clip behavior combined with
+   lifecycle, rather than separately passing fixtures.
+3. Original§5.1/§11A same-font/layout comparative bitmap versus the selected
+   MSDF path under fixed transform/subpixel sequences, with actual stable
+   representation switching and fallback. Independent algorithm experiments
+   do not establish end-to-end switching or temporal quality.
+4. Original§11B shaped glyph outline→finite world mesh/extrusion with the
+   promised scene interactions, rather than only an authored U solid.
+
+The plan selects MSDF/MTSDF and describes analytic curves as an optional
+comparison path; implementing every representation is **not** a new acceptance
+condition. Likewise, no general production UI/font framework is added. Existing
+pre-registered reference conditions and limits stay fixed; missing measurements
+remain missing instead of being replaced with new favorable thresholds.
+
+
+## Bounded dual-logical-device active-output lifecycle
+
+One process now creates A/B simultaneously with independent VkInstances,
+VkDevices, queues, GPU images, descriptors, pipelines, command resources and
+readbacks. Shared const CPU masks come from real HarfBuzz/FreeType O/ffi/Arabic
+inputs. Each draw explicitly rebinds its own pipeline/descriptors. A pause
+guard rejects without drawing, while B actually renders; after A destruction
+B renders again; after A reconstruction both render. A controlled exception
+after a fence-complete draw destroys A, and B continues successfully.
+
+Eight positive readbacks retain the existing independent CPU over reference
+at1e-6, max7.153e-8. All three color attachments are active: velocity/ID writes
+are masked, D32 ALWAYS/no-write preserves.375. Wrong-input actual GPU output,
+stale readback and forged lifecycle records reject. Three fixture devices
+created/three destroyed and peak two live do not prove driver leak freedom.
+
+This advances original§7.4/§11C without creating a new acceptance criterion.
+It is a serial pair of logical devices using the same configured software Vulkan
+implementation, not different physical GPUs, real window/Surface recreation,
+concurrent scheduling, production shared font cache or arbitrary pending-failure
+recovery. No cross-instance physical-device UUID identity claim is made.
+Asynchronous atlas churn with clip/state handoff still needs combined evidence;
+physical platform/device/Live gates remain unchanged and both PRs remain Draft.

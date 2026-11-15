@@ -8,6 +8,12 @@ For the current full original-plan status use
 The table and dated increments below preserve progressive evidence; later increments
 resolve only their explicitly stated earlier gaps, not the entire milestone.
 
+## Historical baseline table (not current completion status)
+
+This table records the starting gaps before the incremental labs below. Use the
+linked current original-plan matrix for today's verified scope and unresolved
+items; completed bounded increments do not rewrite this historical baseline.
+
 | Condition | Executable coverage | Remaining gap |
 |---|---|---|
 | C1 glyph/cluster/positions/lifetime | Actual Linux HarfBuzz trusted single-run tests | Android JNI, DirectWrite, full paragraph bidi/fallback |
