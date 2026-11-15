@@ -1,5 +1,5 @@
 """Offline scoped candidate ledger. Digests are not signatures or reviewer identity proof."""
-import copy,hashlib,json,re,datetime,uuid
+import copy,hashlib,json,re,datetime,uuid,math
 FAMILIES=('device_address','ray_query','robust_buffer','headless_wsi')
 PROFILES={'device_address':['bufferDeviceAddress','shaderInt64','coherent-host-memory','physical-storage-address-chain'], 'ray_query':['bufferDeviceAddress','accelerationStructure','rayQuery','coherent-host-memory'], 'robust_buffer':['robustBufferAccess','robustBufferAccess2','nullDescriptor','coherent-host-memory'], 'headless_wsi':['headlessSurface','swapchain','swapchainMaintenance1','present-fence']}
 def require(ok,msg):
@@ -75,3 +75,42 @@ def retrieve(records,scope,now):
   if reason:excluded.append({'id':record['id'],'reason':reason});continue
   hits.append({'id':record['id'],'matched_scope':copy.deepcopy(scope),'evidence':record['base']['evidence'],'next_validation':record['base']['revisit_conditions'],'authority':record['base']['authority']})
  return {'hits':hits,'excluded':excluded,'trust':'Reviewer/evidence digests are caller attestations, not authenticated identities. Caller must anchor the latest ledger digest externally; selecting an old anchor can replay an old state.'}
+
+def failure_observation(index,index_sha):
+ """Only process-control interruption evidence, not Vulkan failure diagnosis."""
+ hashcheck(index_sha)
+ for k in ('tests_head','skill_head'):require(isinstance(index[k],str) and re.fullmatch('[0-9a-f]{40}',index[k]),'failure source head')
+ hashcheck(index['toolchain_sha256']);require(index.get('development') is False and index.get('status') in ('CANCELLED','BLOCKED'),'controlled incomplete suite required')
+ require(str(uuid.UUID(index['run_id']))==index['run_id'],'canonical UUID required')
+ steps=index['steps'];require(isinstance(steps,list) and 0<len(steps)<=4,'actual started step required');require([s['label'] for s in steps]==list(FAMILIES[:len(steps)]),'step prefix')
+ completed=[f['family'] for f in index['families']];require(completed==list(FAMILIES[:len(completed)]) and len(completed)<4,'verified prefix only');require(index['pending']==list(FAMILIES[len(completed):]),'pending mismatch')
+ require(len(steps)==len(completed)+1,'exactly one interrupted started step')
+ out=[]
+ for i,step in enumerate(steps):
+  require(type(step['returncode']) is int,'actual process exit required')
+  for k in ('started_monotonic','ended_monotonic'):require(type(step[k]) in (int,float) and math.isfinite(step[k]) and step[k]>=0,'finite process timing required')
+  require(step['ended_monotonic']>=step['started_monotonic'] and (i==0 or step['started_monotonic']>=steps[i-1]['ended_monotonic']),'process timing order')
+  for k in ('cancelled','timed_out','budget_exhausted','unexpected_descendants'):require(type(step[k]) is bool,'control boolean required')
+  cleanup=step['group_cleanup'];require(set(cleanup)=={'pgid','term_sent','kill_sent','reaped_descendants','group_gone'},'cleanup schema')
+  require(all(type(step[k]) is int and step[k]>0 for k in ('pid','pgid')) and type(cleanup['pgid']) is int and step['pid']==step['pgid']==cleanup['pgid'],'process group identity')
+  require(type(cleanup['term_sent']) is bool and type(cleanup['kill_sent']) is bool and isinstance(cleanup['reaped_descendants'],list) and all(type(p) is int and p>0 for p in cleanup['reaped_descendants']),'cleanup signal/reap facts')
+  require(cleanup['group_gone'] is True and step['unexpected_descendants'] is False,'cleanup not proved')
+  for stream in ('stdout','stderr'):
+   h=step[stream+'_sha256'];hashcheck(h);require(index['artifacts'][step['label']+'.'+stream]==h,'step log missing or different')
+  if i<len(completed):require(step['returncode']==0 and not any(step[k] for k in ('cancelled','timed_out','budget_exhausted')),'completed step invalid')
+  else:
+   require(step['returncode']!=0,'interruption must affect process')
+   if index['status']=='CANCELLED':require(step['cancelled'] is True,'cancel evidence missing')
+   else:require(not step['cancelled'] and step['timed_out'] and step['budget_exhausted'],'budget evidence missing')
+  out.append({k:step[k] for k in ('label','returncode','cancelled','timed_out','budget_exhausted')})
+ # Export only fixed filenames; reject unknown partial filenames rather than
+ # leak arbitrary filenames, addresses, argv or errors.
+ allowed={'SUMMARY.md'}|{f+'.'+e for f in FAMILIES for e in ('stdout','stderr')}
+ basenames={'summary.json','compute.spv','compute.spvasm','probe','capability_inventory'}|{l+'.'+e for l in ('build','shader-compile','shader-val','shader-dis','inventory','inventory-build','glslangValidator-version','spirv-val-version','spirv-dis-version','good','wrong-output','missing-usage','offset','null-disabled','invalid-acquire') for e in ('stdout','stderr')}
+ started={step['label'] for step in steps}
+ allowed={'SUMMARY.md'}|{f+'.'+e for f in started for e in ('stdout','stderr')}|{f+'/'+n for f in started for n in basenames}
+ require(set(index['artifacts'])<=allowed,'partial artifact name outside sanitized allowlist')
+ refs=[]
+ for path,h in sorted(index['artifacts'].items()):hashcheck(h);refs.append({'path':path,'sha256':h})
+ base={'schema':'resource-failure-observation-v1','state':'NON_RECOMMENDABLE_FAILURE_OBSERVATION','origin':'Controlled authored fixture workflow interruption, not GPU defect or unreproduced defect','run_id':index['run_id'],'tests_head':index['tests_head'],'skill_head':index['skill_head'],'index_sha256':index_sha,'source_manifest_sha256':digest(index['source_manifest']),'tool_cohort_sha256':digest(index['tool_hashes']),'toolchain_sha256':index['toolchain_sha256'],'kind':'CANCELLED_PROCESS' if index['status']=='CANCELLED' else 'TOTAL_BUDGET_EXHAUSTED','steps':out,'completed_families':completed,'pending_families':index['pending'],'evidence':refs,'limitations':'No feature enablement, GPU failure, completed pending-family output, UNREPRODUCED result, repair or recommendation inferred.'}
+ return {'id':digest(base),'observation':base}

@@ -80,3 +80,48 @@ def test_cli_refuses_overwrite(tmp_path,monkeypatch):
 def test_required_evidence_cannot_be_dropped(missing):
  c=base();c['base']['evidence']=[e for e in c['base']['evidence'] if e['path']!=missing];c['id']=m.digest(c['base'])
  with pytest.raises(ValueError,match='evidence missing'):m.validate(c)
+def interrupted():
+ i={'development':False,'status':'BLOCKED','run_id':'12345678-1234-1234-1234-123456789abc','tests_head':'a'*40,'skill_head':'b'*40,'source_manifest':{'source':'c'*64},'tool_hashes':{'tool':'d'*64},'toolchain_sha256':'e'*64,'families':[],'pending':list(m.FAMILIES),'artifacts':{'device_address.stdout':'f'*64,'device_address.stderr':'f'*64,'SUMMARY.md':'a'*64},'steps':[{'label':'device_address','started_monotonic':1.0,'ended_monotonic':2.0,'returncode':-15,'cancelled':False,'timed_out':True,'budget_exhausted':True,'unexpected_descendants':False,'pid':10,'pgid':10,'group_cleanup':{'pgid':10,'term_sent':True,'kill_sent':True,'reaped_descendants':[],'group_gone':True},'stdout_sha256':'f'*64,'stderr_sha256':'f'*64}]}
+ assert m.failure_observation(i,'b'*64)['observation']['state']=='NON_RECOMMENDABLE_FAILURE_OBSERVATION';return i
+@pytest.mark.parametrize('change',['success','unknown','no-step','fake-budget','cleanup','log','pending','completed','private','bool-exit','zero-exit'])
+def test_failure_ingest_rejects(change):
+ i=interrupted()
+ if change=='success':i['status']='BOUNDED_RESOURCE_SUITE_VERIFIED'
+ if change=='unknown':i['status']='UNREPRODUCED'
+ if change=='no-step':i['steps']=[]
+ if change=='fake-budget':i['steps'][0]['budget_exhausted']=False
+ if change=='cleanup':i['steps'][0]['group_cleanup']={}
+ if change=='log':i['artifacts'].pop('device_address.stdout')
+ if change=='pending':i['pending']=[]
+ if change=='completed':i['families']=[{'family':'device_address'}];i['pending']=list(m.FAMILIES[1:])
+ if change=='private':i['artifacts']['/home/private/token']='a'*64
+ if change=='bool-exit':i['steps'][0]['returncode']=False
+ if change=='zero-exit':i['steps'][0]['returncode']=0
+ with pytest.raises((ValueError,KeyError)):m.failure_observation(i,'b'*64)
+def test_cancel_observation_no_gpu_claim():
+ i=interrupted();i['status']='CANCELLED';i['steps'][0].update(cancelled=True,timed_out=False,budget_exhausted=False);o=m.failure_observation(i,'b'*64);assert o['observation']['kind']=='CANCELLED_PROCESS'
+ with pytest.raises((ValueError,KeyError)):m.transition(o,'review','2026-11-15T00:00:00Z','reviewer',{},base()['base']['scope'],'2026-11-20T00:00:00Z')
+ with pytest.raises((ValueError,KeyError)):m.retrieve([o],base()['base']['scope'],'2026-11-16T00:00:00Z')
+def test_failure_after_verified_prefix_preserved():
+ i=interrupted();first=copy.deepcopy(i['steps'][0]);first.update(returncode=0,timed_out=False,budget_exhausted=False);last=copy.deepcopy(i['steps'][0]);last['label']='ray_query';last['started_monotonic']=3.0;last['ended_monotonic']=4.0;i['steps']=[first,last];i['families']=[{'family':'device_address'}];i['pending']=list(m.FAMILIES[1:]);i['artifacts'].update({'ray_query.stdout':'f'*64,'ray_query.stderr':'f'*64,'device_address/capability_inventory':'a'*64})
+ o=m.failure_observation(i,'b'*64);assert o['observation']['completed_families']==['device_address'];assert o['observation']['pending_families']==list(m.FAMILIES[1:])
+@pytest.mark.parametrize('time',[float('nan'),float('inf'),True,-1,0.5])
+def test_failure_timing_invalid(time):
+ i=interrupted();i['steps'][0]['ended_monotonic']=time
+ with pytest.raises(ValueError):m.failure_observation(i,'b'*64)
+@pytest.mark.parametrize('change',['missing','group','pidbool','signal','reap','future'])
+def test_failure_cleanup_and_started_artifacts(change):
+ i=interrupted();st=i['steps'][0]
+ if change=='missing':st['group_cleanup'].pop('term_sent')
+ if change=='group':st['group_cleanup']['pgid']=11
+ if change=='pidbool':st['pid']=True
+ if change=='signal':st['group_cleanup']['kill_sent']='true'
+ if change=='reap':st['group_cleanup']['reaped_descendants']=[False]
+ if change=='future':i['artifacts']['ray_query/probe']='a'*64
+ with pytest.raises(ValueError):m.failure_observation(i,'b'*64)
+def test_failure_fixed_argv(tmp_path):
+ import sys
+ mod=cli_module();t=dict(include='/include',loader='/loader',validusage='/vu',tools='/tools');index={'steps':[{'label':'device_address','argv':[sys.executable,'-O',str(mod.ROOT/'cases19/device_address/run.py'),'--include','/include','--loader','/loader','--validusage','/vu','--output',str(tmp_path/'device_address'),'--tools','/tools']}]}
+ mod.verify_failure_commands(index,t,tmp_path,m.FAMILIES)
+ index['steps'][0]['argv'][2]='/untrusted/program.py'
+ with pytest.raises(ValueError,match='fixed family'):mod.verify_failure_commands(index,t,tmp_path,m.FAMILIES)

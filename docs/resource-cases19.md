@@ -77,3 +77,32 @@ Failed, cancelled and unreproduced suites are not imported by this bounded
 builder. Their original raw reports remain retained locally; no failed history
 is deleted or turned into a successful case. General failure-case ingestion,
 authenticated review systems and broad C7/full-release closure remain unverified.
+
+## Controlled incomplete workflow observations
+
+`fail-import` is separate from successful `build`. It accepts only an externally
+anchored strict suite at the exact current pair, with one actually started child
+interrupted by total-budget exhaustion or cancellation, proven process-group
+cleanup, and an ordered verified prefix. It rechecks all source/tool/partial
+artifact hashes. Earlier verified children are independently raw-verified;
+interrupted children need not have a summary and no missing summary is invented.
+Only fixed control flags, fixed-name relative artifact digests and source/tool
+cohort digests are exported. Raw stderr, argv, environment, addresses and arbitrary
+error strings remain local. Zero-step startup rejection, unsupported capability,
+generic timeout without total-budget exhaustion, uncertain cleanup and general
+Vulkan failures are outside this importer and are rejected.
+
+```
+python checks19/build_resource_cases.py --output fresh-failure.json fail-import \
+  --suite INTERRUPTED_SUITE --expected-index-sha256 TRUSTED_INDEX_DIGEST \
+  --expected-tests-head TESTS40 --expected-skill-head SKILL40 \
+  --skill-root SKILL_CHECKOUT --toolchain TRUSTED_TOOLCHAIN_JSON
+```
+
+The resulting `NON_RECOMMENDABLE_FAILURE_OBSERVATION` is not a candidate and is
+rejected by review/transition/recommendation retrieval. A cancellation or budget
+boundary is a workflow event, **not** evidence of a GPU defect, unsupported
+feature, failed shader output or an unreproduced expected defect. UNREPRODUCED
+is not emitted because no such execution has been performed. Failed original
+raw artifacts are preserved; no claims of hardware recovery, driver hang, full
+failure-catalog ingestion or overall C7/ALL19/E2E acceptance are made.
