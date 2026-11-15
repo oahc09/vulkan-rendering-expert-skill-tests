@@ -435,7 +435,21 @@
     "existing_route": "[合同入口](../04_debug_playbooks/02_crash_hang/device_lost.md#fault-report-order-1368)",
     "open_review": "全部robustness/error/VUID/capture规则与真实宿主行为",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "robust_buffer_family": {
+      "contract": "buffer.md#delivery19-robust-buffer-access",
+      "rules": "tools/robust_buffer19.py",
+      "evidence": "robust-buffer.json",
+      "scope": "ordinary uint32 SSBO robustness2 aligned descriptor bounds and nullDescriptor with actual compute, independent output/source guard oracle and safely aborted API negative",
+      "domain_complete": false,
+      "still_open": [
+        "images/texel/vertex/cooperative/BDA robustness rules",
+        "pipeline robustness override combinations",
+        "device lost, faults and complete debug tool behavior",
+        "physical/mobile performance and isolation",
+        "Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
   }
 ]
