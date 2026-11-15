@@ -4,6 +4,9 @@ import pathlib
 import re
 import pytest
 
+# These exact repaired cards are a v1.0.19 candidate contract, not historical16/17/18.
+pytestmark = pytest.mark.candidate19
+
 ROOT = pathlib.Path(os.environ.get('VULKAN_SKILL_ROOT', '/tmp/vulkan119-skill'))
 CARD = 'references/03_api_manual/05_descriptor/descriptor_indexing.md'
 
