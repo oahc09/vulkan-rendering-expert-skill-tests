@@ -68,6 +68,19 @@
         "physical GPU",
         "external project blind acceptance"
       ]
+    },
+    "secondary_dynamic_draw": {
+      "contract": "command_buffer.md#delivery19-secondary-dynamic-draw",
+      "entry": "cases19/secondary_draw/run.py",
+      "evidence": "secondary-draw.json",
+      "scope": "one secondary records actual shader draw with dynamic-rendering inheritance, primary execute/render/readback with independent full pixels; safe inheritance-format rejection and wrong-output negative",
+      "domain_complete": false,
+      "still_open": [
+        "general command lifecycle and re-record invalidation graph",
+        "nested/queries/multiview/depth and traditional renderpass inheritance",
+        "parallel recording or simultaneous pending reuse",
+        "physical/mobile performance and external-engine/Live/blind acceptance"
+      ]
     }
   },
   {
@@ -355,6 +368,19 @@
         "physical/mobile GPU performance and power",
         "Vulkan SC",
         "external engineering and Live/blind acceptance"
+      ]
+    },
+    "secondary_dynamic_draw": {
+      "contract": "command_buffer.md#delivery19-secondary-dynamic-draw",
+      "entry": "cases19/secondary_draw/run.py",
+      "evidence": "secondary-draw.json",
+      "scope": "one secondary records actual shader draw with dynamic-rendering inheritance, primary execute/render/readback with independent full pixels; safe inheritance-format rejection and wrong-output negative",
+      "domain_complete": false,
+      "still_open": [
+        "general command lifecycle and re-record invalidation graph",
+        "nested/queries/multiview/depth and traditional renderpass inheritance",
+        "parallel recording or simultaneous pending reuse",
+        "physical/mobile performance and external-engine/Live/blind acceptance"
       ]
     }
   },
