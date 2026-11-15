@@ -256,6 +256,21 @@
         "Vulkan SC",
         "external engineering and Live/blind acceptance"
       ]
+    },
+    "dynamic_draw_family": {
+      "contract": "dynamic_rendering.md#delivery19-dynamic-draw-family",
+      "rules": "tools/dynamic_draw19.py",
+      "evidence": "dynamic-draw.json",
+      "scope": "bounded CPU-ICD single-sample single-color ordinary graphics pipeline with compiled vertex/fragment shaders, draw, explicit synchronization, readback and independent nonconstant CPU pixel oracle",
+      "domain_complete": false,
+      "still_open": [
+        "full shader/vertex/fragment interfaces and graphics-state combinations",
+        "depth/stencil, blend, MSAA/resolve",
+        "multiview, local read, FSR/FDM",
+        "physical/mobile GPU performance and power",
+        "Vulkan SC",
+        "external engineering and Live/blind acceptance"
+      ]
     }
   },
   {
