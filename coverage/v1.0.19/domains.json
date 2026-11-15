@@ -5,8 +5,24 @@
     "existing_route": "[合同入口](01_instance_device_queue/instance.md#loader-dispatch-contract)",
     "open_review": "Loader/ICD/layers、allocation callbacks、版本/alias细节仍需逐项复核",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "capability_scene_delivery": {
+      "contract": "physical_device.md#delivery19-capability-admitted-scene",
+      "entry": "checks19/run_indirect_scene.py",
+      "rules": "tools/device_selection19.py",
+      "evidence": "capability-scene.json",
+      "scope": "queried loader/core1.3 single CPU device capabilities admit the fixed compute-generated indirect graphics scene; exact source/tool/pair and actual execution identity verified",
+      "domain_complete": false,
+      "still_open": [
+        "multiple physical devices and general selection",
+        "KHR fallback, device groups and Profiles",
+        "all loader/ICD/layer/platform combinations",
+        "all features/limits and resource-compatible memory classes",
+        "physical/mobile hardware",
+        "Vulkan SC and external/Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK02",
@@ -14,8 +30,24 @@
     "existing_route": "[合同入口](01_instance_device_queue/physical_device.md#device-group-capability-contract)",
     "open_review": "queue priority、全部features/limits/profiles组合",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "capability_scene_delivery": {
+      "contract": "physical_device.md#delivery19-capability-admitted-scene",
+      "entry": "checks19/run_indirect_scene.py",
+      "rules": "tools/device_selection19.py",
+      "evidence": "capability-scene.json",
+      "scope": "queried loader/core1.3 single CPU device capabilities admit the fixed compute-generated indirect graphics scene; exact source/tool/pair and actual execution identity verified",
+      "domain_complete": false,
+      "still_open": [
+        "multiple physical devices and general selection",
+        "KHR fallback, device groups and Profiles",
+        "all loader/ICD/layer/platform combinations",
+        "all features/limits and resource-compatible memory classes",
+        "physical/mobile hardware",
+        "Vulkan SC and external/Live/blind acceptance"
+      ]
+    }
   },
   {
     "id": "VK03",
