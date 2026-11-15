@@ -73,7 +73,7 @@ def verify(folder):
     return {'max_linear_error':max(errors),'max_roi_error':max(roi),'roi_pixels':sum(c>0 for c in mask),'partial_pixels':sum(0<c<1 for c in mask),'tolerance':1e-6,'sentinels':'UNCHANGED'}
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);p.add_argument('--font',type=Path,required=True);p.add_argument('--quality',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);p.add_argument('--font',type=Path,required=True);p.add_argument('--quality',action='store_true');p.add_argument('--packing',action='store_true');a=p.parse_args()
     out=a.out.resolve();out.mkdir(parents=True,exist_ok=False)
     def run(name,args,expected=0):
         r=subprocess.run(list(map(str,args)),cwd=ROOT,capture_output=True,text=True,timeout=120)
@@ -108,6 +108,7 @@ def main():
         run('reject-'+name,[build/'bitmap_lab',build/'shaders',bad,out/('bad-'+name)],1)
         if (out/('bad-'+name)).exists():raise ValueError('bad mask created GPU output')
     quality=load(HERE/'quality_cases.py','quality_cases').run_cases(build,out,a.font) if a.quality else None
-    summary={'quality':quality,'status':'PASS','scope':'Linux single-run shaping + FreeType grayscale bitmap + actual software Vulkan composition','cases':rows,'vector_cases':vector_rows,'unverified':['font raster quality reference','Android/Windows','MSDF/MTSDF','paragraph bidi/fallback','vector geometry','hardware/performance'],'source_hashes':{str(f.relative_to(ROOT)):sha(f) for f in [HERE/'main.cpp',HERE/'run_lab.py',HERE/'vector_cases.py',HERE/'quality_cases.py',ROOT/'tests/bounded_vector_mask.py',old/'main.cpp',old/'coverage.frag',ROOT/'tests/platform_text_probe.py']},'binary_sha256':sha(build/'bitmap_lab')}
+    packing=load(HERE/'packing_cases.py','packing_cases').run_cases(build,out,a.font) if a.packing else None
+    summary={'packing':packing,'quality':quality,'status':'PASS','scope':'Linux single-run shaping + FreeType grayscale bitmap + actual software Vulkan composition','cases':rows,'vector_cases':vector_rows,'unverified':['font raster quality reference','Android/Windows','MSDF/MTSDF','paragraph bidi/fallback','vector geometry','hardware/performance'],'source_hashes':{str(f.relative_to(ROOT)):sha(f) for f in [HERE/'main.cpp',HERE/'run_lab.py',HERE/'vector_cases.py',HERE/'quality_cases.py',HERE/'packing_cases.py',ROOT/'tests/text_atlas_packing.py',ROOT/'tests/bounded_vector_mask.py',old/'main.cpp',old/'coverage.frag',ROOT/'tests/platform_text_probe.py']},'binary_sha256':sha(build/'bitmap_lab')}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary));return 0
 if __name__=='__main__':raise SystemExit(main())

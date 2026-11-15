@@ -70,3 +70,15 @@ Font identity, glyph/run and settings remain equal within a phase sequence;
 phase-zero reraster is byte-equal. Stuck phase and changed area negative cases
 must fail. Ground-truth outline quality, other glyphs, rotation/perspective,
 MSDF/MTSDF, platforms and display conditions remain unverified.
+
+## Optional bounded rectangle packing
+
+--packing crops real O/f/i grayscale run masks and packs their rectangles into
+24x24 logical pages with one zero-coverage texel of padding. A bounded shelf
+algorithm grows from two pages to three after the first pages are sealed;
+canceling staging never changes published bytes. Independent reconstruction
+checks rectangle pixels and untouched padding. Each complete packed page is
+then embedded in the existing 65x49 Vulkan fixture and actually sampled/blended
+and read back. This is whole-page transport, not a production glyph-quad UV
+renderer, bilinear/mipmap bleed test or optimal allocator. The fixture sampler
+is nearest. Glyph/font receipts and page raw data remain local.

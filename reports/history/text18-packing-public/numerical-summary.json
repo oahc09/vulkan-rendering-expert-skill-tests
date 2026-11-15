@@ -1,0 +1,46 @@
+{
+  "scope": "CPU padded shelf atlas of true glyph masks; whole packed pages sampled through Vulkan; not UV-glyph draws",
+  "input_glyph_rectangles": 3,
+  "published_rectangles": 4,
+  "initial_pages": 2,
+  "final_pages": 3,
+  "page_extent": [
+    24,
+    24
+  ],
+  "padding": 1,
+  "canceled_staging_preserved_published": true,
+  "sealed_pages_unchanged": true,
+  "cases": [
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 161,
+      "partial_pixels": 112,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "page": 0,
+      "validation_enabled": true
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 50,
+      "partial_pixels": 34,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "page": 1,
+      "validation_enabled": true
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "page": 2,
+      "validation_enabled": true
+    }
+  ]
+}

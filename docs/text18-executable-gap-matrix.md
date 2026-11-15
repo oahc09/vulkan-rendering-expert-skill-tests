@@ -102,3 +102,33 @@ canceled page is really destroyed. A replacement page uploads and publishes,
 then the old page is destroyed. This is bounded page-count growth, not extent
 resizing, rectangle packing, sampled draw bindings, multiple GPUs or driver
 allocation/leak qualification. Live and target-device gates remain independent.
+
+## Bounded packing / descriptor-consumer split
+
+A deterministic CPU shelf reference packs validated coverage rectangles with
+padding, validates full batches before publication and preserves sealed pages.
+Candidates use owner/revision checks, cancellation, snapshot copying and maximum
+page/extent budgets; oversize/full failure leaves state unchanged. Twelve CPU
+tests include overlap/padding, growth, atomic budget failure, cancellation,
+foreign/stale batch and immutable snapshots. It is externally serialized and
+not an optimal allocator or a secure parser of arbitrary mutated Batch objects.
+
+Real trusted O/f/i glyph rectangles exercise two logical24x24 pages growing to
+three; a canceled staging batch leaves published pages unchanged. Actual Vulkan
+whole-page sampling/readback checks all three, max ROI7.15e-8 at1e-6 tolerance,
+validation enabled. Packed-page PNG was viewed. This is distinct from rendering
+UV-addressed glyph quads, filtering/mip safety or the separate pending descriptor
+consumer experiment. It does not turn fixed-page experiments into full atlas
+acceptance; target hardware/Live/platform limits stay open.
+
+The independent descriptor fixture now submits actual fragment draws through
+2 immutable descriptor sets bound to distinct images on one device. Each whole
+submission is held behind an explicitly enabled timeline semaphore at the
+ALL_COMMANDS stage; a real NOT_READY fence precedes host release and SUCCESS.
+This proves pending submitted consumers, not that a shader was already running.
+Page/set switching and destruction occur only after completion. Two patterns
+are independently verified, and forged completion/old-page substitution fail.
+The initial host-event approach failed validation (VUID-vkSetEvent-event-09543),
+was not accepted and was replaced by the timeline mechanism. Raw failed evidence
+is retained locally. This remains separate from packed-UV glyph draw integration,
+multi-queue/device access and target-device qualification.
