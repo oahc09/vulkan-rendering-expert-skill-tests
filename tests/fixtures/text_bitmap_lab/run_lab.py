@@ -14,13 +14,15 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def load(path,name):
     s=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
 
-def raster(font,text,direction,language):
+def raster(font,text,direction,language,*,pixel_size=20,phase64=0):
     import freetype
+    if type(pixel_size)!=int or not 1<=pixel_size<=28 or type(phase64)!=int or not 0<=phase64<64:raise ValueError('raster size/phase budget')
     provider=load(ROOT/'tests/platform_text_probe.py','provider')
     run=provider.shape(font,text,direction=direction,language=language)
     if run['missing_glyphs'] or not 0<len(run['glyphs'])<=16:raise ValueError('unsupported glyph run')
-    face=freetype.Face(str(font));face.set_pixel_sizes(0,20)
-    penx=4.;peny=32.;scale=20/run['upem'];mask=[0.]*(WIDTH*HEIGHT);placements=[];clipped=0
+    face=freetype.Face(str(font));face.set_pixel_sizes(0,pixel_size)
+    face.set_transform(freetype.Matrix(65536,0,0,65536),freetype.Vector(phase64,0))
+    penx=4.;peny=32.;scale=pixel_size/run['upem'];mask=[0.]*(WIDTH*HEIGHT);placements=[];clipped=0
     for g in run['glyphs']:
         # True shaped glyph IDs, never codepoint substitution. Integer placement
         # deliberately defines this bitmap path; no fractional hinting claim.
@@ -42,7 +44,7 @@ def raster(font,text,direction,language):
     if clipped or not any(mask):raise ValueError('fixture clipped or blank')
     if text=='ffi' and len(run['glyphs'])>=3:raise ValueError('fixture requires real ligature')
     if direction=='rtl' and [g['cluster_utf8_byte'] for g in run['glyphs']]!=sorted((g['cluster_utf8_byte'] for g in run['glyphs']),reverse=True):raise ValueError('RTL cluster order')
-    run.update(placements=placements,raster_provider='freetype-py',freetype_version=list(freetype.version()),freetype_library_sha256=sha(Path(freetype.raw._lib._name)),pixel_size=20,position_policy='round shaped positions to integer pixels; FT normal grayscale',clipped_samples=clipped)
+    run.update(placements=placements,raster_provider='freetype-py',freetype_version=list(freetype.version()),freetype_library_sha256=sha(Path(freetype.raw._lib._name)),pixel_size=pixel_size,phase64=phase64,position_policy='round shaped positions to integer pixels; FT normal grayscale',clipped_samples=clipped)
     return mask,run
 
 def verify(folder):
@@ -71,7 +73,7 @@ def verify(folder):
     return {'max_linear_error':max(errors),'max_roi_error':max(roi),'roi_pixels':sum(c>0 for c in mask),'partial_pixels':sum(0<c<1 for c in mask),'tolerance':1e-6,'sentinels':'UNCHANGED'}
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);p.add_argument('--font',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);p.add_argument('--font',type=Path,required=True);p.add_argument('--quality',action='store_true');a=p.parse_args()
     out=a.out.resolve();out.mkdir(parents=True,exist_ok=False)
     def run(name,args,expected=0):
         r=subprocess.run(list(map(str,args)),cwd=ROOT,capture_output=True,text=True,timeout=120)
@@ -105,6 +107,7 @@ def main():
         bad=out/(name+'.f32');bad.write_bytes(data)
         run('reject-'+name,[build/'bitmap_lab',build/'shaders',bad,out/('bad-'+name)],1)
         if (out/('bad-'+name)).exists():raise ValueError('bad mask created GPU output')
-    summary={'status':'PASS','scope':'Linux single-run shaping + FreeType grayscale bitmap + actual software Vulkan composition','cases':rows,'vector_cases':vector_rows,'unverified':['font raster quality reference','Android/Windows','MSDF/MTSDF','paragraph bidi/fallback','vector geometry','hardware/performance'],'source_hashes':{str(f.relative_to(ROOT)):sha(f) for f in [HERE/'main.cpp',HERE/'run_lab.py',HERE/'vector_cases.py',ROOT/'tests/bounded_vector_mask.py',old/'main.cpp',old/'coverage.frag',ROOT/'tests/platform_text_probe.py']},'binary_sha256':sha(build/'bitmap_lab')}
+    quality=load(HERE/'quality_cases.py','quality_cases').run_cases(build,out,a.font) if a.quality else None
+    summary={'quality':quality,'status':'PASS','scope':'Linux single-run shaping + FreeType grayscale bitmap + actual software Vulkan composition','cases':rows,'vector_cases':vector_rows,'unverified':['font raster quality reference','Android/Windows','MSDF/MTSDF','paragraph bidi/fallback','vector geometry','hardware/performance'],'source_hashes':{str(f.relative_to(ROOT)):sha(f) for f in [HERE/'main.cpp',HERE/'run_lab.py',HERE/'vector_cases.py',HERE/'quality_cases.py',ROOT/'tests/bounded_vector_mask.py',old/'main.cpp',old/'coverage.frag',ROOT/'tests/platform_text_probe.py']},'binary_sha256':sha(build/'bitmap_lab')}
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary));return 0
 if __name__=='__main__':raise SystemExit(main())

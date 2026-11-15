@@ -59,3 +59,21 @@ independent typography oracle and is NOT accepted by this composition test.
 readback tampering and refusing existing output without changing its bytes.
 Official freetype-py is execution-side only; no font or third-party binary is
 added to either repository. The same old13-frame GPU lab remains unchanged.
+
+## Controlled churn and phase regression increment
+
+An independent 64-generation single-slot image-transfer lab reuses persistent
+buffers, command buffers, fences and timelines. Two consumers per generation
+are held pending by explicit host gates; until B completes reuse is refused.
+Every generation's 2 independent raw readbacks are checked against its own
+pattern. Fixed fixture object counts and bounded cleanup are not GPU-driver
+allocator leak proof or a production atlas. Packing/expansion/cancel, sampled
+renderer consumers, shared CPU cache across engines and multi-device lifecycle
+remain open. Prior two-generation fixture is unchanged.
+
+The actual bitmap experiment additionally tests O at12/20px in four post-hint
+quarter-pixel translations through Vulkan. Before running, narrow regression
+bounds were fixed at 5% area drift, .15px centroid shift error and 1e-6 blend
+error. First results: max relative area drift .000712657, centroid .00544121px,
+blend7.15256e-8; these are not a complete Text Quality Board acceptance. Actual
+12px output was viewed. No rotation/perspective/MSDF/platform substitution.

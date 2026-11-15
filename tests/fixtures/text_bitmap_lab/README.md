@@ -55,3 +55,18 @@ flattening has separate CPU dense-reference tests. Here the Vulkan oracle only
 validates coverage-mask composition; no GPU tessellation or general vector
 geometry acceptance is claimed. Generated masks, not font/environment files,
 pass through the same upload/sample/readback path.
+
+## Optional post-hinting phase regression
+
+Add --quality for O at 12 and 20 pixels, delta x = 0/16/32/48 in 26.6 units.
+The FreeType transform shifts scalable glyph images after hinting; it does not
+re-hint at a fractional pen position. API basis: [FreeType sizing/scaling](https://freetype.org/freetype2/docs/reference/ft2-sizing_and_scaling.html)
+and [FreeType tutorial](https://freetype.org/freetype2/docs/tutorial/step1.html).
+The preregistered fixture limits are relative coverage-area drift <=0.05 and
+translation centroid error <=0.15 pixel, in addition to GPU blend tolerance
+1e-6. These are narrow regression conditions, not universal font quality or a
+user-approved relaxation of the original complete quality-board requirement.
+Font identity, glyph/run and settings remain equal within a phase sequence;
+phase-zero reraster is byte-equal. Stuck phase and changed area negative cases
+must fail. Ground-truth outline quality, other glyphs, rotation/perspective,
+MSDF/MTSDF, platforms and display conditions remain unverified.
