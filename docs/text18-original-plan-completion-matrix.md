@@ -726,3 +726,28 @@ support. Curved/dashed strokes, round joins, general topology, AA, transparency,
 world-coordinate widths/perspective and target-device behavior remain unsupported
 or unverified. Other original world/quality/platform/Live/dependency gaps remain
 as previously listed; this finite increment does not close the complete milestone.
+
+### Bounded stroke boundary diagnosis and analytic fallback (2026-11-15)
+
+The preceding mesh experiment remains `BOUNDED_INTERIOR_PASS`: each of the three
+polyline cases has eight guarded pixels but only (42,35) fails (error 0.8).
+Three pixel centers lie on the same exact terminal cap line; only one is absent.
+An 8-bit nearest-grid diagnostic is consistent with the observed split, not proof
+of the driver's private rounding algorithm, and not a portable top-left rule.
+
+`text_stroke_boundary_lab` adds an explicit support-quad/analytic-fragment fallback,
+not a repair claim for pure mesh rasterization. The original six paths and all
+expected pixel classifications are unchanged (3,185 pixels compared per case).
+Nine actual Vulkan images (six original, three reversed polylines) pass full-image
+color/depth tolerance 1e-6 with zero exclusions; maximum error 2.384185793e-8.
+Actual wrong-cap, ignored-miter-limit and open-end negatives detect respectively
+36, 18 and 3 pixels. Omitting fallback reproduces all three original mesh failures.
+Active auxiliary attachments are checked exactly before composition failures.
+The round cap is analytic here, unlike the old 64-segment mesh approximation.
+
+This closes only the tested hard pixel-center opaque coverage boundary. It does
+not qualify transparent/AA strokes, curves/dashes, general vector paths, device
+portability, Android/Windows or Live. The prior GLSL constant-array compile failure
+is retained locally; fixed three-slot storage preserves COUNT-limited semantics.
+Source and stripped numerical evidence only are published. Overall Draft/BLOCKED,
+Skill/candidate pins and the non-main base/dependency chain remain unchanged.
