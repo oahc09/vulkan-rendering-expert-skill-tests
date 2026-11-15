@@ -67,7 +67,44 @@
     "open_review": "各binding model与pipeline layout兼容性的全量扩展合同",
     "depth_target": "L1/L2",
     "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "owner": "v1.0.19 C1",
+    "bounded_review": {
+      "scope": "ordinary non-null non-sparse UBO descriptor updates",
+      "knowledge": "BOUNDED_L1_L2",
+      "cpu_rules": [
+        "00340",
+        "00341",
+        "00342",
+        "00327",
+        "00329",
+        "00330",
+        "00332",
+        "safe update lifetime policy"
+      ],
+      "real_vvl_pair": [
+        "explicit valid range",
+        "WHOLE valid range",
+        "00341 zero",
+        "00342 overrun",
+        "00340 offset-end"
+      ],
+      "cpu_only_not_vvl": [
+        "alignment",
+        "maximum range",
+        "usage",
+        "binding",
+        "lifetime"
+      ],
+      "open": [
+        "general pool/layout counts",
+        "shader interface/access",
+        "in-flight integration",
+        "dynamic/indexing/descriptor-buffer",
+        "SC",
+        "external project acceptance"
+      ],
+      "domain_complete": false
+    }
   },
   {
     "id": "VK08",
