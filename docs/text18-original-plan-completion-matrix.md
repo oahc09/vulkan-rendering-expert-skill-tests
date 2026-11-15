@@ -608,3 +608,36 @@ fault safety, multithreading, real Surface behavior or target-device performance
 Generation2 still attenuates the same glyph coverage, not a new locale run. The
 separate dynamic MSDF quality result remains MEASURED_NOT_QUALIFIED; physical
 Android/Windows/mobile GPU and semantic Live remain external unverified gates.
+
+## Dual logical-device pending independence and higher-grid quality diagnostic
+
+The new dual-device path holds A's actual submitted draw behind a timeline gate
+(value0, fence NOT_READY checked five times) while B independently completes
+initial upload/render, canceled candidate handling, new-generation upload/render.
+B continues rendering after A's controlled pending-scope failure releases its gate,
+waits for completion and destroys A. Three B images are checked independently;
+wrong canceled B routing, stale readback/event mutation and foreign-device page
+publication/draw rejection before command recording are negative controls. A's
+post-release image is not read back: its evidence is bounded completion/cleanup,
+not an A image-quality assertion. This is two logical Devices in the same software
+implementation, not two physical GPUs, real Surfaces, simultaneous shaders or
+arbitrary failure/leak qualification. Auxiliary preservation uses the older UNUSED
+fallback, not the separate active-MRT experiment. Replacement still scales the
+same glyph coverage; complete multilingual asynchronous stress remains partial.
+
+The higher-grid experiment runs the original fixed-phase linear4 GPU baseline,
+then actual linear8/linear16 modes against the identical atlas, transforms and
+history schedule. Each mode has34 measured positive frames,2 warmups and1 legal
+wrong-route draw; modes use separate process/device instances. Independent CPU
+sampling checks keep original .004 MSDF/1e-6 bitmap tolerances. Quality separately
+uses exact original-polygon pixel area, foreground/edge ROI and geometry-subtracted
+adjacent-phase residuals. It remains MEASURED_NOT_QUALIFIED, with no new pass gate.
+
+Observed worst exact-area residuals: linear4 .043696754, linear8 .013053457,
+linear16 .012661063. Worst neighboring-phase residuals: .034055169, .010916074,
+.006532144 respectively. Improvement is not uniform: linear16 is worse than
+linear4 at phases .25/.5/.75 by about .00044, and worse than linear8 at9 of17
+phases. Those results are retained, not replaced by an aggregate-only claim.
+The grids imply16/64/256 texture samples per pixel, not measured GPU time, energy
+or mobile feasibility. Full glyph sets, transforms, perceptual temporal quality,
+real platform raster providers and physical device/Live gates remain open.
