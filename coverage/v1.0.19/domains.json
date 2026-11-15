@@ -183,8 +183,29 @@
     "existing_route": "[合同入口](06_pipeline/shader_module.md#shader-object-contract)",
     "open_review": "全部dynamic state/cache/binary/library/parallel create条件",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "compute_interface_delivery": {
+      "contract": "pipeline_layout.md#delivery19-compute-interface-delivery-chain-bounded-l1l2",
+      "evidence": "pipeline-interface.json",
+      "scope": "single-entry Shader-only direct SSBO ordinary compute pipeline",
+      "actual_chain": [
+        "compile/validate/disassemble same artifact",
+        "reflect and compare actual layout manifest",
+        "07990 type mismatch abort",
+        "apply minimal patch",
+        "descriptor binding/dispatch/barrier/fence/readback42",
+        "07988 missing binding abort",
+        "wrong-output oracle rejection"
+      ],
+      "still_open": [
+        "dynamic/mutable/array descriptors",
+        "push constants",
+        "all dynamic/cache/binary/library states",
+        "general graphics interfaces",
+        "physical hardware/SC/Live/external-engine acceptance"
+      ]
+    }
   },
   {
     "id": "VK10",
