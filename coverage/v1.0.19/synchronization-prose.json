@@ -1,0 +1,122 @@
+{
+  "schema": 1,
+  "status": "EXACT_RAW_PROSE_SLICE_MAP",
+  "source": {
+    "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "path": "chapters/synchronization.adoc",
+    "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+    "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/synchronization.adoc",
+    "api_version": "1.4.368",
+    "license": "CC-BY-4.0",
+    "copyright": "Khronos Group"
+  },
+  "slices": [
+    {
+      "anchor": "synchronization-dependencies-execution",
+      "line_start": 71,
+      "line_end": 91,
+      "raw_slice_sha256": "9bfde19d1e18f1bf7acedc9430049b27280709ba76bfa4b4db44c54bb2185f99",
+      "bytes": 943,
+      "conditional_directives": [],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "synchronization-dependencies-chains",
+      "line_start": 92,
+      "line_end": 113,
+      "raw_slice_sha256": "2d5f5a6fb64b1f8b82517b80e27eb0e8d64abf0d5c1c5b250a110e52d23a41e5",
+      "bytes": 1031,
+      "conditional_directives": [],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "synchronization-dependencies-available-and-visible",
+      "line_start": 114,
+      "line_end": 136,
+      "raw_slice_sha256": "98484a73b2a2e2b33cc35963c64d04d697a54965be3cb8d000381ba6f676ea5a",
+      "bytes": 1287,
+      "conditional_directives": [
+        "ifdef::VK_BASE_VERSION_1_2,VK_KHR_vulkan_memory_model[]",
+        "endif::VK_BASE_VERSION_1_2,VK_KHR_vulkan_memory_model[]"
+      ],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "synchronization-dependencies-memory",
+      "line_start": 137,
+      "line_end": 148,
+      "raw_slice_sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d",
+      "bytes": 582,
+      "conditional_directives": [],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "synchronization-dependencies-access-scopes",
+      "line_start": 149,
+      "line_end": 195,
+      "raw_slice_sha256": "15de723217b646aacbcccc96703cd00fef8d7f0c931054f80965d41c68d2c846",
+      "bytes": 2226,
+      "conditional_directives": [],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "synchronization-submission-order",
+      "line_start": 1914,
+      "line_end": 1979,
+      "raw_slice_sha256": "59efcfd93d94bbcb8e2e87589cd9bc26ee0f5940e8982851008e4c41d8d4843e",
+      "bytes": 3258,
+      "conditional_directives": [
+        "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]"
+      ],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "synchronization-submission-host-writes",
+      "line_start": 8404,
+      "line_end": 8437,
+      "raw_slice_sha256": "02ccebd0ff665619962cce52dd675a21d7635c4e511389b05ffec03bd8d80135",
+      "bytes": 1428,
+      "conditional_directives": [
+        "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]"
+      ],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    },
+    {
+      "anchor": "buffer-memory-barrier-ownership-transfer",
+      "line_start": 7333,
+      "line_end": 7411,
+      "raw_slice_sha256": "a0492daf457a9cebfb6b16069dcd47f305251b4e2a856b113ce579683af6ce51",
+      "bytes": 3436,
+      "conditional_directives": [
+        "ifdef::VK_KHR_maintenance8[]",
+        "endif::VK_KHR_maintenance8[]",
+        "ifdef::VK_KHR_maintenance8[]",
+        "endif::VK_KHR_maintenance8[]",
+        "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+        "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+        "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+        "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+        "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+        "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+        "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]"
+      ],
+      "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+    }
+  ],
+  "limits": [
+    "Physical raw section slices terminate at the next explicit source anchor; not transitive normative dependency closure.",
+    "AsciiDoc includes/macros/conditionals are not expanded or evaluated.",
+    "No equivalence to separately frozen1.4.309 VUID corpus or actual CPU runtime is implied.",
+    "Source identity and slice hashes are traceability, not L1/L2 acceptance."
+  ]
+}
