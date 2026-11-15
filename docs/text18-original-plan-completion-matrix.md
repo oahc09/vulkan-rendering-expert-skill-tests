@@ -19,7 +19,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bounded bilinear MSDF with range/derivatives tested; mip bleed, general transforms/packing and complete quality board remain local open |
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask and simple concave ear-clipped triangle pass; general hole/curve mesh quality, stroke/cap/join/dash and broader topology are local open |
-| §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
+| §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open; fixed hard clips now also execute inside pending packed-glyph lifecycle |
 | §6.4 world/3D | Bounded authored concave solid extrusion with actual front/side/depth readback | Partial: general shaped-font extrusion, near-plane clipping, bevel, world lighting/shadows/second view remain open |
 | §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
 | §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; six-transition real run/size/direction churn added; bounded fixed-font axis churn added; long stress and broader locale/variation semantics remain open |
@@ -448,3 +448,78 @@ concurrent scheduling, production shared font cache or arbitrary pending-failure
 recovery. No cross-instance physical-device UUID identity claim is made.
 Asynchronous atlas churn with clip/state handoff still needs combined evidence;
 physical platform/device/Live gates remain unchanged and both PRs remain Draft.
+
+
+## Integration evidence cannot be added arithmetically
+
+The historical pending packed-glyph lifecycle, active-MRT, hard-clip and dual
+logical-device experiments exercised different executables/resources. Passing
+all of them did not establish a single combined renderer path. New integrated
+experiments must name their actual command-buffer/resource ownership and their
+independent reference. Likewise, separate bitmap/MSDF runs do not establish
+stable representation switching, cache reuse or full dynamic quality.
+
+Only the explicitly exercised conjunction may close a local matrix item. GPU
+shader clip is not a GPU-produced mask image with producer→sample lifetime;
+serial logical devices are not simultaneous GPU execution or real Surfaces;
+a selected A outline is not the full multilingual hinted-font quality board.
+Original§13.1 criteria and optional-representation boundaries remain unchanged.
+
+
+## Joint pending-glyph / clip / active-MRT increment
+
+A new pipeline now actually joins the previously separate conjunction in one
+process/device/queue and draw submission: packed glyph vertex UVs, three hard
+fragment-shader clip predicates and three active color attachments with queried
+independentBlend/write protection, inside the real timeline-gated page
+publication/cancellation/retirement engine. The GPU atlas remains unclipped.
+Original glyph samples plus independent CPU clip predicates define the reference
+at unchanged1e-6; three positive images have max error7.153e-8. Main flow has
+four draws total including the required diagnostic canceled-page wrong route.
+
+The fixed layout was chosen by CPU boundary analysis before the first joint GPU
+run. Bypassing rectangle/circle/rotated rectangle exposes22/38/25 nonzero glyph
+pixels;252 nonzero pixels remain visible in the positive. Each clip bypass and
+incorrect auxiliary write mask runs a full legal GPU lifecycle and is rejected.
+Pending exception cleanup, stale readback and publication-record tamper controls
+remain explicit. Preparation/negative runs are not counted as positive frames.
+
+This closes the **bounded conjunction**, not a general renderer. It has no
+depth attachment, stencil/AA clip, GPU mask producer pass, pre/overlay/post scene
+state restoration, dynamic font content, production allocation/device-loss
+recovery or physical-device/Live evidence. The underlying generation2 still
+attenuates the same trusted coverage. The earlier standalone experiments remain
+historical evidence and are not retroactively labeled joint execution.
+
+
+## Limited same-device bitmap/MSDF stateful routing
+
+One real shaped A glyph supplies the same normalized linear outline/layout for
+two separate GPU images, descriptors and pipelines retained by one VkDevice.
+Ten scale/phase frames use a stateful selection rule fixed before execution:
+start bitmap; scale≤0.9 selects bitmap, scale≥1.1 selects MSDF, between those
+retain previous representation. Observed routes are0001110001. These are finite
+experimental scheduling conditions, not universal typography acceptance limits.
+Each selected image uploads only after the preceding draw completes; there is
+no implemented cache service or asynchronous resource reuse claim.
+
+Bitmap here is unhinted exact polygon/pixel-area coverage at the target transform,
+not a platform-hinted raster. Its reference is also its generation source, so
+near-zero area discrepancy verifies transport/composition rather than an
+independent rasterizer. The same exact area reference is independent of the
+MSDF representation. Existing bitmap1e-6 and MSDF linear4 0.004 sampling/over
+tolerances are unchanged; measured maxima are9.758e-7 and3.230e-6 respectively.
+The legal opposite representation is drawn immediately at hold frame2 without
+changing state and rejected by both route and expected-pixel checks (.007329
+pixel error versus the bitmap reference).
+
+MSDF maximum coverage discrepancy from exact area is about0.02304 in this
+sequence. Adjacent-frame same-pixel coverage changes minus exact geometric
+changes are reported as residual max/union-foreground ROI MAE, without a new
+pass threshold. This is not a perceptual flicker metric or motion-compensated
+temporal acceptance. Output remains **MEASURED_NOT_QUALIFIED**. Previews were
+viewed, but their intended scale/phase change does not prove imperceptible
+representation switching. No rotation/perspective, platform-hinted comparison,
+unsupported-provider fallback, multilingual quality board or target-device
+performance has been established. UNUSED sentinel protection in this switching
+path is not the new active-MRT/pending joint path described above.

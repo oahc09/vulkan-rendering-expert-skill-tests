@@ -1,0 +1,205 @@
+{
+  "temporal_delta_residual": [
+    {
+      "from_frame": 0,
+      "to_frame": 1,
+      "representation_changed": false,
+      "coverage_delta_residual_max": 1.206837775158398e-06,
+      "coverage_delta_residual_roi_mae": 1.8184604250086333e-07
+    },
+    {
+      "from_frame": 1,
+      "to_frame": 2,
+      "representation_changed": false,
+      "coverage_delta_residual_max": 8.742014566687217e-07,
+      "coverage_delta_residual_roi_mae": 1.1612673356779013e-07
+    },
+    {
+      "from_frame": 2,
+      "to_frame": 3,
+      "representation_changed": true,
+      "coverage_delta_residual_max": 0.023039817810058594,
+      "coverage_delta_residual_roi_mae": 0.0005760895465877827
+    },
+    {
+      "from_frame": 3,
+      "to_frame": 4,
+      "representation_changed": false,
+      "coverage_delta_residual_max": 0.023039817810058594,
+      "coverage_delta_residual_roi_mae": 0.0009453668979419692
+    },
+    {
+      "from_frame": 4,
+      "to_frame": 5,
+      "representation_changed": false,
+      "coverage_delta_residual_max": 0.012213731485701373,
+      "coverage_delta_residual_roi_mae": 0.0010081826123472034
+    },
+    {
+      "from_frame": 5,
+      "to_frame": 6,
+      "representation_changed": true,
+      "coverage_delta_residual_max": 0.011569230669503362,
+      "coverage_delta_residual_roi_mae": 0.000590462100745369
+    },
+    {
+      "from_frame": 6,
+      "to_frame": 7,
+      "representation_changed": false,
+      "coverage_delta_residual_max": 8.742014566687217e-07,
+      "coverage_delta_residual_roi_mae": 1.3886854456665568e-07
+    },
+    {
+      "from_frame": 7,
+      "to_frame": 8,
+      "representation_changed": false,
+      "coverage_delta_residual_max": 1.5894571939734092e-06,
+      "coverage_delta_residual_roi_mae": 1.258846587716563e-07
+    },
+    {
+      "from_frame": 8,
+      "to_frame": 9,
+      "representation_changed": true,
+      "coverage_delta_residual_max": 0.023040135701497433,
+      "coverage_delta_residual_roi_mae": 0.0005611791434193736
+    }
+  ],
+  "temporal_scope": "same-pixel coverage delta minus exact geometric-reference delta; measured only, not perceptual flicker or motion-compensated quality",
+  "status": "MEASURED_NOT_QUALIFIED",
+  "sampling_composition_tolerance": {
+    "bitmap": 1e-06,
+    "msdf-linear4": 0.004
+  },
+  "frames": [
+    {
+      "frame": 0,
+      "mode": "outline-area-bitmap",
+      "sample_error": 9.655952454279415e-07,
+      "exact_area_max_error": 1.5894571939734092e-06,
+      "exact_area_roi_mae": 1.765668490479695e-07
+    },
+    {
+      "frame": 1,
+      "mode": "outline-area-bitmap",
+      "sample_error": 5.693621460411968e-07,
+      "exact_area_max_error": 9.5367431640625e-07,
+      "exact_area_roi_mae": 1.5547669485359074e-07
+    },
+    {
+      "frame": 2,
+      "mode": "outline-area-bitmap",
+      "sample_error": 9.655952454279415e-07,
+      "exact_area_max_error": 1.5894571939734092e-06,
+      "exact_area_roi_mae": 1.2975297886713218e-07
+    },
+    {
+      "frame": 3,
+      "mode": "msdf-linear4",
+      "sample_error": 3.230075925397813e-06,
+      "exact_area_max_error": 0.023039817810058594,
+      "exact_area_roi_mae": 0.0006105136184206488
+    },
+    {
+      "frame": 4,
+      "mode": "msdf-linear4",
+      "sample_error": 3.2027801166734093e-06,
+      "exact_area_max_error": 0.012213731485701373,
+      "exact_area_roi_mae": 0.0006050109854265122
+    },
+    {
+      "frame": 5,
+      "mode": "msdf-linear4",
+      "sample_error": 2.140311661291694e-06,
+      "exact_area_max_error": 0.011569230669503362,
+      "exact_area_roi_mae": 0.0006114555747598372
+    },
+    {
+      "frame": 6,
+      "mode": "outline-area-bitmap",
+      "sample_error": 9.757835641721613e-07,
+      "exact_area_max_error": 1.5269648656612844e-06,
+      "exact_area_roi_mae": 1.504540078737805e-07
+    },
+    {
+      "frame": 7,
+      "mode": "outline-area-bitmap",
+      "sample_error": 5.693621460411968e-07,
+      "exact_area_max_error": 9.5367431640625e-07,
+      "exact_area_roi_mae": 1.5495898545927085e-07
+    },
+    {
+      "frame": 8,
+      "mode": "outline-area-bitmap",
+      "sample_error": 9.655952454279415e-07,
+      "exact_area_max_error": 1.5894571939734092e-06,
+      "exact_area_roi_mae": 1.2531701419323678e-07
+    },
+    {
+      "frame": 9,
+      "mode": "msdf-linear4",
+      "sample_error": 2.739620981351276e-06,
+      "exact_area_max_error": 0.023040135701497433,
+      "exact_area_roi_mae": 0.0005949390843000079
+    }
+  ],
+  "routes": [
+    {
+      "frame": 0,
+      "previous": 0,
+      "selected": 0
+    },
+    {
+      "frame": 1,
+      "previous": 0,
+      "selected": 0
+    },
+    {
+      "frame": 2,
+      "previous": 0,
+      "selected": 0
+    },
+    {
+      "frame": 3,
+      "previous": 0,
+      "selected": 1
+    },
+    {
+      "frame": 4,
+      "previous": 1,
+      "selected": 1
+    },
+    {
+      "frame": 5,
+      "previous": 1,
+      "selected": 1
+    },
+    {
+      "frame": 6,
+      "previous": 1,
+      "selected": 0
+    },
+    {
+      "frame": 7,
+      "previous": 0,
+      "selected": 0
+    },
+    {
+      "frame": 8,
+      "previous": 0,
+      "selected": 0
+    },
+    {
+      "frame": 9,
+      "previous": 0,
+      "selected": 1
+    }
+  ],
+  "wrong_hold_pixel_error": 0.00732903461342857,
+  "scope": "one A glyph shared normalized outline/layout; same-device persistent separate legal bitmap/MSDF images descriptors pipelines; scale/phase only",
+  "limits": [
+    "bitmap is unhinted exact-outline area, not platform hinted",
+    "thresholds are fixed experimental routing not general quality gates",
+    "no cache service or asynchronous reuse",
+    "no rotation/perspective/target device acceptance"
+  ]
+}
