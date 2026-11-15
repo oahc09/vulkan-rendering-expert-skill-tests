@@ -97,13 +97,20 @@
       ],
       "open": [
         "general pool/layout counts",
-        "shader interface/access",
-        "in-flight integration",
+        "general shader interface/access",
+        "multi-queue/presentation in-flight integration",
         "dynamic/indexing/descriptor-buffer",
         "SC",
         "external project acceptance"
       ],
-      "domain_complete": false
+      "domain_complete": false,
+      "joint_lifetime": {
+        "scope": "single compute queue, CPU ICD, ordinary UBO set",
+        "actual": "timeline-gated pending update03047; retire/readback42; update/rerecord/readback99; wrong-output exit6",
+        "evidence": "descriptor-lifetime.json",
+        "validation": "ordinary Validation, NOT SyncVal/GPU-AV",
+        "production_or_hardware_acceptance": false
+      }
     }
   },
   {

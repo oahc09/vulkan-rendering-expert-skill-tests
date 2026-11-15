@@ -1,0 +1,100 @@
+{
+  "run_id": "ce21f2cd-6e56-4cd9-bdb4-0bf91bc36665",
+  "provenance": "original deliberate fault injection; not production discovery",
+  "sources": {
+    "probe.c": "67e2fe32894e905b7143905fa07ba9e497d60d6c143fa5b194461350a81911e7",
+    "compute.comp": "622f8bbfcd4006f80c1a206be36f5057ac4f4586e770735162861cab77402b10",
+    "run.py": "956d58c177eb3fb1d0614aeddf828614f30caf376d3d3d8f7dac2dd9e1cce835"
+  },
+  "shader_sha256": "a05387e0f5d6e7ee10c0b88433e914243ab92820457107f5d461da545150ff45",
+  "binary_sha256": "8b256eba3308d1e7085fc4a9a33e2aa4607f4cfa3140e73eab19f64b23e5a447",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "glslang_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+  "spirv_val_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+  "tools": {
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "glslang": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+    "spirv-val": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)"
+  },
+  "cases": {
+    "good": {
+      "result": {
+        "mode": "good",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 0,
+        "expected_vuid_count": 0,
+        "exit_code": 0
+      },
+      "diagnostics": [],
+      "stdout_sha256": "44c235137e0cd0fb317eb9c77d716123e690e196597c80ff5cfea8ae335215c3",
+      "stderr_sha256": "6738e38dc3021092460bf8493f53dc9853054e150c2d985bd0c7e7b3be0507f6"
+    },
+    "bad": {
+      "result": {
+        "mode": "bad",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 1,
+        "expected_vuid_count": 1,
+        "exit_code": 0
+      },
+      "diagnostics": [
+        "VUID phase=pending-update id=VUID-vkUpdateDescriptorSets-None-03047"
+      ],
+      "stdout_sha256": "a978d37f2ebd153dd46ee228d17d21f93405b5ab3a6453a1f9ea9e187155781d",
+      "stderr_sha256": "9571a661c292587779314a84b9071b7b9636211d59d45cee8ca4b853b714a62f"
+    },
+    "wrong-output": {
+      "result": {
+        "mode": "wrong-output",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 0,
+        "expected_vuid_count": 0,
+        "exit_code": 6
+      },
+      "diagnostics": [],
+      "stdout_sha256": "31d29e0239b4b941e87d8af8378b514597a56bb9af77be0582f6ae62c67ebec2",
+      "stderr_sha256": "6738e38dc3021092460bf8493f53dc9853054e150c2d985bd0c7e7b3be0507f6"
+    }
+  },
+  "runtime_identity": {
+    "device_type": 4,
+    "vendor_id": 65541,
+    "device_id": 0,
+    "driver": 1,
+    "api": 4210993,
+    "timeline_supported": true,
+    "layer_spec": 4210997,
+    "layer_impl": 1
+  },
+  "status": "PASS_SCOPED_DESCRIPTOR_LIFETIME_API_REGRESSION",
+  "limitations": [
+    "CPU ICD and one queue only",
+    "actual timeline wait, not render-frame latency evidence",
+    "ordinary descriptor flags only; update-after-bind/indexing excluded",
+    "invalid pending update aborted by Validation; driver undefined behavior not exercised",
+    "uniform/storage shader with 42 then 99 only; no general shader correctness",
+    "wrong-output is an authored oracle negative, not an independently discovered defect",
+    "not external-project/Live-model/hardware/SC acceptance"
+  ],
+  "compiler_packages": [
+    {
+      "package": "glslang-tools",
+      "version": "15.1.0+1.4.309.0-1",
+      "source": "https://deb.debian.org/debian/pool/main/g/glslang/glslang-tools_15.1.0+1.4.309.0-1_amd64.deb",
+      "sha256": "c3025c4af63244296bc9d466746763c809d3f3f126408fc2c7b07070886a7759"
+    },
+    {
+      "package": "spirv-tools",
+      "version": "2025.1~rc1-1",
+      "source": "https://deb.debian.org/debian/pool/main/s/spirv-tools/spirv-tools_2025.1~rc1-1_amd64.deb",
+      "sha256": "2cc272ef1340cf0b47de6c5fcccaf91574d7a8f4061abb718d6c639463e85aab"
+    }
+  ]
+}
