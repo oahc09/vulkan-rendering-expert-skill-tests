@@ -1,4 +1,5 @@
 """Pinned external Amber #951 GPU replay, not a generic test/command runner."""
+import uuid
 import hashlib,json,os,pathlib,re,subprocess,time
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 MANIFEST='948c2f1a10e3269b2742fa4f046a420a510e11d9a2c1cc76c0de0a7ef2fc58f7'
@@ -58,7 +59,9 @@ def provenance_state():
   return {'head':subprocess.check_output(['git','-C',str(repo),'rev-parse','HEAD'],text=True,timeout=15).strip(),'porcelain':subprocess.check_output(['git','-C',str(repo),'status','--porcelain'],text=True,timeout=15).splitlines()}
  return {'tests':state(ROOT),'skill':state(pathlib.Path(os.environ.get('VULKAN_SKILL_ROOT','/tmp/vulkan119-skill'))),'pair':json.loads((ROOT/'coverage/v1.0.19/pair.json').read_text()),'pair_sha256':fh(ROOT/'coverage/v1.0.19/pair.json'),'interpretation':'Explicit dirty/untracked state and implementation hashes; no committed release claim.'}
 
-def run(root,out,timeout=30):
+def run(root,out,timeout=30,run_id=None):
+ run_id=str(uuid.uuid4()) if run_id is None else run_id
+ if not isinstance(run_id,str) or str(uuid.UUID(run_id))!=run_id:raise ValueError('canonical run UUID required')
  root=pathlib.Path(root).resolve();out=pathlib.Path(out)
  require(type(timeout)is int and 1<=timeout<=120,'timeout outside 1..120')
  require(not out.exists() and not out.is_symlink(),'output must be fresh')
@@ -68,7 +71,7 @@ def run(root,out,timeout=30):
  require(set(m['environment'])=={'VK_DRIVER_FILES','VK_LAYER_PATH','LD_LIBRARY_PATH','MESA_SHADER_CACHE_DISABLE'},'unexpected environment schema')
  provenance=provenance_state()
  out.mkdir(parents=True)
- report={'schema':1,'status':'BLOCKED','release_status':'BLOCKED','scope':SCOPE,'fixed_manifest_sha256':MANIFEST,'implementation_sha256':own,'source_commits':{'before':BEFORE,'after':AFTER},'steps':[],'environment':env,'runtime_library_sha256':RUNTIME_LIBS,'provenance':provenance}
+ report={'schema':1,'run_id':run_id,'output_root':str(out.resolve()),'status':'BLOCKED','release_status':'BLOCKED','scope':SCOPE,'fixed_manifest_sha256':MANIFEST,'implementation_sha256':own,'source_commits':{'before':BEFORE,'after':AFTER},'steps':[],'environment':env,'runtime_library_sha256':RUNTIME_LIBS,'provenance':provenance}
  try:
   for name,v,case in [('before','before','original.amber'),('after','after','original.amber'),('rollback','before','original.amber'),('wrong-expect','after','wrong-expect.amber')]:
    exe=local(root,f'amber951-{v}-build/amber/amber');inp=local(root,'amber951-build-support/'+case)

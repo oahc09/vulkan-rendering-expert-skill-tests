@@ -1,4 +1,5 @@
 """Fixed upstream class HOST reproducer. Not full engine, GPU, or blind repair."""
+import uuid
 import hashlib
 import json
 import pathlib
@@ -53,7 +54,9 @@ def verify_parent(repo):
  parent=subprocess.check_output(['git','-C',str(repo),'rev-parse',FIX+'^'],text=True,timeout=15).strip()
  require(parent==PARENT,'upstream parent mismatch')
 
-def run(repo, headers, out):
+def run(repo, headers, out, run_id=None):
+ run_id=str(uuid.uuid4()) if run_id is None else run_id
+ if not isinstance(run_id,str) or str(uuid.UUID(run_id))!=run_id:raise ValueError('canonical run UUID required')
  repo=pathlib.Path(repo).resolve();headers=pathlib.Path(headers).resolve();out=pathlib.Path(out)
  require(not out.exists(),'output must be fresh')
  require((headers/'vulkan/vulkan_core.h').is_file(),'official headers missing')
@@ -68,7 +71,7 @@ def run(repo, headers, out):
  raw={(label,n):source_bytes(repo,label,n) for label in SOURCES for n in SOURCES[label]}
  provenance={'tests':git_state(ROOT),'skill':git_state(pathlib.Path(os.environ.get('VULKAN_SKILL_ROOT','/tmp/vulkan119-skill'))),'pair_file_sha256':filehash(ROOT/'coverage/v1.0.19/pair.json'),'pair':json.loads((ROOT/'coverage/v1.0.19/pair.json').read_text()),'release_status':'BLOCKED','interpretation':'Executed implementation hashes are authoritative; dirty/untracked state is explicit, not a committed release claim.'}
  out.mkdir(parents=True)
- report={'schema':1,'status':'BLOCKED','scope':'Unmodified complete upstream FencePool class with explicit Device/helpers and Vulkan-call HOST test doubles. No GPU wait, driver, full engine build, or blind repair. VK_ERROR_DEVICE_LOST here is a supplied return value, not actual device loss.', 'upstream':{'repository':'KhronosGroup/Vulkan-Samples','before':PARENT,'after':FIX,'source_sha256':SOURCES},'implementation_sha256':before,'compiler_sha256':toolhash,'header_tree_sha256':header_hashes,'runs':{},'steps':[],'provenance':provenance}
+ report={'schema':1,'run_id':run_id,'output_root':str(out.resolve()),'status':'BLOCKED','scope':'Unmodified complete upstream FencePool class with explicit Device/helpers and Vulkan-call HOST test doubles. No GPU wait, driver, full engine build, or blind repair. VK_ERROR_DEVICE_LOST here is a supplied return value, not actual device loss.', 'upstream':{'repository':'KhronosGroup/Vulkan-Samples','before':PARENT,'after':FIX,'source_sha256':SOURCES},'implementation_sha256':before,'compiler_sha256':toolhash,'header_tree_sha256':header_hashes,'runs':{},'steps':[],'provenance':provenance}
  def execute(argv, prefix, timeout):
   start=time.monotonic()
   step={'label':prefix,'argv':argv,'timeout_seconds':timeout,'start_monotonic':start}

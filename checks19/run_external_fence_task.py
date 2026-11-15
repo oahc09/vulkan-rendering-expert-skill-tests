@@ -11,9 +11,10 @@ def main():
  p.add_argument('--source-repo',required=True)
  p.add_argument('--headers',required=True,help='official Vulkan include root')
  p.add_argument('--out',required=True)
+ p.add_argument('--run-id')
  a=p.parse_args()
  try:
-  r=run(a.source_repo,a.headers,a.out)
+  r=run(a.source_repo,a.headers,a.out,a.run_id)
   print(r['status']);return 0
  except Exception as e:
   print('BLOCKED: '+str(e),file=sys.stderr);return 2
