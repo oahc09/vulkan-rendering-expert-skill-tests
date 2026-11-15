@@ -67,7 +67,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 5. Geometry: bounded flattening/mask hole tests plus simple concave ear-clipped triangle and index/area checks; arbitrary holes/stroke/extrusion remain open.
 6. Dynamic quality: phase-only area ≤5%, centroid error ≤0.15px, blend ≤1e-6; not all transforms.
 7. Stability: fixed fixture inventories and controlled cleanup; no global allocator/driver leak claim.
-8. Performance: reliable GPU timings, thermal/power and complete p50/p95/p99 breakdown **UNMEASURED**.
+8. Performance: bounded software renderpass timestamps and CPU submit/wait p50/p95 measured for three MSDF modes; target-device timings, thermal/power and full p99/cold-hot allocation breakdown remain **UNMEASURED**.
 
 Priority local work after the bounded two-page lifecycle: sustained real glyph churn and additional original-plan renderer/quality gaps. Actual packed UV quads and active output/depth write protection now have bounded evidence, not whole-milestone acceptance. Other original-plan local gaps stay visible; they must not be mislabeled as hardware blockers. Retain original failed host-event validation evidence and prior failing CI. Only source and stripped numerical summaries publish; raw logs/environment/font evidence stay local.
 
@@ -352,3 +352,23 @@ it; review corrected winding and added directed-edge validation before publishin
 Back cap is submitted but not visible in this view. This is an authored vector
 solid experiment, not general shaped-font extrusion, holes/bevel, lighting,
 shadows, perspective/near-plane, second camera or full renderer integration.
+
+
+## Software-only MSDF renderpass cost diagnostic
+
+Timestamp capability, actual queue valid bits/period and query availability are
+checked. A dedicated timestamp interval surrounds only the renderpass; upload
+and readback are separate waited submissions. This includes renderpass and
+raster/attachment costs, not pure fragment shader time. Three modes rotate
+order, each5warmups then30measured cycles, with nearest-rank p50/p95/max. Every
+draw checks full RGBA against its freshly validated preparation outside timing,
+and sentinels remain exact. CPU submit/wait costs are separate; do not sum GPU
+time and overlapping CPU wait. Unsupported capability records NOT_MEASURED.
+
+The latest recorded local65x49 A/native software Vulkan run with validation
+enabled gives GPU renderpass p50/p95 milliseconds: baseline0.505/0.784,
+binary16 5.077/6.470, linear4 0.815/1.277. Raw samples and complete local
+provenance remain available; public report omits environment identifiers. This
+is not mobile performance, a frame budget, thermal/power result or general
+claim of production speed. Earlier two local runs remain evidence, not silently
+selected best values. No relative-speed assertion is used as a test gate.
