@@ -836,3 +836,30 @@ before GPU setup with exact reasons. Only source/stripped numerical evidence is
 published; original failures and full receipts remain local. Draft/BLOCKED,
 branch pairing and target-device/Live limitations persist; this does not qualify
 general perspective NEAREST, arbitrary camera planes, shadows or second views.
+
+### True second camera with shared serial resources (2026-11-15)
+
+`text_second_camera_lab` keeps the real O glyph, world geometry, atlas image,
+descriptor and vertex buffer unchanged under one TextLab/Vulkan Device. Camera A
+is the original origin/basis. Camera B has origin(.5,.125,-.25), right(24/25,0,7/25),
+up(0,1,0), forward(-7/25,0,24/25): actual translation plus ~16.26-degree yaw, not a
+second glyph distance. An80-byte ink/view push-constant block drives the vertex
+view transform and fragment composition. A/B each render scene occluder then
+label in depth-tested or always-on-top mode. Five serial submissions (four
+positive, one negative) complete before target/readback reuse. The same atlas
+image is reuploaded with identical data every draw; no once-only-upload or
+parallel-view performance claim is made.
+
+Independent CPU rays start at the respective camera origin/basis and intersect
+original world planes/glyph data; source geometry does not derive from GPU matrix
+or vertex buffers. Four full-image results pass1e-6 without guards: maxcolor
+8.457e-8, B scene-depth max8.997e-8, auxiliary MRT exact. A hidden/visible glyph
+pixels131/217 versus B174/136 prove observable parallax/occlusion changes. A real
+negative keeps scene B correct but pushes camera A only for the label; color
+error0.6 is detected after independent depth/aux checks. Source identity/hashes
+and readback receipts remain local; publishable report contains minimal numbers.
+
+This closes only a bounded planar-label second-camera experiment. Shadowing,
+second-view finite extruded typography, simultaneous views/Surfaces and general
+camera/font quality remain separate. Draft/BLOCKED, precise version pairing and
+non-main sibling dependency chain remain; target-platform and Live are unverified.
