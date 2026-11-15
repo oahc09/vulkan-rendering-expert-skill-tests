@@ -1,0 +1,28 @@
+{
+  "scope": "actual Vulkan two-image candidate growth/cancel/retire transfer cycle",
+  "validation_enabled": true,
+  "page_creates": 3,
+  "pages_destroyed_before_final_cleanup": 2,
+  "peak_live_page_handles": 2,
+  "final_published_generation": 2,
+  "readbacks": 5,
+  "max_readback_error": 0,
+  "cancel_candidate_generation": 1,
+  "route_after_cancel_generation": 0,
+  "old_consumers_preserved": 2,
+  "controlled_pending_cancel_cleanup": "completed",
+  "final_destructor_marker_seen": true,
+  "negative_checks": [
+    "canceled bytes substituted for published route rejected",
+    "canceled publication event tampering rejected",
+    "existing output refused unchanged",
+    "actual initialized recorder failure restored image slot and cleaned resources"
+  ],
+  "limits": [
+    "fixture handles, not driver memory leak accounting",
+    "single queue transfer consumers, not actual draw descriptors",
+    "no production packing/growth allocator",
+    "no multidevice, target hardware or performance",
+    "no exhaustive partial-construction allocation/device-loss injection"
+  ]
+}

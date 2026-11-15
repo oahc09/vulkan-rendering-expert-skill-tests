@@ -77,3 +77,28 @@ bounds were fixed at 5% area drift, .15px centroid shift error and 1e-6 blend
 error. First results: max relative area drift .000712657, centroid .00544121px,
 blend7.15256e-8; these are not a complete Text Quality Board acceptance. Actual
 12px output was viewed. No rotation/perspective/MSDF/platform substitution.
+
+## Bounded page growth/cancellation increment
+
+A new CPU AtlasPages reference keeps page identity separate from slot generation,
+reserves monotonic upload timeline values across pages, rejects backward route
+publication, preserves captured old-page consumers, and enforces page/payload
+budgets before atomic backend allocation. Cancellation stops new routing, not
+GPU work; the page remains owned until upload and all captured consumers retire.
+An uploaded but unpublished candidate retains ownership until explicit publish
+or cancel; collection cannot erase pending publication. Disposal failures retain
+ownership for retry. Allocator/disposer callbacks must
+be atomic on failure; partially completed backend operations need their own
+cleanup. Payload bytes describe R8 logical coverage, not VRAM commitment.
+Twenty-one CPU tests include failed allocation/disposal, canceled pending capacity,
+stale identity/face, signal alias/regression and old snapshots during growth.
+The reference is externally serialized and is not a production atlas allocator.
+
+The separate actual Vulkan growth fixture uses two distinct image pages, with
+old consumers held pending while a candidate upload is canceled at the host
+publication layer. The upload still completes and is diagnostically read back;
+actual published routing continues to read the old page. After retirement the
+canceled page is really destroyed. A replacement page uploads and publishes,
+then the old page is destroyed. This is bounded page-count growth, not extent
+resizing, rectangle packing, sampled draw bindings, multiple GPUs or driver
+allocation/leak qualification. Live and target-device gates remain independent.
