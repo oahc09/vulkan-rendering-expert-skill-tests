@@ -196,3 +196,12 @@ cancel/publish/retire transitions. Independent GPU readbacks and actual provider
 mismatch negatives distinguish this from a metadata-only axis change. The font
 remains execution-side only and is hash-guarded before parsing. Other fonts/axes,
 locale semantics, general typography and real target/Live gates remain open.
+
+## Actual fixed-font locale substitution
+
+A locale fixture now pins one existing font's cyrl/SRB GSUB locl mapping and
+asserts actual glyph IDs. Only ru/sr language changes for the same Cyrillic text,
+size, direction and destination; repeated groups stay stable while their two
+coverage images differ. Six actual same-device cancel/publish/retire transitions
+verify eighteen readbacks and stale-language rejection. This closes a narrow
+language-dependent path, not full locale/fallback/paragraph/platform acceptance.

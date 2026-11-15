@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `ef447158170699da67f7c33437065696b3de8d51`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `1f650684475d7aa42e7540c8730be09738a1ab8b`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -11,7 +11,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §1, §9, §15 architecture/routing/package | 21 changed Skill files, unchanged 200 runtime file budget; deterministic package and routing tests | Bounded static/package pass; actual host discovery/read not verified |
 | §2, §10 M0 baseline | Exact Skill16 and Skill18 CI cohorts; immutable old release contract; TEXT18 candidate contract | Partial: tests base is `feat/v1.0.16-source-review`, not main; CORE17 #10 remains separate; six partial mappings cannot be declared cumulative acceptance |
 | §3, §18 sources | Frozen cited knowledge and sources checked statically | Not proof of each API's execution or all recent platform support |
-| §4.1 C1 units/IDs/runs | Glyph identity/width/generation CPU negatives; actual Linux HarfBuzz single-run glyphs and positions | Partial: paragraph bidi, real fallback/font switches and complete multilingual semantics remain local open |
+| §4.1 C1 units/IDs/runs | Glyph identity/width/generation CPU negatives; actual Linux HarfBuzz single-run glyphs and positions | Partial: fixed-font ru/sr GSUB-dependent execution added; paragraph bidi, real fallback/font switches and complete multilingual semantics remain open |
 | §4.2 Android Java/JNI | Knowledge/contract only | External unverified: no actual Java/JNI platform invocation; not supplied by Linux HarfBuzz |
 | §4.3 DirectWrite | Knowledge/contract only | External unverified: no actual DirectWrite run/outline/bitmap |
 | §4.4 beyond-64k/new tables | Wide-ID and range contracts | Partial: real capable provider and new font format fixtures unavailable/unverified; uint32 storage is not provider support |
@@ -198,3 +198,22 @@ Remaining: locale-specific fallback/paragraph semantics, other axes/fonts/color
 formats, comparative typography/MSDF quality, arbitrary transforms, production
 multithreading and multiple devices/outputs, target-platform/device/Live/host
 acceptance. The source input's OFL license is not a platform/vendor certification.
+
+## Fixed-font language-dependent GSUB churn increment
+
+`text_locale_churn_lab` advances beyond language-parameter pass-through. The
+existing DejaVuSerif-Italic font is size/hash guarded before parsing. Independent
+offline GSUB inspection identifies cyrl/SRB locl SingleSubst mappings for the five
+Cyrillic letters `бгдпт`; actual HB glyph IDs must match those fixed-font mappings.
+The same string,16px,ltr,destination(3,5) and font remain unchanged while only
+ru/sr language alternates. The repeated ru pages match one another, repeated sr
+pages match one another, and the two actual coverage hashes must differ.
+
+Six same-process Vulkan transitions give18 primary draws/13 uploads using the
+existing guarded cancellation/publication/retirement flow and independent raster
+pixel references. Stale-language images and forged publication records reject;
+actual Serbian-localized output was inspected. No font is downloaded or included.
+This is evidence of one real language-dependent font substitution path, **not**
+all-language correctness, fallback/paragraph bidi, every locale/font/provider,
+real Android/Windows, typography quality or device/Live/host acceptance. Broader
+original-plan gaps remain visible rather than being relabeled complete.
