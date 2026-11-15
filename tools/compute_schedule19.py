@@ -88,7 +88,7 @@ def decide(facts,measurement,policy):
   if type(v['cohort']) is not dict or set(v['cohort'])!=cohort or any(type(x) is not str or not x for x in v['cohort'].values()):return r('NEEDS_MEASUREMENT','cohort missing')
   for key in ('full_frame_ns','compute_pass_ns'):
    a=v[key]
-   if type(a) is not list or len(a)<3 or any(not finite(x) or x<=0 for x in a):return r('NEEDS_MEASUREMENT','at least three finite positive trials required')
+   if type(a) is not list or len(a)<3 or any(not finite(x) or not 0<x<2**63 for x in a):return r('NEEDS_MEASUREMENT','at least three finite positive trials required')
   if len(v['full_frame_ns'])!=len(v['compute_pass_ns']):return r('NEEDS_MEASUREMENT','trial counts differ')
  b,c=measurement['baseline'],measurement['candidate']
  if b['cohort']!=c['cohort'] or len(b['full_frame_ns'])!=len(c['full_frame_ns']):return r('NEEDS_MEASUREMENT','cohort or paired trial count mismatch')

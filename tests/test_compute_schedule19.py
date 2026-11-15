@@ -44,7 +44,7 @@ def test_family_shape(change):
 @pytest.mark.parametrize('field',['device','driver','workload','resolution','shader','tools','clock_domain','thermal_regime'])
 def test_cohort(field):
  m=measure();m['candidate']['cohort'][field]='different';assert r.decide(facts(),m,policy())['status']=='NEEDS_MEASUREMENT'
-@pytest.mark.parametrize('bad',[True,float('nan'),float('inf'),0,-1])
+@pytest.mark.parametrize('bad',[True,float('nan'),float('inf'),0,-1,1e308,2**63])
 def test_bad_timing(bad):
  m=measure();m['candidate']['full_frame_ns'][0]=bad;assert r.decide(facts(),m,policy())['status']=='NEEDS_MEASUREMENT'
 @pytest.mark.parametrize('key',['paired_trials','full_frame_boundaries_equal','all_queue_completion_included','output_equal'])

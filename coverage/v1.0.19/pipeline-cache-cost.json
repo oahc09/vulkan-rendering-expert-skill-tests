@@ -1,0 +1,478 @@
+{
+  "actual_performance_comparison": false,
+  "cache_hit_proven": false,
+  "gpu_work_submitted": false,
+  "release_status": "BLOCKED",
+  "runs": [
+    {
+      "artifacts": {
+        "cache.bin": "20c83a5e55d97aa310757dde78b2aae600f99568b5e7e109e4b290d4e503bba6",
+        "noop.spv": "2e20fe5e958e75291419592c6b391fd15efa4a7e22a601b8cd50f6ea144588bf",
+        "noop.spvasm": "2f9a08a26b0b9fd7663ed520d6e590a1bbf19594e66b1aaad6c879fe43cf32ed",
+        "probe": "bc4115964e924c34788684b5878cdfef6a350d66fadf2ee9afbc0245114643c6"
+      },
+      "cache_admission": {
+        "evidence_authority": "CALLER_ATTESTED_NOT_AUTHENTICATED",
+        "header": {
+          "device_id": 0,
+          "header_size": 32,
+          "header_version": 1,
+          "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+          "vendor_id": 65541
+        },
+        "opaque_payload_validated": false,
+        "reason": "exact opaque bytes and declared export provenance match; not payload validation",
+        "reuse": true,
+        "scope": "ordinary Vulkan header version1 only; not Vulkan SC/pipeline binaries/GPL/shader objects",
+        "status": "REUSE_ELIGIBLE_BY_DECLARED_PROVENANCE",
+        "vuids": []
+      },
+      "caller_measurement_not_derived_from_probe": false,
+      "decision": {
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "fallback": null,
+        "limitations": [
+          "Cache retrieval/pipeline creation are not pipeline execution or output correctness.",
+          "CPU API timing is not GPU time or proof of cache hit.",
+          "Sequential cold/warm calls can share implicit driver caches and warmup; not a controlled A/B.",
+          "Cache byte size is serialized storage, not resident/peak GPU memory.",
+          "No cross-driver portability, full C2 or release acceptance."
+        ],
+        "overlap_or_cache_hit_proven": false,
+        "reason": "baseline correctness not established",
+        "revisit_conditions": [
+          "device/driver/cacheUUID change",
+          "shader/workload/tool/protocol change",
+          "first/steady frame regression",
+          "storage or other objective change"
+        ],
+        "rule_id": "ordinary-pipeline-cache-cost-v1",
+        "selected": null,
+        "status": "UNKNOWN",
+        "version_scope": "ordinary Vulkan1 cache header; fixed368 prose; caller performance evidence"
+      },
+      "name": "default",
+      "observation": {
+        "api": 4210993,
+        "cache_bytes": 32,
+        "cache_hit_observed": false,
+        "device_id": 0,
+        "device_type": 4,
+        "driver": 1,
+        "empty_cache_create_cpu_ns": 79980,
+        "gpu_work_submitted": false,
+        "performance_comparison_valid": false,
+        "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+        "restored_cache_create_cpu_ns": 21174,
+        "schema": 1,
+        "status": "CACHE_ROUNDTRIP_CREATED",
+        "vendor_id": 65541
+      },
+      "prose": {
+        "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "limits": "Raw slices retain conditionals, not expanded; ordinary Vulkan only. Header mismatch is application reject policy, not a claimed validation diagnostic.",
+        "path": "chapters/pipelines.adoc",
+        "sha256": "2375781805093fb79a19fea888f183e99928e7af05af71e95a06b09371f70e62",
+        "slices": [
+          {
+            "anchor": "pipelines-cache",
+            "line_end": 8108,
+            "line_start": 8077,
+            "sha256": "d3965d1e52f715727981bb4a62c92b7df91b5b337d0bdbe555bd5262bdab71e2"
+          },
+          {
+            "anchor": "pipelines-cache-create",
+            "line_end": 8397,
+            "line_start": 8109,
+            "sha256": "4dbc9750a4579687d5f192bb724a9171906b6e608f6728af134423802126cc4e"
+          },
+          {
+            "anchor": "pipelines-cache-retrieval",
+            "line_end": 8520,
+            "line_start": 8451,
+            "sha256": "7f13390aef9d9cfafa8a53d4a6280db669661ddcebe702af1ecfcf476fcb4c22"
+          },
+          {
+            "anchor": "pipelines-cache-header",
+            "line_end": 8734,
+            "line_start": 8521,
+            "sha256": "c8b808f7a2f80107703b472492026a77a397d237aedf21a7309a2f694e414936"
+          }
+        ],
+        "version": "1.4.368"
+      },
+      "report_sha256": "6cb60044abe57e9d761d88848694213cc0f301501410c38aee5e965f9b222081",
+      "source_sha256": {
+        "cases19/pipeline_cost/cache_probe.c": "5d514af46d666ddb9469250ddb63f89400f288f040acfabd503f3d82388ce7cd",
+        "cases19/pipeline_cost/noop.comp": "b9806ffd162949026f2ce61e057e54fb4eeb270ebec54813d46e411713666fe5",
+        "checks19/run_pipeline_cache_cost.py": "01b5ab114985eabed75096e49fc546650cb68a452fc315aea1c49d3ef9b509c2",
+        "tools/pipeline_cache_decision19.py": "cbe32a989050f59306847438fe2e1b7bd6337df6b0ec071e23d9e797a4422243",
+        "tools/pipeline_cache_prose19.py": "44b6c6c2adebdcdda9c0e2e96c7b10b3679efb9964a7c54913108b476eb872b9"
+      },
+      "status": "CACHE_PERSISTENCE_OBSERVED_NOT_PERFORMANCE_VERIFIED",
+      "tool_sha256": {
+        "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+        "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+        "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+        "icd_manifest": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+        "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+        "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+        "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+        "vulkan_core.h": "39f358bb99f7be5206524d119de4a5b5ab5c515c329c2857ff395d37e6387b4c"
+      }
+    },
+    {
+      "artifacts": {
+        "cache.bin": "20c83a5e55d97aa310757dde78b2aae600f99568b5e7e109e4b290d4e503bba6",
+        "noop.spv": "2e20fe5e958e75291419592c6b391fd15efa4a7e22a601b8cd50f6ea144588bf",
+        "noop.spvasm": "2f9a08a26b0b9fd7663ed520d6e590a1bbf19594e66b1aaad6c879fe43cf32ed",
+        "probe": "bc4115964e924c34788684b5878cdfef6a350d66fadf2ee9afbc0245114643c6"
+      },
+      "cache_admission": {
+        "evidence_authority": "CALLER_ATTESTED_NOT_AUTHENTICATED",
+        "header": {
+          "device_id": 0,
+          "header_size": 32,
+          "header_version": 1,
+          "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+          "vendor_id": 65541
+        },
+        "opaque_payload_validated": false,
+        "reason": "exact opaque bytes and declared export provenance match; not payload validation",
+        "reuse": true,
+        "scope": "ordinary Vulkan header version1 only; not Vulkan SC/pipeline binaries/GPL/shader objects",
+        "status": "REUSE_ELIGIBLE_BY_DECLARED_PROVENANCE",
+        "vuids": []
+      },
+      "caller_measurement_not_derived_from_probe": true,
+      "decision": {
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "fallback": "COLD_BASELINE",
+        "limitations": [
+          "Cache retrieval/pipeline creation are not pipeline execution or output correctness.",
+          "CPU API timing is not GPU time or proof of cache hit.",
+          "Sequential cold/warm calls can share implicit driver caches and warmup; not a controlled A/B.",
+          "Cache byte size is serialized storage, not resident/peak GPU memory.",
+          "No cross-driver portability, full C2 or release acceptance."
+        ],
+        "overlap_or_cache_hit_proven": false,
+        "reason": "declared paired full costs satisfy bounded policy; no general speed guarantee",
+        "revisit_conditions": [
+          "device/driver/cacheUUID change",
+          "shader/workload/tool/protocol change",
+          "first/steady frame regression",
+          "storage or other objective change"
+        ],
+        "rule_id": "ordinary-pipeline-cache-cost-v1",
+        "selected": "PERSISTED_CACHE",
+        "status": "SELECT_DECLARED_PERSISTED_CACHE",
+        "version_scope": "ordinary Vulkan1 cache header; fixed368 prose; caller performance evidence"
+      },
+      "name": "select",
+      "observation": {
+        "api": 4210993,
+        "cache_bytes": 32,
+        "cache_hit_observed": false,
+        "device_id": 0,
+        "device_type": 4,
+        "driver": 1,
+        "empty_cache_create_cpu_ns": 76485,
+        "gpu_work_submitted": false,
+        "performance_comparison_valid": false,
+        "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+        "restored_cache_create_cpu_ns": 18031,
+        "schema": 1,
+        "status": "CACHE_ROUNDTRIP_CREATED",
+        "vendor_id": 65541
+      },
+      "prose": {
+        "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "limits": "Raw slices retain conditionals, not expanded; ordinary Vulkan only. Header mismatch is application reject policy, not a claimed validation diagnostic.",
+        "path": "chapters/pipelines.adoc",
+        "sha256": "2375781805093fb79a19fea888f183e99928e7af05af71e95a06b09371f70e62",
+        "slices": [
+          {
+            "anchor": "pipelines-cache",
+            "line_end": 8108,
+            "line_start": 8077,
+            "sha256": "d3965d1e52f715727981bb4a62c92b7df91b5b337d0bdbe555bd5262bdab71e2"
+          },
+          {
+            "anchor": "pipelines-cache-create",
+            "line_end": 8397,
+            "line_start": 8109,
+            "sha256": "4dbc9750a4579687d5f192bb724a9171906b6e608f6728af134423802126cc4e"
+          },
+          {
+            "anchor": "pipelines-cache-retrieval",
+            "line_end": 8520,
+            "line_start": 8451,
+            "sha256": "7f13390aef9d9cfafa8a53d4a6280db669661ddcebe702af1ecfcf476fcb4c22"
+          },
+          {
+            "anchor": "pipelines-cache-header",
+            "line_end": 8734,
+            "line_start": 8521,
+            "sha256": "c8b808f7a2f80107703b472492026a77a397d237aedf21a7309a2f694e414936"
+          }
+        ],
+        "version": "1.4.368"
+      },
+      "report_sha256": "54f314e003f474ce125ab6e8101c3338da80c2c9e99f0181698edd037a4742dd",
+      "source_sha256": {
+        "cases19/pipeline_cost/cache_probe.c": "5d514af46d666ddb9469250ddb63f89400f288f040acfabd503f3d82388ce7cd",
+        "cases19/pipeline_cost/noop.comp": "b9806ffd162949026f2ce61e057e54fb4eeb270ebec54813d46e411713666fe5",
+        "checks19/run_pipeline_cache_cost.py": "01b5ab114985eabed75096e49fc546650cb68a452fc315aea1c49d3ef9b509c2",
+        "tools/pipeline_cache_decision19.py": "cbe32a989050f59306847438fe2e1b7bd6337df6b0ec071e23d9e797a4422243",
+        "tools/pipeline_cache_prose19.py": "44b6c6c2adebdcdda9c0e2e96c7b10b3679efb9964a7c54913108b476eb872b9"
+      },
+      "status": "CACHE_PERSISTENCE_OBSERVED_NOT_PERFORMANCE_VERIFIED",
+      "tool_sha256": {
+        "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+        "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+        "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+        "icd_manifest": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+        "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+        "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+        "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+        "vulkan_core.h": "39f358bb99f7be5206524d119de4a5b5ab5c515c329c2857ff395d37e6387b4c"
+      }
+    },
+    {
+      "artifacts": {
+        "cache.bin": "20c83a5e55d97aa310757dde78b2aae600f99568b5e7e109e4b290d4e503bba6",
+        "noop.spv": "2e20fe5e958e75291419592c6b391fd15efa4a7e22a601b8cd50f6ea144588bf",
+        "noop.spvasm": "2f9a08a26b0b9fd7663ed520d6e590a1bbf19594e66b1aaad6c879fe43cf32ed",
+        "probe": "bc4115964e924c34788684b5878cdfef6a350d66fadf2ee9afbc0245114643c6"
+      },
+      "cache_admission": {
+        "evidence_authority": "CALLER_ATTESTED_NOT_AUTHENTICATED",
+        "header": {
+          "device_id": 0,
+          "header_size": 32,
+          "header_version": 1,
+          "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+          "vendor_id": 65541
+        },
+        "opaque_payload_validated": false,
+        "reason": "exact opaque bytes and declared export provenance match; not payload validation",
+        "reuse": true,
+        "scope": "ordinary Vulkan header version1 only; not Vulkan SC/pipeline binaries/GPL/shader objects",
+        "status": "REUSE_ELIGIBLE_BY_DECLARED_PROVENANCE",
+        "vuids": []
+      },
+      "caller_measurement_not_derived_from_probe": true,
+      "decision": {
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "fallback": "COLD_BASELINE",
+        "limitations": [
+          "Cache retrieval/pipeline creation are not pipeline execution or output correctness.",
+          "CPU API timing is not GPU time or proof of cache hit.",
+          "Sequential cold/warm calls can share implicit driver caches and warmup; not a controlled A/B.",
+          "Cache byte size is serialized storage, not resident/peak GPU memory.",
+          "No cross-driver portability, full C2 or release acceptance."
+        ],
+        "overlap_or_cache_hit_proven": false,
+        "reason": "first-frame/observed worst-frame regression outweighs creation speed",
+        "revisit_conditions": [
+          "device/driver/cacheUUID change",
+          "shader/workload/tool/protocol change",
+          "first/steady frame regression",
+          "storage or other objective change"
+        ],
+        "rule_id": "ordinary-pipeline-cache-cost-v1",
+        "selected": "COLD_BASELINE",
+        "status": "REVOKE_TO_BASELINE",
+        "version_scope": "ordinary Vulkan1 cache header; fixed368 prose; caller performance evidence"
+      },
+      "name": "regression",
+      "observation": {
+        "api": 4210993,
+        "cache_bytes": 32,
+        "cache_hit_observed": false,
+        "device_id": 0,
+        "device_type": 4,
+        "driver": 1,
+        "empty_cache_create_cpu_ns": 164406,
+        "gpu_work_submitted": false,
+        "performance_comparison_valid": false,
+        "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+        "restored_cache_create_cpu_ns": 22721,
+        "schema": 1,
+        "status": "CACHE_ROUNDTRIP_CREATED",
+        "vendor_id": 65541
+      },
+      "prose": {
+        "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "limits": "Raw slices retain conditionals, not expanded; ordinary Vulkan only. Header mismatch is application reject policy, not a claimed validation diagnostic.",
+        "path": "chapters/pipelines.adoc",
+        "sha256": "2375781805093fb79a19fea888f183e99928e7af05af71e95a06b09371f70e62",
+        "slices": [
+          {
+            "anchor": "pipelines-cache",
+            "line_end": 8108,
+            "line_start": 8077,
+            "sha256": "d3965d1e52f715727981bb4a62c92b7df91b5b337d0bdbe555bd5262bdab71e2"
+          },
+          {
+            "anchor": "pipelines-cache-create",
+            "line_end": 8397,
+            "line_start": 8109,
+            "sha256": "4dbc9750a4579687d5f192bb724a9171906b6e608f6728af134423802126cc4e"
+          },
+          {
+            "anchor": "pipelines-cache-retrieval",
+            "line_end": 8520,
+            "line_start": 8451,
+            "sha256": "7f13390aef9d9cfafa8a53d4a6280db669661ddcebe702af1ecfcf476fcb4c22"
+          },
+          {
+            "anchor": "pipelines-cache-header",
+            "line_end": 8734,
+            "line_start": 8521,
+            "sha256": "c8b808f7a2f80107703b472492026a77a397d237aedf21a7309a2f694e414936"
+          }
+        ],
+        "version": "1.4.368"
+      },
+      "report_sha256": "e8f5a85d2b872f1f25cf6dee0db6710ef74033ce13e17394d1278879180c0ea5",
+      "source_sha256": {
+        "cases19/pipeline_cost/cache_probe.c": "5d514af46d666ddb9469250ddb63f89400f288f040acfabd503f3d82388ce7cd",
+        "cases19/pipeline_cost/noop.comp": "b9806ffd162949026f2ce61e057e54fb4eeb270ebec54813d46e411713666fe5",
+        "checks19/run_pipeline_cache_cost.py": "01b5ab114985eabed75096e49fc546650cb68a452fc315aea1c49d3ef9b509c2",
+        "tools/pipeline_cache_decision19.py": "cbe32a989050f59306847438fe2e1b7bd6337df6b0ec071e23d9e797a4422243",
+        "tools/pipeline_cache_prose19.py": "44b6c6c2adebdcdda9c0e2e96c7b10b3679efb9964a7c54913108b476eb872b9"
+      },
+      "status": "CACHE_PERSISTENCE_OBSERVED_NOT_PERFORMANCE_VERIFIED",
+      "tool_sha256": {
+        "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+        "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+        "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+        "icd_manifest": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+        "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+        "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+        "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+        "vulkan_core.h": "39f358bb99f7be5206524d119de4a5b5ab5c515c329c2857ff395d37e6387b4c"
+      }
+    },
+    {
+      "artifacts": {
+        "cache.bin": "20c83a5e55d97aa310757dde78b2aae600f99568b5e7e109e4b290d4e503bba6",
+        "noop.spv": "2e20fe5e958e75291419592c6b391fd15efa4a7e22a601b8cd50f6ea144588bf",
+        "noop.spvasm": "2f9a08a26b0b9fd7663ed520d6e590a1bbf19594e66b1aaad6c879fe43cf32ed",
+        "probe": "bc4115964e924c34788684b5878cdfef6a350d66fadf2ee9afbc0245114643c6"
+      },
+      "cache_admission": {
+        "evidence_authority": "CALLER_ATTESTED_NOT_AUTHENTICATED",
+        "header": {
+          "device_id": 0,
+          "header_size": 32,
+          "header_version": 1,
+          "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+          "vendor_id": 65541
+        },
+        "opaque_payload_validated": false,
+        "reason": "exact opaque bytes and declared export provenance match; not payload validation",
+        "reuse": true,
+        "scope": "ordinary Vulkan header version1 only; not Vulkan SC/pipeline binaries/GPL/shader objects",
+        "status": "REUSE_ELIGIBLE_BY_DECLARED_PROVENANCE",
+        "vuids": []
+      },
+      "caller_measurement_not_derived_from_probe": true,
+      "decision": {
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "fallback": "COLD_BASELINE",
+        "limitations": [
+          "Cache retrieval/pipeline creation are not pipeline execution or output correctness.",
+          "CPU API timing is not GPU time or proof of cache hit.",
+          "Sequential cold/warm calls can share implicit driver caches and warmup; not a controlled A/B.",
+          "Cache byte size is serialized storage, not resident/peak GPU memory.",
+          "No cross-driver portability, full C2 or release acceptance."
+        ],
+        "overlap_or_cache_hit_proven": false,
+        "reason": "noncomparable cohort/trials",
+        "revisit_conditions": [
+          "device/driver/cacheUUID change",
+          "shader/workload/tool/protocol change",
+          "first/steady frame regression",
+          "storage or other objective change"
+        ],
+        "rule_id": "ordinary-pipeline-cache-cost-v1",
+        "selected": "COLD_BASELINE",
+        "status": "NEEDS_MEASUREMENT",
+        "version_scope": "ordinary Vulkan1 cache header; fixed368 prose; caller performance evidence"
+      },
+      "name": "noncomparable",
+      "observation": {
+        "api": 4210993,
+        "cache_bytes": 32,
+        "cache_hit_observed": false,
+        "device_id": 0,
+        "device_type": 4,
+        "driver": 1,
+        "empty_cache_create_cpu_ns": 76557,
+        "gpu_work_submitted": false,
+        "performance_comparison_valid": false,
+        "pipeline_cache_uuid": "32352e302e372d322b64656231337531",
+        "restored_cache_create_cpu_ns": 22506,
+        "schema": 1,
+        "status": "CACHE_ROUNDTRIP_CREATED",
+        "vendor_id": 65541
+      },
+      "prose": {
+        "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "limits": "Raw slices retain conditionals, not expanded; ordinary Vulkan only. Header mismatch is application reject policy, not a claimed validation diagnostic.",
+        "path": "chapters/pipelines.adoc",
+        "sha256": "2375781805093fb79a19fea888f183e99928e7af05af71e95a06b09371f70e62",
+        "slices": [
+          {
+            "anchor": "pipelines-cache",
+            "line_end": 8108,
+            "line_start": 8077,
+            "sha256": "d3965d1e52f715727981bb4a62c92b7df91b5b337d0bdbe555bd5262bdab71e2"
+          },
+          {
+            "anchor": "pipelines-cache-create",
+            "line_end": 8397,
+            "line_start": 8109,
+            "sha256": "4dbc9750a4579687d5f192bb724a9171906b6e608f6728af134423802126cc4e"
+          },
+          {
+            "anchor": "pipelines-cache-retrieval",
+            "line_end": 8520,
+            "line_start": 8451,
+            "sha256": "7f13390aef9d9cfafa8a53d4a6280db669661ddcebe702af1ecfcf476fcb4c22"
+          },
+          {
+            "anchor": "pipelines-cache-header",
+            "line_end": 8734,
+            "line_start": 8521,
+            "sha256": "c8b808f7a2f80107703b472492026a77a397d237aedf21a7309a2f694e414936"
+          }
+        ],
+        "version": "1.4.368"
+      },
+      "report_sha256": "ea73732424de03f5ba8018aa64f308c1b1118a35a81d9e04d8ced003985cd5b3",
+      "source_sha256": {
+        "cases19/pipeline_cost/cache_probe.c": "5d514af46d666ddb9469250ddb63f89400f288f040acfabd503f3d82388ce7cd",
+        "cases19/pipeline_cost/noop.comp": "b9806ffd162949026f2ce61e057e54fb4eeb270ebec54813d46e411713666fe5",
+        "checks19/run_pipeline_cache_cost.py": "01b5ab114985eabed75096e49fc546650cb68a452fc315aea1c49d3ef9b509c2",
+        "tools/pipeline_cache_decision19.py": "cbe32a989050f59306847438fe2e1b7bd6337df6b0ec071e23d9e797a4422243",
+        "tools/pipeline_cache_prose19.py": "44b6c6c2adebdcdda9c0e2e96c7b10b3679efb9964a7c54913108b476eb872b9"
+      },
+      "status": "CACHE_PERSISTENCE_OBSERVED_NOT_PERFORMANCE_VERIFIED",
+      "tool_sha256": {
+        "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+        "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+        "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+        "icd_manifest": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+        "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+        "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+        "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+        "vulkan_core.h": "39f358bb99f7be5206524d119de4a5b5ab5c515c329c2857ff395d37e6387b4c"
+      }
+    }
+  ],
+  "status": "BOUNDED_CACHE_PERSISTENCE_AND_DECLARED_DECISIONS",
+  "whole_C2_complete": false
+}
