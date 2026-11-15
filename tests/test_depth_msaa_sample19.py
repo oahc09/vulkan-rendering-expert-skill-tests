@@ -1,3 +1,5 @@
+import pathlib,sys
+sys.path.insert(0,str(pathlib.Path(__file__).resolve().parents[1]))
 import pytest
 from tools import depth_msaa_sample19 as r
 @pytest.fixture
@@ -29,3 +31,9 @@ def test_oracle():
  assert good!=[good[x*4+y] for y in range(4) for x in range(4)]
  assert good!=list(reversed(good))
  assert sum(p==[0,255,0,255] for p in good)==7
+
+def test_import_from_external_workdir(tmp_path):
+ import subprocess,os
+ env={k:v for k,v in os.environ.items() if k!='PYTHONPATH'}
+ result=subprocess.run([sys.executable,'-c','import runpy; runpy.run_path('+repr(str(pathlib.Path(__file__).resolve()))+')'],cwd=tmp_path,env=env,capture_output=True,text=True)
+ assert result.returncode==0,result.stderr
