@@ -670,3 +670,31 @@ fixed-size single-owner experiment, not arbitrary allocation-failure rollback,
 production concurrency, font-service cache accounting or device-loss recovery.
 Earlier dynamic quality remains MEASURED_NOT_QUALIFIED; physical platforms,
 target-device performance, actual host and semantic Live remain unverified.
+
+## Actual shaped-glyph to representation routing bridge
+
+A fixed trusted face is checked before parsing. Actual HarfBuzz GlyphID47 (L)
+selects its FreeType outline, whose verified six straight edges feed the existing
+bounded triangulator and closed front/back/side extrusion. Actual Vulkan geometry
+is checked against ray intersection of the original source contour, not the
+triangulated output. Actual GlyphID50 (O), with two quadratic contours, is rejected
+by that limited triangulator and routed to a real FreeType bitmap/Vulkan planar
+fallback, preserving62 enclosed zero-coverage pixels. This is actual routing and
+output, not only a fallback label.
+
+Wrong GlyphID41 (F) geometry is really drawn and rejected against L's source
+reference; an actually drawn hole-filled O mask is rejected. The latter is a
+wrong-mask negative, not a tested forced solid-O extrusion. Auxiliary checks also
+cover the negative images. Existing numerical tolerances are unchanged. The
+mesh's normalized24px unhinted outline and fallback's existing20px hinted bitmap
+are separate declared representations, not equivalent layout/depth/3D quality.
+
+This closes only the bounded provider→representation connection in §6.2/6.4.
+It does not close full scene-B: stroke/cap/join, wider near-plane/perspective and
+AA clip behavior, world-label policies, shadows and a second view remain local
+implementation gaps rather than hardware blockers. General/mixed-script quality
+and CPU font-cache/performance accounting also remain incomplete. Actual
+Android/DirectWrite providers, physical target devices, semantic Live/host and
+cumulative branch integration are separate external/dependency conditions. No
+claim is made that only external conditions remain or that more finite glyph
+examples would alone complete these milestones.
