@@ -20,7 +20,7 @@ an append-only experiment history; its early absence lists are historical.
 |---|---|---|
 | C1 provider/run semantics | Actual Linux HB/FT, fixed-font fallback, bounded mixed-paragraph bidi checked against ICU, emoji VS15/VS16, variable-font experiments | Android Java/JNI and Windows DirectWrite; provider capability/fallback coverage. Finite inputs do not establish general Unicode layout; all font formats are not a new requirement. |
 | C2 representations / Scene A | Actual bitmap/color/MSDF delivery; same-layout multilingual, emoji-fallback and two-variable-instance board with fixed scaling/phase comparisons | The finite board and high-density refinement are measured, including all seven rows in a new common square rotation output. One fixed bounded perspective and explicit byte-budget fallback are now measured; general perspective and remaining visual-quality qualification are incomplete. |
-| C3 vector/world / Scene B | Bounded fills/strokes/AA, straight-outline extrusion, world planes, near clipping fallback, second view and depth-produced hard shadow sampling | Shared complete Scene B and joint visual regression remain incomplete. Arbitrary triangulation/curve AA/bevel/general lighting are unverified boundaries, not additional mandatory product scope. |
+| C3 vector/world / Scene B | Bounded fills/strokes/AA and clipping plus a shared world-text core joining one visible/casting L prism, an O label, ordinary occluder/receiver, one immutable light map and two oblique views | Shared complete Scene B and joint visual regression remain incomplete. Arbitrary triangulation/curve AA/bevel/general lighting are unverified boundaries, not additional mandatory product scope. |
 | C4 cache / Scene C | Real CPU cache ledger; resident online producer and dual offscreen outputs now integrate natural packed-page growth, pending cancel/retry, immutable old UV snapshots, active MRT and pause/destruction/rebuild | The integrated fixed 8-to-9 instance / two-page sequence is bounded; continuous locale/variation/size workloads, scale tiers, sustained stress and whole-chain costs remain incomplete. |
 | Temporal / HDR boundary | Actual scalar temporal SSBO consumed by linear HDR scene then UI, with history pollution and early-tone-map negatives | World-text motion and full-scene interface consumption remain unverified. Full RGB TAA and physical HDR-display certification are outside this bounded test, not new reimplementation requirements. |
 | Package / static | Exact pair guard, deterministic whitelist package, unchanged routing and 200-file runtime limit | Actual external host discovery and semantic model behavior. |
@@ -228,3 +228,36 @@ inputs, scaling, rotation, phases and this bounded perspective are now represent
 in executable comparisons; this is not complete physical-platform, general
 text quality or Live acceptance. The next concentrated local milestone should
 be chosen from original Scene B/C gaps rather than adding arbitrary glyph cases.
+
+
+## Shared Scene B world-text core (2026-11-15)
+
+Frozen criteria and implementation: `tests/fixtures/scene_b_shared_world_lab`;
+minimal results: `reports/history/text18-scene-b-shared-world-public/numerical-summary.json`.
+The same actual HB/FT L vertex buffer is rendered into the light D32 image once
+and as visible extrusion in both views. Both camera passes consume that same
+immutable image directly, together with ordinary receiver/occluder geometry and
+a complete actual O coverage bitmap. No composition of historical screenshots
+or CPU shadow reupload. One Device; two oblique/shear parallel ray directions,
+not perspective or orthonormal camera rotations. The glyph image is reuploaded
+per view; this is not an upload-once optimization claim.
+
+Independent original-contour ray intersections and original bitmap sampling
+check every camera color/depth pixel, plus independent light-map depth.
+Pre-GPU reference requires visible cap, side, receiver shadow, visible and hidden
+label in both cameras. Frozen local 2 host + 1 GPU tests passed (12.90 seconds):
+max color 1.2734357e-7, scene depth 2.9702516e-7, light depth 1.4851258e-7,
+against unchanged 1e-6 with zero excluded pixels. Actual bypass-shadow and
+stale-label-camera negatives produce .600000012 and .225000024 color error
+while scene depth and active auxiliary attachments remain protected. Initial
+compile failure from an inherited main-macro collision was retained locally
+and corrected without changing scene criteria or thresholds.
+
+This closes a bounded shared world-text core, NOT complete Scene B. Original
+path/fill/stroke/cap, nested clip, near-plane and negative-scale cases remain
+separate rather than jointly integrated here. No sustained stress, arbitrary
+allocation/device-loss cleanup, physical target-device/Surface or Live claim.
+C1-C4 and M1-M3 remain partial; M4 remains BLOCKED. Exact-head post-publication
+regression and CI receipts are recorded in PR comments; the earlier 319-test
+cumulative receipt belongs only to e130cb1, not this stage. Branch/base and
+Skill c0b62 pairing are unchanged.

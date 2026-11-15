@@ -1033,3 +1033,36 @@ A real projected quad adds fixedscale.75,w=1+(x-32.5)/128,positive sourcew, with
 Frozen9host+1Vulkan selection:10passed138.42seconds.86actual positives=72priorconditions+14perspective. The72all have zero float delta to historical fulltexture GPU outputs for the SAME selected representation, not bitmap-vs-MSDF equivalence. Unchanged1e-6/.004 numeric gates and zero exclusions. Actual wrongorigin/affineinverse shaders fail with .5624999285/.5999999985 composition errors; inverse negative also worsens independent outline MAE .00030038295→.01772499302 and changes alpha by.75, while auxiliaries remain independently exact.
 
 Highbudget perspective maximum outline-alpha error .0401098728; lowbudget bitmap fallback can worsen it to.2594186068. Fallback is visibly/numerically non-equivalent; quality remains MEASURED_NOT_QUALIFIED. Entire cost/representation/perspective experiment uses bounded7rows and onecamera, not broad font/device assurance. No fonts/generated resources/raw environment logs committed. Prior original/refined boards, old unsupported labels and failures remain; C1-C4/M1-M3partial and M4BLOCKED unchanged.
+
+
+## Shared Scene B world-text core (2026-11-15)
+
+Frozen criteria and implementation: `tests/fixtures/scene_b_shared_world_lab`;
+minimal results: `reports/history/text18-scene-b-shared-world-public/numerical-summary.json`.
+The same actual HB/FT L vertex buffer is rendered into the light D32 image once
+and as visible extrusion in both views. Both camera passes consume that same
+immutable image directly, together with ordinary receiver/occluder geometry and
+a complete actual O coverage bitmap. No composition of historical screenshots
+or CPU shadow reupload. One Device; two oblique/shear parallel ray directions,
+not perspective or orthonormal camera rotations. The glyph image is reuploaded
+per view; this is not an upload-once optimization claim.
+
+Independent original-contour ray intersections and original bitmap sampling
+check every camera color/depth pixel, plus independent light-map depth.
+Pre-GPU reference requires visible cap, side, receiver shadow, visible and hidden
+label in both cameras. Frozen local 2 host + 1 GPU tests passed (12.90 seconds):
+max color 1.2734357e-7, scene depth 2.9702516e-7, light depth 1.4851258e-7,
+against unchanged 1e-6 with zero excluded pixels. Actual bypass-shadow and
+stale-label-camera negatives produce .600000012 and .225000024 color error
+while scene depth and active auxiliary attachments remain protected. Initial
+compile failure from an inherited main-macro collision was retained locally
+and corrected without changing scene criteria or thresholds.
+
+This closes a bounded shared world-text core, NOT complete Scene B. Original
+path/fill/stroke/cap, nested clip, near-plane and negative-scale cases remain
+separate rather than jointly integrated here. No sustained stress, arbitrary
+allocation/device-loss cleanup, physical target-device/Surface or Live claim.
+C1-C4 and M1-M3 remain partial; M4 remains BLOCKED. Exact-head post-publication
+regression and CI receipts are recorded in PR comments; the earlier 319-test
+cumulative receipt belongs only to e130cb1, not this stage. Branch/base and
+Skill c0b62 pairing are unchanged.
