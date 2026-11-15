@@ -19,7 +19,7 @@ an append-only experiment history; its early absence lists are historical.
 | Plan area | Implemented and evidenced bounded scope | Still incomplete |
 |---|---|---|
 | C1 provider/run semantics | Actual Linux HB/FT, fixed-font fallback, bounded mixed-paragraph bidi checked against ICU, emoji VS15/VS16, variable-font experiments | Android Java/JNI and Windows DirectWrite; provider capability/fallback coverage. Finite inputs do not establish general Unicode layout; all font formats are not a new requirement. |
-| C2 representations / Scene A | Actual bitmap/color/MSDF delivery; same-layout multilingual, emoji-fallback and two-variable-instance board with fixed scaling/phase comparisons | The finite seven-row same-layout bitmap/MSDF board is now measured; six monochrome rotation cases reject clipping and perspective remains unmeasured. Dynamic MSDF quality remains not qualified. |
+| C2 representations / Scene A | Actual bitmap/color/MSDF delivery; same-layout multilingual, emoji-fallback and two-variable-instance board with fixed scaling/phase comparisons | The finite board and high-density refinement are measured, including all seven rows in a new common square rotation output. Perspective and remaining visual-quality qualification are incomplete. |
 | C3 vector/world / Scene B | Bounded fills/strokes/AA, straight-outline extrusion, world planes, near clipping fallback, second view and depth-produced hard shadow sampling | Shared complete Scene B and joint visual regression remain incomplete. Arbitrary triangulation/curve AA/bevel/general lighting are unverified boundaries, not additional mandatory product scope. |
 | C4 cache / Scene C | Real CPU cache ledger; resident online producer and dual offscreen outputs now integrate natural packed-page growth, pending cancel/retry, immutable old UV snapshots, active MRT and pause/destruction/rebuild | The integrated fixed 8-to-9 instance / two-page sequence is bounded; continuous locale/variation/size workloads, scale tiers, sustained stress and whole-chain costs remain incomplete. |
 | Temporal / HDR boundary | Actual scalar temporal SSBO consumed by linear HDR scene then UI, with history pollution and early-tone-map negatives | World-text motion and full-scene interface consumption remain unverified. Full RGB TAA and physical HDR-display certification are outside this bounded test, not new reimplementation requirements. |
@@ -55,8 +55,10 @@ fonts, binaries and environment/driver logs remain local and are not redistribut
 Do not automatically add more one-glyph/one-pass combinations. The concentrated
 resident Scene C service and seven-row Scene A board now have bounded executable
 evidence, not complete scene qualification. Highest-value local follow-up must
-address the existing board's actual quality errors and unsupported rotation /
-unmeasured perspective under common conditions, or integrate original Scene B.
+address the board's remaining measured quality errors / unmeasured perspective
+under common conditions, or integrate original Scene B. The new common square
+output now accommodates every row's rotation; old clipping rejections remain
+historical evidence.
 Do not replace these gaps with further unrelated one-glyph examples. No general
 allocator, full Unicode layout engine or new universal quality threshold is
 required by this audit.
@@ -140,3 +142,38 @@ Source and sanitized numeric report are committed; fonts, generated font
 resources, raw readbacks and provider/environment receipts stay local. This
 increment does not relabel the earlier 319-case cumulative run as a run of the
 new board head. Exact-head regression and CI results are reported in PR #9.
+
+## Scene A source-density root cause and complete square rotation
+
+`scene_a_refined_board_lab/criteria.md` independently registers a refinement;
+the original board and historical unsupported cases are unchanged. The original
+maximum (.486328125) is explained by an exact straight-stem anchor: glyph 553's
+.8125-pixel-wide stem has exact alpha .609375 at the half-phase target pixel,
+while the 1x MSDF returns .123046875. Both adjacent source samples lack positive
+interior distance, so interpolation loses the thin stroke. This is spatial
+representation undersampling, not a demonstrated shaping/composition/reference
+failure or an established msdfgen library defect.
+
+Official generation now uses 4x projection, 260x196 source and a shape-unit
+range of 4 (16 source texels, unchanged 4 original-screen pixels). Fragment
+integration remains linear4. New output is uniformly 65x65 with +8 output-y
+translation; square-rotate90 is pure rotation, not per-row fitting/rescaling.
+All seven rows fit this new rotation, while the old six monochrome rejection
+labels remain explicitly historical.
+
+Frozen selection: 8 passed in 127.85 seconds, with 66 actual positive tiles,
+zero numerical exclusions and unchanged sampling tolerances. Original worst
+anchor error becomes exactly zero; maximum MSDF outline-alpha difference across
+the refined board is .052734375. All 24 historically matched MSDF cases improve
+both maximum error and foreground ROI MAE. Bitmap maximum differences are
+unchanged, not claimed fixed. Baseline report SHA and canonical layout receipts
+are checked; before/after refers to historical frozen 1x results, not a same-run
+1x execution. Exact-head related regression separately reruns both fixtures.
+
+Quality remains MEASURED_NOT_QUALIFIED: remaining MSDF error, bitmap error,
+curved-outline reference approximation, perspective and target platforms are not
+closed. Worst MSDF phase residual is .0236661434173584; full-tile phase means are
+not ROI scores. Two actual shader negatives and auxiliary preservation still
+apply. Payload capacity increases from 815,360 to 13,045,760 bytes (16x); this is
+an explicit storage/upload tradeoff, not measured VRAM or mobile throughput.
+No font, generated resource, raw environment log or image is uploaded.
