@@ -780,3 +780,29 @@ exact clip-axis coordinates, and recognize the existing integer-edge control
 without changing case coordinates or tolerances. This is not round/join/curve AA, transparent overlapping strokes,
 MSAA or world-space/perspective qualification. Overall Draft/BLOCKED and branch
 pairing remain unchanged; target devices and semantic Live remain unverified.
+
+### Bounded perspective world-label path (2026-11-15)
+
+Original-plan §6.4/Scene B now has a fixed real world-space text path beyond
+previous affine fixtures: trusted-font HarfBuzz GlyphID50 O -> FreeType coverage
+bitmap -> padded atlas -> tilted world XYZ/UV quad with actual clip.w=Z and
+perspective-correct interpolation. Four actual images use two distances under
+the same camera and constant world extents, with separate depth-tested and
+always-on-top policies; neither label mode writes depth. A normal mesh rectangle
+is drawn first in the same pass and writes actual depth. CPU camera rays intersect
+the original plane and sample original cropped glyph data, not uploaded vertices.
+
+All four full-image color results pass 1e-6 with zero guards (max8.457e-8);
+depth preservation max2.649e-8 and auxiliary MRT exact checks are independent,
+including negatives. Nonzero glyph ROI shrinks348->183 at greater distance;
+occluded nonzero pixels131/67 and projected hole pixels171/93 are observable.
+Trusted source O has62 enclosed zero pixels; identity, font hash, provider clipping
+and nearest sampler are asserted. Wrong always-on-top and noperspective are real
+GPU negative draws with color errors0.525/0.6, not mocked pipeline flags.
+
+Near-plane and nonfinite inputs reject before new GPU setup with exact error
+reasons. This does not implement near-plane crossing/clipping, constant-pixel
+size/billboard modes, a second camera view, shadows, broad font quality or target
+platform/Live acceptance. Same camera at two distances is not a second view.
+Overall Draft/BLOCKED, exact version pairing and sibling/non-main dependencies
+remain unchanged; other original-plan local and external gaps remain explicit.
