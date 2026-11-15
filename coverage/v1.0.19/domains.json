@@ -44,8 +44,31 @@
     "existing_route": "[合同入口](04_buffer_image_memory/memory_allocation.md#memory-host-alias-contract)",
     "open_review": "全部allocation/BDA/sparse/protected/alias扩展差异",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "mapped_memory": {
+      "contract": "memory_allocation.md#delivery19-mapped-memory-visibility-contract-bounded-l1l2",
+      "rules": "tools/mapped_memory19.py",
+      "evidence": "mapped-memory.json",
+      "actual_api": "coherent mapped-range good plus partial-mapping out-of-range00685 controls",
+      "noncoherent_visibility": "UNAVAILABLE_NOT_RUN: queried CPU ICD has only coherent host-visible type",
+      "cpu_only": [
+        "00684",
+        "00686",
+        "00687",
+        "01389",
+        "01390",
+        "atom expansion",
+        "visibility ownership obligations"
+      ],
+      "still_open": [
+        "actual noncoherent device execution",
+        "sparse/external/device-group memory",
+        "physical hardware",
+        "SC",
+        "external-engine acceptance"
+      ]
+    }
   },
   {
     "id": "VK05",
