@@ -1,6 +1,7 @@
 import importlib.util,json,os,shutil,subprocess,sys
 from pathlib import Path
 import pytest
+pytestmark=pytest.mark.vulkan_integration
 ROOT=Path(__file__).resolve().parents[1]
 @pytest.mark.skipif(os.environ.get('VULKAN_TEXT18_CONTENT_CHURN')!='1',reason='opt-in actual Vulkan content churn')
 def test_actual_content_churn(tmp_path):
