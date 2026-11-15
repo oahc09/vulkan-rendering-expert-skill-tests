@@ -1,5 +1,7 @@
 # v1.0.18 original-plan completion matrix
 
+> **Historical baseline warning:** early tables and dated priority lists below describe their stated old heads. They are not the current missing-feature list. Read the latest appended experiment and current-plan audit for subsequent bounded coverage. C1-C4 remain partial; M4 remains BLOCKED.
+
 Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `57a1aef66efa36784bb576d2919d9843ef786dd1`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
@@ -890,3 +892,23 @@ standard-library PNG path; no numerical/case changes were needed. Scope excludes
 general world receiver meshes, visible caster material/lighting, soft shadows,
 arbitrary bias or self-shadowing and complete Scene B/device/Live qualification.
 Version pins, Draft/BLOCKED state and the non-main dependency chain are unchanged.
+
+## Bounded multilingual whole-run fallback chain (after bacd8a39)
+
+Fixed trusted DejaVu Serif -> DejaVu Sans -> Noto Sans CJK SC TTC face 2 is now selected by real whole-run HarfBuzz missing-glyph results. Dedicated fixed-hash 24 MiB TTC adapter leaves the old 16 MiB probe unchanged. Four explicitly segmented runs at 14 px cover `ffi` (actual ff+i), combining a+acute (precomposed aacute), Arabic joining/RTL clusters, and Chinese. HarfBuzz and FreeType use the identical selected face/index; cross-face receipt mismatch is rejected before rasterization. Frozen complete shaping receipts are provider regression baselines, not independent typography certification.
+
+Run bitmaps are packed into one atlas and delivered by four actual Vulkan UV quads. Original run pixels, not atlas/UV data, drive independent composition reference. Full-frame/ROI error is 7.252544687030849e-8 against unchanged 1e-6; 475 nonzero ROI pixels and zero clipped samples. Actual wrong-route GPU output differs by 0.599999998509884. Separate legitimate Sans/Serif O GlyphID50 resources exercise wrong-face renderer selection: correct output error 7.152557379708213e-8 and wrong-face error 0.2800000062409569. Auxiliary sentinels are independently checked before expected negative color rejection. This helper uses unused/preserve auxiliary attachment routing, not a new active-MRT claim. Missing whole-chain coverage is rejected before GPU preparation.
+
+This closes a previously absent executable face-selection/identity/delivery chain, not all Scene A. Explicit segmentation/direction and cropped integer-positioned run images are not paragraph bidi, baseline-aligned paragraph layout, general mark placement, emoji color fallback, MSDF multilingual quality or platform typography certification. Actual software Vulkan evidence is not target-device acceptance. Only source, reviewed fixed regression data and sanitized numeric output are published; fonts and raw provenance remain local.
+
+## Current original-plan status after bounded fallback chain (not release acceptance)
+
+The early tables and old numbered priorities in this document are historical snapshots, not a current absence list. Later experiment sections supersede only their precise bounded scope. No local experiment changes the original plan's acceptance bar.
+
+- **C1 partial:** Linux HarfBuzz/FreeType fixed-font run shaping, locale/variation experiments and the bounded ordered whole-run fallback chain have executable receipts. Explicit input runs and directions are not paragraph itemization, Unicode bidi layout, general grapheme fallback or Android/Windows platform typography certification.
+- **C2 partial:** bitmap, MSDF and bounded synthetic color paths, representation switching and phase sequences have real software-Vulkan evidence. Full Scene A's same-condition multilingual/emoji/variable-font representation board remains incomplete. Dynamic MSDF quality remains MEASURED_NOT_QUALIFIED; the near-clip hardware-NEAREST counterexample remains recorded, not overwritten by the bounded integer-ray fallback.
+- **C3 partial:** bounded vector fill, stroke, exact-area straight-line AA, shaped straight-outline extrusion, world labels, near-plane clipping fallback, second camera and a real depth-producer/shadow-sampler chain now execute. They do not constitute the complete shared Scene B, general lit text materials, arbitrary outline triangulation or general-purpose shadow filtering.
+- **C4 partial:** packed atlas, pending retirement/cancellation, upload-budget backpressure, two-device ownership and selected same-pass lifecycle/handoff cases execute. The complete real-content Scene C and full font-service cold/hot cache/cost accounting remain local integration work; temporal/HDR/motion interface consumption is not closed by constant auxiliary sentinel preservation.
+- **External/branch conditions:** physical Android Adreno/Mali and available Windows target measurements, platform Java/JNI/DirectWrite integration, semantic TEXT18 Live evaluation and actual external host discovery remain unverified. The CORE17 sibling dependency has an exact independent static gate, not a merged cumulative semantic certification. TEXT18's base remains the existing v1.0.16 source-review branch, not main.
+
+M1–M3 remain partial and M4 remains BLOCKED. Small bounded lab success is not completion of the full plan, and not every remaining gap requires unavailable hardware.
