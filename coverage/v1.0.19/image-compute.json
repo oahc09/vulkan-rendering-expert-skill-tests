@@ -1,0 +1,1317 @@
+{
+  "run_id": "33b32192-db66-481b-807b-aaf5747a05c9",
+  "runner_sha256": "2378796c44542efc0b8100fe420fca4a6ae95455930d4bfa0b42894b4c5982db",
+  "cases": {
+    "missing-upload-dependency": {
+      "result": {
+        "mode": "normal",
+        "upload_dependency": 0,
+        "submitted": false,
+        "errors": 1,
+        "exit_code": 0,
+        "pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "5907ea9ef0330d8f5f576eaf6ed273e286560fa4171d0a803994c829954a343a",
+        "stderr_sha256": "90d9f99fd21ffbb796cb4cad7a84fdcdc911575e0a484372edcb727a115bf8d7"
+      },
+      "diagnostics": [
+        "DIAGNOSTIC phase=compute-dispatch id=SYNC-HAZARD-READ-AFTER-WRITE"
+      ],
+      "actual_manifest": {
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 98,
+            "optimal_features": 52359,
+            "required_features": 49154,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 98,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 11,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [],
+        "COMPLETION": [],
+        "INPUT": [
+          [
+            5,
+            16,
+            27,
+            38,
+            49,
+            60,
+            71,
+            82,
+            93,
+            104,
+            115,
+            126,
+            137,
+            148,
+            159,
+            170
+          ]
+        ]
+      },
+      "binary_sha256": "cb154e1bcf45dae221ffd2b54184dcf71efde69744b399f05b18682a0a3ba91a",
+      "shader_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+      "status": "EXPECTED_DIAGNOSTIC_ABORT"
+    },
+    "good": {
+      "result": {
+        "mode": "normal",
+        "upload_dependency": 1,
+        "submitted": true,
+        "errors": 0,
+        "exit_code": 0,
+        "pixels": [
+          22,
+          55,
+          88,
+          121,
+          154,
+          187,
+          220,
+          253,
+          286,
+          319,
+          352,
+          385,
+          418,
+          451,
+          484,
+          517
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "792723d60906c21b7836fa1b16afb8ed4923ebd60364c5c6c0f6bc80905b9303",
+        "stderr_sha256": "c11c89d3f4c70e19dda90cd6df08793f606468a5e463b1f2a68bdbb0e2826571"
+      },
+      "diagnostics": [],
+      "actual_manifest": {
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 98,
+            "optimal_features": 52359,
+            "required_features": 49154,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 98,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 11,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 0,
+            "phase": "upload",
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcAccess": 4096,
+            "dstAccess": 32,
+            "srcStage": 4096,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "readback",
+            "oldLayout": 1,
+            "newLayout": 6,
+            "srcAccess": 64,
+            "dstAccess": 2048,
+            "srcStage": 2048,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [
+          {
+            "image": 1,
+            "layout": 6,
+            "width": 4,
+            "height": 4,
+            "depth": 1
+          }
+        ],
+        "COMPLETION": [
+          {
+            "fence_wait": "SUCCESS",
+            "host_barrier_src_access": 4096,
+            "host_barrier_dst_access": 8192
+          }
+        ],
+        "INPUT": [
+          [
+            5,
+            16,
+            27,
+            38,
+            49,
+            60,
+            71,
+            82,
+            93,
+            104,
+            115,
+            126,
+            137,
+            148,
+            159,
+            170
+          ]
+        ]
+      },
+      "binary_sha256": "f9e3998324a27ce9c3074b6d5f4fe9b50f159ec676e012906c4293d817343818",
+      "shader_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+      "status": "ALL_PIXELS_EXACT_PASS"
+    },
+    "bad-layout": {
+      "result": {
+        "mode": "bad-layout",
+        "upload_dependency": 1,
+        "submitted": false,
+        "errors": 2,
+        "exit_code": 0,
+        "pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "e54934c9e103a711800ae734fe1ea1b4640f38ad893a6b49ccc003359333fc43",
+        "stderr_sha256": "109d4ab9cbfa8d0dde8cf2210893ddfddf8ebc8b160366375ee45eb2bdcacf2d"
+      },
+      "diagnostics": [
+        "DIAGNOSTIC phase=compute-dispatch id=VUID-VkDescriptorImageInfo-imageLayout-00344",
+        "DIAGNOSTIC phase=compute-dispatch id=VUID-vkCmdDispatch-None-08114"
+      ],
+      "actual_manifest": {
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 98,
+            "optimal_features": 52359,
+            "required_features": 49154,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 98,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 11,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 0,
+            "phase": "upload",
+            "oldLayout": 1,
+            "newLayout": 6,
+            "srcAccess": 4096,
+            "dstAccess": 32,
+            "srcStage": 4096,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [],
+        "COMPLETION": [],
+        "INPUT": [
+          [
+            5,
+            16,
+            27,
+            38,
+            49,
+            60,
+            71,
+            82,
+            93,
+            104,
+            115,
+            126,
+            137,
+            148,
+            159,
+            170
+          ]
+        ]
+      },
+      "binary_sha256": "f9e3998324a27ce9c3074b6d5f4fe9b50f159ec676e012906c4293d817343818",
+      "shader_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+      "status": "EXPECTED_DIAGNOSTIC_ABORT"
+    },
+    "missing-readback-dependency": {
+      "result": {
+        "mode": "bad-readback",
+        "upload_dependency": 1,
+        "submitted": false,
+        "errors": 1,
+        "exit_code": 0,
+        "pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "593631b05ccf014dbb8668209f1357266415e9a886907e3af38116bfa6ec67da",
+        "stderr_sha256": "825ef1eee4516c9655fdeb2037d11b08fa90e12c0eeba60016e983309bddf792"
+      },
+      "diagnostics": [
+        "DIAGNOSTIC phase=readback id=SYNC-HAZARD-READ-AFTER-WRITE"
+      ],
+      "actual_manifest": {
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 98,
+            "optimal_features": 52359,
+            "required_features": 49154,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 98,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 11,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 0,
+            "phase": "upload",
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcAccess": 4096,
+            "dstAccess": 32,
+            "srcStage": 4096,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [
+          {
+            "image": 1,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1
+          }
+        ],
+        "COMPLETION": [],
+        "INPUT": [
+          [
+            5,
+            16,
+            27,
+            38,
+            49,
+            60,
+            71,
+            82,
+            93,
+            104,
+            115,
+            126,
+            137,
+            148,
+            159,
+            170
+          ]
+        ]
+      },
+      "binary_sha256": "f9e3998324a27ce9c3074b6d5f4fe9b50f159ec676e012906c4293d817343818",
+      "shader_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+      "status": "EXPECTED_DIAGNOSTIC_ABORT"
+    },
+    "wrong-output": {
+      "result": {
+        "mode": "wrong-output",
+        "upload_dependency": 1,
+        "submitted": true,
+        "errors": 0,
+        "exit_code": 6,
+        "pixels": [
+          22,
+          55,
+          88,
+          121,
+          154,
+          187,
+          220,
+          253,
+          286,
+          319,
+          352,
+          385,
+          418,
+          451,
+          484,
+          517
+        ]
+      },
+      "log": {
+        "exit_code": 6,
+        "stdout_sha256": "d51d1829910951eb8384df60e47717618a9d6a896c2815249e5ca09425525c9e",
+        "stderr_sha256": "c11c89d3f4c70e19dda90cd6df08793f606468a5e463b1f2a68bdbb0e2826571"
+      },
+      "diagnostics": [],
+      "actual_manifest": {
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 98,
+            "optimal_features": 52359,
+            "required_features": 49154,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 98,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 11,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 0,
+            "phase": "upload",
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcAccess": 4096,
+            "dstAccess": 32,
+            "srcStage": 4096,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "readback",
+            "oldLayout": 1,
+            "newLayout": 6,
+            "srcAccess": 64,
+            "dstAccess": 2048,
+            "srcStage": 2048,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [
+          {
+            "image": 1,
+            "layout": 6,
+            "width": 4,
+            "height": 4,
+            "depth": 1
+          }
+        ],
+        "COMPLETION": [
+          {
+            "fence_wait": "SUCCESS",
+            "host_barrier_src_access": 4096,
+            "host_barrier_dst_access": 8192
+          }
+        ],
+        "INPUT": [
+          [
+            5,
+            16,
+            27,
+            38,
+            49,
+            60,
+            71,
+            82,
+            93,
+            104,
+            115,
+            126,
+            137,
+            148,
+            159,
+            170
+          ]
+        ]
+      },
+      "binary_sha256": "f9e3998324a27ce9c3074b6d5f4fe9b50f159ec676e012906c4293d817343818",
+      "shader_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+      "status": "EXPECTED_ORACLE_FAILURE"
+    }
+  },
+  "tools": {
+    "glslangValidator": {
+      "binary_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "625bd352de44f83029feed47d4d6f2049af695d789c8d8cb6def79d2ced2a6ca",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "spirv-val": {
+      "binary_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "9141086275bff165ecd8e42834953c065be94a551a9304fb228489db06ae4450",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "spirv-dis": {
+      "binary_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "4ad5febf34f7e5635ad03c724a604a95c34f679a938afc2d971f4d46a46cffe7",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "scope": "Original integrated image synchronization fault injection; CPU coherent ICD only, not an external engineering case.",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "repair": {
+    "baseline_sha256": "797361307316154cb3f5c6aee8b5c6171039c348ee93f6a2a0766ecb3d246ad1",
+    "fixed_sha256": "9e2e7e022148e06787bfaccca144f353a27f21f7db855c026b673fb16ac6a3e7",
+    "patch_sha256": "11739de05ed2901baf31d1afbdb70b57818cec47b23f2e55dd4c731fab535538",
+    "log": {
+      "exit_code": 0,
+      "stdout_sha256": "363d71e42616b4bad60830f248cc05ef03a46a4fad89b93d84d7daba01942411",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "baseline_binary_sha256": "cb154e1bcf45dae221ffd2b54184dcf71efde69744b399f05b18682a0a3ba91a",
+    "baseline_build": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixed_binary_sha256": "f9e3998324a27ce9c3074b6d5f4fe9b50f159ec676e012906c4293d817343818",
+    "fixed_build": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "shader": {
+    "source_sha256": "b72a0e7bd5404a6177c51cfd956d46e4906686865d6cf9d3d7ca420a5fcc1d2b",
+    "spirv_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+    "disassembly_sha256": "c5cd0a831cc8434959ec28cbe0380dd0c72cb39b7b42b7d4f996a2c44b7a4fa7",
+    "target_env": "vulkan1.1",
+    "capabilities": [
+      "Shader"
+    ],
+    "extensions": [],
+    "compile": {
+      "exit_code": 0,
+      "stdout_sha256": "98d8544b0a792e76cad3a298e0d2e73156965098728c36ea1c9d90b5801b889a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validate": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "disassemble": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "validation_settings": {
+    "synchronization_validation": true,
+    "syncval_shader_accesses_heuristic": true,
+    "source": "official layer manifest setting; enabled explicitly via VK_LAYER_SYNCVAL_SHADER_ACCESSES_HEURISTIC=true",
+    "limitation": "Static shader-access heuristic may miss accesses or report false positives; not GPU-AV."
+  },
+  "oracle": {
+    "extent": [
+      4,
+      4,
+      1
+    ],
+    "format": "R32_UINT",
+    "input_pixels": [
+      5,
+      16,
+      27,
+      38,
+      49,
+      60,
+      71,
+      82,
+      93,
+      104,
+      115,
+      126,
+      137,
+      148,
+      159,
+      170
+    ],
+    "transform": "input * 3 + 7",
+    "expected_pixels": [
+      22,
+      55,
+      88,
+      121,
+      154,
+      187,
+      220,
+      253,
+      286,
+      319,
+      352,
+      385,
+      418,
+      451,
+      484,
+      517
+    ],
+    "comparison": "every uint pixel exactly; no aggregate tolerance"
+  },
+  "heuristic_off_observation": {
+    "status": "HAZARD_NOT_DETECTED_NOT_PASS",
+    "result": {
+      "mode": "normal",
+      "upload_dependency": 0,
+      "submitted": false,
+      "errors": 0,
+      "exit_code": 5,
+      "pixels": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "log": {
+      "exit_code": 5,
+      "stdout_sha256": "b53a4eb80ee1a7dce362da9f2a8d4e4730412079ab4cfffd6d095645347db71e",
+      "stderr_sha256": "4b0c0e9340559b2fc774e583f1e9a7bbcc14372b3be628eb10bb80db3ce52397"
+    },
+    "binary_sha256": "cb154e1bcf45dae221ffd2b54184dcf71efde69744b399f05b18682a0a3ba91a",
+    "shader_sha256": "fbc12d553c4f1c394c9c80a29453bcacb444e815edb71a9d29e3063fa3241662",
+    "note": "Same actual missing-dependency program, heuristic explicitly disabled. No submission; exit5 prevents false pass."
+  },
+  "identity": {
+    "device_type": 4,
+    "vendor_id": 65541,
+    "device_id": 0,
+    "driver": 1,
+    "api": 4210993,
+    "layer_spec": 4210997,
+    "layer_impl": 1,
+    "sync_validation": true
+  },
+  "status": "INTEGRATED_IMAGE_UPLOAD_COMPUTE_READBACK_REPAIR_PASS",
+  "limitations": [
+    "Original controlled experiment, not external engineering acceptance.",
+    "CPU coherent staging/readback only; noncoherent visibility remains unrun.",
+    "One queue, R32_UINT 4x4 single mip/layer/sample only; no sparse/alias/cross-queue/multiplanar coverage.",
+    "Storage image load/store, not filtered texture sampling.",
+    "Shader-access SyncVal heuristic explicitly enabled; default-disabled discovery did not detect baseline and was not called a pass.",
+    "wrong-output is an oracle negative, not a discovered GPU fault."
+  ]
+}

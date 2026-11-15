@@ -76,8 +76,21 @@
     "existing_route": "[合同入口](04_buffer_image_memory/image.md)",
     "open_review": "逐format/多平面/压缩格式/usage/copy组合",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
-    "owner": "v1.0.19 C1"
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "image_compute_delivery": {
+      "contract": "image.md#delivery19-image-compute-delivery-chain-bounded-l1l2",
+      "evidence": "image-compute.json",
+      "scope": "single queue R32_UINT 4x4 typed storage image upload/compute/readback, coherent CPU staging",
+      "stage_contract": "docs/v1.0.19-integration-stage.md",
+      "domain_complete": false,
+      "not_closed": [
+        "general format/subresource and stage/access combinations",
+        "physical hardware/noncoherent",
+        "cross-queue and aliasing",
+        "external-engine and blind-task acceptance"
+      ]
+    }
   },
   {
     "id": "VK06",
@@ -85,7 +98,7 @@
     "existing_route": "[合同入口](08_synchronization/synchronization2.md#cross-queue-host-contract)",
     "open_review": "全部stage/access适用性和memory model交互",
     "depth_target": "L1/L2",
-    "status": "UNREVIEWED",
+    "status": "PARTIAL_BOUNDED",
     "owner": "v1.0.19 C1",
     "bounded_review": {
       "scope": "single-queue fill/copy/coherent readback",
@@ -93,6 +106,19 @@
       "status": "BOUNDED_L1_L2_REVIEWED",
       "evidence": "transfer-case.json",
       "domain_complete": false
+    },
+    "image_compute_delivery": {
+      "contract": "image.md#delivery19-image-compute-delivery-chain-bounded-l1l2",
+      "evidence": "image-compute.json",
+      "scope": "single queue R32_UINT 4x4 typed storage image upload/compute/readback, coherent CPU staging",
+      "stage_contract": "docs/v1.0.19-integration-stage.md",
+      "domain_complete": false,
+      "not_closed": [
+        "general format/subresource and stage/access combinations",
+        "physical hardware/noncoherent",
+        "cross-queue and aliasing",
+        "external-engine and blind-task acceptance"
+      ]
     }
   },
   {
