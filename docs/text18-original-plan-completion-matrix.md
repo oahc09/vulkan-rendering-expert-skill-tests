@@ -863,3 +863,30 @@ This closes only a bounded planar-label second-camera experiment. Shadowing,
 second-view finite extruded typography, simultaneous views/Surfaces and general
 camera/font quality remain separate. Draft/BLOCKED, precise version pairing and
 non-main sibling dependency chain remain; target-platform and Live are unverified.
+
+### Actual glyph depth producer and hard-shadow receiver (2026-11-15)
+
+`text_shadow_lab` shapes trusted-font L (GlyphID47), obtains its real straight
+outline and builds a20-triangle closed front/back/side prism. A real D32 attachment
+pass writes orthographic-light depth using(x+.5z,y+.25z,z/16). After an explicit
+attachment-write to fragment-read transition, the same Device's receiver shader
+directly samples that image. No CPU readback/reupload bridges the two passes;
+readback occurs only after consumption. CPU independently intersects original
+source-contour cap/side planes to obtain nearest light-ray depth, without using
+emitted triangles or GPU depth. Receiver is a fixed full-screen plane
+parameterization atz10, bias0, hard shadow; its offset(5,2.5) uses explicit integer
+nearest lookup and out-of-map lit semantics.
+
+All pixels retain1e-6/no guards: positive D32 error1.4851e-7, RGBA2.3842e-8,
+213 shaded receiver pixels. Wrong F caster (GlyphID41/36triangles) changes both
+producer depth and output color; bypassing comparison retains correct producer
+depth but causes0.6 color error. Receiver depth .375 is an independent protection
+sentinel, NOT actual z10 camera depth; velocity/ID active MRTs are exact. Negative
+categories and cleanup validation must pass before reporting overall PASS.
+
+First missing explicit validation receipt and optional PNG-library failures are
+retained locally. Final code checks cleanup validation and uses the existing
+standard-library PNG path; no numerical/case changes were needed. Scope excludes
+general world receiver meshes, visible caster material/lighting, soft shadows,
+arbitrary bias or self-shadowing and complete Scene B/device/Live qualification.
+Version pins, Draft/BLOCKED state and the non-main dependency chain are unchanged.
