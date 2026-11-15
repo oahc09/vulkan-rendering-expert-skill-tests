@@ -1,0 +1,457 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "excluded": 0,
+  "tolerance": 1e-06,
+  "variants": {
+    "baseline": {
+      "shadow_depth_error": 1.48512578235227e-07,
+      "views": {
+        "A": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-no-shadow": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-stale-label": {
+          "color_error": 0.2250000238418579,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-rect": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-circle": {
+          "color_error": 0.26651478707790377,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-rotated": {
+          "color_error": 0.2545735843479633,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-filled-hole": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-butt": {
+          "color_error": 0.20999999999999996,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-same-evenodd": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-same-nonzero": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-opposite-evenodd": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        }
+      }
+    },
+    "near-cross": {
+      "shadow_depth_error": 1.48512578235227e-07,
+      "views": {
+        "A": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 4.414172997541099e-07,
+          "positive_view": true
+        },
+        "B": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": true
+        },
+        "B-no-shadow": {
+          "color_error": 0.600000011920929,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-stale-label": {
+          "color_error": 0.2250000238418579,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-no-rect": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-no-circle": {
+          "color_error": 0.26651478707790377,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-no-rotated": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-filled-hole": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-butt": {
+          "color_error": 0.2712499403953552,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": false
+        },
+        "B-same-evenodd": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": true
+        },
+        "B-same-nonzero": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": true
+        },
+        "B-opposite-evenodd": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 6.736510686500274e-07,
+          "positive_view": true
+        }
+      }
+    },
+    "reflected": {
+      "shadow_depth_error": 4.023313522338867e-07,
+      "views": {
+        "A": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-no-shadow": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-stale-label": {
+          "color_error": 0.5249999642372132,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-rect": {
+          "color_error": 0.24500001072883607,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-circle": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-rotated": {
+          "color_error": 0.24500001072883607,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-filled-hole": {
+          "color_error": 0.27125000953674316,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-butt": {
+          "color_error": 0.24499999403953554,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-same-evenodd": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-same-nonzero": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-opposite-evenodd": {
+          "color_error": 1.281499862892943e-07,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        }
+      }
+    },
+    "wrong-near": {
+      "shadow_depth_error": 1.48512578235227e-07,
+      "views": {
+        "A": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9722952089929022,
+          "positive_view": true
+        },
+        "B": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": true
+        },
+        "B-no-shadow": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-stale-label": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-no-rect": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-no-circle": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-no-rotated": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-filled-hole": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-butt": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": false
+        },
+        "B-same-evenodd": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": true
+        },
+        "B-same-nonzero": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": true
+        },
+        "B-opposite-evenodd": {
+          "color_error": 0.700000011920929,
+          "depth_error": 0.9471481511382018,
+          "positive_view": true
+        }
+      }
+    },
+    "wrong-caster-model": {
+      "shadow_depth_error": 1.0,
+      "views": {
+        "A": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-no-shadow": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-stale-label": {
+          "color_error": 0.6749999403953553,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-rect": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-circle": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-no-rotated": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-filled-hole": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-butt": {
+          "color_error": 0.6350000119209289,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": false
+        },
+        "B-same-evenodd": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-same-nonzero": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        },
+        "B-opposite-evenodd": {
+          "color_error": 0.600000011920929,
+          "depth_error": 9.362802955159566e-08,
+          "positive_view": true
+        }
+      }
+    }
+  },
+  "preflight": {
+    "baseline": {
+      "A": {
+        "cap": 451,
+        "side": 141,
+        "shadow": 131,
+        "label_visible": 193,
+        "label_hidden": 173
+      },
+      "B": {
+        "cap": 451,
+        "side": 179,
+        "shadow": 99,
+        "label_visible": 197,
+        "label_hidden": 165
+      }
+    },
+    "near-cross": {
+      "A": {
+        "cap": 167,
+        "side": 303,
+        "shadow": 164,
+        "label_visible": 366,
+        "label_hidden": 0
+      },
+      "B": {
+        "cap": 167,
+        "side": 297,
+        "shadow": 163,
+        "label_visible": 362,
+        "label_hidden": 0
+      }
+    },
+    "reflected": {
+      "A": {
+        "cap": 451,
+        "side": 141,
+        "shadow": 364,
+        "label_visible": 193,
+        "label_hidden": 173
+      },
+      "B": {
+        "cap": 451,
+        "side": 105,
+        "shadow": 336,
+        "label_visible": 197,
+        "label_hidden": 169
+      }
+    },
+    "wrong-near": {
+      "A": {
+        "cap": 167,
+        "side": 303,
+        "shadow": 164,
+        "label_visible": 366,
+        "label_hidden": 0
+      },
+      "B": {
+        "cap": 167,
+        "side": 297,
+        "shadow": 163,
+        "label_visible": 362,
+        "label_hidden": 0
+      }
+    },
+    "wrong-caster-model": {
+      "A": {
+        "cap": 451,
+        "side": 141,
+        "shadow": 364,
+        "label_visible": 193,
+        "label_hidden": 173
+      },
+      "B": {
+        "cap": 451,
+        "side": 105,
+        "shadow": 336,
+        "label_visible": 197,
+        "label_hidden": 169
+      }
+    }
+  },
+  "boundary_centers": {
+    "offset0-mirror0": [
+      {
+        "axis": "x",
+        "source": 43,
+        "pixel": 52,
+        "included": false
+      }
+    ],
+    "offset0-mirror1": [
+      {
+        "axis": "x",
+        "source": 43,
+        "pixel": 12,
+        "included": false
+      }
+    ],
+    "offset2-mirror0": [],
+    "offset2-mirror1": []
+  },
+  "scope": "True perspective w and fixed-function clip with specialized rational reconstruction; variants each independent Device internally shared world/vector/shadow scene.",
+  "retained_diagnostics": {
+    "hardware_depth_initial_max": 1.0312789373023712e-06,
+    "initial_mirror_depth_error": 0.014651953664600259,
+    "initial_mirror_color_error": 0.574999988079071,
+    "scope": "Explicit fragment depth and finite source-domain fallback, not hardware raster/depth repair"
+  },
+  "counts": {
+    "scene_variants": 3,
+    "positive_views": 15,
+    "inherited_negative_views": 21,
+    "additional_wrong_configuration_variants": 2,
+    "views_per_variant": 12,
+    "camera_draws_per_pass": 5,
+    "devices_per_variant": 1
+  },
+  "limits": [
+    "Specialized fixed-camera rational sampling and explicit fragment depth",
+    "Each variant independent Device; internally shared producer/scene/vector path",
+    "Original hardware-depth and reflected-edge failures retained",
+    "No real Surface/hardware/Live, general SVG or arbitrary curved clipping qualification"
+  ]
+}

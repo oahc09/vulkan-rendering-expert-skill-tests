@@ -298,3 +298,51 @@ scene combinations are not closed. No general SVG, world-space path, AA,
 perspective, real Surface/device or Live claim. Original branch dependency,
 Skill c0b62 pair and partial/BLOCKED milestones unchanged. Exact-head selected
 regression/CI receipts follow in PR comments, not inferred from this local run.
+
+
+## Scene B true perspective / near / reflected object joint route (2026-11-15)
+
+New `scene_b_perspective_lab` keeps the real shared-world shadow producer,
+visible L prism, ordinary meshes, O label and vector fifth draw in each camera
+pass. Actual clip.w=viewZ replaces shear. Two translated cameras are used in
+three complete variants: normal near1, near22 crossing the prism, and object
+x'=65-x applied to both visible and shadow vertices. Each variant uses its own
+Device, with internally shared resources. Fifteen positive views and21 inherited
+negatives are exercised, plus separate wrong-near and wrong-caster-model variants.
+
+Independent original-contour rays select surviving cap/side intersections after
+near clipping, not just the nearest rejected front hit. GPU receives uncut
+triangles; no fragment near discard substitutes for fixed-function clipping.
+Fraction source-plane references independently check specialized rational texel
+reconstruction. The original hardware-nearest limitations are not declared fixed.
+
+Retained failures: initial near/B hardware-interpolated depth1.0312789373e-6
+exceeded1e-6; initial reflected/A source right-edge inclusion also failed color
+(.5749999881) and depth(.0146519537). The finite route explicitly reconstructs
+fragment projection depth and enforces the ordinary rectangle's original half-open
+source domain. Geometry, reference, near value and tolerances did not change.
+This is not a general raster/depth precision repair. Boundary enumeration finds
+two excluded-right-edge center ties (normalA pixel52, reflectedA pixel12), no
+included boundary centers in the registered views. An initially incomplete host
+expectation omitted the normal tie and failed before correction; it is retained.
+Discard cannot restore missing raster support; no arbitrary transform claim.
+
+Frozen6 tests passed in24.79seconds: color max1.2814999e-7, near scene depth
+6.7365107e-7, normal/reflected depth9.362803e-8, light depth4.0233136e-7.
+Original1e-6/zero exclusions retained. Inherited negatives keep correct scene
+depth; wrong-near deliberately changes projection and fails both color/depth,
+while wrong-caster fails shadow/color but preserves camera depth. These distinct
+negative categories are not conflated. Minimal report is under
+`reports/history/text18-scene-b-perspective-public/`.
+
+PR#9 was verified merged at head0e3870f into its source-review base. This work
+is an independent closeout increment, not an update to the closed PR. It does
+not alter CORE17 pins or the separately assigned v1.0.19 work. Raw evidence stays
+local. Remaining original Scene B round/quadratic/cubic path scope and wider
+combined quality are incomplete; no real Surface/physical-device/Live acceptance.
+Milestone partial/BLOCKED labels are not promoted by these bounded passes.
+
+Closeout publication base: source-review merge90b2df2c49c65512d52928ca81051e4e5b2b6cc3
+includes merged PR#10 head e8bcb1b1. Its gate isolation/workflow changes are
+preserved byte-for-byte. Existing pinned historical CORE17 dependency is not
+silently updated; current merged CORE17 is checked by its own current job.
