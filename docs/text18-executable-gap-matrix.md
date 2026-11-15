@@ -153,3 +153,20 @@ reference and circle arithmetic independently reconstruct expected coverage.
 Each layer-bypass draw must be rejected. This hard pixel-center example is not
 AA, stencil, arbitrary vector paths or production clip-stack integration.
 Combined renderer lifecycle and real target/Live acceptance remain open.
+
+## Same-process packed glyph lifecycle
+
+A new combined fixture uses one Vulkan executable/device/queue with explicit
+PageResources and independent SubmissionResources. Real packed vertex draws
+consume the actually published page pointer. A stays pending while a distinct B
+upload is queued and canceled; publishing pending/canceled/older generations and
+pending retirement are refused before any invalid GPU action. After completion,
+actual routing still draws A; the canceled page is retired and a new generation
+uploads/publishes/draws before old A retirement. Legal wrong-page readback,
+substituted stale bytes and forged events are rejected. A pending exception run
+releases its gate and awaits all submissions before cleanup.
+
+This is one controlled two-page cycle using scaled original glyph coverage,
+not sustained language/variation churn, multi-device concurrency, production
+allocation recovery or the active-MRT/clip experiments combined into one frame.
+Raw failure/debug/environment evidence stays local; no target/Live claim.

@@ -1,6 +1,6 @@
 # v1.0.18 original-plan completion matrix
 
-Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `e2e730f75a6e0e79d3b74833c082953e6a83ef41`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
+Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `1ce23824050e6c927057cabeedb58bce1398e7b2`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
 
 Legend: **bounded pass** = only the stated executable contract passed; **partial** = missing original-plan scope; **local open** = implementable here, not yet done; **external unverified** = actual platform/device/model/host not available. Knowledge/static checks never promote an execution layer.
 
@@ -16,16 +16,16 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §4.3 DirectWrite | Knowledge/contract only | External unverified: no actual DirectWrite run/outline/bitmap |
 | §4.4 beyond-64k/new tables | Wide-ID and range contracts | Partial: real capable provider and new font format fixtures unavailable/unverified; uint32 storage is not provider support |
 | §5.1–5.4 bitmap | HarfBuzz→FreeType grayscale→actual Vulkan readback for O/ffi/Arabic; fixed 1e-6 blend tolerance | Bounded pass; color glyph/emoji, variable font, MSDF/MTSDF implementation/comparison are local open, not device-only blockers |
-| §5.2 filtering/data | Scalar linear premultiplied oracle, nearest sampling and bounded padding | Partial: packed UV draw, bilinear/mip bleed, distance range/derivatives need executable coverage |
+| §5.2 filtering/data | Scalar linear oracle; actual packed UV quads, nearest sampling and bounded padding | Partial: bilinear/mip bleed, fractional geometry, distance range/derivatives remain local open |
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: shrinking, rotation, perspective and comparative representation board local open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask fallback pass; triangulation, stroke/cap/join/dash and broader topology are local open |
-| §6.3 clipping | Knowledge only | Local open: nested stencil/mask clips, nonrectangular clip and ordering |
+| §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
 | §6.4 world/3D | Knowledge only | Local open: world labels, near-plane clipping, finite extrusion/bevel, depth/shadows/second view |
-| §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded pass; whole-page readback does not yet render per-glyph UV quads |
-| §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue pass; combined renderer-level asynchronous packing/churn remains local open |
+| §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
+| §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; sustained real glyph/size/locale churn remains local open |
 | §7.4 consumers | Two immutable sampled descriptor sets and pending timeline-gated fragment submissions; real fence status | Bounded pass; not shader-already-running, multi-queue or multi-device proof |
 | §7.4 multi-engine | CPU boundaries described | Local open: two real Vulkan devices/outputs, shared CPU cache and independent GPU handles, pause/rebuild/destruction |
-| §7.4 MRT | Separate overlay UNUSED/preserve velocity and ID sentinels | Partial: active MRT and depth/stencil protection are local open; not complete attachment acceptance |
+| §7.4 MRT | Active 3-color plus D32 write protection and legal wrong-output negatives; old fallback preserved | Bounded pass; stencil, actual occlusion, rendergraph/world ordering remain local open |
 | §7.5 temporal/HDR | Linear composition checked numerically | Local open: full temporal/HDR handoff and world-motion experiment |
 | §7.6 budgets/security | Bounded path/work/atlas input checks, controlled failures, no redistributed system font | Partial: CPU font-service memory and complete cold/hot resource accounting; fixture handle counts are not driver leak proof |
 | §8 capability fallbacks | Explicit knowledge and CPU reject paths | Partial: each unimplemented renderer fallback needs execution before support claims |
@@ -34,7 +34,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §10 M3 | Current primary milestone | In progress: integration and combined stress gaps above |
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
 | §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, variable fonts, representations and transformations missing |
-| §11B vector/world | Five generated masks, holes/curves/negative scale | Partial: strokes, nested clips, world meshes/shadows/second view missing |
+| §11B vector/world | Five generated masks, holes/curves/negative scale; hard nested shader clip | Partial: strokes, general/AA clips, world meshes/shadows/second view missing |
 | §11C churn/overlay | Separate bounded packing/growth/churn/descriptor experiments | Partial: real changing glyph/size/locale/axis stream combined with two engines and active outputs not run |
 | §12 TEXT18-01…20 | 20 registered cases, paired controls/rubrics, static validation | Registration is not model behavior; all 20 semantic Live results unverified |
 | §12.1 old cohorts | Preserved legacy contract and separate CI | Full accepted CORE17+TEXT18 union not established; no invented final scenario count |
@@ -49,10 +49,10 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | Layer | Verified scope | Not verified |
 |---|---|---|
 | Static | CI 281 legacy /316 text18; 24 Skill unit | Complete semantic source/API audit |
-| Host Unit | CI 237 CPU; local aggregate 148 selected tests | Production threading and combined renderer integration |
+| Host Unit | CI 237 CPU; bounded lifecycle/packing contracts and GPU integration tracked separately | Production threading and full renderer integration |
 | Platform Integration | Linux trusted HarfBuzz/FreeType bridge only | Android JNI and Windows DirectWrite |
 | Shader Unit | Actual compiler/SPIR-V tools in opt-in labs | Unimplemented paths |
-| Vulkan Integration | Actual software Vulkan upload/draw/readback/controlled pending consumers | Active MRT/depth, multi-device and packed quads at this baseline |
+| Vulkan Integration | Actual software Vulkan upload/draw/readback, packed quads, controlled pending consumers, active MRT/depth write protection and hard clips | Sustained churn/multi-device, depth occlusion/stencil/full renderer |
 | Live Model | No model command configured, explicit SKIP | All TEXT18 semantics and final cohort behavior |
 | Visual Quality | Narrow fixed ROI/phase oracle; selected rendered images inspected | Full board, independent font outline quality, display/color calibration |
 | Device | None | Adreno/Mali/Windows sustained device performance |
@@ -63,13 +63,13 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 1. Semantics: limited fixed-provider run checks only; fallback/paragraph and Live remain unverified.
 2. Composition: independent linear over reference and 1e-6 ROI tolerance; do not relax after failure.
 3. Retirement: pending/final consumers and cancellation tested without illegal use-after-free.
-4. MRT: UNUSED/preserve only; active velocity/ID/depth not accepted.
+4. MRT: active velocity/ID/depth write protection verified; stencil/occlusion and production integration remain open.
 5. Geometry: bounded flattening and mask hole tests; no triangle/index acceptance yet.
 6. Dynamic quality: phase-only area ≤5%, centroid error ≤0.15px, blend ≤1e-6; not all transforms.
 7. Stability: fixed fixture inventories and controlled cleanup; no global allocator/driver leak claim.
 8. Performance: reliable GPU timings, thermal/power and complete p50/p95/p99 breakdown **UNMEASURED**.
 
-Priority local work: actual packed UV glyph quads, then active output/depth protection and combined bounded renderer lifecycle. Other original-plan local gaps stay visible; they must not be mislabeled as hardware blockers. Retain original failed host-event validation evidence and prior failing CI. Only source and stripped numerical summaries publish; raw logs/environment/font evidence stay local.
+Priority local work after the bounded two-page lifecycle: sustained real glyph churn and additional original-plan renderer/quality gaps. Actual packed UV quads and active output/depth write protection now have bounded evidence, not whole-milestone acceptance. Other original-plan local gaps stay visible; they must not be mislabeled as hardware blockers. Retain original failed host-event validation evidence and prior failing CI. Only source and stripped numerical summaries publish; raw logs/environment/font evidence stay local.
 
 ## Packed-quad increment (candidate, pending exact-head CI)
 
@@ -86,8 +86,9 @@ pass remains active MRT/depth protection and combined lifecycle integration.
 
 ## Active MRT/depth and bounded nested clip increment
 
-These later bounded experiments advance two **local open** rows above, not the
-external platform/device gates. The historical baseline table is not rewritten.
+These bounded experiments advance two prior **local open** rows, not the
+external platform/device gates. The current table incorporates the increments;
+prior commit histories and evidence remain unchanged.
 
 - **§7.4 / §13.1(4):** `text_active_mrt_lab` makes all three color references
   active, queries/enables independentBlend, and uses per-output write masks.
@@ -107,3 +108,33 @@ external platform/device gates. The historical baseline table is not rewritten.
   Software Vulkan is not Android/Windows/mobile hardware or performance evidence.
   Combined asynchronous packed-glyph lifecycle, multiple outputs/devices,
   world-depth ordering and the other matrix gaps remain open.
+
+## Same-process packed draw / lifecycle increment
+
+`text_combined_lifecycle_lab` now joins real packed glyph vertex draws with
+explicit page and submission resource owners in **one executable/device/queue**.
+A's gated draw and canceled B upload have separate command buffers, fences,
+staging/vertices/readbacks; draw targets/framebuffers are also separate. A real
+published pointer is updated only after upload completion and rejects canceled
+or older generations. `drawPublished` reads that pointer rather than selecting
+a hardcoded correct page. The canceled candidate upload still finishes. A is
+actually drawn again after cancellation; B is retired, recreated as generation2
+with half-strength glyph coverage, uploaded, published and drawn. Old A retires
+only after the actual consumers finish. Pending submissions are completed before
+owned resources are destroyed, including a controlled pending-exception run.
+
+The same-process flow has three accepted readbacks and one legal wrong-route
+readback from a completed but canceled page. Independent original glyph pixels
+and positions reject wrong routing, stale old-generation bytes and forged event
+records. Host publication and pending retirement guards are exercised before
+any invalid Vulkan operation. Object-state-derived events record routing and
+live page counts; validation stays mandatory. No illegal use-after-free test.
+
+This resolves the **minimal combined two-page cycle**, not the full §11C stress
+scenario. Generation2 attenuates the same trusted glyph coverage, not a change
+of language/variation/fallback. Sustained real glyph/size/locale/axis churn,
+multiple engines/devices, active MRT/depth/clip combined with this flow,
+production threading/allocator/device-loss recovery, and real-device/Live gates
+remain open. Single queue means B upload waits behind gated A; no parallel GPU
+execution or mobile performance claim. Atlas page counts exclude inherited
+setup resources and do not establish driver/CPU service leak freedom.
