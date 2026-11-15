@@ -1,0 +1,1317 @@
+{
+  "baseline": [
+    {
+      "apiVersion": 4210993,
+      "deviceID": 0,
+      "deviceType": 4,
+      "driverVersion": 1,
+      "kind": "identity",
+      "layerImplementation": 1,
+      "layerSpec": 4210997,
+      "queueFamily": 0,
+      "queueFlags": 15,
+      "timestampPeriod": 1,
+      "timestampValidBits": 64,
+      "vendorID": 65541
+    },
+    {
+      "framebufferHeight": 16384,
+      "framebufferWidth": 16384,
+      "kind": "limits",
+      "viewportBoundsMax": 32768,
+      "viewportBoundsMin": -32768,
+      "viewportHeight": 16384,
+      "viewportWidth": 16384
+    },
+    {
+      "alignment": 64,
+      "kind": "image_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 256
+    },
+    {
+      "alignment": 64,
+      "kind": "buffer_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 64
+    },
+    {
+      "finalLayout": 2,
+      "format": 37,
+      "initialLayout": 2,
+      "kind": "renderpass_attachment",
+      "loadOp": 1,
+      "samples": 1,
+      "storeOp": 0,
+      "subpassLayout": 2
+    },
+    {
+      "attachmentFormat": 37,
+      "blendEnable": 0,
+      "colorCount": 1,
+      "cullMode": 0,
+      "depthStencilPresent": 0,
+      "firstInstance": 0,
+      "firstVertex": 0,
+      "format": 37,
+      "instanceCount": 1,
+      "kind": "pipeline",
+      "maxColorAttachments": 8,
+      "rasterizerDiscard": 0,
+      "samples": 1,
+      "scissor": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "stageCount": 2,
+      "stageMask": 17,
+      "topology": 3,
+      "unusedAttachmentsEnabled": false,
+      "vertexCount": 3,
+      "viewMask": 0,
+      "viewport": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "writeMask": 15
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 384,
+      "dstStage": 1024,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 2,
+      "oldLayout": 0,
+      "srcAccess": 0,
+      "srcStage": 1
+    },
+    {
+      "enabled": 0,
+      "format": 37,
+      "formatSampleCounts": 5,
+      "height": 4,
+      "kind": "manifest",
+      "layers": 1,
+      "layout": 2,
+      "loadOp": 1,
+      "maxHeight": 16384,
+      "maxWidth": 16384,
+      "memoryFlags": 15,
+      "offsetX": 0,
+      "offsetY": 0,
+      "resolveMode": 0,
+      "samples": 1,
+      "storeOp": 0,
+      "supported": 1,
+      "usage": 17,
+      "viewHeight": 4,
+      "viewMask": 0,
+      "viewWidth": 4,
+      "width": 4
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 2048,
+      "dstStage": 4096,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 6,
+      "oldLayout": 2,
+      "srcAccess": 256,
+      "srcStage": 1024
+    },
+    {
+      "copyExtent": [
+        4,
+        4,
+        1
+      ],
+      "dstAccess": 8192,
+      "dstStage": 16384,
+      "kind": "host_dependency",
+      "srcAccess": 4096,
+      "srcStage": 4096
+    },
+    {
+      "fenceCompleted": true,
+      "kind": "execution",
+      "pixels": [
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ]
+      ],
+      "submitted": true
+    },
+    {
+      "drawCalls": 1,
+      "dynamicBeginCalls": 0,
+      "framebufferObjects": 1,
+      "kind": "organization",
+      "path": "renderpass",
+      "pipelineObjects": 1,
+      "renderPassBeginCalls": 1,
+      "renderPassObjects": 1
+    },
+    {
+      "errors": 0,
+      "kind": "final",
+      "rc": 0
+    }
+  ],
+  "dynamic": [
+    {
+      "apiVersion": 4210993,
+      "deviceID": 0,
+      "deviceType": 4,
+      "driverVersion": 1,
+      "kind": "identity",
+      "layerImplementation": 1,
+      "layerSpec": 4210997,
+      "queueFamily": 0,
+      "queueFlags": 15,
+      "timestampPeriod": 1,
+      "timestampValidBits": 64,
+      "vendorID": 65541
+    },
+    {
+      "framebufferHeight": 16384,
+      "framebufferWidth": 16384,
+      "kind": "limits",
+      "viewportBoundsMax": 32768,
+      "viewportBoundsMin": -32768,
+      "viewportHeight": 16384,
+      "viewportWidth": 16384
+    },
+    {
+      "alignment": 64,
+      "kind": "image_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 256
+    },
+    {
+      "alignment": 64,
+      "kind": "buffer_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 64
+    },
+    {
+      "attachmentFormat": 37,
+      "blendEnable": 0,
+      "colorCount": 1,
+      "cullMode": 0,
+      "depthStencilPresent": 0,
+      "firstInstance": 0,
+      "firstVertex": 0,
+      "format": 37,
+      "instanceCount": 1,
+      "kind": "pipeline",
+      "maxColorAttachments": 8,
+      "rasterizerDiscard": 0,
+      "samples": 1,
+      "scissor": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "stageCount": 2,
+      "stageMask": 17,
+      "topology": 3,
+      "unusedAttachmentsEnabled": false,
+      "vertexCount": 3,
+      "viewMask": 0,
+      "viewport": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "writeMask": 15
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 384,
+      "dstStage": 1024,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 2,
+      "oldLayout": 0,
+      "srcAccess": 0,
+      "srcStage": 1
+    },
+    {
+      "enabled": 1,
+      "format": 37,
+      "formatSampleCounts": 5,
+      "height": 4,
+      "kind": "manifest",
+      "layers": 1,
+      "layout": 2,
+      "loadOp": 1,
+      "maxHeight": 16384,
+      "maxWidth": 16384,
+      "memoryFlags": 15,
+      "offsetX": 0,
+      "offsetY": 0,
+      "resolveMode": 0,
+      "samples": 1,
+      "storeOp": 0,
+      "supported": 1,
+      "usage": 17,
+      "viewHeight": 4,
+      "viewMask": 0,
+      "viewWidth": 4,
+      "width": 4
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 2048,
+      "dstStage": 4096,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 6,
+      "oldLayout": 2,
+      "srcAccess": 256,
+      "srcStage": 1024
+    },
+    {
+      "copyExtent": [
+        4,
+        4,
+        1
+      ],
+      "dstAccess": 8192,
+      "dstStage": 16384,
+      "kind": "host_dependency",
+      "srcAccess": 4096,
+      "srcStage": 4096
+    },
+    {
+      "fenceCompleted": true,
+      "kind": "execution",
+      "pixels": [
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ]
+      ],
+      "submitted": true
+    },
+    {
+      "drawCalls": 1,
+      "dynamicBeginCalls": 1,
+      "framebufferObjects": 0,
+      "kind": "organization",
+      "path": "dynamic",
+      "pipelineObjects": 1,
+      "renderPassBeginCalls": 0,
+      "renderPassObjects": 0
+    },
+    {
+      "errors": 0,
+      "kind": "final",
+      "rc": 0
+    }
+  ],
+  "recovery": [
+    {
+      "apiVersion": 4210993,
+      "deviceID": 0,
+      "deviceType": 4,
+      "driverVersion": 1,
+      "kind": "identity",
+      "layerImplementation": 1,
+      "layerSpec": 4210997,
+      "queueFamily": 0,
+      "queueFlags": 15,
+      "timestampPeriod": 1,
+      "timestampValidBits": 64,
+      "vendorID": 65541
+    },
+    {
+      "framebufferHeight": 16384,
+      "framebufferWidth": 16384,
+      "kind": "limits",
+      "viewportBoundsMax": 32768,
+      "viewportBoundsMin": -32768,
+      "viewportHeight": 16384,
+      "viewportWidth": 16384
+    },
+    {
+      "alignment": 64,
+      "kind": "image_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 256
+    },
+    {
+      "alignment": 64,
+      "kind": "buffer_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 64
+    },
+    {
+      "finalLayout": 2,
+      "format": 37,
+      "initialLayout": 2,
+      "kind": "renderpass_attachment",
+      "loadOp": 1,
+      "samples": 1,
+      "storeOp": 0,
+      "subpassLayout": 2
+    },
+    {
+      "attachmentFormat": 37,
+      "blendEnable": 0,
+      "colorCount": 1,
+      "cullMode": 0,
+      "depthStencilPresent": 0,
+      "firstInstance": 0,
+      "firstVertex": 0,
+      "format": 37,
+      "instanceCount": 1,
+      "kind": "pipeline",
+      "maxColorAttachments": 8,
+      "rasterizerDiscard": 0,
+      "samples": 1,
+      "scissor": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "stageCount": 2,
+      "stageMask": 17,
+      "topology": 3,
+      "unusedAttachmentsEnabled": false,
+      "vertexCount": 3,
+      "viewMask": 0,
+      "viewport": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "writeMask": 15
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 384,
+      "dstStage": 1024,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 2,
+      "oldLayout": 0,
+      "srcAccess": 0,
+      "srcStage": 1
+    },
+    {
+      "enabled": 0,
+      "format": 37,
+      "formatSampleCounts": 5,
+      "height": 4,
+      "kind": "manifest",
+      "layers": 1,
+      "layout": 2,
+      "loadOp": 1,
+      "maxHeight": 16384,
+      "maxWidth": 16384,
+      "memoryFlags": 15,
+      "offsetX": 0,
+      "offsetY": 0,
+      "resolveMode": 0,
+      "samples": 1,
+      "storeOp": 0,
+      "supported": 1,
+      "usage": 17,
+      "viewHeight": 4,
+      "viewMask": 0,
+      "viewWidth": 4,
+      "width": 4
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 2048,
+      "dstStage": 4096,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 6,
+      "oldLayout": 2,
+      "srcAccess": 256,
+      "srcStage": 1024
+    },
+    {
+      "copyExtent": [
+        4,
+        4,
+        1
+      ],
+      "dstAccess": 8192,
+      "dstStage": 16384,
+      "kind": "host_dependency",
+      "srcAccess": 4096,
+      "srcStage": 4096
+    },
+    {
+      "fenceCompleted": true,
+      "kind": "execution",
+      "pixels": [
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ]
+      ],
+      "submitted": true
+    },
+    {
+      "drawCalls": 1,
+      "dynamicBeginCalls": 0,
+      "framebufferObjects": 1,
+      "kind": "organization",
+      "path": "renderpass",
+      "pipelineObjects": 1,
+      "renderPassBeginCalls": 1,
+      "renderPassObjects": 1
+    },
+    {
+      "errors": 0,
+      "kind": "final",
+      "rc": 0
+    }
+  ],
+  "renderpass-wrong": [
+    {
+      "apiVersion": 4210993,
+      "deviceID": 0,
+      "deviceType": 4,
+      "driverVersion": 1,
+      "kind": "identity",
+      "layerImplementation": 1,
+      "layerSpec": 4210997,
+      "queueFamily": 0,
+      "queueFlags": 15,
+      "timestampPeriod": 1,
+      "timestampValidBits": 64,
+      "vendorID": 65541
+    },
+    {
+      "framebufferHeight": 16384,
+      "framebufferWidth": 16384,
+      "kind": "limits",
+      "viewportBoundsMax": 32768,
+      "viewportBoundsMin": -32768,
+      "viewportHeight": 16384,
+      "viewportWidth": 16384
+    },
+    {
+      "alignment": 64,
+      "kind": "image_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 256
+    },
+    {
+      "alignment": 64,
+      "kind": "buffer_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 64
+    },
+    {
+      "finalLayout": 2,
+      "format": 37,
+      "initialLayout": 2,
+      "kind": "renderpass_attachment",
+      "loadOp": 1,
+      "samples": 1,
+      "storeOp": 0,
+      "subpassLayout": 2
+    },
+    {
+      "attachmentFormat": 37,
+      "blendEnable": 0,
+      "colorCount": 1,
+      "cullMode": 0,
+      "depthStencilPresent": 0,
+      "firstInstance": 0,
+      "firstVertex": 0,
+      "format": 37,
+      "instanceCount": 1,
+      "kind": "pipeline",
+      "maxColorAttachments": 8,
+      "rasterizerDiscard": 0,
+      "samples": 1,
+      "scissor": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "stageCount": 2,
+      "stageMask": 17,
+      "topology": 3,
+      "unusedAttachmentsEnabled": false,
+      "vertexCount": 3,
+      "viewMask": 0,
+      "viewport": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "writeMask": 15
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 384,
+      "dstStage": 1024,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 2,
+      "oldLayout": 0,
+      "srcAccess": 0,
+      "srcStage": 1
+    },
+    {
+      "enabled": 0,
+      "format": 37,
+      "formatSampleCounts": 5,
+      "height": 4,
+      "kind": "manifest",
+      "layers": 1,
+      "layout": 2,
+      "loadOp": 1,
+      "maxHeight": 16384,
+      "maxWidth": 16384,
+      "memoryFlags": 15,
+      "offsetX": 0,
+      "offsetY": 0,
+      "resolveMode": 0,
+      "samples": 1,
+      "storeOp": 0,
+      "supported": 1,
+      "usage": 17,
+      "viewHeight": 4,
+      "viewMask": 0,
+      "viewWidth": 4,
+      "width": 4
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 2048,
+      "dstStage": 4096,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 6,
+      "oldLayout": 2,
+      "srcAccess": 256,
+      "srcStage": 1024
+    },
+    {
+      "copyExtent": [
+        4,
+        4,
+        1
+      ],
+      "dstAccess": 8192,
+      "dstStage": 16384,
+      "kind": "host_dependency",
+      "srcAccess": 4096,
+      "srcStage": 4096
+    },
+    {
+      "fenceCompleted": true,
+      "kind": "execution",
+      "pixels": [
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ]
+      ],
+      "submitted": true
+    },
+    {
+      "drawCalls": 1,
+      "dynamicBeginCalls": 0,
+      "framebufferObjects": 1,
+      "kind": "organization",
+      "path": "renderpass",
+      "pipelineObjects": 1,
+      "renderPassBeginCalls": 1,
+      "renderPassObjects": 1
+    },
+    {
+      "errors": 0,
+      "kind": "final",
+      "rc": 6
+    }
+  ],
+  "dynamic-wrong": [
+    {
+      "apiVersion": 4210993,
+      "deviceID": 0,
+      "deviceType": 4,
+      "driverVersion": 1,
+      "kind": "identity",
+      "layerImplementation": 1,
+      "layerSpec": 4210997,
+      "queueFamily": 0,
+      "queueFlags": 15,
+      "timestampPeriod": 1,
+      "timestampValidBits": 64,
+      "vendorID": 65541
+    },
+    {
+      "framebufferHeight": 16384,
+      "framebufferWidth": 16384,
+      "kind": "limits",
+      "viewportBoundsMax": 32768,
+      "viewportBoundsMin": -32768,
+      "viewportHeight": 16384,
+      "viewportWidth": 16384
+    },
+    {
+      "alignment": 64,
+      "kind": "image_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 256
+    },
+    {
+      "alignment": 64,
+      "kind": "buffer_allocation",
+      "memoryTypeBits": 1,
+      "selectedFlags": 15,
+      "selectedType": 0,
+      "size": 64
+    },
+    {
+      "attachmentFormat": 37,
+      "blendEnable": 0,
+      "colorCount": 1,
+      "cullMode": 0,
+      "depthStencilPresent": 0,
+      "firstInstance": 0,
+      "firstVertex": 0,
+      "format": 37,
+      "instanceCount": 1,
+      "kind": "pipeline",
+      "maxColorAttachments": 8,
+      "rasterizerDiscard": 0,
+      "samples": 1,
+      "scissor": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "stageCount": 2,
+      "stageMask": 17,
+      "topology": 3,
+      "unusedAttachmentsEnabled": false,
+      "vertexCount": 3,
+      "viewMask": 0,
+      "viewport": [
+        0,
+        0,
+        4,
+        4
+      ],
+      "writeMask": 15
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 384,
+      "dstStage": 1024,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 2,
+      "oldLayout": 0,
+      "srcAccess": 0,
+      "srcStage": 1
+    },
+    {
+      "enabled": 1,
+      "format": 37,
+      "formatSampleCounts": 5,
+      "height": 4,
+      "kind": "manifest",
+      "layers": 1,
+      "layout": 2,
+      "loadOp": 1,
+      "maxHeight": 16384,
+      "maxWidth": 16384,
+      "memoryFlags": 15,
+      "offsetX": 0,
+      "offsetY": 0,
+      "resolveMode": 0,
+      "samples": 1,
+      "storeOp": 0,
+      "supported": 1,
+      "usage": 17,
+      "viewHeight": 4,
+      "viewMask": 0,
+      "viewWidth": 4,
+      "width": 4
+    },
+    {
+      "aspect": 1,
+      "baseLayer": 0,
+      "baseMip": 0,
+      "dstAccess": 2048,
+      "dstStage": 4096,
+      "kind": "image_dependency",
+      "layers": 1,
+      "levels": 1,
+      "newLayout": 6,
+      "oldLayout": 2,
+      "srcAccess": 256,
+      "srcStage": 1024
+    },
+    {
+      "copyExtent": [
+        4,
+        4,
+        1
+      ],
+      "dstAccess": 8192,
+      "dstStage": 16384,
+      "kind": "host_dependency",
+      "srcAccess": 4096,
+      "srcStage": 4096
+    },
+    {
+      "fenceCompleted": true,
+      "kind": "execution",
+      "pixels": [
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          0,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ]
+      ],
+      "submitted": true
+    },
+    {
+      "drawCalls": 1,
+      "dynamicBeginCalls": 1,
+      "framebufferObjects": 0,
+      "kind": "organization",
+      "path": "dynamic",
+      "pipelineObjects": 1,
+      "renderPassBeginCalls": 0,
+      "renderPassObjects": 0
+    },
+    {
+      "errors": 0,
+      "kind": "final",
+      "rc": 6
+    }
+  ]
+}
