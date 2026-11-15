@@ -19,7 +19,7 @@ an append-only experiment history; its early absence lists are historical.
 | Plan area | Implemented and evidenced bounded scope | Still incomplete |
 |---|---|---|
 | C1 provider/run semantics | Actual Linux HB/FT, fixed-font fallback, bounded mixed-paragraph bidi checked against ICU, emoji VS15/VS16, variable-font experiments | Android Java/JNI and Windows DirectWrite; provider capability/fallback coverage. Finite inputs do not establish general Unicode layout; all font formats are not a new requirement. |
-| C2 representations / Scene A | Actual bitmap and color-glyph delivery, MSDF production/consumption, fixed transforms and representation controls | One same-condition multilingual/emoji/variation quality board across representations; dynamic MSDF quality remains not qualified. |
+| C2 representations / Scene A | Actual bitmap/color/MSDF delivery; same-layout multilingual, emoji-fallback and two-variable-instance board with fixed scaling/phase comparisons | The finite seven-row same-layout bitmap/MSDF board is now measured; six monochrome rotation cases reject clipping and perspective remains unmeasured. Dynamic MSDF quality remains not qualified. |
 | C3 vector/world / Scene B | Bounded fills/strokes/AA, straight-outline extrusion, world planes, near clipping fallback, second view and depth-produced hard shadow sampling | Shared complete Scene B and joint visual regression remain incomplete. Arbitrary triangulation/curve AA/bevel/general lighting are unverified boundaries, not additional mandatory product scope. |
 | C4 cache / Scene C | Real CPU cache ledger; resident online producer and dual offscreen outputs now integrate natural packed-page growth, pending cancel/retry, immutable old UV snapshots, active MRT and pause/destruction/rebuild | The integrated fixed 8-to-9 instance / two-page sequence is bounded; continuous locale/variation/size workloads, scale tiers, sustained stress and whole-chain costs remain incomplete. |
 | Temporal / HDR boundary | Actual scalar temporal SSBO consumed by linear HDR scene then UI, with history pollution and early-tone-map negatives | World-text motion and full-scene interface consumption remain unverified. Full RGB TAA and physical HDR-display certification are outside this bounded test, not new reimplementation requirements. |
@@ -52,15 +52,14 @@ fonts, binaries and environment/driver logs remain local and are not redistribut
 
 ## Next decisions and stop rule
 
-Do not automatically add more one-glyph/one-pass combinations. The highest-value
-remaining local integration milestone is original Scene C's **real packed-page capacity
-growth with old published UV snapshots preserved**, together with the
-existing cached producer and two-output lifecycle. It must specify original-plan
-input/quality/reference conditions before execution and reuse the existing
-framework rather than growing a new product. Repacking/resizing is not mandatory:
-new-page growth or explicit budget rejection/fallback may be valid; do not add a
-general allocator requirement to the original plan. Complete Scene A/B comparison boards
-are separate concentrated milestones, not a checklist of further tiny examples.
+Do not automatically add more one-glyph/one-pass combinations. The concentrated
+resident Scene C service and seven-row Scene A board now have bounded executable
+evidence, not complete scene qualification. Highest-value local follow-up must
+address the existing board's actual quality errors and unsupported rotation /
+unmeasured perspective under common conditions, or integrate original Scene B.
+Do not replace these gaps with further unrelated one-glyph examples. No general
+allocator, full Unicode layout engine or new universal quality threshold is
+required by this audit.
 
 External blockers are specific: actual Android/JNI and Windows DirectWrite runs;
 Adreno/Mali and available Windows hardware; real Surface/host integration;
@@ -109,3 +108,35 @@ See its pre-registered `criteria.md` and the latest matrix section. The earlier
 319-test frozen run and executable SHA remain historical results, not silently
 reassigned to this new implementation. Full workload/physical-device/Live
 acceptance remains incomplete; this does not create new general-product scope.
+
+## Concentrated Scene A same-layout board
+
+`tests/fixtures/scene_a_board_lab/criteria.md` freezes seven real-content rows
+before candidate rendering: Chinese, ffi, combining a+acute, a fixed mixed bidi
+paragraph, VS16 emoji and two full variable-axis instances. Complete shared HB
+positions/face/axes/ppem and FT 26.6 origins feed both unhinted FT bitmap and
+original outline / pinned RGB-MSDF, without per-glyph ink normalization.
+
+The frozen local selection passes 8 tests (7 host plus one Vulkan integration)
+in 67.43 seconds. There are 53 positive tiles: 24 bitmap, 24 MSDF and 5 color
+emoji fallback; MSDF is explicitly inapplicable to the emoji. Original numerical
+gates remain 1e-6 / .004 with zero excluded pixels. Worst numerical errors are
+1.0654075721650003e-7 including emoji and 1.3627111936642677e-6 for MSDF.
+The first bidi-minification bitmap failure (1.305590075773e-6 > 1e-6) remains
+recorded. Fixed 3/4 inverse sampling now computes rational texel coordinates;
+layout, reference and gates did not change. Actual double-alpha and wrong-range
+negative shaders are rejected with errors .1499423325 and .1587432742.
+
+Sampling PASS is not visual-quality qualification: maximum original-outline
+alpha difference remains .486328125, and phase geometry-subtracted residuals
+are reported separately. Per-image foreground/partial-glyph-edge ROI metrics
+are available. Column-difference and phase MAEs are full-tile means, not ROI
+quality scores. Six monochrome rotate90 cases remain UNSUPPORTED_CLIPPING in
+both columns; emoji rotate90 fits. Perspective is UNMEASURED. The full board
+was viewed, but remains MEASURED_NOT_QUALIFIED. Auxiliary images are UNUSED /
+preserve, not active MRT, and no hardware timing/energy conclusion follows.
+
+Source and sanitized numeric report are committed; fonts, generated font
+resources, raw readbacks and provider/environment receipts stay local. This
+increment does not relabel the earlier 319-case cumulative run as a run of the
+new board head. Exact-head regression and CI results are reported in PR #9.
