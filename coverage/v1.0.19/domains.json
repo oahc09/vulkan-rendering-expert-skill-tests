@@ -122,6 +122,19 @@
         "cross-queue and aliasing",
         "external-engine and blind-task acceptance"
       ]
+    },
+    "texture_sampling_delivery": {
+      "contract": "sampled_image_descriptor.md#delivery19-texture-sampling",
+      "entry": "cases19/texture_sampling/run.py",
+      "evidence": "texture-sampling.json",
+      "scope": "RGBA8 4x4 asymmetric endpoint-color upload, normalized nearest/clamp combined sampler with explicit LOD0 compute sampling, independent full pixel readback and safe sampler rejection",
+      "domain_complete": false,
+      "still_open": [
+        "general filtering, address modes, mip chains and formats",
+        "graphics material and presentation integration",
+        "concurrent queues and noncoherent visibility",
+        "physical/mobile hardware and external-engine/Live/blind acceptance"
+      ]
     }
   },
   {
@@ -150,6 +163,19 @@
         "physical hardware/noncoherent",
         "cross-queue and aliasing",
         "external-engine and blind-task acceptance"
+      ]
+    },
+    "texture_sampling_delivery": {
+      "contract": "sampled_image_descriptor.md#delivery19-texture-sampling",
+      "entry": "cases19/texture_sampling/run.py",
+      "evidence": "texture-sampling.json",
+      "scope": "RGBA8 4x4 asymmetric endpoint-color upload, normalized nearest/clamp combined sampler with explicit LOD0 compute sampling, independent full pixel readback and safe sampler rejection",
+      "domain_complete": false,
+      "still_open": [
+        "general filtering, address modes, mip chains and formats",
+        "graphics material and presentation integration",
+        "concurrent queues and noncoherent visibility",
+        "physical/mobile hardware and external-engine/Live/blind acceptance"
       ]
     }
   },
@@ -217,6 +243,19 @@
         "actual noncoherent visibility",
         "physical/mobile performance",
         "Vulkan SC and external-engine/Live/blind acceptance"
+      ]
+    },
+    "texture_sampling_delivery": {
+      "contract": "sampled_image_descriptor.md#delivery19-texture-sampling",
+      "entry": "cases19/texture_sampling/run.py",
+      "evidence": "texture-sampling.json",
+      "scope": "RGBA8 4x4 asymmetric endpoint-color upload, normalized nearest/clamp combined sampler with explicit LOD0 compute sampling, independent full pixel readback and safe sampler rejection",
+      "domain_complete": false,
+      "still_open": [
+        "general filtering, address modes, mip chains and formats",
+        "graphics material and presentation integration",
+        "concurrent queues and noncoherent visibility",
+        "physical/mobile hardware and external-engine/Live/blind acceptance"
       ]
     }
   },
