@@ -180,7 +180,23 @@
         "sample coverage and antialiasing quality",
         "physical/mobile performance, external project and Live/blind acceptance"
       ]
-    }
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/image-copy-contract19.md",
+        "entry": "checks19/run_image_copy_contracts.py",
+        "rules": "tools/image_copy_contract19.py",
+        "evidence": "image-copy-contract.json",
+        "scope": "partial color format/block compatibility and caller-adjusted per-image local regions; no inferred dstOffset",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
   },
   {
     "id": "VK06",
@@ -235,7 +251,37 @@
         "multi-frame/concurrent queues and physical hardware performance",
         "external-engine/Live/blind acceptance"
       ]
-    }
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/synchronization-contract19.md",
+        "entry": "checks19/run_sync_contracts.py",
+        "rules": "tools/sync_contract19.py",
+        "evidence": "synchronization-contract.json",
+        "scope": "bounded RAW/WAW/WAR, host availability, baseline ownership and buffer-range caller facts",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      },
+      {
+        "document": "docs/image-layout-contract19.md",
+        "entry": "checks19/run_image_layout_contracts.py",
+        "rules": "tools/image_layout_contract19.py",
+        "evidence": "image-layout-contract.json",
+        "scope": "ordinary 2D COLOR per-cell modeled layout state, equal-family/equal-layout ignored branch and discard dependencies",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
   },
   {
     "id": "VK07",
@@ -328,7 +374,23 @@
         "multi-frame/concurrent queues and physical hardware performance",
         "external-engine/Live/blind acceptance"
       ]
-    }
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/layout-contract19.md",
+        "entry": "checks19/run_layout_contracts.py",
+        "rules": "tools/layout_contract19.py",
+        "evidence": "layout-contract.json",
+        "scope": "ordinary complete layout definitions, push creation/update, set compatibility and binding disturbance",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
   },
   {
     "id": "VK08",
