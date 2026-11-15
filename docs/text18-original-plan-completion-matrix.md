@@ -1,5 +1,7 @@
 # v1.0.18 original-plan completion matrix
 
+Current concise delivery status: [TEXT18 current delivery audit](text18-current-delivery-audit.md). This file preserves incremental history.
+
 > **Historical baseline warning:** early tables and dated priority lists below describe their stated old heads. They are not the current missing-feature list. Read the latest appended experiment and current-plan audit for subsequent bounded coverage. C1-C4 remain partial; M4 remains BLOCKED.
 
 Assessment against the owner's **2026-11-08 Text, Vector & 2D/3D Composition** plan, not a reduced replacement plan. Evidence baseline: Skill `c0b62a19938a6b9cfce2ea6a5ce18f91b91e6344`, tests `57a1aef66efa36784bb576d2919d9843ef786dd1`. Later incremental results must identify their own commit. **Overall BLOCKED / Draft; M3 in progress.** A local missing implementation is not a device blocker.
