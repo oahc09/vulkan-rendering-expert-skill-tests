@@ -30,7 +30,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §7.6 budgets/security | Bounded path/work/atlas input checks, controlled failures, no redistributed system font | Partial: CPU font-service memory and complete cold/hot resource accounting; fixture handle counts are not driver leak proof |
 | §8 capability fallbacks | Explicit knowledge and CPU reject paths | Partial: each unimplemented renderer fallback needs execution before support claims |
 | §10 M1 | Single-provider host implementation above | Partial, not all platforms/languages |
-| §10 M2 | Bitmap and bounded vector mask above | Partial: simple contour mesh added; MSDF/color/world/general mesh/clip remain local open |
+| §10 M2 | Bitmap and bounded vector mask above | Partial: simple contour mesh added; MSDF/world/general mesh/clip remain local open; synthetic COLRv0 bounded pass |
 | §10 M3 | Current primary milestone | In progress: integration and combined stress gaps above |
 | §10 M4 | Split exact-pair CI and local labs | Blocked: cumulative dependency, full labs, semantic Live and target/host gates |
 | §11A quality board | Latin ligature, Arabic single run, O phase, same font/raster conditions | Partial: Chinese, mixed bidi, emoji, comparative representations and general transformations missing; one fixed variable-font axis path tested |
@@ -234,3 +234,24 @@ this is not an integrated production fallback or a general hole tessellator.
 Curve-to-mesh quality, strokes/caps, extrusion/bevel, world depth/shadows/second
 view, full quality board and external platform/device/Live gates remain open.
 Only source/docs and numerical summary publish.
+
+
+## Synthetic COLRv0 color-glyph increment
+
+`text_colrv0_lab` creates a disclosed synthetic two-layer COLRv0 font locally,
+then actual FreeType parses glyph layers and three CPAL palettes and rasterizes
+layer coverage. A real RGBA sampled texture and Vulkan shader perform ordered
+premultiplied layer composition and hardware background blending. Independent
+CPU expectations use predeclared rectangle geometry and raw palette constants,
+not provider coverage or GPU-uploaded colors. The third palette includes
+non-endpoint RGB, explicitly decoded from sRGB to linear; alpha is not decoded.
+
+Three palettes satisfy 1e-6 per-channel error (maximum3.555e-8) and preserved
+sentinels. Actual wrong-color and missing-sRGB-decode draws fail the oracle;
+illegal input size/range reject before GPU setup, and a wrong-palette readback
+copy rejects. Rendering was inspected. No generated/system font is uploaded.
+
+This is a synthetic COLRv0 provider-to-GPU path, not production emoji or COLRv1
+paint-graph/SVG/bitmap-color support. Separate text opacity, arbitrary layer
+complexity, other color formats, active-MRT combination, full typography and
+Android/Windows/device/Live acceptance remain unverified.

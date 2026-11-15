@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "cases": [
+    {
+      "max_linear_error": 3.4053432962366514e-08,
+      "tolerance": 1e-06,
+      "palette": 0,
+      "sentinels": "UNCHANGED"
+    },
+    {
+      "max_linear_error": 2.3701611673310197e-08,
+      "tolerance": 1e-06,
+      "palette": 1,
+      "sentinels": "UNCHANGED"
+    },
+    {
+      "max_linear_error": 3.554989558285371e-08,
+      "tolerance": 1e-06,
+      "palette": 2,
+      "sentinels": "UNCHANGED"
+    }
+  ],
+  "scope": "synthetic COLRv0 two-layer FT palette/coverage provider to actual Vulkan composition; not production color-font certification",
+  "negative_checks": [
+    "actual swapped layer colors rejected",
+    "actual missing sRGB decode rejected",
+    "invalid size/range rejected before GPU"
+  ],
+  "palette_count": 3,
+  "text_opacity": "not separately tested; CPAL alpha only"
+}

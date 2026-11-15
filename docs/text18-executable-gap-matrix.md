@@ -214,3 +214,12 @@ its mirrored winding, with six triangles/area960 per case. Independent ray-cross
 CPU reference, preserved sentinels and actual wrong-fan negatives pass. Holes
 explicitly reject; general topology, curves-to-mesh quality and all 3D extrusion
 features remain open. See the original-plan matrix and vector-mesh fixture scope.
+
+
+### Synthetic COLRv0 color increment
+
+Actual FT layer/three-palette parsing and coverage now feed Vulkan color-layer
+composition. Independent fixed-geometry/palette reference checks linear blend,
+sRGB decoding, and preserved sentinels, with legal wrong-color/missing-decode
+GPU negatives. Synthetic two-layer scope only; not production emoji/COLRv1 or
+independent text-opacity qualification. See fixture README and original matrix.
