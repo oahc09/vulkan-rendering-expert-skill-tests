@@ -806,3 +806,33 @@ size/billboard modes, a second camera view, shadows, broad font quality or targe
 platform/Live acceptance. Same camera at two distances is not a second view.
 Overall Draft/BLOCKED, exact version pairing and sibling/non-main dependencies
 remain unchanged; other original-plan local and external gaps remain explicit.
+
+### Real near-plane clipping with bounded sampling fallback (2026-11-15)
+
+A separate `text_near_clip_lab` leaves the earlier conservative rejection fixture
+unchanged. Same real shaped O and world XY now exercise cross-near z=.875+.5*x,
+on-near z=1, and positive-w entirely outside-near z=.5+.125*x. Unclipped triangles
+are submitted directly; Vulkan clips against near1 with depth clamp disabled.
+Independent CPU Fraction camera rays intersect the original plane, apply clip
+domain and sample original glyph data. Input remains finite w>.125; behind-eye
+and arbitrary complex topology are not implemented.
+
+Original hardware-perspective NEAREST sampling is NOT_QUALIFIED on this software
+backend: cross-near has one pixel (45,10) error0.148235. A separate real GPU UV
+readback shows source row2.999999552965164 versus exact3 (source x161/18), explaining
+the discontinuous texel choice. On-near and outside-near hardware cases pass.
+This failure remains recorded; it is not repaired by moving geometry or widening
+1e-6. A distinct fixed-rational-camera/plane integer-ray texelFetch fallback avoids
+that sampling discontinuity. It performs no near test/discard: actual clipping
+still exclusively happens in Vulkan. Integer intermediate maximum7754040 fits
+int32; independent review exhaustively matched9555 pixel mappings to Fraction.
+
+Three fallback images have max composition8.457e-8, depth2.649e-8 and zero guards;
+nonzero glyph ROI479/1761/0 respectively. Two actual label-only wrong vertex-clamp
+variants expose incorrectly retained glyph output (errors0.6/0.0141176), while
+scene depth and auxiliary MRT checks remain independent and pass. One additional
+UV diagnostic draw is not counted as a positive. Nonpositive-w and NaN reject
+before GPU setup with exact reasons. Only source/stripped numerical evidence is
+published; original failures and full receipts remain local. Draft/BLOCKED,
+branch pairing and target-device/Live limitations persist; this does not qualify
+general perspective NEAREST, arbitrary camera planes, shadows or second views.
