@@ -20,7 +20,7 @@ Legend: **bounded pass** = only the stated executable contract passed; **partial
 | §5.3 temporal quality | 12/20px O with four post-hint quarter-pixel phases; area/centroid bounds preregistered | Partial: bounded nearest half/1/1.5 scale and quarter-turn added; arbitrary angles, perspective and comparative representation board remain open |
 | §6.1–6.2 path subset | CPU M/L/Q/C/Z bounded flattening, holes, two fill rules, finite affine, controlled reject; five masks through Vulkan | Bounded mask and simple concave ear-clipped triangle pass; general hole/curve mesh quality, stroke/cap/join/dash and broader topology are local open |
 | §6.3 clipping | Actual rectangle/circle/rotated-rectangle shader intersection; independent CPU reference and each-layer bypass negatives | Bounded hard fixed clip pass; arbitrary path/AA/stencil/variable clip stack and scene ordering remain local open |
-| §6.4 world/3D | Knowledge only | Local open: world labels, near-plane clipping, finite extrusion/bevel, depth/shadows/second view |
+| §6.4 world/3D | Bounded authored concave solid extrusion with actual front/side/depth readback | Partial: general shaped-font extrusion, near-plane clipping, bevel, world lighting/shadows/second view remain open |
 | §7.1 key/packing | Finite keys; CPU shelf padding, batch atomicity, sealed-page snapshots, two→three real-glyph logical pages | Bounded packing and actual per-glyph UV-quad pass; not full renderer layout |
 | §7.2–7.3 lifecycle | 64 generations/128 readbacks; two actual pages, canceled upload/publication, replacement and retirement; failures retain ownership | Bounded single-queue and combined two-page quad lifecycle pass; six-transition real run/size/direction churn added; bounded fixed-font axis churn added; long stress and broader locale/variation semantics remain open |
 | §7.4 consumers | Two immutable sampled descriptor sets and pending timeline-gated fragment submissions; real fence status | Bounded pass; not shader-already-running, multi-queue or multi-device proof |
@@ -334,3 +334,21 @@ all hard-edge mismatches remain reported (up to41 pixels in one frame); this
 is not pixel consistency, temporal stability or AA quality acceptance. Actual
 stale-scale readback rejects. An initial test's mistaken expectation of changing
 vertex counts was corrected without changing scales or numerical gates.
+
+
+## Bounded solid vector extrusion
+
+One authored concave U contour produces28 realxyz triangles: ear-clipped caps
+and sides, with closed opposite-directed edge incidences and outward cap
+orientation. An actual D32 LESS/write pipeline renders visible front/side faces
+under a fixed affine oblique projection. An independent original-contour ray
+reference, not triangle output, checks all color/depth pixels<=1e-6; normal and
+reversed submission order agree. Maximum color2.384e-8/depth1.133e-7,600front
+and315side pixels. Active auxiliary MRT write masks preserve sentinels. Actual
+disabled-depth and corrupted-depth controls reject.
+
+The initial cap orientation was inconsistent with sides while culling-off hid
+it; review corrected winding and added directed-edge validation before publishing.
+Back cap is submitted but not visible in this view. This is an authored vector
+solid experiment, not general shaped-font extrusion, holes/bevel, lighting,
+shadows, perspective/near-plane, second camera or full renderer integration.
