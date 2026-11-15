@@ -44,3 +44,31 @@ multithreaded recording, concurrent secondary execution, pending reset/reuse,
 legacy render passes, multiview, depth/stencil or full VK03/VK10 acceptance is
 claimed. A failure of device-idle cleanup terminates nonzero without destroying
 possibly pending Vulkan objects; no driver-hang recovery has been injected.
+
+## Serial retired-secondary regeneration
+
+Additional modes `lifecycle` and `lifecycle-wrong-output` preserve the original
+three modes. After the first normal image's successful fence wait, the same
+secondary is reset and re-recorded against a second pipeline whose static
+scissor is width 2. The first primary did **not** use ONE_TIME_SUBMIT. Resetting
+its referenced secondary invalidates it. A deliberate old-primary submit is
+Validation-aborted with exactly `VUID-vkQueueSubmit-pCommandBuffers-00070`,
+returns VK_ERROR_VALIDATION_FAILED_EXT, and its reset fence remains NOT_READY.
+This is an attempted/rejected submit, not GPU execution or a completed fence.
+
+The same primary is then reset/re-recorded against secondary generation 1.
+Actual old image layout TRANSFER_SRC_OPTIMAL transitions back to color attachment
+with a transfer-read→color read/write dependency. A full CLEAR preserves magenta
+outside the width-2 scissor; the left half is drawn with the original asymmetric
+pattern. New submit and fence completion precede readback; all 16 second-generation
+pixels are independently checked, and must differ from generation 0.
+`lifecycle-wrong-output` flips the first expected second-generation red bit and
+must return 6 from the actual comparison. Old wrong-output still tests generation 0.
+
+Logical generation and same-handle booleans describe this program's successful
+record/reset/wait operations; they are not Vulkan driver generation introspection.
+Both pipelines and resources remain alive until completion. If the deliberately
+invalid submit unexpectedly succeeds or produces a different diagnosis, the
+experiment fails and takes retirement/cleanup without resetting pending objects.
+No pending reset, concurrent use, multithreaded recording, or general recovery
+claim is made. This serial extension is not all-command-lifecycle acceptance.

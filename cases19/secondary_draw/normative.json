@@ -7,5 +7,10 @@
     "vuid": "VUID-vkCmdExecuteCommands-imageView-06028",
     "text": "If <code>vkCmdExecuteCommands</code> is being called within a render pass instance begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, if the <code>imageView</code> member of an element of the <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>pColorAttachments</code> parameter to <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, the corresponding element of the <code>pColorAttachmentFormats</code> member of the <a href=\"#VkCommandBufferInheritanceRenderingInfo\">VkCommandBufferInheritanceRenderingInfo</a> structure included in the <code>pNext</code> chain of <a href=\"#VkCommandBufferBeginInfo\">VkCommandBufferBeginInfo</a>::<code>pInheritanceInfo</code> used to begin recording each element of <code>pCommandBuffers</code> <strong class=\"purple\">must</strong> be equal to the format used to create that image view",
     "page": "chapters/cmdbuffers.html"
+  },
+  "lifecycle_entry": {
+    "vuid": "VUID-vkQueueSubmit-pCommandBuffers-00070",
+    "text": "Each element of the <code>pCommandBuffers</code> member of each element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>",
+    "page": "chapters/cmdbuffers.html"
   }
 }

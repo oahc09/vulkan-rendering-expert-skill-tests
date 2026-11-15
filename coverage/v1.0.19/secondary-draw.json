@@ -1,12 +1,12 @@
 {
-  "run_id": "7185866b-2a0d-4f20-be47-460f6195e81a",
-  "source_sha256": "da6641164ae6874d2bdbc3a862e8b584b931eaeb35c1af00626bb31d6ea8843e",
-  "runner_sha256": "39172db97837867772905274d34ea75be0f2dd1274363e4af7b03428a94eebb5",
-  "rules_sha256": "47f747884a5e641fd63e1013e32baf7b19222bd6a2e6b1ab8feddaed4493b226",
+  "run_id": "190151a2-5577-480d-89ae-3e5d7fb0404f",
+  "source_sha256": "1a1db1b5c8111d3c5fd048bbd64d3bcf409ae8cc0a4e10dec81cd4e7c28925f1",
+  "runner_sha256": "965c748dea25d6a9c9c1c0910770b02c81dd08a6772779f20e52fd12a12a04c6",
+  "rules_sha256": "47cfae698744c6927b189d80f5f8d12355ce310c4fbf0a09b0ad299250525d60",
   "draw_rules_sha256": "a3b679a7c7aefd26d12201660317b9540725c61f8e302e9ebb260b2712003f1e",
-  "normative_sha256": "70299324915c2b9484480ede21b331828db1eb22ad111e6d765ed957f78791f8",
+  "normative_sha256": "66fc274b91518914086a97de817e83cb07cab9c4d266dcf93c4169c389d0e2f0",
   "attachment_rules_sha256": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
-  "binary_sha256": "60adf9a533ac313f305463213233504a5f48e2e01110693400172f59bd9c1dbf",
+  "binary_sha256": "4889e86a7fc5c54f3561072fd763da7817584aa9f7a6f5c5756c62effe4932b2",
   "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
   "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
   "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
@@ -248,6 +248,7 @@
           "rc": 0
         }
       },
+      "lifecycle_admission": null,
       "secondary_graphics": {
         "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
         "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
@@ -401,6 +402,7 @@
           "rc": 0
         }
       },
+      "lifecycle_admission": null,
       "secondary_graphics": {
         "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
         "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
@@ -660,6 +662,7 @@
           "rc": 6
         }
       },
+      "lifecycle_admission": null,
       "secondary_graphics": {
         "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
         "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
@@ -681,6 +684,850 @@
       "stdout_sha256": "bf56f495dca6f2b5cf7bc993195c1874ab55425df1e81125eae43f7d38051408",
       "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "normative": null
+    },
+    "lifecycle": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 37,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "generation_retired": {
+          "kind": "generation_retired",
+          "generation": 0,
+          "renderFenceSuccess": true
+        },
+        "generation_recorded": {
+          "kind": "generation_recorded",
+          "generation": 1,
+          "secondaryResetAfterFence": true,
+          "scissor": [
+            0,
+            0,
+            2,
+            4
+          ],
+          "pipelineOrdinal": 1
+        },
+        "generation_identity": {
+          "kind": "generation_identity",
+          "primaryBeginFlags": 0,
+          "primaryRecordedGeneration": 0,
+          "secondaryGeneration": 1,
+          "samePrimary": true,
+          "sameSecondary": true,
+          "sameImage": true,
+          "sameReadback": true,
+          "sameFence": true
+        },
+        "stale_fence": {
+          "kind": "stale_fence",
+          "status": 1
+        },
+        "stale_attempt": {
+          "kind": "stale_attempt",
+          "apiResult": -1000011001,
+          "newErrors": 1,
+          "submitted": false
+        },
+        "generation_dependency": {
+          "kind": "generation_dependency",
+          "oldLayout": 6,
+          "newLayout": 2,
+          "srcAccess": 2048,
+          "dstAccess": 384,
+          "srcStage": 4096,
+          "dstStage": 1024,
+          "aspect": 1,
+          "levels": 1,
+          "layers": 1
+        },
+        "primary_rebuilt": {
+          "kind": "primary_rebuilt",
+          "recordedGeneration": 1,
+          "secondaryGeneration": 1,
+          "oldLayout": 6
+        },
+        "generation_execution": {
+          "kind": "generation_execution",
+          "generation": 1,
+          "primaryRerecorded": true,
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "lifecycle_admission": {
+        "status": "RETIRED_SECONDARY_RERECORD_PRIMARY_REBUILD_VERIFIED",
+        "scope": "Serial two-generation authored CPU fixture, not pending reset or concurrent execution."
+      },
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "SECONDARY_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [
+        "stale-primary-submit VUID-vkQueueSubmit-pCommandBuffers-00070"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dac9fc68d1c4f6d3b265d9adf5e362b74d15dac7b8ff8373868a3b6d0c0bff70",
+      "stderr_sha256": "837b6a0a1f2a897ccd39555eb61b69f0d87b97e5175d7fc8b765fabd6baca8cb",
+      "normative": {
+        "vuid": "VUID-vkQueueSubmit-pCommandBuffers-00070",
+        "text": "Each element of the <code>pCommandBuffers</code> member of each element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>",
+        "page": "chapters/cmdbuffers.html"
+      }
+    },
+    "lifecycle-wrong-output": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 37,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "generation_retired": {
+          "kind": "generation_retired",
+          "generation": 0,
+          "renderFenceSuccess": true
+        },
+        "generation_recorded": {
+          "kind": "generation_recorded",
+          "generation": 1,
+          "secondaryResetAfterFence": true,
+          "scissor": [
+            0,
+            0,
+            2,
+            4
+          ],
+          "pipelineOrdinal": 1
+        },
+        "generation_identity": {
+          "kind": "generation_identity",
+          "primaryBeginFlags": 0,
+          "primaryRecordedGeneration": 0,
+          "secondaryGeneration": 1,
+          "samePrimary": true,
+          "sameSecondary": true,
+          "sameImage": true,
+          "sameReadback": true,
+          "sameFence": true
+        },
+        "stale_fence": {
+          "kind": "stale_fence",
+          "status": 1
+        },
+        "stale_attempt": {
+          "kind": "stale_attempt",
+          "apiResult": -1000011001,
+          "newErrors": 1,
+          "submitted": false
+        },
+        "generation_dependency": {
+          "kind": "generation_dependency",
+          "oldLayout": 6,
+          "newLayout": 2,
+          "srcAccess": 2048,
+          "dstAccess": 384,
+          "srcStage": 4096,
+          "dstStage": 1024,
+          "aspect": 1,
+          "levels": 1,
+          "layers": 1
+        },
+        "primary_rebuilt": {
+          "kind": "primary_rebuilt",
+          "recordedGeneration": 1,
+          "secondaryGeneration": 1,
+          "oldLayout": 6
+        },
+        "generation_execution": {
+          "kind": "generation_execution",
+          "generation": 1,
+          "primaryRerecorded": true,
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 6
+        }
+      },
+      "lifecycle_admission": {
+        "status": "RETIRED_SECONDARY_RERECORD_PRIMARY_REBUILD_VERIFIED",
+        "scope": "Serial two-generation authored CPU fixture, not pending reset or concurrent execution."
+      },
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "SECONDARY_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [
+        "stale-primary-submit VUID-vkQueueSubmit-pCommandBuffers-00070"
+      ],
+      "exit_code": 6,
+      "stdout_sha256": "0474ba1fbf2f044092f0ee2e19b0de59cab9e65db97681bd9be1a37258036fa8",
+      "stderr_sha256": "837b6a0a1f2a897ccd39555eb61b69f0d87b97e5175d7fc8b765fabd6baca8cb",
+      "normative": {
+        "vuid": "VUID-vkQueueSubmit-pCommandBuffers-00070",
+        "text": "Each element of the <code>pCommandBuffers</code> member of each element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>",
+        "page": "chapters/cmdbuffers.html"
+      }
     }
   },
   "shaders": {

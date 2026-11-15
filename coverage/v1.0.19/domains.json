@@ -76,11 +76,16 @@
       "scope": "one secondary records actual shader draw with dynamic-rendering inheritance, primary execute/render/readback with independent full pixels; safe inheritance-format rejection and wrong-output negative",
       "domain_complete": false,
       "still_open": [
-        "general command lifecycle and re-record invalidation graph",
+        "general command lifecycle, arbitrary reference graph and concurrent re-record invalidation",
         "nested/queries/multiview/depth and traditional renderpass inheritance",
         "parallel recording or simultaneous pending reuse",
         "physical/mobile performance and external-engine/Live/blind acceptance"
-      ]
+      ],
+      "lifecycle_extension": {
+        "scope": "same primary/secondary/image/readback, completed generation0, secondary reset/rerecord generation1, stale primary submit callback rejected, primary rerecord and distinct complete pixels; second-generation wrong oracle",
+        "evidence": "secondary-draw.json",
+        "not_production_repair": true
+      }
     }
   },
   {
@@ -377,11 +382,16 @@
       "scope": "one secondary records actual shader draw with dynamic-rendering inheritance, primary execute/render/readback with independent full pixels; safe inheritance-format rejection and wrong-output negative",
       "domain_complete": false,
       "still_open": [
-        "general command lifecycle and re-record invalidation graph",
+        "general command lifecycle, arbitrary reference graph and concurrent re-record invalidation",
         "nested/queries/multiview/depth and traditional renderpass inheritance",
         "parallel recording or simultaneous pending reuse",
         "physical/mobile performance and external-engine/Live/blind acceptance"
-      ]
+      ],
+      "lifecycle_extension": {
+        "scope": "same primary/secondary/image/readback, completed generation0, secondary reset/rerecord generation1, stale primary submit callback rejected, primary rerecord and distinct complete pixels; second-generation wrong oracle",
+        "evidence": "secondary-draw.json",
+        "not_production_repair": true
+      }
     }
   },
   {
