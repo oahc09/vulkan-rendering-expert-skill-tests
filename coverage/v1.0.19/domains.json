@@ -1,0 +1,164 @@
+[
+  {
+    "id": "VK01",
+    "domain": "初始化、加载与版本",
+    "existing_route": "[合同入口](01_instance_device_queue/instance.md#loader-dispatch-contract)",
+    "open_review": "Loader/ICD/layers、allocation callbacks、版本/alias细节仍需逐项复核",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK02",
+    "domain": "设备、队列与能力",
+    "existing_route": "[合同入口](01_instance_device_queue/physical_device.md#device-group-capability-contract)",
+    "open_review": "queue priority、全部features/limits/profiles组合",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK03",
+    "domain": "对象与命令管理",
+    "existing_route": "[合同入口](03_command_buffer/command_buffer.md)",
+    "open_review": "各命令host sync、secondary/inheritance、conditional rendering组合",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK04",
+    "domain": "内存与驻留",
+    "existing_route": "[合同入口](04_buffer_image_memory/memory_allocation.md#memory-host-alias-contract)",
+    "open_review": "全部allocation/BDA/sparse/protected/alias扩展差异",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK05",
+    "domain": "资源、格式与数据移动",
+    "existing_route": "[合同入口](04_buffer_image_memory/image.md)",
+    "open_review": "逐format/多平面/压缩格式/usage/copy组合",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK06",
+    "domain": "同步与内存模型",
+    "existing_route": "[合同入口](08_synchronization/synchronization2.md#cross-queue-host-contract)",
+    "open_review": "全部stage/access适用性和memory model交互",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK07",
+    "domain": "资源绑定与布局",
+    "existing_route": "[合同入口](05_descriptor/push_descriptor.md#push-descriptor-count-lifetime)",
+    "open_review": "各binding model与pipeline layout兼容性的全量扩展合同",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK08",
+    "domain": "Shader / SPIR-V",
+    "existing_route": "[合同入口](06_pipeline/shader_module.md#shader-artifact-contract)",
+    "open_review": "全部capability/opcode/feature映射、grammar差异",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK09",
+    "domain": "Pipeline 与状态",
+    "existing_route": "[合同入口](06_pipeline/shader_module.md#shader-object-contract)",
+    "open_review": "全部dynamic state/cache/binary/library/parallel create条件",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK10",
+    "domain": "光栅与帧缓冲",
+    "existing_route": "[合同入口](07_rendering/mobile_tile_rendering.md#tile-capability-matrix)",
+    "open_review": "raster/depth/stencil/blend/MSAA/FDM/FSR等逐扩展审计",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK11",
+    "domain": "绘制与 GPU 生成工作",
+    "existing_route": "[合同入口](03_command_buffer/indirect_commands.md#device-generated-commands-contract)",
+    "open_review": "DGC/transform feedback/mesh/task全部命令规则",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK12",
+    "domain": "Query 与测量",
+    "existing_route": "[合同入口](04_buffer_image_memory/query_pool.md#query-generation-contract)",
+    "open_review": "性能query/calibrated timestamp全部扩展规则",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK13",
+    "domain": "WSI 与平台",
+    "existing_route": "[合同入口](02_surface_swapchain/surface.md)",
+    "open_review": "每个公开平台扩展、present timing/id/wait/maintenance组合",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK14",
+    "domain": "完整光追 API 链",
+    "existing_route": "[合同入口](06_pipeline/pipeline.md#ray-tracing-pipeline-contract)",
+    "open_review": "全量AS/SBT/RT条件扩展，未测设备",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK15",
+    "domain": "Vulkan Video",
+    "existing_route": "[合同入口](04_buffer_image_memory/image.md#vulkan-video-codec-differences)",
+    "open_review": "codec全部valid usage和辅助扩展深层合同，未测codec设备",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK16",
+    "domain": "特殊计算与新扩展族",
+    "existing_route": "[合同入口](06_pipeline/compute_pipeline.md#special-compute-contract)",
+    "open_review": "optical/tensor/data graph/cooperative/地址类逐扩展差异",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK17",
+    "domain": "外部互操作与隔离",
+    "existing_route": "[合同入口](04_buffer_image_memory/external_resource_interop.md#interop-handle-matrix)",
+    "open_review": "各平台handle消费/权限与跨API兼容完整组合",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  },
+  {
+    "id": "VK18",
+    "domain": "调试、鲁棒性与工程治理",
+    "existing_route": "[合同入口](../04_debug_playbooks/02_crash_hang/device_lost.md#fault-report-order-1368)",
+    "open_review": "全部robustness/error/VUID/capture规则与真实宿主行为",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1"
+  }
+]
