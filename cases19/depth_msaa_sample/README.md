@@ -15,3 +15,9 @@ Controls:
 - `wrong-output`: same correct rendering but a genuinely changed expected channel fails (exit 6).
 
 All resources remain live through a successful fence wait. CPU ICD/coherent host output only. No stencil, depth bounds, depth resolve, depth-plane/sample-plane readback, hardware performance, geometric edge-AA quality, arbitrary shader proof, concurrent queues, or full VK10 acceptance. Older render_sample/msaa_sample sources are unchanged.
+
+## Explicit sample-count variants
+
+`--samples 1` executes the same shader/near-far sequence at 1×, renders directly to the sampled source image, uses no color resolve, and allocates no unused multisample-color image. `--samples 4` retains the original behavior and remains the default. All four controls run for either choice. Only requested sample support is required (the 1× path does not require 4× support).
+
+Each successful `vkAllocateMemory` emits its actual allocationSize/type receipt. The aggregate is the sum of simultaneously live, explicit application allocations in this scene. It is **not** GPU residency, memory-budget usage, peak VRAM, total process/driver memory, timing, thermal state or bandwidth. Comparing equal endpoint pixels in this full-coverage scene cannot establish general edge-AA equivalence.

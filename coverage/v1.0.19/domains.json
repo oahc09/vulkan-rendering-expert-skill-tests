@@ -486,6 +486,20 @@
         "mixed sample and all dynamic state variants",
         "physical hardware, external project and Live/blind acceptance"
       ]
+    },
+    "sample_choice_integration": {
+      "contract": "optimize_frame_time.md#delivery19-sample-choice",
+      "entry": "checks19/compare_depth_samples.py",
+      "rules": "tools/sample_decision19.py",
+      "scope": "fixed same-workload1x/4x/1x actual execution with strict raw verification, endpoint correctness and allocation-request budget choice",
+      "domain_complete": false,
+      "performance_verified": false,
+      "edge_quality_verified": false,
+      "still_open": [
+        "complete sample/quality/performance decision families",
+        "physical/mobile sustained measurements",
+        "full semantic denominator and original Live/blind acceptance"
+      ]
     }
   },
   {
