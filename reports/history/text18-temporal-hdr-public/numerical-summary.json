@@ -1,0 +1,165 @@
+{
+  "status": "PASS",
+  "pollution_background_error": 2.9802322387695312e-08,
+  "pollution_ui_error": 0.0949999988079071,
+  "validation_enabled": true,
+  "cases": {
+    "ui-O": [
+      {
+        "frame": 0,
+        "temporal_error": 0.0,
+        "history_error": 0.0,
+        "consumer_error": 2.1913472325607586e-07,
+        "ideal_end_to_end_error": 2.1913472325607586e-07,
+        "max_linear_rgb": 2.5475001335144043,
+        "accepted_history_pixels": 0
+      },
+      {
+        "frame": 1,
+        "temporal_error": 2.384185787684956e-08,
+        "history_error": 2.384185787684956e-08,
+        "consumer_error": 1.4901161193847656e-07,
+        "ideal_end_to_end_error": 1.4901161193847656e-07,
+        "max_linear_rgb": 2.4099998474121094,
+        "accepted_history_pixels": 3136
+      },
+      {
+        "frame": 2,
+        "temporal_error": 3.6954879711892374e-08,
+        "history_error": 3.6954879711892374e-08,
+        "consumer_error": 2.103693348409763e-07,
+        "ideal_end_to_end_error": 2.266729581812399e-07,
+        "max_linear_rgb": 2.5441999435424805,
+        "accepted_history_pixels": 3185
+      },
+      {
+        "frame": 3,
+        "temporal_error": 0.0,
+        "history_error": 0.0,
+        "consumer_error": 1.4901161193847656e-07,
+        "ideal_end_to_end_error": 1.4901161193847656e-07,
+        "max_linear_rgb": 2.4700000286102295,
+        "accepted_history_pixels": 0
+      }
+    ],
+    "ui-F": [
+      {
+        "frame": 0,
+        "temporal_error": 0.0,
+        "history_error": 0.0,
+        "consumer_error": 1.52342459758259e-07,
+        "ideal_end_to_end_error": 1.52342459758259e-07,
+        "max_linear_rgb": 2.5475001335144043,
+        "accepted_history_pixels": 0
+      },
+      {
+        "frame": 1,
+        "temporal_error": 2.384185787684956e-08,
+        "history_error": 2.384185787684956e-08,
+        "consumer_error": 1.4901161193847656e-07,
+        "ideal_end_to_end_error": 1.4901161193847656e-07,
+        "max_linear_rgb": 2.4099998474121094,
+        "accepted_history_pixels": 3136
+      },
+      {
+        "frame": 2,
+        "temporal_error": 3.6954879711892374e-08,
+        "history_error": 3.6954879711892374e-08,
+        "consumer_error": 2.103693348409763e-07,
+        "ideal_end_to_end_error": 2.266729581812399e-07,
+        "max_linear_rgb": 2.5441999435424805,
+        "accepted_history_pixels": 3185
+      },
+      {
+        "frame": 3,
+        "temporal_error": 0.0,
+        "history_error": 0.0,
+        "consumer_error": 1.4901161193847656e-07,
+        "ideal_end_to_end_error": 1.4901161193847656e-07,
+        "max_linear_rgb": 2.4700000286102295,
+        "accepted_history_pixels": 0
+      }
+    ],
+    "pollution": [
+      {
+        "frame": 0,
+        "temporal_error": 0.0,
+        "history_error": 0.0949999988079071,
+        "consumer_error": 2.1913472325607586e-07,
+        "ideal_end_to_end_error": 2.1913472325607586e-07,
+        "max_linear_rgb": 2.5475001335144043,
+        "accepted_history_pixels": 0
+      },
+      {
+        "frame": 1,
+        "temporal_error": 0.05600000619888307,
+        "history_error": 0.05600000619888307,
+        "consumer_error": 1.4901161193847656e-07,
+        "ideal_end_to_end_error": 0.16800001859664926,
+        "max_linear_rgb": 2.4099998474121094,
+        "accepted_history_pixels": 3136
+      },
+      {
+        "frame": 2,
+        "temporal_error": 0.043199989795684846,
+        "history_error": 0.09920001387596133,
+        "consumer_error": 2.103693348409763e-07,
+        "ideal_end_to_end_error": 0.1296000587940216,
+        "max_linear_rgb": 2.5441999435424805,
+        "accepted_history_pixels": 3185
+      },
+      {
+        "frame": 3,
+        "temporal_error": 0.0,
+        "history_error": 5.960464477539063e-08,
+        "consumer_error": 1.4901161193847656e-07,
+        "ideal_end_to_end_error": 1.4901161193847656e-07,
+        "max_linear_rgb": 2.4700000286102295,
+        "accepted_history_pixels": 0
+      }
+    ],
+    "tone": [
+      {
+        "frame": 0,
+        "temporal_error": 0.0,
+        "history_error": 0.0,
+        "consumer_error": 1.6758579909801483,
+        "ideal_end_to_end_error": 1.6758579909801483,
+        "max_linear_rgb": 2.3858447074890137,
+        "accepted_history_pixels": 0
+      },
+      {
+        "frame": 1,
+        "temporal_error": 2.384185787684956e-08,
+        "history_error": 2.384185787684956e-08,
+        "consumer_error": 1.703255146741867,
+        "ideal_end_to_end_error": 1.703255146741867,
+        "max_linear_rgb": 0.7067448496818542,
+        "accepted_history_pixels": 3136
+      },
+      {
+        "frame": 2,
+        "temporal_error": 3.6954879711892374e-08,
+        "history_error": 3.6954879711892374e-08,
+        "consumer_error": 1.7087400555610657,
+        "ideal_end_to_end_error": 1.7087400555610657,
+        "max_linear_rgb": 2.385152578353882,
+        "accepted_history_pixels": 3185
+      },
+      {
+        "frame": 3,
+        "temporal_error": 0.0,
+        "history_error": 0.0,
+        "consumer_error": 1.7581844925880432,
+        "ideal_end_to_end_error": 1.7581844925880432,
+        "max_linear_rgb": 0.7118155360221863,
+        "accepted_history_pixels": 0
+      }
+    ]
+  },
+  "paired_ui_history_byte_equal": true,
+  "temporal_tolerance": 1e-05,
+  "consumer_tolerance": 1e-06,
+  "excluded_count": 0,
+  "scope": "same-device existing scalar visibility temporal compute -> linear HDR mapping -> real glyph UI, not RGB TAA/HDR display or world motion"
+}
