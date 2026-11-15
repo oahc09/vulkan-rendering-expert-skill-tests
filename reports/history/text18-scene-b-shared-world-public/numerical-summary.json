@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "shadow_depth_error": 1.48512578235227e-07,
+  "cases": {
+    "A": {
+      "color_error": 1.273435705773096e-07,
+      "depth_error": 2.97025156470454e-07,
+      "roi": {
+        "cap": 129,
+        "side": 26,
+        "shadow": 83,
+        "label_visible": 80,
+        "label_hidden": 42
+      }
+    },
+    "B": {
+      "color_error": 1.273435705773096e-07,
+      "depth_error": 1.798120026208494e-07,
+      "roi": {
+        "cap": 129,
+        "side": 38,
+        "shadow": 171,
+        "label_visible": 85,
+        "label_hidden": 37
+      }
+    },
+    "B-no-shadow": {
+      "color_error": 0.600000011920929,
+      "depth_error": 1.798120026208494e-07,
+      "roi": {
+        "cap": 129,
+        "side": 38,
+        "shadow": 171,
+        "label_visible": 85,
+        "label_hidden": 37
+      }
+    },
+    "B-stale-label": {
+      "color_error": 0.2250000238418579,
+      "depth_error": 1.798120026208494e-07,
+      "roi": {
+        "cap": 129,
+        "side": 38,
+        "shadow": 171,
+        "label_visible": 85,
+        "label_hidden": 37
+      }
+    }
+  },
+  "tolerance": 1e-06,
+  "excluded": 0,
+  "device_count": 1,
+  "positive_views": 2,
+  "negative_views": 2,
+  "scene_draws_per_view": 4,
+  "scope": "Single software Vulkan Device; shared real L caster/visible mesh, real O label, receiver and ordinary occluder; two oblique parallel views. Not complete Scene B, real Surface/hardware/Live or perspective.",
+  "shared_resources": {
+    "light_images": 1,
+    "caster_vertex_buffers": 1,
+    "glyph_images": 1,
+    "active_color_attachments": 3
+  },
+  "limits": [
+    "Fixed hard-shadow comparison and opaque prism color, not caster lighting/material quality",
+    "Glyph image reuploaded in-place per completed view, not once-uploaded cache performance",
+    "Path/stroke/nested-clip/negative-scale/near-plane combination not included",
+    "No arbitrary allocation/device-loss cleanup or production native memory claims"
+  ]
+}

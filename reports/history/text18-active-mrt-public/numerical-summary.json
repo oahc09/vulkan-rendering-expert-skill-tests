@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "active_color_attachments": 3,
+  "depth_format": "D32_SFLOAT",
+  "numeric": {
+    "max_color_error": 1.907348634588857e-08,
+    "tolerance": 1e-06,
+    "velocity_id_unchanged_pixels": 3185,
+    "depth_unchanged_pixels": 3185
+  },
+  "negative_checks": [
+    "legal active MRT write mask corruption rejected",
+    "legal depth-write corruption rejected"
+  ],
+  "scope": "single pass software Vulkan independentBlend write masking and depth write disable; not platform rendergraph integration"
+}

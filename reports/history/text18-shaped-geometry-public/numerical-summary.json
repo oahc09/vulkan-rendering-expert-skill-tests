@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "positive_routes": {
+    "L": "shaped glyph47 actual front/back/side mesh",
+    "O": "shaped glyph50 multiple contours rejected then actual planar bitmap fallback"
+  },
+  "mesh": [
+    {
+      "max_color_error": 2.384185793236071e-08,
+      "max_depth_error": 1.5497207639381116e-07,
+      "tolerance": 1e-06,
+      "surface_pixels": {
+        "background": 2879,
+        "front": 129,
+        "side": 177
+      },
+      "glyph_id": 47,
+      "triangles": 20
+    }
+  ],
+  "fallback": {
+    "max_linear_error": 7.152557379708213e-08,
+    "max_roi_error": 7.152557379708213e-08,
+    "roi_pixels": 122,
+    "partial_pixels": 86,
+    "tolerance": 1e-06,
+    "sentinels": "UNCHANGED"
+  },
+  "enclosed_hole_pixels": 62,
+  "negative_checks": [
+    "actual F glyph41 mesh rejected against L source outline",
+    "actual forced hole-fill GPU output rejected"
+  ],
+  "limits": [
+    "fixed trusted Linux font/provider and two positive glyphs",
+    "outline no-scale normalized height24, planar fallback independently uses existing20px hinted bitmap placement",
+    "fallback explicit flat representation, not depth/shadow equivalence to solid glyph",
+    "no bevel, lighting/shadows/second view, general world labels",
+    "mesh active MRT/depth; planar mask UNUSED preservation",
+    "font parser/shaping/raster quality not independently certified",
+    "target platform and semantic Live unverified"
+  ]
+}

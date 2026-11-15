@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "main_lifecycle_draws": 4,
+  "positive_verified_images": 3,
+  "diagnostic_wrong_route_draws": 1,
+  "active_color_attachments": 3,
+  "clip_layers": 3,
+  "conditions": {
+    "destinations": [
+      [
+        25,
+        25
+      ],
+      [
+        11,
+        19
+      ],
+      [
+        27,
+        10
+      ]
+    ],
+    "clip_bypass_nonzero_pixels": [
+      22,
+      38,
+      25
+    ],
+    "positive_nonzero_pixels": 252,
+    "tolerance": 1e-06,
+    "gpu_atlas_unclipped": true
+  },
+  "rows": [
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 252,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "old-A"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 252,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "route-after-cancel"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 4.908617801113735e-08,
+      "max_roi_error": 4.908617801113735e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 252,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "new-B"
+    }
+  ],
+  "negative_checks": [
+    "bypass-1",
+    "bypass-2",
+    "bypass-3",
+    "bad-write",
+    "actual canceled-route image rejected",
+    "controlled pending cleanup"
+  ],
+  "scope": "same actual pending glyph submit: packed UV + three hard shader clips + active MRT protection + page cancellation/growth/retirement",
+  "limits": [
+    "software Vulkan",
+    "one queue gated at ALL_COMMANDS, no active shader or parallel claim",
+    "no depth/stencil/general path clip",
+    "no GPU mask producer pass",
+    "not production leak/multithread/target device acceptance"
+  ]
+}

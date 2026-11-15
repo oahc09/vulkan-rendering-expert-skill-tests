@@ -11,7 +11,107 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        cohort: [legacy16, core17]
+        cohort: [legacy16, text18]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout test repository
+        uses: actions/checkout@v4
+        with:
+          path: tests
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Resolve reviewed paired candidate (no fallback)
+        id: candidate
+        run: |
+          SHA=$(python tests/tests/run_text18_versioned_gate.py --cohort '${{ matrix.cohort }}' --resolve)
+          echo "sha=$SHA" >> "$GITHUB_OUTPUT"
+      - name: Checkout paired skill revision
+        uses: actions/checkout@v4
+        with:
+          repository: oahc09/vulkan-rendering-expert-skill
+          ref: ${{ steps.candidate.outputs.sha }}
+          path: skill
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Record exact revisions
+        run: |
+          git -C tests rev-parse HEAD
+          git -C skill rev-parse HEAD
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install test dependencies
+        run: python -m pip install pytest pyyaml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Skill source and safety contracts (same pinned candidate)
+        working-directory: skill
+        run: |
+          node scripts/check-skill.mjs
+          python scripts/host_contract.py
+          python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Version-scoped static gates (no cross-version assertion weakening)
+        run: python tests/tests/run_text18_versioned_gate.py --cohort '${{ matrix.cohort }}' --skill skill
+      - name: Host Unit (CPU contracts, not GPU execution)
+        run: python -m pytest -q -m host_unit tests/tests
+      - name: Snapshot (historical v1.0.8, not live evidence)
+        run: python -m pytest -q -m snapshot tests/tests
+      - name: Live availability (no model credentials in PR jobs)
+        run: python tests/tests/run_live_model_behavior.py --output-dir /tmp/vulkan-live-status
+  core17-dependency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout TEXT18 dependency specification
+        uses: actions/checkout@v4
+        with:
+          path: text18-spec
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          persist-credentials: false
+      - name: Resolve independent immutable CORE17 pair
+        id: dependency
+        run: |
+          echo "tests_sha=$(python text18-spec/tests/run_core17_dependency.py --resolve tests_sha)" >> "$GITHUB_OUTPUT"
+          echo "skill_sha=$(python text18-spec/tests/run_core17_dependency.py --resolve skill_sha)" >> "$GITHUB_OUTPUT"
+      - name: Checkout original CORE17 tests unchanged
+        uses: actions/checkout@v4
+        with:
+          repository: oahc09/vulkan-rendering-expert-skill-tests
+          ref: ${{ steps.dependency.outputs.tests_sha }}
+          path: core17-tests
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Checkout original paired Skill17
+        uses: actions/checkout@v4
+        with:
+          repository: oahc09/vulkan-rendering-expert-skill
+          ref: ${{ steps.dependency.outputs.skill_sha }}
+          path: core17-skill
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Install unchanged static dependencies
+        run: python -m pip install pytest pyyaml
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Skill17 source and safety contracts
+        working-directory: core17-skill
+        run: |
+          node scripts/check-skill.mjs
+          python scripts/host_contract.py
+          python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Independent CORE17 static dependency gate (not full acceptance)
+        run: python text18-spec/tests/run_core17_dependency.py --tests core17-tests --skill core17-skill --output /tmp/core17-dependency-result.json
+  core17-current:
+    strategy:
+      fail-fast: false
+      matrix:
+        cohort: [core17]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout test repository

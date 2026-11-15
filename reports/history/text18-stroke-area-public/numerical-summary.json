@@ -1,0 +1,243 @@
+{
+  "status": "BOUNDED_EXACT_RECTANGLE_AREA_PASS",
+  "validation_enabled": true,
+  "composition_tolerance": 1e-06,
+  "preregistered_area_tolerance": 1e-06,
+  "cases": [
+    {
+      "name": "horizontal-butt-0",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 126,
+      "partial_pixels": 50,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-butt-1",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 105,
+      "partial_pixels": 10,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-butt-2",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 126,
+      "partial_pixels": 50,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-butt-3",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 120,
+      "partial_pixels": 40,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-square-0",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 156,
+      "partial_pixels": 60,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-square-1",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 125,
+      "partial_pixels": 0,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-square-2",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 156,
+      "partial_pixels": 60,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "horizontal-square-3",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 156,
+      "partial_pixels": 60,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-butt-0",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 168,
+      "partial_pixels": 83,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-butt-1",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 162,
+      "partial_pixels": 72,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-butt-2",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 168,
+      "partial_pixels": 83,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-butt-3",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 166,
+      "partial_pixels": 80,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-square-0",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 200,
+      "partial_pixels": 97,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-square-1",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 192,
+      "partial_pixels": 84,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-square-2",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 200,
+      "partial_pixels": 97,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    },
+    {
+      "name": "diagonal-square-3",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 7.152557379708213e-08,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 200,
+      "partial_pixels": 98,
+      "max_stroke_roi_composition_error": 7.152557379708213e-08,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    }
+  ],
+  "phase_sequences": [
+    {
+      "group": "horizontal-butt",
+      "measured_phase_transitions": 3,
+      "max_coverage_delta_error": 0.0,
+      "qualification": "diagnostic, no additional temporal gate"
+    },
+    {
+      "group": "horizontal-square",
+      "measured_phase_transitions": 3,
+      "max_coverage_delta_error": 0.0,
+      "qualification": "diagnostic, no additional temporal gate"
+    },
+    {
+      "group": "diagonal-butt",
+      "measured_phase_transitions": 3,
+      "max_coverage_delta_error": 0.0,
+      "qualification": "diagnostic, no additional temporal gate"
+    },
+    {
+      "group": "diagonal-square",
+      "measured_phase_transitions": 3,
+      "max_coverage_delta_error": 0.0,
+      "qualification": "diagnostic, no additional temporal gate"
+    }
+  ],
+  "actual_gpu_negatives": [
+    {
+      "mode": "hard-center",
+      "name": "diagonal-butt-0",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 0.30156242847442627,
+      "max_alpha_inferred_coverage_error": 0.5026041666666667,
+      "stroke_roi_pixels": 168,
+      "partial_pixels": 83,
+      "max_stroke_roi_composition_error": 0.30156242847442627,
+      "max_partial_pixel_coverage_error": 0.5026041666666667,
+      "excluded_count": 0
+    },
+    {
+      "mode": "double-alpha",
+      "name": "diagonal-butt-0",
+      "max_depth_preservation_error": 0.0,
+      "max_composition_depth_error": 0.22483177781105046,
+      "max_alpha_inferred_coverage_error": 0.0,
+      "stroke_roi_pixels": 168,
+      "partial_pixels": 83,
+      "max_stroke_roi_composition_error": 0.22483177781105046,
+      "max_partial_pixel_coverage_error": 0.0,
+      "excluded_count": 0
+    }
+  ],
+  "limits": [
+    "single straight butt/square strokes only",
+    "exact rational rectangle area reference, not sampled approximation",
+    "not round/joins/curves/general AA/MSAA",
+    "alpha-inferred coverage after real blend, not direct separate coverage readback",
+    "configured software Vulkan not target device or Live"
+  ]
+}

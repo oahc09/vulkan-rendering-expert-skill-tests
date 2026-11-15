@@ -1,0 +1,109 @@
+{
+  "basis": "Frozen from first actual trusted-source Linux HarfBuzz run before later regression checks; not independent platform typography certification",
+  "runs": {
+    "ffi": {
+      "provider_version": "10.2.0",
+      "font_sha256": "8cb29f7db250ebb2551a6ce2c1e0bfd5a0eb520e9e233370db0493e82e1f36f7",
+      "face_index": 0,
+      "upem": 2048,
+      "direction": "ltr",
+      "language": "en",
+      "glyphs": [
+        {
+          "id": 3314,
+          "cluster_utf8_byte": 0,
+          "x_advance": 1455,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        },
+        {
+          "id": 76,
+          "cluster_utf8_byte": 2,
+          "x_advance": 655,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        }
+      ]
+    },
+    "á": {
+      "provider_version": "10.2.0",
+      "font_sha256": "8cb29f7db250ebb2551a6ce2c1e0bfd5a0eb520e9e233370db0493e82e1f36f7",
+      "face_index": 0,
+      "upem": 2048,
+      "direction": "ltr",
+      "language": "en",
+      "glyphs": [
+        {
+          "id": 163,
+          "cluster_utf8_byte": 0,
+          "x_advance": 1221,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        }
+      ]
+    },
+    "سلام": {
+      "provider_version": "10.2.0",
+      "font_sha256": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+      "face_index": 0,
+      "upem": 2048,
+      "direction": "rtl",
+      "language": "ar",
+      "glyphs": [
+        {
+          "id": 1390,
+          "cluster_utf8_byte": 6,
+          "x_advance": 1268,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        },
+        {
+          "id": 5366,
+          "cluster_utf8_byte": 2,
+          "x_advance": 1222,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        },
+        {
+          "id": 5293,
+          "cluster_utf8_byte": 0,
+          "x_advance": 1716,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        }
+      ]
+    },
+    "中文": {
+      "provider_version": "10.2.0",
+      "font_sha256": "b76b0433203017ca80401b2ee0dd69350349871c4b19d504c34dbdd80541690a",
+      "face_index": 2,
+      "upem": 1000,
+      "direction": "ltr",
+      "language": "zh",
+      "glyphs": [
+        {
+          "id": 9544,
+          "cluster_utf8_byte": 0,
+          "x_advance": 1000,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        },
+        {
+          "id": 20036,
+          "cluster_utf8_byte": 3,
+          "x_advance": 1000,
+          "y_advance": 0,
+          "x_offset": 0,
+          "y_offset": 0
+        }
+      ]
+    }
+  }
+}

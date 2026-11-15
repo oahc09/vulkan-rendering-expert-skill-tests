@@ -40,8 +40,8 @@ def test_pair_guards_reject_before_pytest(monkeypatch,tmp_path,failure):
 def test_workflow_has_explicit_two_pins_and_no_write_permissions():
     import yaml
     w=yaml.safe_load((gate.ROOT/'.github/workflows/test-skill-branch.yml').read_text())
-    j=w['jobs']['pytest']
-    assert j['strategy']['matrix']['cohort']==['legacy16','core17']
+    j=w['jobs']['core17-current']
+    assert j['strategy']['matrix']['cohort']==['core17']
     assert w['permissions']=={'contents':'read'}
     assert any('run_versioned_gate.py' in s.get('run','') and '--resolve' in s['run'] for s in j['steps'])
     assert any('run_versioned_gate.py' in s.get('run','') and '--skill' in s['run'] for s in j['steps'])
@@ -54,7 +54,12 @@ def test_actual_collection_keeps_only_the_intended_version_scope(cohort):
     assert p.returncode==0,p.stdout+p.stderr
     selected=set(line.strip() for line in p.stdout.splitlines() if '::test_' in line)
     assert selected
+    assert not any(node.startswith('test_text18_package_pair.py::') for node in selected)
     for node in gate.LEGACY_PIN_ONLY:assert (node in selected)==(cohort=='legacy16')
     assert 'test_v1_0_8_project_diagnosis.py::test_project_diagnosis_workflow_exists_and_follows_template' in selected
     assert 'test_v1_0_9_regression.py::test_registered_cases_and_rubrics' in selected
     assert ('test_core17_pair.py::test_core17_reproducible_package_and_unchanged_knowledge_budget' in selected)==(cohort=='core17')
+
+@pytest.mark.parametrize('cohort', ['legacy16','core17'])
+def test_other_version_contracts_are_isolated(cohort):
+    assert all(f'--ignore={gate.ROOT}/tests/{f}' in gate.test_args(cohort) for f in gate.OTHER_VERSION_FILES)

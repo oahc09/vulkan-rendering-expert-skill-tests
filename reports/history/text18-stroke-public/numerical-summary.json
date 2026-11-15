@@ -1,0 +1,278 @@
+{
+  "status": "BOUNDED_INTERIOR_PASS",
+  "validation_enabled": true,
+  "cases": [
+    {
+      "name": "butt",
+      "tolerance": 1e-06,
+      "guard_pixels": 0.01,
+      "excluded_count": 0,
+      "excluded_all_errors": [],
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "max_excluded_error": 0,
+      "max_unexcluded_error": 2.384185793236071e-08,
+      "analytic_covered_pixels": 120
+    },
+    {
+      "name": "square",
+      "tolerance": 1e-06,
+      "guard_pixels": 0.01,
+      "excluded_count": 0,
+      "excluded_all_errors": [],
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "max_excluded_error": 0,
+      "max_unexcluded_error": 2.384185793236071e-08,
+      "analytic_covered_pixels": 156
+    },
+    {
+      "name": "round",
+      "tolerance": 1e-06,
+      "guard_pixels": 0.01,
+      "excluded_count": 0,
+      "excluded_all_errors": [],
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "max_excluded_error": 0,
+      "max_unexcluded_error": 2.384185793236071e-08,
+      "analytic_covered_pixels": 148
+    },
+    {
+      "name": "bevel",
+      "tolerance": 1e-06,
+      "guard_pixels": 0.01,
+      "excluded_count": 8,
+      "excluded_all_errors": [
+        {
+          "x": 34,
+          "y": 11,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 31,
+          "y": 12,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 28,
+          "y": 13,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 33,
+          "y": 16,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 23,
+          "y": 25,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 42,
+          "y": 35,
+          "max_color_depth_error": 0.8
+        },
+        {
+          "x": 39,
+          "y": 36,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 36,
+          "y": 37,
+          "max_color_depth_error": 2.384185793236071e-08
+        }
+      ],
+      "max_all_pixel_color_depth_error": 0.8,
+      "max_excluded_error": 0.8,
+      "max_unexcluded_error": 2.384185793236071e-08,
+      "analytic_covered_pixels": 407
+    },
+    {
+      "name": "miter-limited",
+      "tolerance": 1e-06,
+      "guard_pixels": 0.01,
+      "excluded_count": 8,
+      "excluded_all_errors": [
+        {
+          "x": 34,
+          "y": 11,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 31,
+          "y": 12,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 28,
+          "y": 13,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 33,
+          "y": 16,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 23,
+          "y": 25,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 42,
+          "y": 35,
+          "max_color_depth_error": 0.8
+        },
+        {
+          "x": 39,
+          "y": 36,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 36,
+          "y": 37,
+          "max_color_depth_error": 2.384185793236071e-08
+        }
+      ],
+      "max_all_pixel_color_depth_error": 0.8,
+      "max_excluded_error": 0.8,
+      "max_unexcluded_error": 2.384185793236071e-08,
+      "analytic_covered_pixels": 407
+    },
+    {
+      "name": "miter-accepted",
+      "tolerance": 1e-06,
+      "guard_pixels": 0.01,
+      "excluded_count": 8,
+      "excluded_all_errors": [
+        {
+          "x": 34,
+          "y": 11,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 31,
+          "y": 12,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 28,
+          "y": 13,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 33,
+          "y": 16,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 23,
+          "y": 25,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 42,
+          "y": 35,
+          "max_color_depth_error": 0.8
+        },
+        {
+          "x": 39,
+          "y": 36,
+          "max_color_depth_error": 2.384185793236071e-08
+        },
+        {
+          "x": 36,
+          "y": 37,
+          "max_color_depth_error": 2.384185793236071e-08
+        }
+      ],
+      "max_all_pixel_color_depth_error": 0.8,
+      "max_excluded_error": 0.8,
+      "max_unexcluded_error": 2.384185793236071e-08,
+      "analytic_covered_pixels": 425
+    }
+  ],
+  "mesh_receipts": {
+    "butt": {
+      "triangles": 2,
+      "effective_join": "none",
+      "miter_ratio": null
+    },
+    "square": {
+      "triangles": 6,
+      "effective_join": "none",
+      "miter_ratio": null
+    },
+    "round": {
+      "triangles": 130,
+      "effective_join": "none",
+      "miter_ratio": null
+    },
+    "bevel": {
+      "triangles": 5,
+      "effective_join": "bevel",
+      "miter_ratio": 1.825111422437881
+    },
+    "miter-limited": {
+      "triangles": 5,
+      "effective_join": "bevel",
+      "miter_ratio": 1.825111422437881
+    },
+    "miter-accepted": {
+      "triangles": 6,
+      "effective_join": "miter",
+      "miter_ratio": 1.825111422437881
+    }
+  },
+  "input_rejections_before_gpu": [
+    {
+      "case": "negative width",
+      "reason": "width budget"
+    },
+    {
+      "case": "nonfinite width",
+      "reason": "width budget"
+    },
+    {
+      "case": "nonfinite point",
+      "reason": "finite points"
+    },
+    {
+      "case": "zero segment",
+      "reason": "zero segment"
+    },
+    {
+      "case": "curves",
+      "reason": "unsupported curve/dash"
+    },
+    {
+      "case": "dash",
+      "reason": "unsupported curve/dash"
+    },
+    {
+      "case": "budget",
+      "reason": "triangle budget"
+    }
+  ],
+  "actual_gpu_negatives": [
+    "wrong square cap for butt request",
+    "miter beyond declared limit instead of bevel"
+  ],
+  "negative_visibility_preflight": [
+    {
+      "case": "wrong-cap",
+      "analytic_mismatch_pixels_outside_both_guards": 36
+    },
+    {
+      "case": "ignored-miter-limit",
+      "analytic_mismatch_pixels_outside_both_guards": 18
+    }
+  ],
+  "limits": [
+    "fixed screen-space simple polylines, opaque same-color union",
+    "round64-segment approximation; hard pixel centers not AA",
+    "guard exclusions explicitly reported, not full-boundary pixel qualification",
+    "no curves/dashes/general stroke/SVG/font text",
+    "no target device or Live acceptance"
+  ]
+}
