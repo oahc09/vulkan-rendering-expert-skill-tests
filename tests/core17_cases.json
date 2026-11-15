@@ -1,0 +1,352 @@
+{
+  "core17_01": {
+    "id": "CORE17-01",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "新 SDK／旧 runtime；核心路径／扩展路径",
+    "variants": {
+      "primary": "新 SDK",
+      "contrast": "旧 runtime；核心路径／扩展路径"
+    },
+    "prompt": "场景对照：新 SDK／旧 runtime；核心路径／扩展路径。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [
+      "tc12_03_new_sdk_old_android",
+      "tc13_01_version_features"
+    ],
+    "legacy_equivalence": "partial-not-equivalent",
+    "new_prompt_required": true,
+    "equivalence_gap": "旧题未覆盖所有核心/扩展入口与启用链组合"
+  },
+  "core17_02": {
+    "id": "CORE17-02",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "同一 logical device／多个 device 与 loader 表",
+    "variants": {
+      "primary": "同一 logical device",
+      "contrast": "多个 device 与 loader 表"
+    },
+    "prompt": "场景对照：同一 logical device／多个 device 与 loader 表。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_03": {
+    "id": "CORE17-03",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "单线程录制／并行 pool/reset/submit",
+    "variants": {
+      "primary": "单线程录制",
+      "contrast": "并行 pool/reset/submit"
+    },
+    "prompt": "场景对照：单线程录制／并行 pool/reset/submit。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_04": {
+    "id": "CORE17-04",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "coherent／non-coherent 子分配",
+    "variants": {
+      "primary": "coherent",
+      "contrast": "non-coherent 子分配"
+    },
+    "prompt": "场景对照：coherent／non-coherent 子分配。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_05": {
+    "id": "CORE17-05",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "fully resident／sparse bind 与 residency",
+    "variants": {
+      "primary": "fully resident",
+      "contrast": "sparse bind 与 residency"
+    },
+    "prompt": "场景对照：fully resident／sparse bind 与 residency。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_06": {
+    "id": "CORE17-06",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "普通／protected memory 和 command submission",
+    "variants": {
+      "primary": "普通",
+      "contrast": "protected memory 和 command submission"
+    },
+    "prompt": "场景对照：普通／protected memory 和 command submission。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_07": {
+    "id": "CORE17-07",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "单设备／device group/peer memory",
+    "variants": {
+      "primary": "单设备",
+      "contrast": "device group/peer memory"
+    },
+    "prompt": "场景对照：单设备／device group/peer memory。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_08": {
+    "id": "CORE17-08",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "单平面／多平面YCbCr与external format",
+    "variants": {
+      "primary": "单平面",
+      "contrast": "多平面YCbCr与external format"
+    },
+    "prompt": "场景对照：单平面／多平面YCbCr与external format。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [
+      "sys_08_ycbcr"
+    ],
+    "legacy_equivalence": "partial-not-equivalent",
+    "new_prompt_required": true,
+    "equivalence_gap": "旧题无多平面memory绑定与usage全链"
+  },
+  "core17_09": {
+    "id": "CORE17-09",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "普通submit／acquire-record-submit异常与present退役",
+    "variants": {
+      "primary": "普通submit",
+      "contrast": "acquire-record-submit异常与present退役"
+    },
+    "prompt": "场景对照：普通submit／acquire-record-submit异常与present退役。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [
+      "tc13_02_frame_exceptions",
+      "tc13_03_present_retirement"
+    ],
+    "legacy_equivalence": "partial-not-equivalent",
+    "new_prompt_required": true,
+    "equivalence_gap": "旧题无录制/提交失败的完整恢复"
+  },
+  "core17_10": {
+    "id": "CORE17-10",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "同queue／跨queue-family消费者",
+    "variants": {
+      "primary": "同queue",
+      "contrast": "跨queue-family消费者"
+    },
+    "prompt": "场景对照：同queue／跨queue-family消费者。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [
+      "eng13_20_queues"
+    ],
+    "legacy_equivalence": "partial-not-equivalent",
+    "new_prompt_required": true,
+    "equivalence_gap": "旧题缺图像layout与精确消费者stage/access推导"
+  },
+  "core17_11": {
+    "id": "CORE17-11",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "RenderPass／Dynamic Rendering／local read",
+    "variants": {
+      "primary": "RenderPass",
+      "contrast": "Dynamic Rendering／local read"
+    },
+    "prompt": "场景对照：RenderPass／Dynamic Rendering／local read。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_12": {
+    "id": "CORE17-12",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "Descriptor Set／Buffer／Heap",
+    "variants": {
+      "primary": "Descriptor Set",
+      "contrast": "Buffer／Heap"
+    },
+    "prompt": "场景对照：Descriptor Set／Buffer／Heap。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_13": {
+    "id": "CORE17-13",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "Pipeline／Shader Object／GPL/Binary",
+    "variants": {
+      "primary": "Pipeline",
+      "contrast": "Shader Object／GPL/Binary"
+    },
+    "prompt": "场景对照：Pipeline／Shader Object／GPL/Binary。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_14": {
+    "id": "CORE17-14",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "FP32普通shader／FP16/subgroup/cooperative路径",
+    "variants": {
+      "primary": "FP32普通shader",
+      "contrast": "FP16/subgroup/cooperative路径"
+    },
+    "prompt": "场景对照：FP32普通shader／FP16/subgroup/cooperative路径。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [
+      "eng13_04_fp16_boundary"
+    ],
+    "legacy_equivalence": "partial-not-equivalent",
+    "new_prompt_required": true,
+    "equivalence_gap": "旧题无subgroup/cooperative能力"
+  },
+  "core17_15": {
+    "id": "CORE17-15",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "固定槽indirect／Count/Mesh/DGC",
+    "variants": {
+      "primary": "固定槽indirect",
+      "contrast": "Count/Mesh/DGC"
+    },
+    "prompt": "场景对照：固定槽indirect／Count/Mesh/DGC。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_16": {
+    "id": "CORE17-16",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "单次timestamp／query耗尽、跨帧复用与校准",
+    "variants": {
+      "primary": "单次timestamp",
+      "contrast": "query耗尽、跨帧复用与校准"
+    },
+    "prompt": "场景对照：单次timestamp／query耗尽、跨帧复用与校准。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_17": {
+    "id": "CORE17-17",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "Ray Query-only／完整Ray Tracing Pipeline",
+    "variants": {
+      "primary": "Ray Query-only",
+      "contrast": "完整Ray Tracing Pipeline"
+    },
+    "prompt": "场景对照：Ray Query-only／完整Ray Tracing Pipeline。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [
+      "vis14_01_query_only"
+    ],
+    "legacy_equivalence": "partial-not-equivalent",
+    "new_prompt_required": true,
+    "equivalence_gap": "旧题无完整RT Pipeline/stack条件"
+  },
+  "core17_18": {
+    "id": "CORE17-18",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "正确SBT/AS／错stride、错alignment与退休时机",
+    "variants": {
+      "primary": "正确SBT/AS",
+      "contrast": "错stride、错alignment与退休时机"
+    },
+    "prompt": "场景对照：正确SBT/AS／错stride、错alignment与退休时机。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_19": {
+    "id": "CORE17-19",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "MediaCodec导入／Vulkan Video decode",
+    "variants": {
+      "primary": "MediaCodec导入",
+      "contrast": "Vulkan Video decode"
+    },
+    "prompt": "场景对照：MediaCodec导入／Vulkan Video decode。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_20": {
+    "id": "CORE17-20",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "Video encode支持／profile或format不支持",
+    "variants": {
+      "primary": "Video encode支持",
+      "contrast": "profile或format不支持"
+    },
+    "prompt": "场景对照：Video encode支持／profile或format不支持。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_21": {
+    "id": "CORE17-21",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "AHB/FD/Win32共享／导入失败与载荷复用",
+    "variants": {
+      "primary": "AHB/FD/Win32共享",
+      "contrast": "导入失败与载荷复用"
+    },
+    "prompt": "场景对照：AHB/FD/Win32共享／导入失败与载荷复用。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_22": {
+    "id": "CORE17-22",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "Android／Windows／Linux／Metal portability",
+    "variants": {
+      "primary": "Android",
+      "contrast": "Windows／Linux／Metal portability"
+    },
+    "prompt": "场景对照：Android／Windows／Linux／Metal portability。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_23": {
+    "id": "CORE17-23",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "稳定KHR/EXT／厂商或预览扩展与弃用别名",
+    "variants": {
+      "primary": "稳定KHR/EXT",
+      "contrast": "厂商或预览扩展与弃用别名"
+    },
+    "prompt": "场景对照：稳定KHR/EXT／厂商或预览扩展与弃用别名。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  },
+  "core17_24": {
+    "id": "CORE17-24",
+    "provenance": "reconstructed-from-plan-9.2; original CORE17 artifacts unavailable",
+    "conditions": "Validation clean／设备丢失或性能退化",
+    "variants": {
+      "primary": "Validation clean",
+      "contrast": "设备丢失或性能退化"
+    },
+    "prompt": "场景对照：Validation clean／设备丢失或性能退化。\n分别给出两种条件下的Vulkan实现方案和验证方法。另讨论相关能力不可用，以及错误配置或执行失败后的恢复。不得将未执行的验证称为通过。\n",
+    "legacy_links": [],
+    "legacy_equivalence": "none",
+    "new_prompt_required": true,
+    "equivalence_gap": "No equivalent full closed-loop legacy input identified"
+  }
+}

@@ -1,0 +1,338 @@
+{
+  "core17_01": {
+    "id": "CORE17-01",
+    "evaluator_only": true,
+    "normal": "版本、feature、扩展、函数入口分别核实，不自动升级最低版本",
+    "capability_missing": {
+      "scenario": "runtime版本或函数入口缺失",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "新 SDK／旧 runtime；核心路径／扩展路径中的配置错误或执行失败",
+      "required": "不调用空入口；重新选择已验证baseline，不提高最低版本"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_02": {
+    "id": "CORE17-02",
+    "evaluator_only": true,
+    "normal": "handle、dispatch、owner 与函数表隔离",
+    "capability_missing": {
+      "scenario": "目标device不能访问另一个device资源",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "同一 logical device／多个 device 与 loader 表中的配置错误或执行失败",
+      "required": "拒绝外来handle并重建本device资源，不混dispatch表"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_03": {
+    "id": "CORE17-03",
+    "evaluator_only": true,
+    "normal": "host external synchronization 与 GPU 同步不混淆",
+    "capability_missing": {
+      "scenario": "缺并行线程安全封装",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "单线程录制／并行 pool/reset/submit中的配置错误或执行失败",
+      "required": "停止竞态访问并等待所属线程/提交完成后reset"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_04": {
+    "id": "CORE17-04",
+    "evaluator_only": true,
+    "normal": "flush/invalidate 范围、alignment、in-flight 使用正确",
+    "capability_missing": {
+      "scenario": "非coherent内存需显式可见性",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "coherent／non-coherent 子分配中的配置错误或执行失败",
+      "required": "对齐flush/invalidate但不得越过allocation边界；等in-flight结束"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_05": {
+    "id": "CORE17-05",
+    "evaluator_only": true,
+    "normal": "能力、granularity/mip tail、绑定完成与使用依赖、无支持回退",
+    "capability_missing": {
+      "scenario": "sparse能力或granularity条件不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "fully resident／sparse bind 与 residency中的配置错误或执行失败",
+      "required": "等待bind完成后使用；回退fully resident"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_06": {
+    "id": "CORE17-06",
+    "evaluator_only": true,
+    "normal": "保护链能力与限制明确，不非法回读受保护内容",
+    "capability_missing": {
+      "scenario": "保护链任一资源/queue不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "普通／protected memory 和 command submission中的配置错误或执行失败",
+      "required": "拒绝非法混用及readback，销毁时遵守保护链"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_07": {
+    "id": "CORE17-07",
+    "evaluator_only": true,
+    "normal": "device mask、可访问性、分配与提交边界；不等同多个 Surface",
+    "capability_missing": {
+      "scenario": "peer访问不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "单设备／device group/peer memory中的配置错误或执行失败",
+      "required": "重建单device路径，等待所有使用者完成后释放"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_08": {
+    "id": "CORE17-08",
+    "evaluator_only": true,
+    "normal": "format/usage/memory/descriptor要求分别验证",
+    "capability_missing": {
+      "scenario": "format/usage/conversion组合不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "单平面／多平面YCbCr与external format中的配置错误或执行失败",
+      "required": "按查询结果重建plane绑定/conversion描述符，失败清理"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_09": {
+    "id": "CORE17-09",
+    "evaluator_only": true,
+    "normal": "不失去fence signal、不提前复用present载荷，不直接用timeline替换WSI binary",
+    "capability_missing": {
+      "scenario": "acquire返回OUT_OF_DATE或SUBOPTIMAL",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "普通submit／acquire-record-submit异常与present退役中的配置错误或执行失败",
+      "required": "保持fence可前进；以present完成证据退休载荷，不用timeline替代WSI binary"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_10": {
+    "id": "CORE17-10",
+    "evaluator_only": true,
+    "normal": "stage/access/layout/ownership及semaphore的职责完整",
+    "capability_missing": {
+      "scenario": "目标queue不支持所需stage",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "同queue／跨queue-family消费者中的配置错误或执行失败",
+      "required": "补齐ownership及执行/可见性依赖，不把semaphore当layout转换"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_11": {
+    "id": "CORE17-11",
+    "evaluator_only": true,
+    "normal": "rendering语义、合法layout、attachment兼容与支持条件",
+    "capability_missing": {
+      "scenario": "local read未启用",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "RenderPass／Dynamic Rendering／local read中的配置错误或执行失败",
+      "required": "修正attachment兼容/layout，回退合法renderpass"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_12": {
+    "id": "CORE17-12",
+    "evaluator_only": true,
+    "normal": "三种绑定模型的内存、对齐、更新及生命周期差异，不套错字段",
+    "capability_missing": {
+      "scenario": "buffer/heap扩展缺失",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "Descriptor Set／Buffer／Heap中的配置错误或执行失败",
+      "required": "匹配绑定模型字段/对齐，等消费完成后更新或释放"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_13": {
+    "id": "CORE17-13",
+    "evaluator_only": true,
+    "normal": "依赖、动态状态、兼容键、缓存与回退，不把新路径必然更快",
+    "capability_missing": {
+      "scenario": "shader object/GPL/binary不可用",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "Pipeline／Shader Object／GPL/Binary中的配置错误或执行失败",
+      "required": "校验缓存兼容键，失效时重新编译并完整恢复动态状态"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_14": {
+    "id": "CORE17-14",
+    "evaluator_only": true,
+    "normal": "arithmetic/storage/IO、subgroup范围、SPIR-V环境与能力独立",
+    "capability_missing": {
+      "scenario": "算术支持但storage/IO/subgroup条件不满足",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "FP32普通shader／FP16/subgroup/cooperative路径中的配置错误或执行失败",
+      "required": "换合法SPIR-V变体并检查数值误差，不能仅FPS宣称成功"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_15": {
+    "id": "CORE17-15",
+    "evaluator_only": true,
+    "normal": "对应能力、command ABI、计数容量与精确消费者同步",
+    "capability_missing": {
+      "scenario": "Count/Mesh/DGC缺失",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "固定槽indirect／Count/Mesh/DGC中的配置错误或执行失败",
+      "required": "限制计数/容量与ABI；阻止越界并同步实际消费者"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_16": {
+    "id": "CORE17-16",
+    "evaluator_only": true,
+    "normal": "availability/validBits/单位/完成点与工具扰动明确",
+    "capability_missing": {
+      "scenario": "timestamp有效位为0或query pool容量耗尽",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "单次timestamp／query耗尽、跨帧复用与校准中的配置错误或执行失败",
+      "required": "等availability/完成点后读取或复用，处理validBits回绕及单位"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_17": {
+    "id": "CORE17-17",
+    "evaluator_only": true,
+    "normal": "SBT仅在相应路径；AS build/update、trace、stack条件正确",
+    "capability_missing": {
+      "scenario": "rayQuery支持但RT Pipeline不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "Ray Query-only／完整Ray Tracing Pipeline中的配置错误或执行失败",
+      "required": "禁用不支持的pipeline路径；分别同步AS build/update与trace"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_18": {
+    "id": "CORE17-18",
+    "evaluator_only": true,
+    "normal": "依据真实properties/命令条件判断，不用通用常量猜",
+    "capability_missing": {
+      "scenario": "SBT/AS属性条件不满足",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "正确SBT/AS／错stride、错alignment与退休时机中的配置错误或执行失败",
+      "required": "按实际properties校验stride/alignment，等trace完成后退休"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_19": {
+    "id": "CORE17-19",
+    "evaluator_only": true,
+    "normal": "不混为一谈；query/profile/session/DPB/codec链完整",
+    "capability_missing": {
+      "scenario": "video decode profile/format不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "MediaCodec导入／Vulkan Video decode中的配置错误或执行失败",
+      "required": "销毁不完整session/DPB并回退平台解码，不将导入称Vulkan解码"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_20": {
+    "id": "CORE17-20",
+    "evaluator_only": true,
+    "normal": "rate/bitstream/feedback/queue依赖明确；拒绝/回退不计成功编码",
+    "capability_missing": {
+      "scenario": "encode profile/format不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "Video encode支持／profile或format不支持中的配置错误或执行失败",
+      "required": "清理失败session/bitstream，回退或报告不支持，不伪称编码成功"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_21": {
+    "id": "CORE17-21",
+    "evaluator_only": true,
+    "normal": "精确handle语义、owner、两端完成、失败清理",
+    "capability_missing": {
+      "scenario": "external handle类型不兼容",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "AHB/FD/Win32共享／导入失败与载荷复用中的配置错误或执行失败",
+      "required": "按具体handle类型处理转移/复制owner，两端完成后复用，失败避免泄漏或双关"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_22": {
+    "id": "CORE17-22",
+    "evaluator_only": true,
+    "normal": "平台支持、WSI、headless、保护、HDR条件不互相套用",
+    "capability_missing": {
+      "scenario": "目标平台WSI/保护/HDR不支持",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "Android／Windows／Linux／Metal portability中的配置错误或执行失败",
+      "required": "按各平台查询结果选择回退，不用别的平台测试代替"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_23": {
+    "id": "CORE17-23",
+    "evaluator_only": true,
+    "normal": "正确检索权威资料、依赖与适用条件，不盲推新技术",
+    "capability_missing": {
+      "scenario": "厂商扩展缺失或preview版本不同",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "稳定KHR/EXT／厂商或预览扩展与弃用别名中的配置错误或执行失败",
+      "required": "依官方registry/spec确认依赖与别名，未知保持未验证"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  },
+  "core17_24": {
+    "id": "CORE17-24",
+    "evaluator_only": true,
+    "normal": "不能排除未覆盖错误；证据链、根因、最小修复和回归边界明确",
+    "capability_missing": {
+      "scenario": "设备丢失或仅validation clean",
+      "required": "先核实适用的版本、扩展、feature/property及函数入口；明确拒绝或合法回退，不虚报执行成功。"
+    },
+    "failure_recovery": {
+      "scenario": "Validation clean／设备丢失或性能退化中的配置错误或执行失败",
+      "required": "记录fault/trace/复现条件，最小修复及定界回归，不以干净日志证明全正确"
+    },
+    "review": "Human semantic review in all three directions; token/keyword matches are not PASS; record evidence and unresolved limits."
+  }
+}
