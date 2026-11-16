@@ -1,0 +1,49 @@
+{
+  "status": "SCOPED_PRELOAD_FIX_AND_REVERSION_VERIFIED",
+  "authority": "ISOLATED_PATCH_EXPERIMENT_NOT_UPSTREAM_SNAPSHOT_CHANGE",
+  "implementation_sha256": "841dd9aee7f218a2bcb056ece55016cd5505835b746bc88527a9b4081db1fa48",
+  "tests_head": "dde65cf47ea88c74539f47cf37af20f0dc3d4113",
+  "patch": {
+    "file": "config/katex_replace/extension.rb",
+    "before_sha256": "a0b21533db2218016ba8a3b24b4edccb7512e4fff205ee13614cae3f2d99ce12",
+    "after_sha256": "a6d4af47736904fa68403a283270b8c8b7aedef955ea43a5c8ae72970c164d1c",
+    "added_line": "katexScript.gsub!('../katex/fonts/', katexpath + '/fonts/')"
+  },
+  "limits": [
+    "one reference page and existing all-spec depth only, not all3553 rerendered",
+    "static path/file existence, not browser network/font appearance",
+    "original all-reference broken-link audit remains unchanged",
+    "no normative prose or fragments repaired"
+  ],
+  "evidence_scope": "DEVELOPMENT_ISOLATED_REAL_PATCH_AND_REVERSION_NOT_PUBLISHED_HEAD_REPLAY",
+  "report_sha256": "f7d7e9a9f56d9e2713e6b9c3610b0c83057fad9bd050d9eecd28122da1508a60",
+  "step_results": [
+    {
+      "label": "patched-reference",
+      "returncode": 0
+    },
+    {
+      "label": "patched-specification",
+      "returncode": 0
+    },
+    {
+      "label": "reverted-reference",
+      "returncode": 0
+    }
+  ],
+  "artifacts": {
+    "patched-reference.html": "ca37de718f40d56ceb1367d91af04dd14ed1c73ed664f64e9e161738bbd1f5cd",
+    "patched-reference.stdout": "39bc2b6bc2ee50f97ee93f80f6ea9a6bff2f789fdb03cf94c30dc8e62a13e0fb",
+    "reverted-reference.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "patched-specification.html": "715f636ba42747b0af8b4404b7e7c4a9fc06c3e3ea3b64d0b3199f089c9b75a5",
+    "baseline-specification.html": "715f636ba42747b0af8b4404b7e7c4a9fc06c3e3ea3b64d0b3199f089c9b75a5",
+    "reverted-reference.stdout": "39bc2b6bc2ee50f97ee93f80f6ea9a6bff2f789fdb03cf94c30dc8e62a13e0fb",
+    "baseline-reference.html": "ec961bc502dad2fd3bfed3bb153c1cb7e91dbcc77982a8bc951e18ce88cdbd7b",
+    "patch-preimage.rb": "a0b21533db2218016ba8a3b24b4edccb7512e4fff205ee13614cae3f2d99ce12",
+    "patch-postimage.rb": "a6d4af47736904fa68403a283270b8c8b7aedef955ea43a5c8ae72970c164d1c",
+    "reverted-reference.html": "ec961bc502dad2fd3bfed3bb153c1cb7e91dbcc77982a8bc951e18ce88cdbd7b",
+    "patched-specification.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "patched-reference.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "patched-specification.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

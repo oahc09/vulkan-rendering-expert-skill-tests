@@ -180,3 +180,21 @@ Clearly distinguish this from an additional post-publication rebuild; do not
 spend another full build merely to relabel unchanged evidence. Full rendering
 and alias presence still do not establish all cross-page links, alternate
 configuration conditions or semantic L1/L2 acceptance.
+
+## P6 execution boundary: explain emptiness and retain broken references
+
+The 66 observed empty sections must be traced individually to original normative
+contexts, generated reference spans and selected configuration, not universally
+allowed. Keep comment-only includes, SC-only filtered bodies, section-partition
+movement and explicit upstream placeholders as separate classes. A classified
+placeholder remains a documentation gap. Retain exact excerpts and attribution;
+changed inputs require a new audit rather than inheriting these classifications.
+
+Static href auditing must resolve the actual current-page target and fragment,
+including eligible aliases. A same-named anchor in the complete spec is only a
+possible repair destination, not proof that an incorrect page-local link works.
+Separate navigation hrefs and link-element assets, occurrences and distinct
+missing targets; external URLs remain unrequested/unverified. Do not broaden the
+claim to CSS URLs, scripts, other src resources, browser behavior or full web
+accessibility. Any missing target/fragment keeps closure PARTIAL_WITH_FINDINGS;
+a successful diagnostic runner is not passing document acceptance.

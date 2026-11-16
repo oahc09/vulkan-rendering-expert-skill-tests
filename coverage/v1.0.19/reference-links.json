@@ -1,0 +1,269 @@
+{
+  "status": "PARTIAL_WITH_FINDINGS",
+  "authority": "READ_ONLY_STATIC_AUDIT_NOT_NEW_RENDER",
+  "pages": 3553,
+  "href_occurrences": 224102,
+  "counts": {
+    "EXTERNAL_NOT_FETCHED": 14670,
+    "MISSING_LOCAL_TARGET": 31979,
+    "LOCAL_RESOLVED": 161173,
+    "MISSING_FRAGMENT": 16280
+  },
+  "distinct_targets_by_status": {
+    "EXTERNAL_NOT_FETCHED": 6060,
+    "MISSING_LOCAL_TARGET": 11,
+    "LOCAL_RESOLVED": 56403,
+    "MISSING_FRAGMENT": 7027
+  },
+  "scope": "static HTML href only; no network/CSS url()/src/JS navigation/visual or semantic validation",
+  "original_build_report_sha256": "5a70d2710c68fe30337944d240a308df66bdc38aa65e19524cc7d3a4f8adc613",
+  "implementation": {
+    "checks19/audit_reference_links19.py": "cd01cc0c1c6c8f66778032ec4fae23ba36e7674a1dacb76bc26062651c8fc1b6",
+    "tools/reference_links19.py": "ef899f37c3160a259b16800529984927b9828ad8b74976d2e7cbdea460bda876",
+    "tools/reference_batch19.py": "0a4500e02f38bb710d018ff930737984a4ab4cbceaa8479081b3d42d9e9092be",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "occurrences_sha256": "cbda727e40e60c6bc63cb401672f31f5dc1afa89c5224d1fbbbc9a55de9b7d8b",
+  "alias_scope": {
+    "registered": 477,
+    "followed_only_exact_direct_entities": true
+  },
+  "external_links_fetched": 0,
+  "source_context": [
+    {
+      "path": "chapters/memory.adoc",
+      "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+      "lines": [
+        {
+          "number": 145,
+          "text": "[[vkAllocationFunction_return_rules]]"
+        },
+        {
+          "number": 223,
+          "text": "<<vkAllocationFunction_return_rules, rules for return values as"
+        }
+      ],
+      "authority": "SOURCE_LOCATION_NOT_AUTOMATIC_REPAIR"
+    },
+    {
+      "path": "appendices/VK_KHR_shader_float_controls.adoc",
+      "sha256": "22826b3c53d8c1d06bb707df36b21ae2b2fb1cc0adf248f86d53c78b242442f9",
+      "lines": [
+        {
+          "number": 90,
+          "text": "[[VK_KHR_shader_controls_v4_incompatibility]]"
+        },
+        {
+          "number": 125,
+          "text": "     <<VK_KHR_shader_controls_v4_incompatibility, Version 4 API"
+        }
+      ],
+      "authority": "SOURCE_LOCATION_NOT_AUTOMATIC_REPAIR"
+    },
+    {
+      "path": "config/katex_replace/extension.rb",
+      "sha256": "a0b21533db2218016ba8a3b24b4edccb7512e4fff205ee13614cae3f2d99ce12",
+      "lines": [
+        {
+          "number": 24,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Main-Bold.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 25,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Main-Italic.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 26,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Main-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 27,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Math-Italic.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 28,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Size1-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 29,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Size2-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 30,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Size3-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 31,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Size4-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">"
+        },
+        {
+          "number": 32,
+          "text": "<link rel=\"preload\" href=\"../katex/fonts/KaTeX_Typewriter-Regular.woff2\" as=\"font\" type=\"font/woff2\" crossorigin=\"\">'"
+        }
+      ],
+      "authority": "SOURCE_LOCATION_NOT_AUTOMATIC_REPAIR"
+    }
+  ],
+  "report_sha256": "c00c0923eb0649e319c5a309ced608da8930a825faaa2cfb1ca1a23cd201fcf5",
+  "report_scope": "DEVELOPMENT_OFFLINE_AUDIT; FULL_FINDINGS_REGENERATED_BY_CLI_NOT_ALL_EMBEDDED_HERE",
+  "external_acceptance": "UNVERIFIED",
+  "missing_local_targets": [
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Main-Bold.woff2",
+      "target": "man/katex/fonts/KaTeX_Main-Bold.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 749,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Main-Italic.woff2",
+      "target": "man/katex/fonts/KaTeX_Main-Italic.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 750,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Main-Regular.woff2",
+      "target": "man/katex/fonts/KaTeX_Main-Regular.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 751,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Math-Italic.woff2",
+      "target": "man/katex/fonts/KaTeX_Math-Italic.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 752,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Size1-Regular.woff2",
+      "target": "man/katex/fonts/KaTeX_Size1-Regular.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 753,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Size2-Regular.woff2",
+      "target": "man/katex/fonts/KaTeX_Size2-Regular.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 754,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Size3-Regular.woff2",
+      "target": "man/katex/fonts/KaTeX_Size3-Regular.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 755,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Size4-Regular.woff2",
+      "target": "man/katex/fonts/KaTeX_Size4-Regular.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 756,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "ASSET",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "../katex/fonts/KaTeX_Typewriter-Regular.woff2",
+      "target": "man/katex/fonts/KaTeX_Typewriter-Regular.woff2",
+      "fragment": "",
+      "occurrences": 3553,
+      "example": {
+        "page": "man/html/AHardwareBuffer.html",
+        "line": 757,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "NAVIGATION",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "vkAllocationFunction_return_rules.html",
+      "target": "man/html/vkAllocationFunction_return_rules.html",
+      "fragment": "",
+      "occurrences": 1,
+      "example": {
+        "page": "man/html/PFN_vkReallocationFunction.html",
+        "line": 890,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    },
+    {
+      "role": "NAVIGATION",
+      "status": "MISSING_LOCAL_TARGET",
+      "href": "VK_KHR_shader_controls_v4_incompatibility.html",
+      "target": "man/html/VK_KHR_shader_controls_v4_incompatibility.html",
+      "fragment": "",
+      "occurrences": 1,
+      "example": {
+        "page": "man/html/VK_KHR_shader_float_controls.html",
+        "line": 1149,
+        "column": 0
+      },
+      "full_spec_candidate": false
+    }
+  ]
+}
