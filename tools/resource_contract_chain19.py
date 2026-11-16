@@ -14,6 +14,9 @@ def trace_subject(trace):
  import hashlib
  return {'trace_sha256':hashlib.sha256(json.dumps(body,sort_keys=True,separators=(',',':'),allow_nan=False).encode()).hexdigest()}
 def check(trace):
+ if type(trace)is dict and type(trace.get("schema"))is int and trace["schema"]==2:
+  from .resource_capture19 import check_v2
+  return check_v2(trace)
  rows=[];position=None
  def result(status,reason=None):return dict(status=status,event_index=position,reason=reason,events=rows,authority='CALLER_DECLARED_TRACE_NOT_DEVICE_PROOF',composed=['memory_binding','descriptor_reference_lifetime','sync','timeline_snapshot'],not_composed=['pipeline_layout_compatibility','image_copy','image_layout'],release_status='BLOCKED',semantic_L1_L2_completion='NOT_INFERRED')
  try:
