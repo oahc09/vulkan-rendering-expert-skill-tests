@@ -130,3 +130,30 @@ all extension/platform/SC configurations, cross-reference completeness and full
 semantic acceptance have independent gates. A core cohort's success must not
 close these. Never use validusage's quiet missing-include extension to make a
 missing active input appear accepted.
+
+## P4 execution boundary: registered all-Vulkan VU and Reference outputs
+
+Run the fixed official `makeSpec -spec all -version 1.4` from fresh exports,
+including its own generated includes, HTML, xrefMap, Antora pageMap and VU
+extraction. Do not combine the P3 core inventory with this configuration. The
+actual attribute inventory, including provisional and platform-specific records,
+is part of its identity; all-Vulkan documentation is not Vulkan SC or platform
+runtime acceptance. Keep the older309 VUID cohort unchanged.
+
+Reference source extraction and HTML rendering have distinct denominators.
+A complete generated source inventory plus two rendered representative pages
+cannot establish that every Reference page renders. Report the exact rendered
+page list; alias link closure and unrendered pages remain separate work.
+
+Official `quiet-include-failure` deliberately suppresses absent inputs in the VU
+path. Page mapping can warn and still exit successfully. The frozen schema uses
+Draft4 with a newer `const` keyword, which Draft4 ignores; missing Ruby schema
+validation also only warns. Preserve these source behaviors. Independently apply
+the declared schema and a separately labeled strict fixed-cohort contract; do not
+silently upgrade the schema or rewrite original output to obtain a pass.
+
+Require bidirectional VUID/HTML-anchor reconciliation, exact literal page-map
+associations, actual observation and complete output provenance. Exercise missing
+active include and missing map entries through the actual official tools, then
+require the outer audit to reject their apparently successful output. Exact
+fixed-cohort agreement is not a general condition solver or L1/L2 semantic proof.
