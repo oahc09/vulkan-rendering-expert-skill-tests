@@ -198,3 +198,16 @@ missing targets; external URLs remain unrequested/unverified. Do not broaden the
 claim to CSS URLs, scripts, other src resources, browser behavior or full web
 accessibility. Any missing target/fragment keeps closure PARTIAL_WITH_FINDINGS;
 a successful diagnostic runner is not passing document acceptance.
+
+### P6 whole-cohort asset repair gate
+
+A fixed source overlay may repair the nine KaTeX preload paths only in an
+isolated copy. Require fresh official rendering of all 3553 entities, preserved
+477 direct aliases, exact per-page difference limited to the nine paths, actual
+WOFF2 files and whole-cohort static href reinspection. Save the executed source
+snapshot before running. If a verifier is wrong, preserve its failed receipt and
+identify the later offline verifier separately rather than relabeling that run.
+The external FontAwesome preload is not part of the nine KaTeX assets and remains
+unfetched; strict whole-page byte comparison must still preserve it unchanged.
+The two high-frequency dynamic-state fragments have source-backed late-include
+routing diagnoses, not repairs. Other content gaps and navigation findings remain.
