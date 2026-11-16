@@ -42,11 +42,24 @@ def parse(raw):
   for k,v in xs:require(k not in d,'duplicate JSON key');d[k]=v
   return d
  return json.loads(raw,object_pairs_hook=pairs,parse_constant=lambda _:(_ for _ in ()).throw(ValueError('nonfinite JSON')))
+def canonical_ast(node):
+ """Version-independent serialization of parsed AST fields, not ast.dump display.
+ Preserve empty lists/None and every declared semantic field; exclude only source
+ location attributes. Newly introduced fields remain visible, not silently skipped.
+ """
+ if isinstance(node,ast.AST):
+  return {'node':type(node).__name__,'fields':{name:canonical_ast(value) for name,value in ast.iter_fields(node)}}
+ if isinstance(node,list):return [canonical_ast(value) for value in node]
+ if node is None or type(node) in (str,int,float,bool):return node
+ if type(node)is bytes:return {'bytes_hex':node.hex()}
+ if type(node)is complex:return {'complex':[node.real,node.imag]}
+ if node is Ellipsis:return {'ellipsis':True}
+ raise ValueError('unsupported AST field type: '+type(node).__name__)
 def scan(root):
  result={}
  for family,names in FUNCTIONS.items():
   path=Path(root)/f'tools/{family}_contract19.py';raw=path.read_bytes();tree=ast.parse(raw);functions={n.name:n for n in tree.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef))};require(set(functions)==set(names)|set(HELPERS[family]),'unregistered/missing function; classification required')
-  result[family]=dict(path=str(path.relative_to(root)),source_sha256=sha(raw),entries={name:dict(ast_sha256=sha(ast.dump(functions[name],include_attributes=False).encode()),signature=ast.unparse(functions[name].args),docstring=ast.get_docstring(functions[name])) for name in names},excluded_helpers={name:dict(ast_sha256=sha(ast.dump(n,include_attributes=False).encode()),reason='Schema/arithmetic/result helper, not an independently accepted semantic entry') for name,n in functions.items() if name in HELPERS[family]})
+  result[family]=dict(path=str(path.relative_to(root)),source_sha256=sha(raw),entries={name:dict(ast_sha256=digest(canonical_ast(functions[name])),signature=ast.unparse(functions[name].args),docstring=ast.get_docstring(functions[name])) for name in names},excluded_helpers={name:dict(ast_sha256=digest(canonical_ast(n)),reason='Schema/arithmetic/result helper, not an independently accepted semantic entry') for name,n in functions.items() if name in HELPERS[family]})
  return result
 
 def replay(family,docs,vu):

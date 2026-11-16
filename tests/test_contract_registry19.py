@@ -53,3 +53,30 @@ def test_full_rebuild_rejects_metadata(mutation,monkeypatch):
  elif mutation=='control':changed['families']['sync']['entries']['evaluate']['controls'].pop()
  else:changed['families']['layout']['normative_309_source']['api_version']='1.4.368'
  with pytest.raises(ValueError,match='full frozen'):r.verify_rebuilt(changed,None,None,None,b'')
+
+
+def test_canonical_ast_preserves_empty_fields_and_semantic_change():
+ import ast
+ a=ast.parse('def f(x):\n return x + 1\n').body[0]
+ encoded=r.canonical_ast(a)
+ assert encoded['fields']['decorator_list']==[]
+ assert encoded['fields']['returns'] is None
+ assert encoded['fields']['args']['fields']['kw_defaults']==[]
+ b=ast.parse('def f(x):\n return x + 2\n').body[0]
+ assert r.digest(encoded)!=r.digest(r.canonical_ast(b))
+ a.lineno=999
+ assert r.canonical_ast(a)==encoded
+
+def test_canonical_ast_does_not_depend_on_dump_display(monkeypatch):
+ import ast
+ before=r.scan(ROOT)
+ monkeypatch.setattr(ast,'dump',lambda *a,**k:'different interpreter display defaults')
+ assert r.scan(ROOT)==before
+
+def test_available_python312_python313_scans_match():
+ import subprocess
+ interpreters=[Path('/tmp/vulkan118-py/bin/python'),Path('/usr/bin/python3.13')]
+ if not all(p.is_file() for p in interpreters):pytest.skip('local dual-interpreter cross-version control unavailable')
+ code='import json,sys;sys.path.insert(0,sys.argv[1]);from pathlib import Path;from tools import contract_registry19 as r;print(json.dumps(r.scan(Path(sys.argv[1])),sort_keys=True))'
+ outputs=[subprocess.check_output([str(p),'-c',code,str(ROOT)]) for p in interpreters]
+ assert outputs[0]==outputs[1]

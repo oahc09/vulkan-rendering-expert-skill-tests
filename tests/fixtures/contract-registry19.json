@@ -8,7 +8,7 @@
       "source_sha256": "219066db5399583463700edc0c47579d543c2563284ff5d9cd3d5a8e9eacada3",
       "entries": {
         "evaluate": {
-          "ast_sha256": "e8f00de4a5bc01bf63190f45b5c020ae21db824046f9b4b89714dcc2fdca491e",
+          "ast_sha256": "1f77b69cbc1434da66c841292ad6e96804b9446a32afb1872a38567e342dc7cb",
           "signature": "facts",
           "docstring": "Evaluate one ordinary overlapping GPU access pair with strict exact fields.\n\nAccess enums are READ/WRITE. A covered execution dependency already includes\nvalid scope intersection/chain evidence, supplied by the caller. For RAW/WAW,\nthe availability and visibility fields refer to this precise first write and\nsecond access, not arbitrary globally true cache properties.",
           "preconditions": [
@@ -60,7 +60,7 @@
           ]
         },
         "buffer_range": {
-          "ast_sha256": "a1b462a2e7293832d634e6005337979ac7db5c014b60f269dfdbf5c68449a202",
+          "ast_sha256": "73a97ce80c1e90446022d8fcd3f510588029813161983724293e2124bf858838",
           "signature": "offset, size, buffer_size",
           "docstring": "VkBufferMemoryBarrier range only; no invented atom/alignment restriction.\n\nWHOLE_SIZE accepts the explicit string or its actual uint64 Vulkan sentinel.\nVUIDs here are exact frozen validusage1.4.309, separate from prose368.",
           "preconditions": [
@@ -104,7 +104,7 @@
           ]
         },
         "ownership": {
-          "ast_sha256": "9fd887939f547e6a5c7630ced70fbbc362d4b77ba86633107ea2ce16bc7f094e",
+          "ast_sha256": "b2c13716c564bbe9411457e5c26a1cfbc38af3e5f3137639c36798f8901b89a4",
           "signature": "facts",
           "docstring": "Ordinary exclusive resource, same device/instance, retaining content.\n\nValid actual family indices are caller-proven. External/foreign/special\nsentinels and concurrent sharing are not handled by this limited function.\nCaller must also rule out implicit-transfer exceptions (e.g. maintenance9).",
           "preconditions": [
@@ -137,7 +137,7 @@
           ]
         },
         "host_write_submission": {
-          "ast_sha256": "5ad687d6af3515e58b4e00d8ae6cc969b20e01462f6b1c59e68f646b0d9be624",
+          "ast_sha256": "adc10bd99f6682cedf97d61a8979ac851a1af01a27f29fcaa5f2596f506fbdf6",
           "signature": "facts",
           "docstring": "Prior ordered, available host writes can use submission's memory dependency.\n\nThis does not infer host happens-before from CPU wall-clock order. Flush\ncorrectness (when required) is an externally established scoped fact.",
           "preconditions": [
@@ -362,7 +362,7 @@
       "source_sha256": "c0f73e9535235b800efb93e79726a25583aefc40eb7d2f9728ee56b334c70373",
       "entries": {
         "push_ranges": {
-          "ast_sha256": "ee3216d1e7be932cc6906bd07fb8c039c7e29660f22376396544ee5cacc06b4d",
+          "ast_sha256": "69397abb20576a5828fd3ab0f4014dcb2d85c66f434a330cfed7ff9ddbcef8d4",
           "signature": "ranges, max_size",
           "docstring": null,
           "preconditions": [
@@ -401,7 +401,7 @@
           ]
         },
         "push_compatible": {
-          "ast_sha256": "2541cd5de0be80195022fec5f91d34646241d9b62344af366e5d81150c79502b",
+          "ast_sha256": "40cd832ed244088a5211f39a97c8bc15c1cc02ef6bc66cd68460a54dfb0a8a11",
           "signature": "a, b",
           "docstring": null,
           "preconditions": [
@@ -421,7 +421,7 @@
           ]
         },
         "compatible": {
-          "ast_sha256": "ac91f2989fe4ef358c9c158c6d2eb615d6cd264aa10a4ca84c248c9bbab6c1bb",
+          "ast_sha256": "298b37e545effa26f25236e5289555ee91087a463d185cbe1abe9f5212accaea",
           "signature": "a, b, set_number",
           "docstring": null,
           "preconditions": [
@@ -466,7 +466,7 @@
           ]
         },
         "bind_disturbance": {
-          "ast_sha256": "74c57daa2b39dd33c6ee60c78c9ef30970b4e134a8fa4110ce808b8d721e4399",
+          "ast_sha256": "bfecc1d1e2f3c6917e492846629e5a07bddbc0528529bd9103bc4666d3e26fdd",
           "signature": "previous, new_layout, set_number",
           "docstring": "Single set bind; previous maps integer indices to binding layout declarations.\n\nReturns disturbed indices, not a complete command-buffer state machine. The\nnew N binding replaces old N. No pipeline need be bound before this operation.\nCaller must mark disturbed descriptors undefined with the new layout; their\nfuture use is outside this one-step model. Pipeline binding alone is not this\noperation and does not mutate bindings.",
           "preconditions": [
@@ -493,7 +493,7 @@
           ]
         },
         "pipeline_access": {
-          "ast_sha256": "e4097e0b35ef4f6f7386aa14ac88b4e8c70b8bfe2a61786adb960f68dd820110",
+          "ast_sha256": "20cdca6bb03874c92f4ae6f7e94db18cc8d244c9398971810190b562bb4d7804",
           "signature": "binding_layout, pipeline_layout, set_number, undisturbed",
           "docstring": null,
           "preconditions": [
@@ -520,7 +520,7 @@
           ]
         },
         "push_update": {
-          "ast_sha256": "49357a5b08359e9bde9972ff2698478cedfd9ed19c098640454c238c56732f16",
+          "ast_sha256": "4d7af0a73b75b5968d2d8acb4ce8ec9425e0452a0f63fc6a89257fa74b2e388b",
           "signature": "layout_ranges, stage_mask, offset, size, max_size",
           "docstring": "Validate byte/stage coverage in both directions, separate from creation.\n\nuint/alignment/bounds are preconditions; malformed update returns UNKNOWN\nrather than inventing a vkCmdPushConstants VUID from range-create VUIDs.\nNo pushed values, command-buffer lifetime or shader access is inspected.",
           "preconditions": [
@@ -561,23 +561,23 @@
       },
       "excluded_helpers": {
         "uint": {
-          "ast_sha256": "56c4bdea4867529233fcc52c8fff640f561404cb85ddd101aa09730c886c998d",
+          "ast_sha256": "8db71e9270772da168e0e174300d8fde0d922f1feff223094d9f78caaa7c9a57",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "stages": {
-          "ast_sha256": "e383ea29058fe2d5ae73c11a105ced3bf5001e3162b80ce15e71dc5c63ade622",
+          "ast_sha256": "e1ba3aa3951569cfcdb7f40197c0dbe4b957f74c8ad749bc9084be2f58c782b8",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "result": {
-          "ast_sha256": "9b55bc5c291dc7808fa68e94269b2bca058d605f3bc1af875d47093a725b6dc1",
+          "ast_sha256": "d0133803cb1ab4e1fb934cfe2b73e84ea0bd9583d0e77d17840a2a2dc326d848",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "_layout": {
-          "ast_sha256": "561433b9b98d8f37c23e88d9799e04cd559877bc4fe72623b1157a4d179cea67",
+          "ast_sha256": "a0ee0c97909bfa46d6e6d8d4807a168a95c23927c385b3dc2a0e57d99a12a2c2",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "_ranges": {
-          "ast_sha256": "2bf5bbcb6fa012c2093d5e3f858febbe968f9480d32a2250819b6bfb8732b277",
+          "ast_sha256": "2ab79a548d78b3d3748dbe2c98c0f5842ad8c221bb30e546a3561bbb23d882e1",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         }
       },
@@ -841,7 +841,7 @@
       "source_sha256": "810cccd30be5ab6daefaf6b75a6a98b8970da93e3683b95ec035b1e0a0f43406",
       "entries": {
         "format_admit": {
-          "ast_sha256": "8144c0107011996d9165c17f7f25736e8608508264c42277a49b79f8913a2664",
+          "ast_sha256": "e6fb348cbbe2e373aa2c61e2190f7ef61759c3ebeead89774269ed97603ebe04",
           "signature": "source, destination",
           "docstring": null,
           "preconditions": [
@@ -892,7 +892,7 @@
           ]
         },
         "representation_blocks_equal": {
-          "ast_sha256": "bb379d7795cf230671fb09554cbe06a87077f2b273232a1f891b6ff936abac8f",
+          "ast_sha256": "26f4b3ca92b6f26e84aba2a6ab6c9ef356eb4a3f8a455a74c306d9e2ff5c1acc",
           "signature": "source_extent, destination_extent, source_block, destination_block",
           "docstring": "Evaluate ceil(A/a)=ceil(X/x); not a construction of unique X or offsets.\n\nDeliberately independent of copy format admission: two compressed formats can\nhave equal block counts but still fail copy's same-block-extent requirement.",
           "preconditions": [
@@ -942,7 +942,7 @@
           ]
         },
         "image_region": {
-          "ast_sha256": "73e0efe82876c074311504f56de8d0905d7ea0c466dfa0806396873ff50bbfc2",
+          "ast_sha256": "97a725824802edf291df9006d8701396ad75c2e7e78bb0df99e44008caa91d0c",
           "signature": "fmt, offset, extent, mip_extent, side",
           "docstring": "One region in ONE image's local texel coordinates, never raw mixed coordinates.\n\nFor destination, the caller must first establish size-adjusted destination\ncoordinates. Exact offset alignment is separate from extent's mip-edge\nexception: reaching the edge never excuses a misaligned offset. VUID labels\ndenote frozen rule families, not predictions of Validation-layer output.",
           "preconditions": [
@@ -1001,19 +1001,19 @@
       },
       "excluded_helpers": {
         "result": {
-          "ast_sha256": "50ef1cb96c9af1443f9d315915e3991f459d536c020dc428fd9551eea224e570",
+          "ast_sha256": "795296fa8998c98aa852bf681d2c7f7ce6c612c765752b9c3bfd244d5e3947ba",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "u32": {
-          "ast_sha256": "dadbcf588f4fe6de0391892328d6d7a6ad6657c44d6bddca6d0c79de2d5790e3",
+          "ast_sha256": "21f245960f3ad08a14e72a2648cc0344b5004192bb909629ed4a118b7044325e",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "vector": {
-          "ast_sha256": "2a89d1872e4682725e01b5355d30f20016cfaca95b08c28efdc870353c1c230a",
+          "ast_sha256": "758e82f1c0d64e354a212e0e1d0d25946bdee411b769173bfdde9f6e28c8f6e6",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "metadata": {
-          "ast_sha256": "a4b5edf24e20443e6764be0d20bbf89bdf7e6779d7d9bcc1c1ce2f1e6b6b8957",
+          "ast_sha256": "0a803f40ae7b90a2f2f11b572260ce3b60c6513f9298669729b8cda0eeb19866",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         }
       },
@@ -1232,7 +1232,7 @@
       "source_sha256": "15c81740f73fb31045917b0d52d08b1a629d34359a86eda8f55462e6a9e4a52b",
       "entries": {
         "evaluate": {
-          "ast_sha256": "e668724779c5b1811df91a285a431cbfc4281dcb11c41e3ba2a3f2ba6eeeaf8b",
+          "ast_sha256": "25a8e5bb59a554fe57ad7b12ec2af6d32889b256568f5b180fe1054716b5f2fa",
           "signature": "state, barrier, facts",
           "docstring": "State list entries: mip,layer,layout,defined; selected cells are explicit pairs.\n\nUnknown/malformed facts never update state. Unsatisfied dependency facts also\nyield no modeled state. Actual current layout need not equal an ignored value.",
           "preconditions": [
@@ -1352,15 +1352,15 @@
       },
       "excluded_helpers": {
         "uint": {
-          "ast_sha256": "0ef0e863132d992b2e7d7635fb0b0e07b351bf74019b093457e6cfeaaf156f61",
+          "ast_sha256": "48c3ad8a1f562124b8f02e2d27aaf366dfe6bf68d29ae81823dafd3063606d78",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "cell": {
-          "ast_sha256": "8434da707904bb020bceef3ed721a92aa075ddedab0d4e1120ce65beda55fb0f",
+          "ast_sha256": "3f9c7ee1eead7b2ae62949c87b1d05542f7c61eda5e204403e7747a311d8367a",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "result": {
-          "ast_sha256": "b9a5d972e4c2f5ea4c45847923cb7f41b2974afd41fcc998a4a265180c3c0179",
+          "ast_sha256": "a42b4168be7c68540970d2ace3d9d7a750abe249375ecdca888d6e1afa477720",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         }
       },
@@ -1525,7 +1525,7 @@
       "source_sha256": "8ef769857784269920a2bc3aa40ead1ce6ad4f151d26318d29b77a670c797a50",
       "entries": {
         "host_signal": {
-          "ast_sha256": "eb882de32f7b434c5515a25faf6a306f8158198a53b639bd1a4efbe6ce75ae82",
+          "ast_sha256": "e953c48a6219c8a4612b85b104cc6c6580cb414510464d74974ca5eb9c8665d9",
           "signature": "facts",
           "docstring": null,
           "preconditions": [
@@ -1594,7 +1594,7 @@
           ]
         },
         "wait_condition": {
-          "ast_sha256": "a2fe0d104af2566efbb8103acc7a216c389296c950d0617a516cb1279258305c",
+          "ast_sha256": "47b951436dffe1c0d8cbba39f3bb56e764ee712131c3275ca7bc83ceee898ef9",
           "signature": "counters, targets, mode",
           "docstring": null,
           "preconditions": [
@@ -1626,7 +1626,7 @@
           ]
         },
         "retirement": {
-          "ast_sha256": "69968ca5a6f853c3110df429e5a73184168a3ba65ca11d58f5207bffb34149dc",
+          "ast_sha256": "55ebfe305f75c3eeffc408d3e6aa088ddbd8e430457a10c8b04b5c0380bfccda",
           "signature": "facts",
           "docstring": null,
           "preconditions": [
@@ -1655,11 +1655,11 @@
       },
       "excluded_helpers": {
         "uint": {
-          "ast_sha256": "6c32f26c8d359059cbf1465fb93797885a76f840f99c4d6ad5d5f57d96d94ae1",
+          "ast_sha256": "57d959ed7d11137f6aea908736affd866cc85c36efa6024cec8c5bcbc83d6dd7",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "result": {
-          "ast_sha256": "06e4868e3d2e07d9b6fd171b0e94f4451a44de966ea322711fe3b042784c9d95",
+          "ast_sha256": "3f095976318eba3ca75f53442c13795d54d2c41b5bbc630bb79379d695dd6e11",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         }
       },
@@ -1795,7 +1795,7 @@
       "source_sha256": "edc3c6132e927447cf00a89c4895fb581c36fd722b6ab8f354195b2fb4105912",
       "entries": {
         "spill": {
-          "ast_sha256": "9338b54bd799d27e536feb2057e4ebd7040554de90320ee9bb723b1871adbbc9",
+          "ast_sha256": "99c92e643209cfd9876958b7e7c8f2da4d25781277bd2135cba26947b668516f",
           "signature": "layout, binding, array_element, count",
           "docstring": "Explicit dense binding table including zero-count holes; first slot must exist.\nSignature means caller-proven identical immutable sampler references, not their\ncreation parameters. Extension flag validity is an independent precondition.",
           "preconditions": [
@@ -1858,7 +1858,7 @@
           ]
         },
         "apply": {
-          "ast_sha256": "c4131872b893a4414e410a10b54f8be9201c27fdc3454a294fcdaaf387dd512a",
+          "ast_sha256": "ab69fe7325894d289908c75e4490c229b1d5a88e3413d1db74134c30c0104718",
           "signature": "sets, writes, copies, preconditions_proven",
           "docstring": "Apply ordered writes then ordered copies to ordinary UBO/SSBO reference tokens.\nAll input safety/descriptor payload validity, synchronization and layout flags\nmust be established separately. Rejection returns no partial modeled state.",
           "preconditions": [
@@ -1894,19 +1894,19 @@
       },
       "excluded_helpers": {
         "u32": {
-          "ast_sha256": "d25caf6414536bf2cfcea5fc1612efc65d6f8f2b80946628747108f1e796c1b9",
+          "ast_sha256": "6fcd786c98f12eadd4301dd601fb207124042a42de9a58421fd275242a8f2ca3",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "result": {
-          "ast_sha256": "dbb68dfada87fadf1237ea656ef5370215dd27424dab7ad749cb856d8b8f06db",
+          "ast_sha256": "524c18438ad352b6944586ca4be816adadc98da033f80ac174c14abb418f6607",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "layout_valid": {
-          "ast_sha256": "0c8af3a03830a1fc3892df9c421c479967fe99974533f360f1a8eb2f40313f01",
+          "ast_sha256": "6c8134f582d456b71806acfa0793962bf5f271571714e4770bee04112a8fbd33",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "token": {
-          "ast_sha256": "b942f3379892fff3ee214ba5a2add1b9c2b8adcc32e7436b2a9d2c85c796796d",
+          "ast_sha256": "5b801fa1c74d27f5168ade200c711de2bd7ae39d737eecf9563e379c8b3bc714",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         }
       },
@@ -2043,7 +2043,7 @@
       "source_sha256": "8502442043761a11a09c6929d9742ba5f3eba8741a809e9e4618d6a08d71868a",
       "entries": {
         "bind": {
-          "ast_sha256": "d3f78255e441af58f7498398defbafa3ba645aaff8a4a6f41e11e42e6c1097f5",
+          "ast_sha256": "b908cd0cad73c8f2ad97d288576d8f25e3509cb0aaf4840f0f88917dba16ce72",
           "signature": "f",
           "docstring": null,
           "preconditions": [
@@ -2155,7 +2155,7 @@
           ]
         },
         "granularity": {
-          "ast_sha256": "dc215bbfe5e2cd238090d61610d0b08bf24e2548b742d214f1191f51240e3290",
+          "ast_sha256": "d87c3e01600b0eb93c0c116f8a40e342e4ef1172c0ddb59995b6b274c67b4078",
           "signature": "a, b, granularity, simultaneous",
           "docstring": null,
           "preconditions": [
@@ -2188,7 +2188,7 @@
           ]
         },
         "free_obligations": {
-          "ast_sha256": "1543ab98e677c367661cc42f5bac6d44a59d6ee4c42c71aadfb26ea81be89b2a",
+          "ast_sha256": "1f88b28f183027b1e846fc74f0480788e90a3fe71c32ea7e188e1c16ce49eeb1",
           "signature": "f",
           "docstring": null,
           "preconditions": [
@@ -2221,7 +2221,7 @@
           ]
         },
         "dedicated_allocation_size": {
-          "ast_sha256": "077269cf70e5a2d334903f9186cc2b14ea8a6b2198db3025eab4f813480fa4f1",
+          "ast_sha256": "c21168bf7909195a9d527fe431fff75ca70336e945443247ec4063781bc5c78d",
           "signature": "kind, allocation_size, requirements_size, contract_version, ordinary_not_imported",
           "docstring": "Version-specific size condition only; excludes imported-memory exceptions.",
           "preconditions": [
@@ -2262,15 +2262,15 @@
       },
       "excluded_helpers": {
         "u64": {
-          "ast_sha256": "d60710dd5c51801a51050f0bb08a9b2f7d40e63454ee6094cbf2e39f89e5d600",
+          "ast_sha256": "cd9d10e7dad40d4b6e7eb970f77074690d9024741062c7aaea9d66f2c4a3b2dc",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "identifier": {
-          "ast_sha256": "e179e96724fad28cc737a5837bd19fb51ca14bbd9e999538465fe8579a8380ec",
+          "ast_sha256": "7769461f661bd5e3f4ade29df28a3b986e99d64f1e262c62bf525aa9cff46169",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         },
         "result": {
-          "ast_sha256": "7f5e86d5c8ac22b3d3ce7ee614462f5a7b7438bb594a5cb635f137d54618febc",
+          "ast_sha256": "cc196f62d393f33eb11f5446b870f80c0bd176b329a1a066d92b6c2ae6da3f0d",
           "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
         }
       },
