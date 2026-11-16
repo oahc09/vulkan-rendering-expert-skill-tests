@@ -108,3 +108,25 @@ not necessarily active or semantically expanded: condition selection, attributes
 tag/line options, recursive composition and generated Reference pages retain
 separate unresolved states. Report missing targets without assuming all are
 active requirements. A quiet generator/build exit does not settle this question.
+
+## P3 execution boundary: actual preprocessor observations
+
+Install any missing runtime only from authenticated official packages into an
+independent current-workspace root; retain package/index provenance and hashes.
+Do not change system configuration, trust settings or the original Docs checkout.
+Fix Ruby, Asciidoctor, syntax-highlighter and other actually loaded dependencies.
+Use the same explicit core1.4 source/configuration as P2, not a moving upstream.
+
+Observe actual preprocessing without replacing its semantics. Preserve original
+reader behavior and compare observed/unobserved results. Record active include
+sources, selected content and conditional/tag handling; inactive branches must not
+be mislabeled missing dependencies. Delete an active include and alter selected
+tag content for negative controls; an inactive deletion alone must not manufacture
+an active failure. Verify output/evidence, not only a zero exit or a log label.
+
+The Asciidoctor stage and full official HTML target remain distinguishable: the
+latter also invokes Node/KaTeX math processing. Reference extraction/rendering,
+all extension/platform/SC configurations, cross-reference completeness and full
+semantic acceptance have independent gates. A core cohort's success must not
+close these. Never use validusage's quiet missing-include extension to make a
+missing active input appear accepted.

@@ -1,0 +1,76 @@
+{
+  "status": "FIXED_CORE_HTML_OBSERVED_MATCH",
+  "closure_status": "PARTIAL_SINGLE_CONFIGURATION_NOT_ALL_P",
+  "tests_head": "3bcd25b6c86d4c4090e34e2490ad93555b40bde8",
+  "implementation": {
+    "checks19/execute_asciidoc19.py": "ba8939b9c6a77020f44b56b5346c7eb93bfac53d5a6bca14f75c5c7f6606eb71",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/asciidoc_observer19.rb": "f5aea9d91d3d45392ddab2be811f3f19577d9f67ccb7911c86c21638064d3f4a",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "runtime_tree_sha256": "e671705e714c0ccbd9113a18a97c8d22a18d0af4326dc4108940b72e3bb2e709",
+  "generated_sha256": "398484391ee5a424fc4cfe2064a8926f97f2d73814f02036224d3ee61d860550",
+  "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "controls": {
+    "active_missing": {
+      "source_line": null,
+      "tag": null,
+      "authority": "EXPLICIT_HOST_SOURCE_OVERLAY_NOT_UNCHANGED_UPSTREAM",
+      "path": "gen/api/structs/VkMemoryDedicatedRequirements.adoc",
+      "before_sha256": "6540e56cce813cc73831a37a14d509df59e990b2771c447eb3c1a51b197d2dba",
+      "after_sha256": null,
+      "html_sha256": null,
+      "result": "EXPECTED_REJECTION"
+    },
+    "inactive_missing": {
+      "source_line": null,
+      "tag": null,
+      "authority": "EXPLICIT_HOST_SOURCE_OVERLAY_NOT_UNCHANGED_UPSTREAM",
+      "path": "gen/meta/VK_AMD_buffer_marker.adoc",
+      "before_sha256": "7d356d5a38d77187fa021792438e7ca1ad2e74dc80e3d2934fe4583a04e02719",
+      "after_sha256": null,
+      "html_sha256": "cf34d8bfae4b032e02a3bfee25b81fb39c613b65ce531d56d256f39eedb2b550",
+      "result": "UNCHANGED_INACTIVE_CORE_OUTPUT"
+    },
+    "tag_changed": {
+      "source_line": 592,
+      "tag": "VK_KHR_external_memory_capabilities-properties",
+      "authority": "EXPLICIT_HOST_SOURCE_OVERLAY_NOT_UNCHANGED_UPSTREAM",
+      "path": "chapters/devsandqueues.adoc",
+      "before_sha256": "9a28a6b978bc4bf57fcaaf263488b4894129518be8aa2dc8b23269be43ade6ad",
+      "after_sha256": "738c0265d9613d4e4cdef3879d747c61a75a47b3f9bc5ecdcab199c433d10bcf",
+      "html_sha256": "ca0d1efaab4b0d14633b7fc19889433477131fba653e503a011a03e7ca069778",
+      "result": "ACTUAL_TAG_CONTENT_CHANGED_OUTPUT"
+    },
+    "condition_switch": {
+      "authority": "SYNTHETIC_HOST_ENGINE_FIXTURE_NOT_UPSTREAM_CONFIG",
+      "on_sha256": "16dabd60ece526b48f155e567ab4577437bc4adfcf283616c871aae0a240db43",
+      "off_sha256": "733997fa66d776cfe7f3b397e1e1c80d3f83389e86523fd61968bcdbfe166a01",
+      "result": "BRANCH_CONTENT_CHANGED"
+    }
+  },
+  "evidence_phase": "DEVELOPMENT_PREPUBLICATION",
+  "report_sha256": "f2e94e66c05ca5277927e2508128d2496a67bf3f32c5112ba290197cddb4e872",
+  "observation": {
+    "status": "FIXED_CORE_HTML_OBSERVED_MATCH",
+    "closure_status": "PARTIAL_SINGLE_CONFIGURATION_NOT_ALL_P",
+    "html_sha256": "cf34d8bfae4b032e02a3bfee25b81fb39c613b65ce531d56d256f39eedb2b550",
+    "html_bytes": 10408265,
+    "event_counts": {
+      "resolve": 1983,
+      "push_include": 1983,
+      "include_directive": 1983,
+      "conditional": 28092,
+      "observer_end": 1
+    },
+    "tag_selection_count": 149,
+    "limits": [
+      "Selected strings are actual engine push_include input before normalization.",
+      "engine_start_line is not a complete source interval map: upstream skips tag lines without preserving all line positions.",
+      "No Reference/validusage/SC/platform/all-extension closure; no semantic L1/L2 acceptance."
+    ]
+  },
+  "executed_step_count": 10
+}
