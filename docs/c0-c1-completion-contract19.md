@@ -67,3 +67,25 @@ Proceed to P and the strongest existing semantic families' exact source/span
 mapping, not another similar GPU demonstration. Hardware/Live/blind evidence
 remains separate external work; it does not block truthful local source closure
 or justify claiming that closure has already occurred.
+
+## P1 execution boundary: source graph and a scoped semantic bridge
+
+The first P increment freezes the entire tracked Docs tree, including executable
+scripts and configuration, not only `.adoc` text. Literal includes, attribute
+macros, conditions and generation inputs remain distinct. A lexical graph does
+not evaluate AsciiDoc or select Vulkan/SC/platform configurations. Single-line
+conditional bodies are not open blocks; self-file tagged includes are not by
+themselves invalid cycles. Unresolved generated or attributed includes remain
+explicit blockers. Successful future compilation is insufficient: the fixed
+source's quiet-include-failure extension can suppress missing-include failures.
+
+The dedicated-allocation preference/requirement bridge reuses a bounded existing
+HOST contract. Bind the actual normative paragraph, enclosing source conditions,
+fixed source bytes, helper/test bytes and observed positive/negative controls.
+Preference permits suballocation; a requirement does not. The raw paragraph is
+not an enabled feature proof, not equivalent to the separately pinned309 VUID
+corpus, and not hardware verification. No broader memory-family L1/L2 completion
+is awarded. Stop P1 after deterministic full source reconstruction, exact scoped
+mapping and independent loss/condition/fake-closure controls. P remains BLOCKED
+until configurations, expansion/generated outputs and their completeness checks
+are actually established.
