@@ -209,5 +209,17 @@ snapshot before running. If a verifier is wrong, preserve its failed receipt and
 identify the later offline verifier separately rather than relabeling that run.
 The external FontAwesome preload is not part of the nine KaTeX assets and remains
 unfetched; strict whole-page byte comparison must still preserve it unchanged.
-The two high-frequency dynamic-state fragments have source-backed late-include
-routing diagnoses, not repairs. Other content gaps and navigation findings remain.
+The initial asset-repair stage only diagnosed the two high-frequency dynamic-state
+fragments. The separate bounded route-repair gate below applies to its subsequent
+implementation. Other content gaps and navigation findings remain.
+
+### P6 bounded late-include route repair gate
+
+The two known dynamic-state anchors may be repaired only with the fixed source
+cohort, generated-page/include relationship, target-definition spans and unique
+full-spec anchors bound. Preserve existing local anchors and unrelated xrefs.
+Generated-file source_location alone is not per-include provenance. Require fresh
+rendering of all 3553 pages, exact expected href-only changes, full static href
+reaudit, unchanged 477 aliases and a real route-disabled rerender control. Scope
+is the proven two-ID/26-page cohort, not a generic cross-reference repair and not
+all 16280 previously missing fragment occurrences.
