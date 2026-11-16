@@ -1,0 +1,69 @@
+# C0/C1 completion contract: denominators before percentages
+
+This is an execution plan, not a completion claim. Original plan §3.3, §7 and
+M0/M1 remain authoritative. The immutable original-plan SHA256 is
+`b28086a1c1b5d390ad5826c10740fbced15a7e5d3efb5628922147d0a6fa955b`.
+
+## Freeze boundaries
+
+| Layer | Frozen input / required closure | Acceptance state |
+|---|---|---|
+| Registry structure | Vulkan-Docs `fa30d4e312e843193601be7cb926c7e25d9ec885`, vk.xml and video.xml, Vulkan 1.4.368 cohort | Audit both complete XML trees; no filtering away SC, disabled or provisional records |
+| Normative VUID coordinates | separate validusage 1.4.309 bytes | Existing partial coordinate inventory, NOT interchangeable with 368 |
+| Normative prose | same fixed Docs tree, chapters, appendices, commonvalidity and source conditionals | Full source and conditional expansion closure NOT DONE |
+| Reference pages | fixed generation inputs, configuration and generated outputs | Generation/coverage closure NOT DONE; inputs are not rendered reference pages |
+| Vulkan Headers | own source revision, generated header mapping and variants | Full paired denominator NOT DONE; selected tool headers do not establish it |
+| SPIR-V Registry/Headers | own revisions and grammar/extensions relationship | Full paired denominator NOT DONE |
+| Tools | loader/layer/compiler/disassembler builds plus settings | Individual lab pins exist, not a complete normative tool denominator |
+| Vulkan SC | separate API/version/profile and restricted workflows | Must remain independent; no safety certification inferred |
+
+Every future source change creates a new denominator identity. Do not silently
+refresh old results, combine 309 and 368 counts, discard unsupported platforms,
+or remove untested families because current hardware lacks them.
+
+## Bounded stages and stop conditions
+
+1. **R: fixed dual-XML structural closure.** Retain every element, attribute,
+   text/tail and ancestry coordinate, including unknown tags. Preserve API,
+   platform/protect, supported/provisional, require/remove, alias, structextends
+   and raw dependency expressions. Rebuild from fixed bytes and reject omitted
+   members/conditions/edges. Relations may be unresolved or ambiguous. A syntactic
+   alias target is not semantic substitutability, feature enablement or legality.
+   Stop once both exact inputs reproduce deterministically and independent
+   mutation controls reject an incomplete or altered inventory.
+2. **P: complete normative source closure.** Enumerate every tracked source at the
+   frozen Git tree, categorize purpose and explicit exclusions, record include
+   and generation dependencies, then evaluate separately fixed Vulkan/SC/platform
+   configurations. Preserve unresolved generated includes. Do not declare P
+   complete from XML R or a recursive `.adoc` file list.
+3. **H: external definitions and generated references.** Freeze separate Headers,
+   SPIR-V and tool cohorts; reconcile symbols/conditions/versions with R/P and
+   explicitly list missing or nonmatching items. Version bridges require review.
+4. **S: actual semantic review.** For each bounded family register purpose,
+   non-purpose, query/enable conditions, object lifecycle, calling order,
+   concurrency, failure/recovery, tool limits and fallback. Bind exact normative
+   spans, card sections, executable positive/negative controls and evidence.
+   Independently resolve contradictions, not merely missing strings. Existing
+   HOST contract evidence can be reused only under exact content and scope pins.
+5. **A: original acceptance.** Evaluate original ALL19/E2E19 and other seals under
+   their own pre-registered denominators. R/P/H/S are prerequisites, not a waiver.
+
+## State discipline
+
+Keep SOURCE_FROZEN, STRUCTURE_INDEXED, ROUTED, REVIEWED_L1, REVIEWED_L2 and
+EXECUTED_WITHIN_SCOPE as separate fields. Structural inventory begins entirely
+UNREVIEWED. A review declaration is not authenticated independent acceptance.
+A passing subset must not upgrade its whole extension, domain or corpus.
+
+Structural counts describe source nodes, not unique APIs or knowledge units.
+Registration and semantic percentages remain UNKNOWN until their full applicable
+frozen denominator and acceptance rule are established. The existing 497 scopes,
+309 VUID cohort and 23 HOST entry registry are useful partial coordinates, not
+an alternative denominator that makes final completion easier.
+
+## Next priority after R
+
+Proceed to P and the strongest existing semantic families' exact source/span
+mapping, not another similar GPU demonstration. Hardware/Live/blind evidence
+remains separate external work; it does not block truthful local source closure
+or justify claiming that closure has already occurred.
