@@ -157,3 +157,26 @@ associations, actual observation and complete output provenance. Exercise missin
 active include and missing map entries through the actual official tools, then
 require the outer audit to reject their apparently successful output. Exact
 fixed-cohort agreement is not a general condition solver or L1/L2 semantic proof.
+
+## P5 execution boundary: all Reference HTML and exact aliases
+
+Use the fixed P4 all-Vulkan generated source inventory and official
+`manhtmlpages` target in a new isolated copy. Remove copied Reference HTML output
+before the full build so earlier two-page results cannot masquerade as newly
+rendered pages. Record bounded parallelism, actual process completion/diagnostics
+and per-source output identity; distinguish scheduling measurements from GPU or
+semantic performance. A finite budget exhaustion is a partial result, not success.
+
+The fixed expected matrix separates 3553 entity source pages from 477 eligible
+aliases and 10 officially excluded metadata aliases. Bind original alias map and
+source inventory, require regular files for entities and exact relative symlinks
+for aliases, reject missing/extra entities, path escapes, cycles or wrong existing
+file types. Run official missing-target and wrong-existing-alias controls;
+warning with exit0 must not satisfy the independent completeness contract.
+
+One complete frozen implementation run may be retained with its source hashes,
+followed by independent output audit and published-code equivalence checks.
+Clearly distinguish this from an additional post-publication rebuild; do not
+spend another full build merely to relabel unchanged evidence. Full rendering
+and alias presence still do not establish all cross-page links, alternate
+configuration conditions or semantic L1/L2 acceptance.
