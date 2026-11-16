@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "status": "PREPUBLICATION_READ_ONLY_IMPORT_NOT_NEW_GPU_EXECUTION",
+  "implementation_sha256": {
+    "checks19/import_validation_diagnostics.py": "ccc4fca7edba07b2a1be5a1ef7c7772a6c32e7f277eec9e19a61dfb9b6504ba6",
+    "tools/import_validation19.py": "9c3ee9e6e1994d0769c931d4a7b28b0bcb11453a649244c31d1bac478a627d7a",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "coverage/v1.0.19/pair.json": "15be0f8f7b282287d439e2a445f4f00518cf6909a98163571a2c481baaa14812"
+  },
+  "current_tests_head": "063a78466c356972e225fe441285e91373c4cfa9",
+  "current_skill_head": "a0e7ea2a952f8163a0468c7780a41fe6d11b7ab5",
+  "normative_source": {
+    "file": "validusage.json",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "api_version": "1.4.309",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "schema_version": 2,
+    "source_kind": "official Debian Vulkan headers registry snapshot",
+    "separate_from_vk_xml_api": "1.4.368"
+  },
+  "historical_input_provenance": {
+    "index_sha256": "2d7dc53f5522b98640a63028880f78aceef5551abb845505a1a08da9fa06eda2",
+    "tests_head": "5a137c2aeaccfbea3b54b9c8defd41de2ff71f99",
+    "skill_head": "98223918dcf89a3be371c75cac0bcbe43afa86ad",
+    "capture_timestamp": "NOT_ESTABLISHED_BY_THIS_IMPORT",
+    "callback_hashes": {
+      "buffer": "1821ff2b084ed8a427a12ee11845d82157a28497586569a5e1e2f13616c825c1",
+      "RAW": "5e70d4a9c6929fb4f58640bde84ef8604b430b46f4c62640b55b84c41460d7c1"
+    },
+    "provenance_scope": "Historical index inspected locally; importer metadata remains declared and does not independently authenticate the historical run"
+  },
+  "imports": {
+    "historical-buffer": {
+      "exit": 0,
+      "report_sha256": "a5b865e25dfcc0927dc3534f148878d1ad2771027dad194b030f35c8c0809f22",
+      "status": "DEVELOPMENT_IMPORTED_READ_ONLY_TRIAGE",
+      "counts": {
+        "MATCHED_SPEC_ENTRY": 1,
+        "TOOL_DIAGNOSTIC": 0,
+        "UNKNOWN": 0
+      }
+    },
+    "historical-raw": {
+      "exit": 0,
+      "report_sha256": "32c95d1a3617d9ed09671ee50c0f18c90d3d25fd18e73587cc9d97664e314551",
+      "status": "DEVELOPMENT_IMPORTED_READ_ONLY_TRIAGE",
+      "counts": {
+        "MATCHED_SPEC_ENTRY": 0,
+        "TOOL_DIAGNOSTIC": 1,
+        "UNKNOWN": 0
+      }
+    },
+    "synthetic-three": {
+      "exit": 0,
+      "report_sha256": "816c805b60298b1c71fc561cc40bf5e3937673c5311882ac8c2ab4baccd555fc",
+      "status": "DEVELOPMENT_IMPORTED_READ_ONLY_TRIAGE",
+      "counts": {
+        "MATCHED_SPEC_ENTRY": 2,
+        "TOOL_DIAGNOSTIC": 1,
+        "UNKNOWN": 0
+      }
+    },
+    "missing-version": {
+      "exit": 0,
+      "report_sha256": "8bce206203e9f78d7b902fe7bcd1ebae0dafa52b0632eedc07a9a461a4105d6d",
+      "status": "DEVELOPMENT_IMPORTED_READ_ONLY_TRIAGE",
+      "counts": {
+        "MATCHED_SPEC_ENTRY": 0,
+        "TOOL_DIAGNOSTIC": 0,
+        "UNKNOWN": 1
+      }
+    }
+  },
+  "tests": {
+    "importer": 29,
+    "importer_plus_existing_spec": 86
+  },
+  "limitations": [
+    "Raw callback messages/handles/names not copied into this repository or report",
+    "Synthetic three-class examples are HOST fixtures, not new GPU observations",
+    "Null or absent IDs retained UNKNOWN; unknown ID only digest and pointer",
+    "Declared layer version, no runtime loading or run/device association",
+    "Three curated unconfirmed hypotheses only; other IDs indexed/unknown",
+    "No execution, patch, causal proof, experience promotion or full C3/C4 completion"
+  ]
+}

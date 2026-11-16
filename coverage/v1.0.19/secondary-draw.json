@@ -1,0 +1,1600 @@
+{
+  "run_id": "190151a2-5577-480d-89ae-3e5d7fb0404f",
+  "source_sha256": "1a1db1b5c8111d3c5fd048bbd64d3bcf409ae8cc0a4e10dec81cd4e7c28925f1",
+  "runner_sha256": "965c748dea25d6a9c9c1c0910770b02c81dd08a6772779f20e52fd12a12a04c6",
+  "rules_sha256": "47cfae698744c6927b189d80f5f8d12355ce310c4fbf0a09b0ad299250525d60",
+  "draw_rules_sha256": "a3b679a7c7aefd26d12201660317b9540725c61f8e302e9ebb260b2712003f1e",
+  "normative_sha256": "66fc274b91518914086a97de817e83cb07cab9c4d266dcf93c4169c389d0e2f0",
+  "attachment_rules_sha256": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
+  "binary_sha256": "4889e86a7fc5c54f3561072fd763da7817584aa9f7a6f5c5756c62effe4932b2",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "good": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 37,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 0
+        }
+      },
+      "lifecycle_admission": null,
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "SECONDARY_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "58031ad1a7194d71854bcdfd409f48c6566f86db5b32521b9e70327be724681f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normative": null
+    },
+    "inheritance-format": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 44,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 44,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": false,
+          "discarded": true
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "lifecycle_admission": null,
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-vkCmdExecuteCommands-imageView-06028"
+        ]
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [
+        "execute-secondary VUID-vkCmdExecuteCommands-imageView-06028"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "622be6b9b1e8589e54945a97225874311d86626039bcd800abb197dc3242756b",
+      "stderr_sha256": "6dc93391c0aed2ce331332cb8b2ee653879189ab90f3ee3a073615125a6a08b2",
+      "normative": {
+        "vuid": "VUID-vkCmdExecuteCommands-imageView-06028",
+        "text": "If <code>vkCmdExecuteCommands</code> is being called within a render pass instance begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, if the <code>imageView</code> member of an element of the <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>pColorAttachments</code> parameter to <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, the corresponding element of the <code>pColorAttachmentFormats</code> member of the <a href=\"#VkCommandBufferInheritanceRenderingInfo\">VkCommandBufferInheritanceRenderingInfo</a> structure included in the <code>pNext</code> chain of <a href=\"#VkCommandBufferBeginInfo\">VkCommandBufferBeginInfo</a>::<code>pInheritanceInfo</code> used to begin recording each element of <code>pCommandBuffers</code> <strong class=\"purple\">must</strong> be equal to the format used to create that image view",
+        "page": "chapters/cmdbuffers.html"
+      }
+    },
+    "wrong-output": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 37,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 6
+        }
+      },
+      "lifecycle_admission": null,
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "SECONDARY_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [],
+      "exit_code": 6,
+      "stdout_sha256": "bf56f495dca6f2b5cf7bc993195c1874ab55425df1e81125eae43f7d38051408",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normative": null
+    },
+    "lifecycle": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 37,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "generation_retired": {
+          "kind": "generation_retired",
+          "generation": 0,
+          "renderFenceSuccess": true
+        },
+        "generation_recorded": {
+          "kind": "generation_recorded",
+          "generation": 1,
+          "secondaryResetAfterFence": true,
+          "scissor": [
+            0,
+            0,
+            2,
+            4
+          ],
+          "pipelineOrdinal": 1
+        },
+        "generation_identity": {
+          "kind": "generation_identity",
+          "primaryBeginFlags": 0,
+          "primaryRecordedGeneration": 0,
+          "secondaryGeneration": 1,
+          "samePrimary": true,
+          "sameSecondary": true,
+          "sameImage": true,
+          "sameReadback": true,
+          "sameFence": true
+        },
+        "stale_fence": {
+          "kind": "stale_fence",
+          "status": 1
+        },
+        "stale_attempt": {
+          "kind": "stale_attempt",
+          "apiResult": -1000011001,
+          "newErrors": 1,
+          "submitted": false
+        },
+        "generation_dependency": {
+          "kind": "generation_dependency",
+          "oldLayout": 6,
+          "newLayout": 2,
+          "srcAccess": 2048,
+          "dstAccess": 384,
+          "srcStage": 4096,
+          "dstStage": 1024,
+          "aspect": 1,
+          "levels": 1,
+          "layers": 1
+        },
+        "primary_rebuilt": {
+          "kind": "primary_rebuilt",
+          "recordedGeneration": 1,
+          "secondaryGeneration": 1,
+          "oldLayout": 6
+        },
+        "generation_execution": {
+          "kind": "generation_execution",
+          "generation": 1,
+          "primaryRerecorded": true,
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "lifecycle_admission": {
+        "status": "RETIRED_SECONDARY_RERECORD_PRIMARY_REBUILD_VERIFIED",
+        "scope": "Serial two-generation authored CPU fixture, not pending reset or concurrent execution."
+      },
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "SECONDARY_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [
+        "stale-primary-submit VUID-vkQueueSubmit-pCommandBuffers-00070"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "dac9fc68d1c4f6d3b265d9adf5e362b74d15dac7b8ff8373868a3b6d0c0bff70",
+      "stderr_sha256": "837b6a0a1f2a897ccd39555eb61b69f0d87b97e5175d7fc8b765fabd6baca8cb",
+      "normative": {
+        "vuid": "VUID-vkQueueSubmit-pCommandBuffers-00070",
+        "text": "Each element of the <code>pCommandBuffers</code> member of each element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>",
+        "page": "chapters/cmdbuffers.html"
+      }
+    },
+    "lifecycle-wrong-output": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "limits": {
+          "kind": "limits",
+          "framebufferWidth": 16384,
+          "framebufferHeight": 16384,
+          "viewportWidth": 16384,
+          "viewportHeight": 16384,
+          "viewportBoundsMin": -32768,
+          "viewportBoundsMax": 32768
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "pipeline": {
+          "kind": "pipeline",
+          "format": 37,
+          "attachmentFormat": 37,
+          "colorCount": 1,
+          "samples": 1,
+          "viewMask": 0,
+          "unusedAttachmentsEnabled": false,
+          "vertexCount": 3,
+          "instanceCount": 1,
+          "viewport": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "scissor": [
+            0,
+            0,
+            4,
+            4
+          ],
+          "stageCount": 2,
+          "stageMask": 17,
+          "topology": 3,
+          "depthStencilPresent": 0,
+          "firstVertex": 0,
+          "firstInstance": 0,
+          "maxColorAttachments": 8,
+          "blendEnable": 0,
+          "writeMask": 15,
+          "cullMode": 0,
+          "rasterizerDiscard": 0
+        },
+        "inheritance": {
+          "kind": "inheritance",
+          "level": 1,
+          "beginFlags": 2,
+          "renderPassNull": true,
+          "renderingFlags": 0,
+          "viewMask": 0,
+          "colorCount": 1,
+          "colorFormat": 37,
+          "samples": 1,
+          "depthFormat": 0,
+          "stencilFormat": 0,
+          "queueFamily": 0,
+          "secondaryExecutable": true
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execute_config": {
+          "kind": "execute_config",
+          "primaryRenderingFlags": 1,
+          "count": 1,
+          "primaryQueueFamily": 0
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "generation_retired": {
+          "kind": "generation_retired",
+          "generation": 0,
+          "renderFenceSuccess": true
+        },
+        "generation_recorded": {
+          "kind": "generation_recorded",
+          "generation": 1,
+          "secondaryResetAfterFence": true,
+          "scissor": [
+            0,
+            0,
+            2,
+            4
+          ],
+          "pipelineOrdinal": 1
+        },
+        "generation_identity": {
+          "kind": "generation_identity",
+          "primaryBeginFlags": 0,
+          "primaryRecordedGeneration": 0,
+          "secondaryGeneration": 1,
+          "samePrimary": true,
+          "sameSecondary": true,
+          "sameImage": true,
+          "sameReadback": true,
+          "sameFence": true
+        },
+        "stale_fence": {
+          "kind": "stale_fence",
+          "status": 1
+        },
+        "stale_attempt": {
+          "kind": "stale_attempt",
+          "apiResult": -1000011001,
+          "newErrors": 1,
+          "submitted": false
+        },
+        "generation_dependency": {
+          "kind": "generation_dependency",
+          "oldLayout": 6,
+          "newLayout": 2,
+          "srcAccess": 2048,
+          "dstAccess": 384,
+          "srcStage": 4096,
+          "dstStage": 1024,
+          "aspect": 1,
+          "levels": 1,
+          "layers": 1
+        },
+        "primary_rebuilt": {
+          "kind": "primary_rebuilt",
+          "recordedGeneration": 1,
+          "secondaryGeneration": 1,
+          "oldLayout": 6
+        },
+        "generation_execution": {
+          "kind": "generation_execution",
+          "generation": 1,
+          "primaryRerecorded": true,
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              0,
+              255
+            ],
+            [
+              0,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 6
+        }
+      },
+      "lifecycle_admission": {
+        "status": "RETIRED_SECONDARY_RERECORD_PRIMARY_REBUILD_VERIFIED",
+        "scope": "Serial two-generation authored CPU fixture, not pending reset or concurrent execution."
+      },
+      "secondary_graphics": {
+        "status": "SECONDARY_GRAPHICS_FIXED_FIELDS_VALID",
+        "scope": "Checks pipeline against secondary inheritance, not primary format validity or full shader reflection."
+      },
+      "admission": {
+        "status": "SECONDARY_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "attachment_admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "diagnostics": [
+        "stale-primary-submit VUID-vkQueueSubmit-pCommandBuffers-00070"
+      ],
+      "exit_code": 6,
+      "stdout_sha256": "0474ba1fbf2f044092f0ee2e19b0de59cab9e65db97681bd9be1a37258036fa8",
+      "stderr_sha256": "837b6a0a1f2a897ccd39555eb61b69f0d87b97e5175d7fc8b765fabd6baca8cb",
+      "normative": {
+        "vuid": "VUID-vkQueueSubmit-pCommandBuffers-00070",
+        "text": "Each element of the <code>pCommandBuffers</code> member of each element of <code>pSubmits</code> <strong class=\"purple\">must</strong> be in the <a href=\"#commandbuffers-lifecycle\">pending or executable state</a>",
+        "page": "chapters/cmdbuffers.html"
+      }
+    }
+  },
+  "shaders": {
+    "vert": {
+      "source_sha256": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0",
+      "binary_sha256": "d562f376849e441ecfb323ac0a21809d5cb7d9e5628e664d34978085ed09eae0",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "57e6881a5c0ebd2d3c04eee3123f007305c1a3d710d0d8c6df87fbc8b0ca5b32",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "43ad1d4bab39bda43a11eb37db299ef91faba4a6f9a3f39c11a84190d7a6292b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    },
+    "frag": {
+      "source_sha256": "2759ed0d04499e541654969eea33bab84147d619794bbb81bddcb96cee695cf9",
+      "binary_sha256": "39ce01cb0aaf383d6b56f3cfe02fe53e008c0b41ab4e425c1c06c10fc9d3243c",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "2fdf6adc025ef22b53d9e5fbe55a8adca609cc039d35852ae377a5486558a95c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "c778f4b5a4476e33a792abcbac1edabe1b10026e80118d7d00133afba0b5fa9a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    }
+  },
+  "status": "BOUNDED_SECONDARY_DRAW_PASS",
+  "limitations": [
+    "Original repository-authored fault, not external production bug.",
+    "CPU ICD only; no mobile/hardware/performance proof.",
+    "Wrong-output is independent CPU expectation inversion, not a Vulkan defect.",
+    "Execute callback abort discards primary command buffer, no invalid submission.",
+    "Standalone cohort; not included in previous five-chain delivery bundle.",
+    "No full VK03/VK10, concurrency or pending secondary reset/reuse acceptance."
+  ]
+}

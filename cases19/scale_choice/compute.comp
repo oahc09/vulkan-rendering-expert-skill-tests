@@ -1,0 +1,5 @@
+#version 450
+layout(local_size_x=1) in;
+layout(set=0,binding=0,std430) readonly buffer Input { uint visible[]; } source;
+layout(set=0,binding=1,std430) buffer Output { uint words[]; } target;
+void main(){uint n=0;for(uint i=0;i<16;i++){if(source.visible[i]!=0){target.words[n*4]=6;target.words[n*4+1]=1;target.words[n*4+2]=i*6;target.words[n*4+3]=0;n++;}}target.words[64]=n;}

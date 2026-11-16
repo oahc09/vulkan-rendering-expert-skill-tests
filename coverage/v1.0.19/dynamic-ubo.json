@@ -1,0 +1,3327 @@
+{
+  "run_id": "905853fd-e2d9-4000-97b2-7d493312c91f",
+  "source_sha256": "b52cba527307ef23b0693c07f1a24e206cabe0f4704c23175208ab219e3ad375",
+  "runner_sha256": "3896acce9c422290f56a1d3585b7ce85258ccb2c8d499eaab2e2c0e3fb104c5f",
+  "rules_sha256": "a3b679a7c7aefd26d12201660317b9540725c61f8e302e9ebb260b2712003f1e",
+  "ubo_rules_sha256": "1d15dfb690789aa42d22cccfc82ef4201e683f5bcaee00e1c8d840dc83145804",
+  "attachment_rules_sha256": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
+  "binary_sha256": "e61afbea6087048b45b1f816d6ac38c60d430be43ee610cf941abe63362368cb",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "baseline": {
+      "records": {
+        "pipeline": [
+          {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          }
+        ],
+        "ubo": [
+          {
+            "kind": "ubo",
+            "alignment": 16,
+            "slotStride": 16,
+            "bufferSize": 64,
+            "descriptorCount": 2,
+            "range": 16,
+            "baseOffset": 0,
+            "descriptors": [
+              {
+                "base": 0,
+                "range": 16
+              },
+              {
+                "base": 0,
+                "range": 16
+              }
+            ],
+            "maxUniformRange": 65536,
+            "maxDynamicUBO": 1000000,
+            "maxStageUBO": 1000000,
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "execution": [
+          {
+            "kind": "execution",
+            "frame": 0,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ]
+            ]
+          },
+          {
+            "kind": "execution",
+            "frame": 1,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ]
+            ]
+          },
+          {
+            "kind": "execution",
+            "frame": 2,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ]
+            ]
+          }
+        ],
+        "image_allocation": [
+          {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "frame_input": [
+          {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              16,
+              0
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          {
+            "kind": "frame_input",
+            "frame": 1,
+            "generation": 1,
+            "firstSlot": 2,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              48,
+              32
+            ],
+            "params": [
+              0,
+              255,
+              0,
+              255,
+              255,
+              255,
+              0,
+              255
+            ]
+          },
+          {
+            "kind": "frame_input",
+            "frame": 2,
+            "generation": 2,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 1,
+            "priorUseFrame": 0,
+            "offsets": [
+              16,
+              0
+            ],
+            "params": [
+              255,
+              255,
+              255,
+              255,
+              0,
+              0,
+              0,
+              255
+            ]
+          }
+        ],
+        "identity": [
+          {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          }
+        ],
+        "manifest": [
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          }
+        ],
+        "buffer_allocation": [
+          {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "limits": [
+          {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          }
+        ],
+        "final": [
+          {
+            "kind": "final",
+            "errors": 0,
+            "rc": 4
+          }
+        ]
+      },
+      "frames": [
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              16,
+              0
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 0,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        },
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 1,
+            "generation": 1,
+            "firstSlot": 2,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              48,
+              32
+            ],
+            "params": [
+              0,
+              255,
+              0,
+              255,
+              255,
+              255,
+              0,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 1,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        },
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 2,
+            "generation": 2,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 1,
+            "priorUseFrame": 0,
+            "offsets": [
+              16,
+              0
+            ],
+            "params": [
+              255,
+              255,
+              255,
+              255,
+              0,
+              0,
+              0,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 2,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        }
+      ],
+      "exit_code": 4,
+      "diagnostics": [],
+      "stdout_sha256": "64589e3b72640d0e9db55410857ef340445c5c810bc9cbe37e5918870572ca59",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normative": null
+    },
+    "fixed": {
+      "records": {
+        "pipeline": [
+          {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          }
+        ],
+        "ubo": [
+          {
+            "kind": "ubo",
+            "alignment": 16,
+            "slotStride": 16,
+            "bufferSize": 64,
+            "descriptorCount": 2,
+            "range": 16,
+            "baseOffset": 0,
+            "descriptors": [
+              {
+                "base": 0,
+                "range": 16
+              },
+              {
+                "base": 0,
+                "range": 16
+              }
+            ],
+            "maxUniformRange": 65536,
+            "maxDynamicUBO": 1000000,
+            "maxStageUBO": 1000000,
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "execution": [
+          {
+            "kind": "execution",
+            "frame": 0,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          {
+            "kind": "execution",
+            "frame": 1,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ]
+            ]
+          },
+          {
+            "kind": "execution",
+            "frame": 2,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ]
+            ]
+          }
+        ],
+        "image_allocation": [
+          {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "frame_input": [
+          {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          {
+            "kind": "frame_input",
+            "frame": 1,
+            "generation": 1,
+            "firstSlot": 2,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              32,
+              48
+            ],
+            "params": [
+              0,
+              255,
+              0,
+              255,
+              255,
+              255,
+              0,
+              255
+            ]
+          },
+          {
+            "kind": "frame_input",
+            "frame": 2,
+            "generation": 2,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 1,
+            "priorUseFrame": 0,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              255,
+              255,
+              255,
+              0,
+              0,
+              0,
+              255
+            ]
+          }
+        ],
+        "identity": [
+          {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          }
+        ],
+        "manifest": [
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          }
+        ],
+        "buffer_allocation": [
+          {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "limits": [
+          {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          }
+        ],
+        "final": [
+          {
+            "kind": "final",
+            "errors": 0,
+            "rc": 0
+          }
+        ]
+      },
+      "frames": [
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 0,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        },
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 1,
+            "generation": 1,
+            "firstSlot": 2,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              32,
+              48
+            ],
+            "params": [
+              0,
+              255,
+              0,
+              255,
+              255,
+              255,
+              0,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 1,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        },
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 2,
+            "generation": 2,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 1,
+            "priorUseFrame": 0,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              255,
+              255,
+              255,
+              0,
+              0,
+              0,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 2,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        }
+      ],
+      "exit_code": 0,
+      "diagnostics": [],
+      "stdout_sha256": "73d6872648853e0ae618d923612f0bb541ed522471adbab9764ca05798495466",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normative": null
+    },
+    "alignment": {
+      "records": {
+        "pipeline": [
+          {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          }
+        ],
+        "ubo": [
+          {
+            "kind": "ubo",
+            "alignment": 16,
+            "slotStride": 16,
+            "bufferSize": 64,
+            "descriptorCount": 2,
+            "range": 16,
+            "baseOffset": 0,
+            "descriptors": [
+              {
+                "base": 0,
+                "range": 16
+              },
+              {
+                "base": 0,
+                "range": 16
+              }
+            ],
+            "maxUniformRange": 65536,
+            "maxDynamicUBO": 1000000,
+            "maxStageUBO": 1000000,
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "execution": [
+          {
+            "kind": "execution",
+            "submitted": false,
+            "discarded": true
+          }
+        ],
+        "image_allocation": [
+          {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "frame_input": [
+          {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              1,
+              16
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          }
+        ],
+        "identity": [
+          {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          }
+        ],
+        "manifest": [
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          }
+        ],
+        "buffer_allocation": [
+          {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "limits": [
+          {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          }
+        ],
+        "final": [
+          {
+            "kind": "final",
+            "errors": 1,
+            "rc": 0
+          }
+        ]
+      },
+      "frames": [
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              1,
+              16
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "submitted": false,
+            "discarded": true
+          },
+          "binding": {
+            "status": "REJECTED",
+            "vuids": [
+              "VUID-vkCmdBindDescriptorSets-pDynamicOffsets-01971"
+            ],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        }
+      ],
+      "exit_code": 0,
+      "diagnostics": [
+        "alignment VUID-vkCmdBindDescriptorSets-pDynamicOffsets-01971"
+      ],
+      "stdout_sha256": "702cdba86f59c48ca5f5af4892c2d6bd5cc22f5f625aeafd4488f17f896f03b1",
+      "stderr_sha256": "4736d1bcceb3990b65f7af6a17ed840b7d1925c470f96d63fe3d857bfa231197",
+      "normative": {
+        "vuid": "VUID-vkCmdBindDescriptorSets-pDynamicOffsets-01971",
+        "text": "Each element of <code>pDynamicOffsets</code> which corresponds to a descriptor binding with type <code>VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC</code> <strong class=\"purple\">must</strong> be a multiple of <code>VkPhysicalDeviceLimits</code>::<code>minUniformBufferOffsetAlignment</code>",
+        "page": "chapters/descriptorsets.html"
+      }
+    },
+    "wrong-output": {
+      "records": {
+        "pipeline": [
+          {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          }
+        ],
+        "ubo": [
+          {
+            "kind": "ubo",
+            "alignment": 16,
+            "slotStride": 16,
+            "bufferSize": 64,
+            "descriptorCount": 2,
+            "range": 16,
+            "baseOffset": 0,
+            "descriptors": [
+              {
+                "base": 0,
+                "range": 16
+              },
+              {
+                "base": 0,
+                "range": 16
+              }
+            ],
+            "maxUniformRange": 65536,
+            "maxDynamicUBO": 1000000,
+            "maxStageUBO": 1000000,
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "execution": [
+          {
+            "kind": "execution",
+            "frame": 0,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          {
+            "kind": "execution",
+            "frame": 1,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ]
+            ]
+          },
+          {
+            "kind": "execution",
+            "frame": 2,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ]
+            ]
+          }
+        ],
+        "image_allocation": [
+          {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "frame_input": [
+          {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          {
+            "kind": "frame_input",
+            "frame": 1,
+            "generation": 1,
+            "firstSlot": 2,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              32,
+              48
+            ],
+            "params": [
+              0,
+              255,
+              0,
+              255,
+              255,
+              255,
+              0,
+              255
+            ]
+          },
+          {
+            "kind": "frame_input",
+            "frame": 2,
+            "generation": 2,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 1,
+            "priorUseFrame": 0,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              255,
+              255,
+              255,
+              0,
+              0,
+              0,
+              255
+            ]
+          }
+        ],
+        "identity": [
+          {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          }
+        ],
+        "manifest": [
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 17,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          }
+        ],
+        "buffer_allocation": [
+          {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          }
+        ],
+        "limits": [
+          {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          }
+        ],
+        "final": [
+          {
+            "kind": "final",
+            "errors": 0,
+            "rc": 6
+          }
+        ]
+      },
+      "frames": [
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 0,
+            "generation": 1,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              0,
+              0,
+              255,
+              0,
+              0,
+              255,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 0,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        },
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 1,
+            "generation": 1,
+            "firstSlot": 2,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 0,
+            "priorUseFrame": -1,
+            "offsets": [
+              32,
+              48
+            ],
+            "params": [
+              0,
+              255,
+              0,
+              255,
+              255,
+              255,
+              0,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 1,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                0,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        },
+        {
+          "input": {
+            "kind": "frame_input",
+            "frame": 2,
+            "generation": 2,
+            "firstSlot": 0,
+            "retiredBeforeWrite": true,
+            "priorGeneration": 1,
+            "priorUseFrame": 0,
+            "offsets": [
+              0,
+              16
+            ],
+            "params": [
+              255,
+              255,
+              255,
+              255,
+              0,
+              0,
+              0,
+              255
+            ]
+          },
+          "output": {
+            "kind": "execution",
+            "frame": 2,
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                255,
+                255,
+                255,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ],
+              [
+                0,
+                0,
+                0,
+                255
+              ]
+            ]
+          },
+          "binding": {
+            "status": "BIND_WITHIN_SCOPE",
+            "vuids": [],
+            "order": "set0 binding0 array element0, then element1; semantic role is not checked by Validation"
+          },
+          "retirement": {
+            "status": "REUSE_WITHIN_SCOPE",
+            "limitation": "caller must bind same buffer/slot/run and real fence coverage; CPU policy does not observe GPU races"
+          }
+        }
+      ],
+      "exit_code": 6,
+      "diagnostics": [],
+      "stdout_sha256": "f6ac26ad64ac11786779e08b37b332943b1b14ec8fff3feaf6ddcda482138768",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "normative": null
+    }
+  },
+  "shaders": {
+    "vert": {
+      "source_sha256": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0",
+      "binary_sha256": "d562f376849e441ecfb323ac0a21809d5cb7d9e5628e664d34978085ed09eae0",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "166f8df2c187d7951c595176eae7076ec7875e659e6a18c09425da96f035f4ab",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "43ad1d4bab39bda43a11eb37db299ef91faba4a6f9a3f39c11a84190d7a6292b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    },
+    "frag": {
+      "source_sha256": "db140264c3fb9e7556d90a23a9eefd0d9ceedbc68776f18c85f764079892e828",
+      "binary_sha256": "7a8936cdba9cfd15779f48b464f43dd3b97db1fcf6444802f186346f8b55a0f0",
+      "target_env": "vulkan1.1",
+      "tools": {
+        "compile": {
+          "exit_code": 0,
+          "stdout_sha256": "ce30b9fe8192e3377b939c0c855ebf7c80993836089c47f48bbe28e99e55fd23",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+          "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+        },
+        "validate": {
+          "exit_code": 0,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+        },
+        "disassemble": {
+          "exit_code": 0,
+          "stdout_sha256": "87c6006c1e9cc54ee22eb6b7945fa92fafc49b776370092bb97b57689e1c8008",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "tool_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+          "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+        }
+      }
+    }
+  },
+  "patch_sha256": "b8ba11f6983ea060ffea6cb153e85caf5aee7b54a85933eb095db5c2dbc44358",
+  "fixed_source_sha256": "98d01b7edbc8359fc950db773fec7ef99dc0d1a7cb922af07951115a874f98a8",
+  "fixed_binary_sha256": "2b874a3449e2d1020e265ba962b7aa068d347e7e4daded170989a569f4c1fe9a",
+  "status": "BOUNDED_DYNAMIC_UBO_RING_PASS",
+  "limitations": [
+    "Original offset-order fault, not external production defect.",
+    "All frames serialized by individual fence; no concurrent-frame performance claim.",
+    "CPU ICD/coherent memory only; no bindless/update-after-bind/descriptor-buffer.",
+    "Pending/stale negatives are CPU policy only, no intentionally raced host writes.",
+    "Standalone, not silently included in older scene delivery entry."
+  ]
+}

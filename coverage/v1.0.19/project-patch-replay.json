@@ -1,0 +1,143 @@
+{
+  "schema": 1,
+  "status": "PREPUBLICATION_DEVELOPMENT_EVIDENCE",
+  "release_status": "BLOCKED",
+  "scope": "Registered known historical HOST AST portability patch replay only; not a new user repair, blind task, GPU experiment, or generic project runner.",
+  "recipe": "tests-ast312-313-portability-v1",
+  "base": "00c3b8b234576817989df116948a2eaa5af761e2",
+  "candidate": "3afa22d29f93a48c5012a968a5eba2085189bc66",
+  "patch_sha256": "162f353bcd0b2bdc0786a29634f7f011f10678bd531d088cf2279a40823cb33c",
+  "allowed_paths": [
+    "tests/fixtures/contract-registry19.json",
+    "tests/test_contract_registry19.py",
+    "tools/contract_registry19.py"
+  ],
+  "source_sha256": {
+    "checks19/replay_project_patch.py": "33c4735e9b1c8587572935aeb8e612b1acb075db15d38637e5ec3bf475d8322d",
+    "tools/project_patch_replay19.py": "3062560cae9fc5925f459ca83e505cc1f4f5d95af4200364a75ddb3cb4496bee",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c",
+    "coverage/v1.0.19/pair.json": "85e048e3c0600b406570087a7eebd2a2fd5f66b9a0f07f7d6d9e1508f09a4fa9"
+  },
+  "stages": [
+    {
+      "stage": "before",
+      "source_directory": "before",
+      "python": "312",
+      "result": "EXACT_FIXTURE_MATCH",
+      "manifest_sha256": "2a8a655583c85b12a1e4dcee0bd36b80a6c651e1d2e75cfaf70f899838c40788",
+      "log_sha256": "467b4cd084c2bf00a081f19da1919456ff952324f2b437d8bc8f2a14115fd00c"
+    },
+    {
+      "stage": "before",
+      "source_directory": "before",
+      "python": "313",
+      "result": "BASELINE_AST_MISMATCH_REPRODUCED",
+      "manifest_sha256": "db58cc81849bffe02b3a3d509f789e056456ca3d12357d1025531875e0b1e469",
+      "log_sha256": "c6de64a836068f9bedd6c7fd9a613429d9c10a7b6011f6c376214f576763d271"
+    },
+    {
+      "stage": "after",
+      "source_directory": "patch-check",
+      "python": "312",
+      "result": "EXACT_FIXTURE_MATCH",
+      "manifest_sha256": "51d4fd412fe460e7933abad6a3e0a4597b9fb88be06e91c3315518e687b72f2e",
+      "log_sha256": "e253aa07ec123ae392c4ebb934cce39fa5d0297400e9a1c0ccf44bbec656b121"
+    },
+    {
+      "stage": "after",
+      "source_directory": "patch-check",
+      "python": "313",
+      "result": "EXACT_FIXTURE_MATCH",
+      "manifest_sha256": "51d4fd412fe460e7933abad6a3e0a4597b9fb88be06e91c3315518e687b72f2e",
+      "log_sha256": "6c4a3c7f4055605b7e23840b5b40893298157cf46c860d63f004d52570652410"
+    },
+    {
+      "stage": "rollback",
+      "source_directory": "rollback",
+      "python": "312",
+      "result": "EXACT_FIXTURE_MATCH",
+      "manifest_sha256": "2a8a655583c85b12a1e4dcee0bd36b80a6c651e1d2e75cfaf70f899838c40788",
+      "log_sha256": "467b4cd084c2bf00a081f19da1919456ff952324f2b437d8bc8f2a14115fd00c"
+    },
+    {
+      "stage": "rollback",
+      "source_directory": "rollback",
+      "python": "313",
+      "result": "BASELINE_AST_MISMATCH_REPRODUCED",
+      "manifest_sha256": "db58cc81849bffe02b3a3d509f789e056456ca3d12357d1025531875e0b1e469",
+      "log_sha256": "c6de64a836068f9bedd6c7fd9a613429d9c10a7b6011f6c376214f576763d271"
+    }
+  ],
+  "controls": {
+    "complete": {
+      "exit": 0,
+      "cancel_triggered": null,
+      "status": "DEVELOPMENT_KNOWN_PATCH_REPLAYED",
+      "stage_count": 6,
+      "pending": [],
+      "report_sha256": "923dac6a021c373f5cc525a79a61706eb7481d3b3262999059ef62a7a41cb34d",
+      "error": null
+    },
+    "cancel-prefix": {
+      "exit": 2,
+      "cancel_triggered": true,
+      "status": "BLOCKED",
+      "stage_count": 2,
+      "pending": [
+        "after-312",
+        "after-313",
+        "rollback-312",
+        "rollback-313"
+      ],
+      "report_sha256": "d8b755cd38b515e946a4b15d74e921a73f6b4c3fe869130f8c74d25298cecd20",
+      "error": "Cancelled: explicit cancel-file or termination signal"
+    },
+    "budget": {
+      "exit": 2,
+      "cancel_triggered": null,
+      "status": "BLOCKED",
+      "stage_count": 0,
+      "pending": [
+        "before-312",
+        "before-313",
+        "after-312",
+        "after-313",
+        "rollback-312",
+        "rollback-313"
+      ],
+      "report_sha256": "70c005b805bf02724453e69366377c6f33ed7270f8f8bd429e72a6f66f796593",
+      "error": "ValueError: controlled step failed runtime-312-ldd"
+    },
+    "recovery": {
+      "exit": 0,
+      "cancel_triggered": null,
+      "status": "DEVELOPMENT_KNOWN_PATCH_REPLAYED",
+      "stage_count": 6,
+      "pending": [],
+      "report_sha256": "3f06820084c58286b3f1e7ab51417460e41d024db7138dc4b578651e25c54d20",
+      "error": null
+    }
+  },
+  "budget_boundary": {
+    "step": "runtime-312-ldd",
+    "leader_returncode": 0,
+    "timed_out": true,
+    "budget_exhausted": true,
+    "group_gone": true,
+    "interpretation": "Execution blocked by exhausted budget; leader had exited zero. No claim that the leader was killed or that this was a GPU failure."
+  },
+  "cancel_boundary": "Two before-stage workers verified; explicit cancel-file prevented remaining four workers. Not an in-flight GPU cancellation.",
+  "tests": {
+    "new_host_tests": 23,
+    "with_existing_registry_tests": 34,
+    "python312": "34 passed",
+    "python313": "34 passed"
+  },
+  "limitations": [
+    "Six workers repeat the same 125 existing controls, not 750 independent tests.",
+    "All 23 semantic entry and 21 helper AST hashes checked; before/rollback Python 3.13 differ only at registered 44 AST coordinates.",
+    "After executes the actual patched isolated base whose bytes equal the fixed candidate. Rollback is a fresh baseline export, not restoration of the user worktree.",
+    "Fixed local interpreter and dependency cohort; output is a local evidence directory, not a portable arbitrary-project package.",
+    "Historical initial CI failure remains a failure; development receipts are not final published strict evidence."
+  ]
+}

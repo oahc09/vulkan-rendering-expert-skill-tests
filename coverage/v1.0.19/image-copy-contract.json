@@ -1,0 +1,333 @@
+{
+  "status": "SOURCE_PAIRED_PARTIAL_IMAGE_COPY_HOST_CONTROLS",
+  "case_count": 19,
+  "prose": {
+    "api_version": "1.4.368",
+    "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "common_include_lines": [
+      397,
+      541
+    ],
+    "copyright": "Khronos Group",
+    "license": "CC-BY-4.0",
+    "limitations": [
+      "Raw physical slices, not preprocessed complete specification.",
+      "Only listed common validity include is resolved; remaining includes and feature conditions require review.",
+      "Size-representation block-count equality is not a unique command coordinate transformation.",
+      "Separate1.4.309 VUID cohort is not treated as the same version or GPU acceptance."
+    ],
+    "sources": {
+      "common": {
+        "bytes": 21614,
+        "path": "chapters/commonvalidity/copy_image_common.adoc",
+        "sha256": "7251d3047441e1be6bf16f4669393ae31b957dea61b3a737ef6a35998b1ef6e0",
+        "slices": []
+      },
+      "copies": {
+        "bytes": 159708,
+        "path": "chapters/copies.adoc",
+        "sha256": "b821b4b219c3e7e691332b651c40cd169b74017d7212aad9d1ddbeef8acbec05",
+        "slices": [
+          {
+            "anchor": "copies-images",
+            "bytes": 1444,
+            "conditional_directives": [
+              "ifdef::VK_EXT_depth_range_unrestricted[]",
+              "endif::VK_EXT_depth_range_unrestricted[]"
+            ],
+            "line_end": 321,
+            "line_start": 285,
+            "sha256": "8678790d1396ebe1ad4f9284920b8a330affc4e5c9adaacf6f69bb41122a0515"
+          },
+          {
+            "anchor": "copies-images-addressing",
+            "bytes": 10330,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_maintenance1[]",
+              "ifndef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "ifdef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_maintenance1[]",
+              "ifdef::VK_EXT_image_drm_format_modifier[]",
+              "endif::VK_EXT_image_drm_format_modifier[]",
+              "ifdef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_copy_commands2[]",
+              "ifdef::VK_BASE_VERSION_1_3[]",
+              "endif::VK_BASE_VERSION_1_3[]",
+              "ifdef::VK_KHR_copy_commands2[]",
+              "endif::VK_KHR_copy_commands2[]",
+              "ifdef::VK_KHR_copy_commands2[]",
+              "endif::VK_KHR_copy_commands2[]",
+              "ifdef::VK_KHR_copy_commands2[]",
+              "endif::VK_KHR_copy_commands2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_copy_commands2[]",
+              "ifdef::VK_KHR_device_address_commands[]"
+            ],
+            "line_end": 590,
+            "line_start": 322,
+            "sha256": "de0120ba218d0ecf67ca49b9746dd776f13eba0e0f2e87c75d223aeeca86e130"
+          }
+        ]
+      },
+      "formats": {
+        "bytes": 257950,
+        "path": "chapters/formats.adoc",
+        "sha256": "9360d12ae4c69c9eb7cf374dc3c99c061b6386f1551b9b4648d14728101cb7f1",
+        "slices": [
+          {
+            "anchor": "formats-size-compatibility",
+            "bytes": 2105,
+            "conditional_directives": [
+              "ifndef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "ifdef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_maintenance2[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_maintenance2[]",
+              "ifdef::VK_KHR_maintenance8[]",
+              "endif::VK_KHR_maintenance8[]"
+            ],
+            "line_end": 2048,
+            "line_start": 1999,
+            "sha256": "c41fd4296a363b3ea1ec1772665f69103c33c9fc115a30426efe9351710b82a8"
+          }
+        ]
+      }
+    },
+    "status": "PINNED_IMAGE_COPY_PROSE_MAP"
+  },
+  "vuid_source": {
+    "api_version": "1.4.309",
+    "file": "validusage.json",
+    "schema_version": 2,
+    "separate_from_vk_xml_api": "1.4.368",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "source_kind": "official Debian Vulkan headers registry snapshot"
+  },
+  "vuid_coordinates": [
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-srcImage-01548"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-srcImage-09247"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-pRegions-07278"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-pRegions-07279"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-pRegions-07280"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-pRegions-07281"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-pRegions-07282"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-pRegions-07283"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-srcImage-01728"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-srcImage-01729"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-srcImage-01730"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-dstImage-01732"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-dstImage-01733"
+    },
+    {
+      "api_owner": "vkCmdCopyImage",
+      "condition_key": "core",
+      "page": "chapters/copies.html",
+      "vuid": "VUID-vkCmdCopyImage-dstImage-01734"
+    }
+  ],
+  "implementation_sha256": {
+    "checks19/run_image_copy_contracts.py": "ee1655da479237ee1acd1eba5927be56d0726f28dd7321fa35ad41041c3c030c",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "tools/image_copy_contract19.py": "810cccd30be5ab6daefaf6b75a6a98b8970da93e3683b95ec035b1e0a0f43406",
+    "tools/image_copy_prose19.py": "39c5766bcae7118901cea98802802ac987be8244c3f351e187ea0214d89381b5"
+  },
+  "evidence_kind": "CALLER_METADATA_HOST_CONTROLS_NOT_GPU",
+  "whole_copy_admission": "NOT_INFERRED",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "release_status": "BLOCKED",
+  "controls": [
+    {
+      "name": "bc1-to-rg32",
+      "expected": "FORMAT_CONDITIONS_WITHIN_SCOPE",
+      "expected_details": {}
+    },
+    {
+      "name": "rg32-to-bc1",
+      "expected": "FORMAT_CONDITIONS_WITHIN_SCOPE",
+      "expected_details": {}
+    },
+    {
+      "name": "different-block-bytes",
+      "expected": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-vkCmdCopyImage-srcImage-01548"
+        ]
+      }
+    },
+    {
+      "name": "both-compressed-different-extents",
+      "expected": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-vkCmdCopyImage-srcImage-09247"
+        ]
+      }
+    },
+    {
+      "name": "alpha-only-outside-scope",
+      "expected": "UNKNOWN",
+      "expected_details": {}
+    },
+    {
+      "name": "unknown-support",
+      "expected": "UNKNOWN",
+      "expected_details": {}
+    },
+    {
+      "name": "astc-small-mip-block-representation",
+      "expected": "BLOCK_COUNTS_EQUAL",
+      "expected_details": {
+        "unique_destination_extent_inferred": false
+      }
+    },
+    {
+      "name": "nonunique-edge-representation-5",
+      "expected": "BLOCK_COUNTS_EQUAL",
+      "expected_details": {
+        "unique_destination_extent_inferred": false
+      }
+    },
+    {
+      "name": "nonunique-edge-representation-6",
+      "expected": "BLOCK_COUNTS_EQUAL",
+      "expected_details": {
+        "unique_destination_extent_inferred": false
+      }
+    },
+    {
+      "name": "nonunique-edge-representation-7",
+      "expected": "BLOCK_COUNTS_EQUAL",
+      "expected_details": {
+        "unique_destination_extent_inferred": false
+      }
+    },
+    {
+      "name": "nonunique-edge-representation-8",
+      "expected": "BLOCK_COUNTS_EQUAL",
+      "expected_details": {
+        "unique_destination_extent_inferred": false
+      }
+    },
+    {
+      "name": "different-block-counts",
+      "expected": "BLOCK_COUNTS_DIFFER",
+      "expected_details": {}
+    },
+    {
+      "name": "src-aligned-offset-partial-edge-extent",
+      "expected": "LOCAL_REGION_CONDITIONS_WITHIN_SCOPE",
+      "expected_details": {
+        "complete_copy_admission": false
+      }
+    },
+    {
+      "name": "src-edge-does-not-excuse-offset",
+      "expected": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "src-unaligned-extent-not-at-edge",
+      "expected": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "dst-aligned-offset-partial-edge-extent",
+      "expected": "LOCAL_REGION_CONDITIONS_WITHIN_SCOPE",
+      "expected_details": {
+        "complete_copy_admission": false
+      }
+    },
+    {
+      "name": "dst-edge-does-not-excuse-offset",
+      "expected": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "dst-unaligned-extent-not-at-edge",
+      "expected": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "region-out-of-bounds",
+      "expected": "REJECTED",
+      "expected_details": {
+        "out_of_bounds_axes": [
+          0
+        ]
+      }
+    }
+  ],
+  "report_sha256": "8c4a00f5cb1f1855ab4a937deea087c972ad500754b81916c4ef6ff1c62d3629",
+  "cohort": "prepublication exact implementation hashes; not final tests head"
+}

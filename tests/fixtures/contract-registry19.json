@@ -1,0 +1,2614 @@
+{
+  "schema": 1,
+  "status": "IMPLEMENTED_HOST_CONTRACT_SUBDENOMINATOR_ONLY",
+  "semantic_entries": 23,
+  "families": {
+    "sync": {
+      "path": "tools/sync_contract19.py",
+      "source_sha256": "219066db5399583463700edc0c47579d543c2563284ff5d9cd3d5a8e9eacada3",
+      "entries": {
+        "evaluate": {
+          "ast_sha256": "1f77b69cbc1434da66c841292ad6e96804b9446a32afb1872a38567e342dc7cb",
+          "signature": "facts",
+          "docstring": "Evaluate one ordinary overlapping GPU access pair with strict exact fields.\n\nAccess enums are READ/WRITE. A covered execution dependency already includes\nvalid scope intersection/chain evidence, supplied by the caller. For RAW/WAW,\nthe availability and visibility fields refer to this precise first write and\nsecond access, not arbitrary globally true cache properties.",
+          "preconditions": [
+            "same_device/overlapping_memory/ordinary_accesses",
+            "exclude layout_transition/ownership_transfer/memory_domain_transfer",
+            "execution_dependency_covers_both_operations",
+            "RAW/WAW first_write_available/available_write_visible_to_second_access/availability_visibility_ordered_between_operations; WAR execution only"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "facts",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "raw-complete",
+              "input_sha256": "bf82a5487d4bb33b22597eec4735986aa49fa489477c0f34a671e860e03bfffd",
+              "expected_status": "CALLER_FACTS_SUFFICIENT",
+              "result_sha256": "2d6d879560b92108b8a82bb87050580e9672086e8a6b9a80c9f471d4100b3334"
+            },
+            {
+              "name": "waw-complete",
+              "input_sha256": "697642454648be39b118b8fb999a6f90ab767fbcba7d8e3841914082f2ad305b",
+              "expected_status": "CALLER_FACTS_SUFFICIENT",
+              "result_sha256": "3b177d30c911727c203747ce8d838f10d4dc3af293264b030f5fff1fdccae414"
+            },
+            {
+              "name": "raw-only-order-and-fence",
+              "input_sha256": "d7842accd1af2cf0fd3c5f98d772c42b9444013312aeeb014cc7ed74cff6744e",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "671d722b773e7d30979236d4065abe122fec3d0e2bbb85a0175468273d08a038"
+            },
+            {
+              "name": "raw-execution-only",
+              "input_sha256": "2e5a9aacebb59e0c8a80eed2a1f926a9a98b5e1700075186329049dd6e972aad",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "0e403f719b87128ce637a235d1c6f89b0cfee2d920715bed463848590ccc9c4a"
+            },
+            {
+              "name": "war-execution-only",
+              "input_sha256": "d82ee90b7ba31e0e8a91b48241bdf332bd62ee383029fb03a12181c8dc9ec71c",
+              "expected_status": "CALLER_FACTS_SUFFICIENT",
+              "result_sha256": "39d057810ce8a44838087960debce647196c3b1a66e6d8462ae2f88e8c08e602"
+            },
+            {
+              "name": "raw-unknown-scope",
+              "input_sha256": "12823d7249a46df908fe82cb5335a2ccd4c32867a75fd88115a8df8435c48919",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "f434ffff32430178061d0351aba51e3e838f6f64c2453891ec61d51158e53a6b"
+            }
+          ]
+        },
+        "buffer_range": {
+          "ast_sha256": "73a97ce80c1e90446022d8fcd3f510588029813161983724293e2124bf858838",
+          "signature": "offset, size, buffer_size",
+          "docstring": "VkBufferMemoryBarrier range only; no invented atom/alignment restriction.\n\nWHOLE_SIZE accepts the explicit string or its actual uint64 Vulkan sentinel.\nVUIDs here are exact frozen validusage1.4.309, separate from prose368.",
+          "preconditions": [
+            "offset,size,buffer_size exact uint64 or recognized WHOLE_SIZE",
+            "no nonCoherentAtomSize alignment inference"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "offset, size, buffer_size",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "unaligned-valid",
+              "input_sha256": "8e5fcb43c44149b58e7d7152431bc268b19b4c25675aaf0e93aa0f430ef9d9ab",
+              "expected_status": "RANGE_WITHIN_SCOPE",
+              "result_sha256": "a14a5f4aec0a5b3ff9321012b7526616b58310badc9f2af64eabf08344f83c44"
+            },
+            {
+              "name": "whole-valid",
+              "input_sha256": "e82b8bc421d662b65725bec567e5197dc77f08ec8a64806e363deef925d3ee03",
+              "expected_status": "RANGE_WITHIN_SCOPE",
+              "result_sha256": "50ee534dd60252577f72c0e79d80fb7e4853acc96dbebcb34f6f4c26da66f423"
+            },
+            {
+              "name": "zero-size",
+              "input_sha256": "0862384b18f9aa08a976f7d61a68e8e264cdd5d17326614ce17cc7890616859b",
+              "expected_status": "REJECTED",
+              "result_sha256": "862db44c64782c7c9133d900d1449ef7849998fe3ae058aebeb1f4702e341efa"
+            },
+            {
+              "name": "overrun",
+              "input_sha256": "54b3c70ff0ab20560ed2d512e6859b8f42776ef4317573efc74c64ec86e613a6",
+              "expected_status": "REJECTED",
+              "result_sha256": "8faa00bb1ec059b66603661424426cdb7550bbf49b511e076f51df30c82361cc"
+            },
+            {
+              "name": "offset-at-end",
+              "input_sha256": "933b948a989cebc4b8b8e3a62b085a09c961b04c8a5a6cf7f8b8357404d0f8c4",
+              "expected_status": "REJECTED",
+              "result_sha256": "750932dc3433b4fe97d7b222863365fda273b5aedec9e87be50f108abd02bd84"
+            }
+          ]
+        },
+        "ownership": {
+          "ast_sha256": "b2c13716c564bbe9411457e5c26a1cfbc38af3e5f3137639c36798f8901b89a4",
+          "signature": "facts",
+          "docstring": "Ordinary exclusive resource, same device/instance, retaining content.\n\nValid actual family indices are caller-proven. External/foreign/special\nsentinels and concurrent sharing are not handled by this limited function.\nCaller must also rule out implicit-transfer exceptions (e.g. maintenance9).",
+          "preconditions": [
+            "ordinary_resource and baseline_no_implicit_transfer_exception",
+            "EXCLUSIVE sharing and source_family/destination_family identity",
+            "does not establish synchronization"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "facts",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "same-family",
+              "input_sha256": "5ea18bcd75be604a989838fe008fef02bec6a17493911069526695788204b801",
+              "expected_status": "NO_FAMILY_TRANSFER_REQUIRED",
+              "result_sha256": "5b15cb2129903dba8f1567f94e52be00c53495754d9726932d38a9408601d730"
+            },
+            {
+              "name": "cross-family",
+              "input_sha256": "5741578e6e1d0f52fb5e9a67a29830f260b3942a515345529156f984d3f6afb5",
+              "expected_status": "OWNERSHIP_TRANSFER_REQUIRED",
+              "result_sha256": "6f051df5eb00b2d1dfb21872065d27da02c491f2de9877bfd266a7a88233ed32"
+            },
+            {
+              "name": "concurrent-not-inferred",
+              "input_sha256": "95963223a2b31a0a0c651b6a96a1b1887b1e6018cd57c4b3a9c41ca2bc75b31f",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "b7dcb1e122a39ad5b3b422f47e7e692168b6e028b07c5cf803603c7a89b33caa"
+            }
+          ]
+        },
+        "host_write_submission": {
+          "ast_sha256": "adc10bd99f6682cedf97d61a8979ac851a1af01a27f29fcaa5f2596f506fbdf6",
+          "signature": "facts",
+          "docstring": "Prior ordered, available host writes can use submission's memory dependency.\n\nThis does not infer host happens-before from CPU wall-clock order. Flush\ncorrectness (when required) is an externally established scoped fact.",
+          "preconditions": [
+            "ordinary_mapped_write/write_happens_before_submission",
+            "host_domain_available/host_memory_model_ordered",
+            "host_coherent or required_flush_completed",
+            "device_read_in_submission_scope/no_inflight_conflicting_access"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "facts",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "flushed-prior-host-write",
+              "input_sha256": "51f18ff86b7d5f252f8ecaa80e5eb963ccf95c773ae90edacce904ed40e5a7d6",
+              "expected_status": "EXPLICIT_HOST_WRITE_BARRIER_NOT_REQUIRED_FOR_THIS_DEPENDENCY",
+              "result_sha256": "77b6d518bc0ed87d6aa34dd9d302f82c5142a6457270f93a684f76e94f3fa1db"
+            },
+            {
+              "name": "coherent-prior-host-write",
+              "input_sha256": "2f8096c618fd0f38c5de5cb14074a73c3658e061978585d54e2aa92a6036baa3",
+              "expected_status": "EXPLICIT_HOST_WRITE_BARRIER_NOT_REQUIRED_FOR_THIS_DEPENDENCY",
+              "result_sha256": "77b6d518bc0ed87d6aa34dd9d302f82c5142a6457270f93a684f76e94f3fa1db"
+            },
+            {
+              "name": "host-missing-required_flush_completed",
+              "input_sha256": "8343e9e50b5b6a5e55cc50d925051dc8c9c473de915b06c4f2c12cd6dfed6c99",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2359640ed0192c385453efb8c854f37f88f0fd8ad7b8951dd93841e405837aa7"
+            },
+            {
+              "name": "host-missing-write_happens_before_submission",
+              "input_sha256": "decda312615c64c3f09160fb694ac9e1b29602371f672740f5fe3846836304cb",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2359640ed0192c385453efb8c854f37f88f0fd8ad7b8951dd93841e405837aa7"
+            },
+            {
+              "name": "host-missing-host_memory_model_ordered",
+              "input_sha256": "a2079a47dd85ade2d8f30ecbd15b829c1d0f5039ca720e45dd2f483c5d76c7c0",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2359640ed0192c385453efb8c854f37f88f0fd8ad7b8951dd93841e405837aa7"
+            },
+            {
+              "name": "host-missing-no_inflight_conflicting_access",
+              "input_sha256": "021cdee4e17422a627696ca280b194ddf5ea950eecf1cb754d901b3e7b388acf",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2359640ed0192c385453efb8c854f37f88f0fd8ad7b8951dd93841e405837aa7"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {},
+      "skill": {
+        "path": "references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+        "anchor": "delivery19-buffer-barrier-source-boundaries",
+        "sha256": "8ee2d37c3b53bd45d93653759d6cb31cb1d38576b76ba8fe17daa42d97ffb479"
+      },
+      "original_entry": "checks19/run_sync_contracts.py",
+      "original_entry_sha256": "ef536c3108f7c876196f74452532668149b8a80fce80c9b8f00516636629d392",
+      "report_sha256": "86a93b3ac23cc6534a61faa536522c9f4967e91b6e38d9b479caa0ead1b93b1f",
+      "implementation_sha256": {
+        "checks19/run_sync_contracts.py": "ef536c3108f7c876196f74452532668149b8a80fce80c9b8f00516636629d392",
+        "tools/sync_contract19.py": "219066db5399583463700edc0c47579d543c2563284ff5d9cd3d5a8e9eacada3",
+        "tools/normative_prose19.py": "e4095700ba2d86de709d53338bfc267bbcb840f80646201d98690a4776a5c659",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "schema": 1,
+        "status": "EXACT_RAW_PROSE_SLICE_MAP",
+        "source": {
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/synchronization.adoc",
+          "api_version": "1.4.368",
+          "license": "CC-BY-4.0",
+          "copyright": "Khronos Group"
+        },
+        "slices": [
+          {
+            "anchor": "synchronization-dependencies-execution",
+            "line_start": 71,
+            "line_end": 91,
+            "raw_slice_sha256": "9bfde19d1e18f1bf7acedc9430049b27280709ba76bfa4b4db44c54bb2185f99",
+            "bytes": 943,
+            "conditional_directives": [],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "synchronization-dependencies-chains",
+            "line_start": 92,
+            "line_end": 113,
+            "raw_slice_sha256": "2d5f5a6fb64b1f8b82517b80e27eb0e8d64abf0d5c1c5b250a110e52d23a41e5",
+            "bytes": 1031,
+            "conditional_directives": [],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "synchronization-dependencies-available-and-visible",
+            "line_start": 114,
+            "line_end": 136,
+            "raw_slice_sha256": "98484a73b2a2e2b33cc35963c64d04d697a54965be3cb8d000381ba6f676ea5a",
+            "bytes": 1287,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_2,VK_KHR_vulkan_memory_model[]",
+              "endif::VK_BASE_VERSION_1_2,VK_KHR_vulkan_memory_model[]"
+            ],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "synchronization-dependencies-memory",
+            "line_start": 137,
+            "line_end": 148,
+            "raw_slice_sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d",
+            "bytes": 582,
+            "conditional_directives": [],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "synchronization-dependencies-access-scopes",
+            "line_start": 149,
+            "line_end": 195,
+            "raw_slice_sha256": "15de723217b646aacbcccc96703cd00fef8d7f0c931054f80965d41c68d2c846",
+            "bytes": 2226,
+            "conditional_directives": [],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "synchronization-submission-order",
+            "line_start": 1914,
+            "line_end": 1979,
+            "raw_slice_sha256": "59efcfd93d94bbcb8e2e87589cd9bc26ee0f5940e8982851008e4c41d8d4843e",
+            "bytes": 3258,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]"
+            ],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "synchronization-submission-host-writes",
+            "line_start": 8404,
+            "line_end": 8437,
+            "raw_slice_sha256": "02ccebd0ff665619962cce52dd675a21d7635c4e511389b05ffec03bd8d80135",
+            "bytes": 1428,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]"
+            ],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          },
+          {
+            "anchor": "buffer-memory-barrier-ownership-transfer",
+            "line_start": 7333,
+            "line_end": 7411,
+            "raw_slice_sha256": "a0492daf457a9cebfb6b16069dcd47f305251b4e2a856b113ce579683af6ce51",
+            "bytes": 3436,
+            "conditional_directives": [
+              "ifdef::VK_KHR_maintenance8[]",
+              "endif::VK_KHR_maintenance8[]",
+              "ifdef::VK_KHR_maintenance8[]",
+              "endif::VK_KHR_maintenance8[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]"
+            ],
+            "semantic_status": "REQUIRES_APPLICABILITY_REVIEW"
+          }
+        ],
+        "limits": [
+          "Physical raw section slices terminate at the next explicit source anchor; not transitive normative dependency closure.",
+          "AsciiDoc includes/macros/conditionals are not expanded or evaluated.",
+          "No equivalence to separately frozen1.4.309 VUID corpus or actual CPU runtime is implied.",
+          "Source identity and slice hashes are traceability, not L1/L2 acceptance."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-VkBufferMemoryBarrier-offset-01187",
+          "api_owner": "VkBufferMemoryBarrier",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkBufferMemoryBarrier-size-01188",
+          "api_owner": "VkBufferMemoryBarrier",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkBufferMemoryBarrier-size-01189",
+          "api_owner": "VkBufferMemoryBarrier",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 20
+    },
+    "layout": {
+      "path": "tools/layout_contract19.py",
+      "source_sha256": "c0f73e9535235b800efb93e79726a25583aefc40eb7d2f9728ee56b334c70373",
+      "entries": {
+        "push_ranges": {
+          "ast_sha256": "69397abb20576a5828fd3ab0f4014dcb2d85c66f434a330cfed7ff9ddbcef8d4",
+          "signature": "ranges, max_size",
+          "docstring": null,
+          "preconditions": [
+            "ranges offset/size/stages and max_size",
+            "ordinary supported core stages, 4-byte range alignment and bounds",
+            "same-stage range uniqueness; not whole pipeline layout validity"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "ranges, max_size",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "different-stage-byte-overlap-created",
+              "input_sha256": "063bdc237b5719e2b94246b7dcbdc855260758f32a930ba6d0626b9abaaef42d",
+              "expected_status": "RANGES_WITHIN_SCOPE",
+              "result_sha256": "565e0bbae90a1e2212a09374f87d22715b1ae3bbb32e1798a53333c782c213d2"
+            },
+            {
+              "name": "same-stage-disjoint-rejected",
+              "input_sha256": "716e13bfe7f7ce92381bb0cf0878f89f474c4981b1a7d0e17f44505bfbfd45d3",
+              "expected_status": "REJECTED",
+              "result_sha256": "b8e476ac9617ffcb10406979d6f78f1a6e665921daad4e8e9c5bb696c5298f25"
+            },
+            {
+              "name": "unaligned-push-range-rejected",
+              "input_sha256": "551b7187824aea1c4b047a283dde63be96b6750b38586fedf1b4123ecfc26d4e",
+              "expected_status": "REJECTED",
+              "result_sha256": "8228ca6f7bfc58a5c4bc078cf21b9c02c239c1c7c27b4b330c36e1ef3b7e9ca8"
+            },
+            {
+              "name": "bound-overflow-rejected",
+              "input_sha256": "7a93dbf688a704ae020e421b8e899a78fe9f9a0db7257fe07d938be330b56670",
+              "expected_status": "REJECTED",
+              "result_sha256": "e2d774ec9ec4c7a3ce5f803120f305a5e8c39253f18db32f64c43e09464a4c6b"
+            }
+          ]
+        },
+        "push_compatible": {
+          "ast_sha256": "40cd832ed244088a5211f39a97c8bc15c1cc02ef6bc66cd68460a54dfb0a8a11",
+          "signature": "a, b",
+          "docstring": null,
+          "preconditions": [
+            "both ordinary complete layouts with caller-proven range definitions",
+            "identical sorted push_ranges; no descriptor-set compatibility inferred"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "a, b",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "push-compatible-despite-descriptor-difference",
+              "input_sha256": "2f3fb15a31bac8c9133bf7c1e10c75f7129adc31a96f38d483b3fd4c9bbfad1a",
+              "expected_status": "COMPATIBLE",
+              "result_sha256": "71575a8b47d4579fa45f9e8eb8dde0bd6100d07204539d6a5ca3a6445cbebafa"
+            }
+          ]
+        },
+        "compatible": {
+          "ast_sha256": "298b37e545effa26f25236e5289555ee91087a463d185cbe1abe9f5212accaea",
+          "signature": "a, b, set_number",
+          "docstring": null,
+          "preconditions": [
+            "both set_definitions hashes caller-proven; set_number exists",
+            "identical prefix0..N/push_ranges/independent_sets",
+            "handle equality not required; hash does not parse Vulkan structures"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "a, b, set_number",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "different-declarations-identical-definitions",
+              "input_sha256": "ef9fd8ce0bc31918b42f88ad99cd262a1625df27341d97ced45c052e8956a65b",
+              "expected_status": "COMPATIBLE",
+              "result_sha256": "71575a8b47d4579fa45f9e8eb8dde0bd6100d07204539d6a5ca3a6445cbebafa"
+            },
+            {
+              "name": "set0-diff-even-if-set1-same",
+              "input_sha256": "0e565ca6cff1eab7b1cd3287f60b5fc797894d7930698085e234957fd01af66f",
+              "expected_status": "INCOMPATIBLE",
+              "result_sha256": "7e3d3e7dd8046cff567abe696f82afdc56a5006ce69cc0b2ca732c0772e3836f"
+            },
+            {
+              "name": "push-range-diff",
+              "input_sha256": "4731ac2a4d3535f405d0ed11ba5a8cc7f2b8c662d629759c7410fb36cde0fedb",
+              "expected_status": "INCOMPATIBLE",
+              "result_sha256": "7e3d3e7dd8046cff567abe696f82afdc56a5006ce69cc0b2ca732c0772e3836f"
+            },
+            {
+              "name": "independent-flag-diff",
+              "input_sha256": "61e8f8d04d8e222f2506ae6bb9037374f3c0c40ddf616cec67eb54de58d7cc1e",
+              "expected_status": "INCOMPATIBLE",
+              "result_sha256": "7e3d3e7dd8046cff567abe696f82afdc56a5006ce69cc0b2ca732c0772e3836f"
+            },
+            {
+              "name": "unknown-special-layout",
+              "input_sha256": "ad887acdfdc639287ec107f9ea783e81bb5cb84031445bf89720f2d4f58ce819",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "3eeb1e5a04f034d83be79811f02e00ef7b4ddd62d6d79dcdfa7d2e3a74d329ed"
+            }
+          ]
+        },
+        "bind_disturbance": {
+          "ast_sha256": "bfecc1d1e2f3c6917e492846629e5a07bddbc0528529bd9103bc4666d3e26fdd",
+          "signature": "previous, new_layout, set_number",
+          "docstring": "Single set bind; previous maps integer indices to binding layout declarations.\n\nReturns disturbed indices, not a complete command-buffer state machine. The\nnew N binding replaces old N. No pipeline need be bound before this operation.\nCaller must mark disturbed descriptors undefined with the new layout; their\nfuture use is outside this one-step model. Pipeline binding alone is not this\noperation and does not mutate bindings.",
+          "preconditions": [
+            "previous set-to-layout inventory complete within requested range",
+            "new_layout definition and set_number valid",
+            "no prebound pipeline obligation; not actual descriptor lifetime"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "previous, new_layout, set_number",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "bind-compatible-keeps-other-sets",
+              "input_sha256": "9d9e9677360152aa67a907f4ec254ef08802679b518db62cbd798aa643c14046",
+              "expected_status": "DISTURBANCE_EVALUATED",
+              "result_sha256": "8d7032a860ac2ac8b3e286a22fc42d7cd30eae08806dbead3d8c97ec72cc68a9"
+            },
+            {
+              "name": "bind-incompatible-prefix-disturbs-both-directions",
+              "input_sha256": "6963e1156711242d529a308c96d6bbcfd97c08d96e535fe88587656ea24073f0",
+              "expected_status": "DISTURBANCE_EVALUATED",
+              "result_sha256": "e93c863c21da43099194be35aed9468a6feb6abf7af31598a7bc76a7b7839be9"
+            }
+          ]
+        },
+        "pipeline_access": {
+          "ast_sha256": "20cdca6bb03874c92f4ae6f7e94db18cc8d244c9398971810190b562bb4d7804",
+          "signature": "binding_layout, pipeline_layout, set_number, undisturbed",
+          "docstring": null,
+          "preconditions": [
+            "binding_layout/pipeline_layout definitions and set_number",
+            "undisturbed boolean externally established",
+            "pipeline bind does not mutate descriptor bindings"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "binding_layout, pipeline_layout, set_number, undisturbed",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "pipeline-access-compatible",
+              "input_sha256": "536b66d442e3f725eb90ef55c0d45e4aa2ba0b43053a0e171b3259c29d291ca1",
+              "expected_status": "LAYOUT_ACCESS_PERMITTED",
+              "result_sha256": "262ab69e6cd1ade0a6a53709d9bf2224526f1131e4f5aeaf62d6c915c5e7d901"
+            },
+            {
+              "name": "disturbed-binding-no-access",
+              "input_sha256": "2e536d9f860e0453f7dc8df5da7d01c57cc926c9b91887e36cdd05cfe2f6bd3e",
+              "expected_status": "LAYOUT_ACCESS_NOT_ESTABLISHED",
+              "result_sha256": "21dffa60e1edf27891ca15e9d7d3d066c3b62d07593b16aa03cd64a348009f51"
+            }
+          ]
+        },
+        "push_update": {
+          "ast_sha256": "4d7af0a73b75b5968d2d8acb4ce8ec9425e0452a0f63fc6a89257fa74b2e388b",
+          "signature": "layout_ranges, stage_mask, offset, size, max_size",
+          "docstring": "Validate byte/stage coverage in both directions, separate from creation.\n\nuint/alignment/bounds are preconditions; malformed update returns UNKNOWN\nrather than inventing a vkCmdPushConstants VUID from range-create VUIDs.\nNo pushed values, command-buffer lifetime or shader access is inspected.",
+          "preconditions": [
+            "layout_ranges/stage_mask/offset/size/max_size",
+            "per-byte update-stage covered and every overlapping range-stage included",
+            "layout creation validity does not imply update validity"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "layout_ranges, stage_mask, offset, size, max_size",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "overlap-update-both-stages",
+              "input_sha256": "1dd09688e41329266dca3e877ee98ce42b4d638007422f0b9b9bb76d495726e5",
+              "expected_status": "UPDATE_WITHIN_SCOPE",
+              "result_sha256": "6a21a4b81661cd79a4ca3ec16d7669bba59ca9780d9207407b07065aa5dd0e02"
+            },
+            {
+              "name": "overlap-update-only-vertex",
+              "input_sha256": "1417622f391a0e43e7d49d1ea8d12916ca906b42163582f8edb8daf51bee829e",
+              "expected_status": "REJECTED",
+              "result_sha256": "e51f3f2b1190dfaad4d65a71feec57624b2afc4740f1cc10d28d3bfcbc2980a4"
+            },
+            {
+              "name": "update-uncovered-by-layout",
+              "input_sha256": "0266bde5be3b10a42959c22df4c6e7a0c453f47a9faa34f5b1cecbf077f4907f",
+              "expected_status": "REJECTED",
+              "result_sha256": "0a2830dd86900450279d6a2c64d6522584a3a4e500173298bd82e95657333302"
+            },
+            {
+              "name": "update-unsupported-stage-unknown",
+              "input_sha256": "79b2adf9324c7426946163e6777d970399530151c3ab00627f399f60cae16f08",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "3eeb1e5a04f034d83be79811f02e00ef7b4ddd62d6d79dcdfa7d2e3a74d329ed"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {
+        "uint": {
+          "ast_sha256": "8db71e9270772da168e0e174300d8fde0d922f1feff223094d9f78caaa7c9a57",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "stages": {
+          "ast_sha256": "e1ba3aa3951569cfcdb7f40197c0dbe4b957f74c8ad749bc9084be2f58c782b8",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "result": {
+          "ast_sha256": "d0133803cb1ab4e1fb934cfe2b73e84ea0bd9583d0e77d17840a2a2dc326d848",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "_layout": {
+          "ast_sha256": "a0ee0c97909bfa46d6e6d8d4807a168a95c23927c385b3dc2a0e57d99a12a2c2",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "_ranges": {
+          "ast_sha256": "2ab79a548d78b3d3748dbe2c98c0f5842ad8c221bb30e546a3561bbb23d882e1",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        }
+      },
+      "skill": {
+        "path": "references/03_api_manual/06_pipeline/pipeline_layout.md",
+        "anchor": "delivery19-layout-push-contract",
+        "sha256": "51f92870b8d6cfbba9ac04bdb9e97e9b3b193ca12c24828f82618895c8d460f5"
+      },
+      "original_entry": "checks19/run_layout_contracts.py",
+      "original_entry_sha256": "645a142cf07bbfb15bc1bd1ecdb6e3bd15fbe81c81d0d7f0f5a91e614baf13d7",
+      "report_sha256": "dd0d28e90c520a808376337d8e87c28d31b8998055021eccf803f70926efe200",
+      "implementation_sha256": {
+        "checks19/run_layout_contracts.py": "645a142cf07bbfb15bc1bd1ecdb6e3bd15fbe81c81d0d7f0f5a91e614baf13d7",
+        "tools/layout_prose19.py": "28c0796a93b708e0689e69612e8509ab4ae99e0858c8a054973c10f85319e764",
+        "tools/layout_contract19.py": "c0f73e9535235b800efb93e79726a25583aefc40eb7d2f9728ee56b334c70373",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "status": "PINNED_LAYOUT_PROSE_MAP",
+        "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "api_version": "1.4.368",
+        "license": "CC-BY-4.0",
+        "copyright": "Khronos Group",
+        "chapter": {
+          "path": "chapters/descriptorsets.adoc",
+          "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950",
+          "slices": [
+            {
+              "anchor": "descriptors-pipelinelayout",
+              "line_start": 1195,
+              "line_end": 1943,
+              "sha256": "3d494aceaf1e7818988aa06579ace8a3cbbdd4e925233c0a10b448aa3b643e00",
+              "bytes": 43234,
+              "conditional_directives": [
+                "ifdef::VKSC_VERSION_1_0[]",
+                "endif::VKSC_VERSION_1_0[]",
+                "ifdef::VKSC_VERSION_1_0[]",
+                "endif::VKSC_VERSION_1_0[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_QCOM_image_processing[]",
+                "endif::VK_QCOM_image_processing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifndef::VK_KHR_maintenance7[The]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifndef::VK_KHR_maintenance7[The]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifndef::VK_KHR_maintenance7[The]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifndef::VK_KHR_maintenance7[The]",
+                "ifdef::VK_KHR_maintenance7[]",
+                "endif::VK_KHR_maintenance7[]",
+                "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_3[]",
+                "endif::VK_COMPUTE_VERSION_1_3[]",
+                "ifdef::VK_COMPUTE_VERSION_1_4,VK_KHR_push_descriptor[]",
+                "endif::VK_COMPUTE_VERSION_1_4,VK_KHR_push_descriptor[]",
+                "ifdef::VK_KHR_acceleration_structure[]",
+                "endif::VK_KHR_acceleration_structure[]",
+                "ifdef::VK_NV_ray_tracing[]",
+                "endif::VK_NV_ray_tracing[]",
+                "ifdef::VK_EXT_fragment_density_map2[]",
+                "endif::VK_EXT_fragment_density_map2[]",
+                "ifdef::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+                "endif::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+                "ifdef::VK_EXT_graphics_pipeline_library[]",
+                "endif::VK_EXT_graphics_pipeline_library[]",
+                "ifndef::VK_EXT_graphics_pipeline_library[Elements]",
+                "ifdef::VK_EXT_descriptor_buffer[]",
+                "endif::VK_EXT_descriptor_buffer[]",
+                "ifdef::VK_ARM_tensors[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+                "endif::VK_ARM_tensors[]",
+                "ifdef::VK_EXT_graphics_pipeline_library+VK_KHR_maintenance11[]",
+                "endif::VK_EXT_graphics_pipeline_library+VK_KHR_maintenance11[]",
+                "ifndef::VK_EXT_graphics_pipeline_library[]",
+                "endif::VK_EXT_graphics_pipeline_library[]",
+                "ifdef::VK_EXT_graphics_pipeline_library[]",
+                "ifdef::VK_KHR_maintenance11[]",
+                "endif::VK_KHR_maintenance11[]",
+                "endif::VK_EXT_graphics_pipeline_library[]"
+              ]
+            },
+            {
+              "anchor": "descriptors-compatibility",
+              "line_start": 2076,
+              "line_end": 2179,
+              "sha256": "a31828b5f46762566db84244e0761e13acb2f9a9980c41f1a2ac5195f5960205",
+              "bytes": 3551,
+              "conditional_directives": [
+                "ifdef::VK_EXT_graphics_pipeline_library[]",
+                "endif::VK_EXT_graphics_pipeline_library[]",
+                "ifdef::implementation-guide[]",
+                "endif::implementation-guide[]"
+              ]
+            },
+            {
+              "anchor": "descriptors-push-constants",
+              "line_start": 5217,
+              "line_end": 5356,
+              "sha256": "90f62435d13153bc81a5d27aedb7fa2e45407d2e8882b9d873d07c59b2091a1b",
+              "bytes": 5270,
+              "conditional_directives": [
+                "ifdef::VK_COMPUTE_VERSION_1_3,VK_KHR_maintenance4[]",
+                "endif::VK_COMPUTE_VERSION_1_3,VK_KHR_maintenance4[]",
+                "ifdef::VK_COMPUTE_VERSION_1_4,VK_KHR_maintenance6[]",
+                "ifdef::VK_COMPUTE_VERSION_1_4[]",
+                "endif::VK_COMPUTE_VERSION_1_4[]",
+                "ifdef::VK_KHR_maintenance6[]",
+                "endif::VK_KHR_maintenance6[]",
+                "ifdef::VK_KHR_maintenance6[]",
+                "endif::VK_KHR_maintenance6[]",
+                "ifdef::VK_NV_per_stage_descriptor_set[]",
+                "endif::VK_NV_per_stage_descriptor_set[]",
+                "endif::VK_COMPUTE_VERSION_1_4,VK_KHR_maintenance6[]"
+              ]
+            }
+          ]
+        },
+        "resolved_common_include": {
+          "path": "chapters/commonvalidity/push_constants_common.adoc",
+          "sha256": "103dd30346b9483a4c7326b6d49a1444257531577d93ee64ad8a6c14fb377dda",
+          "bytes": 1176,
+          "include_lines": [
+            5282,
+            5350
+          ],
+          "refpage_substitution": "vkCmdPushConstants reviewed explicitly; other commands not inferred"
+        },
+        "limitations": [
+          "Raw physical anchor slices, not complete transitive prose closure.",
+          "Only this one common-validity include is bound; other includes/macros/conditional variants are not resolved.",
+          "Distinct from pinned1.4.309 VUID data; no version equivalence, device validation or complete L1/L2 acceptance."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-VkPipelineLayoutCreateInfo-pPushConstantRanges-00292",
+          "api_owner": "VkPipelineLayoutCreateInfo",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-vkCmdPushConstants-offset-01795",
+          "api_owner": "vkCmdPushConstants",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-vkCmdPushConstants-offset-01796",
+          "api_owner": "vkCmdPushConstants",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-VkPushConstantRange-offset-00294",
+          "api_owner": "VkPushConstantRange",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-VkPushConstantRange-offset-00295",
+          "api_owner": "VkPushConstantRange",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-VkPushConstantRange-size-00296",
+          "api_owner": "VkPushConstantRange",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-VkPushConstantRange-size-00297",
+          "api_owner": "VkPushConstantRange",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        },
+        {
+          "vuid": "VUID-VkPushConstantRange-size-00298",
+          "api_owner": "VkPushConstantRange",
+          "condition_key": "core",
+          "page": "chapters/descriptorsets.html"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 18
+    },
+    "image_copy": {
+      "path": "tools/image_copy_contract19.py",
+      "source_sha256": "810cccd30be5ab6daefaf6b75a6a98b8970da93e3683b95ec035b1e0a0f43406",
+      "entries": {
+        "format_admit": {
+          "ast_sha256": "e6fb348cbbe2e373aa2c61e2190f7ef61759c3ebeead89774269ed97603ebe04",
+          "signature": "source, destination",
+          "docstring": null,
+          "preconditions": [
+            "source/destination supported metadata and alpha_only_format false",
+            "ordinary single-plane color/block byte and block extent facts",
+            "not complete image copy admission"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "source, destination",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "bc1-to-rg32",
+              "input_sha256": "cdf7979208b0e67b0c6824f19f567071f6eec6e11ad7dc11b73217be8d46fac0",
+              "expected_status": "FORMAT_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "bda09a4ddad615298827db44a5a5041bc4a35e7f77ee0bb25268198329ecdd1f"
+            },
+            {
+              "name": "rg32-to-bc1",
+              "input_sha256": "a7b08239cbfb2bbbd56cd8310b80311c8d404fc8da2fa9b3e5490a29ccd28f9c",
+              "expected_status": "FORMAT_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "bda09a4ddad615298827db44a5a5041bc4a35e7f77ee0bb25268198329ecdd1f"
+            },
+            {
+              "name": "different-block-bytes",
+              "input_sha256": "779b6543d131c8c6d35b0b549b2eb278e94aa059bd3c68293717b63b666c79e7",
+              "expected_status": "REJECTED",
+              "result_sha256": "157c1405edb58fc3e947f0b945525818b497f82193b8b2767bdf18052a4fd7f5"
+            },
+            {
+              "name": "both-compressed-different-extents",
+              "input_sha256": "ef1a408b4ad886963d0d50edc1430a6c861b3ca16d94d818ce143f3e234c4c7d",
+              "expected_status": "REJECTED",
+              "result_sha256": "ab1cab881e56610bc7ca08ba8aec10b55fb8bb0da544d7727742ee2db2e07541"
+            },
+            {
+              "name": "alpha-only-outside-scope",
+              "input_sha256": "314d873801c77e5de619b421ce377fbd0add95dfaf646ec0763ca8d166f4db70",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "05d5173719a1a6927a151e595397afc475f6623e93ff4f68c62a4853418e0c9c"
+            },
+            {
+              "name": "unknown-support",
+              "input_sha256": "768977753821e87cb7f1fe9bb919f3cbf12ad701baf07e7cbe3bf1bb2f5a79b3",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "05d5173719a1a6927a151e595397afc475f6623e93ff4f68c62a4853418e0c9c"
+            }
+          ]
+        },
+        "representation_blocks_equal": {
+          "ast_sha256": "26f4b3ca92b6f26e84aba2a6ab6c9ef356eb4a3f8a455a74c306d9e2ff5c1acc",
+          "signature": "source_extent, destination_extent, source_block, destination_block",
+          "docstring": "Evaluate ceil(A/a)=ceil(X/x); not a construction of unique X or offsets.\n\nDeliberately independent of copy format admission: two compressed formats can\nhave equal block counts but still fail copy's same-block-extent requirement.",
+          "preconditions": [
+            "source_extent/destination_extent/source_block/destination_block positive vectors",
+            "ceil block-count equality only, no unique command destination extent"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "source_extent, destination_extent, source_block, destination_block",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "astc-small-mip-block-representation",
+              "input_sha256": "16e710521fd2bc151d9fbc2a1da28f98aca773b0f7f69cb1e041b13ee9783fb0",
+              "expected_status": "BLOCK_COUNTS_EQUAL",
+              "result_sha256": "81cea5299ea187e026bc716302ac94f04408858d73d06263946adcc02140ddab"
+            },
+            {
+              "name": "nonunique-edge-representation-5",
+              "input_sha256": "94fa7648a50066b8c44ee6b6ea2cf237650e0381c7c4a4df421d7f949f587ed5",
+              "expected_status": "BLOCK_COUNTS_EQUAL",
+              "result_sha256": "c5302e9d6bc953b8b446132d0442359b7ed09cf55de5073f3e7ab97cd753a7d0"
+            },
+            {
+              "name": "nonunique-edge-representation-6",
+              "input_sha256": "2230b46fbe6a1298b9e377e3a70227035d1654d35537f593ce964797dae698f0",
+              "expected_status": "BLOCK_COUNTS_EQUAL",
+              "result_sha256": "c5302e9d6bc953b8b446132d0442359b7ed09cf55de5073f3e7ab97cd753a7d0"
+            },
+            {
+              "name": "nonunique-edge-representation-7",
+              "input_sha256": "18cd43e1964ddfac9e94e323cccf2dbeac099d24d0e0f9ed8bfb9722bd32318a",
+              "expected_status": "BLOCK_COUNTS_EQUAL",
+              "result_sha256": "c5302e9d6bc953b8b446132d0442359b7ed09cf55de5073f3e7ab97cd753a7d0"
+            },
+            {
+              "name": "nonunique-edge-representation-8",
+              "input_sha256": "e1736673a2c6f788d173e865674da8da176a7851b434ee11b2a9a3a41bfb9a24",
+              "expected_status": "BLOCK_COUNTS_EQUAL",
+              "result_sha256": "c5302e9d6bc953b8b446132d0442359b7ed09cf55de5073f3e7ab97cd753a7d0"
+            },
+            {
+              "name": "different-block-counts",
+              "input_sha256": "026761bb44f3e63497a34dd244f111ed7ef4294874791c09e57d33bc5713c619",
+              "expected_status": "BLOCK_COUNTS_DIFFER",
+              "result_sha256": "c74b3776ba227b402a354c0645d93cec2373c7ed9aeca56511553c36c38cda54"
+            }
+          ]
+        },
+        "image_region": {
+          "ast_sha256": "97a725824802edf291df9006d8701396ad75c2e7e78bb0df99e44008caa91d0c",
+          "signature": "fmt, offset, extent, mip_extent, side",
+          "docstring": "One region in ONE image's local texel coordinates, never raw mixed coordinates.\n\nFor destination, the caller must first establish size-adjusted destination\ncoordinates. Exact offset alignment is separate from extent's mip-edge\nexception: reaching the edge never excuses a misaligned offset. VUID labels\ndenote frozen rule families, not predictions of Validation-layer output.",
+          "preconditions": [
+            "fmt metadata/offset/extent/mip_extent/side",
+            "caller already interpreted single-image coordinates",
+            "offset alignment distinct from permitted partial edge extent; no whole command proof"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "fmt, offset, extent, mip_extent, side",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "src-aligned-offset-partial-edge-extent",
+              "input_sha256": "e18402e84cf4f374409f372f49e23284f84b095dcfc3c944a6cfb7b44fddab17",
+              "expected_status": "LOCAL_REGION_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "b02f48c19f3621b18b906c00d35a94072c2f5e6cc5f8ab12d41bff138e32cb5f"
+            },
+            {
+              "name": "src-edge-does-not-excuse-offset",
+              "input_sha256": "917409f9274c873145929c343e54df5fc2eb0e980ee140482f04f1ab4d8ed3e0",
+              "expected_status": "REJECTED",
+              "result_sha256": "fdebec0bc78f32aa8e6fedb4b761e0a5415bb15e8b25ae781b00d3e1fb04d1b9"
+            },
+            {
+              "name": "src-unaligned-extent-not-at-edge",
+              "input_sha256": "6a6a834c21f2b822e4fe2a7c9e28d85c2582dcad2377a781f7d8b04f560eec6a",
+              "expected_status": "REJECTED",
+              "result_sha256": "b3acf1a2911484d38656b4d2eb439655310093dc78843cad42d3c802374a784b"
+            },
+            {
+              "name": "dst-aligned-offset-partial-edge-extent",
+              "input_sha256": "bfe782841bfa6e9995ba7a8c2d6b0b3f0e0cffd3954c2a689f2f5a61a99d34b0",
+              "expected_status": "LOCAL_REGION_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "b02f48c19f3621b18b906c00d35a94072c2f5e6cc5f8ab12d41bff138e32cb5f"
+            },
+            {
+              "name": "dst-edge-does-not-excuse-offset",
+              "input_sha256": "9c9b88842511828afb73ae86c2df9b43b6302567faa4c3065cc0c98af68a14da",
+              "expected_status": "REJECTED",
+              "result_sha256": "90f23ec488898ce48fcb19578feabd148e6a8a76365079ca17092464e67d988d"
+            },
+            {
+              "name": "dst-unaligned-extent-not-at-edge",
+              "input_sha256": "a136c802deb61184ebc6f97c07700cc5b2355adebba9c81a43d6be7e59f4ed88",
+              "expected_status": "REJECTED",
+              "result_sha256": "a0b48705ec9f78fd6b773e9a5ad4469ee32677d0813c574cd5b1fce6fbaa701a"
+            },
+            {
+              "name": "region-out-of-bounds",
+              "input_sha256": "2236071255887a77be6900b40d68d2e9d5a5bbf1c1b505c3ef4ec91609d163ef",
+              "expected_status": "REJECTED",
+              "result_sha256": "217775cb76e309bd11230da92e0532848547028cc461f1a2c7b1389e3250595c"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {
+        "result": {
+          "ast_sha256": "795296fa8998c98aa852bf681d2c7f7ce6c612c765752b9c3bfd244d5e3947ba",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "u32": {
+          "ast_sha256": "21f245960f3ad08a14e72a2648cc0344b5004192bb909629ed4a118b7044325e",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "vector": {
+          "ast_sha256": "758e82f1c0d64e354a212e0e1d0d25946bdee411b769173bfdde9f6e28c8f6e6",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "metadata": {
+          "ast_sha256": "0a803f40ae7b90a2f2f11b572260ce3b60c6513f9298669729b8cda0eeb19866",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        }
+      },
+      "skill": {
+        "path": "references/03_api_manual/04_buffer_image_memory/copy_blit_resolve.md",
+        "anchor": "delivery19-image-copy-format-region",
+        "sha256": "49dafba51599fb0253fa53705ca5e6de1f4ed048eb0fc8ff5c26519e43a17db5"
+      },
+      "original_entry": "checks19/run_image_copy_contracts.py",
+      "original_entry_sha256": "ee1655da479237ee1acd1eba5927be56d0726f28dd7321fa35ad41041c3c030c",
+      "report_sha256": "5da5db7ea8afc71ba8ca94a0bc84973ede55eec21b30d5805a34e9962b31a5bb",
+      "implementation_sha256": {
+        "checks19/run_image_copy_contracts.py": "ee1655da479237ee1acd1eba5927be56d0726f28dd7321fa35ad41041c3c030c",
+        "tools/image_copy_contract19.py": "810cccd30be5ab6daefaf6b75a6a98b8970da93e3683b95ec035b1e0a0f43406",
+        "tools/image_copy_prose19.py": "39c5766bcae7118901cea98802802ac987be8244c3f351e187ea0214d89381b5",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "status": "PINNED_IMAGE_COPY_PROSE_MAP",
+        "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "api_version": "1.4.368",
+        "license": "CC-BY-4.0",
+        "copyright": "Khronos Group",
+        "sources": {
+          "formats": {
+            "path": "chapters/formats.adoc",
+            "sha256": "9360d12ae4c69c9eb7cf374dc3c99c061b6386f1551b9b4648d14728101cb7f1",
+            "bytes": 257950,
+            "slices": [
+              {
+                "anchor": "formats-size-compatibility",
+                "line_start": 1999,
+                "line_end": 2048,
+                "sha256": "c41fd4296a363b3ea1ec1772665f69103c33c9fc115a30426efe9351710b82a8",
+                "bytes": 2105,
+                "conditional_directives": [
+                  "ifndef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "ifdef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "ifdef::VK_BASE_VERSION_1_1,VK_KHR_maintenance2[]",
+                  "endif::VK_BASE_VERSION_1_1,VK_KHR_maintenance2[]",
+                  "ifdef::VK_KHR_maintenance8[]",
+                  "endif::VK_KHR_maintenance8[]"
+                ]
+              }
+            ]
+          },
+          "copies": {
+            "path": "chapters/copies.adoc",
+            "sha256": "b821b4b219c3e7e691332b651c40cd169b74017d7212aad9d1ddbeef8acbec05",
+            "bytes": 159708,
+            "slices": [
+              {
+                "anchor": "copies-images",
+                "line_start": 285,
+                "line_end": 321,
+                "sha256": "8678790d1396ebe1ad4f9284920b8a330affc4e5c9adaacf6f69bb41122a0515",
+                "bytes": 1444,
+                "conditional_directives": [
+                  "ifdef::VK_EXT_depth_range_unrestricted[]",
+                  "endif::VK_EXT_depth_range_unrestricted[]"
+                ]
+              },
+              {
+                "anchor": "copies-images-addressing",
+                "line_start": 322,
+                "line_end": 590,
+                "sha256": "de0120ba218d0ecf67ca49b9746dd776f13eba0e0f2e87c75d223aeeca86e130",
+                "bytes": 10330,
+                "conditional_directives": [
+                  "ifdef::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+                  "endif::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+                  "ifdef::VK_BASE_VERSION_1_1,VK_KHR_maintenance1[]",
+                  "ifndef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "ifdef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "endif::VK_BASE_VERSION_1_1,VK_KHR_maintenance1[]",
+                  "ifdef::VK_EXT_image_drm_format_modifier[]",
+                  "endif::VK_EXT_image_drm_format_modifier[]",
+                  "ifdef::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "endif::VK_BASE_VERSION_1_4,VK_KHR_maintenance5[]",
+                  "ifdef::VK_BASE_VERSION_1_3,VK_KHR_copy_commands2[]",
+                  "ifdef::VK_BASE_VERSION_1_3[]",
+                  "endif::VK_BASE_VERSION_1_3[]",
+                  "ifdef::VK_KHR_copy_commands2[]",
+                  "endif::VK_KHR_copy_commands2[]",
+                  "ifdef::VK_KHR_copy_commands2[]",
+                  "endif::VK_KHR_copy_commands2[]",
+                  "ifdef::VK_KHR_copy_commands2[]",
+                  "endif::VK_KHR_copy_commands2[]",
+                  "endif::VK_BASE_VERSION_1_3,VK_KHR_copy_commands2[]",
+                  "ifdef::VK_KHR_device_address_commands[]"
+                ]
+              }
+            ]
+          },
+          "common": {
+            "path": "chapters/commonvalidity/copy_image_common.adoc",
+            "sha256": "7251d3047441e1be6bf16f4669393ae31b957dea61b3a737ef6a35998b1ef6e0",
+            "bytes": 21614,
+            "slices": []
+          }
+        },
+        "common_include_lines": [
+          397,
+          541
+        ],
+        "limitations": [
+          "Raw physical slices, not preprocessed complete specification.",
+          "Only listed common validity include is resolved; remaining includes and feature conditions require review.",
+          "Size-representation block-count equality is not a unique command coordinate transformation.",
+          "Separate1.4.309 VUID cohort is not treated as the same version or GPU acceptance."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-vkCmdCopyImage-srcImage-01548",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-srcImage-09247",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-pRegions-07278",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-pRegions-07279",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-pRegions-07280",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-pRegions-07281",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-pRegions-07282",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-pRegions-07283",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-srcImage-01728",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-srcImage-01729",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-srcImage-01730",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-dstImage-01732",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-dstImage-01733",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        },
+        {
+          "vuid": "VUID-vkCmdCopyImage-dstImage-01734",
+          "api_owner": "vkCmdCopyImage",
+          "condition_key": "core",
+          "page": "chapters/copies.html"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 19
+    },
+    "image_layout": {
+      "path": "tools/image_layout_contract19.py",
+      "source_sha256": "15c81740f73fb31045917b0d52d08b1a629d34359a86eda8f55462e6a9e4a52b",
+      "entries": {
+        "evaluate": {
+          "ast_sha256": "25a8e5bb59a554fe57ad7b12ec2af6d32889b256568f5b180fe1054716b5f2fa",
+          "signature": "state, barrier, facts",
+          "docstring": "State list entries: mip,layer,layout,defined; selected cells are explicit pairs.\n\nUnknown/malformed facts never update state. Unsatisfied dependency facts also\nyield no modeled state. Actual current layout need not equal an ignored value.",
+          "preconditions": [
+            "state exact mip/layer/layout/defined inventory",
+            "barrier API/sync2/family/layout/selection facts",
+            "usage/API/subresource scope and four transition dependency proofs",
+            "ignored same-family equal-layout barrier still needs ignored_barrier_dependencies_sufficient"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "state, barrier, facts",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "selected-cell-transition",
+              "input_sha256": "4e3fb8bcb7d08046207e4cc89c7940d5d77f8256d0237ef43d9c06a964aa5ba2",
+              "expected_status": "MODELED_TRANSITION",
+              "result_sha256": "3b1be551228581302f22d764dde1694c5a15320f1c3196bbb3ff9e1950786e4b"
+            },
+            {
+              "name": "legacy-sync2-ignored-UNDEFINED",
+              "input_sha256": "899477449ad4850ee603a9ee43626c262f2372dcb1e0370d06d0d8d0c37b85d3",
+              "expected_status": "MODELED_LAYOUTS_IGNORED",
+              "result_sha256": "074ad79b82b9243a9ae28db4b2d7747f0ceebf20cc24ca5b4d2e07abf4c449d5"
+            },
+            {
+              "name": "legacy-sync2-ignored-TRANSFER_DST_OPTIMAL",
+              "input_sha256": "e69aa1155be393b4404f67da9278e4c43f76c7c016911eac240814c6de26f7e8",
+              "expected_status": "MODELED_LAYOUTS_IGNORED",
+              "result_sha256": "074ad79b82b9243a9ae28db4b2d7747f0ceebf20cc24ca5b4d2e07abf4c449d5"
+            },
+            {
+              "name": "barrier2-sync2-ignored-UNDEFINED",
+              "input_sha256": "98859041fb99aa058274df6826f14305dbf0d73ef1bb2d5f7684aff5ec3f22f1",
+              "expected_status": "MODELED_LAYOUTS_IGNORED",
+              "result_sha256": "074ad79b82b9243a9ae28db4b2d7747f0ceebf20cc24ca5b4d2e07abf4c449d5"
+            },
+            {
+              "name": "barrier2-sync2-ignored-TRANSFER_DST_OPTIMAL",
+              "input_sha256": "52868c465e764b898927319b1afdd16a22206dd6488bf658daf976608e291a0d",
+              "expected_status": "MODELED_LAYOUTS_IGNORED",
+              "result_sha256": "074ad79b82b9243a9ae28db4b2d7747f0ceebf20cc24ca5b4d2e07abf4c449d5"
+            },
+            {
+              "name": "legacy-no-sync2-equal-mismatch",
+              "input_sha256": "5fb647027f5b2b30db7d3dbe9c53bca4a58e335160309f7e24d5c854e82fd677",
+              "expected_status": "REJECTED",
+              "result_sha256": "8e7a36d5dcf0cb2408a872885ffe8e2e47e7e43068b7efe7b14d33bad173677b"
+            },
+            {
+              "name": "legacy-no-sync2-equal-current",
+              "input_sha256": "6fec3418e4c0f1e329049a46fa34853e418aa8feb47b32c49124436b9e6aaca6",
+              "expected_status": "MODELED_TRANSITION",
+              "result_sha256": "0b2b546c15d14c817071bdf74335b1d0802d00947f72e23d11ec7a0b4d82c0af"
+            },
+            {
+              "name": "different-families-not-ignored",
+              "input_sha256": "ce4e6c55c15c724c4bccb5c324a8e84bbfbda49cbcf0ae344318cafeeccebcb1",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "8128bd27fa184e2fde2801efc8d8240e5f859c550e23110697afcb40d46b6697"
+            },
+            {
+              "name": "discard-definedness-not-clearing",
+              "input_sha256": "c97530920acd389232c81eb0f36c738ba29c341b7564b93e0874d93200542582",
+              "expected_status": "MODELED_TRANSITION",
+              "result_sha256": "f43dc490c1e6f8d9f808d2652c913b9ef479f19e66b3a2a27a59f4f62c1cef89"
+            },
+            {
+              "name": "discard-still-requires-prior_accesses_ordered_before_transition",
+              "input_sha256": "46ee519d8f97462299ab27fefa0c559bffde79f015347dd91180ced91c995824",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "a17a21d61733f3b71802d6837b00a010c20e7ca2861fc5cf46c2d85e5141e97f"
+            },
+            {
+              "name": "discard-still-requires-prior_writes_available",
+              "input_sha256": "ef91d09adc1f86895d139387a7bc07d8b75f4ceaf0b42810bb8e43c9b3c914a6",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "5f18bf7c808840b8539d4a3f9ff3cf1169274cb88d27b0c49b90226dc0476512"
+            },
+            {
+              "name": "discard-still-requires-next_accesses_ordered_after_transition",
+              "input_sha256": "deae6670c9169ad917eb2fe39950c32be46e476025c44a6042bf4d22e3d36d88",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "727e26628f36df2cf86a1d71548b24e8ea10bcee48a37ef53b78c7ce8911e68a"
+            },
+            {
+              "name": "discard-still-requires-transition_writes_visible_to_next_access",
+              "input_sha256": "5cbcd20a1bca0d3a60f359adb709dd62616db6c3998b332de659e005c2e648b0",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "7cc17bc54bf99df0f0b566e9992981864886b810b1a26d5491fe706addb04b5d"
+            },
+            {
+              "name": "ignored-layout-not-memory-proof",
+              "input_sha256": "c3e773fb869713b0eb4a1b3f1ff1f937bd12700c49ebe7c51c9268659f3e98de",
+              "expected_status": "INSUFFICIENT_DEPENDENCY",
+              "result_sha256": "53fcc0fe2c060dcd491ad4530a302246198a2ed0c540383ec359a409545f35cc"
+            },
+            {
+              "name": "mixed-cell-oldlayout-mismatch",
+              "input_sha256": "a478587ed351f955abdc563baf1776343b01b56cda39e1220983547bd3f3209c",
+              "expected_status": "REJECTED",
+              "result_sha256": "18eae9dec48f9909da277cb328a76e7815f61e65bb6218da9cb738d56c85fe54"
+            },
+            {
+              "name": "invalid-transition-new",
+              "input_sha256": "941b2580560cc8eb57f986a6b5687fb8620be2b56f2d39323006608a25c10b55",
+              "expected_status": "REJECTED",
+              "result_sha256": "60fd8179b6fb1753621c9523f08bf2bc43012c34aefa8d69dba2942af4b9e4da"
+            },
+            {
+              "name": "missing-caller-proof",
+              "input_sha256": "0aee0cc2fc31430321778e65afc27ba0a3ef5efb6a3d80c1e1a2fa0f62b3ff12",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "8128bd27fa184e2fde2801efc8d8240e5f859c550e23110697afcb40d46b6697"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {
+        "uint": {
+          "ast_sha256": "48c3ad8a1f562124b8f02e2d27aaf366dfe6bf68d29ae81823dafd3063606d78",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "cell": {
+          "ast_sha256": "3f9c7ee1eead7b2ae62949c87b1d05542f7c61eda5e204403e7747a311d8367a",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "result": {
+          "ast_sha256": "a42b4168be7c68540970d2ace3d9d7a750abe249375ecdca888d6e1afa477720",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        }
+      },
+      "skill": {
+        "path": "references/03_api_manual/08_synchronization/image_memory_barrier.md",
+        "anchor": "delivery19-image-layout-ignored-discard",
+        "sha256": "ae59b3f540c6a049fb6c8577162648a5af3de54ad4940bc00971c78f18c8419c"
+      },
+      "original_entry": "checks19/run_image_layout_contracts.py",
+      "original_entry_sha256": "908db14ccacaee88f160a0437a1fd0300f524f8c74910a05682ecc7556239398",
+      "report_sha256": "c064e8daf1a51d9f928c5a1d94a867187baa224bd263476b7585d199239c4119",
+      "implementation_sha256": {
+        "checks19/run_image_layout_contracts.py": "908db14ccacaee88f160a0437a1fd0300f524f8c74910a05682ecc7556239398",
+        "tools/image_layout_contract19.py": "15c81740f73fb31045917b0d52d08b1a629d34359a86eda8f55462e6a9e4a52b",
+        "tools/image_layout_prose19.py": "96f2748b754bd6f099a845b19d41d96e5fc647b082cd61ebddb9aeb118738653",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "status": "EXACT_RAW_PROSE_SLICE_MAP",
+        "source": {
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "api_version": "1.4.368",
+          "license": "CC-BY-4.0",
+          "copyright": "Khronos Group"
+        },
+        "slices": [
+          {
+            "anchor": "synchronization-image-layout-transitions",
+            "line_start": 196,
+            "line_end": 260,
+            "sha256": "9e80a9146487c6ea14f543e9a476072f943de3f804b5309237eb13d435d65622",
+            "bytes": 2983,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]"
+            ]
+          },
+          {
+            "anchor": "synchronization-image-memory-barriers",
+            "line_start": 7412,
+            "line_end": 7526,
+            "sha256": "a35c8033f5f639739272b8a2e35c369bbb7b6a8927d0f7314e593a706799b6da",
+            "bytes": 5981,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_KHR_synchronization2[]",
+              "endif::VK_KHR_synchronization2[]",
+              "ifdef::VK_KHR_maintenance8[]",
+              "endif::VK_KHR_maintenance8[]",
+              "ifdef::VK_KHR_maintenance8[]",
+              "endif::VK_KHR_maintenance8[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]"
+            ]
+          },
+          {
+            "anchor": "synchronization-image-barrier2-ignored-layout",
+            "line_start": 7527,
+            "line_end": 7653,
+            "sha256": "cee7af86511bd2883fc09b1b84afd833f2709612b0de80cd182a2f2d0d080449",
+            "bytes": 6465,
+            "conditional_directives": [
+              "ifdef::VK_KHR_maintenance9[]",
+              "endif::VK_KHR_maintenance9[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+              "ifdef::VK_EXT_zero_initialize_device_memory[ename:VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT,]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]"
+            ]
+          },
+          {
+            "anchor": "synchronization-image-barrier-ignored-layout",
+            "line_start": 7686,
+            "line_end": 7906,
+            "sha256": "aa41b43696733f4a16ea73bdd773d8fc03132030ca4c7289dff6139b819e00f9",
+            "bytes": 9872,
+            "conditional_directives": [
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_KHR_maintenance9[]",
+              "endif::VK_KHR_maintenance9[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+              "ifdef::VK_KHR_synchronization2[]",
+              "endif::VK_KHR_synchronization2[]",
+              "ifndef::VK_KHR_synchronization2[]",
+              "endif::VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_KHR_external_memory_win32[]",
+              "endif::VK_KHR_external_memory_win32[]",
+              "ifdef::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+              "ifdef::VK_BASE_VERSION_1_4[]",
+              "endif::VK_BASE_VERSION_1_4[]",
+              "ifdef::VK_EXT_host_image_copy[]",
+              "endif::VK_EXT_host_image_copy[]",
+              "ifdef::VK_EXT_host_image_copy[]",
+              "endif::VK_EXT_host_image_copy[]",
+              "ifdef::VK_KHR_maintenance9[]",
+              "endif::VK_KHR_maintenance9[]",
+              "ifdef::VK_EXT_zero_initialize_device_memory[ename:VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT,]",
+              "endif::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+              "ifdef::VK_ARM_tensors[]"
+            ]
+          }
+        ],
+        "limits": [
+          "Raw slices end at next explicit anchor; outer conditionals and includes are not expanded or evaluated.",
+          "Not transitive dependency closure or proof of caller facts; separate from validusage1.4.309."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-VkImageMemoryBarrier-oldLayout-01197",
+          "api_owner": "VkImageMemoryBarrier",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkImageMemoryBarrier-newLayout-01198",
+          "api_owner": "VkImageMemoryBarrier",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkImageMemoryBarrier2-oldLayout-01197",
+          "api_owner": "VkImageMemoryBarrier2",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkImageMemoryBarrier2-newLayout-01198",
+          "api_owner": "VkImageMemoryBarrier2",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 17
+    },
+    "timeline": {
+      "path": "tools/timeline_contract19.py",
+      "source_sha256": "8ef769857784269920a2bc3aa40ead1ce6ad4f151d26318d29b77a670c797a50",
+      "entries": {
+        "host_signal": {
+          "ast_sha256": "e953c48a6219c8a4612b85b104cc6c6580cb414510464d74974ca5eb9c8665d9",
+          "signature": "facts",
+          "docstring": null,
+          "preconditions": [
+            "at_call_state_proven/pending_set_complete/host_calls_serialized",
+            "current/value/max_difference exact uint64",
+            "complete pending_signals/pending_waits and happens_after_host_signal ordering"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "facts",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "host-before-pending-ordered",
+              "input_sha256": "7085af7c004efb45fa6a3f814b2cf84c998288b5e51e0ae4e75ed226f4e050e6",
+              "expected_status": "HOST_SIGNAL_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "23b2ce2d67b0572342c856be4db1b988bb6fcd7d2802b1395f060f8576b3d029"
+            },
+            {
+              "name": "equal-current",
+              "input_sha256": "dda86088f143bf26b5b143289064b71ca10567ebe155b03262bc9655d5a64e85",
+              "expected_status": "REJECTED",
+              "result_sha256": "8467c720aeb97d40db05e758b0bb98504db47046bee5ac6db765c59558d74c3a"
+            },
+            {
+              "name": "equal-pending",
+              "input_sha256": "f74fd265bfd66b563b7b6a3f16d3d6a8d3ecf5e7df43435ae328c144c3f46bc4",
+              "expected_status": "REJECTED",
+              "result_sha256": "285527661d39ab996eab42d37d380b8cf4e207e6d9bbbb2d5768cf23d4c52b21"
+            },
+            {
+              "name": "wait-value-difference",
+              "input_sha256": "e5fcd07ccce76e1567d5230d4d9160796bdad555300516362349998d4b9fdefa",
+              "expected_status": "REJECTED",
+              "result_sha256": "49fe08c77b6ecb6f11ac4f65f0658a7a0460a9462bd7ef7918432e2322052f6a"
+            },
+            {
+              "name": "numeric-order-not-execution-order",
+              "input_sha256": "543f7c01f7a222fc1ba1a3ea4861a7e6cc2a72f9ff82267a5bafba3623c01f79",
+              "expected_status": "ORDER_NOT_ESTABLISHED",
+              "result_sha256": "926ee7cb772b44d577b5275241a1d3a8883c37ff35ee0239f534bbe60dc02fdf"
+            },
+            {
+              "name": "unknown-at_call_state_proven",
+              "input_sha256": "3d4c4f58c7614a1f0ee56a1f48d2c9d48c4a717bdf0181a2c0b699e6fa2a15e9",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2ffa9ce83f49f6f7c1126b763c165e57d882e16dbb34eadf676fa32acd17cd92"
+            },
+            {
+              "name": "unknown-pending_set_complete",
+              "input_sha256": "4b0aa7cf23ef368ab32101a7537e356776f7e6352c86be160f1d0406ae1e93b3",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2ffa9ce83f49f6f7c1126b763c165e57d882e16dbb34eadf676fa32acd17cd92"
+            },
+            {
+              "name": "unknown-host_calls_serialized",
+              "input_sha256": "feeedda18ca2b03c2a341c8b4d3ff71eccf9c3a39370cf5255d5a271f4914bd9",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2ffa9ce83f49f6f7c1126b763c165e57d882e16dbb34eadf676fa32acd17cd92"
+            },
+            {
+              "name": "uint64-overflow",
+              "input_sha256": "5eb05cbc2f41ead173b2e679b57457d7e51abd512be6c9b21de4b193677eb79c",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "2ffa9ce83f49f6f7c1126b763c165e57d882e16dbb34eadf676fa32acd17cd92"
+            }
+          ]
+        },
+        "wait_condition": {
+          "ast_sha256": "47b951436dffe1c0d8cbba39f3bb56e764ee712131c3275ca7bc83ceee898ef9",
+          "signature": "counters, targets, mode",
+          "docstring": null,
+          "preconditions": [
+            "counters/targets matching nonempty uint64 arrays; ANY or ALL",
+            "snapshot predicate only; no VkResult/deadlock/retirement inference"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "counters, targets, mode",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "wait-any-snapshot",
+              "input_sha256": "67a104616b0aa9d9e17c42f2033293d6d48156adf5acea2ecb9f702e425ae1fb",
+              "expected_status": "SNAPSHOT_PREDICATE_ONLY",
+              "result_sha256": "1800d4c814667984fa0d7f50f4614d8612f4ce8fbdcefee4afb6220f1cd66a96"
+            },
+            {
+              "name": "wait-all-snapshot",
+              "input_sha256": "a7e25da5c82f148ab65cca02686e4bfdcdcac1bdd087a7e616084a1f1e0b8183",
+              "expected_status": "SNAPSHOT_PREDICATE_ONLY",
+              "result_sha256": "0a4a3b1acade921f9a89e790b5a330d0c68810d8e4889adff59067e7fe315d35"
+            },
+            {
+              "name": "wait-before-signal-not-deadlock-proof",
+              "input_sha256": "9686f2e86e240826b617722b442ec4acc3467f6b9b4131c00a9081e56fcde8a9",
+              "expected_status": "SNAPSHOT_PREDICATE_ONLY",
+              "result_sha256": "9ce3562086113c008c3692f5da4490a53b4dd52f54cb9d0102eac812e92af789"
+            }
+          ]
+        },
+        "retirement": {
+          "ast_sha256": "55ebfe305f75c3eeffc408d3e6aa088ddbd8e430457a10c8b04b5c0380bfccda",
+          "signature": "facts",
+          "docstring": null,
+          "preconditions": [
+            "reference_set_complete/all_submitted_references_completed",
+            "relevant_host_calls_completed/no_concurrent_host_access",
+            "wait_satisfied alone cannot retire references"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "facts",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "wait-success-not-retirement",
+              "input_sha256": "53b8f316817018853caedd238109ccb8499a41f3b41449a7d32bba9582b4c803",
+              "expected_status": "RETIREMENT_NOT_ESTABLISHED",
+              "result_sha256": "7c9bad51bafc91c669c47995e3f19e8083c4ff2a8c9d594f1e2f20258c62891d"
+            },
+            {
+              "name": "all-reference-retirement-declared",
+              "input_sha256": "972c192814cc6f52500d64f6f303cf3d72967b5fafec5a0be0e05db632df6855",
+              "expected_status": "RETIREMENT_OBLIGATIONS_DECLARED",
+              "result_sha256": "89fa87a4c4c2e68db7d352ab93aa4d7742e2fcbab05da392bf52588ff6e26f3d"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {
+        "uint": {
+          "ast_sha256": "57d959ed7d11137f6aea908736affd866cc85c36efa6024cec8c5bcbc83d6dd7",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "result": {
+          "ast_sha256": "3f095976318eba3ca75f53442c13795d54d2c41b5bbc630bb79379d695dd6e11",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        }
+      },
+      "skill": {
+        "path": "references/03_api_manual/08_synchronization/timeline_semaphore.md",
+        "anchor": "delivery19-timeline-host-values",
+        "sha256": "46aefc5f190fa75075624a6bd1dc12af2789e8e533386076281a772074306d28"
+      },
+      "original_entry": "checks19/run_timeline_contracts.py",
+      "original_entry_sha256": "189fdcecbb69aa3cfbb61f543fa990512a1c21d66a7cc38e831c733294ae16e5",
+      "report_sha256": "9a0172a1030c96d1f58dae53db8838e97761b1a03bb132a191932bf89405b44b",
+      "implementation_sha256": {
+        "checks19/run_timeline_contracts.py": "189fdcecbb69aa3cfbb61f543fa990512a1c21d66a7cc38e831c733294ae16e5",
+        "tools/timeline_contract19.py": "8ef769857784269920a2bc3aa40ead1ce6ad4f151d26318d29b77a670c797a50",
+        "tools/timeline_prose19.py": "fcdda45c73aed78da199f8d491c22c76f3fe9e45d0bc403293c51ed0a30f2618",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "status": "EXACT_RAW_PROSE_SLICE_MAP",
+        "source": {
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "api_version": "1.4.368",
+          "license": "CC-BY-4.0",
+          "copyright": "Khronos Group"
+        },
+        "slices": [
+          {
+            "anchor": "synchronization-signal-operation-order",
+            "line_start": 1980,
+            "line_end": 2067,
+            "sha256": "c92218385e65dffc0e1dcddce851e201d159ab920add990409c9fc0cd76b529e",
+            "bytes": 4409,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+              "ifdef::VK_KHR_swapchain[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "endif::VK_KHR_swapchain[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[  ** flink:vkQueueSubmit2]",
+              "ifndef::VKSC_VERSION_1_0[  ** flink:vkQueueBindSparse]",
+              "ifdef::VK_KHR_swapchain[  ** flink:vkAcquireNextImageKHR]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[or slink:VkSubmitInfo2]",
+              "ifndef::VKSC_VERSION_1_0[or slink:VkBindSparseInfo]",
+              "ifdef::VK_BASE_VERSION_1_2,VK_KHR_timeline_semaphore[]",
+              "endif::VK_BASE_VERSION_1_2,VK_KHR_timeline_semaphore[]"
+            ]
+          },
+          {
+            "anchor": "synchronization-semaphores-hostops",
+            "line_start": 4587,
+            "line_end": 4847,
+            "sha256": "72ab8cac3d9c6a471075ee2aa6209cdf16a709fce522671ad2c2600896dc5dca",
+            "bytes": 10602,
+            "conditional_directives": [
+              "ifdef::VK_BASE_VERSION_1_2[]",
+              "endif::VK_BASE_VERSION_1_2[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_BASE_VERSION_1_2[]",
+              "endif::VK_BASE_VERSION_1_2[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+              "endif::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_BASE_VERSION_1_2[]",
+              "endif::VK_BASE_VERSION_1_2[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_KHR_timeline_semaphore[]",
+              "endif::VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+              "endif::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+              "endif::VK_BASE_VERSION_1_2,VK_KHR_timeline_semaphore[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_semaphore[]"
+            ]
+          }
+        ],
+        "limits": [
+          "Raw slice boundaries are next explicit anchor, not complete dependency closure.",
+          "Includes/outer conditionals are not evaluated; separate from309 normative VUIDs."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-VkSemaphoreSignalInfo-value-03258",
+          "api_owner": "VkSemaphoreSignalInfo",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkSemaphoreSignalInfo-value-03259",
+          "api_owner": "VkSemaphoreSignalInfo",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-VkSemaphoreSignalInfo-value-03260",
+          "api_owner": "VkSemaphoreSignalInfo",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        },
+        {
+          "vuid": "VUID-vkDestroySemaphore-semaphore-05149",
+          "api_owner": "vkDestroySemaphore",
+          "condition_key": "core",
+          "page": "chapters/synchronization.html"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 14
+    },
+    "descriptor_update": {
+      "path": "tools/descriptor_update_contract19.py",
+      "source_sha256": "edc3c6132e927447cf00a89c4895fb581c36fd722b6ab8f354195b2fb4105912",
+      "entries": {
+        "spill": {
+          "ast_sha256": "99c92e643209cfd9876958b7e7c8f2da4d25781277bd2135cba26947b668516f",
+          "signature": "layout, binding, array_element, count",
+          "docstring": "Explicit dense binding table including zero-count holes; first slot must exist.\nSignature means caller-proven identical immutable sampler references, not their\ncreation parameters. Extension flag validity is an independent precondition.",
+          "preconditions": [
+            "dense binding layout with explicit zero holes",
+            "binding/array_element/count and type/stages/flags/immutable_reference_signature",
+            "only consecutive routing; no payload/lifetime proof"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "layout, binding, array_element, count",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "spill-skips-zero",
+              "input_sha256": "43bca2c887fd6a7f415397e5b6b532eb2fad5cc724293ef9f0deeea6e239e386",
+              "expected_status": "ROUTE_WITHIN_SCOPE",
+              "result_sha256": "5166424c6e52ddf82286ca2c9062fd1cd7ea58e8b582d97e0d6aeddcf1d90fbb"
+            },
+            {
+              "name": "consecutive-type-mismatch",
+              "input_sha256": "1565b83028fc6d3bb4b792ff9fbbb4a816559fa9c1d2b10e38df4e231c3af47a",
+              "expected_status": "REJECTED",
+              "result_sha256": "cd6e0da52823b7a4010fde428ad4d585db5ac932fbd0aa69c943816d6be87ed7"
+            },
+            {
+              "name": "consecutive-stages-mismatch",
+              "input_sha256": "1dda8ab1de1aaf18b56efd9ab809e3ba36919fe4c90da8509241c2389866aa87",
+              "expected_status": "REJECTED",
+              "result_sha256": "3f335d9cd7f1b26fb1ce1a73779c58c023d5fe29b3fb62747422bd024815dfc7"
+            },
+            {
+              "name": "consecutive-flags-mismatch",
+              "input_sha256": "5803fde7c4af3ae91f6ae8dc8f8551762d512f55210ad2882927781b20ab1990",
+              "expected_status": "REJECTED",
+              "result_sha256": "6b1c89d9b10f952ae5eb61139249f299fdde061c6dc50a428ac5a315b1c297eb"
+            },
+            {
+              "name": "immutable-references-match",
+              "input_sha256": "19ce35d86d065cf1621e9f34445615dceeba5e013d4e2ae34daf037a1b438542",
+              "expected_status": "ROUTE_WITHIN_SCOPE",
+              "result_sha256": "3acc3c2288ee3177aaa41f568c5ee43003e9a9cf1aa1c979f3a7d8147fb8e525"
+            },
+            {
+              "name": "immutable-references-differ",
+              "input_sha256": "f89333ade9f01eaaf538af9cd3984415a12acc1c916935249b86e9a79cfc61ab",
+              "expected_status": "REJECTED",
+              "result_sha256": "b466cd276ae57d959b68cf11f9e9da806094cb7b23f144adee817cd4dadcf756"
+            },
+            {
+              "name": "insufficient-capacity",
+              "input_sha256": "0d78f181f0d11a4ec440f83be4e8ec33b7489d4b33e1be4aa516cf257f736074",
+              "expected_status": "REJECTED",
+              "result_sha256": "07850ba816155efd22a0e09f91fc3e97d3c925948902975d220efb7f7750ad1e"
+            },
+            {
+              "name": "start-at-count-unknown",
+              "input_sha256": "2a6500f0ec76a25baca18e6882c99f13d3bb53b38f07b111060d47796f806a3a",
+              "expected_status": "UNKNOWN",
+              "result_sha256": "99f131cf8f2e0883eea15c5c0b2a25e14840a4d0f52a356a846c757b8a3e73eb"
+            }
+          ]
+        },
+        "apply": {
+          "ast_sha256": "ab69fe7325894d289908c75e4490c229b1d5a88e3413d1db74134c30c0104718",
+          "signature": "sets, writes, copies, preconditions_proven",
+          "docstring": "Apply ordered writes then ordered copies to ordinary UBO/SSBO reference tokens.\nAll input safety/descriptor payload validity, synchronization and layout flags\nmust be established separately. Rejection returns no partial modeled state.",
+          "preconditions": [
+            "sets/writes/copies ordinary UBO/SSBO tokens",
+            "preconditions_proven for payload/sync/layout flags; new writes live+defined",
+            "all writes before ordered copies; copied undefined is not readable",
+            "command-buffer invalidation/pending reference obligations remain outside original helper"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "sets, writes, copies, preconditions_proven",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "all-writes-before-copies-in-order",
+              "input_sha256": "bef48c8548497dda1299d6ecf1c68fc3800d6e3ced1f69df210117c61541d5c5",
+              "expected_status": "MODELED_UPDATES",
+              "result_sha256": "233498c14a6c99b087d64fefbec669bbb6b4c7e1078128aeed6b1bd78b979780"
+            },
+            {
+              "name": "cross-binding-same-set-overlap",
+              "input_sha256": "61cd8d9ae580b7bb23c63ab7dac9db51ebd45fc723748fa450f2e72a0f1083f3",
+              "expected_status": "REJECTED",
+              "result_sha256": "0f219dfba7c3e1df46f9c8d23ae2a01d397353aad32ce15d8030ce527dc871ed"
+            },
+            {
+              "name": "destroyed-reference-copy-is-undefined",
+              "input_sha256": "9947bf04f52785734c20c04c0add600b7cc39518a22f761c62747d84155156f4",
+              "expected_status": "MODELED_UPDATES",
+              "result_sha256": "cf9a5d36d87c2a7ec17a2a2f51dfda04c41f837e27df5fec538cb06087efd90d"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {
+        "u32": {
+          "ast_sha256": "6fcd786c98f12eadd4301dd601fb207124042a42de9a58421fd275242a8f2ca3",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "result": {
+          "ast_sha256": "524c18438ad352b6944586ca4be816adadc98da033f80ac174c14abb418f6607",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "layout_valid": {
+          "ast_sha256": "6c8134f582d456b71806acfa0793962bf5f271571714e4770bee04112a8fbd33",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "token": {
+          "ast_sha256": "5b801fa1c74d27f5168ade200c711de2bd7ae39d737eecf9563e379c8b3bc714",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        }
+      },
+      "skill": {
+        "path": "references/03_api_manual/05_descriptor/descriptor_update.md",
+        "anchor": "delivery19-descriptor-consecutive-updates",
+        "sha256": "48f154ce3ad1ec765d840c2f812d1afb19f9367cc501f3eaec02db92e11e47c3"
+      },
+      "original_entry": "checks19/run_descriptor_update_contracts.py",
+      "original_entry_sha256": "6d7d78c70b1dece4b64e216ba5dca21fb476913183c885f23780143835bf3c9d",
+      "report_sha256": "1557504b62ab8d78c42a7c327f8767ad2aad2636b6283b5377cf9f4a93dceee8",
+      "implementation_sha256": {
+        "checks19/run_descriptor_update_contracts.py": "6d7d78c70b1dece4b64e216ba5dca21fb476913183c885f23780143835bf3c9d",
+        "tools/descriptor_update_contract19.py": "edc3c6132e927447cf00a89c4895fb581c36fd722b6ab8f354195b2fb4105912",
+        "tools/descriptor_update_prose19.py": "d6326bef6e92d59678c9da5a70f14faf98110f3b28c2341d4b4270df42b3d0cb",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "status": "EXACT_RAW_PROSE_SLICE_MAP",
+        "source": {
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "path": "chapters/descriptorsets.adoc",
+          "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950",
+          "api_version": "1.4.368",
+          "license": "CC-BY-4.0"
+        },
+        "slices": [
+          {
+            "section": "updates",
+            "line_start": 2960,
+            "line_end": 3012,
+            "sha256": "97983dfd92a78ce494f5aa4980067c2f6c515b8fe2d972b9358766421bf34150",
+            "bytes": 2446,
+            "conditional_directives": [
+              "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+              "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]"
+            ]
+          },
+          {
+            "section": "consecutive",
+            "line_start": 3269,
+            "line_end": 3306,
+            "sha256": "8164783bfbdfca92d891d251af70a22b315c8cde51b4a2d574f11ec31642dffa",
+            "bytes": 1828,
+            "conditional_directives": [
+              "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+              "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+              "ifdef::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+              "endif::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+              "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]"
+            ]
+          },
+          {
+            "section": "copy",
+            "line_start": 3948,
+            "line_end": 4007,
+            "sha256": "4177dbc035e492899c4bea5a973cf13096626b65392c91e869c7394f7f6b0d23",
+            "bytes": 3227,
+            "conditional_directives": [
+              "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+              "ifdef::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+              "endif::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]"
+            ]
+          }
+        ],
+        "limits": [
+          "Raw prose before Valid Usage only; includes/outer conditions not expanded.",
+          "368 stageFlags/bindingFlags standalone clauses are not identified as309 VUIDs."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-VkWriteDescriptorSet-descriptorCount-00317",
+          "text_html": "All consecutive bindings updated via a single <code>VkWriteDescriptorSet</code> structure, except those with a <code>descriptorCount</code> of zero, <strong class=\"purple\">must</strong> have identical <code>descriptorType</code> and <code>stageFlags</code>",
+          "page": "chapters/descriptorsets.html",
+          "api_owner": "VkWriteDescriptorSet",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkWriteDescriptorSet-descriptorCount-00318",
+          "text_html": "All consecutive bindings updated via a single <code>VkWriteDescriptorSet</code> structure, except those with a <code>descriptorCount</code> of zero, <strong class=\"purple\">must</strong> all either use immutable samplers or <strong class=\"purple\">must</strong> all not use immutable samplers",
+          "page": "chapters/descriptorsets.html",
+          "api_owner": "VkWriteDescriptorSet",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkWriteDescriptorSet-descriptorType-00319",
+          "text_html": "<code>descriptorType</code> <strong class=\"purple\">must</strong> match the type of <code>dstBinding</code> within <code>dstSet</code>",
+          "page": "chapters/descriptorsets.html",
+          "api_owner": "VkWriteDescriptorSet",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkWriteDescriptorSet-dstArrayElement-00321",
+          "text_html": "The sum of <code>dstArrayElement</code> and <code>descriptorCount</code> <strong class=\"purple\">must</strong> be less than or equal to the number of array elements in the descriptor set binding specified by <code>dstBinding</code>, and all applicable <a href=\"#descriptorsets-updates-consecutive\">consecutive bindings</a>",
+          "page": "chapters/descriptorsets.html",
+          "api_owner": "VkWriteDescriptorSet",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkCopyDescriptorSet-dstBinding-02632",
+          "text_html": "The type of <code>dstBinding</code> within <code>dstSet</code> <strong class=\"purple\">must</strong> be equal to the type of <code>srcBinding</code> within <code>srcSet</code>",
+          "page": "chapters/descriptorsets.html",
+          "api_owner": "VkCopyDescriptorSet",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkCopyDescriptorSet-srcSet-00349",
+          "text_html": "If <code>srcSet</code> is equal to <code>dstSet</code>, then the source and destination ranges of descriptors <strong class=\"purple\">must</strong> not overlap, where the ranges <strong class=\"purple\">may</strong> include array elements from <a href=\"#descriptorsets-updates-consecutive\">consecutive bindings</a>",
+          "page": "chapters/descriptorsets.html",
+          "api_owner": "VkCopyDescriptorSet",
+          "condition_key": "core"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 11
+    },
+    "memory_binding": {
+      "path": "tools/memory_binding_contract19.py",
+      "source_sha256": "8502442043761a11a09c6929d9742ba5f3eba8741a809e9e4618d6a08d71868a",
+      "entries": {
+        "bind": {
+          "ast_sha256": "b908cd0cad73c8f2ad97d288576d8f25e3509cb0aaf4840f0f88917dba16ce72",
+          "signature": "f",
+          "docstring": null,
+          "preconditions": [
+            "ordinary_scope_proven/allocation_creation_valid/same_device",
+            "requirements_size/alignment/type_bits vs allocation_size/type_index/offset",
+            "already_bound/requires_dedicated/dedicated exact resource identity",
+            "prefers_dedicated not mandatory; no synchronization proof"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "f",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "buffer-valid-requirements",
+              "input_sha256": "572aba83555cff84e949e762f15d54f371fdf2e6ad7e71c84500578eb107bd31",
+              "expected_status": "BIND_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "5a17bf9f38825816ed39143f21825f17e94bdc50d091ccdd905ec07537935e27"
+            },
+            {
+              "name": "buffer-offset",
+              "input_sha256": "ddf7b32fac22210c010ae7d0836b3a16cbbd5af35f8b442bff22e3a0cf297b28",
+              "expected_status": "REJECTED",
+              "result_sha256": "3ef49662bac887a97ad553b3fe7cdf45eaea4068dce597492cb6b8dfec1e16eb"
+            },
+            {
+              "name": "buffer-memory_type_index",
+              "input_sha256": "487b66e65fce74a73914719c9917fae893546d4142c54d35a2bdf3611e0aa9a2",
+              "expected_status": "REJECTED",
+              "result_sha256": "7d9878e874ca874ede11c9f3b4bb54a181c29b0512310e84d77e95b695c50cc4"
+            },
+            {
+              "name": "buffer-requirements_size",
+              "input_sha256": "2a50eae0752a107f9e37442e4caf4169c1e527567a7483fb6c72d0dbac0fa0f1",
+              "expected_status": "REJECTED",
+              "result_sha256": "18345cbedb43a018231dfdbe987c5102f65beca3c2dc342c81497cdb85fd989d"
+            },
+            {
+              "name": "buffer-already_bound",
+              "input_sha256": "2f03eb06feafda3520c7b3c0a58c76b054844c7c409cdcd40653915b06bb7f39",
+              "expected_status": "REJECTED",
+              "result_sha256": "b75aecc8e0b4367f2909d781a257a4c2616355da7dd42d7efa5da962c8f054ac"
+            },
+            {
+              "name": "buffer-requires_dedicated",
+              "input_sha256": "76b87464e1bac3e1619286b71011dbdfc08d99e25335f724760f28b7d15bb819",
+              "expected_status": "REJECTED",
+              "result_sha256": "cf6f4175d796a36d17e907ec9f51e9b97cf7e68c0752174d778c2ed80b63e544"
+            },
+            {
+              "name": "buffer-prefers-not-required",
+              "input_sha256": "ab3efdd9cfaab1973feff057a82ed07e5d04ece3577fdb8b763fb03f6435d084",
+              "expected_status": "BIND_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "5a17bf9f38825816ed39143f21825f17e94bdc50d091ccdd905ec07537935e27"
+            },
+            {
+              "name": "buffer-dedicated-correct",
+              "input_sha256": "50cba4cc85e9de7fcc62c7f0c8260ff6332e335ebd969081502a4dac20ba82d6",
+              "expected_status": "BIND_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "5a17bf9f38825816ed39143f21825f17e94bdc50d091ccdd905ec07537935e27"
+            },
+            {
+              "name": "image-valid-requirements",
+              "input_sha256": "8c04550d50268d3985707ed79c47884846d1b85b60b7c3e254245eca0603c94c",
+              "expected_status": "BIND_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "5a17bf9f38825816ed39143f21825f17e94bdc50d091ccdd905ec07537935e27"
+            },
+            {
+              "name": "image-offset",
+              "input_sha256": "e99806c048d98e3409b41fdb17522e4969d88be18fb6327dec27aa3614c559ce",
+              "expected_status": "REJECTED",
+              "result_sha256": "b922179a9ba613f9eb9ca49d895dc3a418d63abaaea47f912f4839e2eed41905"
+            },
+            {
+              "name": "image-memory_type_index",
+              "input_sha256": "417f694c5dc8c70e3245182ed40338b0c5dc92eac57e8a888ec226216676656a",
+              "expected_status": "REJECTED",
+              "result_sha256": "e6ba8fd0be1092592fafab368bcbfb68fb0d02f4d773b93fea8454a668a31f22"
+            },
+            {
+              "name": "image-requirements_size",
+              "input_sha256": "924606c21cef98135605e55304cc87628f16b831c8405e875df9f3c544d7a4ab",
+              "expected_status": "REJECTED",
+              "result_sha256": "29c24e34892d2cb8a5b05b0fa1a79faf2dcd6d1ca09f309255197cc7eb7ffcac"
+            },
+            {
+              "name": "image-already_bound",
+              "input_sha256": "7663f4b7e4f11fbc9c410c0461c376833af86a8e8d70ed4fb2eb99d84092545e",
+              "expected_status": "REJECTED",
+              "result_sha256": "630918954383fa8cb35563317aa4ab06e4e198f025331ea8ebc081d5ec2019b9"
+            },
+            {
+              "name": "image-requires_dedicated",
+              "input_sha256": "d379a35fcfa4f2f3c8a6c0e12f0a30686f35b16cc03d67d2d00c931427621f8d",
+              "expected_status": "REJECTED",
+              "result_sha256": "950bc558c2be011c8a1c3b0eb014a45e95cb49a4c5f683a8b66ed6a98835855c"
+            },
+            {
+              "name": "image-prefers-not-required",
+              "input_sha256": "4e4f36c1b593ec9ed0158c73b5f9ea468822115da4eb9ee3bc2be1df986a2680",
+              "expected_status": "BIND_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "5a17bf9f38825816ed39143f21825f17e94bdc50d091ccdd905ec07537935e27"
+            },
+            {
+              "name": "image-dedicated-correct",
+              "input_sha256": "86f6574f127451deddc9084e316f24da9a3406ad78edfb27b880cbd144f8add5",
+              "expected_status": "BIND_CONDITIONS_WITHIN_SCOPE",
+              "result_sha256": "5a17bf9f38825816ed39143f21825f17e94bdc50d091ccdd905ec07537935e27"
+            }
+          ]
+        },
+        "granularity": {
+          "ast_sha256": "d87c3e01600b0eb93c0c116f8a40e342e4ef1172c0ddb59995b6b274c67b4078",
+          "signature": "a, b, granularity, simultaneous",
+          "docstring": null,
+          "preconditions": [
+            "same allocation offsets/requirements_size and linear classification",
+            "granularity and simultaneous usage facts",
+            "page separation only; not atom alignment or full alias synchronization"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "a, b, granularity, simultaneous",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "disjoint-same-page-aliasing",
+              "input_sha256": "12e4debda8f6e4c4d0434efa727c408c2a70ae980388fc04a9a3f7f3c6c0bad8",
+              "expected_status": "ALIASING_RISK_NOT_BIND_VUID",
+              "result_sha256": "e45128e51c84d471a7d881aff842bab064f85a7c5ef84abe6b1c9bb265db2004"
+            },
+            {
+              "name": "page-boundary-not-min-distance",
+              "input_sha256": "5b3515bbd8d8aa16528302a77bb820b0c1edc1af62523e4217eae4bf47ccaabd",
+              "expected_status": "MIXED_PAGE_SEPARATION_SATISFIED",
+              "result_sha256": "2d6f8d45b5d7f85b085afed8add3d2f99dd9d43551c8e07604b3b679202eb54e"
+            },
+            {
+              "name": "not-simultaneous",
+              "input_sha256": "540f547ca186cc6780dd9b8ae61698cae9487cd06fd5937a3a0560997ccaacb5",
+              "expected_status": "NO_MIXED_SIMULTANEOUS_PAGE_CONDITION",
+              "result_sha256": "78f3eadc4e245de25741b4dd232d2528a3b9ba0edd9284a260d55df202a50812"
+            }
+          ]
+        },
+        "free_obligations": {
+          "ast_sha256": "1f88b28f183027b1e846fc74f0480788e90a3fe71c32ea7e188e1c16ce49eeb1",
+          "signature": "f",
+          "docstring": null,
+          "preconditions": [
+            "reference_inventory_complete/all_submitted_uses_retired",
+            "host_accesses_completed/no_future_bound_resource_use",
+            "bound_object_count does not by itself forbid free; not full handle validity"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "f",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "bound-objects-do-not-forbid-free",
+              "input_sha256": "00cba5f5e5b5df1a5703fd2d9c6ccbc9dd00cb03ecab8ea7d12250462cdf8c20",
+              "expected_status": "FREE_LIFETIME_OBLIGATIONS_DECLARED",
+              "result_sha256": "b634ebc43125e749438b56bf59f589bc79616b5399cd0c08f10e1299e4af4bf6"
+            },
+            {
+              "name": "pending-uses-forbid-free",
+              "input_sha256": "aa7f388bbc0cbbad9dc7c6af657cab2ee657a7aec8bbd6eb4769879ce2fb1670",
+              "expected_status": "REJECTED",
+              "result_sha256": "85fed12bf40d166922882e815593e17a4f25987fa5f8937cf9f97b64a052284c"
+            },
+            {
+              "name": "future-bound-use-not-proven",
+              "input_sha256": "dc6074975d6dfef2db82ae46574a78e23edda89c0ea37f1d43339e8d8406a301",
+              "expected_status": "LIFETIME_OBLIGATIONS_NOT_ESTABLISHED",
+              "result_sha256": "00bcd9276ec027eb2ee0cd735eef7024e6cc88e9533db8b9484ba236373e9a36"
+            }
+          ]
+        },
+        "dedicated_allocation_size": {
+          "ast_sha256": "c21168bf7909195a9d527fe431fff75ca70336e945443247ec4063781bc5c78d",
+          "signature": "kind, allocation_size, requirements_size, contract_version, ordinary_not_imported",
+          "docstring": "Version-specific size condition only; excludes imported-memory exceptions.",
+          "preconditions": [
+            "kind/allocation_size/requirements_size/ordinary_not_imported",
+            "explicit contract_version309 equality versus368 greater-or-equal",
+            "same VUID is not cross-version equivalence or complete allocation admission"
+          ],
+          "obligation_completeness": "PARTIAL_EXPLICIT_PREDICATES_NOT_COMPLETE_VULKAN_VALIDITY",
+          "required_arguments": "kind, allocation_size, requirements_size, contract_version, ordinary_not_imported",
+          "unknown_obligations": "Missing/malformed/out-of-scope premises do not establish validity; statuses retain each original helper meaning.",
+          "controls": [
+            {
+              "name": "buffer-oversized-dedicated-1.4.309",
+              "input_sha256": "ab716337db10153281a244a1debfa08f4241c6354111588960c5c796fa7ee0d7",
+              "expected_status": "REJECTED",
+              "result_sha256": "ba6b18c6ae86e3d5b65a1c7104cb6a3e8ba1a91521b942c790749bff346aa6a1"
+            },
+            {
+              "name": "buffer-oversized-dedicated-1.4.368",
+              "input_sha256": "91484fcb07b1a6329bf62e2fde587d797c94ad0bc0989002398f0a4a5543d190",
+              "expected_status": "DEDICATED_SIZE_CONDITION_SATISFIED",
+              "result_sha256": "760b88cba012e1417de452ffa6e5460c47a49d6197eaf103c4e1ef112e296b66"
+            },
+            {
+              "name": "image-oversized-dedicated-1.4.309",
+              "input_sha256": "1df5234799aa5588df34059db6182ff144d51cc44abade4a2528c286023d4fc5",
+              "expected_status": "REJECTED",
+              "result_sha256": "ad6f1307d74e22457b586a4211e81c82454e325e00e0b30e57192f046e32927d"
+            },
+            {
+              "name": "image-oversized-dedicated-1.4.368",
+              "input_sha256": "7730b999688e7aa9881659ef9af83b874edb5c0779cc5ffe626d7d8ec8121fe7",
+              "expected_status": "DEDICATED_SIZE_CONDITION_SATISFIED",
+              "result_sha256": "760b88cba012e1417de452ffa6e5460c47a49d6197eaf103c4e1ef112e296b66"
+            }
+          ]
+        }
+      },
+      "excluded_helpers": {
+        "u64": {
+          "ast_sha256": "cd9d10e7dad40d4b6e7eb970f77074690d9024741062c7aaea9d66f2c4a3b2dc",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "identifier": {
+          "ast_sha256": "7769461f661bd5e3f4ade29df28a3b986e99d64f1e262c62bf525aa9cff46169",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        },
+        "result": {
+          "ast_sha256": "cc196f62d393f33eb11f5446b870f80c0bd176b329a1a066d92b6c2ae6da3f0d",
+          "reason": "Schema/arithmetic/result helper, not an independently accepted semantic entry"
+        }
+      },
+      "skill": {
+        "path": "references/03_api_manual/04_buffer_image_memory/memory_allocation.md",
+        "anchor": "delivery19-ordinary-memory-binding",
+        "sha256": "17b63f4cfb08d17eeb1750b60726964e236bb8fa000094169a69ed24484476c3"
+      },
+      "original_entry": "checks19/run_memory_binding_contracts.py",
+      "original_entry_sha256": "0002dcb76851a79c9ea31ff8eeeeda1dc4ca1a8211c8e466752ff94172f3d116",
+      "report_sha256": "1b33dbe88c4373ca1f2bda42c0130cbf53741941eb9465751b8c7803085ef4e6",
+      "implementation_sha256": {
+        "checks19/run_memory_binding_contracts.py": "0002dcb76851a79c9ea31ff8eeeeda1dc4ca1a8211c8e466752ff94172f3d116",
+        "tools/memory_binding_contract19.py": "8502442043761a11a09c6929d9742ba5f3eba8741a809e9e4618d6a08d71868a",
+        "tools/memory_binding_prose19.py": "d6eeab16ca1148331a12364e7ba0bce04c755cf983c671bcd56568c3e7a466dd",
+        "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e"
+      },
+      "normative_map": {
+        "status": "EXACT_RAW_PROSE_SLICE_MAP",
+        "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+        "sources": {
+          "resources": {
+            "path": "chapters/resources.adoc",
+            "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+            "api_version": "1.4.368",
+            "license": "CC-BY-4.0"
+          },
+          "memory": {
+            "path": "chapters/memory.adoc",
+            "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+            "api_version": "1.4.368",
+            "license": "CC-BY-4.0"
+          }
+        },
+        "slices": [
+          {
+            "source": "resources",
+            "marker": "[open,refpage='VkMemoryRequirements',",
+            "line_start": 10504,
+            "line_end": 10792,
+            "sha256": "16fff14decd2146d5a52810efc1524fe1c45cd058b144e024e34496ab7217b0c",
+            "bytes": 15063,
+            "conditional_directives": [
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "endif::VK_ANDROID_external_memory_android_hardware_buffer[]",
+              "ifdef::VK_KHR_external_memory_win32,VK_EXT_external_memory_metal[]",
+              "ifdef::VK_KHR_external_memory_win32[]",
+              "endif::VK_KHR_external_memory_win32[]",
+              "ifdef::VK_EXT_external_memory_metal[]",
+              "endif::VK_EXT_external_memory_metal[]",
+              "endif::VK_KHR_external_memory_win32,VK_EXT_external_memory_metal[]",
+              "ifdef::VK_KHR_get_memory_requirements2[]",
+              "endif::VK_KHR_get_memory_requirements2[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifndef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifndef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "ifdef::VK_EXT_image_tiling_control[]",
+              "endif::VK_EXT_image_tiling_control[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "ifdef::VK_BASE_VERSION_1_1[]",
+              "endif::VK_BASE_VERSION_1_1[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "ifdef::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+              "endif::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_1[]",
+              "endif::VK_BASE_VERSION_1_1[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+              "ifdef::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+              "endif::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_bind_memory2[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_bind_memory2[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_get_memory_requirements2[]"
+            ]
+          },
+          {
+            "source": "resources",
+            "marker": "[open,refpage='VkMemoryDedicatedRequirements',",
+            "line_start": 11170,
+            "line_end": 11291,
+            "sha256": "e9e7a4306479b216b1d86a07e3da4b58a052aa2dc911cacdad57ab90f3cb72cb",
+            "bytes": 6014,
+            "conditional_directives": [
+              "ifdef::VK_KHR_dedicated_allocation[]",
+              "endif::VK_KHR_dedicated_allocation[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifndef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+              "ifdef::VK_EXT_image_drm_format_modifier[]",
+              "endif::VK_EXT_image_drm_format_modifier[]",
+              "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory,VK_EXT_image_drm_format_modifier[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory,VK_EXT_image_drm_format_modifier[]",
+              "ifdef::VK_ARM_tensors[]",
+              "ifdef::VK_ARM_tensor_controls[]",
+              "endif::VK_ARM_tensor_controls[]",
+              "ifdef::VK_ARM_tensor_controls[]",
+              "endif::VK_ARM_tensor_controls[]",
+              "endif::VK_ARM_tensors[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]"
+            ]
+          },
+          {
+            "source": "resources",
+            "marker": "[[resources-bufferimagegranularity]]",
+            "line_start": 12224,
+            "line_end": 12293,
+            "sha256": "9c88b66fa9bf452f289ad5b862c786320b329e53d6766815b2acc4ef95d5f32e",
+            "bytes": 2464,
+            "conditional_directives": [
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]",
+              "ifdef::VK_ARM_tensors[]",
+              "endif::VK_ARM_tensors[]"
+            ]
+          },
+          {
+            "source": "memory",
+            "marker": "[open,refpage='VkMemoryDedicatedAllocateInfo',",
+            "line_start": 1975,
+            "line_end": 2101,
+            "sha256": "6870da015a4cdc9d7594ee64dc8d34dd2eb19fd596ec59165e3608a5492efd9b",
+            "bytes": 7060,
+            "conditional_directives": [
+              "ifdef::VK_KHR_dedicated_allocation[]",
+              "endif::VK_KHR_dedicated_allocation[]",
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer[Android Hardware Buffer]",
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer+VK_QNX_external_memory_screen_buffer[or an imported]",
+              "ifdef::VK_QNX_external_memory_screen_buffer[QNX Screen buffer]",
+              "endif::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer[Android Hardware Buffer]",
+              "ifdef::VK_ANDROID_external_memory_android_hardware_buffer+VK_QNX_external_memory_screen_buffer[or an imported]",
+              "ifdef::VK_QNX_external_memory_screen_buffer[QNX Screen buffer]",
+              "endif::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+              "ifdef::VK_KHR_external_memory_win32[]",
+              "endif::VK_KHR_external_memory_win32[]",
+              "ifdef::VK_KHR_external_memory_fd[]",
+              "endif::VK_KHR_external_memory_fd[]",
+              "ifdef::VK_KHR_sampler_ycbcr_conversion[]",
+              "endif::VK_KHR_sampler_ycbcr_conversion[]",
+              "ifdef::VK_FUCHSIA_external_memory[]",
+              "endif::VK_FUCHSIA_external_memory[]",
+              "endif::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]",
+              "ifdef::VK_QCOM_tile_memory_heap[]"
+            ]
+          },
+          {
+            "source": "memory",
+            "marker": "[open,refpage='vkFreeMemory',",
+            "line_start": 4974,
+            "line_end": 5034,
+            "sha256": "f557327c651cc39af681015da93fe61eb475abbf141cb3915f715aa413e14739",
+            "bytes": 2197,
+            "conditional_directives": [
+              "endif::VKSC_VERSION_1_0[]"
+            ]
+          }
+        ],
+        "limits": [
+          "Raw bounded sections, not evaluated includes/outer conditional applicability.",
+          "Separate from fixed309 VUID coordinates; not full normative closure."
+        ]
+      },
+      "normative_309_coordinates": [
+        {
+          "vuid": "VUID-vkBindBufferMemory-memoryOffset-01031",
+          "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be less than the size of <code>memory</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindBufferMemory-memory-01035",
+          "text_html": "<code>memory</code> <strong class=\"purple\">must</strong> have been allocated using one of the memory types allowed in the <code>memoryTypeBits</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <code>vkGetBufferMemoryRequirements</code> with <code>buffer</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindBufferMemory-memoryOffset-01036",
+          "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be an integer multiple of the <code>alignment</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <code>vkGetBufferMemoryRequirements</code> with <code>buffer</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindBufferMemory-size-01037",
+          "text_html": "The <code>size</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <code>vkGetBufferMemoryRequirements</code> with <code>buffer</code> <strong class=\"purple\">must</strong> be less than or equal to the size of <code>memory</code> minus <code>memoryOffset</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindBufferMemory-buffer-07459",
+          "text_html": "<code>buffer</code> <strong class=\"purple\">must</strong> not have been bound to a memory object",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindBufferMemory-buffer-01444",
+          "text_html": "If <code>buffer</code> requires a dedicated allocation (as reported by <a href=\"#vkGetBufferMemoryRequirements2\">vkGetBufferMemoryRequirements2</a> in <a href=\"#VkMemoryDedicatedRequirements\">VkMemoryDedicatedRequirements</a>::<code>requiresDedicatedAllocation</code> for <code>buffer</code>), <code>memory</code> <strong class=\"purple\">must</strong> have been allocated with <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>buffer</code> equal to <code>buffer</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindBufferMemory-memory-01508",
+          "text_html": "If the <code>VkMemoryAllocateInfo</code> provided when <code>memory</code> was allocated included a <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a> structure in its <code>pNext</code> chain, and <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>buffer</code> was not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, then <code>buffer</code> <strong class=\"purple\">must</strong> equal <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>buffer</code>, and <code>memoryOffset</code> <strong class=\"purple\">must</strong> be zero",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindBufferMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-memoryOffset-01046",
+          "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be less than the size of <code>memory</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-memory-01047",
+          "text_html": "<code>memory</code> <strong class=\"purple\">must</strong> have been allocated using one of the memory types allowed in the <code>memoryTypeBits</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <a href=\"#vkGetImageMemoryRequirements\">vkGetImageMemoryRequirements</a> with <code>image</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-memoryOffset-01048",
+          "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be an integer multiple of the <code>alignment</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <a href=\"#vkGetImageMemoryRequirements\">vkGetImageMemoryRequirements</a> with <code>image</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-size-01049",
+          "text_html": "The difference of the size of <code>memory</code> and <code>memoryOffset</code> <strong class=\"purple\">must</strong> be greater than or equal to the <code>size</code> member of the <a href=\"#VkMemoryRequirements\">VkMemoryRequirements</a> structure returned from a call to <a href=\"#vkGetImageMemoryRequirements\">vkGetImageMemoryRequirements</a> with the same <code>image</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-image-07460",
+          "text_html": "<code>image</code> <strong class=\"purple\">must</strong> not have been bound to a memory object",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-image-01445",
+          "text_html": "If <code>image</code> requires a dedicated allocation (as reported by <a href=\"#vkGetImageMemoryRequirements2\">vkGetImageMemoryRequirements2</a> in <a href=\"#VkMemoryDedicatedRequirements\">VkMemoryDedicatedRequirements</a>::<code>requiresDedicatedAllocation</code> for <code>image</code>), <code>memory</code> <strong class=\"purple\">must</strong> have been created with <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>image</code> equal to <code>image</code>",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkBindImageMemory-memory-02628",
+          "text_html": "If the <a href=\"#features-dedicatedAllocationImageAliasing\"><code>dedicatedAllocationImageAliasing</code></a> feature is not enabled, and the <code>VkMemoryAllocateInfo</code> provided when <code>memory</code> was allocated included a <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a> structure in its <code>pNext</code> chain, and <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>image</code> was not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, then <code>image</code> <strong class=\"purple\">must</strong> equal <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>image</code> and <code>memoryOffset</code> <strong class=\"purple\">must</strong> be zero",
+          "page": "chapters/resources.html",
+          "api_owner": "vkBindImageMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-vkFreeMemory-memory-00677",
+          "text_html": "All submitted commands that refer to <code>memory</code> (via images or buffers) <strong class=\"purple\">must</strong> have completed execution",
+          "page": "chapters/memory.html",
+          "api_owner": "vkFreeMemory",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkMemoryDedicatedAllocateInfo-image-02964",
+          "text_html": "If <code>image</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>     and the memory is not an imported Android Hardware Buffer or an imported QNX Screen buffer     , <code>VkMemoryAllocateInfo</code>::<code>allocationSize</code> <strong class=\"purple\">must</strong> equal the     <code>VkMemoryRequirements</code>::<code>size</code> of the image",
+          "page": "chapters/memory.html",
+          "api_owner": "VkMemoryDedicatedAllocateInfo",
+          "condition_key": "core"
+        },
+        {
+          "vuid": "VUID-VkMemoryDedicatedAllocateInfo-buffer-02965",
+          "text_html": "If <code>buffer</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>     and the memory is not an imported Android Hardware Buffer or an imported QNX Screen buffer     , <code>VkMemoryAllocateInfo</code>::<code>allocationSize</code> <strong class=\"purple\">must</strong> equal the     <code>VkMemoryRequirements</code>::<code>size</code> of the buffer",
+          "page": "chapters/memory.html",
+          "api_owner": "VkMemoryDedicatedAllocateInfo",
+          "condition_key": "core"
+        }
+      ],
+      "normative_309_source": {
+        "file": "validusage.json",
+        "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+        "api_version": "1.4.309",
+        "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+        "schema_version": 2,
+        "source_kind": "official Debian Vulkan headers registry snapshot",
+        "separate_from_vk_xml_api": "1.4.368"
+      },
+      "case_count": 26
+    }
+  },
+  "semantic_L1_L2_completion": "NOT_INFERRED",
+  "versions": "368 prose and 309 VUIDs retained separately; no automatic equivalence",
+  "release_status": "BLOCKED"
+}

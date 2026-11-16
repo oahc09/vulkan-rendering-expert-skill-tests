@@ -1,0 +1,156 @@
+{
+  "schema": 1,
+  "scope": "ordinary-single-device-single-queue-nonalias-nondedicated-buffer",
+  "allocations": [
+    {
+      "id": "A",
+      "generation": 1,
+      "size": 128,
+      "memory_type_index": 0
+    }
+  ],
+  "buffers": [
+    {
+      "id": "B",
+      "generation": 1,
+      "allocation": "A",
+      "allocation_generation": 1,
+      "buffer_size": 64,
+      "requirements_size": 80,
+      "alignment": 16,
+      "type_bits": 1,
+      "offset": 0
+    }
+  ],
+  "proofs": [
+    {
+      "id": "bind-proof",
+      "kind": "ORDINARY_ALLOCATION_VALID",
+      "subject": {
+        "buffer": "B",
+        "generation": 1,
+        "allocation": "A",
+        "allocation_generation": 1,
+        "event": "bind"
+      },
+      "authority": "CALLER_DECLARED",
+      "evidence_sha256": "04113bc1f6c0f59349613b2cb02a88e460e08b41e269d69f6681cb98691ade56"
+    },
+    {
+      "id": "write-proof",
+      "kind": "DESCRIPTOR_PAYLOAD_AND_LAYOUT_VALID",
+      "subject": {
+        "buffer": "B",
+        "generation": 1,
+        "allocation": "A",
+        "allocation_generation": 1,
+        "event": "write",
+        "offset": 0,
+        "size": 64,
+        "set": "S"
+      },
+      "authority": "CALLER_DECLARED",
+      "evidence_sha256": "04113bc1f6c0f59349613b2cb02a88e460e08b41e269d69f6681cb98691ade56"
+    },
+    {
+      "id": "record-proof",
+      "kind": "PIPELINE_LAYOUT_AND_ACCESS_SCOPE",
+      "subject": {
+        "buffer": "B",
+        "generation": 1,
+        "allocation": "A",
+        "allocation_generation": 1,
+        "event": "record",
+        "cb": "C",
+        "set": "S",
+        "offset": 0,
+        "size": 64,
+        "access": "READ"
+      },
+      "authority": "CALLER_DECLARED",
+      "evidence_sha256": "04113bc1f6c0f59349613b2cb02a88e460e08b41e269d69f6681cb98691ade56"
+    },
+    {
+      "id": "complete-proof",
+      "kind": "SUBMISSION_ALL_USES_COMPLETED",
+      "subject": {
+        "event": "complete",
+        "submission": "T",
+        "record_event": "record",
+        "buffer": "B",
+        "generation": 1,
+        "allocation": "A",
+        "allocation_generation": 1,
+        "submit_event": "submit"
+      },
+      "authority": "CALLER_DECLARED",
+      "evidence_sha256": "04113bc1f6c0f59349613b2cb02a88e460e08b41e269d69f6681cb98691ade56"
+    },
+    {
+      "id": "free-proof",
+      "kind": "HOST_ACCESS_COMPLETED_NO_CONCURRENT_ACCESS",
+      "subject": {
+        "event": "free",
+        "allocation": "A",
+        "generation": 1
+      },
+      "authority": "CALLER_DECLARED",
+      "evidence_sha256": "04113bc1f6c0f59349613b2cb02a88e460e08b41e269d69f6681cb98691ade56"
+    },
+    {
+      "id": "trace-complete",
+      "kind": "TRACE_AND_HOST_SCOPE",
+      "subject": {
+        "trace_sha256": "d930e9449e799274771de9ec95ce77c560698060f284a965a33ac36ffeb00fbf"
+      },
+      "authority": "CALLER_DECLARED",
+      "evidence_sha256": "04113bc1f6c0f59349613b2cb02a88e460e08b41e269d69f6681cb98691ade56"
+    }
+  ],
+  "events": [
+    {
+      "id": "bind",
+      "op": "bind",
+      "buffer": "B",
+      "generation": 1,
+      "proof": "bind-proof"
+    },
+    {
+      "id": "write",
+      "op": "write_descriptor",
+      "set": "S",
+      "buffer": "B",
+      "generation": 1,
+      "offset": 0,
+      "size": 64,
+      "proof": "write-proof"
+    },
+    {
+      "id": "record",
+      "op": "record_use",
+      "cb": "C",
+      "set": "S",
+      "access": "READ",
+      "proof": "record-proof"
+    },
+    {
+      "id": "submit",
+      "op": "submit",
+      "submission": "T",
+      "cb": "C"
+    },
+    {
+      "id": "complete",
+      "op": "complete",
+      "submission": "T",
+      "proof": "complete-proof"
+    },
+    {
+      "id": "free",
+      "op": "free",
+      "allocation": "A",
+      "generation": 1,
+      "proof": "free-proof"
+    }
+  ]
+}

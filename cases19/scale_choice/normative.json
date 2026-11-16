@@ -1,0 +1,55 @@
+{
+  "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "version": "1.4.368",
+  "sources": [
+    {
+      "path": "chapters/memory.adoc",
+      "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+      "anchors": [
+        "memory-device-hostaccess",
+        "memory-device-hostaccess-hazards",
+        "memory-device-bitmask-list"
+      ]
+    },
+    {
+      "path": "chapters/synchronization.adoc",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "anchors": [
+        "synchronization-dependencies-memory",
+        "synchronization-buffer-memory-barriers",
+        "synchronization-submission-host-writes"
+      ]
+    },
+    {
+      "path": "chapters/resources.adoc",
+      "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+      "anchors": [
+        "resources-association"
+      ]
+    },
+    {
+      "path": "chapters/renderpass.adoc",
+      "sha256": "6f434da8a5cf251a33d1e4a9d39a76a42a021ace6c6857b7e34a3e825f44f287",
+      "anchors": [
+        "renderpass",
+        "renderpass-objects",
+        "renderpass-layout-transitions",
+        "renderpass-load-operations",
+        "renderpass-store-operations"
+      ]
+    },
+    {
+      "path": "chapters/drawing.adoc",
+      "sha256": "37ef0859a8c66ac07949291bd09f76411b2d70847f10ce6a9b740e0b58189542",
+      "anchors": [
+        "drawing"
+      ]
+    },
+    {
+      "path": "chapters/commonvalidity/draw_indirect_count_common.adoc",
+      "sha256": "575348c5735dcc5c1ce53ca5dd694b49011f88d3c292ed5b386b27afcc9090a3",
+      "anchors": []
+    }
+  ],
+  "limits": "Frozen368 raw source files, not include/conditional expansion; Count body in drawing.adoc and count commonvalidity full-file hashes retained. No new VUID runtime fault; truncation is valid min(count,maxDrawCount) behavior. No performance threshold."
+}

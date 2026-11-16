@@ -1,0 +1,184 @@
+{
+  "case_count": 14,
+  "evidence_kind": "CALLER_FACTS_HOST_CONTROLS_NOT_GPU",
+  "implementation_sha256": {
+    "checks19/run_timeline_contracts.py": "189fdcecbb69aa3cfbb61f543fa990512a1c21d66a7cc38e831c733294ae16e5",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "tools/timeline_contract19.py": "8ef769857784269920a2bc3aa40ead1ce6ad4f151d26318d29b77a670c797a50",
+    "tools/timeline_prose19.py": "fcdda45c73aed78da199f8d491c22c76f3fe9e45d0bc403293c51ed0a30f2618"
+  },
+  "prose": {
+    "limits": [
+      "Raw slice boundaries are next explicit anchor, not complete dependency closure.",
+      "Includes/outer conditionals are not evaluated; separate from309 normative VUIDs."
+    ],
+    "slices": [
+      {
+        "anchor": "synchronization-signal-operation-order",
+        "bytes": 4409,
+        "conditional_directives": [
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "ifdef::VK_KHR_swapchain[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "endif::VK_KHR_swapchain[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[  ** flink:vkQueueSubmit2]",
+          "ifndef::VKSC_VERSION_1_0[  ** flink:vkQueueBindSparse]",
+          "ifdef::VK_KHR_swapchain[  ** flink:vkAcquireNextImageKHR]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[or slink:VkSubmitInfo2]",
+          "ifndef::VKSC_VERSION_1_0[or slink:VkBindSparseInfo]",
+          "ifdef::VK_BASE_VERSION_1_2,VK_KHR_timeline_semaphore[]",
+          "endif::VK_BASE_VERSION_1_2,VK_KHR_timeline_semaphore[]"
+        ],
+        "line_end": 2067,
+        "line_start": 1980,
+        "sha256": "c92218385e65dffc0e1dcddce851e201d159ab920add990409c9fc0cd76b529e"
+      },
+      {
+        "anchor": "synchronization-semaphores-hostops",
+        "bytes": 10602,
+        "conditional_directives": [
+          "ifdef::VK_BASE_VERSION_1_2[]",
+          "endif::VK_BASE_VERSION_1_2[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_BASE_VERSION_1_2[]",
+          "endif::VK_BASE_VERSION_1_2[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+          "endif::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_BASE_VERSION_1_2[]",
+          "endif::VK_BASE_VERSION_1_2[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_KHR_timeline_semaphore[]",
+          "endif::VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+          "endif::VK_NV_external_sci_sync,VK_NV_external_sci_sync2[]",
+          "endif::VK_BASE_VERSION_1_2,VK_KHR_timeline_semaphore[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_semaphore[]"
+        ],
+        "line_end": 4847,
+        "line_start": 4587,
+        "sha256": "72ab8cac3d9c6a471075ee2aa6209cdf16a709fce522671ad2c2600896dc5dca"
+      }
+    ],
+    "source": {
+      "api_version": "1.4.368",
+      "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "copyright": "Khronos Group",
+      "license": "CC-BY-4.0",
+      "path": "chapters/synchronization.adoc",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909"
+    },
+    "status": "EXACT_RAW_PROSE_SLICE_MAP"
+  },
+  "release_status": "BLOCKED",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "status": "SOURCE_PAIRED_TIMELINE_HOST_CONTROLS",
+  "vuid_coordinates": [
+    {
+      "api_owner": "VkSemaphoreSignalInfo",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkSemaphoreSignalInfo-value-03258"
+    },
+    {
+      "api_owner": "VkSemaphoreSignalInfo",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkSemaphoreSignalInfo-value-03259"
+    },
+    {
+      "api_owner": "VkSemaphoreSignalInfo",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkSemaphoreSignalInfo-value-03260"
+    },
+    {
+      "api_owner": "vkDestroySemaphore",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-vkDestroySemaphore-semaphore-05149"
+    }
+  ],
+  "vuid_source": {
+    "api_version": "1.4.309",
+    "file": "validusage.json",
+    "schema_version": 2,
+    "separate_from_vk_xml_api": "1.4.368",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "source_kind": "official Debian Vulkan headers registry snapshot"
+  },
+  "controls": [
+    {
+      "name": "host-before-pending-ordered",
+      "expected": "HOST_SIGNAL_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "equal-current",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "equal-pending",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "wait-value-difference",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "numeric-order-not-execution-order",
+      "expected": "ORDER_NOT_ESTABLISHED"
+    },
+    {
+      "name": "unknown-at_call_state_proven",
+      "expected": "UNKNOWN"
+    },
+    {
+      "name": "unknown-pending_set_complete",
+      "expected": "UNKNOWN"
+    },
+    {
+      "name": "unknown-host_calls_serialized",
+      "expected": "UNKNOWN"
+    },
+    {
+      "name": "uint64-overflow",
+      "expected": "UNKNOWN"
+    },
+    {
+      "name": "wait-any-snapshot",
+      "expected": "SNAPSHOT_PREDICATE_ONLY"
+    },
+    {
+      "name": "wait-all-snapshot",
+      "expected": "SNAPSHOT_PREDICATE_ONLY"
+    },
+    {
+      "name": "wait-before-signal-not-deadlock-proof",
+      "expected": "SNAPSHOT_PREDICATE_ONLY"
+    },
+    {
+      "name": "wait-success-not-retirement",
+      "expected": "RETIREMENT_NOT_ESTABLISHED"
+    },
+    {
+      "name": "all-reference-retirement-declared",
+      "expected": "RETIREMENT_OBLIGATIONS_DECLARED"
+    }
+  ],
+  "report_sha256": "35bac5f7452bd0f6d021815ca226251c781b63605cab53545e5208974672fb06",
+  "cohort": "prepublication exact implementation hashes; not final tests head"
+}

@@ -1,0 +1,11 @@
+--- baseline.c
++++ baseline.c
+@@ -5,7 +5,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ static unsigned errors;
+-#define LAYOUT_DESCRIPTOR_TYPE VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER
++#define LAYOUT_DESCRIPTOR_TYPE VK_DESCRIPTOR_TYPE_STORAGE_BUFFER
+ static const char *phase="setup";
+ static VKAPI_ATTR VkBool32 VKAPI_CALL cb(VkDebugUtilsMessageSeverityFlagBitsEXT severity,VkDebugUtilsMessageTypeFlagsEXT type,const VkDebugUtilsMessengerCallbackDataEXT *d,void *u){
+  (void)type;(void)u;

@@ -1,0 +1,68 @@
+{
+  "status": "FONT_PRELOAD_REPAIR_VERIFIED_OTHER_LINK_FINDINGS_RETAINED",
+  "execution": "OFFLINE_RECHECK_NO_RENDER_OR_GPU",
+  "original_build_status": "BLOCKED",
+  "original_build_report_sha256": "c54b7cd150001ddb56ade9ecfdd5c6f1c3f052da30216fbaaf1bf8c821c05a39",
+  "original_build_implementation": {
+    "checks19/repair_reference_fonts19.py": "ee4eddffd25b96e6bb700341908d38f4e8a5fcdb59a97c91216a82ee4a10d304",
+    "tools/reference_batch19.py": "0a4500e02f38bb710d018ff930737984a4ab4cbceaa8479081b3d42d9e9092be",
+    "tools/reference_font_repair19.py": "87bca36ef45497e748526418513b4e9e7680a36e98d79bff2eebdf46a4ddcfce",
+    "tools/reference_links19.py": "ef899f37c3160a259b16800529984927b9828ad8b74976d2e7cbdea460bda876",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "implementation": {
+    "checks19/verify_reference_font_repair19.py": "1c0b48dd4f041a4130736a960ae51933ae1f5580985b08c5a05d6dd14242bc3c",
+    "tools/reference_font_repair19.py": "612b048bb10fe608abfdedd69d0db9c9696554bc20845eeb4ff88b14e2de61b1",
+    "tools/reference_batch19.py": "0a4500e02f38bb710d018ff930737984a4ab4cbceaa8479081b3d42d9e9092be",
+    "tools/reference_links19.py": "ef899f37c3160a259b16800529984927b9828ad8b74976d2e7cbdea460bda876",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "raw_log_binding": "FIRST_HASHED_AT_OFFLINE_RECHECK_NOT_ORIGINAL_EXECUTION; ORIGINAL_FAILED_REPORT_HAS_NO_STREAM_DIGESTS",
+  "font_assets": {
+    "KaTeX_Main-Bold.woff2": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+    "KaTeX_Main-Italic.woff2": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+    "KaTeX_Main-Regular.woff2": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+    "KaTeX_Math-Italic.woff2": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+    "KaTeX_Size1-Regular.woff2": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+    "KaTeX_Size2-Regular.woff2": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+    "KaTeX_Size3-Regular.woff2": "73d591271b1604960cb10bb90fee021670af7297017e0e98480b332d11f51995",
+    "KaTeX_Size4-Regular.woff2": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+    "KaTeX_Typewriter-Regular.woff2": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b"
+  },
+  "font_preload_occurrences": 31977,
+  "limits": [
+    "original rendering completed under preserved prior implementation; first validator failed on extra external FontAwesome preload",
+    "current offline checker separately validates all pages; original receipt unchanged",
+    "exact nine href replacements per entity; FontAwesome and other bytes unchanged",
+    "static WOFF2 bytes/existence only, no browser/font visual test",
+    "navigation/fragment findings remain, external URLs not fetched"
+  ],
+  "report_sha256": "d94a79e2aa8a747ecdc85fa06261f2142bc34571cecc187841f2cae4d14fd02a",
+  "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "baseline_p5_report_sha256": "5a70d2710c68fe30337944d240a308df66bdc38aa65e19524cc7d3a4f8adc613",
+  "entity_count": 3553,
+  "alias_count": 477,
+  "official_render_elapsed_seconds": 296.3545420550072,
+  "href_counts": {
+    "EXTERNAL_NOT_FETCHED": 14670,
+    "LOCAL_RESOLVED": 193150,
+    "MISSING_LOCAL_TARGET": 2,
+    "MISSING_FRAGMENT": 16280
+  },
+  "href_occurrences": 224102,
+  "original_href_counts": {
+    "LOCAL_RESOLVED": 161173,
+    "MISSING_LOCAL_TARGET": 31979,
+    "MISSING_FRAGMENT": 16280,
+    "EXTERNAL_NOT_FETCHED": 14670
+  },
+  "independent_actual_output_review_sha256": "2c97f9567dce9db4ad84ee71f1fba87dc252b04e305fd6556a0f6340f556350f",
+  "release_accepted": false,
+  "upstream_modified": false
+}

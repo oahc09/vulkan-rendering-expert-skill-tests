@@ -1,0 +1,3620 @@
+{
+  "1": {
+    "run_id": "602beab4-4992-43bf-9bc4-f951ad737de8",
+    "cases": {
+      "good": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 21,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 1,
+            "allocationCount": 4,
+            "requestedBytes": 832,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 126,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 1,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 0,
+            "sourceLayout": 1,
+            "resolveLayout": 0,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 1,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 126,
+            "viewFormat": 126,
+            "samples": 1,
+            "testEnable": 1,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "draw_sequence": {
+            "kind": "draw_sequence",
+            "modes": [
+              0,
+              1
+            ],
+            "nearDepth": 0.25,
+            "farDepth": 0.75,
+            "drawCount": 2
+          },
+          "source_contract": {
+            "kind": "source_contract",
+            "storeOp": 0,
+            "loadOp": 1,
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "imageIsSource": true,
+            "aspect": 1,
+            "baseMip": 0,
+            "levelCount": 1,
+            "baseLayer": 0,
+            "layerCount": 1,
+            "distinctPipelines": true,
+            "sourceViewFormat": 37,
+            "viewType": 1
+          },
+          "two_pass": {
+            "kind": "two_pass",
+            "sameSourceView": true,
+            "sourceLayout": 1,
+            "descriptorLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "srcAccess": 256,
+            "dstAccess": 32,
+            "dependencyRecorded": true,
+            "sourceHostFilled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "final": {
+            "kind": "final",
+            "errors": 0,
+            "rc": 0
+          }
+        },
+        "admission": {
+          "status": "WITHIN_SCOPE",
+          "vuids": []
+        },
+        "allocation_receipt": {
+          "samples": 1,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 832,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [],
+        "exit_code": 0,
+        "stdout_sha256": "54067b1da8b6eb69bfb53c8f0beefb4767d54d1137adfce523fb1ae45cb91e9d",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "depth-format": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 21,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 1,
+            "allocationCount": 4,
+            "requestedBytes": 832,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 124,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 1,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 0,
+            "sourceLayout": 1,
+            "resolveLayout": 0,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 1,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 124,
+            "viewFormat": 126,
+            "samples": 1,
+            "testEnable": 1,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": false,
+            "discarded": true
+          },
+          "final": {
+            "kind": "final",
+            "errors": 1,
+            "rc": 0
+          }
+        },
+        "admission": {
+          "status": "REJECTED",
+          "vuids": [
+            "VUID-vkCmdDraw-dynamicRenderingUnusedAttachments-08914"
+          ]
+        },
+        "allocation_receipt": {
+          "samples": 1,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 832,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [
+          "depth-format VUID-vkCmdDraw-dynamicRenderingUnusedAttachments-08914"
+        ],
+        "exit_code": 0,
+        "stdout_sha256": "62ff1d9944c1ce5a9488189ad928c29e2c437e1bfdf78e55c687eb9524071f4a",
+        "stderr_sha256": "a4460d6ec4b2656aebf1214a94ed9d1d22165b907564e5ab1f647b2b486c6d81"
+      },
+      "wrong-output": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 21,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 1,
+            "allocationCount": 4,
+            "requestedBytes": 832,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 126,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 1,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 0,
+            "sourceLayout": 1,
+            "resolveLayout": 0,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 1,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 126,
+            "viewFormat": 126,
+            "samples": 1,
+            "testEnable": 1,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "draw_sequence": {
+            "kind": "draw_sequence",
+            "modes": [
+              0,
+              1
+            ],
+            "nearDepth": 0.25,
+            "farDepth": 0.75,
+            "drawCount": 2
+          },
+          "source_contract": {
+            "kind": "source_contract",
+            "storeOp": 0,
+            "loadOp": 1,
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "imageIsSource": true,
+            "aspect": 1,
+            "baseMip": 0,
+            "levelCount": 1,
+            "baseLayer": 0,
+            "layerCount": 1,
+            "distinctPipelines": true,
+            "sourceViewFormat": 37,
+            "viewType": 1
+          },
+          "two_pass": {
+            "kind": "two_pass",
+            "sameSourceView": true,
+            "sourceLayout": 1,
+            "descriptorLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "srcAccess": 256,
+            "dstAccess": 32,
+            "dependencyRecorded": true,
+            "sourceHostFilled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "final": {
+            "kind": "final",
+            "errors": 0,
+            "rc": 6
+          }
+        },
+        "admission": {
+          "status": "WITHIN_SCOPE",
+          "vuids": []
+        },
+        "allocation_receipt": {
+          "samples": 1,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 832,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [],
+        "exit_code": 6,
+        "stdout_sha256": "436ffc8c062458b7e198e74b02a5e39141c0385a988da921e17d60fb202e719b",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "depth-disabled": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 21,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 1,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 1,
+            "allocationCount": 4,
+            "requestedBytes": 832,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 126,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 1,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 0,
+            "sourceLayout": 1,
+            "resolveLayout": 0,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 1,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 126,
+            "viewFormat": 126,
+            "samples": 1,
+            "testEnable": 0,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "draw_sequence": {
+            "kind": "draw_sequence",
+            "modes": [
+              0,
+              1
+            ],
+            "nearDepth": 0.25,
+            "farDepth": 0.75,
+            "drawCount": 2
+          },
+          "source_contract": {
+            "kind": "source_contract",
+            "storeOp": 0,
+            "loadOp": 1,
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "imageIsSource": true,
+            "aspect": 1,
+            "baseMip": 0,
+            "levelCount": 1,
+            "baseLayer": 0,
+            "layerCount": 1,
+            "distinctPipelines": true,
+            "sourceViewFormat": 37,
+            "viewType": 1
+          },
+          "two_pass": {
+            "kind": "two_pass",
+            "sameSourceView": true,
+            "sourceLayout": 1,
+            "descriptorLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "srcAccess": 256,
+            "dstAccess": 32,
+            "dependencyRecorded": true,
+            "sourceHostFilled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "final": {
+            "kind": "final",
+            "errors": 0,
+            "rc": 4
+          }
+        },
+        "admission": {
+          "status": "DEPTH_DISABLED_CONTROL",
+          "vuids": []
+        },
+        "allocation_receipt": {
+          "samples": 1,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 832,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [],
+        "exit_code": 4,
+        "stdout_sha256": "8bd6e6a27af6a5a8d0f14a91c5c2ca05ca2ba9a9c2ad09af5674cab919e02d11",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "workload": {
+      "width": 4,
+      "height": 4,
+      "draw_order": [
+        "near-partial",
+        "far-full"
+      ],
+      "near_depth": 0.25,
+      "far_depth": 0.75,
+      "source_fragment_sha256": "88887b2727b1237de63915659c5717f2da27412cdb20b5cabca54c642be28817",
+      "post_fragment_sha256": "43493963105009619005552b1ae63da6bd3a5c0ee777a6bcfb0f40b2e58f0691",
+      "vertex_sha256": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0",
+      "final_reference": [
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ]
+      ],
+      "comparison_scope": "Fixed endpoint pixels only, not general AA quality equivalence"
+    },
+    "validation_settings": {
+      "synchronization_validation": true,
+      "shader_accesses_heuristic": true
+    }
+  },
+  "4": {
+    "run_id": "79f7309d-dd46-4b89-9677-85e4ff85910a",
+    "cases": {
+      "good": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_allocation": {
+            "kind": "multi_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "multisample_color_request": {
+            "kind": "multisample_color_request",
+            "object": "multisample_color",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 16,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 4,
+            "allocationCount": 5,
+            "requestedBytes": 2624,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 126,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 4,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 2,
+            "sourceLayout": 1,
+            "resolveLayout": 1,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 4,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 126,
+            "viewFormat": 126,
+            "samples": 4,
+            "testEnable": 1,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "draw_sequence": {
+            "kind": "draw_sequence",
+            "modes": [
+              0,
+              1
+            ],
+            "nearDepth": 0.25,
+            "farDepth": 0.75,
+            "drawCount": 2
+          },
+          "source_contract": {
+            "kind": "source_contract",
+            "storeOp": 0,
+            "loadOp": 1,
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "imageIsSource": true,
+            "aspect": 1,
+            "baseMip": 0,
+            "levelCount": 1,
+            "baseLayer": 0,
+            "layerCount": 1,
+            "distinctPipelines": true,
+            "sourceViewFormat": 37,
+            "viewType": 1
+          },
+          "two_pass": {
+            "kind": "two_pass",
+            "sameSourceView": true,
+            "sourceLayout": 1,
+            "descriptorLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "srcAccess": 256,
+            "dstAccess": 32,
+            "dependencyRecorded": true,
+            "sourceHostFilled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "final": {
+            "kind": "final",
+            "errors": 0,
+            "rc": 0
+          }
+        },
+        "admission": {
+          "status": "WITHIN_SCOPE",
+          "vuids": []
+        },
+        "allocation_receipt": {
+          "samples": 4,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            },
+            {
+              "object": "multisample_color",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 2624,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [],
+        "exit_code": 0,
+        "stdout_sha256": "0b0f6dbcd90cc4915fd373d097b4e9983b9fb656fd5424168637a666cc0db32c",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "depth-format": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_allocation": {
+            "kind": "multi_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "multisample_color_request": {
+            "kind": "multisample_color_request",
+            "object": "multisample_color",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 16,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 4,
+            "allocationCount": 5,
+            "requestedBytes": 2624,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 124,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 4,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 2,
+            "sourceLayout": 1,
+            "resolveLayout": 1,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 4,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 124,
+            "viewFormat": 126,
+            "samples": 4,
+            "testEnable": 1,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": false,
+            "discarded": true
+          },
+          "final": {
+            "kind": "final",
+            "errors": 1,
+            "rc": 0
+          }
+        },
+        "admission": {
+          "status": "REJECTED",
+          "vuids": [
+            "VUID-vkCmdDraw-dynamicRenderingUnusedAttachments-08914"
+          ]
+        },
+        "allocation_receipt": {
+          "samples": 4,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            },
+            {
+              "object": "multisample_color",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 2624,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [
+          "depth-format VUID-vkCmdDraw-dynamicRenderingUnusedAttachments-08914"
+        ],
+        "exit_code": 0,
+        "stdout_sha256": "c7e66d5ca9b46bcca8b919782c76f1efc2f63ace7d78948853a7e242b6cd2119",
+        "stderr_sha256": "a4460d6ec4b2656aebf1214a94ed9d1d22165b907564e5ab1f647b2b486c6d81"
+      },
+      "wrong-output": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_allocation": {
+            "kind": "multi_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "multisample_color_request": {
+            "kind": "multisample_color_request",
+            "object": "multisample_color",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 16,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 4,
+            "allocationCount": 5,
+            "requestedBytes": 2624,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 126,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 4,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 2,
+            "sourceLayout": 1,
+            "resolveLayout": 1,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 4,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 126,
+            "viewFormat": 126,
+            "samples": 4,
+            "testEnable": 1,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "draw_sequence": {
+            "kind": "draw_sequence",
+            "modes": [
+              0,
+              1
+            ],
+            "nearDepth": 0.25,
+            "farDepth": 0.75,
+            "drawCount": 2
+          },
+          "source_contract": {
+            "kind": "source_contract",
+            "storeOp": 0,
+            "loadOp": 1,
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "imageIsSource": true,
+            "aspect": 1,
+            "baseMip": 0,
+            "levelCount": 1,
+            "baseLayer": 0,
+            "layerCount": 1,
+            "distinctPipelines": true,
+            "sourceViewFormat": 37,
+            "viewType": 1
+          },
+          "two_pass": {
+            "kind": "two_pass",
+            "sameSourceView": true,
+            "sourceLayout": 1,
+            "descriptorLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "srcAccess": 256,
+            "dstAccess": 32,
+            "dependencyRecorded": true,
+            "sourceHostFilled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                0,
+                255,
+                0,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "final": {
+            "kind": "final",
+            "errors": 0,
+            "rc": 6
+          }
+        },
+        "admission": {
+          "status": "WITHIN_SCOPE",
+          "vuids": []
+        },
+        "allocation_receipt": {
+          "samples": 4,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            },
+            {
+              "object": "multisample_color",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 2624,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [],
+        "exit_code": 6,
+        "stdout_sha256": "75a93313ce2308f6d0baba8b99545182be862c15c307cc14b6589ec5d4d24805",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "depth-disabled": {
+        "records": {
+          "identity": {
+            "kind": "identity",
+            "deviceType": 4,
+            "deviceID": 0,
+            "vendorID": 65541,
+            "driverVersion": 1,
+            "apiVersion": 4210993,
+            "layerSpec": 4210997,
+            "layerImplementation": 1,
+            "queueFamily": 0,
+            "queueFlags": 15,
+            "timestampValidBits": 64,
+            "timestampPeriod": 1
+          },
+          "limits": {
+            "kind": "limits",
+            "framebufferWidth": 16384,
+            "framebufferHeight": 16384,
+            "viewportWidth": 16384,
+            "viewportHeight": 16384,
+            "viewportBoundsMin": -32768,
+            "viewportBoundsMax": 32768
+          },
+          "resolve_capabilities": {
+            "kind": "resolve_capabilities",
+            "colorSampleCounts": 5,
+            "depthSampleCounts": 5,
+            "depthModes": 3,
+            "stencilModes": 1,
+            "independentResolve": 0,
+            "independentResolveNone": 0
+          },
+          "image_allocation": {
+            "kind": "image_allocation",
+            "memoryTypeBits": 1,
+            "size": 256,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "output_request": {
+            "kind": "output_request",
+            "object": "output",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "source_allocation": {
+            "kind": "source_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 256,
+            "alignment": 64
+          },
+          "sampled_source_request": {
+            "kind": "sampled_source_request",
+            "object": "sampled_source",
+            "requestedBytes": 256,
+            "memoryTypeIndex": 0
+          },
+          "sampler": {
+            "kind": "sampler",
+            "min": 0,
+            "mag": 0,
+            "mipmap": 0,
+            "u": 2,
+            "v": 2,
+            "w": 2,
+            "minLod": 0.0,
+            "maxLod": 0.0,
+            "unnormalized": 0,
+            "compare": 0,
+            "anisotropy": 0
+          },
+          "descriptor": {
+            "kind": "descriptor",
+            "binding": 0,
+            "count": 1,
+            "type": 1,
+            "stages": 16,
+            "layout": 1,
+            "sourceOrdinal": 0,
+            "outputOrdinal": 1,
+            "distinctImages": true
+          },
+          "multi_allocation": {
+            "kind": "multi_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "multisample_color_request": {
+            "kind": "multisample_color_request",
+            "object": "multisample_color",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "multi_format": {
+            "kind": "multi_format",
+            "format": 37,
+            "usage": 16,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "depth_allocation": {
+            "kind": "depth_allocation",
+            "memoryTypeBits": 1,
+            "selectedType": 0,
+            "selectedFlags": 15,
+            "size": 1024,
+            "alignment": 64
+          },
+          "depth_request": {
+            "kind": "depth_request",
+            "object": "depth",
+            "requestedBytes": 1024,
+            "memoryTypeIndex": 0
+          },
+          "depth_format": {
+            "kind": "depth_format",
+            "format": 126,
+            "usage": 32,
+            "samples": 4,
+            "supportedSamples": 5,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "maxLayers": 2048
+          },
+          "buffer_allocation": {
+            "kind": "buffer_allocation",
+            "memoryTypeBits": 1,
+            "size": 64,
+            "alignment": 64,
+            "selectedType": 0,
+            "selectedFlags": 15
+          },
+          "readback_request": {
+            "kind": "readback_request",
+            "object": "readback",
+            "requestedBytes": 64,
+            "memoryTypeIndex": 0
+          },
+          "allocation_budget": {
+            "kind": "allocation_budget",
+            "samples": 4,
+            "allocationCount": 5,
+            "requestedBytes": 2624,
+            "residentBytesKnown": false,
+            "driverInternalBytesKnown": false,
+            "performanceKnown": false
+          },
+          "pipeline_depth_capability": {
+            "kind": "pipeline_depth_capability",
+            "format": 126,
+            "optimalFeatures": 122369
+          },
+          "pipeline": {
+            "kind": "pipeline",
+            "format": 37,
+            "attachmentFormat": 37,
+            "colorCount": 1,
+            "samples": 1,
+            "viewMask": 0,
+            "unusedAttachmentsEnabled": false,
+            "vertexCount": 3,
+            "instanceCount": 1,
+            "viewport": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "scissor": [
+              0,
+              0,
+              4,
+              4
+            ],
+            "stageCount": 2,
+            "stageMask": 17,
+            "topology": 3,
+            "depthStencilPresent": 0,
+            "firstVertex": 0,
+            "firstInstance": 0,
+            "maxColorAttachments": 8,
+            "blendEnable": 0,
+            "writeMask": 15,
+            "cullMode": 0,
+            "rasterizerDiscard": 0
+          },
+          "manifest": {
+            "kind": "manifest",
+            "offsetX": 0,
+            "offsetY": 0,
+            "samples": 1,
+            "layers": 1,
+            "viewMask": 0,
+            "resolveMode": 0,
+            "supported": 1,
+            "enabled": 1,
+            "format": 37,
+            "usage": 21,
+            "viewWidth": 4,
+            "viewHeight": 4,
+            "width": 4,
+            "height": 4,
+            "layout": 2,
+            "loadOp": 1,
+            "storeOp": 0,
+            "maxWidth": 16384,
+            "maxHeight": 16384,
+            "formatSampleCounts": 5,
+            "memoryFlags": 15
+          },
+          "resolve_contract": {
+            "kind": "resolve_contract",
+            "sourceSamples": 4,
+            "resolveSamples": 1,
+            "sourceFormat": 37,
+            "resolveFormat": 37,
+            "resolveMode": 2,
+            "sourceLayout": 1,
+            "resolveLayout": 1,
+            "storeOp": 0,
+            "distinctImages": true,
+            "sampledResolveView": true,
+            "sourcePipelineSamples": 4,
+            "sourceSampleShading": 0,
+            "postPipelineSamples": 1
+          },
+          "depth_transition": {
+            "kind": "depth_transition",
+            "oldLayout": 0,
+            "newLayout": 3,
+            "srcAccess": 0,
+            "dstAccess": 1536,
+            "srcStage": 1,
+            "dstStage": 768,
+            "aspect": 2,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          "depth_contract": {
+            "kind": "depth_contract",
+            "pipelineFormat": 126,
+            "viewFormat": 126,
+            "samples": 4,
+            "testEnable": 0,
+            "writeEnable": 1,
+            "compareOp": 1,
+            "boundsEnable": 0,
+            "stencilEnable": 0,
+            "layout": 3,
+            "loadOp": 1,
+            "storeOp": 0,
+            "clearDepth": 1.0,
+            "resolveMode": 0,
+            "aspect": 2,
+            "pushStage": 16,
+            "pushSize": 4,
+            "maxPushSize": 256,
+            "unusedAttachmentsEnabled": false
+          },
+          "draw_sequence": {
+            "kind": "draw_sequence",
+            "modes": [
+              0,
+              1
+            ],
+            "nearDepth": 0.25,
+            "farDepth": 0.75,
+            "drawCount": 2
+          },
+          "source_contract": {
+            "kind": "source_contract",
+            "storeOp": 0,
+            "loadOp": 1,
+            "oldLayout": 1,
+            "newLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "imageIsSource": true,
+            "aspect": 1,
+            "baseMip": 0,
+            "levelCount": 1,
+            "baseLayer": 0,
+            "layerCount": 1,
+            "distinctPipelines": true,
+            "sourceViewFormat": 37,
+            "viewType": 1
+          },
+          "two_pass": {
+            "kind": "two_pass",
+            "sameSourceView": true,
+            "sourceLayout": 1,
+            "descriptorLayout": 1,
+            "srcStage": 1024,
+            "dstStage": 128,
+            "srcAccess": 256,
+            "dstAccess": 32,
+            "dependencyRecorded": true,
+            "sourceHostFilled": false
+          },
+          "execution": {
+            "kind": "execution",
+            "submitted": true,
+            "fenceCompleted": true,
+            "pixels": [
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ],
+              [
+                255,
+                0,
+                255,
+                255
+              ]
+            ]
+          },
+          "final": {
+            "kind": "final",
+            "errors": 0,
+            "rc": 4
+          }
+        },
+        "admission": {
+          "status": "DEPTH_DISABLED_CONTROL",
+          "vuids": []
+        },
+        "allocation_receipt": {
+          "samples": 4,
+          "allocation_requests": [
+            {
+              "object": "output",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "sampled_source",
+              "requested_bytes": 256,
+              "memory_type_index": 0
+            },
+            {
+              "object": "depth",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            },
+            {
+              "object": "readback",
+              "requested_bytes": 64,
+              "memory_type_index": 0
+            },
+            {
+              "object": "multisample_color",
+              "requested_bytes": 1024,
+              "memory_type_index": 0
+            }
+          ],
+          "total_requested_bytes": 2624,
+          "resident_bytes": null,
+          "driver_internal_bytes": null,
+          "gpu_time": null,
+          "thermal_state": null
+        },
+        "diagnostics": [],
+        "exit_code": 4,
+        "stdout_sha256": "3795ac5dd2f5c68cd8210d6f5abd3d298e9713e1261780a5c3443792626d4cee",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "workload": {
+      "width": 4,
+      "height": 4,
+      "draw_order": [
+        "near-partial",
+        "far-full"
+      ],
+      "near_depth": 0.25,
+      "far_depth": 0.75,
+      "source_fragment_sha256": "88887b2727b1237de63915659c5717f2da27412cdb20b5cabca54c642be28817",
+      "post_fragment_sha256": "43493963105009619005552b1ae63da6bd3a5c0ee777a6bcfb0f40b2e58f0691",
+      "vertex_sha256": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0",
+      "final_reference": [
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          0,
+          255,
+          0,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ],
+        [
+          255,
+          0,
+          255,
+          255
+        ]
+      ],
+      "comparison_scope": "Fixed endpoint pixels only, not general AA quality equivalence"
+    },
+    "validation_settings": {
+      "synchronization_validation": true,
+      "shader_accesses_heuristic": true
+    }
+  }
+}

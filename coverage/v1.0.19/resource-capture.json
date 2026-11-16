@@ -1,0 +1,553 @@
+{
+  "limitations": [
+    "No VERIFIED authority; default obligations unresolved",
+    "No generic lifecycle solver or seven-family composition",
+    "Wrong reference is actual exit6; HOST event corruptions are not GPU misuse",
+    "Resource lifetime generation1 distinct from content/recording epochs0/1",
+    "Software CPU ICD only; no performance/full release claim"
+  ],
+  "normative": {
+    "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "limits": "Frozen raw source references, no include/conditional expansion. No normative performance or budget thresholds. Host write barrier is conservative, not asserted mandatory for coherent pre-submit writes.",
+    "sources": [
+      {
+        "anchors": [
+          "memory-device-hostaccess",
+          "memory-device-hostaccess-hazards",
+          "memory-device-bitmask-list"
+        ],
+        "path": "chapters/memory.adoc",
+        "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d"
+      },
+      {
+        "anchors": [
+          "synchronization-dependencies-memory",
+          "synchronization-buffer-memory-barriers",
+          "synchronization-submission-host-writes"
+        ],
+        "path": "chapters/synchronization.adoc",
+        "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909"
+      },
+      {
+        "anchors": [
+          "resources-association"
+        ],
+        "path": "chapters/resources.adoc",
+        "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a"
+      },
+      {
+        "anchors": [
+          "descriptors-push-descriptors",
+          "descriptors-compatibility"
+        ],
+        "path": "chapters/descriptorsets.adoc",
+        "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950"
+      }
+    ],
+    "version": "1.4.368"
+  },
+  "provenance": {
+    "skill": {
+      "dirty": "M references/07_integration_pack/integration_test_plan.md",
+      "head": "3457cd3811d3a7acd5b31f63b8125d39e3f834fb"
+    },
+    "tests": {
+      "dirty": "M cases19/binding_choice/probe.c\n M docs/v1.0.19-gap-priorities.md\n M docs/v1.0.19-status.md\n M tools/resource_contract_chain19.py\n?? checks19/run_resource_capture.py\n?? docs/resource-capture19.md\n?? tests/fixtures/resource-capture19/\n?? tests/test_resource_capture19.py\n?? tools/resource_capture19.py",
+      "head": "3afa22d29f93a48c5012a968a5eba2085189bc66"
+    }
+  },
+  "runs": {
+    "budget": {
+      "contract_states": {},
+      "error": "ValueError: controlled step failed shader-compile",
+      "report_sha256": "84c15613b9dfedaa5a58f5bfd0f43f1e92fede7880b5d7ae53a7f630782b96c6",
+      "status": "BLOCKED",
+      "steps": [
+        {
+          "budget_exhausted": true,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 288,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-compile",
+          "returncode": -15
+        }
+      ]
+    },
+    "cancel": {
+      "contract_states": {},
+      "error": "Cancelled: explicit cancel-file or termination signal",
+      "report_sha256": "9b6ac45ac20096cc06fb1be621954db27813a2ed005347814259f789ed3af445",
+      "status": "BLOCKED",
+      "steps": []
+    },
+    "declared": {
+      "contract_states": {
+        "capture-good": "CONSISTENT_DECLARED_TRACE",
+        "capture-wrong": "CONSISTENT_DECLARED_TRACE"
+      },
+      "error": null,
+      "report_sha256": "f1b8b7e9a6f8a9695dc1f7fd5fef88f87d49685e7d38a8e98cff2e6f50e002e2",
+      "status": "DEVELOPMENT_CAPTURE_RECHECKED",
+      "steps": [
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 148,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-compile",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 149,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-val",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 150,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-dis",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 151,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "compile",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 156,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "linked-libraries",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 163,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-set",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 184,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-push",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 205,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-recovery",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 226,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "capture-good",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 247,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "capture-wrong",
+          "returncode": 6
+        }
+      ]
+    },
+    "default": {
+      "contract_states": {
+        "capture-good": "OBLIGATIONS_NOT_ESTABLISHED",
+        "capture-wrong": "OBLIGATIONS_NOT_ESTABLISHED"
+      },
+      "error": null,
+      "report_sha256": "cbd57af18e662d8b888b88c0e1828d9a93655ee8eb67ad3b960d8c6953c675f0",
+      "status": "DEVELOPMENT_CAPTURE_RECHECKED",
+      "steps": [
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 15,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-compile",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 16,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-val",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 17,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-dis",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 18,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "compile",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 23,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "linked-libraries",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 30,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-set",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 51,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-push",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 72,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-recovery",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 93,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "capture-good",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 114,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "capture-wrong",
+          "returncode": 6
+        }
+      ]
+    },
+    "recovery": {
+      "contract_states": {
+        "capture-good": "OBLIGATIONS_NOT_ESTABLISHED",
+        "capture-wrong": "OBLIGATIONS_NOT_ESTABLISHED"
+      },
+      "error": null,
+      "report_sha256": "be77050af860d042e47b0e1cbb95a3366fb85cfa93cfb5cc576105a5bdd8bec7",
+      "status": "DEVELOPMENT_CAPTURE_RECHECKED",
+      "steps": [
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 13,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-compile",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 14,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-val",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 15,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "shader-dis",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 16,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "compile",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 21,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "linked-libraries",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 28,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-set",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 49,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-push",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 70,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "legacy-recovery",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 91,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "capture-good",
+          "returncode": 0
+        },
+        {
+          "budget_exhausted": false,
+          "cancelled": false,
+          "group_cleanup": {
+            "group_gone": true,
+            "kill_sent": true,
+            "pgid": 112,
+            "reaped_descendants": [],
+            "term_sent": true
+          },
+          "label": "capture-wrong",
+          "returncode": 6
+        }
+      ]
+    },
+    "wronghead": {
+      "contract_states": {},
+      "error": "ValueError: expected heads",
+      "report_sha256": "e9b41c77168f58aa0b5726b1bc5d5118506eaf32c0d9f5eb7858a3aad0063131",
+      "status": "BLOCKED",
+      "steps": []
+    }
+  },
+  "schema": 1,
+  "scope": "fixed traditional two SSBO references, two epochs, one actual CB/submission per epoch",
+  "source_sha256": {
+    "cases19/binding_choice/compute.comp": "ba6afc82419152c791dc01a2da59166af049720d5b32f24d1ffbfa5ca051908b",
+    "cases19/binding_choice/normative.json": "0159f7982d5ef5d655868c924fb69a92ba72ed4bf8943930edbed3432dc4e489",
+    "cases19/binding_choice/probe.c": "467e6c90a66740bff56ec0fcb53a97fb8782e33cc2994969c407051c96307679",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c",
+    "checks19/run_resource_capture.py": "d05daa946e6a0877284fd645d41f8580668b44c69ee0a54b6f1c70e3cc164512",
+    "coverage/v1.0.19/pair.json": "a25c7f85d4a412b98f96824a3fa4fc2cb1f67eb0dcf7fb3c4d8227be56023de5",
+    "tools/binding_choice19.py": "4bce5b679cab1a0329cd848bbe4f78cbd1dc12ca6b240c97236dbcdc98fff2fe",
+    "tools/descriptor_update_contract19.py": "edc3c6132e927447cf00a89c4895fb581c36fd722b6ab8f354195b2fb4105912",
+    "tools/memory_binding_contract19.py": "8502442043761a11a09c6929d9742ba5f3eba8741a809e9e4618d6a08d71868a",
+    "tools/resource_capture19.py": "850f535d818557b42de133a40dc5021878192d854e27ecc69f7d8d9f3756279d",
+    "tools/resource_contract_chain19.py": "8b38e14590945b37f4a41d947c279a877fd24e3c257e573c1dc66c5a9f2f58a0",
+    "tools/sync_contract19.py": "219066db5399583463700edc0c47579d543c2563284ff5d9cd3d5a8e9eacada3",
+    "tools/timeline_contract19.py": "8ef769857784269920a2bc3aa40ead1ce6ad4f151d26318d29b77a670c797a50",
+    "tools/upload_choice19.py": "7992b46ba8158d099bc8f5cb79de0a41123f3dbbdc62e4e5ccfc2297cdaf9a48"
+  },
+  "status": "PREPUBLICATION_DEVELOPMENT_CAPTURE_OBSERVATIONS",
+  "tests": 93,
+  "tool_sha256": {
+    "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+    "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+    "icd": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+    "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+    "layer_library": "25002892d69ff2719fdd7a92a454a15c2d271a17186bc70b625aafaf2df49a05",
+    "layer_manifest": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+    "ldd": "7bcd61a279946cb376d36fd91f4938ab4f4aba48e793c652a9797319d23f8dd3",
+    "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+    "python": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+    "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea"
+  },
+  "toolchain_sha256": "bad1a997442283282ca97c7dac481e5bfba0ca1d4da2aadfaa5c7a5a1155d10e"
+}

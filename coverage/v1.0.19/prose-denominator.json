@@ -1,0 +1,132 @@
+{
+  "semantic_bridge": {
+    "authority": "EXPLICIT_MANUAL_MAPPING_HOST_CONTROLS_NOT_DEVICE_OR_L1_ACCEPTANCE",
+    "helper_sha256": "8502442043761a11a09c6929d9742ba5f3eba8741a809e9e4618d6a08d71868a",
+    "tests_sha256": "89c9a88c23289a499e956206e38fe39ff4a529da6a9569df325f341c1e5719c3",
+    "results": {
+      "preference_only": {
+        "status": "BIND_CONDITIONS_WITHIN_SCOPE",
+        "authority": "CALLER_FACTS_NOT_VERIFIED",
+        "complete_memory_validity": "NOT_INFERRED",
+        "vuids": [],
+        "normative_api_version": "1.4.309",
+        "limits": [
+          "ordinary_scope excludes sparse, disjoint, external, protected, dedicated-image-aliasing/NV exceptions and unverified allocation API conditions.",
+          "Dedicated allocation creation validity remains separate. prefersDedicatedAllocation does not require dedication."
+        ]
+      },
+      "required_missing": {
+        "status": "REJECTED",
+        "authority": "CALLER_FACTS_NOT_VERIFIED",
+        "complete_memory_validity": "NOT_INFERRED",
+        "vuids": [
+          "VUID-vkBindBufferMemory-buffer-01444"
+        ],
+        "normative_api_version": "1.4.309",
+        "limits": [
+          "ordinary_scope excludes sparse, disjoint, external, protected, dedicated-image-aliasing/NV exceptions and unverified allocation API conditions.",
+          "Dedicated allocation creation validity remains separate. prefersDedicatedAllocation does not require dedication."
+        ]
+      },
+      "required_matching": {
+        "status": "BIND_CONDITIONS_WITHIN_SCOPE",
+        "authority": "CALLER_FACTS_NOT_VERIFIED",
+        "complete_memory_validity": "NOT_INFERRED",
+        "vuids": [],
+        "normative_api_version": "1.4.309",
+        "limits": [
+          "ordinary_scope excludes sparse, disjoint, external, protected, dedicated-image-aliasing/NV exceptions and unverified allocation API conditions.",
+          "Dedicated allocation creation validity remains separate. prefersDedicatedAllocation does not require dedication."
+        ]
+      }
+    },
+    "scope": "Existing ordinary bind contract; 368 prose meaning with separately scoped 309 VUID coordinates, not version equivalence."
+  },
+  "status": "P_SOURCE_GRAPH_INDEXED",
+  "closure_status": "BLOCKED",
+  "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "tracked_source_count": 1340,
+  "graph_records": 37429,
+  "generation_reference_count": 2489,
+  "manual_spans": [
+    {
+      "source": "chapters/resources.adoc",
+      "refpage": "VkMemoryDedicatedRequirements",
+      "line_start": 11170,
+      "line_end": 11289,
+      "sha256": "bac52c534d780a68442fc15b13c60e4241908abf3f70461b48dfa3dc846eb866",
+      "outer_conditions": [
+        {
+          "line": 11169,
+          "directive": "ifdef::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]"
+        }
+      ],
+      "mapping": "MANUAL_BIND_PREFERS_REQUIRES_HOST_ONLY",
+      "generated_includes": [
+        {
+          "source": "chapters/resources.adoc",
+          "line": 11174,
+          "raw": "include::{generated}/api/structs/VkMemoryDedicatedRequirements.adoc[]",
+          "line_sha256": "a6b005c5e95d5be64969a1ab2e5044b98f16811e6262885ed208471ea4f41c41",
+          "outer_conditions": [
+            {
+              "line": 11169,
+              "directive": "ifdef::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]"
+            }
+          ],
+          "kind": "include",
+          "target_expression": "{generated}/api/structs/VkMemoryDedicatedRequirements.adoc",
+          "options_raw": "[]",
+          "resolution": "UNRESOLVED_GENERATED_MACRO_OR_MISSING"
+        },
+        {
+          "source": "chapters/resources.adoc",
+          "line": 11177,
+          "raw": "include::{generated}/api/structs/VkMemoryDedicatedRequirementsKHR.adoc[]",
+          "line_sha256": "e8fe46484a8ec104d1abdb24d9c4c318122c141ce84a661c13f6a4790c0c173c",
+          "outer_conditions": [
+            {
+              "line": 11169,
+              "directive": "ifdef::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]"
+            },
+            {
+              "line": 11176,
+              "directive": "ifdef::VK_KHR_dedicated_allocation[]"
+            }
+          ],
+          "kind": "include",
+          "target_expression": "{generated}/api/structs/VkMemoryDedicatedRequirementsKHR.adoc",
+          "options_raw": "[]",
+          "resolution": "UNRESOLVED_GENERATED_MACRO_OR_MISSING"
+        },
+        {
+          "source": "chapters/resources.adoc",
+          "line": 11288,
+          "raw": "include::{generated}/validity/structs/VkMemoryDedicatedRequirements.adoc[]",
+          "line_sha256": "1adf8a64a8b2f36feaf1eb222a74078bb09886b02b467fd9256aa7626bac27b3",
+          "outer_conditions": [
+            {
+              "line": 11169,
+              "directive": "ifdef::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]"
+            }
+          ],
+          "kind": "include",
+          "target_expression": "{generated}/validity/structs/VkMemoryDedicatedRequirements.adoc",
+          "options_raw": "[]",
+          "resolution": "UNRESOLVED_GENERATED_MACRO_OR_MISSING"
+        }
+      ]
+    }
+  ],
+  "graph_sha256": "7ea35ca95d3e1e0dbffa627b47a9fedfa537c900b3f46fef42a594ea154edeb0",
+  "implementation_sha256": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+  "blockers": [
+    "Vulkan/SC/platform configurations not evaluated",
+    "Generated includes and reference outputs not produced or reconciled",
+    "Macro expansion and transitive include condition composition not evaluated",
+    "Build dependency references are lexical, not a complete executable dependency graph",
+    "OTHER_UNCLASSIFIED entries require purpose review",
+    "All semantic review remains UNREVIEWED"
+  ],
+  "evidence_phase": "DEVELOPMENT_PREPUBLICATION"
+}

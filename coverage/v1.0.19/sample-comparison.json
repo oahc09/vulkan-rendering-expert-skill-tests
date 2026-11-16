@@ -1,0 +1,995 @@
+{
+  "status": "PREPUBLICATION_BOUNDED_COMPARISON_EVIDENCE",
+  "scope": "Actual fixed 1\u21924\u21921 CPU scene; application allocation requests only; no GPU performance/thermal/AA quality measurement. Internal controlled fixtures, not external engineering acceptance.",
+  "execution_tests_head": "93be875cbe47aa4019ccb8ef69e33670de1d76bf",
+  "execution_skill_head": "5a341d85640a6ac2adf93b22758a169b6bdb5cfc",
+  "prior_depth_msaa_snapshot": "coverage/v1.0.19/depth-msaa-sample.json is a historical earlier source cohort, not current variant-source evidence.",
+  "controls": {
+    "budget": {
+      "index_sha256": "92f1802a00835868afe24a1d214dac063eacaebdefbb8233048fb1e8d7783048",
+      "status": "BLOCKED",
+      "tests_head": "93be875cbe47aa4019ccb8ef69e33670de1d76bf",
+      "skill_head": "5a341d85640a6ac2adf93b22758a169b6bdb5cfc",
+      "decision": null,
+      "variants": [],
+      "pending": [
+        "baseline1",
+        "candidate4",
+        "recovery1"
+      ],
+      "steps": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "returncode": -15,
+          "timed_out": true,
+          "cancelled": false,
+          "budget_exhausted": true,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 26,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "baseline": {
+      "index_sha256": "95afbd504d1838340f452d0ed8e503cc67c6a393c5dd63ac8f94aee2405c24da",
+      "status": "BOUNDED_COMPARISON_VERIFIED",
+      "tests_head": "93be875cbe47aa4019ccb8ef69e33670de1d76bf",
+      "skill_head": "5a341d85640a6ac2adf93b22758a169b6bdb5cfc",
+      "decision": {
+        "rule_id": "depth-endpoint-samples-v1",
+        "version_scope": "fixed CPU ICD depth-occlusion-endpoint scene; source/tool pair checked by caller",
+        "inputs": {
+          "required_samples": 1,
+          "requested_bytes_budget": 4096,
+          "require_edge_quality": false,
+          "require_performance_gain": false
+        },
+        "alternatives": [
+          {
+            "samples": 1,
+            "requested_bytes": 832,
+            "rejections": []
+          },
+          {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "rejections": []
+          }
+        ],
+        "measured": {
+          "endpoint_pixels": 16,
+          "requested_bytes_only": true
+        },
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "thermal/power",
+          "residency/peak VRAM",
+          "edge antialiasing quality",
+          "present/input latency"
+        ],
+        "selected_samples": 1,
+        "fallback_samples": 1,
+        "revisit_conditions": [
+          "source/device/driver/tool/scene change",
+          "budget or sample requirement change",
+          "new independently comparable quality/performance evidence"
+        ],
+        "tests": "tests/test_sample_decision19.py",
+        "status": "KEEP_BASELINE",
+        "reason": "baseline meets bounded contract; no measured reason to upgrade"
+      },
+      "variants": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "run_id": "78f3e01a-1bc3-4e3e-9a5d-1536c2caff92",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "07266cd2124b71f1a37e160c8b94b816682f33bf250d2560eb2be72c9c2e7ca5"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "run_id": "351231ab-4675-4ca3-b678-613f43360717",
+          "facts": {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 4,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              },
+              {
+                "object": "multisample_color",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 2624,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "4ab908fc9a5ca4a42248389b547e02a94dc972f2676efda47ae01943b488b620"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "run_id": "88db58e9-7f42-4fd1-b16a-ef66f056636f",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "28275659a7e235400154fd3c492a6642577fe236ca035936e40a27b44925a333"
+        }
+      ],
+      "pending": [],
+      "steps": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 47,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 158,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 269,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "required4": {
+      "index_sha256": "9516fed15d25d45ca7b349dcb73fa3ea7122fcf76b2a05a65de3d5f58fd4ca48",
+      "status": "BOUNDED_COMPARISON_VERIFIED",
+      "tests_head": "93be875cbe47aa4019ccb8ef69e33670de1d76bf",
+      "skill_head": "5a341d85640a6ac2adf93b22758a169b6bdb5cfc",
+      "decision": {
+        "rule_id": "depth-endpoint-samples-v1",
+        "version_scope": "fixed CPU ICD depth-occlusion-endpoint scene; source/tool pair checked by caller",
+        "inputs": {
+          "required_samples": 4,
+          "requested_bytes_budget": 4096,
+          "require_edge_quality": false,
+          "require_performance_gain": false
+        },
+        "alternatives": [
+          {
+            "samples": 1,
+            "requested_bytes": 832,
+            "rejections": [
+              "required-sample-count"
+            ]
+          },
+          {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "rejections": []
+          }
+        ],
+        "measured": {
+          "endpoint_pixels": 16,
+          "requested_bytes_only": true
+        },
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "thermal/power",
+          "residency/peak VRAM",
+          "edge antialiasing quality",
+          "present/input latency"
+        ],
+        "selected_samples": 4,
+        "fallback_samples": null,
+        "revisit_conditions": [
+          "source/device/driver/tool/scene change",
+          "budget or sample requirement change",
+          "new independently comparable quality/performance evidence"
+        ],
+        "tests": "tests/test_sample_decision19.py",
+        "status": "SELECT_REQUIRED_SAMPLE_COUNT",
+        "reason": "only 4x meets the explicit bounded contract; no performance/quality superiority claim"
+      },
+      "variants": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "run_id": "37f9c930-13b8-43b4-99f7-3ff120bfe57c",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "db48d0c370392dd1ba0be98dc4a08642c15dd31f4660c0c28cd3aa2939559a62"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "run_id": "d817f461-b55d-49ae-b9a8-268e84b6f6f2",
+          "facts": {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 4,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              },
+              {
+                "object": "multisample_color",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 2624,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "9dc39458d23ad13e5e5b1b7b985016c1eed49f3c6f36774a1c020378857d6b40"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "run_id": "f3f8aa91-92e4-45df-a659-f5ec0914603c",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "280d0de86a3582e31ee4b944b8433462f88a4470d7cac517338396e248d95f75"
+        }
+      ],
+      "pending": [],
+      "steps": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 419,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 530,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 641,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "rejected": {
+      "index_sha256": "a720c6570be9f20b6296c6ca8145e1cfb063fb354c1be0b3e80381e761430cb7",
+      "status": "BOUNDED_COMPARISON_VERIFIED",
+      "tests_head": "93be875cbe47aa4019ccb8ef69e33670de1d76bf",
+      "skill_head": "5a341d85640a6ac2adf93b22758a169b6bdb5cfc",
+      "decision": {
+        "rule_id": "depth-endpoint-samples-v1",
+        "version_scope": "fixed CPU ICD depth-occlusion-endpoint scene; source/tool pair checked by caller",
+        "inputs": {
+          "required_samples": 4,
+          "requested_bytes_budget": 1024,
+          "require_edge_quality": false,
+          "require_performance_gain": false
+        },
+        "alternatives": [
+          {
+            "samples": 1,
+            "requested_bytes": 832,
+            "rejections": [
+              "required-sample-count"
+            ]
+          },
+          {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "rejections": [
+              "allocation-request-budget"
+            ]
+          }
+        ],
+        "measured": {
+          "endpoint_pixels": 16,
+          "requested_bytes_only": true
+        },
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "thermal/power",
+          "residency/peak VRAM",
+          "edge antialiasing quality",
+          "present/input latency"
+        ],
+        "selected_samples": null,
+        "fallback_samples": null,
+        "revisit_conditions": [
+          "source/device/driver/tool/scene change",
+          "budget or sample requirement change",
+          "new independently comparable quality/performance evidence"
+        ],
+        "tests": "tests/test_sample_decision19.py",
+        "status": "NO_ADMISSIBLE_PATH",
+        "reason": "all candidates violate explicit bounded requirements"
+      },
+      "variants": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "run_id": "6c60e05e-bda7-4b4a-829f-6eb933d17068",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "4d579cf879918e8f61781679a3fa270aa433df5fa02b5b460bdec65012f48a84"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "run_id": "c98ce2c7-13ff-4861-981d-ab4c99417d5e",
+          "facts": {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 4,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              },
+              {
+                "object": "multisample_color",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 2624,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "0dff06c14206571c91a1b1a553e7785bf1bda3294fd79f1bdbb7c26abc274f4f"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "run_id": "7b8b02c7-8f4b-4e8f-b085-e7c81e2f49a1",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "cd13356f4a2333706becf9411ecc2e5f4c461f30d768774334cf6116b45d95ba"
+        }
+      ],
+      "pending": [],
+      "steps": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 791,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 902,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 1013,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    "unknown": {
+      "index_sha256": "398d8f243291ae26bee95d20465bee84d75cca66789e3c79b0ff20bb06b5533d",
+      "status": "BOUNDED_COMPARISON_VERIFIED",
+      "tests_head": "93be875cbe47aa4019ccb8ef69e33670de1d76bf",
+      "skill_head": "5a341d85640a6ac2adf93b22758a169b6bdb5cfc",
+      "decision": {
+        "rule_id": "depth-endpoint-samples-v1",
+        "version_scope": "fixed CPU ICD depth-occlusion-endpoint scene; source/tool pair checked by caller",
+        "inputs": {
+          "required_samples": 1,
+          "requested_bytes_budget": 4096,
+          "require_edge_quality": false,
+          "require_performance_gain": true
+        },
+        "alternatives": [
+          {
+            "samples": 1,
+            "requested_bytes": 832,
+            "rejections": []
+          },
+          {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "rejections": []
+          }
+        ],
+        "measured": {
+          "endpoint_pixels": 16,
+          "requested_bytes_only": true
+        },
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "thermal/power",
+          "residency/peak VRAM",
+          "edge antialiasing quality",
+          "present/input latency"
+        ],
+        "selected_samples": null,
+        "fallback_samples": 1,
+        "revisit_conditions": [
+          "source/device/driver/tool/scene change",
+          "budget or sample requirement change",
+          "new independently comparable quality/performance evidence"
+        ],
+        "tests": "tests/test_sample_decision19.py",
+        "status": "NEEDS_MEASUREMENT",
+        "reason": "requested objectives have no evidence",
+        "unknown_objectives": [
+          "require_performance_gain"
+        ]
+      },
+      "variants": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "run_id": "80d98fe1-0bb8-44e0-9388-d44ea04f45c2",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "8d3b7358336e4871df97fc2ff6f40f2883e9318e3a9181d513c451971060c271"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "run_id": "623acfa0-3c29-4367-9b42-121560ae90ff",
+          "facts": {
+            "samples": 4,
+            "requested_bytes": 2624,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 4,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              },
+              {
+                "object": "multisample_color",
+                "requested_bytes": 1024,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 2624,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "974b9f968a74d290394dbe813e1ec5c29696f47f9295771a29f0538820cd9ea5"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "run_id": "a8204c53-ad4f-4d45-a4cd-616ab9fa9050",
+          "facts": {
+            "samples": 1,
+            "requested_bytes": 832,
+            "endpoint_error": 0
+          },
+          "receipt": {
+            "samples": 1,
+            "allocation_requests": [
+              {
+                "object": "output",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "sampled_source",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "depth",
+                "requested_bytes": 256,
+                "memory_type_index": 0
+              },
+              {
+                "object": "readback",
+                "requested_bytes": 64,
+                "memory_type_index": 0
+              }
+            ],
+            "total_requested_bytes": 832,
+            "resident_bytes": null,
+            "driver_internal_bytes": null,
+            "gpu_time": null,
+            "thermal_state": null
+          },
+          "summary_sha256": "5f6b91ba154d95f1589715d17ed51c5fe204586f016c6804997e3bc9987020ba"
+        }
+      ],
+      "pending": [],
+      "steps": [
+        {
+          "label": "baseline1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 1163,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "candidate4",
+          "samples": 4,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 1274,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "label": "recovery1",
+          "samples": 1,
+          "returncode": 0,
+          "timed_out": false,
+          "cancelled": false,
+          "budget_exhausted": false,
+          "unexpected_descendants": false,
+          "group_cleanup": {
+            "pgid": 1385,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          },
+          "stdout_sha256": "25e9b53f403827fb54806ca6f1bf06d089677f1b59272bf9eafad821d4d1d452",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  }
+}

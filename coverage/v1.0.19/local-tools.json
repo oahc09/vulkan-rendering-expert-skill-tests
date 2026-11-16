@@ -1,0 +1,71 @@
+{
+  "source_sha256": "333099cd8a80c9ebede4aef9ee6116cab1df8f41f2e85183b68e6b95f948eee8",
+  "runner_sha256": "f0b1d91c31b9aa35dced210ddcc8f58fd6c26179daa556d41e09caccfbd4331b",
+  "run_id": "23b2078c-49ac-40ab-9be2-919c4003ea5e",
+  "runtime_identity": {
+    "device_type": 4,
+    "device_id": 0,
+    "vendor_id": 65541,
+    "driver": 1,
+    "api": 4210993,
+    "layer_spec": 4210997,
+    "layer_impl": 1
+  },
+  "binary_sha256": "8dacc44085302f8c36dcacb1cd44da2acbf023097ae8eee89ab2e1f8858b9dcc",
+  "manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "trace_processor_sha256": "2434129a3af4dc9e2034a476f7b76447b490975213e301769310d3bd0d5d6458",
+  "status": "PASS_LOCAL_TOOL_PIPELINE_ONLY",
+  "layer_api": "1.4.309",
+  "layer_implementation": "1",
+  "trace_processor": "Perfetto v59.1-1e9c61e98 (1e9c61e9844affd7dccd3d42d9ea9f3a3d10cf6d)\nTrace Processor RPC API version: 14",
+  "cases": {
+    "bad": {
+      "exit_code": 0,
+      "message_ids": [
+        "VUID-VkBufferCreateInfo-size-00912"
+      ],
+      "sha256": "1821ff2b084ed8a427a12ee11845d82157a28497586569a5e1e2f13616c825c1"
+    },
+    "good": {
+      "exit_code": 0,
+      "message_ids": [],
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    }
+  },
+  "trace_sha256": "1b972c2030a090198314eca300a4e2d683dcd355c3c925811f9d03d9276ac2ed",
+  "trace_export_sha256": "f1c1a357f6d653c950416483afc51e444372348bef7835f34b52b62ebf3f5158",
+  "parsed_slices": 2,
+  "parsed_validation": 1,
+  "limitations": [
+    "authored minimal buffer probe, not real project",
+    "software ICD, not hardware/device acceptance",
+    "CPU subprocess timing, not GPU execution time",
+    "no capture-event/resource generation join",
+    "only size VUID checked; clean good case is not general correctness"
+  ],
+  "packages": [
+    {
+      "name": "mesa-vulkan-drivers",
+      "version": "25.0.7-2+deb13u1",
+      "sha256": "caf2f7d296b7522efe74e40a74bce762a3ce84c33b53b5e54e1248ac2e0a13a5",
+      "source": "https://deb.debian.org/debian/pool/main/m/mesa/mesa-vulkan-drivers_25.0.7-2+deb13u1_amd64.deb"
+    },
+    {
+      "name": "libvulkan-dev",
+      "version": "1.4.309.0-1",
+      "sha256": "8d329d465e16168afff58b1bd0dd6db46aac2cc3f56054a481b25a04e90b345a",
+      "source": "https://deb.debian.org/debian/pool/main/v/vulkan-loader/libvulkan-dev_1.4.309.0-1_amd64.deb"
+    },
+    {
+      "name": "vulkan-validationlayers",
+      "version": "1.4.309.0-1",
+      "sha256": "ff7e18ef011ff448ac799daf16134a676ccf9c5987e1a9f4b779611ed5fc3b0d",
+      "source": "https://deb.debian.org/debian/pool/main/v/vulkan-validationlayers/vulkan-validationlayers_1.4.309.0-1_amd64.deb"
+    }
+  ],
+  "negative_controls": {
+    "missing_validation_layer_exit": 2,
+    "fault_removed_mutant_exit": 5
+  },
+  "independent_review": "corrected assert removal, runtime identity, event identity/time and run uniqueness; rerun under python -O; exclusive output prevents stale PASS reuse"
+}

@@ -1,0 +1,11 @@
+#version 450
+layout(local_size_x=1) in;
+layout(set=0,binding=0,std430) buffer Source { uint v[]; } src;
+layout(set=0,binding=1,std430) buffer Output { uint v[]; } dst;
+layout(set=0,binding=2,std430) buffer NullResource { uint v[]; } nil;
+layout(push_constant) uniform Params { uint n; } p;
+void main(){
+ dst.v[0]=src.v[0]; dst.v[1]=src.v[p.n-1];
+ dst.v[2]=src.v[p.n]; dst.v[3]=nil.v[0];
+ src.v[p.n+1]=0xdeadbeefu; nil.v[1]=0x12345678u;
+}

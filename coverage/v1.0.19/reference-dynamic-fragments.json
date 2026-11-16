@@ -1,0 +1,1263 @@
+{
+  "authority": "INDEPENDENT_READ_ONLY_ROOT_CAUSE_AUDIT_NO_PATCH_OR_NEW_RENDER",
+  "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "occurrence_input_sha256": "cbda727e40e60c6bc63cb401672f31f5dc1afa89c5224d1fbbbc9a55de9b7d8b",
+  "full_spec_html_sha256": "715f636ba42747b0af8b4404b7e7c4a9fc06c3e3ea3b64d0b3199f089c9b75a5",
+  "full_spec_unique_anchor_counts": {
+    "dynamic-state-lifetime": 1,
+    "dynamic-state-current-value": 1
+  },
+  "counts": {
+    "dynamic-state-lifetime": 1873,
+    "dynamic-state-current-value": 2708
+  },
+  "affected_page_count": 26,
+  "pages": [
+    {
+      "page": "man/html/vkCmdDraw.html",
+      "html_sha256": "7e10995ebe3d10e417d64cb182a4976a6a60f85b8240389fa481633d76756a70",
+      "generated_refpage_sha256": "bc1022e3356aa6fdd62287b3de8b6fbab9d82ec4afe6a26aab1d03ef7ff515a1",
+      "generated_refpage": "gen/refpage/vkCmdDraw.adoc",
+      "late_include_locations": [
+        {
+          "line": 50,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 51,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_nonindirect_common.adoc[]"
+        },
+        {
+          "line": 52,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 53,
+          "text": "include::{chapters}/commonvalidity/draw_instance_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2134,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2143,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2153,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawClusterHUAWEI.html",
+      "html_sha256": "81a9b3ddea887e9297774b92e5647a6ec0052a2993d2f3f7c5f2263615e5e3c8",
+      "generated_refpage_sha256": "590b0e8912dd2ebf5bbb81935614c4f80c7604532ad492ebe307dc010243b679",
+      "generated_refpage": "gen/refpage/vkCmdDrawClusterHUAWEI.adoc",
+      "late_include_locations": [
+        {
+          "line": 50,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 51,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2131,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2140,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2150,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawClusterIndirectHUAWEI.html",
+      "html_sha256": "0d3b3a72177b82c79609ea5ae9f65241a03caacc28298a46803c316c6d08ac3a",
+      "generated_refpage_sha256": "893b2dbb0726713a1fa4181bda5a5aef7ecd94fe0cffc3fedc87bee23a6cdd34",
+      "generated_refpage": "gen/refpage/vkCmdDrawClusterIndirectHUAWEI.adoc",
+      "late_include_locations": [
+        {
+          "line": 51,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 52,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        },
+        {
+          "line": 53,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_drawcount.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2129,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2138,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2148,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndexed.html",
+      "html_sha256": "509b0065d59083da192328fdd7ac88daa07c5dd97fdd95316b1858c62ea9ee0b",
+      "generated_refpage_sha256": "e06ceec6664fb8e403623d675fd528bddd6daae82348e665d477f7befde272ea",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndexed.adoc",
+      "late_include_locations": [
+        {
+          "line": 76,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 77,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_nonindirect_common.adoc[]"
+        },
+        {
+          "line": 78,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 79,
+          "text": "include::{chapters}/commonvalidity/draw_indexed_common.adoc[]"
+        },
+        {
+          "line": 80,
+          "text": "include::{chapters}/commonvalidity/draw_instance_common.adoc[]"
+        },
+        {
+          "line": 81,
+          "text": "include::{chapters}/commonvalidity/draw_index_binding.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2163,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2172,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2182,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndexedIndirect.html",
+      "html_sha256": "45f2d05f88e7cca1a639d155fb30c6400463589cc127c3e7a679612f83b2eb6f",
+      "generated_refpage_sha256": "d595d29c000d55810c440c26fd10f723589b0fdac219c5bdaa96293290b8b75c",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndexedIndirect.adoc",
+      "late_include_locations": [
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 55,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 56,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 57,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_drawcount.adoc[]"
+        },
+        {
+          "line": 58,
+          "text": "include::{chapters}/commonvalidity/draw_indexed_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2138,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2147,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2157,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndexedIndirect2KHR.html",
+      "html_sha256": "ad818fab257d35cddca4b297ff80841497a493df6caa44023859dab290a80037",
+      "generated_refpage_sha256": "c7446bf98afcf637fec16fb1f5ef389a966448cefd2eaa3fbc52a765b5f5d89d",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndexedIndirect2KHR.adoc",
+      "late_include_locations": [
+        {
+          "line": 52,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 53,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_indexed_common.adoc[]"
+        },
+        {
+          "line": 55,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_address_stride_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2124,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2133,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2143,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndexedIndirectCount.html",
+      "html_sha256": "9f8c005955513f583c25f6a0ec948700339c307d4ef239316469368cec6d8797",
+      "generated_refpage_sha256": "4ca207a5d72f188d25614538a563620b742b08a50e92cf3db134c9d37e629dc6",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndexedIndirectCount.adoc",
+      "late_include_locations": [
+        {
+          "line": 68,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 69,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 70,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 71,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_count_common.adoc[]"
+        },
+        {
+          "line": 72,
+          "text": "include::{chapters}/commonvalidity/draw_indexed_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2175,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2184,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2194,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndexedIndirectCount2KHR.html",
+      "html_sha256": "3e4aabf90ebd59b3dd36c6f02b1f6f722031390b0ffcd14ebd831e7c41dbe51b",
+      "generated_refpage_sha256": "0bfaa3f2d9ec0a925a16d6cb2b8f633d44b7f44295ee82847150833fc5d13186",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndexedIndirectCount2KHR.adoc",
+      "late_include_locations": [
+        {
+          "line": 49,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 50,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 51,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_address_stride_common.adoc[]"
+        },
+        {
+          "line": 52,
+          "text": "include::{chapters}/commonvalidity/draw_indexed_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2121,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2130,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2140,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndirect.html",
+      "html_sha256": "c732ad5160cd39a287ec1d3853816a10cbb11b30eaf2f2a131079f216b5071c6",
+      "generated_refpage_sha256": "80312eb1b79543614ae1630295586462f5fb67d8144a5f16b76e4aab047b0ce8",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndirect.adoc",
+      "late_include_locations": [
+        {
+          "line": 53,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 55,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 56,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_drawcount.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2137,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2146,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2156,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndirect2KHR.html",
+      "html_sha256": "2c45d01f674fb883fd47bfcecb26f8db15c76109c805cd337985bbcf3c051891",
+      "generated_refpage_sha256": "e9a2ca986326b1be627291bfa8331570ff98cf56568b33954ebb1f7b2afd2a9f",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndirect2KHR.adoc",
+      "late_include_locations": [
+        {
+          "line": 52,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 53,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_address_stride_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2124,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2133,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2143,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndirectByteCount2EXT.html",
+      "html_sha256": "178f1c6e54ac58cd36cb22e6ba4b1e0500a9b1b0535721f87b94b46df3e9caae",
+      "generated_refpage_sha256": "338894cae32e4b91f621d669c693d623a32db1240daa45f78c90bf1434ff665c",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndirectByteCount2EXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 68,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 69,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 70,
+          "text": "include::{chapters}/commonvalidity/draw_instance_common.adoc[]"
+        },
+        {
+          "line": 71,
+          "text": "include::{chapters}/commonvalidity/xform_feedback_draw_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2157,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2166,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2176,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndirectByteCountEXT.html",
+      "html_sha256": "5a3f354e255bff7737ca114ea65a404570efb352694247f4e21b6de10d6b11c7",
+      "generated_refpage_sha256": "fd1330a28cdd843f4cb2add38959554d5f871426a3e01b383d8d2aa8acd8c63c",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndirectByteCountEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 70,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 71,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 72,
+          "text": "include::{chapters}/commonvalidity/draw_instance_common.adoc[]"
+        },
+        {
+          "line": 73,
+          "text": "include::{chapters}/commonvalidity/xform_feedback_draw_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2174,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2183,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2193,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndirectCount.html",
+      "html_sha256": "f3c6468a12579687c36d9abe9c8df70c08f55c09b71207d06db9adb00050fd79",
+      "generated_refpage_sha256": "9216e23e82bbdc130260ba1c259b242f9792db36ffc8391e8f5e774ec6676148",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndirectCount.adoc",
+      "late_include_locations": [
+        {
+          "line": 68,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 69,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 70,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 71,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_count_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2175,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2184,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2194,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawIndirectCount2KHR.html",
+      "html_sha256": "7b5233cb59987a85201061bd09871267e3c9379baa0b1bac4bd9f1c0110bf48e",
+      "generated_refpage_sha256": "78a2c19ae81ffee1d768add726920d659af0eb7f9c76a937ab0595114916120c",
+      "generated_refpage": "gen/refpage/vkCmdDrawIndirectCount2KHR.adoc",
+      "late_include_locations": [
+        {
+          "line": 49,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 50,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 51,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_address_stride_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2121,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2130,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2140,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksEXT.html",
+      "html_sha256": "c8079b1d6e31badecd99508a6a00a5852893e90f65cde468d45d7ed844273af0",
+      "generated_refpage_sha256": "34642f9deb900bd0b45e965a7354199e3cad32a259cc8c9fe57298aad9145756",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 48,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 49,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        },
+        {
+          "line": 50,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_limits_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2129,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2138,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2148,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksIndirect2EXT.html",
+      "html_sha256": "8f0e5ee4514a3281e0f1e8160e6b940cab5a7bbafb72f4eff3b0440103cc3bee",
+      "generated_refpage_sha256": "cd972ea80c8aeaae10e18417333d7dfe19e7365de2bce94a115c01248ca9e361",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksIndirect2EXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 49,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 50,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2124,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2133,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2143,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksIndirectCount2EXT.html",
+      "html_sha256": "1b76167796a8aa9668823a6c73dab49c6bee9027161367baaa86389403da19d4",
+      "generated_refpage_sha256": "7042793b9518c9ef61633e874f701d560e79e2d284dd6035d0ffbe773f51cd8a",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksIndirectCount2EXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 47,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 48,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2122,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2131,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2141,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksIndirectCountEXT.html",
+      "html_sha256": "45e609ab4871083ca281fdd244181a7cf4f0bb1dc4debba37ef4acdf121a050b",
+      "generated_refpage_sha256": "08fdaade6cb6c9aafbe26bd0ae86cd8af609f3619a2170131acccec6bf6c83d9",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksIndirectCountEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 57,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 58,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        },
+        {
+          "line": 59,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 60,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_count_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2159,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2168,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2178,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksIndirectCountNV.html",
+      "html_sha256": "4ee78bfd515f6e27ac7eccf9d0be9a56f6926a6522c826c791bb0fb706bc44f7",
+      "generated_refpage_sha256": "db98bbc12718ad487be2570d570f467589caad4aaffee15ca2aa36b592b58da4",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksIndirectCountNV.adoc",
+      "late_include_locations": [
+        {
+          "line": 57,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 58,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        },
+        {
+          "line": 59,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 60,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_count_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2147,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2156,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2166,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksIndirectEXT.html",
+      "html_sha256": "4adecae062ea3ff4487d18b0fdb8aed67b3275494b42b4c47ad47acab4d5f003",
+      "generated_refpage_sha256": "13575eae6a2da0276c67ede66e6950890d43f155689e6fc9dca66eec4e5cab44",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksIndirectEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 55,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        },
+        {
+          "line": 56,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 57,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_drawcount.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2150,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2159,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2169,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksIndirectNV.html",
+      "html_sha256": "a68f8c8e5a5ea3be7a3cb446a217c454b1d9b82b0c0d1ba6d6fb1556dcada963",
+      "generated_refpage_sha256": "07ccd3de29ac6206280ffdf1e8728f2b55d425ebf9e5e255dc53ef2fd05cd289",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksIndirectNV.adoc",
+      "late_include_locations": [
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 55,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        },
+        {
+          "line": 56,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_indirect_common.adoc[]"
+        },
+        {
+          "line": 57,
+          "text": "include::{chapters}/commonvalidity/draw_indirect_drawcount.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2138,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2147,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2157,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMeshTasksNV.html",
+      "html_sha256": "51dee7b9300516002b1c96ac2e7f9ee55d04db86c80c5f696c5247d38c401975",
+      "generated_refpage_sha256": "3f7d4eaf22d1bbc2d46678ae513b1b0f66b7342619f99ce921e444eb24cbe7e7",
+      "generated_refpage": "gen/refpage/vkCmdDrawMeshTasksNV.adoc",
+      "late_include_locations": [
+        {
+          "line": 45,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 46,
+          "text": "include::{chapters}/commonvalidity/draw_mesh_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2123,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2132,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2142,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMultiEXT.html",
+      "html_sha256": "e9bd4ce5e81785f17bf3a5ce9b8b3539b9c3d7442c775297e635d72cab5240e8",
+      "generated_refpage_sha256": "adb10407439b0dd927539874fd81f77c7ccd189f938686cd973e9254974b71e4",
+      "generated_refpage": "gen/refpage/vkCmdDrawMultiEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 54,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 55,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_nonindirect_common.adoc[]"
+        },
+        {
+          "line": 56,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 57,
+          "text": "include::{chapters}/commonvalidity/draw_instance_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2141,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2150,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2160,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdDrawMultiIndexedEXT.html",
+      "html_sha256": "6507e9a92b4471172f311eb44ec1f99465d793fe9d4a099369ffdd54941186ce",
+      "generated_refpage_sha256": "03dba5855c28e6eef48ac41355278b8b8499b84ac831704989f94f825897c06a",
+      "generated_refpage": "gen/refpage/vkCmdDrawMultiIndexedEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 62,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 63,
+          "text": "include::{chapters}/commonvalidity/draw_dispatch_nonindirect_common.adoc[]"
+        },
+        {
+          "line": 64,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        },
+        {
+          "line": 65,
+          "text": "include::{chapters}/commonvalidity/draw_indexed_common.adoc[]"
+        },
+        {
+          "line": 66,
+          "text": "include::{chapters}/commonvalidity/draw_instance_common.adoc[]"
+        },
+        {
+          "line": 67,
+          "text": "include::{chapters}/commonvalidity/draw_index_binding.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2152,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2161,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2171,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdExecuteGeneratedCommandsEXT.html",
+      "html_sha256": "1fe8af88a44d143335968fc11a8fbd26ff64911a35637db17f14ee181eb515a3",
+      "generated_refpage_sha256": "4f02a58091f57e6fc3bd6f4993bc81a2ab0c1f80bd551c13756a76e1784a051c",
+      "generated_refpage": "gen/refpage/vkCmdExecuteGeneratedCommandsEXT.adoc",
+      "late_include_locations": [
+        {
+          "line": 77,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      },
+      "example_occurrences": [
+        {
+          "line": 2183,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2192,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2202,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    },
+    {
+      "page": "man/html/vkCmdExecuteGeneratedCommandsNV.html",
+      "html_sha256": "585ae5565b1a11ae30c3e252ec50bb3ebaec354c976b2c23b1e624ac6117ce7d",
+      "generated_refpage_sha256": "295d5fe48aa35065f1f642485ffa8ea2e20bd770c751da5712cdca15ee5ca0ce",
+      "generated_refpage": "gen/refpage/vkCmdExecuteGeneratedCommandsNV.adoc",
+      "late_include_locations": [
+        {
+          "line": 60,
+          "text": "include::{chapters}/commonvalidity/draw_common.adoc[]"
+        },
+        {
+          "line": 61,
+          "text": "include::{chapters}/commonvalidity/draw_vertex_binding.adoc[]"
+        }
+      ],
+      "missing_counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      },
+      "example_occurrences": [
+        {
+          "line": 2137,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2146,
+          "column": 0,
+          "href": "#dynamic-state-lifetime"
+        },
+        {
+          "line": 2156,
+          "column": 0,
+          "href": "#dynamic-state-current-value"
+        }
+      ]
+    }
+  ],
+  "fixed_sources": {
+    "chapters/pipelines.adoc": {
+      "sha256": "2375781805093fb79a19fea888f183e99928e7af05af71e95a06b09371f70e62",
+      "spans": [
+        {
+          "lines": [
+            10169,
+            10216
+          ],
+          "sha256": "2b7afd145a348ad9d356ec4140fd94bd59fd25e41ece0a34a827207c35cb5171",
+          "text": "== Dynamic State\n\nWhen a pipeline object is bound, any pipeline object state that is not\nspecified as dynamic is applied to the command buffer state.\nPipeline object state that is specified as dynamic is not applied to the\ncommand buffer state at this time.\n\n[[dynamic-state-lifetime]]\nInstead, dynamic state can: be modified at any time and persists for the\nlifetime of the command buffer, or until modified by another dynamic state\nsetting command, or made invalid by binding a pipeline in which that state\nis statically specified.\n\nifdef::VK_NV_command_buffer_inheritance[]\nIf the <<features-commandBufferInheritance,pname:commandBufferInheritance>>\nfeature is enabled, all valid state from the previously executed command\nbuffer in the queue is inherited into the next command buffer executed in\nthe same queue.\nThis inherited state does not need to be set again before draw or dispatch\ncommands.\nendif::VK_NV_command_buffer_inheritance[]\n\n[[dynamic-state-current-value]]\nWhen a pipeline object is bound, the following applies to each state\nparameter:\n\n  * If the state is not specified as dynamic in the new pipeline object,\n    then that command buffer state is overwritten by the state in the new\n    pipeline object.\n    Before any draw or dispatch call with this pipeline there must: not have\n    been any calls to any of the corresponding dynamic state setting\n    commands after this pipeline was bound.\n  * If the state is specified as dynamic in the new pipeline object, then\n    that command buffer state is not disturbed.\n    Before any draw or dispatch call with this pipeline there must: have\n    been at least one call to each of the corresponding dynamic state\n    setting commands.\n    The state-setting commands must: be recorded after command buffer\n    recording was begun, or after the last command binding a pipeline object\n    with that state specified as static, whichever was the latter.\n  * If the state is not included (corresponding pointer in\n    slink:VkGraphicsPipelineCreateInfo was `NULL` or was ignored) in the new\n    pipeline object, then that command buffer state is not disturbed.\nifdef::VK_NV_mesh_shader,VK_EXT_mesh_shader[]\n    For example, mesh shading pipelines do not include vertex input state\n    and therefore do not disturb any such command buffer state.\nendif::VK_NV_mesh_shader,VK_EXT_mesh_shader[]\n\n"
+        }
+      ]
+    },
+    "chapters/commonvalidity/draw_common.adoc": {
+      "sha256": "52b3d48e51f6595b89fb810907eafab13a65906f20be377e67637ad4670cd39e",
+      "spans": [
+        {
+          "lines": [
+            128,
+            176
+          ],
+          "sha256": "ba7b90b0266bf2a50bb62c2e9e23292118a9b69d9612aff2ad9cfb8c49fb8381",
+          "text": "  * [[VUID-{refpage}-None-06887]]\n    If the current render pass instance uses a depth/stencil attachment with\n    a read-only layout for the stencil aspect, both front and back\n    pname:writeMask are not zero, and stencil test is enabled,\n    <<fragops-stencil, all stencil ops>> must: be ename:VK_STENCIL_OP_KEEP\n  * [[VUID-{refpage}-None-07831]]\n    If the bound graphics pipeline state was created with the\n    ename:VK_DYNAMIC_STATE_VIEWPORT dynamic state enabled then\n    flink:vkCmdSetViewport must: have been called and not subsequently\n    <<dynamic-state-lifetime, invalidated>> in the current command buffer\n    prior to this drawing command\n  * [[VUID-{refpage}-None-07832]]\n    If the bound graphics pipeline state was created with the\n    ename:VK_DYNAMIC_STATE_SCISSOR dynamic state enabled then\n    flink:vkCmdSetScissor must: have been called and not subsequently\n    <<dynamic-state-lifetime, invalidated>> in the current command buffer\n    prior to this drawing command\n  * [[VUID-{refpage}-None-08617]]\n    If\nifdef::VK_EXT_shader_object[]\n    a shader object is bound to any graphics stage or\nendif::VK_EXT_shader_object[]\n    a graphics pipeline is bound which was created with the\n    ename:VK_DYNAMIC_STATE_LINE_WIDTH dynamic state enabled, the\n    <<dynamic-state-current-value, current value>> of\n    pname:rasterizerDiscardEnable is ename:VK_FALSE, and the\n    <<drawing-rasterization-input-topology, effective rasterization input\n    topology>> is in the line topology class, then flink:vkCmdSetLineWidth\n    must: have been called and not subsequently <<dynamic-state-lifetime,\n    invalidated>> in the current command buffer prior to this drawing\n    command\n  * [[VUID-{refpage}-None-07834]]\n    If\nifdef::VK_EXT_shader_object[]\n    a shader object is bound to any graphics stage or\nendif::VK_EXT_shader_object[]\n    a graphics pipeline is bound which was created with the\n    ename:VK_DYNAMIC_STATE_DEPTH_BIAS dynamic state enabled, the\n    <<dynamic-state-current-value, current value>> of\n    pname:rasterizerDiscardEnable is ename:VK_FALSE, and the\n    <<dynamic-state-current-value, current value>> of pname:depthBiasEnable\n    is ename:VK_TRUE, then flink:vkCmdSetDepthBias\nifdef::VK_EXT_depth_bias_control[]\n    or flink:vkCmdSetDepthBias2EXT\nendif::VK_EXT_depth_bias_control[]\n    must: have been called and not subsequently <<dynamic-state-lifetime,\n    invalidated>> in the current command buffer prior to this drawing\n    command\n  * [[VUID-{refpage}-None-07835]]\n"
+        }
+      ]
+    },
+    "chapters/commonvalidity/draw_vertex_binding.adoc": {
+      "sha256": "a83003c11ed0d4077f51dc3c423b97f1d192507f6f46e08caf640f4eece8350b",
+      "spans": [
+        {
+          "lines": [
+            62,
+            87
+          ],
+          "sha256": "bc0c1b28c87035559cb75ff282ba05b4fbb6d33ae8513e269701d4f518b1a1b6",
+          "text": "ifdef::VK_EXT_vertex_input_dynamic_state[or]\nendif::VK_EXT_shader_object[]\nifdef::VK_EXT_vertex_input_dynamic_state[]\n    the bound graphics pipeline state was created with the\n    ename:VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY dynamic state enabled\nendif::VK_EXT_vertex_input_dynamic_state[]\n    then flink:vkCmdSetPrimitiveTopology must: have been called and not\n    subsequently <<dynamic-state-lifetime, invalidated>> in the current\n    command buffer prior to this drawing command\n  * [[VUID-{refpage}-dynamicPrimitiveTopologyUnrestricted-07500]]\n    If the bound graphics pipeline state was created with the\n    ename:VK_DYNAMIC_STATE_PRIMITIVE_TOPOLOGY dynamic state enabled\nifdef::VK_EXT_extended_dynamic_state3[]\n    and the <<limits-dynamicPrimitiveTopologyUnrestricted,\n    pname:dynamicPrimitiveTopologyUnrestricted>> is ename:VK_FALSE,\nendif::VK_EXT_extended_dynamic_state3[]\n    then the pname:primitiveTopology parameter of\n    fname:vkCmdSetPrimitiveTopology must: be of the same\n    <<drawing-primitive-topology-class, topology class>> as the pipeline\n    slink:VkPipelineInputAssemblyStateCreateInfo::pname:topology state\n  * [[VUID-{refpage}-primitiveTopology-10286]]\n    If a ename:VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT stage is bound, then\n    the <<dynamic-state-current-value, current value>> of\n    pname:primitiveTopology must: be ename:VK_PRIMITIVE_TOPOLOGY_PATCH_LIST\n    prior to this drawing command\n  * [[VUID-{refpage}-primitiveTopology-10747]]\n"
+        }
+      ]
+    },
+    "scripts/genRef.py": {
+      "sha256": "9ecf50f4209757d2c89c92958c8b882bf07fb86100aa42e329afb0ab5963f2cf",
+      "spans": [
+        {
+          "lines": [
+            231,
+            262
+          ],
+          "sha256": "5f33c34657d8e6bdc7ed01c74b3820aefae8952eadb549e5ffa3597fc9a00631",
+          "text": "def remapIncludes(lines, baseDir, specDir):\n    \"\"\"Remap include directives in a list of lines so they can be extracted to a\n    different directory.\n\n    Returns remapped lines.\n\n    - lines - text to remap\n    - baseDir - target directory\n    - specDir - source directory\"\"\"\n    # This should be compiled only once\n    includePat = re.compile(r'^include::(?P<path>.*)\\[\\]')\n\n    newLines = []\n    for line in lines:\n        matches = includePat.search(line)\n        if matches is not None:\n            path = matches.group('path')\n\n            if path[0] != '{':\n                # Relative path to include file from here\n                incPath = f'{specDir}/{path}'\n                # Remap to be relative to baseDir\n                newPath = os.path.relpath(incPath, baseDir)\n                newLine = f'include::{newPath}[]\\n'\n                logDiag('remapIncludes: remapping', line, '->', newLine)\n                newLines.append(newLine)\n            else:\n                # An asciidoctor variable starts the path.\n                # This must be an absolute path, not needing to be rewritten.\n                newLines.append(line)\n        else:\n            newLines.append(line)\n"
+        },
+        {
+          "lines": [
+            456,
+            477
+          ],
+          "sha256": "bccd4e7a0f8a62a94073c65420e5355850eb6a498769ae10db15107205be3b50",
+          "text": "       resource IDs and add them to the remapPatterns object.\"\"\"\n\n    # These are xrefs to API entities, rewritten to link to refpages\n    # The refLink variants are for xrefs with only an anchor and no text.\n    # The refLinkText variants are for xrefs with both anchor and text\n    remapPatterns.refLinkPattern = re.compile(r'<<([Vv][Kk][A-Za-z0-9_]+)>>')\n    remapPatterns.refLinkTextPattern = re.compile(r'<<([Vv][Kk][A-Za-z0-9_]+)[,]?[ \\t\\n]*([^>,]*)>>')\n\n    if remapState.antora:\n        remapPatterns.refLinkSubstitute = r'xref:\\1.adoc[\\1]'\n        remapPatterns.refLinkTextSubstitute = r'xref:\\1.adoc[\\2]'\n    else:\n        remapPatterns.refLinkSubstitute = r'link:\\1.html[\\1^]'\n        remapPatterns.refLinkTextSubstitute = r'link:\\1.html[\\2^]'\n\n    # These are xrefs to other anchors, rewritten to link to the spec\n    remapPatterns.specLinkPattern = re.compile(r'<<([-A-Za-z0-9_.(){}:]+)[,]?[ \\t\\n]*([^>,]*)>>')\n\n    # Unfortunately specLinkSubstitute depends on the link target,\n    # so must be generated for each target\n    remapPatterns.specLinkSubstitute = None\n\n"
+        },
+        {
+          "lines": [
+            516,
+            532
+          ],
+          "sha256": "9e73f64a08e6a21df0740135574613c382324dda987f2c195bb52691028bd7d4",
+          "text": "    else:\n        # For the standalone refpages, rewrite relative to the HTML spec\n        # URL.\n\n        def substituteURL(match, specURL):\n            anchor = match.group(1)\n            text = match.group(2)\n\n            return f'link:{specURL}#{anchor}[{text}^]'\n\n        specLinkSubstitute = lambda match: substituteURL(match, specURL)\n\n    # Substitute\n    text, _ = remapPatterns.refLinkPattern.subn(remapPatterns.refLinkSubstitute, text)\n    text, _ = remapPatterns.refLinkTextPattern.subn(remapPatterns.refLinkTextSubstitute, text)\n    text, _ = remapPatterns.specLinkPattern.subn(specLinkSubstitute, text)\n\n"
+        },
+        {
+          "lines": [
+            567,
+            603
+          ],
+          "sha256": "3919c522ccb4b662c6718976cd61b55fe5467a2dbd33e424b9fde812cf5969cb",
+          "text": "            # is absent then go a line beyond the include.\n            remap_end = pi.include + 1 if pi.param is None else pi.param\n            lines = remapIncludes(file[pi.begin:remap_end], baseDir, specDir)\n            specText = ''.join(lines)\n\n            if pi.param is not None:\n                if pi.type == 'structs':\n                    field = 'Members'\n                elif pi.type in ['protos', 'funcpointers']:\n                    field = 'Parameters'\n                else:\n                    logWarn(f'emitPage: unknown field type: {pi.type} for {pi.name}')\n                lines = remapIncludes(file[pi.param:pi.body], baseDir, specDir)\n                fieldText = ''.join(lines)\n\n            # Description text\n            if pi.body != pi.include:\n                lines = remapIncludes(file[pi.body:pi.end + 1], baseDir, specDir)\n                descText = ''.join(lines)\n            else:\n                descText = None\n                logWarn(f'emitPage: INCLUDE == BODY, so description will be empty for {pi.name}')\n                if pi.begin != pi.include:\n                    logWarn('emitPage: Note: BEGIN != INCLUDE, so the description might be incorrectly located before the API include!')\n        else:\n            specText = None\n            descText = ''.join(file[pi.begin:pi.end + 1])\n    else:\n        # This should be caught in the spec markup checking tests\n        logErr(f'emitPage: refpage type=\"{pi.type}\" is unrecognized')\n\n    # Rewrite asciidoctor xrefs to resolve properly in refpages\n    specURL = conventions.specURL(pi.spec)\n\n    specText = xrefRewrite(specText, specURL)\n    fieldText = xrefRewrite(fieldText, specURL)\n    descText = xrefRewrite(descText, specURL)\n"
+        }
+      ]
+    },
+    "Makefile": {
+      "sha256": "62c567ba6933c55b2138301109d1550ba158358625748a03f3925269128f47f2",
+      "spans": [
+        {
+          "lines": [
+            658,
+            677
+          ],
+          "sha256": "44663bae39ad5f9ea9dc74426bf4977c350b665458ec342e0827fb8479e8479b",
+          "text": "# ADOCREFOPTS *must* be placed after ADOCOPTS in the command line, so\n# that it can override spec attribute values.\n#\n# cross-file-links makes custom macros link to other refpages\n# refprefix includes the refpage (not spec) extension metadata.\n# isrefpage is for refpage-specific content\n# html_spec_relative is where to find the full specification\nADOCREFOPTS = -a cross-file-links -a refprefix='refpage.' -a isrefpage \\\n\t      -a html_spec_relative='../../html/vkspec.html'\n\n# The refpage build process normally generates far too much output, so\n# use VERYQUIET instead of QUIET\n# Running translate_math.js on every refpage is slow and most of them\n# do not contain math, so do a quick search for latexmath delimiters.\n$(MANHTMLDIR)/%.html: KATEXDIR = ../../katex\n$(MANHTMLDIR)/%.html: $(REFPATH)/%.adoc $(GENDEPENDS) $(KATEXINSTDIR)\n\t$(VERYQUIET)echo \"Building $@ from $< using default options\"\n\t$(VERYQUIET)$(MKDIR) $(MANHTMLDIR)\n\t$(VERYQUIET)$(ASCIIDOC) -b html5 $(ADOCOPTS) $(ADOCHTMLOPTS) $(ADOCREFOPTS) \\\n\t    -d manpage -o $@ $<\n"
+        }
+      ]
+    }
+  },
+  "root_cause": "genRef rewrites xrefs only within extracted strings, retaining commonvalidity include directives without expanding their content. Later Asciidoctor expansion introduces generic local xrefs after that rewrite stage. All26 generated refpage files include draw_common and contain neither target string directly. Rendered links point to absent local IDs; both actual target IDs exist uniquely in the corresponding full specification.",
+  "classification": "GENERATION_INCLUDE_STAGE_LINK_ROUTING_DEFECT_NOT_MISSING_NORMATIVE_CONTENT",
+  "proposed_probe_only": {
+    "scope": "isolated copy; one representative vkCmdDraw page; exactly two allowlisted fragments; no repository or original artifact modification",
+    "preconditions": [
+      "exact original source/build/output hashes and explicit target anchor source spans",
+      "each candidate is an actual anchor href exactly #allowlisted-fragment, not a string in scripts/comments",
+      "local target anchor absent; corresponding fixed fullspec id unique",
+      "fullspec destination file stays within copied output root and retains original bytes"
+    ],
+    "transformation": "Rewrite only href values to ../../html/vkspec.html#same-fragment in the isolated representative page; preserve link text/other attributes/all other bytes. This is an output-routing patch, not a universal generator fix.",
+    "checks": [
+      "positive original missing-local result",
+      "patched static destination and fragment resolve",
+      "no changes beyond registered href substitutions; fullspec unchanged",
+      "revert exact original bytes",
+      "delete destination anchor in another isolated control: reject target proof instead of relocating to guessed target",
+      "locally valid same-named anchor/unknown fragment: do not rewrite",
+      "wrong expected source/hash or changed anchor text: reject scope proof"
+    ],
+    "not_authorized_or_executed": true
+  },
+  "limits": [
+    "No fragment repaired by this audit",
+    "No automatic redirect of any other missing target/fragment pairs",
+    "Fullspec matching ID is only a candidate unless source relationship and uniqueness are independently verified",
+    "Static routing proof is not browser/visual/accessibility or full normative semantic validation",
+    "Root cause established for these26 pages/two fragments, not all included xrefs"
+  ]
+}

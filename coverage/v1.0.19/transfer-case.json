@@ -1,0 +1,58 @@
+{
+  "run_id": "b31781f8-1c4e-4077-9676-dfe2fa04aec9",
+  "provenance": "authored deliberate fault injection; not external production bug",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "patch_sha256": "f798d78289b2d138576f5c916571161c9a2923c2b5d7ec961fb9b0c6c1673777",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "cases": {
+    "before": {
+      "exit": 0,
+      "matching_words": 0,
+      "errors": 1,
+      "message_ids": [
+        "SYNC-HAZARD-READ-AFTER-WRITE"
+      ],
+      "source_sha256": "eb41d7c856ef250883177cc8a73ef18aba332b4177c7db317fc791dc33953dd3",
+      "binary_sha256": "82ac13e8b11e2341f51152a661fafdb3326d5095f77747a836eeba569567acf3",
+      "callback_sha256": "b57cd0e2332a877b2033a103d3e3980afdac35f8279a2fd1c15f5fd2b970e13c"
+    },
+    "after": {
+      "exit": 0,
+      "matching_words": 64,
+      "errors": 0,
+      "message_ids": [],
+      "source_sha256": "c33f5a2c08e705492b3ba942f0ff0b34fef6b507e61da16d248febc03c19edf8",
+      "binary_sha256": "6a32ec591b0ce59d9afbef2eac3678188ec5e15fbd89044cb4208b5ef1d9cba9",
+      "callback_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "mutant": {
+      "exit": 6,
+      "matching_words": 0,
+      "errors": 1,
+      "message_ids": [
+        "SYNC-HAZARD-READ-AFTER-WRITE"
+      ],
+      "source_sha256": "8962ed92cd2ec04b1422d605751c35935bf2865bdcf70eb7906d3a85ffc86b91",
+      "binary_sha256": "895bbd237168a50098f4912eb638789589cba39b302b70d005c234bc8a9038c3",
+      "callback_sha256": "e9f97881176693af3f066130d74051e915eafc98e7f8ff9d7286547fbaa9b2dd"
+    }
+  },
+  "runtime_identity": {
+    "device_type": 4,
+    "device_id": 0,
+    "vendor_id": 65541,
+    "driver": 1,
+    "api": 4210993,
+    "layer_spec": 4210997,
+    "layer_impl": 1
+  },
+  "status": "PASS_SCOPED_REAL_API_REGRESSION",
+  "limitations": [
+    "deliberate fault injection, not production discovery",
+    "CPU ICD only",
+    "one queue and coherent host memory",
+    "invalid command aborted by callback; bad output is not undefined driver execution evidence",
+    "not timing/performance evidence",
+    "not cross-queue/WSI/noncoherent/SC validation"
+  ]
+}

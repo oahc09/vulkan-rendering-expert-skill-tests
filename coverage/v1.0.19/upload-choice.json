@@ -1,0 +1,280 @@
+{
+  "actual_performance_comparison": false,
+  "boundary": "Full original reports and five-run raw fixture retained; output hashes here encode canonical JSON compact uint arrays, not raw buffer bytes. Published exact-pair verification is separate.",
+  "common": {
+    "artifacts": {
+      "compute.spv": "609e53c050c14023a111dfa7acf608022b32f6225975d34af543f36b9144dcbc",
+      "compute.spvasm": "65936e10afd7d223b3961ebaaaa9ea12327c8255462c88f5fd76246b1e14ce83",
+      "probe": "5d6be2661d5127ce385bdc81211c28b395dbf23713e74586a0ed9525d6a9df97"
+    },
+    "normative": {
+      "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "limits": "Frozen raw source references, no include/conditional expansion. No normative performance or budget thresholds. Host write barrier is conservative, not asserted mandatory for coherent pre-submit writes.",
+      "sources": [
+        {
+          "anchors": [
+            "memory-device-hostaccess",
+            "memory-device-hostaccess-hazards",
+            "memory-device-bitmask-list"
+          ],
+          "path": "chapters/memory.adoc",
+          "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+          "slices": [
+            {
+              "anchor": "memory-device-hostaccess",
+              "line_end": 5084,
+              "line_start": 5024,
+              "sha256": "c9ad723217ee59a3219c99a25e2a809357131e305a2ccfa9e16e741795990071"
+            },
+            {
+              "anchor": "memory-device-hostaccess-hazards",
+              "line_end": 5440,
+              "line_start": 5085,
+              "sha256": "ed457eb9d3c074bca0ce6a27cb15e732361917cca772c08f83c1dbc19cc2e6b3"
+            },
+            {
+              "anchor": "memory-device-bitmask-list",
+              "line_end": 1118,
+              "line_start": 597,
+              "sha256": "78c459ee06393e70a9f69e00c87b6e95fe01d1e9327e472262de9d8c66adb455"
+            }
+          ]
+        },
+        {
+          "anchors": [
+            "synchronization-dependencies-memory",
+            "synchronization-buffer-memory-barriers",
+            "synchronization-submission-host-writes"
+          ],
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "slices": [
+            {
+              "anchor": "synchronization-dependencies-memory",
+              "line_end": 148,
+              "line_start": 137,
+              "sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d"
+            },
+            {
+              "anchor": "synchronization-buffer-memory-barriers",
+              "line_end": 7332,
+              "line_start": 7128,
+              "sha256": "b4b8a2234d659a299832432f40fe74a330b7a9c46d08adec18a0fbd58d1d9ff4"
+            },
+            {
+              "anchor": "synchronization-submission-host-writes",
+              "line_end": 8437,
+              "line_start": 8404,
+              "sha256": "02ccebd0ff665619962cce52dd675a21d7635c4e511389b05ffec03bd8d80135"
+            }
+          ]
+        },
+        {
+          "anchors": [
+            "resources-association"
+          ],
+          "path": "chapters/resources.adoc",
+          "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+          "slices": [
+            {
+              "anchor": "resources-association",
+              "line_end": 12223,
+              "line_start": 10319,
+              "sha256": "09c6997fa7d4cf36905b426d476b01dc4543c7080b4ee845414adfbc946ebd99"
+            }
+          ]
+        }
+      ],
+      "version": "1.4.368"
+    },
+    "source_sha256": {
+      "cases19/upload_choice/compute.comp": "ba6afc82419152c791dc01a2da59166af049720d5b32f24d1ffbfa5ca051908b",
+      "cases19/upload_choice/normative.json": "511355e6e56f82481f38182a7855dd645397c6ac95d89f7d32a6123acf1fdabf",
+      "cases19/upload_choice/probe.c": "599168a6c9248f30e0caca259f43392bdb20ba918fffb1862d8e24039ec5c0a8",
+      "cases19/upload_choice/run.py": "719f9615453a07c4ac82bd3b3eecb26c596f624baca96a18ded0fcb2609ffc77",
+      "tools/upload_choice19.py": "7992b46ba8158d099bc8f5cb79de0a41123f3dbbdc62e4e5ccfc2297cdaf9a48"
+    }
+  },
+  "evidence_cohort": "PREPUBLICATION_LOCAL_SOURCE",
+  "release_status": "BLOCKED",
+  "reports": [
+    {
+      "decision": {
+        "limitations": [
+          "Caller must independently validate complete raw records/source before decision; status strings are not authentication.",
+          "No physical memory, throughput or GPU latency superiority inferred."
+        ],
+        "reason": "actual simultaneous requested allocation budget only; not residency/performance",
+        "revisit_conditions": [
+          "source/device/driver/input/size change",
+          "budget or performance requirement change"
+        ],
+        "rule_id": "verified-upload-request-budget-v1",
+        "selected": "direct",
+        "status": "KEEP_BASELINE"
+      },
+      "name": "default",
+      "policy": {
+        "requested_budget": 512,
+        "require_performance": false
+      },
+      "report_sha256": "33797bb5c6f23710c52fed8227469473d2fc02402627b15582e2d66a1a3eaa54",
+      "run_summary": [
+        {
+          "label": "baseline",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "staging",
+          "logical_bytes": 768,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "staging",
+          "requested_bytes": 768,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "recovery",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "direct-wrong",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "staging-wrong",
+          "logical_bytes": 768,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "staging",
+          "requested_bytes": 768,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        }
+      ],
+      "status": "UPLOAD_PATH_ABA_VERIFIED_NOT_PERFORMANCE"
+    },
+    {
+      "decision": {
+        "selected": null,
+        "status": "NO_ADMISSIBLE_PATH"
+      },
+      "name": "reject",
+      "policy": {
+        "requested_budget": 511,
+        "require_performance": false
+      },
+      "report_sha256": "e56be2a028bb5fa97731f11ddfedda06b35b98e000ee60164de318bae75a1df0",
+      "run_summary": [
+        {
+          "label": "baseline",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "staging",
+          "logical_bytes": 768,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "staging",
+          "requested_bytes": 768,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "recovery",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "direct-wrong",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "staging-wrong",
+          "logical_bytes": 768,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "staging",
+          "requested_bytes": 768,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        }
+      ],
+      "status": "UPLOAD_PATH_ABA_VERIFIED_NOT_PERFORMANCE"
+    },
+    {
+      "decision": {
+        "fallback": "direct",
+        "selected": null,
+        "status": "NEEDS_MEASUREMENT"
+      },
+      "name": "performance",
+      "policy": {
+        "requested_budget": 1024,
+        "require_performance": true
+      },
+      "report_sha256": "e755532a6b2cf2e84bfc54f51caaf4b4b995001392be5ee4a9713b4e9f90348d",
+      "run_summary": [
+        {
+          "label": "baseline",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "staging",
+          "logical_bytes": 768,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "staging",
+          "requested_bytes": 768,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "recovery",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "direct-wrong",
+          "logical_bytes": 512,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "direct",
+          "requested_bytes": 512,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        },
+        {
+          "label": "staging-wrong",
+          "logical_bytes": 768,
+          "output_sha256": "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+          "path": "staging",
+          "requested_bytes": 768,
+          "status": "BOUNDED_UPLOAD_PATH_VERIFIED"
+        }
+      ],
+      "status": "UPLOAD_PATH_ABA_VERIFIED_NOT_PERFORMANCE"
+    }
+  ],
+  "status": "ACTUAL_SAME_WORKLOAD_UPLOAD_ABA",
+  "whole_C2_complete": false
+}

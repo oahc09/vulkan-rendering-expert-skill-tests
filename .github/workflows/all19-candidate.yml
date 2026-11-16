@@ -1,0 +1,43 @@
+name: ALL19 candidate contracts (not final acceptance)
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: tests
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - id: pair
+        run: echo "sha=$(python tests/checks19/check_pair.py --resolve)" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: oahc09/vulkan-rendering-expert-skill
+          ref: ${{ steps.pair.outputs.sha }}
+          path: skill
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install pytest pyyaml
+      - run: sudo apt-get update && sudo apt-get install -y glslang-tools spirv-tools
+      - run: python tests/checks19/check_pair.py --skill skill
+      - working-directory: skill
+        run: |
+          node scripts/check-skill.mjs
+          python scripts/host_contract.py
+          python -m unittest discover -s scripts -p 'test_*.py'
+      - run: python tests/checks19/run_regression.py --skill skill --junit /tmp/all19-regression.xml
+        env:
+          VULKAN_SKILL_ROOT: ${{ github.workspace }}/skill
+      - run: python skill/scripts/agensi_audit_and_pack.py skill --out /tmp/all19.zip

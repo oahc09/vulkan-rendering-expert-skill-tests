@@ -1,0 +1,200 @@
+{
+  "status": "TWO_DYNAMIC_STATE_ROUTES_REPAIRED_OTHER_FINDINGS_RETAINED",
+  "scope": "fixed P4 all-Vulkan368 source cohort; all reference HTML and direct aliases; no semantic proof",
+  "implementation": {
+    "checks19/repair_reference_dynamic_routes19.py": "051eed8a7496803fe3b94945b0853b413847ca72a46b5831ef56481f17ffa3dd",
+    "tools/reference_batch19.py": "0a4500e02f38bb710d018ff930737984a4ab4cbceaa8479081b3d42d9e9092be",
+    "tools/reference_font_repair19.py": "612b048bb10fe608abfdedd69d0db9c9696554bc20845eeb4ff88b14e2de61b1",
+    "tools/reference_dynamic_route19.py": "7ea282a91fefac3d383816bf6cb89d4d29e6d1b11234d2e5487867506015139e",
+    "tools/reference_dynamic_route19.rb": "0558aac51335c1d329e54d79752cd08857e63f3451e1eeedcea5c546a27e99b3",
+    "tests/fixtures/reference-dynamic-route19.json": "c950470f2996dfc5f38d367bc77747a65575168127ff87f575df0980a9fd9843",
+    "tests/fixtures/reference_dynamic_route19_guards.rb": "5285d952437b29012dd87b890ac49cd1cd95ab60562373c509dec01a083e80bc",
+    "tools/reference_links19.py": "ef899f37c3160a259b16800529984927b9828ad8b74976d2e7cbdea460bda876",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "source_tree_sha256": "39681837283249fea7741fa5b0c2b9fd3bf77082e169f850a5823f9770f0a6fa",
+  "runtime_sha256": "e671705e714c0ccbd9113a18a97c8d22a18d0af4326dc4108940b72e3bb2e709",
+  "baseline_report_sha256": "d94a79e2aa8a747ecdc85fa06261f2142bc34571cecc187841f2cae4d14fd02a",
+  "changed_pages": {
+    "vkCmdDraw": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawClusterHUAWEI": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawClusterIndirectHUAWEI": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawIndexed": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndexedIndirect": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndexedIndirect2KHR": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndexedIndirectCount": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndexedIndirectCount2KHR": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndirect": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndirect2KHR": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndirectByteCount2EXT": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndirectByteCountEXT": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndirectCount": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawIndirectCount2KHR": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawMeshTasksEXT": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksIndirect2EXT": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksIndirectCount2EXT": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksIndirectCountEXT": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksIndirectCountNV": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksIndirectEXT": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksIndirectNV": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMeshTasksNV": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdDrawMultiEXT": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdDrawMultiIndexedEXT": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    },
+    "vkCmdExecuteGeneratedCommandsEXT": {
+      "dynamic-state-lifetime": 68,
+      "dynamic-state-current-value": 103
+    },
+    "vkCmdExecuteGeneratedCommandsNV": {
+      "dynamic-state-lifetime": 75,
+      "dynamic-state-current-value": 105
+    }
+  },
+  "route_counts": {
+    "dynamic-state-lifetime": 1873,
+    "dynamic-state-current-value": 2708
+  },
+  "unchanged_entity_pages": 3527,
+  "revert_control": "ACTUAL_OFFICIAL_SINGLE_PAGE_RENDER_WITH_ROUTE_DISABLED_THEN_SAVED_REPAIRED_BYTES_RESTORED",
+  "limits": [
+    "fixed26-page/two-ID/source-cohort route, not general cross-reference resolution",
+    "all3553 fresh rendered; exactly4581 href changes versus font repaired baseline, all other bytes unchanged",
+    "source_location instrumentation did not retain per-xref include origin; source-cohort and known include-chain binding only",
+    "remaining link findings retained; no network/browser or semantic verification",
+    "source snapshots retained; single-page revert separately rendered; original baselines unchanged"
+  ],
+  "report_sha256": "ed3f9babbf7dd0da8a46871f77b3e5efa591ba54a84c2cb4e5f0cf5315c8088a",
+  "original_build_tests_head": "12bd93088044ff3d3b00f4463ace89d880796de4",
+  "entity_count": 3553,
+  "alias_count": 477,
+  "href_counts": {
+    "EXTERNAL_NOT_FETCHED": 14670,
+    "LOCAL_RESOLVED": 197731,
+    "MISSING_LOCAL_TARGET": 2,
+    "MISSING_FRAGMENT": 11699
+  },
+  "href_occurrences": 224102,
+  "steps": [
+    {
+      "label": "ruby-ldd",
+      "returncode": 0,
+      "elapsed_seconds": 1.027567145996727
+    },
+    {
+      "label": "node-ldd",
+      "returncode": 0,
+      "elapsed_seconds": 1.027099573999294
+    },
+    {
+      "label": "node-modules",
+      "returncode": 0,
+      "elapsed_seconds": 1.1284869109949796
+    },
+    {
+      "label": "python-import",
+      "returncode": 0,
+      "elapsed_seconds": 1.102017546989373
+    },
+    {
+      "label": "ruby-converter-guards",
+      "returncode": 0,
+      "elapsed_seconds": 1.101747891996638
+    },
+    {
+      "label": "all-reference-html",
+      "returncode": 0,
+      "elapsed_seconds": 333.40484881600423
+    },
+    {
+      "label": "route-reverted-reference",
+      "returncode": 0,
+      "elapsed_seconds": 2.026377425005194
+    }
+  ],
+  "final_acceptance": false,
+  "preliminary_evidence": {
+    "dynamic-route19-sourceprobe/receipt.json": "2bc9f63793870ebe1a0345cc232109f6028eaf3390bbcf7f429869642108fa58",
+    "dynamic-route19-routeprobe/receipt.json": "0927afb4d8dc915cdcc2b0819a19104557939e24086bf2089f6f53427b6f5891",
+    "dynamic-route19-guards.stderr": "46a67f9a85e87c158f4bb27d04856a3a709e9d80b18125855a87faa0bd3a977c",
+    "dynamic-route19-guards-v2.stdout": "3cc3a4979fe12461e84e37ae9e3879c8c651c57c95354fa01e8becb7378c08bd"
+  },
+  "preliminary_boundaries": [
+    "Source-location observation records generated-page coordinates, not original include coordinates",
+    "First standalone Ruby guard harness omitted requiring asciidoctor and failed NameError; retained, corrected harness and final actual step distinguish this from render failure",
+    "Single-page probe not extrapolated to entire cohort; full3553 render and byte audit separately executed"
+  ]
+}

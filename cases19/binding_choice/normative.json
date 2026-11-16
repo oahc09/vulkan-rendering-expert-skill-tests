@@ -1,0 +1,40 @@
+{
+  "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "version": "1.4.368",
+  "sources": [
+    {
+      "path": "chapters/memory.adoc",
+      "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+      "anchors": [
+        "memory-device-hostaccess",
+        "memory-device-hostaccess-hazards",
+        "memory-device-bitmask-list"
+      ]
+    },
+    {
+      "path": "chapters/synchronization.adoc",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "anchors": [
+        "synchronization-dependencies-memory",
+        "synchronization-buffer-memory-barriers",
+        "synchronization-submission-host-writes"
+      ]
+    },
+    {
+      "path": "chapters/resources.adoc",
+      "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+      "anchors": [
+        "resources-association"
+      ]
+    },
+    {
+      "path": "chapters/descriptorsets.adoc",
+      "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950",
+      "anchors": [
+        "descriptors-push-descriptors",
+        "descriptors-compatibility"
+      ]
+    }
+  ],
+  "limits": "Frozen raw source references, no include/conditional expansion. No normative performance or budget thresholds. Host write barrier is conservative, not asserted mandatory for coherent pre-submit writes."
+}

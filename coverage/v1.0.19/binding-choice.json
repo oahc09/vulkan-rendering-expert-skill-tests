@@ -1,0 +1,352 @@
+{
+  "common_results": [
+    {
+      "config": {
+        "descriptorCount": 2,
+        "descriptorType": 7,
+        "kind": "binding_config",
+        "layoutFlags": 0,
+        "maxPushDescriptors": 32,
+        "pushEnabled": false,
+        "pushSupported": true
+      },
+      "cost": {
+        "bindCalls": 2,
+        "descriptorPoolCreates": 1,
+        "descriptorSetAllocations": 1,
+        "dispatches": 2,
+        "kind": "binding_cost",
+        "pushCalls": 0,
+        "updateCalls": 1
+      },
+      "exit_code": 0,
+      "generation_output_sha256": [
+        "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+        "0489bf9f49f3cef7417458f193efca2f682c6e70c73d85ef36d8a1cf5615544a"
+      ],
+      "label": "baseline",
+      "path": "set",
+      "requested_bytes": [
+        512,
+        512
+      ]
+    },
+    {
+      "config": {
+        "descriptorCount": 2,
+        "descriptorType": 7,
+        "kind": "binding_config",
+        "layoutFlags": 1,
+        "maxPushDescriptors": 32,
+        "pushEnabled": true,
+        "pushSupported": true
+      },
+      "cost": {
+        "bindCalls": 0,
+        "descriptorPoolCreates": 0,
+        "descriptorSetAllocations": 0,
+        "dispatches": 2,
+        "kind": "binding_cost",
+        "pushCalls": 2,
+        "updateCalls": 0
+      },
+      "exit_code": 0,
+      "generation_output_sha256": [
+        "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+        "0489bf9f49f3cef7417458f193efca2f682c6e70c73d85ef36d8a1cf5615544a"
+      ],
+      "label": "push",
+      "path": "push",
+      "requested_bytes": [
+        512,
+        512
+      ]
+    },
+    {
+      "config": {
+        "descriptorCount": 2,
+        "descriptorType": 7,
+        "kind": "binding_config",
+        "layoutFlags": 0,
+        "maxPushDescriptors": 32,
+        "pushEnabled": false,
+        "pushSupported": true
+      },
+      "cost": {
+        "bindCalls": 2,
+        "descriptorPoolCreates": 1,
+        "descriptorSetAllocations": 1,
+        "dispatches": 2,
+        "kind": "binding_cost",
+        "pushCalls": 0,
+        "updateCalls": 1
+      },
+      "exit_code": 0,
+      "generation_output_sha256": [
+        "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+        "0489bf9f49f3cef7417458f193efca2f682c6e70c73d85ef36d8a1cf5615544a"
+      ],
+      "label": "recovery",
+      "path": "set",
+      "requested_bytes": [
+        512,
+        512
+      ]
+    },
+    {
+      "config": {
+        "descriptorCount": 2,
+        "descriptorType": 7,
+        "kind": "binding_config",
+        "layoutFlags": 0,
+        "maxPushDescriptors": 32,
+        "pushEnabled": false,
+        "pushSupported": true
+      },
+      "cost": {
+        "bindCalls": 2,
+        "descriptorPoolCreates": 1,
+        "descriptorSetAllocations": 1,
+        "dispatches": 2,
+        "kind": "binding_cost",
+        "pushCalls": 0,
+        "updateCalls": 1
+      },
+      "exit_code": 6,
+      "generation_output_sha256": [
+        "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+        "0489bf9f49f3cef7417458f193efca2f682c6e70c73d85ef36d8a1cf5615544a"
+      ],
+      "label": "set-wrong",
+      "path": "set",
+      "requested_bytes": [
+        512,
+        512
+      ]
+    },
+    {
+      "config": {
+        "descriptorCount": 2,
+        "descriptorType": 7,
+        "kind": "binding_config",
+        "layoutFlags": 1,
+        "maxPushDescriptors": 32,
+        "pushEnabled": true,
+        "pushSupported": true
+      },
+      "cost": {
+        "bindCalls": 0,
+        "descriptorPoolCreates": 0,
+        "descriptorSetAllocations": 0,
+        "dispatches": 2,
+        "kind": "binding_cost",
+        "pushCalls": 2,
+        "updateCalls": 0
+      },
+      "exit_code": 6,
+      "generation_output_sha256": [
+        "d4d4ed94dbef8ce3b2803bc4b0e8d3b18f0f60210a34468b6c0f66793d168315",
+        "0489bf9f49f3cef7417458f193efca2f682c6e70c73d85ef36d8a1cf5615544a"
+      ],
+      "label": "push-wrong",
+      "path": "push",
+      "requested_bytes": [
+        512,
+        512
+      ]
+    }
+  ],
+  "normative": {
+    "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "limits": "Frozen raw source references, no include/conditional expansion. No normative performance or budget thresholds. Host write barrier is conservative, not asserted mandatory for coherent pre-submit writes.",
+    "sources": [
+      {
+        "anchors": [
+          "memory-device-hostaccess",
+          "memory-device-hostaccess-hazards",
+          "memory-device-bitmask-list"
+        ],
+        "path": "chapters/memory.adoc",
+        "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+        "slices": [
+          {
+            "anchor": "memory-device-hostaccess",
+            "line_end": 5084,
+            "line_start": 5024,
+            "sha256": "c9ad723217ee59a3219c99a25e2a809357131e305a2ccfa9e16e741795990071"
+          },
+          {
+            "anchor": "memory-device-hostaccess-hazards",
+            "line_end": 5440,
+            "line_start": 5085,
+            "sha256": "ed457eb9d3c074bca0ce6a27cb15e732361917cca772c08f83c1dbc19cc2e6b3"
+          },
+          {
+            "anchor": "memory-device-bitmask-list",
+            "line_end": 1118,
+            "line_start": 597,
+            "sha256": "78c459ee06393e70a9f69e00c87b6e95fe01d1e9327e472262de9d8c66adb455"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "synchronization-dependencies-memory",
+          "synchronization-buffer-memory-barriers",
+          "synchronization-submission-host-writes"
+        ],
+        "path": "chapters/synchronization.adoc",
+        "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+        "slices": [
+          {
+            "anchor": "synchronization-dependencies-memory",
+            "line_end": 148,
+            "line_start": 137,
+            "sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d"
+          },
+          {
+            "anchor": "synchronization-buffer-memory-barriers",
+            "line_end": 7332,
+            "line_start": 7128,
+            "sha256": "b4b8a2234d659a299832432f40fe74a330b7a9c46d08adec18a0fbd58d1d9ff4"
+          },
+          {
+            "anchor": "synchronization-submission-host-writes",
+            "line_end": 8437,
+            "line_start": 8404,
+            "sha256": "02ccebd0ff665619962cce52dd675a21d7635c4e511389b05ffec03bd8d80135"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "resources-association"
+        ],
+        "path": "chapters/resources.adoc",
+        "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+        "slices": [
+          {
+            "anchor": "resources-association",
+            "line_end": 12223,
+            "line_start": 10319,
+            "sha256": "09c6997fa7d4cf36905b426d476b01dc4543c7080b4ee845414adfbc946ebd99"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "descriptors-push-descriptors",
+          "descriptors-compatibility"
+        ],
+        "path": "chapters/descriptorsets.adoc",
+        "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950",
+        "slices": [
+          {
+            "anchor": "descriptors-push-descriptors",
+            "line_end": 5216,
+            "line_start": 4839,
+            "sha256": "e8bc14798a2f599b5ff1f674fc1d79001e93460a409a320dfc730289dc015eda"
+          },
+          {
+            "anchor": "descriptors-compatibility",
+            "line_end": 2179,
+            "line_start": 2076,
+            "sha256": "a31828b5f46762566db84244e0761e13acb2f9a9980c41f1a2ac5195f5960205"
+          }
+        ]
+      }
+    ],
+    "version": "1.4.368"
+  },
+  "performance_measured": false,
+  "release_status": "BLOCKED",
+  "reports": [
+    {
+      "decision": {
+        "policy_scope": "application-managed descriptor-set allocation count, not Vulkan hardware capacity",
+        "reason": "verified baseline preferred unless explicit application allocation-count policy excludes it",
+        "rule_id": "verified-binding-call-policy-v1",
+        "selected": "set",
+        "status": "KEEP_BASELINE",
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "driver descriptor memory",
+          "dynamic indexing/bindless",
+          "descriptor buffers"
+        ]
+      },
+      "mode": "default",
+      "policy": {
+        "max_set_allocations": 1,
+        "require_performance": false
+      },
+      "report_sha256": "41d4692684e0ef4800d2bc36788ea47c5338e12020c39818f1bc8bcb0e1cbf28",
+      "status": "BINDING_PATH_ABA_VERIFIED_NOT_PERFORMANCE"
+    },
+    {
+      "decision": {
+        "policy_scope": "application-managed descriptor-set allocation count, not Vulkan hardware capacity",
+        "reason": "verified baseline preferred unless explicit application allocation-count policy excludes it",
+        "rule_id": "verified-binding-call-policy-v1",
+        "selected": "push",
+        "status": "SELECT_ONLY_POLICY_ADMISSIBLE_PATH",
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "driver descriptor memory",
+          "dynamic indexing/bindless",
+          "descriptor buffers"
+        ]
+      },
+      "mode": "zerobudget",
+      "policy": {
+        "max_set_allocations": 0,
+        "require_performance": false
+      },
+      "report_sha256": "f05f05978da790a2331fe636164d49ca352a3108e9c7d4e6e244bbe4b54a9a19",
+      "status": "BINDING_PATH_ABA_VERIFIED_NOT_PERFORMANCE"
+    },
+    {
+      "decision": {
+        "policy_scope": "application-managed descriptor-set allocation count, not Vulkan hardware capacity",
+        "reason": "call counts cannot prove frame-time benefit",
+        "rule_id": "verified-binding-call-policy-v1",
+        "selected": null,
+        "status": "NEEDS_MEASUREMENT",
+        "unmeasured": [
+          "GPU/full-frame performance",
+          "driver descriptor memory",
+          "dynamic indexing/bindless",
+          "descriptor buffers"
+        ]
+      },
+      "mode": "performance",
+      "policy": {
+        "max_set_allocations": 1,
+        "require_performance": true
+      },
+      "report_sha256": "f87aa42c829d2501332b23e7cc6035d2d3f56e482473bc7910dc6efde6004a70",
+      "status": "BINDING_PATH_ABA_VERIFIED_NOT_PERFORMANCE"
+    }
+  ],
+  "source_sha256": {
+    "cases19/binding_choice/compute.comp": "ba6afc82419152c791dc01a2da59166af049720d5b32f24d1ffbfa5ca051908b",
+    "cases19/binding_choice/normative.json": "0159f7982d5ef5d655868c924fb69a92ba72ed4bf8943930edbed3432dc4e489",
+    "cases19/binding_choice/probe.c": "f29d3a64b63df5e6161dacd1f3790e1efc48dac2a9c1d0fedbc1532cb0dbf9b4",
+    "cases19/binding_choice/run.py": "e1ee89abc77c34ecabb9cbe48e7b64dd0e3f2e5eb4f8913d54a81bb7f31cdd49",
+    "tools/binding_choice19.py": "4bce5b679cab1a0329cd848bbe4f78cbd1dc12ca6b240c97236dbcdc98fff2fe",
+    "tools/upload_choice19.py": "7992b46ba8158d099bc8f5cb79de0a41123f3dbbdc62e4e5ccfc2297cdaf9a48"
+  },
+  "status": "PREPUBLICATION_LOCAL_BINDING_ABA",
+  "tools_sha256": {
+    "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+    "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+    "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+    "icd_manifest": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+    "layer_library": "25002892d69ff2719fdd7a92a454a15c2d271a17186bc70b625aafaf2df49a05",
+    "layer_manifest": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+    "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+    "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+    "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea"
+  },
+  "whole_C2_complete": false
+}
