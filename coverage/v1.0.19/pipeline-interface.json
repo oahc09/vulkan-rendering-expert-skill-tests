@@ -1,0 +1,312 @@
+{
+  "run_id": "39a06812-d95b-487e-a5b3-44497fc1a557",
+  "runner_sha256": "13a430935e3fed0b6c9de6254959fc36c3a77424798e186810a2dcbfb5dba241",
+  "cases": {
+    "bad-type": {
+      "result": {
+        "mode": "normal",
+        "output": 0,
+        "errors": 1,
+        "pipeline_result": -1000011001,
+        "exit_code": 0
+      },
+      "layout": [
+        {
+          "set": 0,
+          "binding": 0,
+          "type": "uniform-buffer",
+          "count": 1,
+          "stages": [
+            "compute"
+          ]
+        }
+      ],
+      "admission": {
+        "status": "REJECTED_INTERFACE",
+        "vuids": [
+          "VUID-VkComputePipelineCreateInfo-layout-07990"
+        ],
+        "remaining": [
+          "pipeline limits and specialization",
+          "buffer member offsets/ranges",
+          "descriptor writes and lifetime",
+          "memory visibility and actual dispatch output"
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "a810d12be583481ba8eaa5225f74742393463c1dfa0c430aa1b0c85e8c470cc0",
+        "stderr_sha256": "782a1102d8802cf3083880a8dd7c7a8f493cceba67ca0bf6399e6697ccc2614c"
+      },
+      "diagnostics": [
+        "VUID phase=pipeline-create id=VUID-VkComputePipelineCreateInfo-layout-07990"
+      ],
+      "memory": {
+        "type": 0,
+        "flags": 15,
+        "compatible_bits": 1
+      },
+      "binary_sha256": "08fedbefdfc272f3a3ec46fee9595a5cf964b5a2d2d99de3e56415354366f5f0",
+      "shader_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+      "status": "EXPECTED_DIAGNOSTIC_ABORT"
+    },
+    "good": {
+      "result": {
+        "mode": "normal",
+        "output": 42,
+        "errors": 0,
+        "pipeline_result": 0,
+        "exit_code": 0
+      },
+      "layout": [
+        {
+          "set": 0,
+          "binding": 0,
+          "type": "storage-buffer",
+          "count": 1,
+          "stages": [
+            "compute"
+          ]
+        }
+      ],
+      "admission": {
+        "status": "WITHIN_CHECKED_INTERFACE",
+        "vuids": [],
+        "remaining": [
+          "pipeline limits and specialization",
+          "buffer member offsets/ranges",
+          "descriptor writes and lifetime",
+          "memory visibility and actual dispatch output"
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "def161f664643cc1264854098379859dec6da0b336c13c25bcfdb7b5f34900bb",
+        "stderr_sha256": "533ea33de4e771ebdc85a5745f120e7140d82c240c2edb136b2142fd163f8a3c"
+      },
+      "diagnostics": [],
+      "memory": {
+        "type": 0,
+        "flags": 15,
+        "compatible_bits": 1
+      },
+      "binary_sha256": "d3aa53b1c7727e34c9dae3626ac315a1c32773fef526583e42e2bd2d5391a398",
+      "shader_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+      "status": "DISPATCH_READBACK_PASS"
+    },
+    "missing-binding": {
+      "result": {
+        "mode": "missing-binding",
+        "output": 0,
+        "errors": 1,
+        "pipeline_result": -1000011001,
+        "exit_code": 0
+      },
+      "layout": [
+        {
+          "set": 0,
+          "binding": 1,
+          "type": "storage-buffer",
+          "count": 1,
+          "stages": [
+            "compute"
+          ]
+        }
+      ],
+      "admission": {
+        "status": "REJECTED_INTERFACE",
+        "vuids": [
+          "VUID-VkComputePipelineCreateInfo-layout-07988"
+        ],
+        "remaining": [
+          "pipeline limits and specialization",
+          "buffer member offsets/ranges",
+          "descriptor writes and lifetime",
+          "memory visibility and actual dispatch output"
+        ]
+      },
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "fd59e1d94348fa51befe24c517ae446bd47446d7dd2783da53ae96ce275fbcdc",
+        "stderr_sha256": "9db4cf3a219e8cd1e6f078f48ad867a13b33f8fe6a870587dec2b3a07e8f5720"
+      },
+      "diagnostics": [
+        "VUID phase=pipeline-create id=VUID-VkComputePipelineCreateInfo-layout-07988"
+      ],
+      "memory": {
+        "type": 0,
+        "flags": 15,
+        "compatible_bits": 1
+      },
+      "binary_sha256": "d3aa53b1c7727e34c9dae3626ac315a1c32773fef526583e42e2bd2d5391a398",
+      "shader_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+      "status": "EXPECTED_DIAGNOSTIC_ABORT"
+    },
+    "wrong-output": {
+      "result": {
+        "mode": "wrong-output",
+        "output": 42,
+        "errors": 0,
+        "pipeline_result": 0,
+        "exit_code": 6
+      },
+      "layout": [
+        {
+          "set": 0,
+          "binding": 0,
+          "type": "storage-buffer",
+          "count": 1,
+          "stages": [
+            "compute"
+          ]
+        }
+      ],
+      "admission": {
+        "status": "WITHIN_CHECKED_INTERFACE",
+        "vuids": [],
+        "remaining": [
+          "pipeline limits and specialization",
+          "buffer member offsets/ranges",
+          "descriptor writes and lifetime",
+          "memory visibility and actual dispatch output"
+        ]
+      },
+      "log": {
+        "exit_code": 6,
+        "stdout_sha256": "d8f5cc7e8e7d0391ae5bd269364e7b9acbd9b96905bcc4c3e975417c261d8465",
+        "stderr_sha256": "533ea33de4e771ebdc85a5745f120e7140d82c240c2edb136b2142fd163f8a3c"
+      },
+      "diagnostics": [],
+      "memory": {
+        "type": 0,
+        "flags": 15,
+        "compatible_bits": 1
+      },
+      "binary_sha256": "d3aa53b1c7727e34c9dae3626ac315a1c32773fef526583e42e2bd2d5391a398",
+      "shader_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+      "status": "ORACLE_NEGATIVE_EXPECTED_FAILURE"
+    }
+  },
+  "tools": {
+    "glslangValidator": {
+      "binary_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "625bd352de44f83029feed47d4d6f2049af695d789c8d8cb6def79d2ced2a6ca",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "spirv-val": {
+      "binary_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "9141086275bff165ecd8e42834953c065be94a551a9304fb228489db06ae4450",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "spirv-dis": {
+      "binary_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "4ad5febf34f7e5635ad03c724a604a95c34f679a938afc2d971f4d46a46cffe7",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "scope": "Original deliberate shader/layout fault injection; CPU ICD actual dispatch, not external production bug or mobile qualification.",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "repair": {
+    "baseline_sha256": "98e6a7d2d8fdcc5e866b307f87d4b7b05e37ea171ad2017ac8b77209201fa776",
+    "fixed_sha256": "5f720b2a3cde62e97233cba4f772fe163c3b1cb60efdcd60832b40daafbcc757",
+    "patch_sha256": "20887e457e15a3e28607288fba4be155387e4fe2cd1dd2c568bb53a89f8905de",
+    "log": {
+      "exit_code": 0,
+      "stdout_sha256": "363d71e42616b4bad60830f248cc05ef03a46a4fad89b93d84d7daba01942411",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "baseline_binary_sha256": "08fedbefdfc272f3a3ec46fee9595a5cf964b5a2d2d99de3e56415354366f5f0",
+    "baseline_build": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "fixed_binary_sha256": "d3aa53b1c7727e34c9dae3626ac315a1c32773fef526583e42e2bd2d5391a398",
+    "fixed_build": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "shader": {
+    "source_sha256": "5d8d67295af2d7d936f242853a39a10bafbcdbd952657ad4578f0e609bb859de",
+    "spirv_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+    "disassembly_sha256": "f229b6ea7172573abc551f847941d35f40bbb98183ea94ee0ca4ded945e77961",
+    "target_env": "vulkan1.1",
+    "capabilities": [
+      "Shader"
+    ],
+    "extensions": [],
+    "compile": {
+      "exit_code": 0,
+      "stdout_sha256": "1b3889116856d8b8e7ec3eb9c53aca2cd4bcbeaef06b4cb9050b65752d4a73cc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validate": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "disassemble": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "rule_sha256": "236be83f33d741a7e7a55deefd8c049331638a5304b3f29285e3e7919a8798a1",
+  "reflection": {
+    "status": "BOUNDED_REFLECTION",
+    "artifact_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+    "disassembly_sha256": "f229b6ea7172573abc551f847941d35f40bbb98183ea94ee0ca4ded945e77961",
+    "entrypoint": "main",
+    "descriptors": [
+      {
+        "set": 0,
+        "binding": 0,
+        "type": "storage-buffer",
+        "count": 1,
+        "stage": "compute"
+      }
+    ]
+  },
+  "validation_record": {
+    "artifact_sha256": "328958f94d09ad80d66a6b89bd5b13b7b3a0a371fbcd067e65b603f6a3399bf9",
+    "disassembly_sha256": "f229b6ea7172573abc551f847941d35f40bbb98183ea94ee0ca4ded945e77961",
+    "exit_code": 0,
+    "target_env": "vulkan1.1"
+  },
+  "identity": {
+    "device_type": 4,
+    "vendor_id": 65541,
+    "device_id": 0,
+    "driver": 1,
+    "api": 4210993,
+    "storage_limit": 1000000,
+    "range_limit": 134217728,
+    "invocations": 1024,
+    "layer_spec": 4210997,
+    "layer_impl": 1
+  },
+  "status": "BOUNDED_PIPELINE_INTERFACE_REPAIR_PASS",
+  "limitations": [
+    "Not external engineering acceptance.",
+    "wrong-output is an oracle negative, not an independent discovered GPU fault.",
+    "Coherent CPU memory only; no noncoherent or mobile claim.",
+    "Ordinary Validation only; not SyncVal or GPU-AV."
+  ]
+}

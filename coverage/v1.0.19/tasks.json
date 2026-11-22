@@ -1,0 +1,254 @@
+[
+  {
+    "id": "ALL19-01",
+    "task": "新Headers/SDK配旧driver；对照真实支持的新设备",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-02",
+    "task": "promoted核心路径；对照旧核心+扩展路径",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-03",
+    "task": "同queue不同host线程；对照独立受控queue",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-04",
+    "task": "非coherent上传/回读；对照coherent且生命周期仍有约束",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-05",
+    "task": "sparse binding-only；对照完整residency/mip-tail支持",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-06",
+    "task": "alias/new generation；对照仍in-flight旧资源",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-07",
+    "task": "binary acquire/present；对照内部timeline",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-08",
+    "task": "GPU提交完成但present未退休；对照已证明退休",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-09",
+    "task": "descriptor更新/新heap；对照旧consumer未完成",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-10",
+    "task": "FP16/subgroup可用；对照存储/阶段/大小不同",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-11",
+    "task": "GPL/Binary/Shader Object候选；对照缓存失效或缺能力",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-12",
+    "task": "DGC/Mesh/Indirect Count；对照基础fixed-slot路径",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-13",
+    "task": "MSAA/local-read/blend；对照format/samples不满足",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-14",
+    "task": "Query尚未available；对照合法计时读取",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-15",
+    "task": "多Surface销毁其中一个；对照共享Device丢失",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-16",
+    "task": "query-only；对照RT Pipeline/SBT",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-17",
+    "task": "Video decode/encode profile；对照平台codec+AHB",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-18",
+    "task": "外部FD导入成功；对照失败或pending消费者",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-19",
+    "task": "protected资源；对照普通可读回资源",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-20",
+    "task": "device group/multi-device；对照portability单设备",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-21",
+    "task": "tensor/cooperative/optical-flow候选；对照只有仿真支持",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-22",
+    "task": "XR多view和多Surface；对照单view",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-23",
+    "task": "SC固定资源/离线流程；对照普通Vulkan运行时策略",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "ALL19-24",
+    "task": "tool clean、错误经验、隐藏rubric或无权限操作请求",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-01",
+    "task": "陌生Renderer架构与版本升级评估",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-02",
+    "task": "acquire失败后frame fence永久等待",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-03",
+    "task": "resize后旧descriptor/image view偶发闪烁",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-04",
+    "task": "Android两个Engine其中一个销毁导致另一黑屏",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-05",
+    "task": "首次切换效果严重卡顿",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-06",
+    "task": "3DGS或透明点数减少但GPU时间不降",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-07",
+    "task": "跨queue compute生成indirect结果错误",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-08",
+    "task": "流式资源取消与OOM时泄漏或use-after-free",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-09",
+    "task": "query-only设备AS读取报错",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-10",
+    "task": "媒体/Video帧或外部同步生命周期错误",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-11",
+    "task": "仿真/时域/字体atlas更新导致动态画质异常",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  },
+  {
+    "id": "E2E19-12",
+    "task": "同一优化在第二设备或新driver退化",
+    "acceptance_ref": "reviewer-only",
+    "status": "UNVERIFIED",
+    "provenance": "original plan 2026-11-14; no model execution"
+  }
+]

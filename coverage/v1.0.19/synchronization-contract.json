@@ -1,0 +1,133 @@
+{
+  "status": "SOURCE_PAIRED_HOST_CONTRACT_CONTROLS",
+  "case_count": 20,
+  "evidence_kind": "DECLARED_FACTS_HOST_CONTROLS_NOT_GPU",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "release_status": "BLOCKED",
+  "implementation_sha256": {
+    "checks19/run_sync_contracts.py": "ef536c3108f7c876196f74452532668149b8a80fce80c9b8f00516636629d392",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "tools/normative_prose19.py": "e4095700ba2d86de709d53338bfc267bbcb840f80646201d98690a4776a5c659",
+    "tools/sync_contract19.py": "219066db5399583463700edc0c47579d543c2563284ff5d9cd3d5a8e9eacada3"
+  },
+  "report_sha256": "f5189decf9a4cba4affda2882e5442c1d1ba8dbdec32ec5e1784975ffe8f9054",
+  "cohort": "prepublication exact implementation hashes; not final tests head",
+  "source_versions": {
+    "prose": {
+      "api_version": "1.4.368",
+      "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "copyright": "Khronos Group",
+      "license": "CC-BY-4.0",
+      "path": "chapters/synchronization.adoc",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "source_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/synchronization.adoc"
+    },
+    "range_vuid": {
+      "api_version": "1.4.309",
+      "file": "validusage.json",
+      "schema_version": 2,
+      "separate_from_vk_xml_api": "1.4.368",
+      "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+      "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+      "source_kind": "official Debian Vulkan headers registry snapshot"
+    }
+  },
+  "controls": [
+    {
+      "name": "raw-complete",
+      "result": "CALLER_FACTS_SUFFICIENT"
+    },
+    {
+      "name": "waw-complete",
+      "result": "CALLER_FACTS_SUFFICIENT"
+    },
+    {
+      "name": "raw-only-order-and-fence",
+      "result": "INSUFFICIENT_DEPENDENCY"
+    },
+    {
+      "name": "raw-execution-only",
+      "result": "INSUFFICIENT_DEPENDENCY"
+    },
+    {
+      "name": "war-execution-only",
+      "result": "CALLER_FACTS_SUFFICIENT"
+    },
+    {
+      "name": "raw-unknown-scope",
+      "result": "UNKNOWN"
+    },
+    {
+      "name": "unaligned-valid",
+      "result": "RANGE_WITHIN_SCOPE"
+    },
+    {
+      "name": "whole-valid",
+      "result": "RANGE_WITHIN_SCOPE"
+    },
+    {
+      "name": "zero-size",
+      "result": "REJECTED"
+    },
+    {
+      "name": "overrun",
+      "result": "REJECTED"
+    },
+    {
+      "name": "offset-at-end",
+      "result": "REJECTED"
+    },
+    {
+      "name": "same-family",
+      "result": "NO_FAMILY_TRANSFER_REQUIRED"
+    },
+    {
+      "name": "cross-family",
+      "result": "OWNERSHIP_TRANSFER_REQUIRED"
+    },
+    {
+      "name": "concurrent-not-inferred",
+      "result": "UNKNOWN"
+    },
+    {
+      "name": "flushed-prior-host-write",
+      "result": "EXPLICIT_HOST_WRITE_BARRIER_NOT_REQUIRED_FOR_THIS_DEPENDENCY"
+    },
+    {
+      "name": "coherent-prior-host-write",
+      "result": "EXPLICIT_HOST_WRITE_BARRIER_NOT_REQUIRED_FOR_THIS_DEPENDENCY"
+    },
+    {
+      "name": "host-missing-required_flush_completed",
+      "result": "UNKNOWN"
+    },
+    {
+      "name": "host-missing-write_happens_before_submission",
+      "result": "UNKNOWN"
+    },
+    {
+      "name": "host-missing-host_memory_model_ordered",
+      "result": "UNKNOWN"
+    },
+    {
+      "name": "host-missing-no_inflight_conflicting_access",
+      "result": "UNKNOWN"
+    }
+  ],
+  "card_changes": [
+    {
+      "path": "references/03_api_manual/08_synchronization/buffer_memory_barrier.md",
+      "before_commit": "d15782e8a4465dfe42c320d354647abb2ffebd2b",
+      "after_commit": "a1b645f184697e4bb46f09ae1995fafa9c3455fc",
+      "before_sha256": "02385f154223f56c4bb5dd2a1860054a51a14de4cf5c6e5a23d790d81ae410c4",
+      "after_sha256": "8ee2d37c3b53bd45d93653759d6cb31cb1d38576b76ba8fe17daa42d97ffb479"
+    },
+    {
+      "path": "references/03_api_manual/08_synchronization/pipeline_barrier.md",
+      "before_commit": "d15782e8a4465dfe42c320d354647abb2ffebd2b",
+      "after_commit": "a1b645f184697e4bb46f09ae1995fafa9c3455fc",
+      "before_sha256": "c45b2d8451655251ea6632c89ff1d33844e2986806171936b68e579efe36a562",
+      "after_sha256": "3992992475af3827f423c98694989de93ef03254e97bf698fdf41de9ac769ea4"
+    }
+  ]
+}

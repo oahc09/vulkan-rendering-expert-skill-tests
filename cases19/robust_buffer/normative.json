@@ -1,0 +1,32 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "entries": [
+    {
+      "owner": "VkDescriptorBufferInfo",
+      "condition": "core",
+      "vuid": "VUID-VkDescriptorBufferInfo-buffer-02998",
+      "text": "If the <a href=\"#features-nullDescriptor\"><code>nullDescriptor</code></a> feature is not enabled, <code>buffer</code> <strong class=\"purple\">must</strong> not be <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>",
+      "page": "chapters/descriptorsets.html"
+    },
+    {
+      "owner": "VkDescriptorBufferInfo",
+      "condition": "core",
+      "vuid": "VUID-VkDescriptorBufferInfo-buffer-02999",
+      "text": "If <code>buffer</code> is <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, <code>offset</code> <strong class=\"purple\">must</strong> be zero and <code>range</code> <strong class=\"purple\">must</strong> be <code>VK_WHOLE_SIZE</code>",
+      "page": "chapters/descriptorsets.html"
+    },
+    {
+      "owner": "VkPhysicalDeviceRobustness2FeaturesEXT",
+      "condition": "core",
+      "vuid": "VUID-VkPhysicalDeviceRobustness2FeaturesEXT-robustBufferAccess2-04000",
+      "text": "If <code>robustBufferAccess2</code> is enabled then <a href=\"#features-robustBufferAccess\"><code>robustBufferAccess</code></a> <strong class=\"purple\">must</strong> also be enabled",
+      "page": "chapters/features.html"
+    }
+  ]
+}

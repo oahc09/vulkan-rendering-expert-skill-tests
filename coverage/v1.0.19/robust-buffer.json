@@ -1,0 +1,467 @@
+{
+  "run_id": "441ecaa3-52c2-412f-bdf3-91fbc0c1f5b2",
+  "source_sha256": "69dcb09836e97c5b584f043516d8c39aabc51c70c85a39cb47d5654ae57ac5b9",
+  "runner_sha256": "f888f96bd40ecbbc40e6d59fb5360b33d1196f0903097e45ee4e538d1abd1166",
+  "shader_sha256": "5370c19bbd2164de9b11e971bd46738ad01f35f986871744b713394c6b09943c",
+  "rules_sha256": "ae7b83290a9ee643df728d464c30f9feee3f7ba95bbd6e62461288310d5abe4a",
+  "binary_sha256": "fbcf6c23ffa35e3ee40ae7548c9ca23727bb7dfac99bc08c43520489c018261d",
+  "spirv_sha256": "b8da40ca05b66605576e476b95b2bd26d33a1527aa446cefbb6f9afac02c6471",
+  "disassembly_sha256": "429506bbcd1591cd9e9e54e6a30e89157461a6bf0045eec73b352e8eea94f204",
+  "normative_sha256": "6c8a3587af681845b07a43dd5e177e5a39d0b97acf47f5879466de00847bdb97",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "tools": {
+    "glslangValidator": {
+      "sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+    },
+    "spirv-val": {
+      "sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+    },
+    "spirv-dis": {
+      "sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+    }
+  },
+  "shader_structure": {
+    "localSize": [
+      1,
+      1,
+      1
+    ],
+    "atomicInstructions": 0,
+    "protected_loads": [
+      [
+        75,
+        "%src"
+      ],
+      [
+        82,
+        "%src"
+      ],
+      [
+        88,
+        "%src"
+      ],
+      [
+        92,
+        "%nil"
+      ]
+    ],
+    "protected_stores": [
+      [
+        99,
+        "%src"
+      ],
+      [
+        101,
+        "%nil"
+      ]
+    ],
+    "scope": "Bounded disassembly structure check; not general SPIR-V semantic proof."
+  },
+  "compile": {
+    "exit_code": 0,
+    "stdout_sha256": "d780232b29da91a4ccfd4d907c315ebba6f499b86df31132c6bb889358754525",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "validate": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "disassemble": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cases": {
+    "good": {
+      "records": [
+        {
+          "kind": "identity",
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "extensionSupported": 1,
+          "coreSupported": 1,
+          "buffer2Supported": 1,
+          "nullSupported": 1,
+          "coreEnabled": 1,
+          "buffer2Enabled": 1,
+          "nullEnabled": 1,
+          "alignment": 1,
+          "range": 16,
+          "sourceSize": 32,
+          "oobReadIndex": 4,
+          "oobWriteIndex": 5
+        },
+        {
+          "kind": "allocation",
+          "index": 0,
+          "size": 32,
+          "requirementsSize": 32,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15
+        },
+        {
+          "kind": "allocation",
+          "index": 1,
+          "size": 16,
+          "requirementsSize": 16,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15
+        },
+        {
+          "kind": "contract",
+          "extensionEnabled": true,
+          "sourceOffset": 0,
+          "outputRange": 16,
+          "nullOffset": 0,
+          "nullWholeSize": true,
+          "maxStorageRange": 134217728,
+          "maxStageStorageBuffers": 1000000,
+          "maxSetStorageBuffers": 1000000
+        },
+        {
+          "kind": "pipeline",
+          "pipelineOverrideAbsent": true
+        },
+        {
+          "kind": "dispatch",
+          "pushN": 4,
+          "pushSize": 4,
+          "groups": [
+            1,
+            1,
+            1
+          ],
+          "maxInvocations": 1024,
+          "maxLocalX": 1024,
+          "maxGroupX": 65535,
+          "maxPushConstantSize": 256
+        },
+        {
+          "kind": "dependency",
+          "srcStage": 2048,
+          "dstStage": 16384,
+          "srcAccess": 64,
+          "dstAccess": 8192
+        },
+        {
+          "kind": "source-readback",
+          "values": [
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+          ]
+        },
+        {
+          "kind": "readback",
+          "output": [
+            100,
+            103,
+            0,
+            0
+          ],
+          "fullSourceUnchanged": true,
+          "expected": [
+            100,
+            103,
+            0,
+            0
+          ]
+        },
+        {
+          "kind": "final",
+          "submitted": true,
+          "fenceCompleted": true,
+          "errors": 0,
+          "rc": 0
+        }
+      ],
+      "null_admission": {
+        "status": "NULL_UPDATE_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "access_admission": {
+        "status": "ROBUST2_BUFFER_WITHIN_SCOPE",
+        "read": {
+          "status": "ZERO_REQUIRED",
+          "rounded_range": 16
+        },
+        "write": {
+          "status": "DISCARD_REQUIRED",
+          "rounded_range": 16
+        },
+        "null_access": "zero loads; stores discarded; not classified as out-of-bounds",
+        "scope": "query/enable metadata only; actual shader ordering, synchronization and readback verified separately"
+      },
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "da5c38640c9ea010f845238f9251dd2486da5c653509076335dff0e277edf7c5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "wrong-output": {
+      "records": [
+        {
+          "kind": "identity",
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "extensionSupported": 1,
+          "coreSupported": 1,
+          "buffer2Supported": 1,
+          "nullSupported": 1,
+          "coreEnabled": 1,
+          "buffer2Enabled": 1,
+          "nullEnabled": 1,
+          "alignment": 1,
+          "range": 16,
+          "sourceSize": 32,
+          "oobReadIndex": 4,
+          "oobWriteIndex": 5
+        },
+        {
+          "kind": "allocation",
+          "index": 0,
+          "size": 32,
+          "requirementsSize": 32,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15
+        },
+        {
+          "kind": "allocation",
+          "index": 1,
+          "size": 16,
+          "requirementsSize": 16,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15
+        },
+        {
+          "kind": "contract",
+          "extensionEnabled": true,
+          "sourceOffset": 0,
+          "outputRange": 16,
+          "nullOffset": 0,
+          "nullWholeSize": true,
+          "maxStorageRange": 134217728,
+          "maxStageStorageBuffers": 1000000,
+          "maxSetStorageBuffers": 1000000
+        },
+        {
+          "kind": "pipeline",
+          "pipelineOverrideAbsent": true
+        },
+        {
+          "kind": "dispatch",
+          "pushN": 4,
+          "pushSize": 4,
+          "groups": [
+            1,
+            1,
+            1
+          ],
+          "maxInvocations": 1024,
+          "maxLocalX": 1024,
+          "maxGroupX": 65535,
+          "maxPushConstantSize": 256
+        },
+        {
+          "kind": "dependency",
+          "srcStage": 2048,
+          "dstStage": 16384,
+          "srcAccess": 64,
+          "dstAccess": 8192
+        },
+        {
+          "kind": "source-readback",
+          "values": [
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107
+          ]
+        },
+        {
+          "kind": "readback",
+          "output": [
+            100,
+            103,
+            0,
+            0
+          ],
+          "fullSourceUnchanged": true,
+          "expected": [
+            100,
+            103,
+            1,
+            0
+          ]
+        },
+        {
+          "kind": "final",
+          "submitted": true,
+          "fenceCompleted": true,
+          "errors": 0,
+          "rc": 6
+        }
+      ],
+      "null_admission": {
+        "status": "NULL_UPDATE_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "access_admission": {
+        "status": "ROBUST2_BUFFER_WITHIN_SCOPE",
+        "read": {
+          "status": "ZERO_REQUIRED",
+          "rounded_range": 16
+        },
+        "write": {
+          "status": "DISCARD_REQUIRED",
+          "rounded_range": 16
+        },
+        "null_access": "zero loads; stores discarded; not classified as out-of-bounds",
+        "scope": "query/enable metadata only; actual shader ordering, synchronization and readback verified separately"
+      },
+      "diagnostics": [],
+      "exit_code": 6,
+      "stdout_sha256": "98597c32954f28f8b5734b49cd9df88fb6bc893200a3c3894e0e9a3ed0eb2ad0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "null-disabled": {
+      "records": [
+        {
+          "kind": "identity",
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "extensionSupported": 1,
+          "coreSupported": 1,
+          "buffer2Supported": 1,
+          "nullSupported": 1,
+          "coreEnabled": 1,
+          "buffer2Enabled": 1,
+          "nullEnabled": 0,
+          "alignment": 1,
+          "range": 16,
+          "sourceSize": 32,
+          "oobReadIndex": 4,
+          "oobWriteIndex": 5
+        },
+        {
+          "kind": "allocation",
+          "index": 0,
+          "size": 32,
+          "requirementsSize": 32,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15
+        },
+        {
+          "kind": "allocation",
+          "index": 1,
+          "size": 16,
+          "requirementsSize": 16,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15
+        },
+        {
+          "kind": "contract",
+          "extensionEnabled": true,
+          "sourceOffset": 0,
+          "outputRange": 16,
+          "nullOffset": 0,
+          "nullWholeSize": true,
+          "maxStorageRange": 134217728,
+          "maxStageStorageBuffers": 1000000,
+          "maxSetStorageBuffers": 1000000
+        },
+        {
+          "kind": "final",
+          "submitted": false,
+          "fenceCompleted": false,
+          "errors": 1,
+          "rc": 0
+        }
+      ],
+      "null_admission": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkDescriptorBufferInfo-buffer-02998"
+        ]
+      },
+      "access_admission": null,
+      "diagnostics": [
+        "VUID-VkDescriptorBufferInfo-buffer-02998"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "a5f48810c99ef08e8cb08ae1b1e057b860cb4bade9f0dff751aeb3d6ace61c9c",
+      "stderr_sha256": "57b376f93eecc82063405c23d00e2cee71bb24faf23700fa57948aabe8da7b3d"
+    }
+  },
+  "status": "BOUNDED_ROBUST2_BUFFER_PASS",
+  "limitations": [
+    "CPU ICD authored experiment, not production bug or physical GPU evidence.",
+    "Two distinct allocations; third descriptor is genuinely NULL, not a dummy allocation.",
+    "Only ordinary uint32 SSBO; no atomics, image robustness, BDA or pipeline overrides.",
+    "No disabled-robustness OOB execution; null-disabled update aborts before bind/dispatch.",
+    "Wrong-output expects OOB read 1 instead of normative 0; independent oracle rejection, not a VVL diagnosis.",
+    "Coherent memory only; complete guard bytes checked. Not full VK18 acceptance."
+  ]
+}

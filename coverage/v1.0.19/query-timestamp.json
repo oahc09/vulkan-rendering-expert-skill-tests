@@ -1,0 +1,502 @@
+{
+  "run_id": "dcf9be8b-9d79-472c-bd4c-17d3cf99cc33",
+  "source_sha256": "9276fb12a63f3417dff86f9f23e070036dfe8b252c03bf15f414be619e3c2584",
+  "runner_sha256": "60e3235919aaa6921989843182f681af74959b7496c270b7f44774c42cf0dd5c",
+  "rules_sha256": "92dfae2cc7d6abdecb5614873ea6bb2e814d76866c6493b2b3c046efd0fd9aaa",
+  "binary_sha256": "45ee1aeb764e52a0a4f16bbdc088b46cb326a7338f478c01ae2aab29379d45dc",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "good": {
+      "range_rules": {
+        "status": "RANGE_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "write_rules": [
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        },
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        }
+      ],
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "unwritten": {
+          "kind": "unwritten",
+          "result": 1,
+          "availability": [
+            0,
+            0
+          ]
+        },
+        "write_config": {
+          "kind": "write_config",
+          "poolType": 2,
+          "poolCount": 2,
+          "queries": [
+            0,
+            1
+          ],
+          "stages": [
+            1,
+            8192
+          ],
+          "resetCompleted": true,
+          "alreadyWritten": false
+        },
+        "fill": {
+          "kind": "fill",
+          "words": 1024,
+          "expected": 42,
+          "memoryFlags": 15
+        },
+        "get_config": {
+          "kind": "get_config",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "stride": 16,
+          "dataSize": 40,
+          "flags": 5
+        },
+        "completed": {
+          "kind": "completed",
+          "values": [
+            49709338391406,
+            49709338700663
+          ],
+          "availability": [
+            1,
+            1
+          ],
+          "fenceCompleted": true,
+          "resetCompleted": true,
+          "generation": 1
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 0
+        }
+      },
+      "exit_code": 0,
+      "diagnostics": [],
+      "layout_rules": {
+        "status": "LAYOUT_WITHIN_SCOPE",
+        "vuids": [],
+        "required_bytes": 32,
+        "limitation": "pData address alignment and accessible storage are separate caller obligations"
+      },
+      "interpretation": {
+        "status": "UNKNOWN_WRAP"
+      },
+      "normative": null,
+      "stdout_sha256": "06942a391de5b947075a42be87dfd6edf382d6476546e6b4c1e30f4ed526bf50",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stride": {
+      "range_rules": {
+        "status": "RANGE_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "write_rules": [
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        },
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        }
+      ],
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "unwritten": {
+          "kind": "unwritten",
+          "result": 1,
+          "availability": [
+            0,
+            0
+          ]
+        },
+        "write_config": {
+          "kind": "write_config",
+          "poolType": 2,
+          "poolCount": 2,
+          "queries": [
+            0,
+            1
+          ],
+          "stages": [
+            1,
+            8192
+          ],
+          "resetCompleted": true,
+          "alreadyWritten": false
+        },
+        "fill": {
+          "kind": "fill",
+          "words": 1024,
+          "expected": 42,
+          "memoryFlags": 15
+        },
+        "get_config": {
+          "kind": "get_config",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "stride": 16,
+          "dataSize": 40,
+          "flags": 5
+        },
+        "completed": {
+          "kind": "completed",
+          "values": [
+            49709465773483,
+            49709465900375
+          ],
+          "availability": [
+            1,
+            1
+          ],
+          "fenceCompleted": true,
+          "resetCompleted": true,
+          "generation": 1
+        },
+        "negative": {
+          "kind": "negative",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "result": -1000011001,
+          "stride": 17,
+          "dataSize": 40,
+          "flags": 5
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "exit_code": 0,
+      "diagnostics": [
+        "stride VUID-vkGetQueryPoolResults-flags-00815"
+      ],
+      "layout_rules": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-vkGetQueryPoolResults-flags-00815"
+        ],
+        "required_bytes": 33,
+        "limitation": "pData address alignment and accessible storage are separate caller obligations"
+      },
+      "interpretation": {
+        "status": "UNKNOWN_WRAP"
+      },
+      "normative": {
+        "vuid": "VUID-vkGetQueryPoolResults-flags-00815",
+        "text": "If <code>VK_QUERY_RESULT_64_BIT</code> is set in <code>flags</code> then <code>pData</code> and <code>stride</code> <strong class=\"purple\">must</strong> be multiples of <code>8</code>",
+        "page": "chapters/queries.html"
+      },
+      "stdout_sha256": "011b2d7e5f1e9b83074e9298855531347fc692b595e57eb5d6137ca6d569d12c",
+      "stderr_sha256": "19f653b33220577b33bc76b99dac936ed1e5f08b38fc6d91e13c7656356885d0"
+    },
+    "size": {
+      "range_rules": {
+        "status": "RANGE_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "write_rules": [
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        },
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        }
+      ],
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "unwritten": {
+          "kind": "unwritten",
+          "result": 1,
+          "availability": [
+            0,
+            0
+          ]
+        },
+        "write_config": {
+          "kind": "write_config",
+          "poolType": 2,
+          "poolCount": 2,
+          "queries": [
+            0,
+            1
+          ],
+          "stages": [
+            1,
+            8192
+          ],
+          "resetCompleted": true,
+          "alreadyWritten": false
+        },
+        "fill": {
+          "kind": "fill",
+          "words": 1024,
+          "expected": 42,
+          "memoryFlags": 15
+        },
+        "get_config": {
+          "kind": "get_config",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "stride": 16,
+          "dataSize": 40,
+          "flags": 5
+        },
+        "completed": {
+          "kind": "completed",
+          "values": [
+            49709608442619,
+            49709608571816
+          ],
+          "availability": [
+            1,
+            1
+          ],
+          "fenceCompleted": true,
+          "resetCompleted": true,
+          "generation": 1
+        },
+        "negative": {
+          "kind": "negative",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "result": -1000011001,
+          "stride": 16,
+          "dataSize": 24,
+          "flags": 5
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "exit_code": 0,
+      "diagnostics": [
+        "size VUID-vkGetQueryPoolResults-dataSize-00817"
+      ],
+      "layout_rules": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-vkGetQueryPoolResults-dataSize-00817"
+        ],
+        "required_bytes": 32,
+        "limitation": "pData address alignment and accessible storage are separate caller obligations"
+      },
+      "interpretation": {
+        "status": "UNKNOWN_WRAP"
+      },
+      "normative": {
+        "vuid": "VUID-vkGetQueryPoolResults-dataSize-00817",
+        "text": "<code>dataSize</code> <strong class=\"purple\">must</strong> be large enough to contain the result of each query, as described <a href=\"#queries-operation-memorylayout\">here</a>",
+        "page": "chapters/queries.html"
+      },
+      "stdout_sha256": "96aee805127f1b63746c50c2d37f1d1b4e658606ca8be6bd0e86ca470c343919",
+      "stderr_sha256": "680cb7ee221973041c77c7d1358e351fe82476dfa901fd0cadfef45ec6ee9a08"
+    },
+    "partial": {
+      "range_rules": {
+        "status": "RANGE_WITHIN_SCOPE",
+        "vuids": []
+      },
+      "write_rules": [
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        },
+        {
+          "status": "WRITE_WITHIN_SCOPE",
+          "vuids": [],
+          "limitation": "caller must independently establish reset execution, exclusive slot ownership, queue/stage support; recording reset alone is insufficient"
+        }
+      ],
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "unwritten": {
+          "kind": "unwritten",
+          "result": 1,
+          "availability": [
+            0,
+            0
+          ]
+        },
+        "write_config": {
+          "kind": "write_config",
+          "poolType": 2,
+          "poolCount": 2,
+          "queries": [
+            0,
+            1
+          ],
+          "stages": [
+            1,
+            8192
+          ],
+          "resetCompleted": true,
+          "alreadyWritten": false
+        },
+        "fill": {
+          "kind": "fill",
+          "words": 1024,
+          "expected": 42,
+          "memoryFlags": 15
+        },
+        "get_config": {
+          "kind": "get_config",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "stride": 16,
+          "dataSize": 40,
+          "flags": 5
+        },
+        "completed": {
+          "kind": "completed",
+          "values": [
+            49709677298806,
+            49709677455221
+          ],
+          "availability": [
+            1,
+            1
+          ],
+          "fenceCompleted": true,
+          "resetCompleted": true,
+          "generation": 1
+        },
+        "negative": {
+          "kind": "negative",
+          "firstQuery": 0,
+          "queryCount": 2,
+          "poolCount": 2,
+          "result": -1000011001,
+          "stride": 16,
+          "dataSize": 40,
+          "flags": 13
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "exit_code": 0,
+      "diagnostics": [
+        "partial VUID-vkGetQueryPoolResults-queryType-09439"
+      ],
+      "layout_rules": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-vkGetQueryPoolResults-queryType-09439"
+        ],
+        "required_bytes": 32,
+        "limitation": "pData address alignment and accessible storage are separate caller obligations"
+      },
+      "interpretation": {
+        "status": "UNKNOWN_WRAP"
+      },
+      "normative": {
+        "vuid": "VUID-vkGetQueryPoolResults-queryType-09439",
+        "text": "If the <code>queryType</code> used to create <code>queryPool</code> was <code>VK_QUERY_TYPE_TIMESTAMP</code>, <code>flags</code> <strong class=\"purple\">must</strong> not contain <code>VK_QUERY_RESULT_PARTIAL_BIT</code>",
+        "page": "chapters/queries.html"
+      },
+      "stdout_sha256": "e1b12447b5eda7c08705b19f8f7e45655a18145a791a65b60c5f079cefb6b57c",
+      "stderr_sha256": "a0f04630a4312e07eece2c951e6c5cf180a51b77c039e2d3c841b9f21405a3dd"
+    }
+  },
+  "status": "BOUNDED_QUERY_LIFECYCLE_PASS",
+  "limitations": [
+    "CPU ICD implementation timestamps, not physical GPU performance or pure fill time.",
+    "No independently justified elapsed upper bound: actual timestamp duration remains UNKNOWN_WRAP.",
+    "Generation stale-result rejection is CPU policy, not an additional device experiment.",
+    "No host-reset/occlusion/performance/calibrated timestamp/multiqueue coverage.",
+    "Original deliberate API misuse; callback aborts before invalid driver call."
+  ]
+}

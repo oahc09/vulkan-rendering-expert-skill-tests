@@ -1,0 +1,134 @@
+{
+  "status": "FIXED_ALL_VU_AND_TWO_REFERENCE_PAGES_RECHECKED",
+  "scope": "VULKAN_1_4_ALL_REGISTERED_EXTENSIONS_NOT_SC; TWO_REFERENCE_HTML_PAGES",
+  "limitations": [
+    "not all reference HTML pages rendered",
+    "official Draft4 schema weak, Ruby json-schema not installed",
+    "fixed cohort agreement is not independent general normative semantic proof"
+  ],
+  "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "runtime_sha256": "e671705e714c0ccbd9113a18a97c8d22a18d0af4326dc4108940b72e3bb2e709",
+  "implementation": {
+    "checks19/generate_reference19.py": "d182246f2500d24274da4db74e148c9123bfa0523e323a8cb25cec168acac7b7",
+    "tools/reference_generation19.py": "6e398bb4ec5fbf1e3188ad75de4f5de22ce5406dcf3590cefe3cd2956aa36258",
+    "tools/validusage_observer19.rb": "d7b4b9dd79fe51c256b53ee819168516c30c7484ad4a0545486f917cad933fd1",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "vu_observation": {
+    "status": "FIXED_OBSERVATION_MATRIX_RECHECKED",
+    "events": 60886,
+    "push_events": 8349,
+    "condition_events": 52537,
+    "tag_selections": 477,
+    "quiet_missing": 0,
+    "normalized_sha256": "be6c83c7bbc19d0fc270bc4d400222af5bcb18c6a64ccd59fa894941d87f943e",
+    "boundary": "fixed observed cohort plus actual engine controls; not a general conditional/tag solver; no at_exit marker assumed"
+  },
+  "deterministic_validusage_sha256": "0b17ea2578b1c782b9c485cfe7bb8689bab227f23bf17dc8df764278a2423bf7",
+  "controls": {
+    "quiet_missing": {
+      "authority": "EXPLICIT_OVERLAY",
+      "path": "gen/validity/structs/VkMemoryDedicatedRequirements.adoc",
+      "before_sha256": "4b4583b02b8c60135819502b92277bd0a511c946e43e766c6478dac90630317a",
+      "after_sha256": null,
+      "official_exit": 0,
+      "strict_rejected": true
+    },
+    "page_missing": {
+      "authority": "EXPLICIT_OVERLAY",
+      "vuid": "VUID-vkBindBufferMemory-memory-01035",
+      "official_exit": 0,
+      "strict_rejected": true,
+      "before_sha256": "667b08208c772daa132285a9c25fd2b9f3ff84c29d5fd92c17052716cd19fd61",
+      "after_sha256": "1caab88a9e9018d8c976e4c54ff89dd6cce72b2d94ed639998d8ba6c4c24c864"
+    }
+  },
+  "evidence_scope": "DEVELOPMENT_V2_NOT_PUBLISHED_HEAD_REPLAY",
+  "report_sha256": "a66555a86401289045cc744a9c278f30119c759dd08bb31f6b953b37b533a7df",
+  "observed_tests_head": "74c156c7e8ab4890bf391f5059f20471d5f6bcac",
+  "step_results": [
+    {
+      "label": "ruby-ldd",
+      "returncode": 0
+    },
+    {
+      "label": "node-ldd",
+      "returncode": 0
+    },
+    {
+      "label": "lxml-ldd",
+      "returncode": 0
+    },
+    {
+      "label": "python-imports",
+      "returncode": 0
+    },
+    {
+      "label": "baseline-generated",
+      "returncode": 0
+    },
+    {
+      "label": "baseline-validusage",
+      "returncode": 0
+    },
+    {
+      "label": "baseline-references",
+      "returncode": 0
+    },
+    {
+      "label": "baseline-schema",
+      "returncode": 0
+    },
+    {
+      "label": "observed-generated",
+      "returncode": 0
+    },
+    {
+      "label": "observed-validusage",
+      "returncode": 0
+    },
+    {
+      "label": "observed-references",
+      "returncode": 0
+    },
+    {
+      "label": "observed-schema",
+      "returncode": 0
+    },
+    {
+      "label": "quiet-missing",
+      "returncode": 0
+    },
+    {
+      "label": "page-missing",
+      "returncode": 0
+    }
+  ],
+  "reference_sources": 3553,
+  "reference_html": [
+    {
+      "page": "VkMemoryDedicatedRequirements",
+      "html_sha256": "ec961bc502dad2fd3bfed3bb153c1cb7e91dbcc77982a8bc951e18ce88cdbd7b",
+      "bytes": 51455,
+      "checked_vuid": "VUID-VkMemoryDedicatedRequirements-sType-sType"
+    },
+    {
+      "page": "vkBindBufferMemory",
+      "html_sha256": "b704b42ac41146d7a28d90c9d61202a011ea8f213e9f68f7d069260819248469",
+      "bytes": 61589,
+      "checked_vuid": "VUID-vkBindBufferMemory-memory-01035"
+    }
+  ],
+  "owners": 2251,
+  "vuid_count": 27464,
+  "attributes": {
+    "core": 20,
+    "extensions": 482,
+    "provisional_extensions_included": 5
+  },
+  "original_acceptance": "UNVERIFIED_24_ALL19_AND_12_E2E19",
+  "next": "Published-head replay and independent audit receipts belong in PR comments. Full Reference/aliases, SC, alternate configurations and semantics remain open."
+}

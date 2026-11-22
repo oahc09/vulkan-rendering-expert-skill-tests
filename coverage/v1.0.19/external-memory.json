@@ -1,0 +1,334 @@
+{
+  "run_id": "c339631a-2b56-459d-a0cb-7dec9f0ddefc",
+  "source_sha256": "a7f01ec52918ff8f7537f0d9e1d241510eb8c4a925405a0ff99f5ec66142a6ca",
+  "runner_sha256": "60032deaf3b3254c07df103e16c373a7510e64b64c300e7dd6887bd491ea2803",
+  "rules_sha256": "6919e7556a840c790d6e72321e1ff5cec5111b013e3ebc1998400697f036c0df",
+  "normative_sha256": "e5e39c74dd2735d8c2362e570d4bfedc1b86159fe6d4d694cf41554bc641ff0d",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "binary_sha256": "6fc1398b8e624b22c487ed40213a5a0909cdc1489dc445308868f0171f536366",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "good": {
+      "events": [
+        {
+          "kind": "layer",
+          "spec": 4210997,
+          "implementation": 1
+        },
+        {
+          "kind": "side",
+          "index": 0,
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "deviceUUID": "6d65736132352e302e372d322b646500",
+          "driverUUID": "6c6c766d706970655555494400000000",
+          "memoryFdSupported": 1,
+          "memoryFdEnabled": true,
+          "semaphoreFdSupported": 0,
+          "fenceFdSupported": 0,
+          "usage": 3,
+          "flags": 0,
+          "sharingMode": 0,
+          "handleTypes": 1,
+          "handleType": 1,
+          "externalFeatures": 6,
+          "compatible": 1,
+          "exportFromImported": 1,
+          "bufferSize": 1024,
+          "requirementSize": 1024,
+          "alignment": 64,
+          "memoryTypeBits": 1,
+          "requiresDedicated": 0,
+          "prefersDedicated": 0
+        },
+        {
+          "kind": "side",
+          "index": 1,
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "deviceUUID": "6d65736132352e302e372d322b646500",
+          "driverUUID": "6c6c766d706970655555494400000000",
+          "memoryFdSupported": 1,
+          "memoryFdEnabled": true,
+          "semaphoreFdSupported": 0,
+          "fenceFdSupported": 0,
+          "usage": 3,
+          "flags": 0,
+          "sharingMode": 0,
+          "handleTypes": 1,
+          "handleType": 1,
+          "externalFeatures": 6,
+          "compatible": 1,
+          "exportFromImported": 1,
+          "bufferSize": 1024,
+          "requirementSize": 1024,
+          "alignment": 64,
+          "memoryTypeBits": 1,
+          "requiresDedicated": 0,
+          "prefersDedicated": 0
+        },
+        {
+          "kind": "export",
+          "fd1": 6,
+          "fd2": 7,
+          "bothValidBeforeTransfer": true,
+          "allocationSize": 1024,
+          "memoryTypeIndex": 0,
+          "commonTypeBits": 1,
+          "dedicatedBoth": true
+        },
+        {
+          "kind": "app_close",
+          "exportOrdinal": 2,
+          "closeCount": 1
+        },
+        {
+          "kind": "import",
+          "success": true,
+          "applicationOwnershipTransferred": true,
+          "bound": true,
+          "allocationSize": 1024,
+          "memoryTypeIndex": 0
+        },
+        {
+          "kind": "retirement",
+          "exporterDestroyedFirst": true,
+          "importerStillAllocated": true,
+          "queueSubmissions": 0,
+          "payloadRead": false
+        },
+        {
+          "kind": "final",
+          "errors": 0,
+          "rc": 0
+        }
+      ],
+      "manifest": {
+        "importMemoryTypeIndex": 0,
+        "exportRequirementSize": 1024,
+        "importRequirementSize": 1024,
+        "exportBufferSize": 1024,
+        "importBufferSize": 1024,
+        "exportSharingMode": 0,
+        "importSharingMode": 0,
+        "exportHandleTypes": 1,
+        "importHandleTypes": 1,
+        "handleType": 1,
+        "usage": 3,
+        "flags": 0,
+        "exportFeatures": 6,
+        "importFeatures": 6,
+        "exportCompatible": 1,
+        "importCompatible": 1,
+        "exportTypes": 1,
+        "importTypes": 1,
+        "memoryTypeIndex": 0,
+        "exportSize": 1024,
+        "importSize": 1024,
+        "exportRequiresDedicated": false,
+        "importRequiresDedicated": false,
+        "exportDedicated": true,
+        "importDedicated": true,
+        "sameDeviceUUID": true,
+        "sameDriverUUID": true,
+        "memoryFdEnabled": true
+      },
+      "admission": {
+        "status": "MEMORY_IMPORT_WITHIN_SCOPE",
+        "execution_visibility": "NOT_PROVEN",
+        "scope": "same physical device/driver; identical exclusive transfer buffers, Vulkan-origin OPAQUE_FD; size/type matched to exporting allocation"
+      },
+      "fd1_model": {
+        "status": "TRANSITION_ALLOWED",
+        "state": "IMPLEMENTATION_OWNED"
+      },
+      "fd2_model": {
+        "status": "TRANSITION_ALLOWED",
+        "state": "CLOSED"
+      },
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "9c6c92eef826bc88d23b66f692e62322d34f1169764a77603391b6772a6ba308",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "properties": {
+      "events": [
+        {
+          "kind": "layer",
+          "spec": 4210997,
+          "implementation": 1
+        },
+        {
+          "kind": "side",
+          "index": 0,
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "deviceUUID": "6d65736132352e302e372d322b646500",
+          "driverUUID": "6c6c766d706970655555494400000000",
+          "memoryFdSupported": 1,
+          "memoryFdEnabled": true,
+          "semaphoreFdSupported": 0,
+          "fenceFdSupported": 0,
+          "usage": 3,
+          "flags": 0,
+          "sharingMode": 0,
+          "handleTypes": 1,
+          "handleType": 1,
+          "externalFeatures": 6,
+          "compatible": 1,
+          "exportFromImported": 1,
+          "bufferSize": 1024,
+          "requirementSize": 1024,
+          "alignment": 64,
+          "memoryTypeBits": 1,
+          "requiresDedicated": 0,
+          "prefersDedicated": 0
+        },
+        {
+          "kind": "side",
+          "index": 1,
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "deviceUUID": "6d65736132352e302e372d322b646500",
+          "driverUUID": "6c6c766d706970655555494400000000",
+          "memoryFdSupported": 1,
+          "memoryFdEnabled": true,
+          "semaphoreFdSupported": 0,
+          "fenceFdSupported": 0,
+          "usage": 3,
+          "flags": 0,
+          "sharingMode": 0,
+          "handleTypes": 1,
+          "handleType": 1,
+          "externalFeatures": 6,
+          "compatible": 1,
+          "exportFromImported": 1,
+          "bufferSize": 1024,
+          "requirementSize": 1024,
+          "alignment": 64,
+          "memoryTypeBits": 1,
+          "requiresDedicated": 0,
+          "prefersDedicated": 0
+        },
+        {
+          "kind": "export",
+          "fd1": 6,
+          "fd2": 7,
+          "bothValidBeforeTransfer": true,
+          "allocationSize": 1024,
+          "memoryTypeIndex": 0,
+          "commonTypeBits": 1,
+          "dedicatedBoth": true
+        },
+        {
+          "kind": "negative",
+          "result": -1000011001,
+          "fdStillAppOwned": true
+        },
+        {
+          "kind": "app_close",
+          "exportOrdinal": 2,
+          "closeCount": 1
+        },
+        {
+          "kind": "import",
+          "success": true,
+          "applicationOwnershipTransferred": true,
+          "bound": true,
+          "allocationSize": 1024,
+          "memoryTypeIndex": 0
+        },
+        {
+          "kind": "retirement",
+          "exporterDestroyedFirst": true,
+          "importerStillAllocated": true,
+          "queueSubmissions": 0,
+          "payloadRead": false
+        },
+        {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      ],
+      "manifest": {
+        "importMemoryTypeIndex": 0,
+        "exportRequirementSize": 1024,
+        "importRequirementSize": 1024,
+        "exportBufferSize": 1024,
+        "importBufferSize": 1024,
+        "exportSharingMode": 0,
+        "importSharingMode": 0,
+        "exportHandleTypes": 1,
+        "importHandleTypes": 1,
+        "handleType": 1,
+        "usage": 3,
+        "flags": 0,
+        "exportFeatures": 6,
+        "importFeatures": 6,
+        "exportCompatible": 1,
+        "importCompatible": 1,
+        "exportTypes": 1,
+        "importTypes": 1,
+        "memoryTypeIndex": 0,
+        "exportSize": 1024,
+        "importSize": 1024,
+        "exportRequiresDedicated": false,
+        "importRequiresDedicated": false,
+        "exportDedicated": true,
+        "importDedicated": true,
+        "sameDeviceUUID": true,
+        "sameDriverUUID": true,
+        "memoryFdEnabled": true
+      },
+      "admission": {
+        "status": "MEMORY_IMPORT_WITHIN_SCOPE",
+        "execution_visibility": "NOT_PROVEN",
+        "scope": "same physical device/driver; identical exclusive transfer buffers, Vulkan-origin OPAQUE_FD; size/type matched to exporting allocation"
+      },
+      "fd1_model": {
+        "status": "TRANSITION_ALLOWED",
+        "state": "IMPLEMENTATION_OWNED"
+      },
+      "fd2_model": {
+        "status": "TRANSITION_ALLOWED",
+        "state": "CLOSED"
+      },
+      "diagnostics": [
+        "properties VUID-vkGetMemoryFdPropertiesKHR-handleType-00674"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "69f5a29b7222d1f6332d25b81ec3198d9f92c5b8082dfd556c5c221a0ed30cbb",
+      "stderr_sha256": "e7ff4a16a7187660aa60756a94970d3fa0a9ad772ceb0f257d2af55cadb9bf09"
+    }
+  },
+  "status": "BOUNDED_MEMORY_FD_LIFECYCLE_PASS",
+  "limitations": [
+    "No queue submissions, payload mapping/read, execution ordering or cross-device visibility proof.",
+    "External semaphore/fence FD extensions absent in this actual CPU cohort; corresponding synchronization path NOT_RUN.",
+    "Application never touches consumed FD after successful import; opaque numeric reuse is not used to infer ownership.",
+    "No physical hardware, cross-process/cross-API or full VK17 acceptance.",
+    "Original repository-authored fault, not external production bug."
+  ]
+}

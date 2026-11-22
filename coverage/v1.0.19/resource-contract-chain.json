@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "scope": "PREPUBLICATION_DEVELOPMENT_HOST_DECLARATIONS_ONLY",
+  "families": 7,
+  "semantic_entries": 23,
+  "explicit_excluded_helpers": 21,
+  "original_controls_per_run": 125,
+  "targeted_tests": 37,
+  "runs": {
+    "good": {
+      "report_sha256": "e383e15b4a136373a210c91d9a1f05849708e415886b635fe0a0a85e2f05942f",
+      "status": "DEVELOPMENT_HOST_CONTRACT_REVIEW",
+      "chain_status": "CONSISTENT_DECLARED_TRACE",
+      "control_count": 125,
+      "trace_sha256": "1519bae538c53f9248a9174a86dab543ac6f5ed48f776f99ab2bb7f6c59cf6b6",
+      "development": true
+    },
+    "missing": {
+      "report_sha256": "2e309719a1c0810012f050a833f8606a10f65baa472e63d95b1546ceda69d215",
+      "status": "DEVELOPMENT_HOST_CONTRACT_REVIEW",
+      "chain_status": "OBLIGATIONS_NOT_ESTABLISHED",
+      "control_count": 125,
+      "trace_sha256": "ae01e802bde4c303813af3a81c4894dfd6c418c228510daa861b0f4258c39fea",
+      "development": true
+    },
+    "scoped": {
+      "report_sha256": "21dbe16a48cce5a294ccaf80f703a8ea3cc6c265db2801216793712f8b662ad1",
+      "status": "DEVELOPMENT_HOST_CONTRACT_REVIEW",
+      "chain_status": "CONSISTENT_DECLARED_TRACE",
+      "control_count": 125,
+      "trace_sha256": "f3f93e90976a194ab41849c1b94d1b4bfdd7004eb95ab80f2f4878dc49687bbf",
+      "development": true
+    }
+  },
+  "limitations": [
+    "No observed Vulkan event capture or authority authentication",
+    "Partial implemented HOST subdenominator, not full normative or L1/L2 closure",
+    "Pipeline layout remains declared prerequisite; image copy/layout not composed",
+    "record_use is abstract rerecord declaration, not proof of reset/begin/end or command-pool lifetime",
+    "Consistent traces may retain pending submissions",
+    "No GPU or external-engine proof; release BLOCKED"
+  ]
+}

@@ -1,0 +1,11 @@
+--- baseline.c
++++ baseline.c
+@@ -4,7 +4,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#define UPLOAD_DEPENDENCY 0
++#define UPLOAD_DEPENDENCY 1
+ static unsigned errors;
+ static const char *phase="setup";
+ static VKAPI_ATTR VkBool32 VKAPI_CALL callback(VkDebugUtilsMessageSeverityFlagBitsEXT s,VkDebugUtilsMessageTypeFlagsEXT t,const VkDebugUtilsMessengerCallbackDataEXT*d,void*u){

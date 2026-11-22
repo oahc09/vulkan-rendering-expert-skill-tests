@@ -1,0 +1,49 @@
+{
+  "schema": "text-choice19-prepublication",
+  "status": "ORIGINAL_LABS_EXECUTED_QUALITY_NOT_QUALIFIED",
+  "runs": {
+    "baseline": {
+      "summary_sha256": "d8ac45623fb37cc7b07742c1619d64154d831b129cea25cf0e6535ac7eee8d6e",
+      "status": "SAMPLING_PASS_QUALITY_NOT_QUALIFIED",
+      "positive_draws": 53,
+      "negative_errors": {
+        "double-alpha": 0.14994233250617983,
+        "wrong-range": 0.1587432742118836
+      }
+    },
+    "refined": {
+      "summary_sha256": "cd1e3c8803e622a70bea6ce70025b7e8364191403f9022b0119fb591b31aa2a2",
+      "status": "SAMPLING_PASS_QUALITY_NOT_QUALIFIED",
+      "positive_draws": 66,
+      "negative_errors": {
+        "double-alpha": 0.14994233250617983,
+        "wrong-range": 0.15468747615814216
+      }
+    },
+    "budget": {
+      "summary_sha256": "d24a75785daaeb6d27c2f06c33695cd09059ea0d583826365d661873641405ed",
+      "status": "SAMPLING_PASS_QUALITY_NOT_QUALIFIED",
+      "positive_draws": 86,
+      "negative_errors": [
+        0.5624999284744263,
+        0.599999998509884
+      ]
+    }
+  },
+  "count_semantics": "53/66/86 original positive draws, not pytest cases or product qualifications",
+  "source_cohort_tests": "e62c551a766967f22ae08cd1f82110d5a744b918",
+  "strict_outer_published_run": "NOT_YET_RUN",
+  "limits": [
+    "six mono/four common transforms decision only",
+    "sampled independent outline; no independent shaping",
+    "emoji bitmap-only",
+    "six original mono rotations unsupported",
+    "payload bytes not native allocation or VRAM",
+    "no physical-device or performance qualification"
+  ],
+  "raw_recomputation": {
+    "sha256": "86e5780d3948c6ba5cfbfea92fa1836ea653fe7b567725d2b0eeecb47e6b9acb",
+    "common_observations": 144,
+    "scope": "pre-freeze pure CPU verification; later source changes require exact final verification"
+  }
+}

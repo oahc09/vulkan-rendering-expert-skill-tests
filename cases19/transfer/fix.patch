@@ -1,0 +1,11 @@
+--- baseline.c
++++ baseline.c
+@@ -19,7 +19,7 @@
+  if(argc!=2||(strcmp(argv[1],"bad")&&strcmp(argv[1],"good")))return 7;
+  int bad=!strcmp(argv[1],"bad");
+ #ifndef TRANSFER_FIX
+-#define TRANSFER_FIX 0
++#define TRANSFER_FIX 1
+ #endif
+  const char *layer="VK_LAYER_KHRONOS_validation";
+  const char *exts[]={VK_EXT_DEBUG_UTILS_EXTENSION_NAME,VK_EXT_VALIDATION_FEATURES_EXTENSION_NAME};

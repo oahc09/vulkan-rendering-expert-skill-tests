@@ -1,0 +1,81 @@
+{
+  "source_sha256": "bc62cba2b07c2ab4b6bfd62b1e1a964e6fc5697adff1e997bcda34569415ed21",
+  "binary_sha256": "55b903a822f14366e0627bbde510c8b06da47f0f7745ee390a57f112dd0e4b16",
+  "build": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "run": {
+    "exit_code": 0,
+    "stdout_sha256": "ea206f0394ef1252f5fc0fe399d69de05f702010af1776b01c4cdeff99f569c3",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "capabilities": {
+    "deviceType": 4,
+    "apiVersion": 4210993,
+    "vendorID": 65541,
+    "deviceID": 0,
+    "driverVersion": 1,
+    "extensions": {
+      "VK_KHR_video_queue": false,
+      "VK_KHR_video_decode_queue": false,
+      "VK_KHR_video_decode_h264": false,
+      "VK_KHR_video_decode_h265": false,
+      "VK_KHR_video_decode_av1": false,
+      "VK_KHR_video_encode_queue": false,
+      "VK_KHR_video_encode_h264": false,
+      "VK_KHR_video_encode_h265": false,
+      "VK_KHR_video_encode_av1": false,
+      "VK_EXT_subgroup_size_control": true,
+      "VK_KHR_cooperative_matrix": false,
+      "VK_NV_cooperative_matrix": false,
+      "VK_NV_optical_flow": false,
+      "VK_ARM_tensors": false,
+      "VK_ARM_data_graph": false,
+      "VK_KHR_buffer_device_address": true,
+      "VK_NV_cooperative_vector": false,
+      "VK_NV_memory_decompression": false,
+      "VK_EXT_memory_decompression": false,
+      "VK_NV_copy_memory_indirect": false,
+      "VK_QCOM_data_graph_model": false,
+      "VK_KHR_copy_memory_indirect": false
+    },
+    "shaderInt64": 1,
+    "bufferDeviceAddress": 1,
+    "subgroup": {
+      "size": 8,
+      "supportedStages": 240,
+      "supportedOperations": 1791,
+      "quadOperationsInAllStages": 0,
+      "sizeControl": 1,
+      "computeFullSubgroups": 1,
+      "minSize": 8,
+      "maxSize": 8,
+      "maxComputeWorkgroupSubgroups": 32,
+      "requiredSubgroupSizeStages": 48
+    },
+    "computeLimits": {
+      "maxInvocations": 1024,
+      "maxSize": [
+        1024,
+        1024,
+        1024
+      ],
+      "maxCount": [
+        65535,
+        65535,
+        65535
+      ]
+    },
+    "queues": [
+      {
+        "index": 0,
+        "flags": 15,
+        "count": 1
+      }
+    ],
+    "logicalDevicesCreated": 0,
+    "queueSubmissions": 0
+  }
+}

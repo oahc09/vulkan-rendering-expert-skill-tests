@@ -1,0 +1,791 @@
+[
+  {
+    "id": "VK01",
+    "domain": "初始化、加载与版本",
+    "existing_route": "[合同入口](01_instance_device_queue/instance.md#loader-dispatch-contract)",
+    "open_review": "Loader/ICD/layers、allocation callbacks、版本/alias细节仍需逐项复核",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "capability_scene_delivery": {
+      "contract": "physical_device.md#delivery19-capability-admitted-scene",
+      "entry": "checks19/run_indirect_scene.py",
+      "rules": "tools/device_selection19.py",
+      "evidence": "capability-scene.json",
+      "scope": "queried loader/core1.3 single CPU device capabilities admit the fixed compute-generated indirect graphics scene; exact source/tool/pair and actual execution identity verified",
+      "domain_complete": false,
+      "still_open": [
+        "multiple physical devices and general selection",
+        "KHR fallback, device groups and Profiles",
+        "all loader/ICD/layer/platform combinations",
+        "all features/limits and resource-compatible memory classes",
+        "physical/mobile hardware",
+        "Vulkan SC and external/Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK02",
+    "domain": "设备、队列与能力",
+    "existing_route": "[合同入口](01_instance_device_queue/physical_device.md#device-group-capability-contract)",
+    "open_review": "queue priority、全部features/limits/profiles组合",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "capability_scene_delivery": {
+      "contract": "physical_device.md#delivery19-capability-admitted-scene",
+      "entry": "checks19/run_indirect_scene.py",
+      "rules": "tools/device_selection19.py",
+      "evidence": "capability-scene.json",
+      "scope": "queried loader/core1.3 single CPU device capabilities admit the fixed compute-generated indirect graphics scene; exact source/tool/pair and actual execution identity verified",
+      "domain_complete": false,
+      "still_open": [
+        "multiple physical devices and general selection",
+        "KHR fallback, device groups and Profiles",
+        "all loader/ICD/layer/platform combinations",
+        "all features/limits and resource-compatible memory classes",
+        "physical/mobile hardware",
+        "Vulkan SC and external/Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK03",
+    "domain": "对象与命令管理",
+    "existing_route": "[合同入口](03_command_buffer/command_buffer.md)",
+    "open_review": "各命令host sync、secondary/inheritance、conditional rendering组合",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "joint_descriptor_command_scope": {
+      "contract": "command_buffer.md#delivery19-ordinary-descriptor--command-buffer-joint-lifecycle-bounded-l1l2",
+      "evidence": "descriptor-lifetime.json",
+      "scope": "ordinary primary command-buffer descriptor retirement/invalidation; single CPU ICD queue",
+      "not_closed": [
+        "secondary/inheritance",
+        "pool-wide reset",
+        "general command host synchronization",
+        "physical GPU",
+        "external project blind acceptance"
+      ]
+    },
+    "secondary_dynamic_draw": {
+      "contract": "command_buffer.md#delivery19-secondary-dynamic-draw",
+      "entry": "cases19/secondary_draw/run.py",
+      "evidence": "secondary-draw.json",
+      "scope": "one secondary records actual shader draw with dynamic-rendering inheritance, primary execute/render/readback with independent full pixels; safe inheritance-format rejection and wrong-output negative",
+      "domain_complete": false,
+      "still_open": [
+        "general command lifecycle, arbitrary reference graph and concurrent re-record invalidation",
+        "nested/queries/multiview/depth and traditional renderpass inheritance",
+        "parallel recording or simultaneous pending reuse",
+        "physical/mobile performance and external-engine/Live/blind acceptance"
+      ],
+      "lifecycle_extension": {
+        "scope": "same primary/secondary/image/readback, completed generation0, secondary reset/rerecord generation1, stale primary submit callback rejected, primary rerecord and distinct complete pixels; second-generation wrong oracle",
+        "evidence": "secondary-draw.json",
+        "not_production_repair": true
+      }
+    }
+  },
+  {
+    "id": "VK04",
+    "domain": "内存与驻留",
+    "existing_route": "[合同入口](04_buffer_image_memory/memory_allocation.md#memory-host-alias-contract)",
+    "open_review": "全部allocation/BDA/sparse/protected/alias扩展差异",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "mapped_memory": {
+      "contract": "memory_allocation.md#delivery19-mapped-memory-visibility-contract-bounded-l1l2",
+      "rules": "tools/mapped_memory19.py",
+      "evidence": "mapped-memory.json",
+      "actual_api": "coherent mapped-range good plus partial-mapping out-of-range00685 controls",
+      "noncoherent_visibility": "UNAVAILABLE_NOT_RUN: queried CPU ICD has only coherent host-visible type",
+      "cpu_only": [
+        "00684",
+        "00686",
+        "00687",
+        "01389",
+        "01390",
+        "atom expansion",
+        "visibility ownership obligations"
+      ],
+      "still_open": [
+        "actual noncoherent device execution",
+        "sparse/external/device-group memory",
+        "physical hardware",
+        "SC",
+        "external-engine acceptance"
+      ]
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/memory-binding-contract19.md",
+        "entry": "checks19/run_memory_binding_contracts.py",
+        "rules": "tools/memory_binding_contract19.py",
+        "evidence": "memory-binding-contract.json",
+        "scope": "ordinary requirements/binding, versioned dedicated allocation size, mixed adjacent-page and free lifetime obligations",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "VK05",
+    "domain": "资源、格式与数据移动",
+    "existing_route": "[合同入口](04_buffer_image_memory/image.md)",
+    "open_review": "逐format/多平面/压缩格式/usage/copy组合",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "image_compute_delivery": {
+      "contract": "image.md#delivery19-image-compute-delivery-chain-bounded-l1l2",
+      "evidence": "image-compute.json",
+      "scope": "single queue R32_UINT 4x4 typed storage image upload/compute/readback, coherent CPU staging",
+      "stage_contract": "docs/v1.0.19-integration-stage.md",
+      "domain_complete": false,
+      "not_closed": [
+        "general format/subresource and stage/access combinations",
+        "physical hardware/noncoherent",
+        "cross-queue and aliasing",
+        "external-engine and blind-task acceptance"
+      ]
+    },
+    "texture_sampling_delivery": {
+      "contract": "sampled_image_descriptor.md#delivery19-texture-sampling",
+      "entry": "cases19/texture_sampling/run.py",
+      "evidence": "texture-sampling.json",
+      "scope": "RGBA8 4x4 asymmetric endpoint-color upload, normalized nearest/clamp combined sampler with explicit LOD0 compute sampling, independent full pixel readback and safe sampler rejection",
+      "domain_complete": false,
+      "still_open": [
+        "general filtering, address modes, mip chains and formats",
+        "graphics material and presentation integration",
+        "concurrent queues and noncoherent visibility",
+        "physical/mobile hardware and external-engine/Live/blind acceptance"
+      ]
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
+      ]
+    },
+    "msaa_resolve_sampling": {
+      "contract": "copy_blit_resolve.md#delivery19-msaa-resolve-sampling",
+      "rules": "tools/msaa_sample19.py",
+      "evidence": "msaa-sample.json",
+      "scope": "4x noninteger color dynamic attachment resolve to same-view fragment sampling and independent final pixels; CPU ICD authored integration",
+      "domain_complete": false,
+      "still_open": [
+        "depth/stencil resolve and testing",
+        "mixed sample and render-to-single-sampled variants",
+        "traditional renderpass and local-read",
+        "sample coverage and antialiasing quality",
+        "physical/mobile performance, external project and Live/blind acceptance"
+      ]
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/image-copy-contract19.md",
+        "entry": "checks19/run_image_copy_contracts.py",
+        "rules": "tools/image_copy_contract19.py",
+        "evidence": "image-copy-contract.json",
+        "scope": "partial color format/block compatibility and caller-adjusted per-image local regions; no inferred dstOffset",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "VK06",
+    "domain": "同步与内存模型",
+    "existing_route": "[合同入口](08_synchronization/synchronization2.md#cross-queue-host-contract)",
+    "open_review": "全部stage/access适用性和memory model交互",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "bounded_review": {
+      "scope": "single-queue fill/copy/coherent readback",
+      "route": "08_synchronization/buffer_memory_barrier.md#delivery19-transfer-contract-bounded-l1l2-fillcopyreadback",
+      "status": "BOUNDED_L1_L2_REVIEWED",
+      "evidence": "transfer-case.json",
+      "domain_complete": false
+    },
+    "image_compute_delivery": {
+      "contract": "image.md#delivery19-image-compute-delivery-chain-bounded-l1l2",
+      "evidence": "image-compute.json",
+      "scope": "single queue R32_UINT 4x4 typed storage image upload/compute/readback, coherent CPU staging",
+      "stage_contract": "docs/v1.0.19-integration-stage.md",
+      "domain_complete": false,
+      "not_closed": [
+        "general format/subresource and stage/access combinations",
+        "physical hardware/noncoherent",
+        "cross-queue and aliasing",
+        "external-engine and blind-task acceptance"
+      ]
+    },
+    "texture_sampling_delivery": {
+      "contract": "sampled_image_descriptor.md#delivery19-texture-sampling",
+      "entry": "cases19/texture_sampling/run.py",
+      "evidence": "texture-sampling.json",
+      "scope": "RGBA8 4x4 asymmetric endpoint-color upload, normalized nearest/clamp combined sampler with explicit LOD0 compute sampling, independent full pixel readback and safe sampler rejection",
+      "domain_complete": false,
+      "still_open": [
+        "general filtering, address modes, mip chains and formats",
+        "graphics material and presentation integration",
+        "concurrent queues and noncoherent visibility",
+        "physical/mobile hardware and external-engine/Live/blind acceptance"
+      ]
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
+      ]
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/synchronization-contract19.md",
+        "entry": "checks19/run_sync_contracts.py",
+        "rules": "tools/sync_contract19.py",
+        "evidence": "synchronization-contract.json",
+        "scope": "bounded RAW/WAW/WAR, host availability, baseline ownership and buffer-range caller facts",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      },
+      {
+        "document": "docs/image-layout-contract19.md",
+        "entry": "checks19/run_image_layout_contracts.py",
+        "rules": "tools/image_layout_contract19.py",
+        "evidence": "image-layout-contract.json",
+        "scope": "ordinary 2D COLOR per-cell modeled layout state, equal-family/equal-layout ignored branch and discard dependencies",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      },
+      {
+        "document": "docs/timeline-contract19.md",
+        "entry": "checks19/run_timeline_contracts.py",
+        "rules": "tools/timeline_contract19.py",
+        "evidence": "timeline-contract.json",
+        "scope": "ordinary timeline host signal bounds and ordering, snapshot ANY/ALL predicates, declared full reference retirement obligations",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "VK07",
+    "domain": "资源绑定与布局",
+    "existing_route": "[合同入口](05_descriptor/push_descriptor.md#push-descriptor-count-lifetime)",
+    "open_review": "各binding model与pipeline layout兼容性的全量扩展合同",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "bounded_review": {
+      "scope": "ordinary non-null non-sparse UBO descriptor updates",
+      "knowledge": "BOUNDED_L1_L2",
+      "cpu_rules": [
+        "00340",
+        "00341",
+        "00342",
+        "00327",
+        "00329",
+        "00330",
+        "00332",
+        "safe update lifetime policy"
+      ],
+      "real_vvl_pair": [
+        "explicit valid range",
+        "WHOLE valid range",
+        "00341 zero",
+        "00342 overrun",
+        "00340 offset-end"
+      ],
+      "cpu_only_not_vvl": [
+        "alignment",
+        "maximum range",
+        "usage",
+        "binding",
+        "lifetime"
+      ],
+      "open": [
+        "general pool/layout counts",
+        "general shader interface/access",
+        "multi-queue/presentation in-flight integration",
+        "dynamic/indexing/descriptor-buffer",
+        "SC",
+        "external project acceptance"
+      ],
+      "domain_complete": false,
+      "joint_lifetime": {
+        "scope": "single compute queue, CPU ICD, ordinary UBO set",
+        "actual": "timeline-gated pending update03047; retire/readback42; update/rerecord/readback99; wrong-output exit6",
+        "evidence": "descriptor-lifetime.json",
+        "validation": "ordinary Validation, NOT SyncVal/GPU-AV",
+        "production_or_hardware_acceptance": false
+      }
+    },
+    "dynamic_ubo_ring": {
+      "contract": "uniform_buffer_descriptor.md#delivery19-dynamic-ubo-ring",
+      "evidence": "dynamic-ubo.json",
+      "scope": "ordinary two-element dynamic UBO array, three sequential graphics frames, A/B/retired-A generation reuse, legal offset-order semantic fault and minimal repair with independent pixels",
+      "domain_complete": false,
+      "still_open": [
+        "all descriptor binding models and layout compatibility",
+        "update-after-bind, descriptor buffers and indexing",
+        "concurrent frames, multi-thread and multi-queue races",
+        "actual noncoherent visibility",
+        "physical/mobile performance",
+        "Vulkan SC and external-engine/Live/blind acceptance"
+      ]
+    },
+    "texture_sampling_delivery": {
+      "contract": "sampled_image_descriptor.md#delivery19-texture-sampling",
+      "entry": "cases19/texture_sampling/run.py",
+      "evidence": "texture-sampling.json",
+      "scope": "RGBA8 4x4 asymmetric endpoint-color upload, normalized nearest/clamp combined sampler with explicit LOD0 compute sampling, independent full pixel readback and safe sampler rejection",
+      "domain_complete": false,
+      "still_open": [
+        "general filtering, address modes, mip chains and formats",
+        "graphics material and presentation integration",
+        "concurrent queues and noncoherent visibility",
+        "physical/mobile hardware and external-engine/Live/blind acceptance"
+      ]
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
+      ]
+    },
+    "host_semantic_contracts": [
+      {
+        "document": "docs/layout-contract19.md",
+        "entry": "checks19/run_layout_contracts.py",
+        "rules": "tools/layout_contract19.py",
+        "evidence": "layout-contract.json",
+        "scope": "ordinary complete layout definitions, push creation/update, set compatibility and binding disturbance",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      },
+      {
+        "document": "docs/descriptor-update-contract19.md",
+        "entry": "checks19/run_descriptor_update_contracts.py",
+        "rules": "tools/descriptor_update_contract19.py",
+        "evidence": "descriptor-update-contract.json",
+        "scope": "qualified consecutive binding routes and ordinary buffer descriptor-token writes before ordered copies",
+        "evidence_kind": "HOST_CALLER_FACTS_NOT_GPU",
+        "domain_complete": false,
+        "semantic_completion": "UNKNOWN_NOT_INFERRED",
+        "source_versions": [
+          "Vulkan-Docs 1.4.368",
+          "validusage 1.4.309 separately pinned"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "VK08",
+    "domain": "Shader / SPIR-V",
+    "existing_route": "[合同入口](06_pipeline/shader_module.md#shader-artifact-contract)",
+    "open_review": "全部capability/opcode/feature映射、grammar差异",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "offline_tool_pair": {
+      "contract": "shader_module.md#delivery19-offline-target--device-admission-split-bounded-l1l2",
+      "evidence": "shader-target.json",
+      "actual_tools": [
+        "GLSL to SPIR-V vulkan1.1/vulkan1.2",
+        "same-binary spirv-val target mismatch",
+        "spirv-dis Shader/Float64 and extension extraction"
+      ],
+      "cpu_only": [
+        "Shader/Float64 device feature facts admission",
+        "wrong/stale extraction and logical-device identity negative controls"
+      ],
+      "still_open": [
+        "all capability/opcode/extension mappings",
+        "pipeline interfaces/specialization/limits",
+        "device feature query/creation",
+        "actual shader dispatch",
+        "physical hardware/SC/Live/external-engine acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK09",
+    "domain": "Pipeline 与状态",
+    "existing_route": "[合同入口](06_pipeline/shader_module.md#shader-object-contract)",
+    "open_review": "全部dynamic state/cache/binary/library/parallel create条件",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "compute_interface_delivery": {
+      "contract": "pipeline_layout.md#delivery19-compute-interface-delivery-chain-bounded-l1l2",
+      "evidence": "pipeline-interface.json",
+      "scope": "single-entry Shader-only direct SSBO ordinary compute pipeline",
+      "actual_chain": [
+        "compile/validate/disassemble same artifact",
+        "reflect and compare actual layout manifest",
+        "07990 type mismatch abort",
+        "apply minimal patch",
+        "descriptor binding/dispatch/barrier/fence/readback42",
+        "07988 missing binding abort",
+        "wrong-output oracle rejection"
+      ],
+      "still_open": [
+        "dynamic/mutable/array descriptors",
+        "push constants",
+        "all dynamic/cache/binary/library states",
+        "general graphics interfaces",
+        "physical hardware/SC/Live/external-engine acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK10",
+    "domain": "光栅与帧缓冲",
+    "existing_route": "[合同入口](07_rendering/mobile_tile_rendering.md#tile-capability-matrix)",
+    "open_review": "raster/depth/stencil/blend/MSAA/FDM/FSR等逐扩展审计",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "dynamic_color_family": {
+      "contract": "dynamic_rendering.md#delivery19-color-attachment-family",
+      "rules": "tools/dynamic_color19.py",
+      "evidence": "dynamic-color.json",
+      "scope": "single CPU-ICD graphics queue, core1.3 enabled dynamicRendering, RGBA8_UNORM full 4x4 single layer/sample color CLEAR-STORE then LOAD-STORE then copy/readback; no draws",
+      "domain_complete": false,
+      "still_open": [
+        "graphics pipeline/shader/draw and blend",
+        "depth/stencil and MSAA/resolve",
+        "multiview, FSR/FDM and local read",
+        "general subresource/partial region contents",
+        "physical/mobile GPU performance and power",
+        "Vulkan SC",
+        "external engineering and Live/blind acceptance"
+      ]
+    },
+    "dynamic_draw_family": {
+      "contract": "dynamic_rendering.md#delivery19-dynamic-draw-family",
+      "rules": "tools/dynamic_draw19.py",
+      "evidence": "dynamic-draw.json",
+      "scope": "bounded CPU-ICD single-sample single-color ordinary graphics pipeline with compiled vertex/fragment shaders, draw, explicit synchronization, readback and independent nonconstant CPU pixel oracle",
+      "domain_complete": false,
+      "still_open": [
+        "full shader/vertex/fragment interfaces and graphics-state combinations",
+        "depth/stencil, blend, MSAA/resolve",
+        "multiview, local read, FSR/FDM",
+        "physical/mobile GPU performance and power",
+        "Vulkan SC",
+        "external engineering and Live/blind acceptance"
+      ]
+    },
+    "secondary_dynamic_draw": {
+      "contract": "command_buffer.md#delivery19-secondary-dynamic-draw",
+      "entry": "cases19/secondary_draw/run.py",
+      "evidence": "secondary-draw.json",
+      "scope": "one secondary records actual shader draw with dynamic-rendering inheritance, primary execute/render/readback with independent full pixels; safe inheritance-format rejection and wrong-output negative",
+      "domain_complete": false,
+      "still_open": [
+        "general command lifecycle, arbitrary reference graph and concurrent re-record invalidation",
+        "nested/queries/multiview/depth and traditional renderpass inheritance",
+        "parallel recording or simultaneous pending reuse",
+        "physical/mobile performance and external-engine/Live/blind acceptance"
+      ],
+      "lifecycle_extension": {
+        "scope": "same primary/secondary/image/readback, completed generation0, secondary reset/rerecord generation1, stale primary submit callback rejected, primary rerecord and distinct complete pixels; second-generation wrong oracle",
+        "evidence": "secondary-draw.json",
+        "not_production_repair": true
+      }
+    },
+    "render_sample_chain": {
+      "contract": "add_postprocess_pass.md#delivery19-render-sample-chain",
+      "entry": "cases19/render_sample/run.py",
+      "evidence": "render-sample.json",
+      "scope": "actual color attachment producer to same-image fragment combined-sampler postprocess, independent full final pixel reference; GENERAL same-layout dependency and SyncVal heuristic ON/OFF controls",
+      "domain_complete": false,
+      "still_open": [
+        "general postprocess algorithms and image quality",
+        "mips/filtering/formats and depth/resolve",
+        "multi-frame/concurrent queues and physical hardware performance",
+        "external-engine/Live/blind acceptance"
+      ]
+    },
+    "msaa_resolve_sampling": {
+      "contract": "copy_blit_resolve.md#delivery19-msaa-resolve-sampling",
+      "rules": "tools/msaa_sample19.py",
+      "evidence": "msaa-sample.json",
+      "scope": "4x noninteger color dynamic attachment resolve to same-view fragment sampling and independent final pixels; CPU ICD authored integration",
+      "domain_complete": false,
+      "still_open": [
+        "depth/stencil resolve and testing",
+        "mixed sample and render-to-single-sampled variants",
+        "traditional renderpass and local-read",
+        "sample coverage and antialiasing quality",
+        "physical/mobile performance, external project and Live/blind acceptance"
+      ]
+    },
+    "depth_occlusion_chain": {
+      "contract": "add_depth_pass.md#delivery19-depth-occlusion-chain",
+      "entry": "cases19/depth_msaa_sample/run.py",
+      "evidence": "depth-msaa-sample.json",
+      "scope": "bounded actual depth test/write overlapping near/far draws, color MSAA resolve and fragment postprocess; whole final image oracle and legal depth-state causal control",
+      "domain_complete": false,
+      "still_open": [
+        "depth/stencil resolve and stencil testing",
+        "depth sampling/shadows, reversed Z and precision",
+        "general fragment depth precision and early/late variants",
+        "mixed sample and all dynamic state variants",
+        "physical hardware, external project and Live/blind acceptance"
+      ]
+    },
+    "sample_choice_integration": {
+      "contract": "optimize_frame_time.md#delivery19-sample-choice",
+      "entry": "checks19/compare_depth_samples.py",
+      "rules": "tools/sample_decision19.py",
+      "scope": "fixed same-workload1x/4x/1x actual execution with strict raw verification, endpoint correctness and allocation-request budget choice",
+      "domain_complete": false,
+      "performance_verified": false,
+      "edge_quality_verified": false,
+      "still_open": [
+        "complete sample/quality/performance decision families",
+        "physical/mobile sustained measurements",
+        "full semantic denominator and original Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK11",
+    "domain": "绘制与 GPU 生成工作",
+    "existing_route": "[合同入口](03_command_buffer/indirect_commands.md#device-generated-commands-contract)",
+    "open_review": "DGC/transform feedback/mesh/task全部命令规则",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "generated_indirect_family": {
+      "contract": "indirect_commands.md#delivery19-generated-indirect-draw",
+      "rules": "tools/indirect_draw19.py",
+      "evidence": "indirect-draw.json",
+      "scope": "CPU ICD compute generates a single ordinary VkDrawIndirectCommand; explicit shader-write to indirect-read dependency; actual indirect draw with generated argument and independent nonconstant pixel readback",
+      "domain_complete": false,
+      "still_open": [
+        "indexed and indirectCount execution",
+        "multi-draw and arbitrary GPU-generated argument validation",
+        "mesh and EXT/NV device-generated commands",
+        "production culling/compaction/residency and multi-queue",
+        "physical/mobile GPU performance",
+        "Vulkan SC",
+        "external-engine and Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK12",
+    "domain": "Query 与测量",
+    "existing_route": "[合同入口](04_buffer_image_memory/query_pool.md#query-generation-contract)",
+    "open_review": "性能query/calibrated timestamp全部扩展规则",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "timestamp_family": {
+      "contract": "query_pool.md#delivery19-timestamp-query-family",
+      "rules": "tools/query19.py",
+      "evidence": "query-timestamp.json",
+      "scope": "ordinary timestamp single-device single-queue command reset, nonwaiting availability and host result layout; software-ICD timestamps not hardware performance",
+      "domain_complete": false,
+      "still_open": [
+        "occlusion/pipeline statistics full contracts",
+        "performance/calibrated timestamp extension families",
+        "multi-queue clock correlation",
+        "host reset feature variants",
+        "physical/mobile GPU timing and overhead",
+        "external-engine/Live/blind acceptance",
+        "Vulkan SC"
+      ]
+    }
+  },
+  {
+    "id": "VK13",
+    "domain": "WSI 与平台",
+    "existing_route": "[合同入口](02_surface_swapchain/surface.md)",
+    "open_review": "每个公开平台扩展、present timing/id/wait/maintenance组合",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "headless_present_chain": {
+      "contract": "swapchain_recreate.md#delivery19-headless-present-retirement",
+      "rules": "tools/headless_wsi19.py",
+      "evidence": "headless-wsi.json",
+      "scope": "CPU ICD headless acquire-clear-copy-present, actual maintenance1 present-fence retirement and explicit oldSwapchain generation rebuild; no physical screen or actual out-of-date event claim",
+      "domain_complete": false,
+      "still_open": [
+        "real window platforms and physical displays",
+        "actual OUT_OF_DATE/SURFACE_LOST/device-lost recovery",
+        "overlapped frames, pacing and presentation timing",
+        "protected surfaces, VRR and platform extension combinations",
+        "Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK14",
+    "domain": "完整光追 API 链",
+    "existing_route": "[合同入口](06_pipeline/pipeline.md#ray-tracing-pipeline-contract)",
+    "open_review": "全量AS/SBT/RT条件扩展，未测设备",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "ray_query_chain": {
+      "contract": "pipeline.md#delivery19-ray-query-chain",
+      "rules": "tools/ray_query19.py",
+      "evidence": "ray-query.json",
+      "scope": "one opaque triangle BLAS to identity instance TLAS to compute rayQuery hit/miss with real device build, independent geometry reference and safe invalid-create negative on CPU ICD",
+      "domain_complete": false,
+      "still_open": [
+        "ray tracing pipeline and SBT",
+        "update/compact/multiple geometries and instances",
+        "AABB, nonopaque traversal and advanced extension families",
+        "physical/mobile ray tracing hardware/performance",
+        "Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK15",
+    "domain": "Vulkan Video",
+    "existing_route": "[合同入口](04_buffer_image_memory/image.md#vulkan-video-codec-differences)",
+    "open_review": "codec全部valid usage和辅助扩展深层合同，未测codec设备",
+    "depth_target": "L1/L2",
+    "status": "UNREVIEWED",
+    "owner": "v1.0.19 C1",
+    "device_feasibility": {
+      "evidence": "device-address.json",
+      "status": "UNSUPPORTED_ON_CURRENT_CPU_ICD",
+      "scope": "explicitly queried Video queue and H264/H265/AV1 codec extension names absent; no profile/session/codec execution",
+      "domain_complete": false
+    }
+  },
+  {
+    "id": "VK16",
+    "domain": "特殊计算与新扩展族",
+    "existing_route": "[合同入口](06_pipeline/compute_pipeline.md#special-compute-contract)",
+    "open_review": "optical/tensor/data graph/cooperative/地址类逐扩展差异",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "physical_storage_address": {
+      "contract": "compute_pipeline.md#delivery19-physical-storage-address",
+      "rules": "tools/device_address19.py",
+      "evidence": "device-address.json",
+      "scope": "core1.2 physical-storage pointer-table transform with full64word oracle, guards, feature/allocation/usage/alignment/lifetime and callback-aborted address query",
+      "domain_complete": false,
+      "still_open": [
+        "cooperative matrix/vector and precision/tuple rules",
+        "Video, optical flow, tensor/data graph, decompression and indirect-copy execution unavailable on current CPU ICD",
+        "capture/replay, sparse/device-group and pointer aliasing variants",
+        "physical/mobile hardware, external-engine and Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK17",
+    "domain": "外部互操作与隔离",
+    "existing_route": "[合同入口](04_buffer_image_memory/external_resource_interop.md#interop-handle-matrix)",
+    "open_review": "各平台handle消费/权限与跨API兼容完整组合",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "memory_fd_lifecycle": {
+      "contract": "external_resource_interop.md#delivery19-memory-fd-lifecycle",
+      "rules": "tools/external_memory19.py",
+      "evidence": "external-memory.json",
+      "scope": "same-process two-instance CPU ICD Vulkan-origin OPAQUE_FD buffer allocation export/import/bind and ownership cleanup, no queue submissions or payload visibility claim",
+      "domain_complete": false,
+      "still_open": [
+        "cross-device GPU synchronization and external ownership transfer",
+        "external semaphore/fence FD unavailable on current ICD",
+        "cross-process and cross-API protocols",
+        "images, DMA_BUF, Win32, AHB and protected content",
+        "physical/mobile hardware",
+        "full VK17, Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
+  },
+  {
+    "id": "VK18",
+    "domain": "调试、鲁棒性与工程治理",
+    "existing_route": "[合同入口](../04_debug_playbooks/02_crash_hang/device_lost.md#fault-report-order-1368)",
+    "open_review": "全部robustness/error/VUID/capture规则与真实宿主行为",
+    "depth_target": "L1/L2",
+    "status": "PARTIAL_BOUNDED",
+    "owner": "v1.0.19 C1",
+    "robust_buffer_family": {
+      "contract": "buffer.md#delivery19-robust-buffer-access",
+      "rules": "tools/robust_buffer19.py",
+      "evidence": "robust-buffer.json",
+      "scope": "ordinary uint32 SSBO robustness2 aligned descriptor bounds and nullDescriptor with actual compute, independent output/source guard oracle and safely aborted API negative",
+      "domain_complete": false,
+      "still_open": [
+        "images/texel/vertex/cooperative/BDA robustness rules",
+        "pipeline robustness override combinations",
+        "device lost, faults and complete debug tool behavior",
+        "physical/mobile performance and isolation",
+        "Vulkan SC, external-engine and Live/blind acceptance"
+      ]
+    }
+  }
+]

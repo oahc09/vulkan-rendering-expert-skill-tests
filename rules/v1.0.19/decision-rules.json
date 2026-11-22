@@ -1,0 +1,302 @@
+[
+  {
+    "rule_id": "D19-rendering",
+    "candidate": "dynamic-rendering",
+    "requires": {
+      "supported": [
+        "dynamic-rendering"
+      ],
+      "enabled": [
+        "dynamic-rendering"
+      ],
+      "parameters": [
+        "dynamic-rendering.valid-combination"
+      ],
+      "lifecycle": [
+        "dynamic-rendering.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "renderpass"
+    ],
+    "fallback": "renderpass",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-binding",
+    "candidate": "descriptor-buffer",
+    "requires": {
+      "supported": [
+        "descriptor-buffer"
+      ],
+      "enabled": [
+        "descriptor-buffer"
+      ],
+      "parameters": [
+        "descriptor-buffer.valid-combination"
+      ],
+      "lifecycle": [
+        "descriptor-buffer.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "descriptor-set"
+    ],
+    "fallback": "descriptor-set",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-scheduling",
+    "candidate": "async-compute",
+    "requires": {
+      "supported": [
+        "async-compute"
+      ],
+      "enabled": [
+        "async-compute"
+      ],
+      "parameters": [
+        "async-compute.valid-combination"
+      ],
+      "lifecycle": [
+        "async-compute.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "single-queue"
+    ],
+    "fallback": "single-queue",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-memory",
+    "candidate": "sparse-residency",
+    "requires": {
+      "supported": [
+        "sparse-residency"
+      ],
+      "enabled": [
+        "sparse-residency"
+      ],
+      "parameters": [
+        "sparse-residency.valid-combination"
+      ],
+      "lifecycle": [
+        "sparse-residency.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "resident"
+    ],
+    "fallback": "resident",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-pipeline",
+    "candidate": "pipeline-binary",
+    "requires": {
+      "supported": [
+        "pipeline-binary"
+      ],
+      "enabled": [
+        "pipeline-binary"
+      ],
+      "parameters": [
+        "pipeline-binary.valid-combination"
+      ],
+      "lifecycle": [
+        "pipeline-binary.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "pipeline-cache"
+    ],
+    "fallback": "pipeline-cache",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-scale",
+    "candidate": "indirect-count",
+    "requires": {
+      "supported": [
+        "indirect-count"
+      ],
+      "enabled": [
+        "indirect-count"
+      ],
+      "parameters": [
+        "indirect-count.valid-combination"
+      ],
+      "lifecycle": [
+        "indirect-count.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "fixed-slot"
+    ],
+    "fallback": "fixed-slot",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-quality",
+    "candidate": "ray-query",
+    "requires": {
+      "supported": [
+        "ray-query"
+      ],
+      "enabled": [
+        "ray-query"
+      ],
+      "parameters": [
+        "ray-query.valid-combination"
+      ],
+      "lifecycle": [
+        "ray-query.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "raster"
+    ],
+    "fallback": "raster",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-mobile",
+    "candidate": "quality-tier",
+    "requires": {
+      "supported": [
+        "quality-tier"
+      ],
+      "enabled": [
+        "quality-tier"
+      ],
+      "parameters": [
+        "quality-tier.valid-combination"
+      ],
+      "lifecycle": [
+        "quality-tier.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "baseline"
+    ],
+    "fallback": "baseline",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-platform",
+    "candidate": "vulkan-video",
+    "requires": {
+      "supported": [
+        "vulkan-video"
+      ],
+      "enabled": [
+        "vulkan-video"
+      ],
+      "parameters": [
+        "vulkan-video.valid-combination"
+      ],
+      "lifecycle": [
+        "vulkan-video.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "platform-codec"
+    ],
+    "fallback": "platform-codec",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  },
+  {
+    "rule_id": "D19-text",
+    "candidate": "msdf",
+    "requires": {
+      "supported": [
+        "msdf"
+      ],
+      "enabled": [
+        "msdf"
+      ],
+      "parameters": [
+        "msdf.valid-combination"
+      ],
+      "lifecycle": [
+        "msdf.owners-retirement"
+      ]
+    },
+    "alternatives": [
+      "bitmap"
+    ],
+    "fallback": "bitmap",
+    "revisit_conditions": [
+      "workload changes",
+      "driver/device changes",
+      "counterexample",
+      "budget changes"
+    ],
+    "version_scope": "project-specific capability report required",
+    "limitation": "internal facts require prior normative review, not an automatic Vulkan feature enumerator"
+  }
+]

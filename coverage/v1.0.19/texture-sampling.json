@@ -1,0 +1,950 @@
+{
+  "run_id": "f648cd81-03f8-4c2a-9e0c-067b3babc540",
+  "scope": "Authored single CPU ICD, RGBA8_UNORM nearest explicit LOD0 normalized clamp; no linear/sRGB/mip/anisotropy/physical hardware claim. SyncVal shader access heuristic enabled, not precise shader memory analysis.",
+  "sources": {
+    "probe.c": "16acf5a994793dec1c35cda4d99516554c43ab10bd8f485ecdb8d7a3b0d903a1",
+    "compute.comp": "65a3acd59aabf7191c0743f7b89d4dae770b421067c9a9d4bb280cae2285992c",
+    "normative.json": "15497bdee35bd04007f2403e8b9c73953921bc3adfead95ddedac53f34619e0a",
+    "run.py": "2b439fd4d80f0414cd00ac79094065b6b5c5c47a30a39a33f3c74e92ad17bef3"
+  },
+  "rule_sha256": "6f03991d2b1181c8588c4d4b040c29f8c9a315075918914c727473fb48aae2f6",
+  "tools": {
+    "glslangValidator": {
+      "binary_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "625bd352de44f83029feed47d4d6f2049af695d789c8d8cb6def79d2ced2a6ca",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "spirv-val": {
+      "binary_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "9141086275bff165ecd8e42834953c065be94a551a9304fb228489db06ae4450",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "spirv-dis": {
+      "binary_sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5",
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "4ad5febf34f7e5635ad03c724a604a95c34f679a938afc2d971f4d46a46cffe7",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "cases": {
+    "normal": {
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "fe65c85c1df700d1f30f9afc4f8fd7d731ad781e9055ce076138f7754a10ca0e",
+        "stderr_sha256": "0816ad767b6ab19cb41c78f3b3726661e321e0b157e82564a54e8076c93df7c8"
+      },
+      "result": {
+        "mode": "normal",
+        "submitted": true,
+        "errors": 0,
+        "exit_code": 0,
+        "pixels": [
+          4294967295,
+          4294967295,
+          4294967040,
+          4278255360,
+          4294902015,
+          4294902015,
+          4294901760,
+          4294901760,
+          4294902015,
+          4294902015,
+          4278190080,
+          4278190080,
+          4294902015,
+          4294902015,
+          4278190080,
+          4278190080
+        ]
+      },
+      "facts": {
+        "LIMITS": [
+          {
+            "samplers": 1000000,
+            "sampledImages": 1000000,
+            "storageImages": 1000000,
+            "setSamplers": 1000000,
+            "setSampled": 1000000,
+            "setStorage": 1000000,
+            "groupsX": 65535,
+            "groupsY": 65535,
+            "groupsZ": 65535
+          }
+        ],
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 37,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 15,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 37,
+            "optimal_features": 56707,
+            "required_features": 49155,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "QUEUE": [
+          {
+            "family": 0,
+            "flags": 15
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_CREATE": [
+          {
+            "image": 0,
+            "format": 37,
+            "usage": 15,
+            "width": 4,
+            "height": 4,
+            "samples": 1,
+            "levels": 1,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "format": 37,
+            "usage": 15,
+            "width": 4,
+            "height": 4,
+            "samples": 1,
+            "levels": 1,
+            "layers": 1
+          }
+        ],
+        "VIEW": [
+          {
+            "image": 0,
+            "format": 37,
+            "type": 1,
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "format": 37,
+            "type": 1,
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "INPUT": [
+          [
+            4294967295,
+            4278255360,
+            4278255360,
+            4278255360,
+            4294967295,
+            4294967040,
+            4278255360,
+            4278255360,
+            4294902015,
+            4294901760,
+            4294901760,
+            4278190080,
+            4294902015,
+            4278190080,
+            4278190080,
+            4278190080
+          ]
+        ],
+        "SAMPLER": [
+          {
+            "minFilter": 0,
+            "magFilter": 0,
+            "mipmapMode": 0,
+            "addressU": 2,
+            "addressV": 2,
+            "addressW": 2,
+            "minLod": 0,
+            "maxLod": 0,
+            "unnormalized": 0,
+            "anisotropyEnable": 0,
+            "compareEnable": 0
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 1,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 5,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 0,
+            "phase": "upload",
+            "oldLayout": 1,
+            "newLayout": 5,
+            "srcAccess": 4096,
+            "dstAccess": 32,
+            "srcStage": 4096,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "readback",
+            "oldLayout": 1,
+            "newLayout": 6,
+            "srcAccess": 64,
+            "dstAccess": 2048,
+            "srcStage": 2048,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [
+          {
+            "image": 1,
+            "layout": 6,
+            "width": 4,
+            "height": 4,
+            "depth": 1
+          }
+        ],
+        "COMPLETION": [
+          {
+            "fence_wait": "SUCCESS",
+            "host_barrier_src_access": 4096,
+            "host_barrier_dst_access": 8192
+          }
+        ]
+      },
+      "admission": {
+        "status": "NEAREST_CLAMP_SCOPE",
+        "vuids": []
+      },
+      "diagnostics": []
+    },
+    "bad-sampler": {
+      "log": {
+        "exit_code": 0,
+        "stdout_sha256": "71794f93c726788cf2f7f08fbea5f849c99c4dfe5f610fd7e827d4dba9daf024",
+        "stderr_sha256": "dcead601ccbe8339631ed31328aed8671c216d18ccaa886cc981aa9864e3e7ba"
+      },
+      "result": {
+        "mode": "bad-sampler",
+        "submitted": false,
+        "errors": 1,
+        "exit_code": 0,
+        "pixels": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "facts": {
+        "LIMITS": [
+          {
+            "samplers": 1000000,
+            "sampledImages": 1000000,
+            "storageImages": 1000000,
+            "setSamplers": 1000000,
+            "setSampled": 1000000,
+            "setStorage": 1000000,
+            "groupsX": 65535,
+            "groupsY": 65535,
+            "groupsZ": 65535
+          }
+        ],
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 37,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 15,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 37,
+            "optimal_features": 56707,
+            "required_features": 49155,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "QUEUE": [
+          {
+            "family": 0,
+            "flags": 15
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_CREATE": [
+          {
+            "image": 0,
+            "format": 37,
+            "usage": 15,
+            "width": 4,
+            "height": 4,
+            "samples": 1,
+            "levels": 1,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "format": 37,
+            "usage": 15,
+            "width": 4,
+            "height": 4,
+            "samples": 1,
+            "levels": 1,
+            "layers": 1
+          }
+        ],
+        "VIEW": [
+          {
+            "image": 0,
+            "format": 37,
+            "type": 1,
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "format": 37,
+            "type": 1,
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "INPUT": [
+          [
+            4294967295,
+            4278255360,
+            4278255360,
+            4278255360,
+            4294967295,
+            4294967040,
+            4278255360,
+            4278255360,
+            4294902015,
+            4294901760,
+            4294901760,
+            4278190080,
+            4294902015,
+            4278190080,
+            4278190080,
+            4278190080
+          ]
+        ],
+        "SAMPLER": [
+          {
+            "minFilter": 0,
+            "magFilter": 0,
+            "mipmapMode": 1,
+            "addressU": 2,
+            "addressV": 2,
+            "addressW": 2,
+            "minLod": 0,
+            "maxLod": 0,
+            "unnormalized": 1,
+            "anisotropyEnable": 0,
+            "compareEnable": 0
+          }
+        ]
+      },
+      "admission": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkSamplerCreateInfo-unnormalizedCoordinates-01073"
+        ]
+      },
+      "diagnostics": [
+        [
+          "sampler-create",
+          "VUID-VkSamplerCreateInfo-unnormalizedCoordinates-01073"
+        ]
+      ]
+    },
+    "wrong-output": {
+      "log": {
+        "exit_code": 6,
+        "stdout_sha256": "54683988a12f619767a20a52ba56322a3a1e11814154106aa7beba39291f70c6",
+        "stderr_sha256": "0816ad767b6ab19cb41c78f3b3726661e321e0b157e82564a54e8076c93df7c8"
+      },
+      "result": {
+        "mode": "wrong-output",
+        "submitted": true,
+        "errors": 0,
+        "exit_code": 6,
+        "pixels": [
+          4294967295,
+          4294967295,
+          4294967040,
+          4278255360,
+          4294902015,
+          4294902015,
+          4294901760,
+          4294901760,
+          4294902015,
+          4294902015,
+          4278190080,
+          4278190080,
+          4294902015,
+          4294902015,
+          4278190080,
+          4278190080
+        ]
+      },
+      "facts": {
+        "LIMITS": [
+          {
+            "samplers": 1000000,
+            "sampledImages": 1000000,
+            "storageImages": 1000000,
+            "setSamplers": 1000000,
+            "setSampled": 1000000,
+            "setStorage": 1000000,
+            "groupsX": 65535,
+            "groupsY": 65535,
+            "groupsZ": 65535
+          }
+        ],
+        "IDENTITY": [
+          {
+            "device_type": 4,
+            "vendor_id": 65541,
+            "device_id": 0,
+            "driver": 1,
+            "api": 4210993,
+            "layer_spec": 4210997,
+            "layer_impl": 1,
+            "sync_validation": true
+          }
+        ],
+        "IMAGE_QUERY": [
+          {
+            "format": 37,
+            "imageType": 1,
+            "tiling": 0,
+            "usage": 15,
+            "flags": 0,
+            "result": 0,
+            "samples": 5,
+            "maxLevels": 15,
+            "maxLayers": 2048
+          }
+        ],
+        "CAPABILITY": [
+          {
+            "format": 37,
+            "optimal_features": 56707,
+            "required_features": 49155,
+            "storage_images_limit": 1000000,
+            "max_width": 16384,
+            "max_height": 16384,
+            "extended_storage_supported": true,
+            "optional_features_enabled": false
+          }
+        ],
+        "QUEUE": [
+          {
+            "family": 0,
+            "flags": 15
+          }
+        ],
+        "MEMORY": [
+          {
+            "buffer": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          },
+          {
+            "buffer": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 64,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_MEMORY": [
+          {
+            "image": 0,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          },
+          {
+            "image": 1,
+            "type": 0,
+            "flags": 15,
+            "bits": 1,
+            "size": 256,
+            "alignment": 64
+          }
+        ],
+        "IMAGE_CREATE": [
+          {
+            "image": 0,
+            "format": 37,
+            "usage": 15,
+            "width": 4,
+            "height": 4,
+            "samples": 1,
+            "levels": 1,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "format": 37,
+            "usage": 15,
+            "width": 4,
+            "height": 4,
+            "samples": 1,
+            "levels": 1,
+            "layers": 1
+          }
+        ],
+        "VIEW": [
+          {
+            "image": 0,
+            "format": 37,
+            "type": 1,
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "format": 37,
+            "type": 1,
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "INPUT": [
+          [
+            4294967295,
+            4278255360,
+            4278255360,
+            4278255360,
+            4294967295,
+            4294967040,
+            4278255360,
+            4278255360,
+            4294902015,
+            4294901760,
+            4294901760,
+            4278190080,
+            4294902015,
+            4278190080,
+            4278190080,
+            4278190080
+          ]
+        ],
+        "SAMPLER": [
+          {
+            "minFilter": 0,
+            "magFilter": 0,
+            "mipmapMode": 0,
+            "addressU": 2,
+            "addressV": 2,
+            "addressW": 2,
+            "minLod": 0,
+            "maxLod": 0,
+            "unnormalized": 0,
+            "anisotropyEnable": 0,
+            "compareEnable": 0
+          }
+        ],
+        "DESCRIPTOR": [
+          {
+            "set": 0,
+            "binding": 0,
+            "type": 1,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 5,
+            "image": 0
+          },
+          {
+            "set": 0,
+            "binding": 1,
+            "type": 3,
+            "count": 1,
+            "stage": 32,
+            "imageLayout": 1,
+            "image": 1
+          }
+        ],
+        "BARRIER": [
+          {
+            "image": 0,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 4096,
+            "srcStage": 1,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "initial-layouts",
+            "oldLayout": 0,
+            "newLayout": 1,
+            "srcAccess": 0,
+            "dstAccess": 64,
+            "srcStage": 1,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 0,
+            "phase": "upload",
+            "oldLayout": 1,
+            "newLayout": 5,
+            "srcAccess": 4096,
+            "dstAccess": 32,
+            "srcStage": 4096,
+            "dstStage": 2048,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          },
+          {
+            "image": 1,
+            "phase": "readback",
+            "oldLayout": 1,
+            "newLayout": 6,
+            "srcAccess": 64,
+            "dstAccess": 2048,
+            "srcStage": 2048,
+            "dstStage": 4096,
+            "aspect": 1,
+            "baseMip": 0,
+            "levels": 1,
+            "baseLayer": 0,
+            "layers": 1
+          }
+        ],
+        "COPY_UPLOAD": [
+          {
+            "image": 0,
+            "layout": 1,
+            "width": 4,
+            "height": 4,
+            "depth": 1,
+            "aspect": 1,
+            "mip": 0,
+            "baseLayer": 0,
+            "layerCount": 1
+          }
+        ],
+        "COPY_READBACK": [
+          {
+            "image": 1,
+            "layout": 6,
+            "width": 4,
+            "height": 4,
+            "depth": 1
+          }
+        ],
+        "COMPLETION": [
+          {
+            "fence_wait": "SUCCESS",
+            "host_barrier_src_access": 4096,
+            "host_barrier_dst_access": 8192
+          }
+        ]
+      },
+      "admission": {
+        "status": "NEAREST_CLAMP_SCOPE",
+        "vuids": []
+      },
+      "diagnostics": []
+    }
+  },
+  "normative_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "compile": {
+    "exit_code": 0,
+    "stdout_sha256": "dc0d3a2c1fc74d3406796130af0c46efb35fab193f1ad7e9d168cf1c861754c9",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "validate": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "disassemble": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "spirv_sha256": "7c08efaa0d02228d44d49008d9d4158f5314d2cda641c307c1f14569ac2706c6",
+  "disassembly_sha256": "1d2451d06abea26ee0778efbfc846f76f19b8c89cb9d07f66cb2e85733412a79",
+  "build": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "binary_sha256": "0e642536fcaf74cd5a6620118a9e9c8f3e00c65e7862f8558db0070258b25d2b",
+  "status": "BOUNDED_NEAREST_COMBINED_SAMPLER_PASS"
+}

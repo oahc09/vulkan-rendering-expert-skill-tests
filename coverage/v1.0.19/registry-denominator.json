@@ -1,0 +1,36 @@
+{
+  "alias_host_controls": {
+    "source_coordinate": "0/4/157",
+    "target": "VkMemoryUnmapFlags",
+    "same_declared_scope": "STRUCTURAL_ALIAS_TARGET_ONLY_NOT_ENABLED_OR_INTERCHANGEABLE",
+    "cross_api": "APPLICABILITY_UNRESOLVED",
+    "authority": "CALLER_DECLARED_SCOPE_NOT_AUTHENTICATED"
+  },
+  "status": "COMPLETE_PINNED_XML_ELEMENT_STRUCTURE_ONLY",
+  "semantic_status": "UNREVIEWED",
+  "source_sha256": {
+    "vk.xml": "d56ff7f1613c36b820998dbd8e184b79ec49dc44db63390185205fa15ebcd444",
+    "video.xml": "1b6ed670bd1a4e1abb04b40a324f54d60e2a2ab5938fe72e99cb8223d298873f"
+  },
+  "inventory_sha256": "2d15c43318f3a673306c32507e260408216421db1175a9b9fce59e3354c6b175",
+  "implementation_sha256": "646a8f826a111f7651ac2705bd73324050ddb352c48e219ee4bc5b639bd6cd48",
+  "documents": {
+    "video.xml": {
+      "element_count": 3805,
+      "relation_count": 1156
+    },
+    "vk.xml": {
+      "element_count": 54257,
+      "relation_count": 27449
+    }
+  },
+  "limits": [
+    "Every XML element/attribute/text/tail is retained; comments and processing instructions are not element coordinates and remain in hashed original bytes.",
+    "Conditions and dependency expressions are preserved, not evaluated; remove blocks are not applied.",
+    "Reference candidates are lexical, not API applicability, feature enablement or semantic equivalence.",
+    "309 VUIDs, expanded specification prose, Headers and SPIR-V remain separate unfinished denominators.",
+    "No L1/L2, device support or runtime execution follows from indexing."
+  ],
+  "evidence_phase": "DEVELOPMENT_PREPUBLICATION",
+  "not_semantic_completion": true
+}

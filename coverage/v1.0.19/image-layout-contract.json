@@ -1,0 +1,334 @@
+{
+  "case_count": 17,
+  "evidence_kind": "CALLER_FACTS_HOST_CONTROLS_NOT_GPU",
+  "implementation_sha256": {
+    "checks19/run_image_layout_contracts.py": "908db14ccacaee88f160a0437a1fd0300f524f8c74910a05682ecc7556239398",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "tools/image_layout_contract19.py": "15c81740f73fb31045917b0d52d08b1a629d34359a86eda8f55462e6a9e4a52b",
+    "tools/image_layout_prose19.py": "96f2748b754bd6f099a845b19d41d96e5fc647b082cd61ebddb9aeb118738653"
+  },
+  "prose": {
+    "limits": [
+      "Raw slices end at next explicit anchor; outer conditionals and includes are not expanded or evaluated.",
+      "Not transitive dependency closure or proof of caller facts; separate from validusage1.4.309."
+    ],
+    "slices": [
+      {
+        "anchor": "synchronization-image-layout-transitions",
+        "bytes": 2983,
+        "conditional_directives": [
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]"
+        ],
+        "line_end": 260,
+        "line_start": 196,
+        "sha256": "9e80a9146487c6ea14f543e9a476072f943de3f804b5309237eb13d435d65622"
+      },
+      {
+        "anchor": "synchronization-image-memory-barriers",
+        "bytes": 5981,
+        "conditional_directives": [
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "ifdef::VK_KHR_synchronization2[]",
+          "endif::VK_KHR_synchronization2[]",
+          "ifdef::VK_KHR_maintenance8[]",
+          "endif::VK_KHR_maintenance8[]",
+          "ifdef::VK_KHR_maintenance8[]",
+          "endif::VK_KHR_maintenance8[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]"
+        ],
+        "line_end": 7526,
+        "line_start": 7412,
+        "sha256": "a35c8033f5f639739272b8a2e35c369bbb7b6a8927d0f7314e593a706799b6da"
+      },
+      {
+        "anchor": "synchronization-image-barrier2-ignored-layout",
+        "bytes": 6465,
+        "conditional_directives": [
+          "ifdef::VK_KHR_maintenance9[]",
+          "endif::VK_KHR_maintenance9[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+          "ifdef::VK_EXT_zero_initialize_device_memory[ename:VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT,]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]"
+        ],
+        "line_end": 7653,
+        "line_start": 7527,
+        "sha256": "cee7af86511bd2883fc09b1b84afd833f2709612b0de80cd182a2f2d0d080449"
+      },
+      {
+        "anchor": "synchronization-image-barrier-ignored-layout",
+        "bytes": 9872,
+        "conditional_directives": [
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "ifdef::VK_KHR_maintenance9[]",
+          "endif::VK_KHR_maintenance9[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_sampler_ycbcr_conversion[]",
+          "ifdef::VK_KHR_synchronization2[]",
+          "endif::VK_KHR_synchronization2[]",
+          "ifndef::VK_KHR_synchronization2[]",
+          "endif::VK_KHR_synchronization2[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_synchronization2[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_KHR_external_memory_win32[]",
+          "endif::VK_KHR_external_memory_win32[]",
+          "ifdef::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+          "ifdef::VK_BASE_VERSION_1_4[]",
+          "endif::VK_BASE_VERSION_1_4[]",
+          "ifdef::VK_EXT_host_image_copy[]",
+          "endif::VK_EXT_host_image_copy[]",
+          "ifdef::VK_EXT_host_image_copy[]",
+          "endif::VK_EXT_host_image_copy[]",
+          "ifdef::VK_KHR_maintenance9[]",
+          "endif::VK_KHR_maintenance9[]",
+          "ifdef::VK_EXT_zero_initialize_device_memory[ename:VK_IMAGE_LAYOUT_ZERO_INITIALIZED_EXT,]",
+          "endif::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+          "ifdef::VK_ARM_tensors[]"
+        ],
+        "line_end": 7906,
+        "line_start": 7686,
+        "sha256": "aa41b43696733f4a16ea73bdd773d8fc03132030ca4c7289dff6139b819e00f9"
+      }
+    ],
+    "source": {
+      "api_version": "1.4.368",
+      "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "copyright": "Khronos Group",
+      "license": "CC-BY-4.0",
+      "path": "chapters/synchronization.adoc",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909"
+    },
+    "status": "EXACT_RAW_PROSE_SLICE_MAP"
+  },
+  "release_status": "BLOCKED",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "status": "SOURCE_PAIRED_IMAGE_LAYOUT_HOST_CONTROLS",
+  "vuid_coordinates": [
+    {
+      "api_owner": "VkImageMemoryBarrier",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkImageMemoryBarrier-oldLayout-01197"
+    },
+    {
+      "api_owner": "VkImageMemoryBarrier",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkImageMemoryBarrier-newLayout-01198"
+    },
+    {
+      "api_owner": "VkImageMemoryBarrier2",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkImageMemoryBarrier2-oldLayout-01197"
+    },
+    {
+      "api_owner": "VkImageMemoryBarrier2",
+      "condition_key": "core",
+      "page": "chapters/synchronization.html",
+      "vuid": "VUID-VkImageMemoryBarrier2-newLayout-01198"
+    }
+  ],
+  "vuid_source": {
+    "api_version": "1.4.309",
+    "file": "validusage.json",
+    "schema_version": 2,
+    "separate_from_vk_xml_api": "1.4.368",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "source_kind": "official Debian Vulkan headers registry snapshot"
+  },
+  "controls": [
+    {
+      "name": "selected-cell-transition",
+      "expected": "MODELED_TRANSITION",
+      "expected_details": {}
+    },
+    {
+      "name": "legacy-sync2-ignored-UNDEFINED",
+      "expected": "MODELED_LAYOUTS_IGNORED",
+      "expected_details": {
+        "content_preservation_not_guaranteed": false,
+        "state_after": [
+          {
+            "defined": true,
+            "layer": 0,
+            "layout": "GENERAL",
+            "mip": 0
+          },
+          {
+            "defined": false,
+            "layer": 0,
+            "layout": "TRANSFER_SRC_OPTIMAL",
+            "mip": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "legacy-sync2-ignored-TRANSFER_DST_OPTIMAL",
+      "expected": "MODELED_LAYOUTS_IGNORED",
+      "expected_details": {
+        "content_preservation_not_guaranteed": false,
+        "state_after": [
+          {
+            "defined": true,
+            "layer": 0,
+            "layout": "GENERAL",
+            "mip": 0
+          },
+          {
+            "defined": false,
+            "layer": 0,
+            "layout": "TRANSFER_SRC_OPTIMAL",
+            "mip": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "barrier2-sync2-ignored-UNDEFINED",
+      "expected": "MODELED_LAYOUTS_IGNORED",
+      "expected_details": {
+        "content_preservation_not_guaranteed": false,
+        "state_after": [
+          {
+            "defined": true,
+            "layer": 0,
+            "layout": "GENERAL",
+            "mip": 0
+          },
+          {
+            "defined": false,
+            "layer": 0,
+            "layout": "TRANSFER_SRC_OPTIMAL",
+            "mip": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "barrier2-sync2-ignored-TRANSFER_DST_OPTIMAL",
+      "expected": "MODELED_LAYOUTS_IGNORED",
+      "expected_details": {
+        "content_preservation_not_guaranteed": false,
+        "state_after": [
+          {
+            "defined": true,
+            "layer": 0,
+            "layout": "GENERAL",
+            "mip": 0
+          },
+          {
+            "defined": false,
+            "layer": 0,
+            "layout": "TRANSFER_SRC_OPTIMAL",
+            "mip": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "legacy-no-sync2-equal-mismatch",
+      "expected": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-VkImageMemoryBarrier-oldLayout-01197"
+        ]
+      }
+    },
+    {
+      "name": "legacy-no-sync2-equal-current",
+      "expected": "MODELED_TRANSITION",
+      "expected_details": {}
+    },
+    {
+      "name": "different-families-not-ignored",
+      "expected": "UNKNOWN",
+      "expected_details": {}
+    },
+    {
+      "name": "discard-definedness-not-clearing",
+      "expected": "MODELED_TRANSITION",
+      "expected_details": {
+        "content_preservation_not_guaranteed": true,
+        "state_after": [
+          {
+            "defined": false,
+            "layer": 0,
+            "layout": "TRANSFER_DST_OPTIMAL",
+            "mip": 0
+          },
+          {
+            "defined": false,
+            "layer": 0,
+            "layout": "TRANSFER_SRC_OPTIMAL",
+            "mip": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "discard-still-requires-prior_accesses_ordered_before_transition",
+      "expected": "INSUFFICIENT_DEPENDENCY",
+      "expected_details": {}
+    },
+    {
+      "name": "discard-still-requires-prior_writes_available",
+      "expected": "INSUFFICIENT_DEPENDENCY",
+      "expected_details": {}
+    },
+    {
+      "name": "discard-still-requires-next_accesses_ordered_after_transition",
+      "expected": "INSUFFICIENT_DEPENDENCY",
+      "expected_details": {}
+    },
+    {
+      "name": "discard-still-requires-transition_writes_visible_to_next_access",
+      "expected": "INSUFFICIENT_DEPENDENCY",
+      "expected_details": {}
+    },
+    {
+      "name": "ignored-layout-not-memory-proof",
+      "expected": "INSUFFICIENT_DEPENDENCY",
+      "expected_details": {}
+    },
+    {
+      "name": "mixed-cell-oldlayout-mismatch",
+      "expected": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-VkImageMemoryBarrier2-oldLayout-01197"
+        ]
+      }
+    },
+    {
+      "name": "invalid-transition-new",
+      "expected": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-VkImageMemoryBarrier2-newLayout-01198"
+        ]
+      }
+    },
+    {
+      "name": "missing-caller-proof",
+      "expected": "UNKNOWN",
+      "expected_details": {}
+    }
+  ],
+  "report_sha256": "300650b5a0c29056108381d51f18235dd8ff8fd32053484dba693bd47d3dc3a0",
+  "cohort": "prepublication exact implementation hashes; not final tests head"
+}

@@ -1,0 +1,15 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "owner": "VkRenderingAttachmentInfo",
+  "entry": {
+    "vuid": "VUID-VkRenderingAttachmentInfo-imageView-06861",
+    "text": "<code>imageView</code> <strong class=\"purple\">must</strong> not have a sample count of <code>VK_SAMPLE_COUNT_1_BIT</code> if all of the following hold:<div class=\"ulist\">\n<ul>\n<li>\n<p><code>imageView</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a></p>\n</li>\n<li>\n<p><code>resolveMode</code> is not <code>VK_RESOLVE_MODE_NONE</code></p>\n</li>\n<li>\n<p>the <code>pNext</code> chain of <a href=\"#VkRenderingInfo\">VkRenderingInfo</a> does not include a\n<a href=\"#VkMultisampledRenderToSingleSampledInfoEXT\">VkMultisampledRenderToSingleSampledInfoEXT</a> structure with the\n<code>multisampledRenderToSingleSampledEnable</code> field equal to\n<code>VK_TRUE</code></p>\n</li>\n</ul>\n</div>",
+    "page": "chapters/renderpass.html"
+  }
+}

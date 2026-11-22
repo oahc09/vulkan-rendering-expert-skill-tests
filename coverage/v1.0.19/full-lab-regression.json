@@ -1,0 +1,382 @@
+{
+  "schema": 1,
+  "status": "COMPLETE_SCOPED_LOCAL_LAB_SWEEP",
+  "tests_run_sha": "3d801465919979c9c8856e977d1fe99f89ee4a4c",
+  "skill_run_sha": "3211186f6f07e39263d463cf58af9241b9b9e092",
+  "source_clean_at_start": true,
+  "source_clean_at_end": true,
+  "comparison": {
+    "sha": "e718c6254928f40e2ef1108fdb30005a49ab9649",
+    "scope": "all tests/fixtures and selected integration test files",
+    "changed_paths": [],
+    "harness_changes_not_in_equivalence": [
+      "tests/conftest.py: candidate19 marker recognition",
+      "tests/pytest.ini: candidate19 marker registration"
+    ],
+    "meaning": "source equivalence only; not a run at comparison SHA"
+  },
+  "primary_counts": {
+    "PASS": 54,
+    "SKIP": 1
+  },
+  "nodes": [
+    {
+      "node": "test_text18_scene_a_refined_lab::test_actual_refined_multilingual_board",
+      "outcome": "PASS",
+      "seconds": 117.324
+    },
+    {
+      "node": "test_simulation_lab::test_current_simulation_vulkan_artifacts",
+      "outcome": "SKIP",
+      "seconds": 0.001,
+      "reason": "No current clean-source Simulation Lab run; host is not GPU evidence"
+    },
+    {
+      "node": "test_text18_active_mrt_lab::test_actual_active_mrt_and_depth_preservation",
+      "outcome": "PASS",
+      "seconds": 9.197
+    },
+    {
+      "node": "test_text18_affine_quality_lab::test_actual_scaled_rotated_bitmap_quad",
+      "outcome": "PASS",
+      "seconds": 10.822
+    },
+    {
+      "node": "test_text18_bidi_lab::test_actual_bidi_fallback_paragraph",
+      "outcome": "PASS",
+      "seconds": 10.65
+    },
+    {
+      "node": "test_text18_bitmap_lab::test_actual_shaped_glyph_bitmap_composition",
+      "outcome": "PASS",
+      "seconds": 10.178
+    },
+    {
+      "node": "test_text18_cache_churn_lab::test_actual_cache_products_gpu_churn",
+      "outcome": "PASS",
+      "seconds": 20.571
+    },
+    {
+      "node": "test_text18_cache_cost_lab::test_actual_cpu_cache_cost",
+      "outcome": "PASS",
+      "seconds": 0.419,
+      "evidence_layer": "actual CPU font-provider cost only, despite integration marker"
+    },
+    {
+      "node": "test_text18_cache_dual_mrt_lab::test_actual_cache_dual_device_active_mrt",
+      "outcome": "PASS",
+      "seconds": 28.457
+    },
+    {
+      "node": "test_text18_churn_lab::test_actual_64_generation_retirement",
+      "outcome": "PASS",
+      "seconds": 2.651
+    },
+    {
+      "node": "test_text18_clip_lab::test_actual_nested_fragment_clips",
+      "outcome": "PASS",
+      "seconds": 9.358
+    },
+    {
+      "node": "test_text18_colrv0_lab::test_actual_colrv0",
+      "outcome": "PASS",
+      "seconds": 9.463
+    },
+    {
+      "node": "test_text18_combined_lifecycle_lab::test_actual_combined_packed_draw_lifecycle",
+      "outcome": "PASS",
+      "seconds": 13.127
+    },
+    {
+      "node": "test_text18_content_churn_lab::test_actual_content_churn",
+      "outcome": "PASS",
+      "seconds": 17.712
+    },
+    {
+      "node": "test_text18_descriptor_lab::test_actual_pending_descriptor_draw_retirement",
+      "outcome": "PASS",
+      "seconds": 8.423
+    },
+    {
+      "node": "test_text18_dual_device_lab::test_actual_dual_device_lifecycle",
+      "outcome": "PASS",
+      "seconds": 14.915
+    },
+    {
+      "node": "test_text18_dual_pending_lab::test_actual_dual_device_pending_isolation",
+      "outcome": "PASS",
+      "seconds": 18.603
+    },
+    {
+      "node": "test_text18_emoji_lab::test_actual_real_emoji_selectors",
+      "outcome": "PASS",
+      "seconds": 9.059
+    },
+    {
+      "node": "test_text18_extrusion_lab::test_actual_extrusion",
+      "outcome": "PASS",
+      "seconds": 13.332
+    },
+    {
+      "node": "test_text18_fallback_lab::test_actual_multiface_run_fallback",
+      "outcome": "PASS",
+      "seconds": 10.332
+    },
+    {
+      "node": "test_text18_growth_lab::test_actual_growth_cancel_retirement",
+      "outcome": "PASS",
+      "seconds": 2.434
+    },
+    {
+      "node": "test_text18_handoff_lab::test_actual_pre_overlay_post_handoff",
+      "outcome": "PASS",
+      "seconds": 10.408
+    },
+    {
+      "node": "test_text18_joint_lifecycle_lab::test_actual_joint_lifecycle",
+      "outcome": "PASS",
+      "seconds": 23.273
+    },
+    {
+      "node": "test_text18_lifecycle_handoff_lab::test_actual_pending_lifecycle_with_scene_handoff",
+      "outcome": "PASS",
+      "seconds": 32.662
+    },
+    {
+      "node": "test_text18_locale_churn_lab::test_actual_locale_churn",
+      "outcome": "PASS",
+      "seconds": 18.042
+    },
+    {
+      "node": "test_text18_msdf_cost_lab::test_software_msdf_cost_measurement",
+      "outcome": "PASS",
+      "seconds": 79.562
+    },
+    {
+      "node": "test_text18_msdf_integration_lab::test_gpu_msdf_subpixel_integration",
+      "outcome": "PASS",
+      "seconds": 74.382
+    },
+    {
+      "node": "test_text18_msdf_lab::test_actual_edge_colored_msdf_gpu_and_outline_gate",
+      "outcome": "PASS",
+      "seconds": 25.156
+    },
+    {
+      "node": "test_text18_near_clip_lab::test_actual_world_glyph_near_clip",
+      "outcome": "PASS",
+      "seconds": 17.563
+    },
+    {
+      "node": "test_text18_packed_quad_lab::test_actual_packed_uv_glyph_quads",
+      "outcome": "PASS",
+      "seconds": 8.665
+    },
+    {
+      "node": "test_text18_packing::test_actual_packed_font_pages",
+      "outcome": "PASS",
+      "seconds": 11.15
+    },
+    {
+      "node": "test_text18_phase_integration_lab::test_actual_higher_grid_phase_evidence",
+      "outcome": "PASS",
+      "seconds": 122.834
+    },
+    {
+      "node": "test_text18_phase_sequence_lab::test_actual_phase_sequence_persistent_evidence",
+      "outcome": "PASS",
+      "seconds": 42.782
+    },
+    {
+      "node": "test_text18_quality::test_actual_subpixel_font_sequence",
+      "outcome": "PASS",
+      "seconds": 14.731
+    },
+    {
+      "node": "test_text18_representation_switch_lab::test_actual_stateful_same_device_representation_switch",
+      "outcome": "PASS",
+      "seconds": 28.923
+    },
+    {
+      "node": "test_text18_scene_a_board_lab::test_actual_same_layout_multilingual_board",
+      "outcome": "PASS",
+      "seconds": 69.664
+    },
+    {
+      "node": "test_text18_scene_a_budget_lab::test_actual_compact_budget_perspective_board",
+      "outcome": "PASS",
+      "seconds": 149.181
+    },
+    {
+      "node": "test_text18_scene_b_shared_lab::test_actual_shared_world_scene",
+      "outcome": "PASS",
+      "seconds": 14.168
+    },
+    {
+      "node": "test_text18_scene_b_vector_lab::test_actual_shared_world_vector",
+      "outcome": "PASS",
+      "seconds": 19.091
+    },
+    {
+      "node": "test_text18_scene_c_service_lab::test_actual_resident_scene_c_service",
+      "outcome": "PASS",
+      "seconds": 26.371
+    },
+    {
+      "node": "test_text18_second_camera_lab::test_actual_second_camera_same_device",
+      "outcome": "PASS",
+      "seconds": 18.738
+    },
+    {
+      "node": "test_text18_shadow_lab::test_actual_shaped_shadow_producer_consumer",
+      "outcome": "PASS",
+      "seconds": 13.308
+    },
+    {
+      "node": "test_text18_shaped_geometry_lab::test_actual_shaped_glyph_geometry_or_fallback",
+      "outcome": "PASS",
+      "seconds": 26.028
+    },
+    {
+      "node": "test_text18_stroke_area_lab::test_actual_stroke_exact_area_aa",
+      "outcome": "PASS",
+      "seconds": 40.434
+    },
+    {
+      "node": "test_text18_stroke_boundary_lab::test_actual_closed_stroke_boundary_fallback",
+      "outcome": "PASS",
+      "seconds": 24.503
+    },
+    {
+      "node": "test_text18_stroke_lab::test_actual_bounded_stroke_caps_joins",
+      "outcome": "PASS",
+      "seconds": 15.95
+    },
+    {
+      "node": "test_text18_temporal_hdr_lab::test_actual_temporal_hdr_text_consumer",
+      "outcome": "PASS",
+      "seconds": 14.562
+    },
+    {
+      "node": "test_text18_upload_budget_lab::test_actual_upload_budget_backpressure",
+      "outcome": "PASS",
+      "seconds": 17.39
+    },
+    {
+      "node": "test_text18_variation_churn_lab::test_actual_variation_churn",
+      "outcome": "PASS",
+      "seconds": 17.579
+    },
+    {
+      "node": "test_text18_vector_mesh_lab::test_actual_concave_triangle_mesh",
+      "outcome": "PASS",
+      "seconds": 12.638
+    },
+    {
+      "node": "test_text18_vector_scale_lab::test_actual_progressive_curve_mesh",
+      "outcome": "PASS",
+      "seconds": 16.095
+    },
+    {
+      "node": "test_text18_world_label_lab::test_actual_world_glyph_perspective",
+      "outcome": "PASS",
+      "seconds": 14.328
+    },
+    {
+      "node": "test_transparent_scene_lab::test_actual_transparent_vulkan_artifacts",
+      "outcome": "PASS",
+      "seconds": 0.139
+    },
+    {
+      "node": "test_v1_0_18_inflight_lab::test_actual_multiple_pending_consumers_retire_before_slot_reuse",
+      "outcome": "PASS",
+      "seconds": 1.861
+    },
+    {
+      "node": "test_v1_0_18_vulkan_lab::test_actual_text_coverage_upload_and_preserved_overlay",
+      "outcome": "PASS",
+      "seconds": 5.495
+    }
+  ],
+  "simulation_retry": {
+    "reason": "initial build failed writing git index.lock due full tmpfs; primary suite SKIP; moved storage then rebuilt unchanged clean sources",
+    "nodes": [
+      {
+        "node": "test_simulation_lab::test_current_simulation_vulkan_artifacts",
+        "outcome": "PASS",
+        "seconds": 0.262
+      }
+    ]
+  },
+  "artifacts": {
+    "junit.xml": "7464772b0917c6c6d66f670e89f6d71d8d37c4f7b096d8fe488dc832bfe40764",
+    "pytest.log": "0dddf110fcc58608a8d2088c9397d3917a03fed19dad0ebd0e10e8d6d5818b32",
+    "simulation-junit.xml": "5509f97e0bec886f3fa276407a6a3be8ee1a3feb147f82610ae839af78a1837a",
+    "simulation-retry-pytest.log": "3d216e5d4dc1b0743b05ae40e0fe0b05c1d66e38f3e20b543788fa819fd40676",
+    "simulation-retry-0.log": "e74509273e36abeab1498e3463f0fccff6891d571be89db351fa9e1f58866d8b",
+    "simulation-retry-1.log": "3d6593e653036dd96f8fffc0bd13c0d96d1c6aee01337439733a0293e5123a4a",
+    "transparent-run.log": "48c597ce4a288efe38ea7dfd7d81c07e0b34cde84c005cc590d1da0db8c827b4"
+  },
+  "tools": {
+    "compiler_packages": [
+      {
+        "package": "glslang-tools",
+        "version": "15.1.0+1.4.309.0-1",
+        "source": "https://deb.debian.org/debian/pool/main/g/glslang/glslang-tools_15.1.0+1.4.309.0-1_amd64.deb",
+        "sha256": "c3025c4af63244296bc9d466746763c809d3f3f126408fc2c7b07070886a7759"
+      },
+      {
+        "package": "spirv-tools",
+        "version": "2025.1~rc1-1",
+        "source": "https://deb.debian.org/debian/pool/main/s/spirv-tools/spirv-tools_2025.1~rc1-1_amd64.deb",
+        "sha256": "2cc272ef1340cf0b47de6c5fcccaf91574d7a8f4061abb718d6c639463e85aab"
+      }
+    ],
+    "binary_sha256": {
+      "glslang": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "validation_layer": "25002892d69ff2719fdd7a92a454a15c2d271a17186bc70b625aafaf2df49a05",
+      "software_ICD": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2"
+    },
+    "software_ICD_source": "https://deb.debian.org/debian/pool/main/m/mesa/mesa-vulkan-drivers_25.0.7-2+deb13u1_amd64.deb",
+    "validation_layer_source": "https://deb.debian.org/debian/pool/main/v/vulkan-validationlayers/vulkan-validationlayers_1.4.309.0-1_amd64.deb",
+    "observed_versions": {
+      "glslang": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+      "spirv-val": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)"
+    }
+  },
+  "nested_summary_status_counts": {
+    "PASS": 106,
+    "MEASURED_SOFTWARE_ONLY": 1,
+    "BOUNDED_INTERIOR_PASS": 2,
+    "BOUNDED_SECOND_CAMERA_PASS": 1,
+    "BOUNDED_PERSPECTIVE_WORLD_LABEL_PASS": 2,
+    "MEASURED_NOT_QUALIFIED": 1,
+    "SAMPLING_PASS_QUALITY_NOT_QUALIFIED": 3,
+    "BOUNDED_REAL_NEAR_CLIP_STABLE_SAMPLING_PASS": 1,
+    "BOUNDED_EXACT_RECTANGLE_AREA_PASS": 1,
+    "BOUNDED_PASS": 1,
+    "BOUNDED_ANALYTIC_FALLBACK_PASS": 1
+  },
+  "limitations": [
+    "CPU llvmpipe ICD only; not mobile or physical GPU validation",
+    "cache cost integration marker is CPU-only",
+    "test PASS preserves sampling/quality-not-qualified states; not final quality acceptance",
+    "historical lab baselines remain historical, not newly executed",
+    "No Live-model calls or external uploads",
+    "raw assets/logs retained locally; digest embeds neither",
+    "run SHA not replaced with later comparison SHA"
+  ],
+  "recovery": {
+    "initial_attempt": "interrupted after tmpfs ENOSPC; no complete-suite verdict claimed",
+    "storage": "moved all sweep outputs/temporary compiler files to workspace, retained tmp logical location",
+    "simulation_original_failure": "fresh build failed writing git worktree index.lock under full tmpfs; retried without source/assertion changes"
+  },
+  "nested_summary_note": "Counts include nested preparation artifacts and historical-baseline summaries; they are not independent test totals or new acceptance claims.",
+  "effective_unique_node_outcomes_after_retry": {
+    "PASS": 55,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "effective_outcome_caveat": "Primary 54 PASS / 1 SKIP retained above; sole skipped simulation passed a separate fresh rebuild and pytest rerun. Not a single 55-pass suite execution."
+}

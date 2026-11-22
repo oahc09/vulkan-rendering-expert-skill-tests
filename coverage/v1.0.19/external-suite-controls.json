@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "evidence_stage": "PREPUBLICATION_LOCAL_COHORT",
+  "tests_head": "b1a32d3bf5a00b0745c59de96555f2152fbcabe0",
+  "skill_head": "2eb4e2e62046fd215cfd5b526af94c26997d0956",
+  "controls_sha256": "81c3a9392a170ebed3c9fe9f6b9231ff74a48698b5771b25809f3dee1c89ee7a",
+  "scope": "Fixed repeated real external tasks; HOST boundary and software Vulkan kept separate. Local process-group controls, not GPU hang/device recovery.",
+  "controls": [
+    {
+      "label": "budget",
+      "exit": 1,
+      "status": "BLOCKED",
+      "run_id": "377046ac-c134-4a5b-842c-bdad64a54cf0",
+      "verified": [],
+      "pending": [
+        "fence_host",
+        "amber_gpu",
+        "related_gpu"
+      ],
+      "index_sha256": "638568cba585ec56dfffda7bd83227e943e0ff940e4f2709f11ba0c12dfb0f4e",
+      "all_started_groups_gone": true
+    },
+    {
+      "label": "prefix-cancel",
+      "exit": 1,
+      "status": "CANCELLED",
+      "run_id": "3cd3a150-1a00-45f5-9b48-be6e99191981",
+      "verified": [
+        "fence_host"
+      ],
+      "pending": [
+        "amber_gpu",
+        "related_gpu"
+      ],
+      "index_sha256": "42cf45ea9a9f7ccb46d6e6c316ccd68cb4c451525eeb919edb8db4684b454178",
+      "all_started_groups_gone": true
+    },
+    {
+      "label": "fresh-recovery",
+      "exit": 0,
+      "status": "BOUNDED_EXTERNAL_TASK_SUITE_VERIFIED",
+      "run_id": "6899aca8-5fb7-4dce-b633-387b651c8b51",
+      "verified": [
+        "fence_host",
+        "amber_gpu",
+        "related_gpu"
+      ],
+      "pending": [],
+      "index_sha256": "9e4aa1a1a9e68b7f09f0d1cfa04698435148890d5d7b08d07949de2db39e8f69",
+      "all_started_groups_gone": true
+    }
+  ],
+  "release_status": "BLOCKED",
+  "final_tasks": "UNVERIFIED",
+  "blind_repairs": 0,
+  "related_regression_original_receipt_sha256": "bbd0fe2eb2852b5d327bf1e181c0b8023f4f9e82b29b13d451630d35ab495a19",
+  "related_independent_receipt_sha256": "070719b1a5134d85085f7a462890c40956bf92baffd12b9b579f776dcef2f5f1"
+}

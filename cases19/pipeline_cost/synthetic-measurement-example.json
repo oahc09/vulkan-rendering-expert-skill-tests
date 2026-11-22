@@ -1,0 +1,66 @@
+{
+  "cohort_equal": true,
+  "paired_protocol": true,
+  "output_equal": true,
+  "source_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+  "baseline": {
+    "creation_cpu_ns": [
+      50,
+      50,
+      50
+    ],
+    "first_frame_ns": [
+      100,
+      100,
+      100
+    ],
+    "steady_frame_ns": [
+      40,
+      40,
+      40
+    ],
+    "cohort": {
+      "device": "same",
+      "driver": "same",
+      "workload": "same",
+      "shader": "same",
+      "tools": "same",
+      "input": "same",
+      "resolution": "same",
+      "clock_domain": "same",
+      "thermal": "same",
+      "warmup_protocol": "same",
+      "run_order_protocol": "same"
+    }
+  },
+  "candidate": {
+    "creation_cpu_ns": [
+      20,
+      20,
+      20
+    ],
+    "first_frame_ns": [
+      80,
+      80,
+      80
+    ],
+    "steady_frame_ns": [
+      35,
+      35,
+      35
+    ],
+    "cohort": {
+      "device": "same",
+      "driver": "same",
+      "workload": "same",
+      "shader": "same",
+      "tools": "same",
+      "input": "same",
+      "resolution": "same",
+      "clock_domain": "same",
+      "thermal": "same",
+      "warmup_protocol": "same",
+      "run_order_protocol": "same"
+    }
+  }
+}
