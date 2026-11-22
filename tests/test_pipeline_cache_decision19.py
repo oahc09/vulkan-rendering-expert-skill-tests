@@ -82,3 +82,16 @@ def test_runner_invoked_through_symlink(tmp_path):
  'cases19/pipeline_cost/cache_probe.c','cases19/pipeline_cost/noop.comp',
  'checks19/run_pipeline_cache_cost.py','tools/pipeline_cache_decision19.py',
  'tools/pipeline_cache_prose19.py']
+
+
+def test_typical_steady_frame_regression_is_not_hidden_by_better_worst_frame():
+ m=measure()
+ m['baseline']['steady_frame_ns']=[8_000_000,8_000_000,18_000_000]
+ m['candidate']['steady_frame_ns']=[14_000_000,14_000_000,16_000_000]
+ # Cold-start policy has a qualifying first frame, and the candidate's worst
+ # steady frame improves. The median still regresses 75%, past the zero budget.
+ outcome=r.decide(cache(),m,policy())
+ assert outcome['status']=='REVOKE_TO_BASELINE'
+ assert outcome['selected']=='COLD_BASELINE'
+ m['candidate']['steady_frame_ns']=[8_000_000,8_000_000,16_000_000]
+ assert r.decide(cache(),m,policy())['status']=='SELECT_DECLARED_PERSISTED_CACHE'
