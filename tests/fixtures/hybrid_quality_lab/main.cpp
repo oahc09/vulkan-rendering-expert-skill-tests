@@ -14,6 +14,10 @@ static void pgm(const std::filesystem::path &path,const float* data,uint32_t w,u
 int main(int argc,char**argv){try{
  if(argc!=3&&argc!=4)throw std::runtime_error("usage: hybrid_quality_lab SHADER_DIR NEW_OUTPUT_DIR [--disable-query]");
  bool disableQuery=argc==4;if(disableQuery&&std::string(argv[3])!="--disable-query")throw std::runtime_error("Unknown option");
+#ifdef HYBRID_SHADOW_JITTER
+ // Jitter/golden variants are raster-only; the query companion uses the original material.
+ disableQuery=true;
+#endif
  std::filesystem::path out=argv[2];if(!std::filesystem::create_directory(out))throw std::runtime_error("Refuse existing output directory");
  Vulkan v(65*49,argv[1],true);uint32_t pixels=v.width*v.height;
  uint32_t ec=0;VK(vkEnumerateDeviceExtensionProperties(v.physical,nullptr,&ec,nullptr));std::vector<VkExtensionProperties> ex(ec);VK(vkEnumerateDeviceExtensionProperties(v.physical,nullptr,&ec,ex.data()));
@@ -28,7 +32,13 @@ int main(int argc,char**argv){try{
  for(uint32_t frame=0;frame<12;frame++){
   auto started=std::chrono::steady_clock::now();
   float camera=frame>=3&&frame<=4?float(frame-2)*1.3f/float(v.width):frame>=5?.15f:0.f;
+#ifdef HYBRID_SHADOW_JITTER
+  // Frozen light-space jitter as the cutout moves and history resets.
+  const float deltaTexel[]={0.f,0.f,0.f,.25f,-.25f,0.f,0.f,.125f,-.125f,.25f,-.25f,0.f};
+  float light=(frame>=6?-.55f:-.35f)+deltaTexel[frame]*(2.f/65.f);
+#else
   float light=frame>=6?-.55f:-.35f;
+#endif
   uint32_t reset=frame==0||frame==5||frame==6||frame==9||frame==11;
   Push p{};p.width=v.width;p.height=v.height;p.tick=frame<7?0:frame;p.zoom=light;p.viewX=camera;p.flags=reset;
   p.base=uint32_t(int(std::round((camera-previousCamera)*float(v.width)/1.3f)));
