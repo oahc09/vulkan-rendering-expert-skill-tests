@@ -9,7 +9,8 @@ import subprocess
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PAIRS = {
     "historical-v1.0.19": "coverage/v1.0.19/pair.json",
-    "current-v1.0.20": "coverage/v1.0.20/postmerge-pair.json",
+    "postmerge16-v1.0.20": "coverage/v1.0.20/postmerge-pair.json",
+    "current-v1.0.20": "coverage/v1.0.20/current-pair.json",
 }
 
 
@@ -29,6 +30,11 @@ def sha256(path):
 def load_pair(pair):
     config = json.loads((ROOT / PAIRS[pair]).read_text())
     require(bool(re.fullmatch(r"[0-9a-f]{40}", config["skill_sha"])), "Skill pin must be a full commit SHA")
+    if pair == "current-v1.0.20":
+        require(bool(re.fullmatch(r"[0-9a-f]{64}", config["package_manifest_sha256"])),
+                "package manifest pin must be a SHA-256")
+        require(type(config["package_files"]) is int and 0 < config["package_files"] <= config["package_file_limit"],
+                "invalid exact package size or budget")
     require(config["release_status"] == "BLOCKED", "pair is not a release seal")
     return config
 
@@ -41,7 +47,7 @@ def verify(skill, pair, config):
     skill_doc = (skill / "SKILL.md").read_text()
     require(f"  version: {version}\n" in skill_doc and "  release-status: candidate-blocked\n" in skill_doc,
             "Skill version or candidate status mismatch")
-    if pair == "current-v1.0.20":
+    if pair != "historical-v1.0.19":
         require(not git(skill, "status", "--porcelain", "--untracked-files=all"), "Skill worktree is not clean")
         require(not git(ROOT, "status", "--porcelain", "--untracked-files=all"), "Tests worktree is not clean")
         require(git(skill, "rev-parse", "HEAD^{tree}") == config["skill_tree"], "Skill tree mismatch")

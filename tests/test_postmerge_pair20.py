@@ -18,8 +18,11 @@ def check(*args, optimized=False):
 
 def test_resolve_discriminates_history_and_current():
     historical = json.loads((ROOT / "coverage/v1.0.19/pair.json").read_text())
-    current = json.loads((ROOT / "coverage/v1.0.20/postmerge-pair.json").read_text())
-    assert historical["skill_sha"] != current["skill_sha"]
+    postmerge16 = json.loads((ROOT / "coverage/v1.0.20/postmerge-pair.json").read_text())
+    current = json.loads((ROOT / "coverage/v1.0.20/current-pair.json").read_text())
+    assert len({historical["skill_sha"], postmerge16["skill_sha"], current["skill_sha"]}) == 3
+    assert postmerge16["skill_sha"] == "77c702cb7810e05e49c0499ab960295374442f8c"
+    assert check("--resolve", "--pair", "postmerge16-v1.0.20").stdout.strip() == postmerge16["skill_sha"]
     assert check("--resolve").stdout.strip() == historical["skill_sha"]
     assert check("--resolve", "--pair", "current-v1.0.20").stdout.strip() == current["skill_sha"]
     assert check("--resolve", "--pair", "main").returncode == 2
