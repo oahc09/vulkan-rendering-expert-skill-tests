@@ -1,0 +1,26 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "entries": [
+    {
+      "vuid": "VUID-vkCmdBindDescriptorSets-dynamicOffsetCount-00359",
+      "text": "<code>dynamicOffsetCount</code> <strong class=\"purple\">must</strong> be equal to the total number of dynamic descriptors in <code>pDescriptorSets</code>",
+      "page": "chapters/descriptorsets.html"
+    },
+    {
+      "vuid": "VUID-vkCmdBindDescriptorSets-pDynamicOffsets-01971",
+      "text": "Each element of <code>pDynamicOffsets</code> which corresponds to a descriptor binding with type <code>VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC</code> <strong class=\"purple\">must</strong> be a multiple of <code>VkPhysicalDeviceLimits</code>::<code>minUniformBufferOffsetAlignment</code>",
+      "page": "chapters/descriptorsets.html"
+    },
+    {
+      "vuid": "VUID-vkCmdBindDescriptorSets-pDescriptorSets-01979",
+      "text": "For each dynamic uniform or storage buffer binding in <code>pDescriptorSets</code>, the sum of the <a href=\"#dynamic-effective-offset\">effective offset</a> and the range of the binding <strong class=\"purple\">must</strong> be less than or equal to the size of the buffer",
+      "page": "chapters/descriptorsets.html"
+    }
+  ]
+}

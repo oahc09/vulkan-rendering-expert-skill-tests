@@ -1,0 +1,14 @@
+# Dynamic UBO array ring: three-frame offset-order repair
+Original authored semantic fault, not an external production bug. Standalone fixture; historical indirect scene CLI remains unchanged.
+```
+python -O cases19/dynamic_ubo/run.py --tools OFFICIAL_TOOLS --include HEADERS --loader LOADER --validusage VALIDUSAGE_1_4_309 --output FRESH_DIRECTORY
+```
+A single binding holds two ordinary UNIFORM_BUFFER_DYNAMIC descriptors, each base0/range16 into four aligned coherent slots. std140 uvec4 is16 bytes; compiled SPIR-V member Offset0 is checked. Fragment shader uses constant array indices[0]/[1], not descriptor dynamic indexing features. Device alignment, maxUniformBufferRange, per-stage UBO count and dynamic descriptor count are queried.
+
+Three fully serialized frames: A slots0/1, B slots2/3, C reuses0/1 only after actual successful frameA fence. C tracks last submission and generation per slot; readiness is derived before host writes, not assumed from frame number. Every frame records actual mapped parameters, dynamic offsets, prior frame/generation, successful fence and all16 pixels. No parallel frame throughput claim. CPU checks distinct red/blue, green/yellow, white/black patterns using asymmetric integer predicate x < 1+(y%3), distinguishing transpose and axis flips as well as offset order.
+
+baseline.c intentionally swaps the dynamic offsets. This is a valid API bind and generates no VUID, but all semantic pixel references fail, process exit4. Runner really applies fix.patch (single macro change), compiles fixed source, and verifies all three frames. Offset array order follows set, binding, array element; Validation cannot infer application semantic roles. Wrong-oracle uses inverted per-frame expectation and exits6. Alignment+1 negative (only when queried alignment>1) produces01971, callback abort bind then resets/discards command buffer without draw/submission. Unsupported alignment-negative capability exits nonzero, never claimed passed.
+
+UBO bind rule covers count00359, dynamic alignment01971 and effective range01979 in this explicit16-byte/base0 family; WHOLE_SIZE, other ranges and bindless are out of scope. Pending/stale-generation controls are CPU policy tests, not deliberately raced device memory. Same-run/buffer/slot identity and completion evidence remain caller obligations. End-of-program DeviceWaitIdle is cleanup, not the frame-retirement mechanism.
+
+Source: schema2 validusage1.4.309 pinned runner SHA; descriptorsets v1.4.309 blob3cad5740ff176cbef473b1c4914d56c7810281d0. CPU ICD/coherent memory only; no noncoherent/hardware/mobile/descriptor-buffer/update-after-bind/general VK07 closure. Full shader/tool/source/patch/binary/raw-log hashes retained. Rollback means restore the hashed fixture baseline in a fresh copy, knowingly restoring the intentional fault; no production rollback is implied.

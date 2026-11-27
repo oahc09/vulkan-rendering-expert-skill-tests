@@ -1,0 +1,18 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "entries": [
+    {
+      "owner": "vkAcquireNextImageKHR",
+      "condition": "core",
+      "vuid": "VUID-vkAcquireNextImageKHR-semaphore-01780",
+      "text": "<code>semaphore</code> and <code>fence</code> <strong class=\"purple\">must</strong> not both be equal to <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>",
+      "page": "chapters/VK_KHR_surface/wsi.html"
+    }
+  ]
+}

@@ -1,0 +1,507 @@
+{
+  "old_reference_coverage_agreement": [
+    {
+      "case": "butt",
+      "compared_pixels": 3185,
+      "different_coverage_pixels": 0
+    },
+    {
+      "case": "square",
+      "compared_pixels": 3185,
+      "different_coverage_pixels": 0
+    },
+    {
+      "case": "round",
+      "compared_pixels": 3185,
+      "different_coverage_pixels": 0
+    },
+    {
+      "case": "bevel",
+      "compared_pixels": 3185,
+      "different_coverage_pixels": 0
+    },
+    {
+      "case": "miter-limited",
+      "compared_pixels": 3185,
+      "different_coverage_pixels": 0
+    },
+    {
+      "case": "miter-accepted",
+      "compared_pixels": 3185,
+      "different_coverage_pixels": 0
+    }
+  ],
+  "boundary_diagnostic": {
+    "reported_subpixel_precision_bits": 8,
+    "endpoint_float64": [
+      [
+        36.45526680779795,
+        37.51491106406735
+      ],
+      [
+        44.04473319220205,
+        34.98508893593265
+      ]
+    ],
+    "nearest_grid_model": [
+      [
+        36.45703125,
+        37.515625
+      ],
+      [
+        44.04296875,
+        34.984375
+      ]
+    ],
+    "samples": [
+      {
+        "x": 42,
+        "y": 35,
+        "exact_terminal_dot": 0.0,
+        "snapped_edge_cross_model": 0.005859375,
+        "actual_original_mesh_covered": false
+      },
+      {
+        "x": 39,
+        "y": 36,
+        "exact_terminal_dot": 0.0,
+        "snapped_edge_cross_model": -0.001953125,
+        "actual_original_mesh_covered": true
+      },
+      {
+        "x": 36,
+        "y": 37,
+        "exact_terminal_dot": 0.0,
+        "snapped_edge_cross_model": -0.009765625,
+        "actual_original_mesh_covered": true
+      }
+    ],
+    "scope": "nearest-grid model explains split; not proof of driver snapping algorithm or Vulkan-wide top-left rule"
+  },
+  "status": "BOUNDED_ANALYTIC_FALLBACK_PASS",
+  "tolerance": 1e-06,
+  "validation_enabled": true,
+  "cases": [
+    {
+      "name": "butt",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 120,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "square",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 156,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "round",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 148,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "bevel",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "miter-limited",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "miter-accepted",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 425,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "bevel-reverse",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "miter-limited-reverse",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": []
+    },
+    {
+      "name": "miter-accepted-reverse",
+      "max_all_pixel_color_depth_error": 2.384185793236071e-08,
+      "excluded_count": 0,
+      "covered_pixels": 425,
+      "mismatch_pixels": []
+    }
+  ],
+  "actual_gpu_negatives": [
+    {
+      "name": "wrong-cap",
+      "max_all_pixel_color_depth_error": 0.7999999970197678,
+      "excluded_count": 0,
+      "covered_pixels": 120,
+      "mismatch_pixels": [
+        {
+          "x": 7,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 8,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 9,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 7,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 8,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 9,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 7,
+          "y": 11,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 8,
+          "y": 11,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 9,
+          "y": 11,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 11,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 11,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 11,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 7,
+          "y": 12,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 8,
+          "y": 12,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 9,
+          "y": 12,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 12,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 12,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 12,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 7,
+          "y": 13,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 8,
+          "y": 13,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 9,
+          "y": 13,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 13,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 13,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 13,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 7,
+          "y": 14,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 8,
+          "y": 14,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 9,
+          "y": 14,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 14,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 14,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 14,
+          "error": 0.7999999970197678
+        }
+      ]
+    },
+    {
+      "name": "ignored-miter-limit",
+      "max_all_pixel_color_depth_error": 0.7999999970197678,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": [
+        {
+          "x": 33,
+          "y": 6,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 34,
+          "y": 6,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 7,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 33,
+          "y": 7,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 34,
+          "y": 7,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 8,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 8,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 8,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 33,
+          "y": 8,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 34,
+          "y": 8,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 30,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 31,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 32,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 33,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 34,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 35,
+          "y": 9,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 34,
+          "y": 10,
+          "error": 0.7999999970197678
+        },
+        {
+          "x": 35,
+          "y": 10,
+          "error": 0.7999999970197678
+        }
+      ]
+    },
+    {
+      "name": "open-endpoint",
+      "max_all_pixel_color_depth_error": 0.8,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": [
+        {
+          "x": 42,
+          "y": 35,
+          "error": 0.8
+        },
+        {
+          "x": 39,
+          "y": 36,
+          "error": 0.8
+        },
+        {
+          "x": 36,
+          "y": 37,
+          "error": 0.8
+        }
+      ]
+    }
+  ],
+  "omitted_fallback_original_mesh": [
+    {
+      "name": "bevel",
+      "max_all_pixel_color_depth_error": 0.8,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": [
+        {
+          "x": 42,
+          "y": 35,
+          "error": 0.8
+        }
+      ]
+    },
+    {
+      "name": "miter-limited",
+      "max_all_pixel_color_depth_error": 0.8,
+      "excluded_count": 0,
+      "covered_pixels": 407,
+      "mismatch_pixels": [
+        {
+          "x": 42,
+          "y": 35,
+          "error": 0.8
+        }
+      ]
+    },
+    {
+      "name": "miter-accepted",
+      "max_all_pixel_color_depth_error": 0.8,
+      "excluded_count": 0,
+      "covered_pixels": 425,
+      "mismatch_pixels": [
+        {
+          "x": 42,
+          "y": 35,
+          "error": 0.8
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "same configured software Vulkan only",
+    "closed hard pixel-center opaque coverage; not AA or transparent blending",
+    "support mesh plus analytic fragment fallback, not pure mesh precision repair",
+    "fixed straight and2segmentpaths; no curves/dashes/generalSVG"
+  ]
+}

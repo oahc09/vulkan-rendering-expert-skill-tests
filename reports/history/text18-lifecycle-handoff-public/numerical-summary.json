@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "lifecycle_render_submissions": 4,
+  "positive_verified_images": 3,
+  "wrong_route_diagnostic_images": 1,
+  "draws_per_render_submission": 3,
+  "positive_verified_draws": 9,
+  "renderpasses_per_render_submission": 1,
+  "active_color_attachments": 3,
+  "clip_layers": 3,
+  "rows": [
+    {
+      "max_error": 7.559271419932401e-08,
+      "tolerance": 1e-06,
+      "roi_pixels": {
+        "visible_overlay": 208,
+        "post_over_overlay": 44,
+        "pre_only": 2657
+      },
+      "stage": "old-A"
+    },
+    {
+      "max_error": 7.559271419932401e-08,
+      "tolerance": 1e-06,
+      "roi_pixels": {
+        "visible_overlay": 208,
+        "post_over_overlay": 44,
+        "pre_only": 2657
+      },
+      "stage": "route-after-cancel"
+    },
+    {
+      "max_error": 5.5817996780227475e-08,
+      "tolerance": 1e-06,
+      "roi_pixels": {
+        "visible_overlay": 208,
+        "post_over_overlay": 44,
+        "pre_only": 2657
+      },
+      "stage": "new-B"
+    }
+  ],
+  "negative_checks": [
+    "actual canceled descriptor route",
+    "actual omit post state rebinding",
+    "controlled pending gate release and cleanup"
+  ],
+  "limits": [
+    "single software Vulkan device and queue",
+    "ALL_COMMANDS gate is pending not shader execution",
+    "one scene upload setup submission plus three atlas uploads distinct from four render submissions",
+    "no depth/stencil or full arbitrary renderer state",
+    "no general allocation/device loss cleanup",
+    "no target-device Live acceptance"
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "sampling_oracle_tolerance": 0.004,
+  "old_quality_limits_unchanged": true,
+  "status": "MEASURED_NOT_QUALIFIED",
+  "samples_per_pixel": {
+    "binary16": 256,
+    "linear4": 16
+  },
+  "acceptance": "not pixel-perfect; no target-device performance qualification",
+  "mrt_scope": "UNUSED preserve, not active MRT",
+  "negative_srgb_sampling_error": {
+    "binary16": 1.0,
+    "linear4": 1.0
+  },
+  "rows": [
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "A",
+      "case": "small",
+      "baseline": {
+        "sample_error": 1.966953277032779e-06,
+        "roi_mae": 0.016737158336336648,
+        "edge_mae": 0.025105737504504972,
+        "max_coverage_error": 0.36143461863199866,
+        "roi_pixels": 147,
+        "edge_pixels": 98
+      },
+      "max_error": 0.01171875,
+      "roi_mae": 7.971938775510203e-05,
+      "exact_polygon_max_error": 0.018000669792400004,
+      "baseline_exact_polygon_max_error": 0.3576805092751366
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "A",
+      "case": "native",
+      "baseline": {
+        "sample_error": 1.1920928955078125e-06,
+        "roi_mae": 0.014467723939100258,
+        "edge_mae": 0.025895129079404083,
+        "max_coverage_error": 0.3997001647949219,
+        "roi_pixels": 247,
+        "edge_pixels": 138
+      },
+      "max_error": 0.00390625,
+      "roi_mae": 1.5814777327935223e-05,
+      "exact_polygon_max_error": 0.030768586738304293,
+      "baseline_exact_polygon_max_error": 0.3974618485911776
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 0.0023437976837158425,
+      "sample_error": 0.00390625,
+      "glyph": "A",
+      "case": "large",
+      "baseline": {
+        "sample_error": 2.0444393146468176e-06,
+        "roi_mae": 0.008141950982117476,
+        "edge_mae": 0.019643444845205756,
+        "max_coverage_error": 0.39006805419921875,
+        "roi_pixels": 497,
+        "edge_pixels": 206
+      },
+      "max_error": 0.015625,
+      "roi_mae": 3.945707070707071e-05,
+      "exact_polygon_max_error": 0.030404910415199993,
+      "baseline_exact_polygon_max_error": 0.38789354582985425
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "A",
+      "case": "phase",
+      "baseline": {
+        "sample_error": 1.1920928955078125e-06,
+        "roi_mae": 0.012923407972904675,
+        "edge_mae": 0.02296461704537737,
+        "max_coverage_error": 0.2636146545410156,
+        "roi_pixels": 247,
+        "edge_pixels": 139
+      },
+      "max_error": 0.00390625,
+      "roi_mae": 1.5814777327935223e-05,
+      "exact_polygon_max_error": 0.030768586738304293,
+      "baseline_exact_polygon_max_error": 0.2511417180098192
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "O",
+      "case": "small",
+      "baseline": {
+        "sample_error": 1.3709068299450067e-06,
+        "roi_mae": 0.010015724151115108,
+        "edge_mae": 0.015209062599841462,
+        "max_coverage_error": 0.04629627863566077,
+        "roi_pixels": 164,
+        "edge_pixels": 108
+      },
+      "max_error": 0.0234375,
+      "roi_mae": 0.003286966463414634
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "O",
+      "case": "native",
+      "baseline": {
+        "sample_error": 6.318092346246917e-07,
+        "roi_mae": 0.007768685510268758,
+        "edge_mae": 0.014004077827721314,
+        "max_coverage_error": 0.03694756825764978,
+        "roi_pixels": 274,
+        "edge_pixels": 152
+      },
+      "max_error": 0.01953125,
+      "roi_mae": 0.0032361998175182483
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "O",
+      "case": "large",
+      "baseline": {
+        "sample_error": 2.378225324506378e-06,
+        "roi_mae": 0.006586343086932819,
+        "edge_mae": 0.01581898473557972,
+        "max_coverage_error": 0.05336078008015954,
+        "roi_pixels": 538,
+        "edge_pixels": 224
+      },
+      "max_error": 0.03515625,
+      "roi_mae": 0.004244983856088561
+    },
+    {
+      "mode": "binary16",
+      "rgba_error": 7.152557379708213e-08,
+      "sample_error": 0.0,
+      "glyph": "O",
+      "case": "phase",
+      "baseline": {
+        "sample_error": 8.225440978337772e-07,
+        "roi_mae": 0.008648374305123288,
+        "edge_mae": 0.015735236582932646,
+        "max_coverage_error": 0.05182488759358722,
+        "roi_pixels": 262,
+        "edge_pixels": 144
+      },
+      "max_error": 0.02734375,
+      "roi_mae": 0.0033086520522388058
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 2.324581145685123e-06,
+      "sample_error": 3.874301909512212e-06,
+      "glyph": "A",
+      "case": "small",
+      "baseline": {
+        "sample_error": 1.966953277032779e-06,
+        "roi_mae": 0.016737158336336648,
+        "edge_mae": 0.025105737504504972,
+        "max_coverage_error": 0.36143461863199866,
+        "roi_pixels": 147,
+        "edge_pixels": 98
+      },
+      "max_error": 0.020632108052571596,
+      "roi_mae": 0.002013424897139845,
+      "exact_polygon_max_error": 0.012381008098676205,
+      "baseline_exact_polygon_max_error": 0.3576805092751366
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 1.5977770090047638e-06,
+      "sample_error": 2.752368648856196e-06,
+      "glyph": "A",
+      "case": "native",
+      "baseline": {
+        "sample_error": 1.1920928955078125e-06,
+        "roi_mae": 0.014467723939100258,
+        "edge_mae": 0.025895129079404083,
+        "max_coverage_error": 0.3997001647949219,
+        "roi_pixels": 247,
+        "edge_pixels": 138
+      },
+      "max_error": 0.03395970662434894,
+      "roi_mae": 0.002623771688072627,
+      "exact_polygon_max_error": 0.017070326690562354,
+      "baseline_exact_polygon_max_error": 0.3974618485911776
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 2.446956933022104e-06,
+      "sample_error": 4.078261554907314e-06,
+      "glyph": "A",
+      "case": "large",
+      "baseline": {
+        "sample_error": 2.0444393146468176e-06,
+        "roi_mae": 0.008141950982117476,
+        "edge_mae": 0.019643444845205756,
+        "max_coverage_error": 0.39006805419921875,
+        "roi_pixels": 497,
+        "edge_pixels": 206
+      },
+      "max_error": 0.02650054295857751,
+      "roi_mae": 0.0016452679711003468,
+      "exact_polygon_max_error": 0.0195470001922331,
+      "baseline_exact_polygon_max_error": 0.38789354582985425
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 2.1815299987570924e-06,
+      "sample_error": 3.750125567109075e-06,
+      "glyph": "A",
+      "case": "phase",
+      "baseline": {
+        "sample_error": 1.1920928955078125e-06,
+        "roi_mae": 0.012923407972904675,
+        "edge_mae": 0.02296461704537737,
+        "max_coverage_error": 0.2636146545410156,
+        "roi_pixels": 247,
+        "edge_pixels": 139
+      },
+      "max_error": 0.030768712361653627,
+      "roi_mae": 0.0026814889328682463,
+      "exact_polygon_max_error": 0.017069350659558835,
+      "baseline_exact_polygon_max_error": 0.2511417180098192
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 1.7464160919633542e-06,
+      "sample_error": 2.9702981313439736e-06,
+      "glyph": "O",
+      "case": "small",
+      "baseline": {
+        "sample_error": 1.3709068299450067e-06,
+        "roi_mae": 0.010015724151115108,
+        "edge_mae": 0.015209062599841462,
+        "max_coverage_error": 0.04629627863566077,
+        "roi_pixels": 164,
+        "edge_pixels": 108
+      },
+      "max_error": 0.02345498402913415,
+      "roi_mae": 0.004211752187638054
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 2.3294240236171326e-06,
+      "sample_error": 3.882994254439387e-06,
+      "glyph": "O",
+      "case": "native",
+      "baseline": {
+        "sample_error": 6.318092346246917e-07,
+        "roi_mae": 0.007768685510268758,
+        "edge_mae": 0.014004077827721314,
+        "max_coverage_error": 0.03694756825764978,
+        "roi_pixels": 274,
+        "edge_pixels": 152
+      },
+      "max_error": 0.02420727411905925,
+      "roi_mae": 0.0040197540663744705
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 2.509541809192495e-06,
+      "sample_error": 4.093162714768894e-06,
+      "glyph": "O",
+      "case": "large",
+      "baseline": {
+        "sample_error": 2.378225324506378e-06,
+        "roi_mae": 0.006586343086932819,
+        "edge_mae": 0.01581898473557972,
+        "max_coverage_error": 0.05336078008015954,
+        "roi_pixels": 538,
+        "edge_pixels": 224
+      },
+      "max_error": 0.03783734639485675,
+      "roi_mae": 0.004672100623155433
+    },
+    {
+      "mode": "linear4",
+      "rgba_error": 2.61459499595329e-06,
+      "sample_error": 4.357658326625824e-06,
+      "glyph": "O",
+      "case": "phase",
+      "baseline": {
+        "sample_error": 8.225440978337772e-07,
+        "roi_mae": 0.008648374305123288,
+        "edge_mae": 0.015735236582932646,
+        "max_coverage_error": 0.05182488759358722,
+        "roi_pixels": 262,
+        "edge_pixels": 144
+      },
+      "max_error": 0.025923728942871094,
+      "roi_mae": 0.004081943578887403
+    }
+  ]
+}

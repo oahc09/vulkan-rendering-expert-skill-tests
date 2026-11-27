@@ -1,0 +1,366 @@
+{
+  "status": "SOURCE_PAIRED_LAYOUT_HOST_CONTROLS",
+  "case_count": 18,
+  "prose": {
+    "api_version": "1.4.368",
+    "chapter": {
+      "path": "chapters/descriptorsets.adoc",
+      "sha256": "3de692bf6e4f8579de50175be94c564a4580e1b8f0a59ed1e1267e1c3ca88950",
+      "slices": [
+        {
+          "anchor": "descriptors-pipelinelayout",
+          "bytes": 43234,
+          "conditional_directives": [
+            "ifdef::VKSC_VERSION_1_0[]",
+            "endif::VKSC_VERSION_1_0[]",
+            "ifdef::VKSC_VERSION_1_0[]",
+            "endif::VKSC_VERSION_1_0[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_QCOM_image_processing[]",
+            "endif::VK_QCOM_image_processing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifndef::VK_KHR_maintenance7[The]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifndef::VK_KHR_maintenance7[The]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifndef::VK_KHR_maintenance7[The]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifndef::VK_KHR_maintenance7[The]",
+            "ifdef::VK_KHR_maintenance7[]",
+            "endif::VK_KHR_maintenance7[]",
+            "ifdef::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "endif::VK_COMPUTE_VERSION_1_3,VK_EXT_inline_uniform_block[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_3[]",
+            "endif::VK_COMPUTE_VERSION_1_3[]",
+            "ifdef::VK_COMPUTE_VERSION_1_4,VK_KHR_push_descriptor[]",
+            "endif::VK_COMPUTE_VERSION_1_4,VK_KHR_push_descriptor[]",
+            "ifdef::VK_KHR_acceleration_structure[]",
+            "endif::VK_KHR_acceleration_structure[]",
+            "ifdef::VK_NV_ray_tracing[]",
+            "endif::VK_NV_ray_tracing[]",
+            "ifdef::VK_EXT_fragment_density_map2[]",
+            "endif::VK_EXT_fragment_density_map2[]",
+            "ifdef::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+            "endif::VK_EXT_mutable_descriptor_type,VK_VALVE_mutable_descriptor_type[]",
+            "ifdef::VK_EXT_graphics_pipeline_library[]",
+            "endif::VK_EXT_graphics_pipeline_library[]",
+            "ifndef::VK_EXT_graphics_pipeline_library[Elements]",
+            "ifdef::VK_EXT_descriptor_buffer[]",
+            "endif::VK_EXT_descriptor_buffer[]",
+            "ifdef::VK_ARM_tensors[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "ifdef::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_COMPUTE_VERSION_1_2,VK_EXT_descriptor_indexing[]",
+            "endif::VK_ARM_tensors[]",
+            "ifdef::VK_EXT_graphics_pipeline_library+VK_KHR_maintenance11[]",
+            "endif::VK_EXT_graphics_pipeline_library+VK_KHR_maintenance11[]",
+            "ifndef::VK_EXT_graphics_pipeline_library[]",
+            "endif::VK_EXT_graphics_pipeline_library[]",
+            "ifdef::VK_EXT_graphics_pipeline_library[]",
+            "ifdef::VK_KHR_maintenance11[]",
+            "endif::VK_KHR_maintenance11[]",
+            "endif::VK_EXT_graphics_pipeline_library[]"
+          ],
+          "line_end": 1943,
+          "line_start": 1195,
+          "sha256": "3d494aceaf1e7818988aa06579ace8a3cbbdd4e925233c0a10b448aa3b643e00"
+        },
+        {
+          "anchor": "descriptors-compatibility",
+          "bytes": 3551,
+          "conditional_directives": [
+            "ifdef::VK_EXT_graphics_pipeline_library[]",
+            "endif::VK_EXT_graphics_pipeline_library[]",
+            "ifdef::implementation-guide[]",
+            "endif::implementation-guide[]"
+          ],
+          "line_end": 2179,
+          "line_start": 2076,
+          "sha256": "a31828b5f46762566db84244e0761e13acb2f9a9980c41f1a2ac5195f5960205"
+        },
+        {
+          "anchor": "descriptors-push-constants",
+          "bytes": 5270,
+          "conditional_directives": [
+            "ifdef::VK_COMPUTE_VERSION_1_3,VK_KHR_maintenance4[]",
+            "endif::VK_COMPUTE_VERSION_1_3,VK_KHR_maintenance4[]",
+            "ifdef::VK_COMPUTE_VERSION_1_4,VK_KHR_maintenance6[]",
+            "ifdef::VK_COMPUTE_VERSION_1_4[]",
+            "endif::VK_COMPUTE_VERSION_1_4[]",
+            "ifdef::VK_KHR_maintenance6[]",
+            "endif::VK_KHR_maintenance6[]",
+            "ifdef::VK_KHR_maintenance6[]",
+            "endif::VK_KHR_maintenance6[]",
+            "ifdef::VK_NV_per_stage_descriptor_set[]",
+            "endif::VK_NV_per_stage_descriptor_set[]",
+            "endif::VK_COMPUTE_VERSION_1_4,VK_KHR_maintenance6[]"
+          ],
+          "line_end": 5356,
+          "line_start": 5217,
+          "sha256": "90f62435d13153bc81a5d27aedb7fa2e45407d2e8882b9d873d07c59b2091a1b"
+        }
+      ]
+    },
+    "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "copyright": "Khronos Group",
+    "license": "CC-BY-4.0",
+    "limitations": [
+      "Raw physical anchor slices, not complete transitive prose closure.",
+      "Only this one common-validity include is bound; other includes/macros/conditional variants are not resolved.",
+      "Distinct from pinned1.4.309 VUID data; no version equivalence, device validation or complete L1/L2 acceptance."
+    ],
+    "resolved_common_include": {
+      "bytes": 1176,
+      "include_lines": [
+        5282,
+        5350
+      ],
+      "path": "chapters/commonvalidity/push_constants_common.adoc",
+      "refpage_substitution": "vkCmdPushConstants reviewed explicitly; other commands not inferred",
+      "sha256": "103dd30346b9483a4c7326b6d49a1444257531577d93ee64ad8a6c14fb377dda"
+    },
+    "status": "PINNED_LAYOUT_PROSE_MAP"
+  },
+  "vuid_source": {
+    "api_version": "1.4.309",
+    "file": "validusage.json",
+    "schema_version": 2,
+    "separate_from_vk_xml_api": "1.4.368",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "source_kind": "official Debian Vulkan headers registry snapshot"
+  },
+  "vuid_coordinates": [
+    {
+      "api_owner": "VkPipelineLayoutCreateInfo",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-VkPipelineLayoutCreateInfo-pPushConstantRanges-00292"
+    },
+    {
+      "api_owner": "vkCmdPushConstants",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-vkCmdPushConstants-offset-01795"
+    },
+    {
+      "api_owner": "vkCmdPushConstants",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-vkCmdPushConstants-offset-01796"
+    },
+    {
+      "api_owner": "VkPushConstantRange",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-VkPushConstantRange-offset-00294"
+    },
+    {
+      "api_owner": "VkPushConstantRange",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-VkPushConstantRange-offset-00295"
+    },
+    {
+      "api_owner": "VkPushConstantRange",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-VkPushConstantRange-size-00296"
+    },
+    {
+      "api_owner": "VkPushConstantRange",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-VkPushConstantRange-size-00297"
+    },
+    {
+      "api_owner": "VkPushConstantRange",
+      "condition_key": "core",
+      "page": "chapters/descriptorsets.html",
+      "vuid": "VUID-VkPushConstantRange-size-00298"
+    }
+  ],
+  "implementation_sha256": {
+    "checks19/run_layout_contracts.py": "645a142cf07bbfb15bc1bd1ecdb6e3bd15fbe81c81d0d7f0f5a91e614baf13d7",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "tools/layout_contract19.py": "c0f73e9535235b800efb93e79726a25583aefc40eb7d2f9728ee56b334c70373",
+    "tools/layout_prose19.py": "28c0796a93b708e0689e69612e8509ab4ae99e0858c8a054973c10f85319e764"
+  },
+  "evidence_kind": "CALLER_DECLARED_DEFINITION_HOST_CONTROLS_NOT_GPU",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "release_status": "BLOCKED",
+  "controls": [
+    {
+      "name": "different-declarations-identical-definitions",
+      "expected_status": "COMPATIBLE",
+      "expected_details": {}
+    },
+    {
+      "name": "set0-diff-even-if-set1-same",
+      "expected_status": "INCOMPATIBLE",
+      "expected_details": {}
+    },
+    {
+      "name": "push-compatible-despite-descriptor-difference",
+      "expected_status": "COMPATIBLE",
+      "expected_details": {}
+    },
+    {
+      "name": "push-range-diff",
+      "expected_status": "INCOMPATIBLE",
+      "expected_details": {}
+    },
+    {
+      "name": "independent-flag-diff",
+      "expected_status": "INCOMPATIBLE",
+      "expected_details": {}
+    },
+    {
+      "name": "unknown-special-layout",
+      "expected_status": "UNKNOWN",
+      "expected_details": {}
+    },
+    {
+      "name": "different-stage-byte-overlap-created",
+      "expected_status": "RANGES_WITHIN_SCOPE",
+      "expected_details": {}
+    },
+    {
+      "name": "same-stage-disjoint-rejected",
+      "expected_status": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "unaligned-push-range-rejected",
+      "expected_status": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "bound-overflow-rejected",
+      "expected_status": "REJECTED",
+      "expected_details": {}
+    },
+    {
+      "name": "overlap-update-both-stages",
+      "expected_status": "UPDATE_WITHIN_SCOPE",
+      "expected_details": {}
+    },
+    {
+      "name": "overlap-update-only-vertex",
+      "expected_status": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-vkCmdPushConstants-offset-01796"
+        ]
+      }
+    },
+    {
+      "name": "update-uncovered-by-layout",
+      "expected_status": "REJECTED",
+      "expected_details": {
+        "vuids": [
+          "VUID-vkCmdPushConstants-offset-01795"
+        ]
+      }
+    },
+    {
+      "name": "update-unsupported-stage-unknown",
+      "expected_status": "UNKNOWN",
+      "expected_details": {}
+    },
+    {
+      "name": "bind-compatible-keeps-other-sets",
+      "expected_status": "DISTURBANCE_EVALUATED",
+      "expected_details": {
+        "disturbed": [],
+        "requires_prebound_pipeline": false
+      }
+    },
+    {
+      "name": "bind-incompatible-prefix-disturbs-both-directions",
+      "expected_status": "DISTURBANCE_EVALUATED",
+      "expected_details": {
+        "disturbed": [
+          0,
+          2
+        ]
+      }
+    },
+    {
+      "name": "pipeline-access-compatible",
+      "expected_status": "LAYOUT_ACCESS_PERMITTED",
+      "expected_details": {
+        "bindings_mutated": false
+      }
+    },
+    {
+      "name": "disturbed-binding-no-access",
+      "expected_status": "LAYOUT_ACCESS_NOT_ESTABLISHED",
+      "expected_details": {
+        "bindings_mutated": false
+      }
+    }
+  ],
+  "report_sha256": "2f843e1143fe7bc9d321eed1e9238b73aa8f26df1502f212f0958fb39847c800",
+  "cohort": "prepublication exact source hashes; not final tests head"
+}

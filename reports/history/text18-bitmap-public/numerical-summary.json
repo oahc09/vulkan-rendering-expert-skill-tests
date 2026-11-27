@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "scope": "Linux single-run shaping + FreeType grayscale bitmap + actual software Vulkan composition",
+  "cases": [
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 122,
+      "partial_pixels": 86,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "O",
+      "glyph_count": 1,
+      "validation_enabled": true
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 152,
+      "partial_pixels": 88,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "ffi",
+      "glyph_count": 1,
+      "validation_enabled": true
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 253,
+      "partial_pixels": 194,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "Arabic",
+      "glyph_count": 3,
+      "validation_enabled": true
+    }
+  ],
+  "vector_cases": [
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 1160,
+      "partial_pixels": 0,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "path-evenodd",
+      "validation_enabled": true,
+      "reference": "CPU bounded mask -> independent linear GPU-composition oracle",
+      "path_edges": 8
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 1160,
+      "partial_pixels": 0,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "path-nonzero",
+      "validation_enabled": true,
+      "reference": "CPU bounded mask -> independent linear GPU-composition oracle",
+      "path_edges": 8
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 768,
+      "partial_pixels": 44,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "path-quad",
+      "validation_enabled": true,
+      "reference": "CPU bounded mask -> independent linear GPU-composition oracle",
+      "path_edges": 19
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 1012,
+      "partial_pixels": 58,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "path-cubic",
+      "validation_enabled": true,
+      "reference": "CPU bounded mask -> independent linear GPU-composition oracle",
+      "path_edges": 19
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 1160,
+      "partial_pixels": 0,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "path-negative",
+      "validation_enabled": true,
+      "reference": "CPU bounded mask -> independent linear GPU-composition oracle",
+      "path_edges": 8
+    }
+  ],
+  "unverified": [
+    "font raster quality reference",
+    "Android/Windows",
+    "MSDF/MTSDF",
+    "paragraph bidi/fallback",
+    "vector geometry",
+    "hardware/performance"
+  ],
+  "negative_checks": [
+    "truncated mask rejected before GPU creation",
+    "NaN coverage rejected before GPU creation",
+    "coverage >1 rejected before GPU creation",
+    "modified color readback rejected",
+    "modified non-target ID rejected",
+    "existing GPU output refused with byte hashes unchanged"
+  ]
+}

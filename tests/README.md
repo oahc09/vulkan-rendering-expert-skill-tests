@@ -284,3 +284,39 @@ Candidate evidence is under `reports/v1.0.14/`. Always use final pinned clean
 Skill/tests SHAs, generated artifact hashes, preregistered sequence/ROI criteria
 and raw logs. Missing Live/provider, host, physical phone, OMM, power or latency
 measurements remain BLOCKED/UNSUPPORTED/UNVERIFIED. No main merge or publishing.
+
+
+## v1.0.15 transparency, volume and Gaussian candidate
+
+Preredecessor skill `4a7ff82372648c4a9df91e76848cbc9c95de51a3` is merged v1.0.14.
+`v114-cohort.json` freezes the 84 predecessor prompt hashes. TRAN15 adds 20 paired
+primary/contrast scenarios; registry total is 104, not a count of executed models.
+Original 12-case provider-token target remains unchanged. `measure_context.py
+--tran15-run RUN --candidate-sha FULL_SHA` reports new-cohort usage separately,
+with no invented 30% target. Rubrics and CPU oracles never enter model context.
+
+- Static: `VULKAN_SKILL_ROOT=/path/skill python -m pytest -q -m static tests`
+- CPU contracts: same command with `-m host_unit`; `transparency_host_contracts.py`
+  covers FP64 composition, explicitly simulated storage, bounded overflow,
+  extinction/step invariance, profile validation, footprints and full sort keys.
+- Real shader/Vulkan experiment: see `fixtures/transparent_scene_lab/README.md`.
+  It reuses the prior scale/hybrid lab conventions and tiny offscreen resources.
+  Software Vulkan proves only the named implementation and executed path.
+- Live: all 104 cases SKIP without an authorized wrapper. Historical snapshots,
+  mocks, static host configuration and model-word smoke gates are not semantic
+  acceptance, real-host discovery or Adreno/Mali visual/performance evidence.
+- Package: immutable whitelist budget remains 200 files, zero new knowledge paths;
+  source count and ZIP count are separate. Final evidence is in reports/v1.0.15.
+
+RGBA8 128-layer low-alpha storage can exceed the fixed 0.13 quality budget in the
+CPU fixture. This is an expected failed quality tier with a mathematically bounded
+rounding error, not a reason to relax the threshold or blame a driver. CPU storage
+simulation is not a claim about every GPU's intermediate blend precision.
+
+## v1.0.16 candidate: GPU Simulation & Dynamic Geometry
+
+- Skill v1.0.15 PR #11 merged; paired v1.0.15 tests main/evidence publication remains pending. The exact historical plan and current prerequisite reconciliation are in docs/update-plan-v1.0.16.md and docs/v1.0.16-requirement-map.md. Do not infer both repositories merged from the skill merge.
+- Registry now preserves the previous 104 prompt bytes (tests/v115-cohort.json) and appends SIM16-01..16, totaling 120. Each has primary/contrast conditions; rubrics stay evaluation-only. Original12 provider-token target remains separate. measure_context.py --sim16-run measures only complete clean real Live records, with no inherited 30% target.
+- simulation_host_contracts.py covers clock, bounded queue/dedup history, force/impulse, XPBD, colors/Jacobi, collisions, wave stability/events and all-consumer snapshot retirement. It is host evidence, never fabricated GPU evidence.
+- fixtures/simulation_lab provides original C++/GLSL, same-algorithm FP64 references, a bounded Vulkan runner, compile/run source hashes, independent readback verification and explicit unverified scope. Build/run commands and thresholds are in its README. Set VULKAN_SIM16_RUN_DIR only for an actual current, clean-source run.
+- Without fresh model output, all 120 Live cases skip. Without a device run, the Vulkan artifact test skips. Android, host integration, thermal/mobile performance and optional async/atomic/FP16/AS paths remain unverified. CI static/host success does not close these layers.

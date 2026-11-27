@@ -1,0 +1,867 @@
+{
+  "run_id": "c10a4bdb-57d7-4fe9-a1ed-ebf2469f00e3",
+  "source_sha256": "7f031a67e351c3b03560e3e3d6d18c688ca9f2f737c8cbcfaa9506e2eb7bc96b",
+  "runner_sha256": "8c717ac95773b851a572d2134b0a7801f93ad83a5e06478ef6040da4e12430db",
+  "shader_sha256": "7d211217173b1f72b910f192bc3bae3f83e11f049c8b1e97c744b5798b023775",
+  "rules_sha256": "7f05561867b8021e35ff8a4a3cc6bc95b9d5edbca1cca6143bc3469ad01c64e4",
+  "binary_sha256": "8ac6853a3832b9c5e2a6a05b85509490b395e938c426adbb25fcda16515b8608",
+  "spirv_sha256": "9ecb42d55e5e59ca9de69fcc2aa886a020d65bac87a7b9a17455113230ed49b7",
+  "disassembly_sha256": "1308c7ad3cfda9e2891644a3ab0ab5802d761137a01173ac4fb688b03fa50125",
+  "normative_sha256": "de545a6eda78870e46eb21994926e99f3c6d0b3994e82e4f5153348c0e072144",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "tools": {
+    "glslangValidator": {
+      "sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+      "version": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100\n"
+    },
+    "spirv-val": {
+      "sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)\n"
+    },
+    "spirv-dis": {
+      "sha256": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+      "version": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTarget: SPIR-V 1.5\n"
+    }
+  },
+  "spirv_inspection_scope": "Exact named layout and instruction presence checks plus source/manual data-flow review, NOT complete SPIR-V reflection or formal data-flow proof.",
+  "compile": {
+    "exit_code": 0,
+    "stdout_sha256": "8b0d1c3c2a840d5121b4e4f8a52718f428a5ce7f10dd5d3c4df37fbd9727edb1",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "validate": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "disassemble": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "build": {
+    "exit_code": 0,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "cases": {
+    "good": {
+      "records": [
+        {
+          "kind": "identity",
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "bdaSupported": 1,
+          "int64Supported": 1,
+          "bdaEnabled": 1,
+          "int64Enabled": 1,
+          "maxLocalX": 1024,
+          "maxInvocations": 1024,
+          "maxGroupX": 65535,
+          "maxPushConstants": 256
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 0,
+          "size": 272,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 272,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140114907213824,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 1,
+          "size": 272,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 272,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140114907209728,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 2,
+          "size": 16,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 16,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 140114907205632,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "table",
+          "tableAddress": 140114907205632,
+          "sourceAddress": 140114907213824,
+          "outputAddress": 140114907209728,
+          "sourceOffset": 0,
+          "outputOffset": 8,
+          "alignment": 16,
+          "count": 64
+        },
+        {
+          "kind": "dispatch",
+          "groups": [
+            8,
+            1,
+            1
+          ],
+          "pushAddress": 140114907205632,
+          "pushSize": 8,
+          "beforeAccess": [
+            16384,
+            96
+          ],
+          "afterAccess": [
+            64,
+            8192
+          ],
+          "beforeStages": [
+            16384,
+            2048
+          ],
+          "afterStages": [
+            2048,
+            16384
+          ]
+        },
+        {
+          "kind": "readback",
+          "ordinal": 0,
+          "values": [
+            17,
+            24,
+            31,
+            38,
+            45,
+            52,
+            59,
+            66,
+            73,
+            80,
+            87,
+            94,
+            101,
+            108,
+            115,
+            122,
+            129,
+            136,
+            143,
+            150,
+            157,
+            164,
+            171,
+            178,
+            185,
+            192,
+            199,
+            206,
+            213,
+            220,
+            227,
+            234,
+            241,
+            248,
+            255,
+            262,
+            269,
+            276,
+            283,
+            290,
+            297,
+            304,
+            311,
+            318,
+            325,
+            332,
+            339,
+            346,
+            353,
+            360,
+            367,
+            374,
+            381,
+            388,
+            395,
+            402,
+            409,
+            416,
+            423,
+            430,
+            437,
+            444,
+            451,
+            458,
+            465,
+            472,
+            479,
+            486
+          ]
+        },
+        {
+          "kind": "readback",
+          "ordinal": 1,
+          "values": [
+            51,
+            73,
+            95,
+            117,
+            139,
+            161,
+            183,
+            205,
+            227,
+            249,
+            271,
+            293,
+            315,
+            337,
+            359,
+            381,
+            403,
+            425,
+            447,
+            469,
+            491,
+            513,
+            535,
+            557,
+            579,
+            601,
+            623,
+            645,
+            667,
+            689,
+            711,
+            733,
+            755,
+            777,
+            799,
+            821,
+            843,
+            865,
+            887,
+            909,
+            931,
+            953,
+            975,
+            997,
+            1019,
+            1041,
+            1063,
+            1085,
+            1107,
+            1129,
+            1151,
+            1173,
+            1195,
+            1217,
+            1239,
+            1261,
+            1283,
+            1305,
+            1327,
+            1349,
+            1371,
+            1393,
+            1415,
+            1437,
+            3237998144,
+            3237998145,
+            3237998146,
+            3237998147
+          ]
+        },
+        {
+          "kind": "oracle",
+          "expectedAddend": 0,
+          "matched": true,
+          "guardsIntact": true,
+          "tableValues": [
+            140114907213824,
+            140114907209728
+          ]
+        },
+        {
+          "kind": "final",
+          "submitted": true,
+          "fenceCompleted": true,
+          "errors": 0,
+          "rc": 0
+        }
+      ],
+      "admissions": [
+        {
+          "status": "BDA_PREREQUISITES_WITHIN_SCOPE",
+          "shader_execution": "NOT_PROVEN"
+        },
+        {
+          "status": "BDA_PREREQUISITES_WITHIN_SCOPE",
+          "shader_execution": "NOT_PROVEN"
+        },
+        {
+          "status": "BDA_PREREQUISITES_WITHIN_SCOPE",
+          "shader_execution": "NOT_PROVEN"
+        }
+      ],
+      "ranges": [
+        {
+          "status": "ADDRESS_WITHIN_KNOWN_LIVE_BUFFER",
+          "robustness_guarantee": false
+        },
+        {
+          "status": "ADDRESS_WITHIN_KNOWN_LIVE_BUFFER",
+          "robustness_guarantee": false
+        },
+        {
+          "status": "ADDRESS_WITHIN_KNOWN_LIVE_BUFFER",
+          "robustness_guarantee": false
+        }
+      ],
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "a851531987632748a3f521cbb6d36c54444425942448f58d2bd6b8ff3587696c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "wrong-output": {
+      "records": [
+        {
+          "kind": "identity",
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "bdaSupported": 1,
+          "int64Supported": 1,
+          "bdaEnabled": 1,
+          "int64Enabled": 1,
+          "maxLocalX": 1024,
+          "maxInvocations": 1024,
+          "maxGroupX": 65535,
+          "maxPushConstants": 256
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 0,
+          "size": 272,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 272,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 139952815439872,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 1,
+          "size": 272,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 272,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 139952815435776,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 2,
+          "size": 16,
+          "usage": 131104,
+          "allocationFlags": 2,
+          "requirementsSize": 16,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 139952815431680,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "table",
+          "tableAddress": 139952815431680,
+          "sourceAddress": 139952815439872,
+          "outputAddress": 139952815435776,
+          "sourceOffset": 0,
+          "outputOffset": 8,
+          "alignment": 16,
+          "count": 64
+        },
+        {
+          "kind": "dispatch",
+          "groups": [
+            8,
+            1,
+            1
+          ],
+          "pushAddress": 139952815431680,
+          "pushSize": 8,
+          "beforeAccess": [
+            16384,
+            96
+          ],
+          "afterAccess": [
+            64,
+            8192
+          ],
+          "beforeStages": [
+            16384,
+            2048
+          ],
+          "afterStages": [
+            2048,
+            16384
+          ]
+        },
+        {
+          "kind": "readback",
+          "ordinal": 0,
+          "values": [
+            17,
+            24,
+            31,
+            38,
+            45,
+            52,
+            59,
+            66,
+            73,
+            80,
+            87,
+            94,
+            101,
+            108,
+            115,
+            122,
+            129,
+            136,
+            143,
+            150,
+            157,
+            164,
+            171,
+            178,
+            185,
+            192,
+            199,
+            206,
+            213,
+            220,
+            227,
+            234,
+            241,
+            248,
+            255,
+            262,
+            269,
+            276,
+            283,
+            290,
+            297,
+            304,
+            311,
+            318,
+            325,
+            332,
+            339,
+            346,
+            353,
+            360,
+            367,
+            374,
+            381,
+            388,
+            395,
+            402,
+            409,
+            416,
+            423,
+            430,
+            437,
+            444,
+            451,
+            458,
+            465,
+            472,
+            479,
+            486
+          ]
+        },
+        {
+          "kind": "readback",
+          "ordinal": 1,
+          "values": [
+            51,
+            73,
+            95,
+            117,
+            139,
+            161,
+            183,
+            205,
+            227,
+            249,
+            271,
+            293,
+            315,
+            337,
+            359,
+            381,
+            403,
+            425,
+            447,
+            469,
+            491,
+            513,
+            535,
+            557,
+            579,
+            601,
+            623,
+            645,
+            667,
+            689,
+            711,
+            733,
+            755,
+            777,
+            799,
+            821,
+            843,
+            865,
+            887,
+            909,
+            931,
+            953,
+            975,
+            997,
+            1019,
+            1041,
+            1063,
+            1085,
+            1107,
+            1129,
+            1151,
+            1173,
+            1195,
+            1217,
+            1239,
+            1261,
+            1283,
+            1305,
+            1327,
+            1349,
+            1371,
+            1393,
+            1415,
+            1437,
+            3237998144,
+            3237998145,
+            3237998146,
+            3237998147
+          ]
+        },
+        {
+          "kind": "oracle",
+          "expectedAddend": 1,
+          "matched": false,
+          "guardsIntact": true,
+          "tableValues": [
+            139952815439872,
+            139952815435776
+          ]
+        },
+        {
+          "kind": "final",
+          "submitted": true,
+          "fenceCompleted": true,
+          "errors": 0,
+          "rc": 6
+        }
+      ],
+      "admissions": [
+        {
+          "status": "BDA_PREREQUISITES_WITHIN_SCOPE",
+          "shader_execution": "NOT_PROVEN"
+        },
+        {
+          "status": "BDA_PREREQUISITES_WITHIN_SCOPE",
+          "shader_execution": "NOT_PROVEN"
+        },
+        {
+          "status": "BDA_PREREQUISITES_WITHIN_SCOPE",
+          "shader_execution": "NOT_PROVEN"
+        }
+      ],
+      "ranges": [
+        {
+          "status": "ADDRESS_WITHIN_KNOWN_LIVE_BUFFER",
+          "robustness_guarantee": false
+        },
+        {
+          "status": "ADDRESS_WITHIN_KNOWN_LIVE_BUFFER",
+          "robustness_guarantee": false
+        },
+        {
+          "status": "ADDRESS_WITHIN_KNOWN_LIVE_BUFFER",
+          "robustness_guarantee": false
+        }
+      ],
+      "diagnostics": [],
+      "exit_code": 6,
+      "stdout_sha256": "b222ae66f3879ef33314063904e76c6fa53f40b676056144856b9e848d76c5e0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "missing-usage": {
+      "records": [
+        {
+          "kind": "identity",
+          "deviceType": 4,
+          "apiVersion": 4210993,
+          "vendorID": 65541,
+          "deviceID": 0,
+          "driverVersion": 1,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15
+        },
+        {
+          "kind": "features",
+          "bdaSupported": 1,
+          "int64Supported": 1,
+          "bdaEnabled": 1,
+          "int64Enabled": 1,
+          "maxLocalX": 1024,
+          "maxInvocations": 1024,
+          "maxGroupX": 65535,
+          "maxPushConstants": 256
+        },
+        {
+          "kind": "buffer",
+          "ordinal": 0,
+          "size": 272,
+          "usage": 32,
+          "allocationFlags": 2,
+          "requirementsSize": 272,
+          "requirementsAlignment": 64,
+          "bindOffset": 0,
+          "memoryTypeBits": 1,
+          "memoryTypeIndex": 0,
+          "memoryFlags": 15,
+          "address": 0,
+          "bound": true,
+          "live": true,
+          "generation": 0
+        },
+        {
+          "kind": "negative",
+          "addressConsumed": false,
+          "returnedAddress": 0
+        },
+        {
+          "kind": "final",
+          "submitted": false,
+          "fenceCompleted": false,
+          "errors": 1,
+          "rc": 0
+        }
+      ],
+      "admissions": [
+        {
+          "status": "MISSING_ADDRESS_USAGE",
+          "vuid": "VUID-VkBufferDeviceAddressInfo-buffer-02601"
+        }
+      ],
+      "ranges": [],
+      "diagnostics": [
+        "VUID-VkBufferDeviceAddressInfo-buffer-02601"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "149075bd84c4f5db957687ef70fcc663b77945ea06217d56bb0eb5a5ebd226b5",
+      "stderr_sha256": "9f6bd6d4bf70b408b1f80c69d6229aa03fa4461a26760ad0afff00733897b1f4"
+    }
+  },
+  "capability_inventory": {
+    "source_sha256": "bc62cba2b07c2ab4b6bfd62b1e1a964e6fc5697adff1e997bcda34569415ed21",
+    "binary_sha256": "55b903a822f14366e0627bbde510c8b06da47f0f7745ee390a57f112dd0e4b16",
+    "build": {
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "run": {
+      "exit_code": 0,
+      "stdout_sha256": "ea206f0394ef1252f5fc0fe399d69de05f702010af1776b01c4cdeff99f569c3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "capabilities": {
+      "deviceType": 4,
+      "apiVersion": 4210993,
+      "vendorID": 65541,
+      "deviceID": 0,
+      "driverVersion": 1,
+      "extensions": {
+        "VK_KHR_video_queue": false,
+        "VK_KHR_video_decode_queue": false,
+        "VK_KHR_video_decode_h264": false,
+        "VK_KHR_video_decode_h265": false,
+        "VK_KHR_video_decode_av1": false,
+        "VK_KHR_video_encode_queue": false,
+        "VK_KHR_video_encode_h264": false,
+        "VK_KHR_video_encode_h265": false,
+        "VK_KHR_video_encode_av1": false,
+        "VK_EXT_subgroup_size_control": true,
+        "VK_KHR_cooperative_matrix": false,
+        "VK_NV_cooperative_matrix": false,
+        "VK_NV_optical_flow": false,
+        "VK_ARM_tensors": false,
+        "VK_ARM_data_graph": false,
+        "VK_KHR_buffer_device_address": true,
+        "VK_NV_cooperative_vector": false,
+        "VK_NV_memory_decompression": false,
+        "VK_EXT_memory_decompression": false,
+        "VK_NV_copy_memory_indirect": false,
+        "VK_QCOM_data_graph_model": false,
+        "VK_KHR_copy_memory_indirect": false
+      },
+      "shaderInt64": 1,
+      "bufferDeviceAddress": 1,
+      "subgroup": {
+        "size": 8,
+        "supportedStages": 240,
+        "supportedOperations": 1791,
+        "quadOperationsInAllStages": 0,
+        "sizeControl": 1,
+        "computeFullSubgroups": 1,
+        "minSize": 8,
+        "maxSize": 8,
+        "maxComputeWorkgroupSubgroups": 32,
+        "requiredSubgroupSizeStages": 48
+      },
+      "computeLimits": {
+        "maxInvocations": 1024,
+        "maxSize": [
+          1024,
+          1024,
+          1024
+        ],
+        "maxCount": [
+          65535,
+          65535,
+          65535
+        ]
+      },
+      "queues": [
+        {
+          "index": 0,
+          "flags": 15,
+          "count": 1
+        }
+      ],
+      "logicalDevicesCreated": 0,
+      "queueSubmissions": 0
+    }
+  },
+  "special_availability": {
+    "status": "UNSUPPORTED_EXTENSION",
+    "owners": [
+      "VK_KHR_video_queue",
+      "VK_KHR_video_decode_queue",
+      "VK_KHR_video_decode_h264",
+      "VK_KHR_video_decode_h265",
+      "VK_KHR_video_decode_av1",
+      "VK_KHR_video_encode_queue",
+      "VK_KHR_video_encode_h264",
+      "VK_KHR_video_encode_h265",
+      "VK_KHR_video_encode_av1",
+      "VK_KHR_cooperative_matrix",
+      "VK_NV_cooperative_matrix",
+      "VK_NV_optical_flow",
+      "VK_ARM_tensors",
+      "VK_ARM_data_graph",
+      "VK_NV_cooperative_vector",
+      "VK_NV_memory_decompression",
+      "VK_EXT_memory_decompression",
+      "VK_NV_copy_memory_indirect",
+      "VK_QCOM_data_graph_model",
+      "VK_KHR_copy_memory_indirect"
+    ],
+    "executed": false
+  },
+  "status": "BOUNDED_PHYSICAL_STORAGE_ADDRESS_PASS",
+  "limitations": [
+    "CPU ICD repository-authored fixture, not production failure or hardware performance.",
+    "Ordinary in-range PhysicalStorageBuffer pointer table only, not sparse/capture-replay or stale pointers.",
+    "BDA has no descriptor robustness promise; no invalid GPU address is submitted.",
+    "Video, optical/tensor/data-graph/cooperative special families unavailable, not replaced by BDA.",
+    "Wrong-output is arithmetic oracle mismatch, missingusage is callback-aborted address query.",
+    "Standalone bounded address-support family, not complete VK16."
+  ],
+  "evidence_stage": "PREPUBLICATION retained v4; published-head fresh run reported separately",
+  "release_status": "BLOCKED"
+}

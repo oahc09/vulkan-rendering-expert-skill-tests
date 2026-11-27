@@ -1,0 +1,54 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "cases": {
+    "vs16": {
+      "max_composition_error": 6.724376688804767e-08,
+      "max_partial_error": 6.724376688804767e-08,
+      "partial_pixels": 18,
+      "roi_pixels": 582,
+      "tolerance": 1e-06,
+      "excluded_count": 0
+    },
+    "vs15": {
+      "max_composition_error": 7.152557379708213e-08,
+      "max_partial_error": 5.273257985827229e-08,
+      "partial_pixels": 52,
+      "roi_pixels": 126,
+      "tolerance": 1e-06,
+      "excluded_count": 0
+    },
+    "skip-decode": {
+      "max_composition_error": 0.21526829972383427,
+      "max_partial_error": 0.14558434314246083,
+      "partial_pixels": 18,
+      "roi_pixels": 582,
+      "tolerance": 1e-06,
+      "excluded_count": 0
+    },
+    "wrong-text-route": {
+      "max_composition_error": 0.6749999985098839,
+      "max_partial_error": 0.6345705962165115,
+      "partial_pixels": 18,
+      "roi_pixels": 582,
+      "tolerance": 1e-06,
+      "excluded_count": 0
+    }
+  },
+  "png_to_ft_premult_byte_error": 0,
+  "source_size": [
+    136,
+    128
+  ],
+  "display_size": [
+    34,
+    32
+  ],
+  "text_opacity": 0.75,
+  "official_selector_cases": 2,
+  "request_routes": {
+    "vs16": "emoji",
+    "vs15": "text"
+  },
+  "scope": "fixed real heart VS15/text and VS16/color cluster policy; independently decoded CBDT PNG and actual system FT; not full emoji Unicode or bitmap scaling quality"
+}

@@ -1,0 +1,448 @@
+{
+  "actual_gpu_work_submitted": false,
+  "cases": [
+    {
+      "actual_capability_observation": null,
+      "decision": {
+        "admission": {
+          "overlap_proven": false,
+          "reason": "declared baseline obligations met; no overlap guarantee",
+          "status": "MULTI_QUEUE_ADMISSIBLE"
+        },
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "limitations": [
+          "Caller declarations are not authenticated captures or Vulkan validation.",
+          "Ordinary unprotected single-device queues only; complete stage/access and resource legality are caller-proven.",
+          "A second queue does not guarantee overlap, independent hardware or a performance benefit.",
+          "No thermal/power/latency/quality objective is silently inferred from full-frame duration.",
+          "HOST decision contract, not executed async GPU benchmark or whole C2 acceptance."
+        ],
+        "observed_declared_medians_ns": {
+          "baseline_full_frame": 100,
+          "baseline_pass": 50,
+          "candidate_full_frame": 80,
+          "candidate_pass": 40
+        },
+        "observed_worst_frame_ns": {
+          "baseline": 101,
+          "candidate": 81
+        },
+        "overlap_proven": false,
+        "reason": "declared paired full-frame median meets explicit policy; no general or statistically proven benefit",
+        "revisit_conditions": [
+          "device/driver/workload/tool change",
+          "dependency/ownership/feature change",
+          "full-frame regression or new measurement"
+        ],
+        "rule_id": "ordinary-compute-scheduling-v1",
+        "selected": "MULTI_QUEUE",
+        "status": "SELECT_MEASURED_CANDIDATE"
+      },
+      "implementation_sha256": {
+        "checks19/decide_compute_schedule.py": "933d9ac8dc1443ba22e7c242eef99240536370e1ca4aa50baa9b0ca53a593f2b",
+        "tools/compute_schedule19.py": "96b4961baa820dff8d7da80b0d53f322598b70784c09b998e302914cdbca78e3",
+        "tools/compute_schedule_prose19.py": "ccf1180eccb49f64f1d86342ff2e0b34271fd43534bd95f2c9bd8cc9fe7538ac"
+      },
+      "name": "declared",
+      "report_sha256": "3d674b03ed6145469612e2c1edc9eb247a3d509af85b05fffbc1e541f45dbe6f",
+      "request_sha256": "8d343949028fd368757d12a03975a5362e311b8166122edccc69db12f6b44d0b",
+      "sources": [
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/devsandqueues.adoc",
+          "sha256": "9a28a6b978bc4bf57fcaaf263488b4894129518be8aa2dc8b23269be43ade6ad",
+          "slices": [
+            {
+              "anchor": "devsandqueues-queueprops",
+              "line_end": 3635,
+              "line_start": 3602,
+              "sha256": "5b0b2e029741c0d3834e7f2a7c1ad4b37be541b8fe31d67da0da3cae988e0475"
+            },
+            {
+              "anchor": "devsandqueues-queue-creation",
+              "line_end": 4057,
+              "line_start": 3636,
+              "sha256": "07c9b658719aeb5bb3b73da5b129f88122871cd337d4a36e6eef1f8db96fa53e"
+            },
+            {
+              "anchor": "devsandqueues-submission",
+              "line_end": 4296,
+              "line_start": 4259,
+              "sha256": "b4d0024cae687c19665ca3955bdb6e51d49a82a652439895aec3e110399e8b7d"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "slices": [
+            {
+              "anchor": "synchronization-submission-order",
+              "line_end": 1979,
+              "line_start": 1914,
+              "sha256": "59efcfd93d94bbcb8e2e87589cd9bc26ee0f5940e8982851008e4c41d8d4843e"
+            },
+            {
+              "anchor": "synchronization-dependencies-memory",
+              "line_end": 148,
+              "line_start": 137,
+              "sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/resources.adoc",
+          "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+          "slices": [
+            {
+              "anchor": "resources-sharing",
+              "line_end": 12436,
+              "line_start": 12294,
+              "sha256": "629442a40c55b6501fc6962ee96c6ce0c3bd0ba64c131689fff659b2dc4d3bf3"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/features.adoc",
+          "sha256": "c3f4d376c6609c2ef14a7cc840fd0472167c2833fda0c5358d1f55e087b96ff2",
+          "slices": [
+            {
+              "anchor": "features",
+              "line_end": 60,
+              "line_start": 19,
+              "sha256": "5e5b3a7f1e949a2c0f5f110bde694352e4c82b3afd4ee1c19e80a709bac4d07f"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/fundamentals.adoc",
+          "sha256": "0e505b495d75fbe83029ac6e3c6451585f0eeef492224db0a3bbac1fd3217fa9",
+          "slices": [
+            {
+              "anchor": "fundamentals-queueoperation",
+              "line_end": 165,
+              "line_start": 93,
+              "sha256": "f656ccae9647f78b35873dda0dae1d877adc40c177de13bd3109fa4a437e2694"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actual_capability_observation": null,
+      "decision": {
+        "admission": {
+          "overlap_proven": false,
+          "reason": "declared baseline obligations met; no overlap guarantee",
+          "status": "MULTI_QUEUE_ADMISSIBLE"
+        },
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "limitations": [
+          "Caller declarations are not authenticated captures or Vulkan validation.",
+          "Ordinary unprotected single-device queues only; complete stage/access and resource legality are caller-proven.",
+          "A second queue does not guarantee overlap, independent hardware or a performance benefit.",
+          "No thermal/power/latency/quality objective is silently inferred from full-frame duration.",
+          "HOST decision contract, not executed async GPU benchmark or whole C2 acceptance."
+        ],
+        "observed_declared_medians_ns": {
+          "baseline_full_frame": 100,
+          "baseline_pass": 50,
+          "candidate_full_frame": 120,
+          "candidate_pass": 20
+        },
+        "observed_worst_frame_ns": {
+          "baseline": 101,
+          "candidate": 121
+        },
+        "overlap_proven": false,
+        "reason": "observed worst frame exceeds explicit tolerance; no percentile inference",
+        "revisit_conditions": [
+          "device/driver/workload/tool change",
+          "dependency/ownership/feature change",
+          "full-frame regression or new measurement"
+        ],
+        "rule_id": "ordinary-compute-scheduling-v1",
+        "selected": "BASELINE",
+        "status": "REVOKE_TO_BASELINE"
+      },
+      "implementation_sha256": {
+        "checks19/decide_compute_schedule.py": "933d9ac8dc1443ba22e7c242eef99240536370e1ca4aa50baa9b0ca53a593f2b",
+        "tools/compute_schedule19.py": "96b4961baa820dff8d7da80b0d53f322598b70784c09b998e302914cdbca78e3",
+        "tools/compute_schedule_prose19.py": "ccf1180eccb49f64f1d86342ff2e0b34271fd43534bd95f2c9bd8cc9fe7538ac"
+      },
+      "name": "regression",
+      "report_sha256": "76fb87024c6d0e6489f3a42bbea75ab9850162e249c1b7f2108c1fc7b8bd7836",
+      "request_sha256": "ec2611fe74669a3bf87199fed915cc24b2dd8cfdbc12ac8012c271fae0713288",
+      "sources": [
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/devsandqueues.adoc",
+          "sha256": "9a28a6b978bc4bf57fcaaf263488b4894129518be8aa2dc8b23269be43ade6ad",
+          "slices": [
+            {
+              "anchor": "devsandqueues-queueprops",
+              "line_end": 3635,
+              "line_start": 3602,
+              "sha256": "5b0b2e029741c0d3834e7f2a7c1ad4b37be541b8fe31d67da0da3cae988e0475"
+            },
+            {
+              "anchor": "devsandqueues-queue-creation",
+              "line_end": 4057,
+              "line_start": 3636,
+              "sha256": "07c9b658719aeb5bb3b73da5b129f88122871cd337d4a36e6eef1f8db96fa53e"
+            },
+            {
+              "anchor": "devsandqueues-submission",
+              "line_end": 4296,
+              "line_start": 4259,
+              "sha256": "b4d0024cae687c19665ca3955bdb6e51d49a82a652439895aec3e110399e8b7d"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "slices": [
+            {
+              "anchor": "synchronization-submission-order",
+              "line_end": 1979,
+              "line_start": 1914,
+              "sha256": "59efcfd93d94bbcb8e2e87589cd9bc26ee0f5940e8982851008e4c41d8d4843e"
+            },
+            {
+              "anchor": "synchronization-dependencies-memory",
+              "line_end": 148,
+              "line_start": 137,
+              "sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/resources.adoc",
+          "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+          "slices": [
+            {
+              "anchor": "resources-sharing",
+              "line_end": 12436,
+              "line_start": 12294,
+              "sha256": "629442a40c55b6501fc6962ee96c6ce0c3bd0ba64c131689fff659b2dc4d3bf3"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/features.adoc",
+          "sha256": "c3f4d376c6609c2ef14a7cc840fd0472167c2833fda0c5358d1f55e087b96ff2",
+          "slices": [
+            {
+              "anchor": "features",
+              "line_end": 60,
+              "line_start": 19,
+              "sha256": "5e5b3a7f1e949a2c0f5f110bde694352e4c82b3afd4ee1c19e80a709bac4d07f"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/fundamentals.adoc",
+          "sha256": "0e505b495d75fbe83029ac6e3c6451585f0eeef492224db0a3bbac1fd3217fa9",
+          "slices": [
+            {
+              "anchor": "fundamentals-queueoperation",
+              "line_end": 165,
+              "line_start": 93,
+              "sha256": "f656ccae9647f78b35873dda0dae1d877adc40c177de13bd3109fa4a437e2694"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "actual_capability_observation": {
+        "created": [
+          {
+            "family": 0,
+            "index": 0
+          }
+        ],
+        "device": {
+          "apiVersion": 4210993,
+          "deviceID": 0,
+          "deviceType": 4,
+          "driverVersion": 1,
+          "name": "llvmpipe (LLVM 19.1.7, 256 bits)",
+          "vendorID": 65541
+        },
+        "families": [
+          {
+            "count": 1,
+            "family": 0,
+            "flags": 15
+          }
+        ],
+        "gpu_work_submitted": false,
+        "scope": "Observed capability/creation only; no timing or dependency evidence; caller-supplied digest is not authentication",
+        "sha256": "d7246f90a8f5cb70b065eaa7df7752ab42cb1745214a72256e663323660dddcc"
+      },
+      "decision": {
+        "admission": {
+          "overlap_proven": false,
+          "reason": "selected queue was not created",
+          "status": "NOT_ADMISSIBLE"
+        },
+        "evidence_authority": "CALLER_DECLARED_NOT_AUTHENTICATED",
+        "limitations": [
+          "Caller declarations are not authenticated captures or Vulkan validation.",
+          "Ordinary unprotected single-device queues only; complete stage/access and resource legality are caller-proven.",
+          "A second queue does not guarantee overlap, independent hardware or a performance benefit.",
+          "No thermal/power/latency/quality objective is silently inferred from full-frame duration.",
+          "HOST decision contract, not executed async GPU benchmark or whole C2 acceptance."
+        ],
+        "overlap_proven": false,
+        "reason": "multi-queue candidate lacks bounded admission",
+        "revisit_conditions": [
+          "device/driver/workload/tool change",
+          "dependency/ownership/feature change",
+          "full-frame regression or new measurement"
+        ],
+        "rule_id": "ordinary-compute-scheduling-v1",
+        "selected": "BASELINE",
+        "status": "REVOKE_TO_BASELINE"
+      },
+      "implementation_sha256": {
+        "checks19/decide_compute_schedule.py": "933d9ac8dc1443ba22e7c242eef99240536370e1ca4aa50baa9b0ca53a593f2b",
+        "tools/compute_schedule19.py": "96b4961baa820dff8d7da80b0d53f322598b70784c09b998e302914cdbca78e3",
+        "tools/compute_schedule_prose19.py": "ccf1180eccb49f64f1d86342ff2e0b34271fd43534bd95f2c9bd8cc9fe7538ac"
+      },
+      "name": "actual",
+      "report_sha256": "789fac2bc92f87db758da780fec0a1be65c5bedf507773ad6b189b1083aa36a0",
+      "request_sha256": "1be2446cfa43de9ada5d770af37e60fba6b892ac93c63532cea6d4551a457331",
+      "sources": [
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/devsandqueues.adoc",
+          "sha256": "9a28a6b978bc4bf57fcaaf263488b4894129518be8aa2dc8b23269be43ade6ad",
+          "slices": [
+            {
+              "anchor": "devsandqueues-queueprops",
+              "line_end": 3635,
+              "line_start": 3602,
+              "sha256": "5b0b2e029741c0d3834e7f2a7c1ad4b37be541b8fe31d67da0da3cae988e0475"
+            },
+            {
+              "anchor": "devsandqueues-queue-creation",
+              "line_end": 4057,
+              "line_start": 3636,
+              "sha256": "07c9b658719aeb5bb3b73da5b129f88122871cd337d4a36e6eef1f8db96fa53e"
+            },
+            {
+              "anchor": "devsandqueues-submission",
+              "line_end": 4296,
+              "line_start": 4259,
+              "sha256": "b4d0024cae687c19665ca3955bdb6e51d49a82a652439895aec3e110399e8b7d"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/synchronization.adoc",
+          "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+          "slices": [
+            {
+              "anchor": "synchronization-submission-order",
+              "line_end": 1979,
+              "line_start": 1914,
+              "sha256": "59efcfd93d94bbcb8e2e87589cd9bc26ee0f5940e8982851008e4c41d8d4843e"
+            },
+            {
+              "anchor": "synchronization-dependencies-memory",
+              "line_end": 148,
+              "line_start": 137,
+              "sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/resources.adoc",
+          "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+          "slices": [
+            {
+              "anchor": "resources-sharing",
+              "line_end": 12436,
+              "line_start": 12294,
+              "sha256": "629442a40c55b6501fc6962ee96c6ce0c3bd0ba64c131689fff659b2dc4d3bf3"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/features.adoc",
+          "sha256": "c3f4d376c6609c2ef14a7cc840fd0472167c2833fda0c5358d1f55e087b96ff2",
+          "slices": [
+            {
+              "anchor": "features",
+              "line_end": 60,
+              "line_start": 19,
+              "sha256": "5e5b3a7f1e949a2c0f5f110bde694352e4c82b3afd4ee1c19e80a709bac4d07f"
+            }
+          ]
+        },
+        {
+          "api_version": "1.4.368",
+          "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+          "limitations": "Raw source slices only; includes and conditionals not expanded. No VUID-derived performance claims.",
+          "path": "chapters/fundamentals.adoc",
+          "sha256": "0e505b495d75fbe83029ac6e3c6451585f0eeef492224db0a3bbac1fd3217fa9",
+          "slices": [
+            {
+              "anchor": "fundamentals-queueoperation",
+              "line_end": 165,
+              "line_start": 93,
+              "sha256": "f656ccae9647f78b35873dda0dae1d877adc40c177de13bd3109fa4a437e2694"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "performance_samples": "SYNTHETIC_CALLER_DECLARED_ONLY",
+  "probe_report_sha256": "21341653d767bf10bb1e9ea7a1dc062b9ca97dadf8596adb5b79e4ea676f727e",
+  "release_status": "BLOCKED",
+  "status": "BOUNDED_COMPUTE_SCHEDULING_HOST_DECISION",
+  "whole_C2_complete": false
+}

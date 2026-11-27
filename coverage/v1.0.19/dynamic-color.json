@@ -1,0 +1,716 @@
+{
+  "run_id": "9605b92c-07cf-47d3-8312-df876fce9d01",
+  "source_sha256": "aac0b3c7300221c5cb539c9feb9a044061a040d1577d31812041819018d972bd",
+  "runner_sha256": "db84ba521195560f0bd3b64d5eea7a461059bb1291c28e1706195a7abd5536ee",
+  "rules_sha256": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
+  "binary_sha256": "4ef253ecac882c7f3a06c2f8daa2b780f7be44318f21ef85116a858953ff93aa",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "spec_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "spec_version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "good": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "preserve_dependency": {
+          "kind": "preserve_dependency",
+          "oldLayout": 2,
+          "newLayout": 2,
+          "srcAccess": 256,
+          "dstAccess": 384,
+          "srcStage": 1024,
+          "dstStage": 1024
+        },
+        "load": {
+          "kind": "load",
+          "loadOp": 0,
+          "storeOp": 0,
+          "clear": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 0
+        }
+      },
+      "admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "content": [
+        {
+          "status": "DEFINED",
+          "reason": "no intervening draws; CLEAR defines, LOAD preserves only defined prior content, discard does not define"
+        },
+        {
+          "status": "DEFINED",
+          "reason": "no intervening draws; CLEAR defines, LOAD preserves only defined prior content, discard does not define"
+        }
+      ],
+      "exit_code": 0,
+      "diagnostics": [],
+      "normative": null,
+      "stdout_sha256": "258cb33e13fae92bc754b21359c62400a97d4a9ac7feb7c8f06c5abbe81ce836",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "area": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 5,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": false,
+          "discarded": true
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "admission": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkRenderingInfo-pNext-06079"
+        ],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "content": [],
+      "exit_code": 0,
+      "diagnostics": [
+        "area VUID-VkRenderingInfo-pNext-06079"
+      ],
+      "normative": {
+        "vuid": "VUID-VkRenderingInfo-pNext-06079",
+        "text": "If the <code>pNext</code> chain does not contain <a href=\"#VkDeviceGroupRenderPassBeginInfo\">VkDeviceGroupRenderPassBeginInfo</a> or its <code>deviceRenderAreaCount</code> member is equal to 0, the width of the <code>imageView</code> member of any element of <code>pColorAttachments</code>, <code>pDepthAttachment</code>, or <code>pStencilAttachment</code> that is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a> <strong class=\"purple\">must</strong> be greater than or equal to <span class=\"eq\"><code>renderArea.offset.x</code> +  <code>renderArea.extent.width</code></span>",
+        "page": "chapters/renderpass.html"
+      },
+      "stdout_sha256": "3cbf79c7d28ecd866df7e763af90fd32ff8b6fa627755121f3197c3aa7f058f9",
+      "stderr_sha256": "de5329310f0a586b0f07270626770427370f47be6505b5364113fcd18f02ec03"
+    },
+    "layout": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 6,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": false,
+          "discarded": true
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "admission": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkRenderingAttachmentInfo-imageView-06135"
+        ],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "content": [],
+      "exit_code": 0,
+      "diagnostics": [
+        "layout VUID-VkRenderingAttachmentInfo-imageView-06135"
+      ],
+      "normative": {
+        "vuid": "VUID-VkRenderingAttachmentInfo-imageView-06135",
+        "text": "If <code>imageView</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, <code>imageLayout</code> <strong class=\"purple\">must</strong> not be <code>VK_IMAGE_LAYOUT_UNDEFINED</code>, <code>VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</code>, or <code>VK_IMAGE_LAYOUT_PREINITIALIZED</code>",
+        "page": "chapters/renderpass.html"
+      },
+      "stdout_sha256": "5ee3e51df8310b54ee5a5ef8199f9924f222e61b62899d46b2d7f7b712866b80",
+      "stderr_sha256": "a7e476dc90742d7c8a1ba10b392870d98b18ad291993ac41f034f661a67115f2"
+    },
+    "feature": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 0,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": false,
+          "discarded": true
+        },
+        "final": {
+          "kind": "final",
+          "errors": 1,
+          "rc": 0
+        }
+      },
+      "admission": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-vkCmdBeginRendering-dynamicRendering-06446"
+        ],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "content": [],
+      "exit_code": 0,
+      "diagnostics": [
+        "feature VUID-vkCmdBeginRendering-dynamicRendering-06446"
+      ],
+      "normative": {
+        "vuid": "VUID-vkCmdBeginRendering-dynamicRendering-06446",
+        "text": "The <a href=\"#features-dynamicRendering\"><code>dynamicRendering</code></a> feature <strong class=\"purple\">must</strong> be enabled",
+        "page": "chapters/renderpass.html"
+      },
+      "stdout_sha256": "76aa441f20cf883e5d0badfd19677d4b01377bafc6fd03e08a57936d0a5ca53d",
+      "stderr_sha256": "5ea4f8ba27539448356c755ba7dde5b9588036dbaf5a090168e780ca50219eeb"
+    },
+    "wrong-output": {
+      "records": {
+        "identity": {
+          "kind": "identity",
+          "deviceType": 4,
+          "deviceID": 0,
+          "vendorID": 65541,
+          "driverVersion": 1,
+          "apiVersion": 4210993,
+          "layerSpec": 4210997,
+          "layerImplementation": 1,
+          "queueFamily": 0,
+          "queueFlags": 15,
+          "timestampValidBits": 64,
+          "timestampPeriod": 1
+        },
+        "image_allocation": {
+          "kind": "image_allocation",
+          "memoryTypeBits": 1,
+          "size": 256,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "buffer_allocation": {
+          "kind": "buffer_allocation",
+          "memoryTypeBits": 1,
+          "size": 64,
+          "alignment": 64,
+          "selectedType": 0,
+          "selectedFlags": 15
+        },
+        "manifest": {
+          "kind": "manifest",
+          "offsetX": 0,
+          "offsetY": 0,
+          "samples": 1,
+          "layers": 1,
+          "viewMask": 0,
+          "resolveMode": 0,
+          "supported": 1,
+          "enabled": 1,
+          "format": 37,
+          "usage": 17,
+          "viewWidth": 4,
+          "viewHeight": 4,
+          "width": 4,
+          "height": 4,
+          "layout": 2,
+          "loadOp": 1,
+          "storeOp": 0,
+          "maxWidth": 16384,
+          "maxHeight": 16384,
+          "formatSampleCounts": 5,
+          "memoryFlags": 15
+        },
+        "preserve_dependency": {
+          "kind": "preserve_dependency",
+          "oldLayout": 2,
+          "newLayout": 2,
+          "srcAccess": 256,
+          "dstAccess": 384,
+          "srcStage": 1024,
+          "dstStage": 1024
+        },
+        "load": {
+          "kind": "load",
+          "loadOp": 0,
+          "storeOp": 0,
+          "clear": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        "execution": {
+          "kind": "execution",
+          "submitted": true,
+          "fenceCompleted": true,
+          "pixels": [
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ],
+            [
+              255,
+              0,
+              255,
+              255
+            ]
+          ]
+        },
+        "final": {
+          "kind": "final",
+          "errors": 0,
+          "rc": 6
+        }
+      },
+      "admission": {
+        "status": "CONFIG_WITHIN_SCOPE",
+        "vuids": [],
+        "limitations": [
+          "origin0 single layer/sample/color only; no resolve/depth/stencil/multiview",
+          "actual tracked image layout, format capabilities, synchronization and object lifetimes require independent evidence"
+        ]
+      },
+      "content": [
+        {
+          "status": "DEFINED",
+          "reason": "no intervening draws; CLEAR defines, LOAD preserves only defined prior content, discard does not define"
+        },
+        {
+          "status": "DEFINED",
+          "reason": "no intervening draws; CLEAR defines, LOAD preserves only defined prior content, discard does not define"
+        }
+      ],
+      "exit_code": 6,
+      "diagnostics": [],
+      "normative": null,
+      "stdout_sha256": "cf00a77c6b5a7fbeb91fb53752c403c53c159d03785d87c9aea64e28d98a2678",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "status": "BOUNDED_DYNAMIC_COLOR_PASS",
+  "limitations": [
+    "Original deliberate fixture faults, not external-production bugs.",
+    "CPU ICD; no shader/draw/pipeline or mobile performance validation.",
+    "Negative BeginRendering callback abort then reset/discard; never EndRendering or submit that scope.",
+    "Green expected pixel mismatch is an oracle check, not independent GPU fault.",
+    "Single color RGBA8, layer1 sample1 origin0; not full VK10 coverage."
+  ]
+}

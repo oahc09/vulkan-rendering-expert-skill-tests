@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "logical_devices": 2,
+  "A_pending_render_submissions": 1,
+  "B_completed_render_submissions": 4,
+  "B_positive_images": 3,
+  "B_diagnostic_images": 1,
+  "A_pending_checks": 5,
+  "rows": [
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "B-initial-A-pending"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 5.189110252601381e-08,
+      "max_roi_error": 5.189110252601381e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "B-new-A-pending"
+    },
+    {
+      "glyph_quads": 3,
+      "vertices": 18,
+      "max_linear_error": 5.189110252601381e-08,
+      "max_roi_error": 5.189110252601381e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 20,
+      "roi_pixels": 191,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "stage": "B-after-A-destroyed"
+    }
+  ],
+  "negative_checks": [
+    "foreign device publication/draw rejected before recording",
+    "actual canceled B route rejected",
+    "controlled A pending exception cleanup with gate release",
+    "existing output refused unchanged"
+  ],
+  "limits": [
+    "same configured software Vulkan implementation, not different physical GPUs or real Surface",
+    "B completes while A gate un-signaled; no simultaneous shader execution assertion",
+    "A post-release image not read back; only bounded fence completion/cleanup verified",
+    "B candidate cancel occurs after its upload completion",
+    "UNUSED preserve auxiliary fallback, not active MRT/depth",
+    "no arbitrary allocation or device-loss cleanup/production leak assertion",
+    "target platform and Live unverified"
+  ]
+}

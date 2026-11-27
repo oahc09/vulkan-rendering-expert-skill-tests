@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "tolerance": 1e-06,
+  "excluded": 0,
+  "shadow_depth_error": 1.48512578235227e-07,
+  "cases": {
+    "A": {
+      "color_error": 8.195638656616211e-08,
+      "depth_error": 2.97025156470454e-07,
+      "positive": true
+    },
+    "B": {
+      "color_error": 8.195638656616211e-08,
+      "depth_error": 1.798120026208494e-07,
+      "positive": true
+    },
+    "B-no-shadow": {
+      "color_error": 0.600000011920929,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-stale-label": {
+      "color_error": 0.2250000238418579,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-no-rect": {
+      "color_error": 0.27125000953674316,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-no-circle": {
+      "color_error": 0.24500001072883607,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-no-rotated": {
+      "color_error": 0.24500001072883607,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-filled-hole": {
+      "color_error": 0.27125000953674316,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-butt": {
+      "color_error": 0.2712499403953552,
+      "depth_error": 1.798120026208494e-07,
+      "positive": false
+    },
+    "B-same-evenodd": {
+      "color_error": 8.195638656616211e-08,
+      "depth_error": 1.798120026208494e-07,
+      "positive": true
+    },
+    "B-same-nonzero": {
+      "color_error": 8.091330538917418e-08,
+      "depth_error": 1.798120026208494e-07,
+      "positive": true
+    },
+    "B-opposite-evenodd": {
+      "color_error": 8.195638656616211e-08,
+      "depth_error": 1.798120026208494e-07,
+      "positive": true
+    }
+  },
+  "preflight": {
+    "negative_1": 36,
+    "negative_2": 91,
+    "negative_3": 35,
+    "negative_4": 256,
+    "negative_5": 12,
+    "path_only": 297,
+    "stroke_only": 68,
+    "hole_kept": 256
+  },
+  "world_negative_post_overlay_errors": {
+    "B-no-shadow": 0.600000011920929,
+    "B-stale-label": 0.2250000238418579
+  },
+  "positive_views": 5,
+  "negative_views": 7,
+  "camera_pass_draws": 5,
+  "light_producers": 1,
+  "scope": "Bounded fixed analytic screen-vector fill/stroke/three clips added as fifth draw to actual shared world camera renderpass; software Vulkan, not full Scene B.",
+  "reference_correction": {
+    "first_run_mismatched_pixels": [
+      [
+        28,
+        11
+      ],
+      [
+        31,
+        12
+      ],
+      [
+        34,
+        13
+      ],
+      [
+        37,
+        14
+      ],
+      [
+        40,
+        15
+      ]
+    ],
+    "cause": "CPU ray crossing excluded exact finite-edge points while inherited shader halfplanes were closed",
+    "gpu_geometry_threshold_changed": false
+  },
+  "limits": [
+    "Oblique parallel cameras, not perspective",
+    "Hard pixel-center analytic coverage, not AA or path tessellation",
+    "No general curves/dashes/joins, near-plane, negative-scale or platform/Live acceptance"
+  ]
+}

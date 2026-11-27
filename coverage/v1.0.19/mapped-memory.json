@@ -1,0 +1,133 @@
+{
+  "run_id": "33ef38b8-462b-488b-abca-3eefb7712a18",
+  "source_sha256": "f95e12dd87a3a7fdb4e70a0a8fac0c089e20b36fd43f7577bee73d34d0e089e3",
+  "runner_sha256": "a1b726239bbfbcaea494a729d975ec78cda3c7517ddfa81657ba5a3d11ed0d7f",
+  "binary_sha256": "e1c87d02aeb04469e70b932062316834a3b6086a51ea55d7b294d56de92949ee",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "cases": {
+    "visibility": {
+      "result": {
+        "kind": "result",
+        "status": "UNAVAILABLE_NOT_RUN"
+      },
+      "selection": [],
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "560f215939ecab45dc08a93fdcefc5f2e65b0533ffe44d43db7f73fac186be4f",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "good": {
+      "result": {
+        "kind": "result",
+        "status": "API_ONLY",
+        "memoryTypeIndex": 0,
+        "errors": 0,
+        "flushResult": 0
+      },
+      "selection": [
+        {
+          "kind": "selection",
+          "deviceIndex": 0,
+          "memoryTypeIndex": 0,
+          "flags": 15
+        }
+      ],
+      "diagnostics": [],
+      "exit_code": 0,
+      "stdout_sha256": "c3e1f29900b8517265d5e2e23b7e7af2f4cf535bc953b5f83b21f82023de3001",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "offset": {
+      "result": {
+        "kind": "result",
+        "status": "API_ONLY",
+        "memoryTypeIndex": 0,
+        "errors": 1,
+        "flushResult": -1000011001
+      },
+      "selection": [
+        {
+          "kind": "selection",
+          "deviceIndex": 0,
+          "memoryTypeIndex": 0,
+          "flags": 15
+        }
+      ],
+      "diagnostics": [
+        "VUID VUID-VkMappedMemoryRange-size-00685"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e724bd77872127ee986c575158a0a091158cf5bf89c3f6436ec68a43f35e7d13",
+      "stderr_sha256": "204bbdda7b3fb11ecaedfbde1506907a27b318c257be3d7a014c3aa8dc20aa15"
+    },
+    "size": {
+      "result": {
+        "kind": "result",
+        "status": "API_ONLY",
+        "memoryTypeIndex": 0,
+        "errors": 1,
+        "flushResult": -1000011001
+      },
+      "selection": [
+        {
+          "kind": "selection",
+          "deviceIndex": 0,
+          "memoryTypeIndex": 0,
+          "flags": 15
+        }
+      ],
+      "diagnostics": [
+        "VUID VUID-VkMappedMemoryRange-size-00685"
+      ],
+      "exit_code": 0,
+      "stdout_sha256": "e724bd77872127ee986c575158a0a091158cf5bf89c3f6436ec68a43f35e7d13",
+      "stderr_sha256": "204bbdda7b3fb11ecaedfbde1506907a27b318c257be3d7a014c3aa8dc20aa15"
+    }
+  },
+  "scope": "Original deliberate API-boundary experiment. CPU ICD only. Not external-production, hardware or mobile acceptance.",
+  "icd_manifest_sha256": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "devices": [
+    {
+      "kind": "device",
+      "index": 0,
+      "deviceType": 4,
+      "vendorID": 65541,
+      "deviceID": 0,
+      "driverVersion": 1,
+      "apiVersion": 4210993,
+      "nonCoherentAtomSize": 64,
+      "memoryTypeBits": 1,
+      "allocationSize": 256,
+      "memoryTypes": [
+        {
+          "index": 0,
+          "flags": 15,
+          "heapIndex": 0
+        }
+      ]
+    }
+  ],
+  "layer": {
+    "kind": "layer",
+    "specVersion": 4210997,
+    "implementationVersion": 1
+  },
+  "status": "API_BOUNDARY_PASS_NON_COHERENT_UNAVAILABLE",
+  "limitations": [
+    "Coherent API-boundary checks never establish noncoherent visibility.",
+    "When unavailable, transfer/flush/fence/invalidate path is compiled only, not runtime validated.",
+    "Validation callback aborts invalid calls before driver execution."
+  ],
+  "missing_layer_negative": {
+    "scope": "Actual missing validation-layer manifest negative control. Runner preflight fails before launching probe; not a driver test.",
+    "runner_sha256": "a1b726239bbfbcaea494a729d975ec78cda3c7517ddfa81657ba5a3d11ed0d7f",
+    "condition": "VK_LAYER_PATH points to newly created empty directory",
+    "exit_code": 1,
+    "summary_created": false,
+    "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr_sha256": "3fa92725352375255d8dfb17614834f73ba5ffc3c74af9b0805a9ef814cc63a3",
+    "status": "EXPECTED_FAILURE"
+  }
+}

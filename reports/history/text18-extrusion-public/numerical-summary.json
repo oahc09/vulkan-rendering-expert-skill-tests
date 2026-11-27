@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "triangles": 28,
+  "cases": [
+    {
+      "max_color_error": 2.384185793236071e-08,
+      "max_depth_error": 1.132488250399355e-07,
+      "tolerance": 1e-06,
+      "surface_pixels": {
+        "background": 2270,
+        "front": 600,
+        "side": 315
+      },
+      "case": "normal"
+    },
+    {
+      "max_color_error": 2.384185793236071e-08,
+      "max_depth_error": 1.132488250399355e-07,
+      "tolerance": 1e-06,
+      "surface_pixels": {
+        "background": 2270,
+        "front": 600,
+        "side": 315
+      },
+      "case": "reverse"
+    }
+  ],
+  "negative": "actual disabled depth test rejected",
+  "scope": "one concave contour finite extrusion with affine oblique projection and actual D32 LESS/write; not world/shadow/bevel pipeline"
+}

@@ -1,0 +1,220 @@
+{
+  "scope": "same-source prepublication strict local cohort; not external/hardware acceptance",
+  "tests_sha": "d69a12013baac9995f3aced2def0f3b5ba1dfc5a",
+  "skill_sha": "b1ddd33c0e5fc2563a63ea12e2e5d1452a50ca4e",
+  "sources": {
+    "checks19/run_indirect_scene.py": "c324212be00f6a6a14f8da7e90cc5e75944a9e5aa2cd51049ac3c818ec31be4d",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c",
+    "tools/device_selection19.py": "7b89d93d47ff8f304eecf3d0db97685f64fdd9821df7e09b7598340fbd4880f4",
+    "probes19/device_capabilities.c": "cddd8876e10b2523142608ff41c5c3c7b25dd7e38645041d6c3e92e28d7e35a9",
+    "tools/dynamic_color19.py": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
+    "tools/dynamic_draw19.py": "a3b679a7c7aefd26d12201660317b9540725c61f8e302e9ebb260b2712003f1e",
+    "tools/indirect_draw19.py": "003f7f0fea4da7eba7f673ac88d2a7fc2edbe72623885660b19d82d1fe969466",
+    "coverage/v1.0.19/pair.json": "5c556f53abd3db163f82411a6882a78f648843da388f323461b236e034a718a0",
+    "docs/v1.0.19-original-plan.md": "b28086a1c1b5d390ad5826c10740fbced15a7e5d3efb5628922147d0a6fa955b",
+    "cases19/indirect_draw/main.frag": "8164d3fa0a2c03d2aa5970519f771f75b612a782700ddd06e59775e5807d3b3b",
+    "cases19/indirect_draw/run.py": "0ef3fe93c0f602ade24297934b7f02926013208d0a0c51a4d5c05c82465b1bdc",
+    "cases19/indirect_draw/probe.c": "0e8a4874af8535c6571175a8a77873c3a358b67117b9726e195f2873ad6de51f",
+    "cases19/indirect_draw/main.comp": "ef32bfe5bc9545598d922a1d83aef14b0bf5c53edfeb09e4398619ea8e8681c2",
+    "cases19/indirect_draw/main.vert": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0"
+  },
+  "admission": {
+    "status": "ADMITTED_SUPPORT_ONLY",
+    "checks": {
+      "loader-core13": true,
+      "physical-core13": true,
+      "dynamicRendering-supported": true,
+      "format-query": true,
+      "format-extent": true,
+      "sample1": true,
+      "indirect-limit": true,
+      "color-limit": true,
+      "framebuffer-extent": true,
+      "viewport-extent": true,
+      "compute-limit": true,
+      "viewport-bounds": true,
+      "host-coherent-type": true,
+      "joint-queue": true
+    },
+    "identity": {
+      "deviceType": 4,
+      "deviceID": 0,
+      "vendorID": 65541,
+      "driverVersion": 1,
+      "apiVersion": 4210993
+    },
+    "queue": {
+      "family": 0,
+      "flags": 15,
+      "count": 1
+    },
+    "enabled_features_proven": false,
+    "remaining": [
+      "actual scene enable manifest",
+      "image/buffer memoryTypeBits compatible allocations",
+      "actual shaders/limits/layout/dependency/pixels"
+    ]
+  },
+  "capabilities": {
+    "loaderApi": 4210997,
+    "devices": [
+      {
+        "deviceType": 4,
+        "deviceID": 0,
+        "vendorID": 65541,
+        "driverVersion": 1,
+        "apiVersion": 4210993,
+        "dynamicRenderingSupported": 1,
+        "formatResult": 0,
+        "formatWidth": 16384,
+        "formatHeight": 16384,
+        "formatSamples": 5,
+        "maxDrawIndirectCount": 4294967295,
+        "maxColorAttachments": 8,
+        "maxFramebufferWidth": 16384,
+        "maxFramebufferHeight": 16384,
+        "maxViewportWidth": 16384,
+        "maxViewportHeight": 16384,
+        "maxComputeInvocations": 1024,
+        "maxLocalX": 1024,
+        "maxGroupsX": 65535,
+        "viewportBoundsMin": -32768,
+        "viewportBoundsMax": 32768,
+        "coherentHostTypeExists": 1,
+        "queues": [
+          {
+            "family": 0,
+            "flags": 15,
+            "count": 1
+          }
+        ]
+      }
+    ]
+  },
+  "scene_report_sha256": "2bcdb332605b92979ff259dea9476ac0c8c98edcd884d7f3b8855e5bbfdcd65d",
+  "tool_scope": "Explicit compiler tools, Vulkan headers, loader and ICD/layer manifests; transitive runtime shared libraries are not a complete environment attestation",
+  "controls": {
+    "wrong-profile": {
+      "status": "BLOCKED",
+      "index_sha256": "6eea894b625ffd181bd6dcc285bac9c468eb85310eadc7f83813160e455025e7",
+      "steps": [
+        {
+          "label": "compile",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 31,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        },
+        {
+          "label": "capabilities",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 36,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        }
+      ],
+      "error": "capability/profile scope rejected"
+    },
+    "budget": {
+      "status": "BLOCKED",
+      "index_sha256": "00a8301f8b0e593b24933fd8213a4f3f2e6dd4bd14e783225707ce19bbd62cb2",
+      "steps": [
+        {
+          "label": "compile",
+          "returncode": -15,
+          "group_cleanup": {
+            "pgid": 56,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        }
+      ],
+      "error": "process did not complete cleanly"
+    },
+    "cancel": {
+      "status": "CANCELLED",
+      "index_sha256": "f554403b3af62857f9aa600979d0555c687a8b98ca6a7175e1d79b82724e3431",
+      "steps": [
+        {
+          "label": "compile",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 77,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        },
+        {
+          "label": "capabilities",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 82,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        }
+      ],
+      "error": "explicit cancel-file or termination signal"
+    },
+    "recovered": {
+      "status": "BOUNDED_SCENE_VERIFIED",
+      "index_sha256": "49c4d6271bfeb3ba2943f5247f5c809bba7ede28a1eec66ad1b0065ed05def2f",
+      "steps": [
+        {
+          "label": "compile",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 102,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        },
+        {
+          "label": "capabilities",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 107,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        },
+        {
+          "label": "scene",
+          "returncode": 0,
+          "group_cleanup": {
+            "pgid": 108,
+            "term_sent": true,
+            "kill_sent": true,
+            "reaped_descendants": [],
+            "group_gone": true
+          }
+        }
+      ],
+      "error": null
+    }
+  },
+  "limitations": [
+    "one CPU ICD only",
+    "cancellation between capability probe and scene; not GPU-hang recovery",
+    "transitive shared-library environment not fully attested",
+    "full VK01/VK02 and external-engine/Live/blind gates remain open"
+  ]
+}

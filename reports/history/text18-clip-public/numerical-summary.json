@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "clip_layers": 3,
+  "draws": 4,
+  "numeric": {
+    "max_linear_error": 7.152557379708213e-08,
+    "max_roi_error": 7.152557379708213e-08,
+    "roi_pixels": 532,
+    "partial_pixels": 442,
+    "tolerance": 1e-06,
+    "sentinels": "UNCHANGED"
+  },
+  "negative_checks": [
+    "bypass outer rectangle",
+    "bypass circle",
+    "bypass rotated rectangle"
+  ],
+  "scope": "pixel-center hard rectangle/circle/rotated-rectangle intersection in fragment shader; independent CPU polygon ray-crossing reference",
+  "unverified": [
+    "arbitrary path clip",
+    "clip antialiasing",
+    "stencil",
+    "active MRT/depth",
+    "combined asynchronous glyph renderer",
+    "target device"
+  ]
+}

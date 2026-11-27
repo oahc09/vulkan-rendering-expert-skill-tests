@@ -1,0 +1,39 @@
+{
+  "status": "OFFICIAL_CORE14_GENERATED_REPRODUCED_NOT_EXPANDED",
+  "closure_status": "BLOCKED",
+  "config": {
+    "spec": "core",
+    "version": "1.4",
+    "extensions": [],
+    "target": "generated"
+  },
+  "tests_head": "dff80e69534f68c6372caff7f5dfe3d61247cee9",
+  "tools": {
+    "/usr/bin/python3.13": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9",
+    "/usr/bin/make": "8a229baf64671988cfb5af43ba3070c6ce7214cf32bcf96155115559d1466fa7",
+    "/usr/bin/git": "356db14e102d68a1a37d8a1ac577dfd678d45d46e92f468bef8b7154e7bfdc60",
+    "/bin/sh": "a6f559e00b69a4aa4d8cb607be18d9386c5aee55c509e2c075549dcf00e00fc7"
+  },
+  "implementation_sha256": {
+    "checks19/generate_prose_denominator.py": "b005ec81ec2dc28a27604df7edab18adf86f68d42db50792df9519afd0ff9bbb",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "comparison": "EXACT_GENERATED_BYTES_EQUAL_INCLUDING_EMPTY_MARKERS",
+  "limits": [
+    "No Asciidoctor/Ruby HTML/Reference/validusage execution.",
+    "Include existence is not conditional expansion; missing files are not proved active.",
+    "Two independent runs compare output bytes; not two semantic tests."
+  ],
+  "evidence_phase": "DEVELOPMENT_PREPUBLICATION_FINAL_SOURCE",
+  "report_sha256": "afa74d657f1d822ff30bc53c8c7dbf318c2e4ac06bfcd35846493dcbef8dc85b",
+  "generated_file_count": 2462,
+  "source_file_count": 1340,
+  "include_counts": {
+    "MISSING_OR_UNRESOLVED_NOT_PROVEN_ACTIVE": 5356,
+    "FILE_EXISTS_NOT_EXPANDED": 2724
+  },
+  "executed_step_count": 3,
+  "independent_review_scope": "v2 actual dual run, final dependency-probe rejection flag separately reviewed"
+}

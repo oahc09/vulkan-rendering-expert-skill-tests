@@ -1,0 +1,74 @@
+
+==================================== ERRORS ====================================
+___________________ ERROR collecting tests/test_metadata.py ____________________
+ImportError while importing test module '/tmp/vulkan118-tests/tests/test_metadata.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests/test_metadata.py:6: in <module>
+    import yaml
+E   ModuleNotFoundError: No module named 'yaml'
+=============================== warnings summary ===============================
+tests/test_v1_0_8_model_behavior.py:5
+  /tmp/vulkan118-tests/tests/test_v1_0_8_model_behavior.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.snapshot - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = pytest.mark.snapshot
+
+tests/test_live_model_behavior.py:12
+  /tmp/vulkan118-tests/tests/test_live_model_behavior.py:12: PytestUnknownMarkWarning: Unknown pytest.mark.live - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark = pytest.mark.live
+
+tests/test_simulation_lab.py:20
+  /tmp/vulkan118-tests/tests/test_simulation_lab.py:20: PytestUnknownMarkWarning: Unknown pytest.mark.vulkan_integration - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.vulkan_integration
+
+tests/test_simulation_lab.py:27
+  /tmp/vulkan118-tests/tests/test_simulation_lab.py:27: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.host_unit
+
+tests/test_simulation_lab.py:31
+  /tmp/vulkan118-tests/tests/test_simulation_lab.py:31: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.host_unit
+
+tests/test_transparent_scene_lab.py:17
+  /tmp/vulkan118-tests/tests/test_transparent_scene_lab.py:17: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.host_unit
+
+tests/test_transparent_scene_lab.py:25
+  /tmp/vulkan118-tests/tests/test_transparent_scene_lab.py:25: PytestUnknownMarkWarning: Unknown pytest.mark.vulkan_integration - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.vulkan_integration
+
+tests/test_v1_0_13_host_unit.py:9
+  /tmp/vulkan118-tests/tests/test_v1_0_13_host_unit.py:9: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=pytest.mark.host_unit
+
+tests/test_v1_0_14_host_unit.py:4
+  /tmp/vulkan118-tests/tests/test_v1_0_14_host_unit.py:4: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=pytest.mark.host_unit
+
+tests/test_v1_0_15_host_unit.py:6
+  /tmp/vulkan118-tests/tests/test_v1_0_15_host_unit.py:6: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=pytest.mark.host_unit
+
+tests/test_v1_0_16_host_unit.py:5
+  /tmp/vulkan118-tests/tests/test_v1_0_16_host_unit.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=pytest.mark.host_unit
+
+tests/test_v1_0_18_host_unit.py:4
+  /tmp/vulkan118-tests/tests/test_v1_0_18_host_unit.py:4: PytestUnknownMarkWarning: Unknown pytest.mark.host_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=pytest.mark.host_unit
+
+tests/test_v1_0_18_shader.py:5
+  /tmp/vulkan118-tests/tests/test_v1_0_18_shader.py:5: PytestUnknownMarkWarning: Unknown pytest.mark.shader_unit - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    pytestmark=pytest.mark.shader_unit
+
+tests/conftest.py:56
+  /tmp/vulkan118-tests/tests/conftest.py:56: PytestUnknownMarkWarning: Unknown pytest.mark.static - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    item.add_marker(pytest.mark.static)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/test_metadata.py
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+405 deselected, 14 warnings, 1 error in 0.54s

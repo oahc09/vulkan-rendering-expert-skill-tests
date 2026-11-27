@@ -1,0 +1,17 @@
+#include "temporal_text.hpp"
+static std::vector<float>readMask(const char*p){std::ifstream f(p,std::ios::binary|std::ios::ate);if(!f||f.tellg()!=3185*4)throw std::runtime_error("mask size");std::vector<float>a(3185);f.seekg(0);f.read((char*)a.data(),12740);for(float v:a)if(!std::isfinite(v)||v<0||v>1)throw std::runtime_error("mask range");return a;}
+int main(int argc,char**argv){try{
+ if(argc!=7)throw std::runtime_error("usage shaders O-mask F-mask newout variant mode");auto o=readMask(argv[2]),f=readMask(argv[3]);int variant=std::stoi(argv[5]);std::string mode=argv[6];if(variant<0||variant>1||(mode!="normal"&&mode!="pollution"&&mode!="tone"))throw std::runtime_error("mode");std::filesystem::path out=argv[4];if(!std::filesystem::create_directory(out))throw std::runtime_error("existing output");gTone=mode=="tone";
+ {TextLab v(argv[1]);if(!v.validation)throw std::runtime_error("validation required");auto temporal=v.compute("temporal.comp"),history=v.compute("history.comp");memset(v.buffers[2].map,0,v.buffers[2].size);
+ VkDescriptorImageInfo imageInfo{v.sampler,v.target.view,VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL};VkWriteDescriptorSet wr{VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET};wr.dstSet=v.set;wr.dstBinding=6;wr.descriptorCount=1;wr.descriptorType=VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;wr.pImageInfo=&imageInfo;vkUpdateDescriptorSets(v.device,1,&wr,0,nullptr);
+ for(int frame=0;frame<4;frame++){
+ auto raw=(float*)v.buffers[0].map;for(int y=0;y<49;y++)for(int x=0;x<65;x++){int i=y*65+x;raw[4*i]=.3f+.04f*(x%5)+.01f*frame;raw[4*i+1]=.5f;raw[4*i+2]=0;raw[4*i+3]=1;}
+ Push p{};p.width=65;p.height=49;p.flags=(frame==0||frame==3);p.base=(frame==1?1:0);
+ v.begin();v.barrier(VK_PIPELINE_STAGE_HOST_BIT|VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_ACCESS_HOST_WRITE_BIT|VK_ACCESS_SHADER_WRITE_BIT,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_ACCESS_SHADER_READ_BIT);v.bindCompute(temporal,p,50);v.barrier(VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_ACCESS_SHADER_WRITE_BIT,VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT|VK_PIPELINE_STAGE_HOST_BIT,VK_ACCESS_SHADER_READ_BIT|VK_ACCESS_HOST_READ_BIT);v.submit();
+ std::vector<float> acc(12740);memcpy(acc.data(),v.buffers[1].map,acc.size()*4);save(out/("accum"+std::to_string(frame)+".f32"),acc);
+ auto mask=frame==0?(variant?f:o):frame==2?f:std::vector<float>(3185,0);auto pixels=v.draw(mask,{0,0,0,1},{2,3,1,.75f});const char*names[]={"color","velocity","id"};for(int i=0;i<3;i++)save(out/(std::string(names[i])+std::to_string(frame)+".f32"),pixels[i]);std::vector<float>d(3185);memcpy(d.data(),v.buffers[v.readDepth].map,12740);save(out/("depth"+std::to_string(frame)+".f32"),d);
+ v.begin();v.transition(v.target,VK_IMAGE_ASPECT_COLOR_BIT,VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,VK_PIPELINE_STAGE_TRANSFER_BIT,VK_ACCESS_TRANSFER_READ_BIT,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_ACCESS_SHADER_READ_BIT);p.flags=mode=="pollution";v.bindCompute(history,p,50);v.barrier(VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_ACCESS_SHADER_WRITE_BIT,VK_PIPELINE_STAGE_HOST_BIT|VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_ACCESS_HOST_READ_BIT|VK_ACCESS_SHADER_READ_BIT);v.submit();memcpy(acc.data(),v.buffers[2].map,acc.size()*4);save(out/("history"+std::to_string(frame)+".f32"),acc);
+ }
+ std::cout<<"validation_enabled=1\n";}
+ if(validationErrors)throw std::runtime_error("validation errors");return 0;
+ }catch(const std::exception&e){std::cerr<<e.what()<<'\n';return 1;}}

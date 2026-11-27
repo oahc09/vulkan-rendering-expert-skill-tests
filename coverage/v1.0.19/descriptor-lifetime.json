@@ -1,0 +1,137 @@
+{
+  "run_id": "cffe0bd4-d981-4b3e-9048-f3a9067e43c4",
+  "provenance": "original deliberate fault injection; not production discovery",
+  "sources": {
+    "probe.c": "1ac6fddeb8cfc786ec6e712338c4639a4b5530f0786b800f7b85d3829cd689bf",
+    "compute.comp": "622f8bbfcd4006f80c1a206be36f5057ac4f4586e770735162861cab77402b10",
+    "run.py": "d9e1f7607cf40ab5f281e2db306b7dc118d03a9c7be51394d9213edcd26a5559"
+  },
+  "shader_sha256": "a05387e0f5d6e7ee10c0b88433e914243ab92820457107f5d461da545150ff45",
+  "binary_sha256": "0a8d5026843a272b4b44389b18efeeedf0684421754de532b3afe5e43f9a9b35",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "layer_manifest_sha256": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+  "glslang_sha256": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+  "spirv_val_sha256": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea",
+  "tools": {
+    "gcc": "gcc (Debian 14.2.0-19) 14.2.0",
+    "glslang": "Glslang Version: 11:15.2.0\nESSL Version: OpenGL ES GLSL 3.20 glslang Khronos. 15.2.0\nGLSL Version: 4.60 glslang Khronos. 15.2.0\nSPIR-V Version 0x00010600, Revision 1\nGLSL.std.450 Version 100, Revision 1\nKhronos Tool ID 8\nSPIR-V Generator Version 11\nGL_KHR_vulkan_glsl version 100\nARB_GL_gl_spirv version 100",
+    "spirv-val": "SPIRV-Tools v2025.1 unknown hash, 2025-03-18T14:15:19+00:00\nTargets:\n  SPIR-V 1.0\n  SPIR-V 1.1\n  SPIR-V 1.2\n  SPIR-V 1.3\n  SPIR-V 1.4\n  SPIR-V 1.5\n  SPIR-V 1.6\n  SPIR-V 1.2 (under OpenCL 2.2 Full Profile semantics)\n  SPIR-V 1.0 (under Vulkan 1.0 semantics)\n  SPIR-V 1.3 (under Vulkan 1.1 semantics)\n  SPIR-V 1.4 (under Vulkan 1.1 semantics)\n  SPIR-V 1.5 (under Vulkan 1.2 semantics)\n  SPIR-V 1.6 (under Vulkan 1.3 semantics) SPIR-V 1.6 (under Vulkan 1.4 semantics)"
+  },
+  "cases": {
+    "good": {
+      "result": {
+        "mode": "good",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 0,
+        "expected_vuid_count": 0,
+        "rejected_call_result": 0,
+        "exit_code": 0
+      },
+      "diagnostics": [],
+      "stdout_sha256": "5f6a323e4a74d45bad0d5d68fe965fef49b2576f91713dcac979f95cfa0ae127",
+      "stderr_sha256": "6738e38dc3021092460bf8493f53dc9853054e150c2d985bd0c7e7b3be0507f6"
+    },
+    "bad": {
+      "result": {
+        "mode": "bad",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 1,
+        "expected_vuid_count": 1,
+        "rejected_call_result": 0,
+        "exit_code": 0
+      },
+      "diagnostics": [
+        "VUID phase=pending-update id=VUID-vkUpdateDescriptorSets-None-03047"
+      ],
+      "stdout_sha256": "bac91c928695050a186ea35d2a58a5b656414e69e59e88d4069ae5a7e09edb25",
+      "stderr_sha256": "9571a661c292587779314a84b9071b7b9636211d59d45cee8ca4b853b714a62f"
+    },
+    "wrong-output": {
+      "result": {
+        "mode": "wrong-output",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 0,
+        "expected_vuid_count": 0,
+        "rejected_call_result": 0,
+        "exit_code": 6
+      },
+      "diagnostics": [],
+      "stdout_sha256": "9526d27248afeb84af186ce457ef458bd1d8ef5da4fe9c8adb5a2d94597bba51",
+      "stderr_sha256": "6738e38dc3021092460bf8493f53dc9853054e150c2d985bd0c7e7b3be0507f6"
+    },
+    "pending-reset": {
+      "result": {
+        "mode": "pending-reset",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 1,
+        "expected_vuid_count": 1,
+        "rejected_call_result": -1000011001,
+        "exit_code": 0
+      },
+      "diagnostics": [
+        "VUID phase=pending-reset id=VUID-vkResetCommandBuffer-commandBuffer-00045"
+      ],
+      "stdout_sha256": "19a06b3784591d16273aaa0a044b4779a3f20d2c76abc8003a21b5bfb4aaf0c7",
+      "stderr_sha256": "d3d5dc46793dc75545622c87b7da7ab5dc923bcfc46d42c4c92f26d8a2abecab"
+    },
+    "stale-submit": {
+      "result": {
+        "mode": "stale-submit",
+        "fence_not_ready": true,
+        "first": 42,
+        "second": 99,
+        "errors": 1,
+        "expected_vuid_count": 1,
+        "rejected_call_result": -1000011001,
+        "exit_code": 0
+      },
+      "diagnostics": [
+        "VUID phase=stale-submit id=VUID-vkQueueSubmit-pCommandBuffers-00070"
+      ],
+      "stdout_sha256": "173610c637a7d59631eb0bfccf69ff76468c556f6a56cf36cc87452417f9a804",
+      "stderr_sha256": "0f56059e3d34ee13c4ffd74300876f56e791d4cd6eeec09e44812ebaad6d733c"
+    }
+  },
+  "runtime_identity": {
+    "device_type": 4,
+    "vendor_id": 65541,
+    "device_id": 0,
+    "driver": 1,
+    "api": 4210993,
+    "timeline_supported": true,
+    "layer_spec": 4210997,
+    "layer_impl": 1
+  },
+  "status": "PASS_SCOPED_DESCRIPTOR_LIFETIME_API_REGRESSION",
+  "limitations": [
+    "CPU ICD and one queue only",
+    "actual timeline wait, not render-frame latency evidence",
+    "ordinary descriptor flags only; update-after-bind/indexing excluded",
+    "invalid pending update/reset and stale submit aborted by Validation; driver undefined behavior not exercised",
+    "uniform/storage shader with 42 then 99 only; no general shader correctness",
+    "wrong-output is an authored oracle negative, not an independently discovered defect",
+    "not external-project/Live-model/hardware/SC acceptance"
+  ],
+  "compiler_packages": [
+    {
+      "package": "glslang-tools",
+      "version": "15.1.0+1.4.309.0-1",
+      "source": "https://deb.debian.org/debian/pool/main/g/glslang/glslang-tools_15.1.0+1.4.309.0-1_amd64.deb",
+      "sha256": "c3025c4af63244296bc9d466746763c809d3f3f126408fc2c7b07070886a7759"
+    },
+    {
+      "package": "spirv-tools",
+      "version": "2025.1~rc1-1",
+      "source": "https://deb.debian.org/debian/pool/main/s/spirv-tools/spirv-tools_2025.1~rc1-1_amd64.deb",
+      "sha256": "2cc272ef1340cf0b47de6c5fcccaf91574d7a8f4061abb718d6c639463e85aab"
+    }
+  ]
+}

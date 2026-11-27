@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "status": "VERIFIED_EXTERNAL_CLASS_HOST_REPRODUCTION",
+  "scope": "Unmodified complete upstream FencePool class with explicit Device/helpers and Vulkan-call HOST test doubles. No GPU wait, driver, full engine build, or blind repair. VK_ERROR_DEVICE_LOST here is a supplied return value, not actual device loss.",
+  "upstream": {
+    "repository": "KhronosGroup/Vulkan-Samples",
+    "before": "dca8e0842417ef14440135ee48a09870a05d5bff",
+    "after": "02d3010a3517620e7eedd919217e169c4a188de3",
+    "source_sha256": {
+      "before": {
+        "fence_pool.cpp": "03ad9609ac150e6eefbacd43a2fdaf7ce74f06f3e0f953150f1e3ce59228ff7c",
+        "fence_pool.h": "6851e19669e1ec42fe3badb8de276d22699a799d9d874c5f160075ed7903e3f7"
+      },
+      "after": {
+        "fence_pool.cpp": "9afd43ff1b20d0cbc3111fbe6184e86a388667d95d52f5412388b38bac295cb3",
+        "fence_pool.h": "34bea176d8e5a36ad3a21dbe9642540ffa8a3f9c8c2c46e53d56f30577fc0b5f"
+      }
+    }
+  },
+  "implementation_sha256": {
+    "tools/external_fence19.py": "4454f1ab9d0d637e1187fa153f9238de75647e8b5759621f386ae342989e1a7f",
+    "checks19/run_external_fence_task.py": "9ea5e1f9187257fcd3311a9dfd01ce2098a06cfbc204edeeaf960f5e1c2e1b5d",
+    "cases19/external_fence/harness.cpp": "99bbea7c6f48f80cef4c2aeb858e476f3864b98c2ba8b4dbdbac71ead1044d2a",
+    "cases19/external_fence/stubs/common/helpers.h": "0153095b2313f11a5111dfe5fb05e0318f0f34555598eb86647da8f4c885a37c",
+    "cases19/external_fence/stubs/core/device.h": "9a4687069a189bae4f763934fb669506300500ed974d477d733cfa1937421051"
+  },
+  "runs": {
+    "before": {
+      "mode": "old",
+      "exit_code": 0,
+      "binary_sha256": "5a0774260560a60e5ff327176ca30dfac5ec5eedcef54cbb1cc9c3cfd4367347"
+    },
+    "after": {
+      "mode": "fixed",
+      "exit_code": 0,
+      "binary_sha256": "da25d9e6ae6bd8a6c46439e358c81e866597801f5b50740fbbf3589c8cddf15c"
+    },
+    "historical-fixed-oracle": {
+      "mode": "fixed",
+      "exit_code": 6
+    },
+    "invalid-mode": {
+      "mode": "invalid",
+      "exit_code": 2
+    }
+  },
+  "local_report_sha256": "b0a5b77046eb9387ca7112de968296df941736155e58b77d32eda1856ccdb231",
+  "stage": "PREPUBLICATION_HOST_ORIGINAL_CLASS",
+  "release_status": "BLOCKED",
+  "blind_solve": "NOT_ATTEMPTED_PUBLIC_REPAIR_ALREADY_READ"
+}

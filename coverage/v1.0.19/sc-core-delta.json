@@ -1,0 +1,1553 @@
+{
+  "source_sha256": "d56ff7f1613c36b820998dbd8e184b79ec49dc44db63390185205fa15ebcd444",
+  "variant": "vulkansc",
+  "core": "1.0",
+  "base_dependency": "VK_VERSION_1_2",
+  "records": [
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VKSC_API_VARIANT",
+      "struct": null,
+      "block_attributes": {},
+      "item_attributes": {
+        "name": "VKSC_API_VARIANT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[1]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VKSC_API_VERSION_1_0",
+      "struct": null,
+      "block_attributes": {},
+      "item_attributes": {
+        "name": "VKSC_API_VERSION_1_0"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[1]/*[2]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPhysicalDeviceVulkanSC10Features",
+      "struct": null,
+      "block_attributes": {},
+      "item_attributes": {
+        "name": "VkPhysicalDeviceVulkanSC10Features"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[1]/*[3]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPhysicalDeviceVulkanSC10Properties",
+      "struct": null,
+      "block_attributes": {},
+      "item_attributes": {
+        "name": "VkPhysicalDeviceVulkanSC10Properties"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[1]/*[4]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_FEATURES",
+      "struct": null,
+      "block_attributes": {},
+      "item_attributes": {
+        "offset": "0",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_FEATURES"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[1]/*[5]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_PROPERTIES",
+      "struct": null,
+      "block_attributes": {},
+      "item_attributes": {
+        "offset": "1",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_SC_1_0_PROPERTIES"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[1]/*[6]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkDeviceObjectReservationCreateInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "name": "VkDeviceObjectReservationCreateInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkCommandPoolMemoryReservationCreateInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "name": "VkCommandPoolMemoryReservationCreateInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[2]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkCommandPoolMemoryConsumption",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "name": "VkCommandPoolMemoryConsumption"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[3]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelinePoolSize",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "name": "VkPipelinePoolSize"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[4]"
+    },
+    {
+      "operation": "require",
+      "kind": "command",
+      "name": "vkGetCommandPoolMemoryConsumption",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "name": "vkGetCommandPoolMemoryConsumption"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[5]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_DEVICE_OBJECT_RESERVATION_CREATE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "offset": "2",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_DEVICE_OBJECT_RESERVATION_CREATE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[6]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_RESERVATION_CREATE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "offset": "3",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_RESERVATION_CREATE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[7]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_CONSUMPTION",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "offset": "4",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_COMMAND_POOL_MEMORY_CONSUMPTION"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[8]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_PIPELINE_POOL_SIZE",
+      "struct": null,
+      "block_attributes": {
+        "comment": "static memory functionality"
+      },
+      "item_attributes": {
+        "offset": "5",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_PIPELINE_POOL_SIZE"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[2]/*[9]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_FAULT_DATA",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "offset": "7",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_FAULT_DATA"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_FAULT_CALLBACK_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "offset": "8",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_FAULT_CALLBACK_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[2]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkFaultData",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "VkFaultData"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[3]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkFaultCallbackInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "VkFaultCallbackInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[4]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkFaultLevel",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "VkFaultLevel"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[5]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkFaultType",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "VkFaultType"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[6]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkFaultQueryBehavior",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "VkFaultQueryBehavior"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[7]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "PFN_vkFaultCallbackFunction",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "PFN_vkFaultCallbackFunction"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[8]"
+    },
+    {
+      "operation": "require",
+      "kind": "command",
+      "name": "vkGetFaultData",
+      "struct": null,
+      "block_attributes": {
+        "comment": "fault handling functionality"
+      },
+      "item_attributes": {
+        "name": "vkGetFaultData"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[3]/*[9]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_PIPELINE_OFFLINE_CREATE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline offline create info"
+      },
+      "item_attributes": {
+        "offset": "10",
+        "extnumber": "299",
+        "extends": "VkStructureType",
+        "name": "VK_STRUCTURE_TYPE_PIPELINE_OFFLINE_CREATE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[4]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelineOfflineCreateInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline offline create info"
+      },
+      "item_attributes": {
+        "name": "VkPipelineOfflineCreateInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[4]/*[2]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelineMatchControl",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline offline create info"
+      },
+      "item_attributes": {
+        "name": "VkPipelineMatchControl"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[4]/*[3]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_ERROR_INVALID_PIPELINE_CACHE_DATA",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache functionality"
+      },
+      "item_attributes": {
+        "offset": "0",
+        "extnumber": "299",
+        "extends": "VkResult",
+        "dir": "-",
+        "name": "VK_ERROR_INVALID_PIPELINE_CACHE_DATA"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[5]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_ERROR_NO_PIPELINE_MATCH",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache functionality"
+      },
+      "item_attributes": {
+        "offset": "1",
+        "extnumber": "299",
+        "extends": "VkResult",
+        "dir": "-",
+        "name": "VK_ERROR_NO_PIPELINE_MATCH"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[5]/*[2]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_PIPELINE_CACHE_CREATE_READ_ONLY_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache functionality"
+      },
+      "item_attributes": {
+        "bitpos": "1",
+        "extends": "VkPipelineCacheCreateFlagBits",
+        "name": "VK_PIPELINE_CACHE_CREATE_READ_ONLY_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[5]/*[3]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_PIPELINE_CACHE_CREATE_USE_APPLICATION_STORAGE_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache functionality"
+      },
+      "item_attributes": {
+        "bitpos": "2",
+        "extends": "VkPipelineCacheCreateFlagBits",
+        "name": "VK_PIPELINE_CACHE_CREATE_USE_APPLICATION_STORAGE_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[5]/*[4]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_MEMORY_HEAP_SEU_SAFE_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "seu safe memory functionality"
+      },
+      "item_attributes": {
+        "bitpos": "2",
+        "extends": "VkMemoryHeapFlagBits",
+        "name": "VK_MEMORY_HEAP_SEU_SAFE_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[6]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "enum",
+      "name": "VK_PIPELINE_CACHE_HEADER_VERSION_SAFETY_CRITICAL_ONE",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache header - These types are part of the API, though not all directly used in API commands or data structures"
+      },
+      "item_attributes": {
+        "offset": "1",
+        "extnumber": "299",
+        "extends": "VkPipelineCacheHeaderVersion",
+        "name": "VK_PIPELINE_CACHE_HEADER_VERSION_SAFETY_CRITICAL_ONE"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[7]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelineCacheValidationVersion",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache header - These types are part of the API, though not all directly used in API commands or data structures"
+      },
+      "item_attributes": {
+        "name": "VkPipelineCacheValidationVersion"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[7]/*[2]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelineCacheStageValidationIndexEntry",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache header - These types are part of the API, though not all directly used in API commands or data structures"
+      },
+      "item_attributes": {
+        "name": "VkPipelineCacheStageValidationIndexEntry"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[7]/*[3]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelineCacheSafetyCriticalIndexEntry",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache header - These types are part of the API, though not all directly used in API commands or data structures"
+      },
+      "item_attributes": {
+        "name": "VkPipelineCacheSafetyCriticalIndexEntry"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[7]/*[4]"
+    },
+    {
+      "operation": "require",
+      "kind": "type",
+      "name": "VkPipelineCacheHeaderVersionSafetyCriticalOne",
+      "struct": null,
+      "block_attributes": {
+        "comment": "pipeline cache header - These types are part of the API, though not all directly used in API commands or data structures"
+      },
+      "item_attributes": {
+        "name": "VkPipelineCacheHeaderVersionSafetyCriticalOne"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[7]/*[5]"
+    },
+    {
+      "operation": "require",
+      "kind": "feature",
+      "name": "vulkanMemoryModel",
+      "struct": "VkPhysicalDeviceVulkanMemoryModelFeatures",
+      "block_attributes": {
+        "depends": "VK_VERSION_1_2"
+      },
+      "item_attributes": {
+        "name": "vulkanMemoryModel",
+        "struct": "VkPhysicalDeviceVulkanMemoryModelFeatures"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[8]/*[1]"
+    },
+    {
+      "operation": "require",
+      "kind": "feature",
+      "name": "vulkanMemoryModel",
+      "struct": "VkPhysicalDeviceVulkan12Features",
+      "block_attributes": {
+        "depends": "VK_VERSION_1_2"
+      },
+      "item_attributes": {
+        "name": "vulkanMemoryModel",
+        "struct": "VkPhysicalDeviceVulkan12Features"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[8]/*[2]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_SHADER_MODULE_CREATE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[1]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_PIPELINE_CREATE_ALLOW_DERIVATIVES_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_PIPELINE_CREATE_ALLOW_DERIVATIVES_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[3]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_PIPELINE_CREATE_DERIVATIVE_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_PIPELINE_CREATE_DERIVATIVE_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[4]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[5]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VK_API_VERSION",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_API_VERSION"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[7]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VK_MAKE_VERSION",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_MAKE_VERSION"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[8]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VK_VERSION_MAJOR",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_VERSION_MAJOR"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[9]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VK_VERSION_MINOR",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_VERSION_MINOR"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[10]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VK_VERSION_PATCH",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_VERSION_PATCH"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[11]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkShaderModuleCreateFlags",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkShaderModuleCreateFlags"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[13]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkShaderModuleCreateFlagBits",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkShaderModuleCreateFlagBits"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[14]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkShaderModuleCreateInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkShaderModuleCreateInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[15]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkCommandPoolTrimFlags",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkCommandPoolTrimFlags"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[16]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkCreateShaderModule",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkCreateShaderModule"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[17]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroyShaderModule",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroyShaderModule"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[18]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkMergePipelineCaches",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkMergePipelineCaches"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[19]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkGetPipelineCacheData",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkGetPipelineCacheData"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[20]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkTrimCommandPool",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkTrimCommandPool"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[21]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroyCommandPool",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroyCommandPool"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[22]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroyDescriptorPool",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroyDescriptorPool"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[23]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroyQueryPool",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroyQueryPool"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[24]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroySwapchainKHR",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroySwapchainKHR"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[25]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkFreeMemory",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkFreeMemory"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[26]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_CREATE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[28]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[29]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkCreateDescriptorUpdateTemplate",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkCreateDescriptorUpdateTemplate"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[30]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroyDescriptorUpdateTemplate",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroyDescriptorUpdateTemplate"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[31]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkUpdateDescriptorSetWithTemplate",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkUpdateDescriptorSetWithTemplate"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[32]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkDescriptorUpdateTemplate",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkDescriptorUpdateTemplate"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[33]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkDescriptorUpdateTemplateCreateFlags",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkDescriptorUpdateTemplateCreateFlags"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[34]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkDescriptorUpdateTemplateType",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkDescriptorUpdateTemplateType"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[35]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkDescriptorUpdateTemplateEntry",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkDescriptorUpdateTemplateEntry"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[36]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkDescriptorUpdateTemplateCreateInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkDescriptorUpdateTemplateCreateInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[37]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[38]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_PUSH_DESCRIPTOR_SET_WITH_TEMPLATE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[39]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkPushDescriptorSetWithTemplateInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkPushDescriptorSetWithTemplateInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[40]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkCmdPushDescriptorSetWithTemplate",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkCmdPushDescriptorSetWithTemplate"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[41]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkCmdPushDescriptorSetWithTemplate2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkCmdPushDescriptorSetWithTemplate2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[42]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_QUEUE_SPARSE_BINDING_BIT",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_QUEUE_SPARSE_BINDING_BIT"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[44]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageFormatProperties",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageFormatProperties"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[46]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageFormatFlagBits",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageFormatFlagBits"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[47]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageFormatFlags",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageFormatFlags"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[48]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkGetPhysicalDeviceSparseImageFormatProperties",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkGetPhysicalDeviceSparseImageFormatProperties"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[49]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkGetPhysicalDeviceSparseImageFormatProperties2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkGetPhysicalDeviceSparseImageFormatProperties2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[50]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkPhysicalDeviceSparseImageFormatInfo2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkPhysicalDeviceSparseImageFormatInfo2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[51]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SPARSE_IMAGE_FORMAT_INFO_2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[52]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageFormatProperties2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageFormatProperties2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[53]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_SPARSE_IMAGE_FORMAT_PROPERTIES_2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[54]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageMemoryRequirements",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageMemoryRequirements"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[55]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkGetImageSparseMemoryRequirements",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkGetImageSparseMemoryRequirements"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[56]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkGetImageSparseMemoryRequirements2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkGetImageSparseMemoryRequirements2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[57]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkImageSparseMemoryRequirementsInfo2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkImageSparseMemoryRequirementsInfo2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[58]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_IMAGE_SPARSE_MEMORY_REQUIREMENTS_INFO_2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[59]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageMemoryRequirements2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageMemoryRequirements2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[60]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_SPARSE_IMAGE_MEMORY_REQUIREMENTS_2"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[61]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseMemoryBind",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseMemoryBind"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[62]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseMemoryBindFlagBits",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseMemoryBindFlagBits"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[63]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseMemoryBindFlags",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseMemoryBindFlags"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[64]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseBufferMemoryBindInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseBufferMemoryBindInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[65]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageOpaqueMemoryBindInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageOpaqueMemoryBindInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[66]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageMemoryBindInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageMemoryBindInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[67]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkSparseImageMemoryBind",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkSparseImageMemoryBind"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[68]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkQueueBindSparse",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkQueueBindSparse"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[69]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkBindSparseInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkBindSparseInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[70]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_BIND_SPARSE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_BIND_SPARSE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[71]"
+    },
+    {
+      "operation": "remove",
+      "kind": "type",
+      "name": "VkDeviceGroupBindSparseInfo",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VkDeviceGroupBindSparseInfo"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[72]"
+    },
+    {
+      "operation": "remove",
+      "kind": "enum",
+      "name": "VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "VK_STRUCTURE_TYPE_DEVICE_GROUP_BIND_SPARSE_INFO"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[73]"
+    },
+    {
+      "operation": "remove",
+      "kind": "command",
+      "name": "vkDestroySemaphoreSciSyncPoolNV",
+      "struct": null,
+      "block_attributes": {
+        "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+      },
+      "item_attributes": {
+        "name": "vkDestroySemaphoreSciSyncPoolNV"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[74]"
+    },
+    {
+      "operation": "remove",
+      "kind": "feature",
+      "name": "multiview",
+      "struct": "VkPhysicalDeviceMultiviewFeatures",
+      "block_attributes": {
+        "reasonlink": "SCID-8"
+      },
+      "item_attributes": {
+        "name": "multiview",
+        "struct": "VkPhysicalDeviceMultiviewFeatures"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[10]/*[1]"
+    },
+    {
+      "operation": "remove",
+      "kind": "feature",
+      "name": "multiview",
+      "struct": "VkPhysicalDeviceVulkan11Features",
+      "block_attributes": {
+        "reasonlink": "SCID-8"
+      },
+      "item_attributes": {
+        "name": "multiview",
+        "struct": "VkPhysicalDeviceVulkan11Features"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[10]/*[2]"
+    },
+    {
+      "operation": "remove",
+      "kind": "feature",
+      "name": "timelineSemaphore",
+      "struct": "VkPhysicalDeviceTimelineSemaphoreFeatures",
+      "block_attributes": {
+        "reasonlink": "SCID-8"
+      },
+      "item_attributes": {
+        "name": "timelineSemaphore",
+        "struct": "VkPhysicalDeviceTimelineSemaphoreFeatures"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[10]/*[3]"
+    },
+    {
+      "operation": "remove",
+      "kind": "feature",
+      "name": "timelineSemaphore",
+      "struct": "VkPhysicalDeviceVulkan12Features",
+      "block_attributes": {
+        "reasonlink": "SCID-8"
+      },
+      "item_attributes": {
+        "name": "timelineSemaphore",
+        "struct": "VkPhysicalDeviceVulkan12Features"
+      },
+      "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[10]/*[4]"
+    }
+  ],
+  "limitations": [
+    "core delta only, not complete inherited symbol resolution",
+    "extension/platform conditions preserved but not evaluated",
+    "not full semantic review or certification"
+  ],
+  "binary_audit": {
+    "status": "REQUIRES_SC_REDESIGN",
+    "core_removed_references": [
+      {
+        "symbol": "vkDestroyCommandPool",
+        "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[22]",
+        "conditions": {
+          "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+        }
+      },
+      {
+        "symbol": "vkFreeMemory",
+        "source_path": "/registry/feature[@name='VKSC_VERSION_1_0']/*[9]/*[26]",
+        "conditions": {
+          "comment": "SC 1.0 removes some features from Vulkan 1.0/1.1/1.2"
+        }
+      }
+    ],
+    "observed_symbols": [
+      "vkAllocateCommandBuffers",
+      "vkAllocateMemory",
+      "vkBeginCommandBuffer",
+      "vkBindBufferMemory",
+      "vkCmdCopyBuffer",
+      "vkCmdFillBuffer",
+      "vkCmdPipelineBarrier",
+      "vkCreateBuffer",
+      "vkCreateCommandPool",
+      "vkCreateDevice",
+      "vkCreateFence",
+      "vkCreateInstance",
+      "vkDestroyBuffer",
+      "vkDestroyCommandPool",
+      "vkDestroyDevice",
+      "vkDestroyFence",
+      "vkDestroyInstance",
+      "vkEndCommandBuffer",
+      "vkEnumerateInstanceLayerProperties",
+      "vkEnumeratePhysicalDevices",
+      "vkFreeMemory",
+      "vkGetBufferMemoryRequirements",
+      "vkGetDeviceQueue",
+      "vkGetInstanceProcAddr",
+      "vkGetPhysicalDeviceMemoryProperties",
+      "vkGetPhysicalDeviceProperties",
+      "vkGetPhysicalDeviceQueueFamilyProperties",
+      "vkMapMemory",
+      "vkQueueSubmit",
+      "vkUnmapMemory",
+      "vkWaitForFences"
+    ],
+    "limitations": [
+      "symbol presence cannot prove execution",
+      "dynamic function pointers/inlined dispatch may be absent",
+      "no removed reference does not imply API support or correct lifetime",
+      "no SC device execution, extension overrides require separate review"
+    ]
+  },
+  "binary_sha256": "6a32ec591b0ce59d9afbef2eac3678188ec5e15fbd89044cb4208b5ef1d9cba9"
+}

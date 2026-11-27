@@ -1,0 +1,13 @@
+{
+  "api_version": "1.4.309",
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "entries": [
+    {
+      "owner": "VkSamplerCreateInfo",
+      "condition": "core",
+      "vuid": "VUID-VkSamplerCreateInfo-unnormalizedCoordinates-01073",
+      "text": "If <code>unnormalizedCoordinates</code> is <code>VK_TRUE</code>, <code>mipmapMode</code> <strong class=\"purple\">must</strong> be <code>VK_SAMPLER_MIPMAP_MODE_NEAREST</code>",
+      "page": "chapters/samplers.html"
+    }
+  ]
+}

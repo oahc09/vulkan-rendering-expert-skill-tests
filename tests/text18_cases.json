@@ -1,0 +1,162 @@
+{
+  "text18_01": {
+    "id": "TEXT18-01",
+    "variants": {
+      "primary": "简单拉丁",
+      "contrast": "中文+RTL+组合符"
+    },
+    "prompt": "主条件：简单拉丁。\n对照条件：中文+RTL+组合符。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_02": {
+    "id": "TEXT18-02",
+    "variants": {
+      "primary": "单字体",
+      "contrast": "fallback改变实际font"
+    },
+    "prompt": "主条件：单字体。\n对照条件：fallback改变实际font。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_03": {
+    "id": "TEXT18-03",
+    "variants": {
+      "primary": "普通glyphID",
+      "contrast": "大于65535的provider ID"
+    },
+    "prompt": "主条件：普通glyphID。\n对照条件：大于65535的provider ID。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_04": {
+    "id": "TEXT18-04",
+    "variants": {
+      "primary": "可靠单色轮廓",
+      "contrast": "复杂emoji或无outline"
+    },
+    "prompt": "主条件：可靠单色轮廓。\n对照条件：复杂emoji或无outline。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_05": {
+    "id": "TEXT18-05",
+    "variants": {
+      "primary": "旧variation",
+      "contrast": "face或axis切换且异步任务晚到"
+    },
+    "prompt": "主条件：旧variation。\n对照条件：face或axis切换且异步任务晚到。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_06": {
+    "id": "TEXT18-06",
+    "variants": {
+      "primary": "小字号UI",
+      "contrast": "大倍率空间标签"
+    },
+    "prompt": "主条件：小字号UI。\n对照条件：大倍率空间标签。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_07": {
+    "id": "TEXT18-07",
+    "variants": {
+      "primary": "正确linear distance数据",
+      "contrast": "错设sRGB"
+    },
+    "prompt": "主条件：正确linear distance数据。\n对照条件：错设sRGB。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_08": {
+    "id": "TEXT18-08",
+    "variants": {
+      "primary": "隔离glyph边距",
+      "contrast": "紧密atlas+mip"
+    },
+    "prompt": "主条件：隔离glyph边距。\n对照条件：紧密atlas+mip。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_09": {
+    "id": "TEXT18-09",
+    "variants": {
+      "primary": "grayscale coverage",
+      "contrast": "预乘颜色emoji"
+    },
+    "prompt": "主条件：grayscale coverage。\n对照条件：预乘颜色emoji。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_10": {
+    "id": "TEXT18-10",
+    "variants": {
+      "primary": "静态清晰",
+      "contrast": "亚像素平移+缩小+透视序列"
+    },
+    "prompt": "主条件：静态清晰。\n对照条件：亚像素平移+缩小+透视序列。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_11": {
+    "id": "TEXT18-11",
+    "variants": {
+      "primary": "简单轮廓",
+      "contrast": "多孔洞或自交输入"
+    },
+    "prompt": "主条件：简单轮廓。\n对照条件：多孔洞或自交输入。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_12": {
+    "id": "TEXT18-12",
+    "variants": {
+      "primary": "普通cubic",
+      "contrast": "高曲率+奇异变换"
+    },
+    "prompt": "主条件：普通cubic。\n对照条件：高曲率+奇异变换。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_13": {
+    "id": "TEXT18-13",
+    "variants": {
+      "primary": "轴对齐矩形clip",
+      "contrast": "旋转曲线clip"
+    },
+    "prompt": "主条件：轴对齐矩形clip。\n对照条件：旋转曲线clip。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_14": {
+    "id": "TEXT18-14",
+    "variants": {
+      "primary": "厚实轮廓",
+      "contrast": "细笔画大倒角"
+    },
+    "prompt": "主条件：厚实轮廓。\n对照条件：细笔画大倒角。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_15": {
+    "id": "TEXT18-15",
+    "variants": {
+      "primary": "屏幕UI",
+      "contrast": "受遮挡世界标签"
+    },
+    "prompt": "主条件：屏幕UI。\n对照条件：受遮挡世界标签。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_16": {
+    "id": "TEXT18-16",
+    "variants": {
+      "primary": "空闲slot",
+      "contrast": "GPU仍读旧slot时扩容淘汰"
+    },
+    "prompt": "主条件：空闲slot。\n对照条件：GPU仍读旧slot时扩容淘汰。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_17": {
+    "id": "TEXT18-17",
+    "variants": {
+      "primary": "单Device",
+      "contrast": "多Device与重建"
+    },
+    "prompt": "主条件：单Device。\n对照条件：多Device与重建。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_18": {
+    "id": "TEXT18-18",
+    "variants": {
+      "primary": "单color附件",
+      "contrast": "多附件+velocity+ID"
+    },
+    "prompt": "主条件：单color附件。\n对照条件：多附件+velocity+ID。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_19": {
+    "id": "TEXT18-19",
+    "variants": {
+      "primary": "小批文字更新",
+      "contrast": "高频churn+预算压力"
+    },
+    "prompt": "主条件：小批文字更新。\n对照条件：高频churn+预算压力。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  },
+  "text18_20": {
+    "id": "TEXT18-20",
+    "variants": {
+      "primary": "正常字体/path",
+      "contrast": "恶意或极端嵌套工作量"
+    },
+    "prompt": "主条件：正常字体/path。\n对照条件：恶意或极端嵌套工作量。\n请分别给出文字/矢量渲染方案、成立前提、失败回退、资源生命周期与验证方法；未执行项明确标出。"
+  }
+}

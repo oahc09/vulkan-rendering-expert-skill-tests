@@ -1,0 +1,7 @@
+#version 450
+layout(local_size_x=64) in;
+layout(set=0,binding=0,std430) readonly buffer Accum { vec4 accumulation[]; };
+layout(set=0,binding=1,std430) readonly buffer Reveal { vec4 revealage[]; };
+layout(set=0,binding=2,std430) writeonly buffer Result { vec4 result[]; };
+layout(push_constant) uniform Push { uint n;uint capacity;uint mode;uint flags;uint width;uint height;uint level;uint tick;float viewX;float zoom;uint base;uint unused; } p;
+void main(){uint i=gl_GlobalInvocationID.x;if(i>=p.width*p.height)return;vec4 a=accumulation[i];float opacity=1-revealage[i].r;result[i]=vec4(a.a>0?a.rgb/a.a*opacity:vec3(0),opacity);}

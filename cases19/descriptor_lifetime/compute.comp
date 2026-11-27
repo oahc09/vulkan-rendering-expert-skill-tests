@@ -1,0 +1,5 @@
+#version 450
+layout(local_size_x=1) in;
+layout(set=0,binding=0,std140) uniform InputValue { uint value; } inputValue;
+layout(set=0,binding=1,std430) buffer OutputValue { uint value; } outputValue;
+void main() { outputValue.value=inputValue.value; }

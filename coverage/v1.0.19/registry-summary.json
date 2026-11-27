@@ -1,0 +1,39 @@
+{
+  "source_url": "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/fa30d4e312e843193601be7cb926c7e25d9ec885/xml/vk.xml",
+  "source_sha256": "d56ff7f1613c36b820998dbd8e184b79ec49dc44db63390185205fa15ebcd444",
+  "types": 2686,
+  "commands": 876,
+  "dependency_expressions": 281,
+  "sc_variant_records": 118,
+  "inherited_counts": {
+    "extension_records": 730,
+    "classification_counts": {
+      "disabled": 242,
+      "other_api_or_unspecified": 6,
+      "vulkan_provisional": 5,
+      "vulkan_stable": 477
+    },
+    "feature_records": 21,
+    "included_feature_records": 20,
+    "unique_direct_requirement_symbols": {
+      "command": 833,
+      "enum": 3873,
+      "type": 2490
+    },
+    "semantic_reviewed_entries": 0,
+    "release_status": "BLOCKED"
+  },
+  "claims": {
+    "symbol_extraction": "PASS",
+    "semantic_L1_L2": "UNREVIEWED",
+    "pnext_validity": "UNREVIEWED",
+    "SC_certification": "NOT_APPLICABLE"
+  },
+  "limits": [
+    "not a full SC Registry",
+    "no VUID/Headers/SPIR-V frozen yet",
+    "not transitive semantic dependency closure",
+    "remove/protect/pNext preserved not normatively validated",
+    "all L1/L2 reviews remain separate"
+  ]
+}

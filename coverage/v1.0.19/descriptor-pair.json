@@ -1,0 +1,123 @@
+{
+  "compiler": "gcc (Debian 14.2.0-19) 14.2.0",
+  "loader_sha256": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+  "build_flags": [
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ],
+  "run_id": "89d89281-0b3a-4528-9732-eb45f8898987",
+  "source_sha256": "2109dd9e4aa117d254dcb331250168b5a9d14d6dc08111e1b912f6c7373bb5fd",
+  "binary_sha256": "6011b66f25a20a8aa46ca494d72711238c1527a4a33475bc006886baf1ae2580",
+  "cases": {
+    "good": {
+      "rule": {
+        "status": "WITHIN_CHECKED_SCOPE",
+        "vuids": [],
+        "policy_rejections": [],
+        "unknown": [],
+        "effective_range": 16,
+        "limitations": [
+          "ordinary non-null non-sparse UBO only",
+          "pool/layout/write counts and shader access not checked",
+          "dynamic offsets/indexing/descriptor buffers excluded"
+        ]
+      },
+      "observed_vuids": [],
+      "callback_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "whole": {
+      "rule": {
+        "status": "WITHIN_CHECKED_SCOPE",
+        "vuids": [],
+        "policy_rejections": [],
+        "unknown": [],
+        "effective_range": 256,
+        "limitations": [
+          "ordinary non-null non-sparse UBO only",
+          "pool/layout/write counts and shader access not checked",
+          "dynamic offsets/indexing/descriptor buffers excluded"
+        ]
+      },
+      "observed_vuids": [],
+      "callback_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "zero": {
+      "rule": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkDescriptorBufferInfo-range-00341"
+        ],
+        "policy_rejections": [],
+        "unknown": [],
+        "effective_range": 0,
+        "limitations": [
+          "ordinary non-null non-sparse UBO only",
+          "pool/layout/write counts and shader access not checked",
+          "dynamic offsets/indexing/descriptor buffers excluded"
+        ]
+      },
+      "observed_vuids": [
+        "VUID-VkDescriptorBufferInfo-range-00341"
+      ],
+      "callback_sha256": "224cc4c5d4faf2ea13656c83c2d7784fd319ef2bb17550a45258f061089614e3"
+    },
+    "overrun": {
+      "rule": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkDescriptorBufferInfo-range-00342"
+        ],
+        "policy_rejections": [],
+        "unknown": [],
+        "effective_range": 257,
+        "limitations": [
+          "ordinary non-null non-sparse UBO only",
+          "pool/layout/write counts and shader access not checked",
+          "dynamic offsets/indexing/descriptor buffers excluded"
+        ]
+      },
+      "observed_vuids": [
+        "VUID-VkDescriptorBufferInfo-range-00342"
+      ],
+      "callback_sha256": "48da3818fd7db45f702f6e7cd2d1a383c35d87b2300c8ded1253cbd668f0d9ba"
+    },
+    "offset-end": {
+      "rule": {
+        "status": "REJECTED",
+        "vuids": [
+          "VUID-VkDescriptorBufferInfo-offset-00340",
+          "VUID-VkDescriptorBufferInfo-range-00342"
+        ],
+        "policy_rejections": [],
+        "unknown": [],
+        "effective_range": 16,
+        "limitations": [
+          "ordinary non-null non-sparse UBO only",
+          "pool/layout/write counts and shader access not checked",
+          "dynamic offsets/indexing/descriptor buffers excluded"
+        ]
+      },
+      "observed_vuids": [
+        "VUID-VkDescriptorBufferInfo-offset-00340",
+        "VUID-VkDescriptorBufferInfo-range-00342"
+      ],
+      "callback_sha256": "59f8c1e8a4e038f0d611bb195ebde3e08db36a444f44bdb8bb8e1d83e83235e5"
+    }
+  },
+  "scope": "original ordinary descriptor update experiment; no shader execution or external project acceptance",
+  "runtime_identity": {
+    "device_type": 4,
+    "device_id": 0,
+    "vendor_id": 65541,
+    "driver": 1,
+    "api": 4210993,
+    "layer_spec": 4210997,
+    "layer_impl": 1
+  },
+  "queried_limits": {
+    "maxUniformBufferRange": 65536,
+    "minUniformBufferOffsetAlignment": 16
+  },
+  "status": "PASS_BOUNDED_RULE_TOOL_PAIR"
+}

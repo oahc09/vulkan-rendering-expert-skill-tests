@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "draws": [
+    {
+      "generation": 0,
+      "max_linear_error": 7.152557379708213e-08,
+      "tolerance": 1e-06
+    },
+    {
+      "generation": 1,
+      "max_linear_error": 7.152557379708213e-08,
+      "tolerance": 1e-06
+    }
+  ],
+  "scope": "single-queue two immutable descriptor sets/pages; actual host-timeline-gated sampled fragment draws",
+  "limits": [
+    "controlled single-queue schedule",
+    "no UV packed-glyph extraction",
+    "no multidevice or mobile performance",
+    "no driver allocator leak claim"
+  ],
+  "distinct_coverage_pages": 2,
+  "distinct_immutable_descriptor_sets": 2,
+  "pending_fence_not_ready_observations": 2,
+  "successful_retired_fences": 2,
+  "negative_checks": [
+    "old page pixels substituted for new descriptor rejected",
+    "forged pending-fence evidence rejected",
+    "controlled pending draw cleanup completed",
+    "existing output refused unchanged"
+  ]
+}

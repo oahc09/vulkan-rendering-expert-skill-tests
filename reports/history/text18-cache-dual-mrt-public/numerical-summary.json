@@ -1,0 +1,157 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "logical_devices_created": 3,
+  "simultaneously_live_devices": 2,
+  "positive_images": 6,
+  "diagnostic_wrong_route_images": 1,
+  "active_color_attachments": 3,
+  "rows": [
+    {
+      "glyph_quads": 1,
+      "vertices": 6,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 122,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "image": "B-initial"
+    },
+    {
+      "glyph_quads": 1,
+      "vertices": 6,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 160,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "image": "B-new"
+    },
+    {
+      "glyph_quads": 1,
+      "vertices": 6,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 122,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "image": "A-released"
+    },
+    {
+      "glyph_quads": 1,
+      "vertices": 6,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 160,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "image": "B-after-A-destroyed"
+    },
+    {
+      "glyph_quads": 1,
+      "vertices": 6,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 71,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "image": "A-rebuilt"
+    },
+    {
+      "glyph_quads": 1,
+      "vertices": 6,
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "max_background_error": 1.1920928966180355e-08,
+      "clipped_nonzero_source_pixels": 0,
+      "roi_pixels": 160,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "image": "B-after-A-rebuilt"
+    }
+  ],
+  "events": [
+    {
+      "phase": "A_gated",
+      "A_pending": true,
+      "B_completed": 0,
+      "B_generation": -1,
+      "B_live_pages": 0
+    },
+    {
+      "phase": "B_initial",
+      "A_pending": true,
+      "B_completed": 1,
+      "B_generation": 0,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "B_canceled",
+      "A_pending": true,
+      "B_completed": 2,
+      "B_generation": 0,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "B_new",
+      "A_pending": true,
+      "B_completed": 3,
+      "B_generation": 2,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "A_destroyed",
+      "A_pending": false,
+      "B_completed": 3,
+      "B_generation": 2,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "B_continued",
+      "A_pending": false,
+      "B_completed": 4,
+      "B_generation": 2,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "A_rebuilt",
+      "A_pending": false,
+      "B_completed": 4,
+      "B_generation": 2,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "B_final",
+      "A_pending": false,
+      "B_completed": 5,
+      "B_generation": 2,
+      "B_live_pages": 1
+    },
+    {
+      "phase": "all_destroyed",
+      "B_completed": 5
+    }
+  ],
+  "cache_inputs_immutable": true,
+  "pause_guard_no_submission": true,
+  "wrong_route_rejected": true,
+  "bad_write_rejected_images": 7,
+  "limits": [
+    "same configured software implementation, not different physical GPUs or real Surfaces",
+    "CPU cache products pre-generated; not concurrent CPU/GPU production",
+    "B cancel occurs after upload completion, not pending B cancellation",
+    "active MRT but no depth/stencil/clip",
+    "fixed page sizes; no growth or full native allocator cleanup",
+    "A gate blocks submit, no simultaneous shader execution claim"
+  ]
+}

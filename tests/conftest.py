@@ -51,6 +51,6 @@ def module_dirs():
 def pytest_collection_modifyitems(items):
     """Every test belongs to one evidence layer; historical responses stay snapshots."""
     for item in items:
-        if any(item.get_closest_marker(layer) for layer in ("live", "snapshot", "host_unit", "shader_unit", "vulkan_integration", "mobile_scale")):
+        if any(item.get_closest_marker(layer) for layer in ("live", "snapshot", "host_unit", "shader_unit", "vulkan_integration", "mobile_scale", "candidate19")):
             continue
         item.add_marker(pytest.mark.static)

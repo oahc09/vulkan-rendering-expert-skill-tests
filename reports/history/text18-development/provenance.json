@@ -1,0 +1,39 @@
+{
+  "scope": "development dirty-tree run, not release",
+  "skill_sha": "a5cfc939130db2250c2828513bab07c03465d681",
+  "tests_base_sha": "528ba9ea7b417684c1066aceabd9a79cae4cd05b",
+  "files": {
+    "tests/text_host_contracts.py": "e6f9230a59133c9943ee69128e5cabcf76e2dd8147a7424c6d7d0efe85071982",
+    "tests/test_v1_0_18_contracts.py": "803b2541c437be311ea2ce5a416d2bb2e2efd36ce1cb269a688143dad88bd08d",
+    "tests/test_v1_0_18_host_unit.py": "e5eb22680edbd5abb4979171eef1aef5df8197d9b3f910c167938d7cc61dd669",
+    "tests/test_v1_0_18_shader.py": "9772d413ac472037bf8b036400c667ce0b93c22a92ab61338c26e16b9bedd93e",
+    "tests/fixtures/text_vector_lab/coverage.frag": "65f5a6daab5cadcd047dfa09ec74f094da897d5b97466cdc2f076e1f8f490f9f",
+    "tests/text18_cases.json": "ff4fff5c7ac43f09701563ebb5f7984cbbf92bbafa2b3e848136ca775d9b332e",
+    "tests/text18_rubrics.json": "bac11e58255d40138dee109632676751dd13027ad52b344920e42bbdfd410759",
+    "tests/run_text18_live.py": "a25253f67ca4a233820c08e5b99d57b6a289b8967d5bd9673377743ab901fc77",
+    "tests/v116-cohort.json": "34b3d424ff75a7c33ed4fae97e7d7ea553a9006564052ec21fe2832e81eb1ac7",
+    "text18-candidate-contract.json": "e3cfb3189350898fb64b2f6b63efdf94caed1b797668941696b2479d261ea916"
+  },
+  "text18": {
+    "passed": 36,
+    "skipped": 0
+  },
+  "host_suite": {
+    "passed": 150,
+    "deselected": 409
+  },
+  "shader": {
+    "compiler": "glslang 15.2.0",
+    "validator": "SPIRV-Tools 2025.1",
+    "target": "vulkan1.1",
+    "spv_sha256": "f69d02dd2081ec07a9c0e0866bd638731d2643a45414307096543af6869ee852"
+  },
+  "not_run": [
+    "Platform",
+    "Vulkan",
+    "Live",
+    "Visual",
+    "Device",
+    "actual host"
+  ]
+}

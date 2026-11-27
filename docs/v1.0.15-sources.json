@@ -1,0 +1,263 @@
+{
+  "window": [
+    "2026-08-10",
+    "2026-11-07"
+  ],
+  "baseline": {
+    "skill": "4a7ff82372648c4a9df91e76848cbc9c95de51a3",
+    "tests": "f8cadd3614f998b042b77293618323120bcb6d28"
+  },
+  "sources": [
+    {
+      "source_id": "S2",
+      "canonical_url": "https://github.com/nvpro-samples/vk_gaussian_splatting/blob/d0a3befe1d5b2620cb646bde5369186e835a930a/README.md",
+      "revision": "d0a3befe1d5b2620cb646bde5369186e835a930a",
+      "blob": "c6422ee1fb50ff527f8d2f6b2dd16ca8c2327192",
+      "claim": "Desktop reference offers multiple raster/RT paths and identifies multi-set material fix.",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#gaussian-preproject-sort"
+      ],
+      "license_boundary": "Apache-2.0 verified in same revision LICENSE; only links and original summaries, no upstream code/assets copied.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "REF",
+      "unverified_scope": "No upstream build/device/model execution; no Android or benchmark extrapolation.",
+      "sha256": "1cb8a3c1e7ae5ac32b75a228244e256bedc321646e967369316b6a1e7760cfbb",
+      "bytes": 11047
+    },
+    {
+      "source_id": "S1-S2-release",
+      "canonical_url": "https://github.com/nvpro-samples/vk_gaussian_splatting/blob/d0a3befe1d5b2620cb646bde5369186e835a930a/docs/release-notes.md",
+      "revision": "d0a3befe1d5b2620cb646bde5369186e835a930a",
+      "blob": "11ea6aed43184e78a818decfbda5a217d91d2a6b",
+      "claim": "2026.2.9 fixes nonblending ID attachment choosing the farthest set and rendering-order/global-offset mismatch.",
+      "mapped_skill_paths": [
+        "references/06_cases/02_descriptor_pipeline/case_descriptor_pipeline.md"
+      ],
+      "license_boundary": "Apache-2.0 repository; no source reproduction.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "REF",
+      "unverified_scope": "No upstream build/device/model execution; no Android or benchmark extrapolation.",
+      "sha256": "d333411e05cee997d2a28d323d01ab59641f508c3589635aace9024349e80dca",
+      "bytes": 10816
+    },
+    {
+      "source_id": "S12",
+      "canonical_url": "https://github.com/nvpro-samples/vk_gaussian_splatting/blob/d0a3befe1d5b2620cb646bde5369186e835a930a/docs/deep-dives/rasterization_of_3d_gaussian_splatting.md",
+      "revision": "d0a3befe1d5b2620cb646bde5369186e835a930a",
+      "blob": "38d193bcda40300cca3f81efc6edf50fc9ceb666",
+      "claim": "Vertex/mesh and CPU/GPU sorting alternatives; own docs acknowledge center-only frustum dilation is approximate.",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#gaussian-preproject-sort"
+      ],
+      "license_boundary": "Apache-2.0 repository; no copied implementation, data or performance claims.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "REF",
+      "unverified_scope": "No upstream build/device/model execution; no Android or benchmark extrapolation.",
+      "sha256": "c7b4d3dd86381d59e14f8cb5eb01f0e9228a943b7b54b5acb573b7ae07651e66",
+      "bytes": 22501
+    },
+    {
+      "source_id": "S4",
+      "canonical_url": "https://github.com/xiaobiaodu/Mobile-4DGS/blob/8acbff398cef038fac11c5815cd95a03c9462eb0/README.md",
+      "revision": "8acbff398cef038fac11c5815cd95a03c9462eb0",
+      "blob": "f48fbd3888b0ea118c9a4b37aa170fe988b5298b",
+      "claim": "README announces WebGL mobile renderer; training setup has mixed repository links and no blanket asset license.",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#gaussian-preproject-sort"
+      ],
+      "license_boundary": "Ideas statement is not code/data license. No code, weights or assets copied.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "REF",
+      "unverified_scope": "No upstream build/device/model execution; no Android or benchmark extrapolation.",
+      "sha256": "414793f514dc5168900be3fde032d1930c5307d10fae17d951a4ede3bcda13e7",
+      "bytes": 4457
+    },
+    {
+      "source_id": "S4-renderer",
+      "canonical_url": "https://github.com/xiaobiaodu/mobile-4dgs-project/blob/3f713ef913d8e884c7cf2784d8d10b09a3cba3d5/README.md",
+      "revision": "3f713ef913d8e884c7cf2784d8d10b09a3cba3d5",
+      "blob": "72db920c6f46ea0aef7db86e4453dc9cd39bd8f1",
+      "claim": "Actual gh-pages renderer README describes static/dynamic split and camera-keyed sorting; no Vulkan inference.",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/add_compute_pass.md#gaussian-preproject-sort"
+      ],
+      "license_boundary": "No top-level LICENSE in recursively inspected tree; reuse not authorized. Only original policy interpretation and link.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "REF",
+      "unverified_scope": "No upstream build/device/model execution; no Android or benchmark extrapolation.",
+      "sha256": "b12430b7bc78525067b33887911ae7ba40b4c953b0e46e5aa733754d58412d64",
+      "bytes": 3804
+    },
+    {
+      "source_id": "S7",
+      "canonical_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/framebuffer.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "72157f3d9982d51f1cf53dcdd2e3d80ad650f8cd364055b5669fa95f8b8f8435",
+      "bytes": 93541,
+      "claim": "Format blending and independentBlend requirements; blend equations and attachment states.",
+      "mapped_skill_paths": [
+        "references/03_api_manual/06_pipeline/graphics_pipeline.md#blend-format-capability"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked and attributed; original implementation only, no upstream prose bundled.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 repository revision, not first publication",
+      "checked_at": "2026-11-07",
+      "evidence_level": "SPEC/REGISTRY",
+      "unverified_scope": "Source legality review only; device evidence separately reported."
+    },
+    {
+      "source_id": "S8",
+      "canonical_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/appendices/VK_EXT_fragment_shader_interlock.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "ac3414864ecfb63c28f75f848a2a991443dbc200ba249d1ef2b120472ea17190",
+      "bytes": 2269,
+      "claim": "Interlock provides a critical section and API-order guarantees, not geometric depth sorting.",
+      "mapped_skill_paths": [
+        "references/05_workflows/02_render_pass_effects/add_postprocess_pass.md#transparency-resolve"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked and attributed; original implementation only, no upstream prose bundled.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 repository revision, not first publication",
+      "checked_at": "2026-11-07",
+      "evidence_level": "SPEC/REGISTRY",
+      "unverified_scope": "Source legality review only; device evidence separately reported."
+    },
+    {
+      "source_id": "S9",
+      "canonical_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/appendices/VK_EXT_attachment_feedback_loop_layout.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "a4afe3698afc34c131ab2d856604643643056cc589aa3dbc489763d787dbbaa9",
+      "bytes": 1031,
+      "claim": "Optional attachment feedback-loop layout contract; not a generic GENERAL workaround.",
+      "mapped_skill_paths": [
+        "references/03_api_manual/07_rendering/render_target_layout.md#refraction-read-write-boundary"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked and attributed; original implementation only, no upstream prose bundled.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 repository revision, not first publication",
+      "checked_at": "2026-11-07",
+      "evidence_level": "SPEC/REGISTRY",
+      "unverified_scope": "Source legality review only; device evidence separately reported."
+    },
+    {
+      "source_id": "SYNC",
+      "canonical_url": "https://github.com/KhronosGroup/Vulkan-Docs/blob/fa30d4e312e843193601be7cb926c7e25d9ec885/chapters/synchronization.adoc",
+      "revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+      "bytes": 393598,
+      "claim": "Actual producer/consumer stage-access, layouts and cross-queue dependencies.",
+      "mapped_skill_paths": [
+        "references/05_workflows/03_compute_workflows/compute_to_graphics_sync.md#gaussian-consumer-dependencies"
+      ],
+      "license_boundary": "CC-BY-4.0 source linked and attributed; original implementation only, no upstream prose bundled.",
+      "verification": "source_read",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": "2026-11-06 repository revision, not first publication",
+      "checked_at": "2026-11-07",
+      "evidence_level": "SPEC/REGISTRY",
+      "unverified_scope": "Source legality review only; device evidence separately reported."
+    },
+    {
+      "source_id": "S3",
+      "canonical_url": "https://github.com/isl-org/Open3D/discussions/7564",
+      "revision": null,
+      "claim": "Plan reports Gaussian/mesh/depth/offscreen integration.",
+      "verification": "plan_attribution_not_reverified",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "PLAN_CONTEXT",
+      "mapped_skill_paths": [],
+      "license_boundary": "No copied content or assets. No permission inferred from plan.",
+      "unverified_scope": "Dynamic external page not independently rechecked in this implementation; not normative API proof."
+    },
+    {
+      "source_id": "S5",
+      "canonical_url": "https://arxiv.org/abs/2610.05289",
+      "revision": null,
+      "claim": "Plan research context for mobile static/dynamic sorting.",
+      "verification": "plan_attribution_not_reverified",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "PLAN_CONTEXT",
+      "mapped_skill_paths": [],
+      "license_boundary": "No copied content or assets. No permission inferred from plan.",
+      "unverified_scope": "Dynamic external page not independently rechecked in this implementation; not normative API proof."
+    },
+    {
+      "source_id": "S6",
+      "canonical_url": "https://www.kitware.com/better-transparency-with-vtk-and-webgpu/",
+      "revision": null,
+      "claim": "Plan reports bounded retained layers and shared pools.",
+      "verification": "plan_attribution_not_reverified",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "PLAN_CONTEXT",
+      "mapped_skill_paths": [],
+      "license_boundary": "No copied content or assets. No permission inferred from plan.",
+      "unverified_scope": "Dynamic external page not independently rechecked in this implementation; not normative API proof."
+    },
+    {
+      "source_id": "S10",
+      "canonical_url": "https://github.com/nvpro-samples/vk_order_independent_transparency",
+      "revision": null,
+      "claim": "Historical algorithm comparison; no upstream implementation used.",
+      "verification": "plan_attribution_not_reverified",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "PLAN_CONTEXT",
+      "mapped_skill_paths": [],
+      "license_boundary": "No copied content or assets. No permission inferred from plan.",
+      "unverified_scope": "Dynamic external page not independently rechecked in this implementation; not normative API proof."
+    },
+    {
+      "source_id": "S11",
+      "canonical_url": "https://developer.nvidia.com/gpugems/gpugems/part-vi-beyond-triangles/chapter-39-volume-rendering-techniques",
+      "revision": null,
+      "claim": "Historical absorption/integration context; formulas independently implemented.",
+      "verification": "plan_attribution_not_reverified",
+      "event_date": null,
+      "published_at": null,
+      "updated_at": null,
+      "checked_at": "2026-11-07",
+      "evidence_level": "PLAN_CONTEXT",
+      "mapped_skill_paths": [],
+      "license_boundary": "No copied content or assets. No permission inferred from plan.",
+      "unverified_scope": "Dynamic external page not independently rechecked in this implementation; not normative API proof."
+    }
+  ]
+}

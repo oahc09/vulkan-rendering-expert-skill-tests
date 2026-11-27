@@ -1,0 +1,403 @@
+{
+  "status": "EXISTING_BUILD_CONTENT_AND_ALIASES_RECHECKED",
+  "authority": "DEVELOPMENT_OFFLINE_RECHECK_OF_PREPUBLICATION_BUILD_NOT_NEW_BUILD",
+  "original_build_report_sha256": "5a70d2710c68fe30337944d240a308df66bdc38aa65e19524cc7d3a4f8adc613",
+  "enhanced_report_sha256": "1e2c3b795e6e3cc4b8135ce224fac10572b1b819e466f31f0cb8cf0de0fdb3bc",
+  "original_build_implementation": {
+    "checks19/render_reference_batch19.py": "51e56536d788995c01550b9ccdda5cd540b40564454b271deae69a7748cff290",
+    "tools/reference_batch19.py": "455f3d3d3c6f7068ba81f4e05a71b6c17c3952f2751b31e05768042175d17ace",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7",
+    "tools/prose_generation19.py": "107a6ed9d234c5bf5b33de4b6fa338150990cc9f72cded5e721adb71fd948561",
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c"
+  },
+  "enhanced_implementation": {
+    "checks19/verify_reference_batch19.py": "6e73278f196c4cda26fa4ea8d431c537e7cc417466820f9822e53a72100e2241",
+    "tools/reference_batch19.py": "0a4500e02f38bb710d018ff930737984a4ab4cbceaa8479081b3d42d9e9092be",
+    "tools/asciidoc_execution19.py": "8bb97a466751bd31e2ef1643941ddae407e239beaed0653c9c108fe5d963e834",
+    "tools/prose_denominator19.py": "df2e0043361b1a5eeecb5d0b27a62cde68eab14da066758462bbc10510e431f7"
+  },
+  "original_tests_head": "dba4346ea123930601e96d854c4d4dbb5836272e",
+  "build_steps": [
+    {
+      "label": "ruby-ldd",
+      "returncode": 0,
+      "elapsed_seconds": 1.0275636580045102
+    },
+    {
+      "label": "node-ldd",
+      "returncode": 0,
+      "elapsed_seconds": 1.0270226710126735
+    },
+    {
+      "label": "node-modules",
+      "returncode": 0,
+      "elapsed_seconds": 1.1038423860009061
+    },
+    {
+      "label": "python-import",
+      "returncode": 0,
+      "elapsed_seconds": 1.1532989660045132
+    },
+    {
+      "label": "all-reference-html",
+      "returncode": 0,
+      "elapsed_seconds": 295.9088561420067
+    },
+    {
+      "label": "missing-target",
+      "returncode": 0,
+      "elapsed_seconds": 1.5621558839920908
+    },
+    {
+      "label": "wrong-regular-alias",
+      "returncode": 0,
+      "elapsed_seconds": 1.5314828310074518
+    }
+  ],
+  "source_tree_sha256": "39681837283249fea7741fa5b0c2b9fd3bf77082e169f850a5823f9770f0a6fa",
+  "entity_count": 3553,
+  "alias_count": 477,
+  "limits": [
+    "original runtime/build commands not reexecuted",
+    "source-derived body/section presence is not full semantic or visual correctness",
+    "no internal cross-page hyperlink scan",
+    "Original full-build CLI/helper complete source snapshot not separately retained; execution-time before/after digests and logs retained. Current source is enhanced verifier, not an archived original implementation."
+  ],
+  "original_acceptance": "UNVERIFIED_24_ALL19_AND_12_E2E19",
+  "c_specification_entity_identifiers_checked": 2929,
+  "empty_other_sections": [
+    {
+      "entity": "VkAccelerationStructureGeometryDataKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkAccelerationStructureMotionInstanceDataNV",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkAllocationCallbacks",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkAmigoProfilingSubmitInfoSEC",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkClusterAccelerationStructureOpInputNV",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkConformanceVersion",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkCuFunctionCreateInfoNVX",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkCuLaunchInfoNVX",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkCuModuleCreateInfoNVX",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkCuModuleTexturingModeCreateInfoNVX",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDataGraphTOSANameQualityARM",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDescriptorMappingSourceDataEXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDescriptorSetBindingReferenceVALVE",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDescriptorSetLayoutHostMappingInfoVALVE",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDeviceFaultDebugInfoKHR",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDeviceFaultVendorInfoKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDeviceMemory",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDeviceOrHostAddressConstAMDX",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDeviceOrHostAddressConstKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDeviceOrHostAddressKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDisplayModePropertiesKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDisplayPlanePropertiesKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkDrmFormatModifierProperties2EXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkExtensionProperties",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkExtent2D",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkExtent3D",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkExternalImageFormatPropertiesNV",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkIndirectExecutionSetInfoEXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkLayerProperties",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkMemoryHeap",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkMemoryRequirements",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkMemoryType",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkOffset2D",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkOffset3D",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPerformanceValueINTEL",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceAmigoProfilingFeaturesSEC",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceDataGraphOperationSupportARM",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceDataGraphProcessingEngineARM",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceDescriptorSetHostMappingFeaturesVALVE",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDevicePipelineCacheIncrementalModeFeaturesSEC",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceSparseProperties",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceThrottleHintFeaturesSEC",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPipelineExecutableStatisticValueKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkPresentStageTimeEXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkRect2D",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkRefreshCycleDurationGOOGLE",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkRenderPassCreationFeedbackInfoEXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkRenderPassSubpassFeedbackInfoEXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkResourceDescriptorDataEXT",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkSetStateFlagsIndirectCommandNV",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkShaderModule",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkShaderResourceUsageAMD",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkSparseImageFormatProperties",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkSparseImageMemoryRequirements",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkStructureType",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkSurfaceCapabilitiesKHR",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkSurfaceFormatKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkThrottleHintSubmitInfoSEC",
+      "section": "Members",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkVideoEncodeAV1FrameSizeKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkVideoEncodeAV1QIndexKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkVideoEncodeH264FrameSizeKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkVideoEncodeH264QpKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkVideoEncodeH265FrameSizeKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkVideoEncodeH265QpKHR",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    },
+    {
+      "entity": "VkViewportWScalingNV",
+      "section": "Description",
+      "reason": "OBSERVED_EMPTY_FIXED_OUTPUT; INDIVIDUAL_SEMANTIC_REASON_NOT_FULLY_AUDITED"
+    }
+  ],
+  "semantic_review": false,
+  "internal_cross_page_link_check": "NOT_RUN"
+}

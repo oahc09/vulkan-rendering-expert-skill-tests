@@ -1,0 +1,26 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "entries": [
+    {
+      "owner": "VkDescriptorImageInfo",
+      "condition": "core",
+      "vuid": "VUID-VkDescriptorImageInfo-imageLayout-00344",
+      "text": "<code>imageLayout</code> <strong class=\"purple\">must</strong> match the actual <a href=\"#VkImageLayout\">VkImageLayout</a> of each subresource accessible from <code>imageView</code> at the time this descriptor is accessed as defined by the <a href=\"#resources-image-layouts-matching-rule\">image layout matching rules</a>",
+      "page": "chapters/descriptorsets.html"
+    },
+    {
+      "owner": "VkRenderingAttachmentInfo",
+      "condition": "core",
+      "vuid": "VUID-VkRenderingAttachmentInfo-imageView-06135",
+      "text": "If <code>imageView</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, <code>imageLayout</code> <strong class=\"purple\">must</strong> not be <code>VK_IMAGE_LAYOUT_UNDEFINED</code>, <code>VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL</code>, <code>VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL</code>, or <code>VK_IMAGE_LAYOUT_PREINITIALIZED</code>",
+      "page": "chapters/renderpass.html"
+    }
+  ],
+  "synchronization": "SyncVal SYNC-HAZARD-READ-AFTER-WRITE is tool diagnostic, not VUID; GENERAL is legal for sampled descriptor but requires producer-consumer dependency."
+}

@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "draws": 4,
+  "rows": [
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 960,
+      "partial_pixels": 0,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "normal",
+      "triangles": 6,
+      "area": 960.0
+    },
+    {
+      "max_linear_error": 7.152557379708213e-08,
+      "max_roi_error": 7.152557379708213e-08,
+      "roi_pixels": 960,
+      "partial_pixels": 0,
+      "tolerance": 1e-06,
+      "sentinels": "UNCHANGED",
+      "case": "mirrored",
+      "triangles": 6,
+      "area": 960.0
+    }
+  ],
+  "negative_checks": [
+    "actual wrong fan draw rejected for each winding"
+  ],
+  "scope": "one simple concave contour and mirrored winding; real vertex triangle lists; CPU point-in-polygon reference",
+  "limits": [
+    "hard pixel-center coverage only",
+    "holes/multiple contours explicitly reject to existing mask fallback",
+    "no stroke/extrusion/bevel/3D shadows",
+    "no target hardware/Live acceptance"
+  ]
+}

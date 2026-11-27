@@ -1,0 +1,159 @@
+{
+  "after_claims": [
+    {
+      "assertion": false,
+      "authority_anchor": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md#delivery19-ordinary-ubo-lifetime",
+      "authority_sha256": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31",
+      "card_anchor": "references/03_api_manual/05_descriptor/descriptor_update.md#delivery19-descriptor-retirement-contract",
+      "card_sha256": "a7e988f7d41b9af314e82a63a001f35925f69b53b530cada5d3a44cf8b1b6626",
+      "claim_id": "repaired-update-card",
+      "entry_sha256": "32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "predicate": "descriptor-replacement-alone-permits-pending-buffer-destruction",
+      "scope": {
+        "api_variant": "Vulkan",
+        "enabled_features": [],
+        "normative_api_version": "1.4.309",
+        "platform": "any",
+        "profile": "ordinary-buffer-consumers",
+        "registry_api_version": "1.4.368",
+        "registry_record_sha256": "e83fc03e6a313d0608945f9a2f376dd1ac5b392d15aec1771dc1bdfbccde233a",
+        "registry_scope_id": "scope:c31172ae3f9417ff0e04c13a7461963d833d33b871174a78f2785a73f3ad3def"
+      },
+      "unit_id": "vu:32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "version_mapping": "MANUAL_309_CLAUSE_TO_368_SCOPE"
+    },
+    {
+      "assertion": false,
+      "authority_anchor": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md#delivery19-ordinary-ubo-lifetime",
+      "authority_sha256": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31",
+      "card_anchor": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md#delivery19-ordinary-ubo-lifetime",
+      "card_sha256": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31",
+      "claim_id": "ubo-contract",
+      "entry_sha256": "32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "predicate": "descriptor-replacement-alone-permits-pending-buffer-destruction",
+      "scope": {
+        "api_variant": "Vulkan",
+        "enabled_features": [],
+        "normative_api_version": "1.4.309",
+        "platform": "any",
+        "profile": "ordinary-buffer-consumers",
+        "registry_api_version": "1.4.368",
+        "registry_record_sha256": "e83fc03e6a313d0608945f9a2f376dd1ac5b392d15aec1771dc1bdfbccde233a",
+        "registry_scope_id": "scope:c31172ae3f9417ff0e04c13a7461963d833d33b871174a78f2785a73f3ad3def"
+      },
+      "unit_id": "vu:32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "version_mapping": "MANUAL_309_CLAUSE_TO_368_SCOPE"
+    }
+  ],
+  "after_findings": [],
+  "before_claims": [
+    {
+      "assertion": true,
+      "authority_anchor": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md#delivery19-ordinary-ubo-lifetime",
+      "authority_sha256": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31",
+      "card_anchor": "references/03_api_manual/05_descriptor/descriptor_update.md#historical-destruction-checklist",
+      "card_sha256": "ca0aebc27d3d65555441190719c468521ba22ecf7617c21210a321905ad56a04",
+      "claim_id": "historical-update-card",
+      "entry_sha256": "32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "predicate": "descriptor-replacement-alone-permits-pending-buffer-destruction",
+      "scope": {
+        "api_variant": "Vulkan",
+        "enabled_features": [],
+        "normative_api_version": "1.4.309",
+        "platform": "any",
+        "profile": "ordinary-buffer-consumers",
+        "registry_api_version": "1.4.368",
+        "registry_record_sha256": "e83fc03e6a313d0608945f9a2f376dd1ac5b392d15aec1771dc1bdfbccde233a",
+        "registry_scope_id": "scope:c31172ae3f9417ff0e04c13a7461963d833d33b871174a78f2785a73f3ad3def"
+      },
+      "unit_id": "vu:32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "version_mapping": "MANUAL_309_CLAUSE_TO_368_SCOPE"
+    },
+    {
+      "assertion": false,
+      "authority_anchor": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md#delivery19-ordinary-ubo-lifetime",
+      "authority_sha256": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31",
+      "card_anchor": "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md#delivery19-ordinary-ubo-lifetime",
+      "card_sha256": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31",
+      "claim_id": "ubo-contract",
+      "entry_sha256": "32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "predicate": "descriptor-replacement-alone-permits-pending-buffer-destruction",
+      "scope": {
+        "api_variant": "Vulkan",
+        "enabled_features": [],
+        "normative_api_version": "1.4.309",
+        "platform": "any",
+        "profile": "ordinary-buffer-consumers",
+        "registry_api_version": "1.4.368",
+        "registry_record_sha256": "e83fc03e6a313d0608945f9a2f376dd1ac5b392d15aec1771dc1bdfbccde233a",
+        "registry_scope_id": "scope:c31172ae3f9417ff0e04c13a7461963d833d33b871174a78f2785a73f3ad3def"
+      },
+      "unit_id": "vu:32b096a43e8db0479ae07e111a012b593921948d8088e11b4c50eeee4294936e",
+      "version_mapping": "MANUAL_309_CLAUSE_TO_368_SCOPE"
+    }
+  ],
+  "before_findings": [
+    {
+      "claims": [
+        "historical-update-card",
+        "ubo-contract"
+      ],
+      "kind": "SAME_SCOPE_OPPOSED_ASSERTIONS",
+      "meaning": "Explicit structured declarations conflict; prose truth not adjudicated.",
+      "predicate": "descriptor-replacement-alone-permits-pending-buffer-destruction",
+      "scope_sha256": "7b64784b4c4129074daf088cab69bb7604ac6bae28ef8732cf737f9390b76d6c"
+    }
+  ],
+  "claim_interpretation": "Manually authored predicate interpretation of exact quoted source; not automatic prose extraction. Historical anchor is a labeled location, not a claimed extant Markdown heading.",
+  "current_card_sha256": {
+    "references/03_api_manual/05_descriptor/descriptor_indexing.md": "b012062d106f7451c2174ed25afcca7173af7281336bf3b651d0b1806211d682",
+    "references/03_api_manual/05_descriptor/descriptor_update.md": "a7e988f7d41b9af314e82a63a001f35925f69b53b530cada5d3a44cf8b1b6626",
+    "references/03_api_manual/05_descriptor/uniform_buffer_descriptor.md": "7ea12f21c89a07c78d962a0d43426a3f8caf36771b8162aa776a891c7468bb31"
+  },
+  "denominators": {
+    "included_extension_scopes": 477,
+    "included_feature_scopes": 20,
+    "normative_owner_condition_units": 20111,
+    "stable_registry_review_scopes": 497,
+    "unique_vuids": 20111
+  },
+  "historical_card_sha256": "ca0aebc27d3d65555441190719c468521ba22ecf7617c21210a321905ad56a04",
+  "historical_commit": "b1a3f72e03c9a9621224746146e12a7d5beab81b",
+  "historical_line": "资源销毁前是否已更新 descriptor 指向新资源或等待 GPU idle？",
+  "historical_line_number": 125,
+  "release_status": "BLOCKED",
+  "review_declarations": 0,
+  "semantic_L1_L2_completion": "UNKNOWN_NOT_INFERRED",
+  "sources": {
+    "normative": {
+      "api_version": "1.4.309",
+      "file": "validusage.json",
+      "schema_version": 2,
+      "separate_from_vk_xml_api": "1.4.368",
+      "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+      "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+      "source_kind": "official Debian Vulkan headers registry snapshot"
+    },
+    "registry": {
+      "api_version": "1.4.368",
+      "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+      "sha256": "d56ff7f1613c36b820998dbd8e184b79ec49dc44db63390185205fa15ebcd444"
+    }
+  },
+  "status": "BOUNDED_SOURCE_CARD_AUDIT",
+  "evidence_files": {
+    "inventory.json": {
+      "sha256": "0fbdfe10cd1278f4e723127e24ba1ce9876187a0b88b39f58da6136735d4a64d",
+      "bytes": 23973504
+    },
+    "card-audit.json": {
+      "sha256": "ee8a733f822fce6b41d534c55c6cff9999d87befeefd2323c213cbfb96a4a56c",
+      "bytes": 7609
+    },
+    "unreviewed-audit.json": {
+      "sha256": "f9e4cdea98ca39f018bd6e5b8fbac88b1fda2c32f5f690ce5b1243656fe02812",
+      "bytes": 1549176
+    }
+  },
+  "evidence_cohort": "prepublication local tool run; exact file hashes, not final tests head"
+}

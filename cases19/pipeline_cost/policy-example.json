@@ -1,0 +1,8 @@
+{
+  "baseline_verified": true,
+  "candidate_active": true,
+  "max_cache_bytes": 1000,
+  "minimum_first_frame_gain": 0.05,
+  "max_steady_regression": 0.0,
+  "other_objectives_satisfied": true
+}

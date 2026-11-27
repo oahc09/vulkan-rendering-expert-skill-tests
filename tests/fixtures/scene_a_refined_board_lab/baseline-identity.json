@@ -1,0 +1,13 @@
+{
+  "basis": "Prior actual frozen Scene A input manifest; provider regression identity, not independent typography",
+  "report_sha256": "dd7777469e9509e6f80dcf2b73f903c077ef8548500ebe69933c750dada260fb",
+  "row_identity_sha256": {
+    "chinese": "8371fbe9cebd8af848011ec4cf160d0415213287afbc807bf68b9e4ef1b0a29f",
+    "ligature": "cc3c6788dfda6f1f42a027c6f0694a851d0778791963a4614ddcd484ce34da30",
+    "combining": "3ce163847a9b237d6d2a64b9ba461fbda203e9b9bd9066abe39213dfc3fa4be4",
+    "bidi": "ff3085c1728d77da3fa9659da421f0b5c5bc1a326d56f3e65b18856e81e89cbf",
+    "emoji": "92bf4cc618148c7df4b93fd4f5ca860bc8aeb6313794a4069287974b6f2d684b",
+    "variable-light": "a3e85b8282a3a0022f0a5d04e48a6f5b465c8ecdf60b1666ed181af8a2debb8f",
+    "variable-heavy": "4432880fda80d1089a157c0627d34f5ea93e71a17d4c5c3c818b6ae25ef8203e"
+  }
+}

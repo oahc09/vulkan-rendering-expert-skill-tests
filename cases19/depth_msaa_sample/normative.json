@@ -1,0 +1,15 @@
+{
+  "source_sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+  "version": {
+    "schema version": 2,
+    "api version": "1.4.309",
+    "comment": "from git branch: github-main commit: 43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "date": "2025-02-21 10:19:04Z"
+  },
+  "owner": "vkCmdDraw",
+  "entry": {
+    "vuid": "VUID-vkCmdDraw-dynamicRenderingUnusedAttachments-08914",
+    "text": "If current render pass instance was begun with <a href=\"#vkCmdBeginRendering\">vkCmdBeginRendering</a>, the <a href=\"#features-dynamicRenderingUnusedAttachments\"><code>dynamicRenderingUnusedAttachments</code></a> feature is not enabled, and <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>pDepthAttachment-&gt;imageView</code> was not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, the value of <a href=\"#VkPipelineRenderingCreateInfo\">VkPipelineRenderingCreateInfo</a>::<code>depthAttachmentFormat</code> used to create the bound graphics pipeline <strong class=\"purple\">must</strong> be equal to the <a href=\"#VkFormat\">VkFormat</a> used to create <a href=\"#VkRenderingInfo\">VkRenderingInfo</a>::<code>pDepthAttachment-&gt;imageView</code>",
+    "page": "chapters/drawing.html"
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "schema": "render-organization19-prepublication-summary",
+  "scope": "CPU one-draw RenderPass/dynamic comparison; not performance or full family acceptance",
+  "reports": {
+    "default": {
+      "sha256": "52a108161f7fd90cc873107a39be4371c134121ba89468893b603f787c83e140",
+      "status": "RENDER_ORGANIZATION_ABA_VERIFIED_NOT_PERFORMANCE",
+      "policy": {
+        "max_renderpass_objects": 1,
+        "require_performance": false
+      },
+      "decision": {
+        "limitations": [
+          "Application object-count policy, not driver memory or speed.",
+          "CPU endpoint scene only; no tile/local-read/whole-frame performance."
+        ],
+        "rule_id": "C2.render-organization.bounded19",
+        "selected": "renderpass",
+        "status": "KEEP_BASELINE"
+      }
+    },
+    "zero": {
+      "sha256": "1333155d5919bd8af3c00bbbec88d825da819ba30be90deb88c810e4974e93cd",
+      "status": "RENDER_ORGANIZATION_ABA_VERIFIED_NOT_PERFORMANCE",
+      "policy": {
+        "max_renderpass_objects": 0,
+        "require_performance": false
+      },
+      "decision": {
+        "limitations": [
+          "Application object-count policy, not driver memory or speed.",
+          "CPU endpoint scene only; no tile/local-read/whole-frame performance."
+        ],
+        "rule_id": "C2.render-organization.bounded19",
+        "selected": "dynamic",
+        "status": "SELECT_ONLY_POLICY_ADMISSIBLE_PATH"
+      }
+    },
+    "performance": {
+      "sha256": "85ec08f832286f5b6057c408bbbf371c081d67f35e17dc877193730086ef308b",
+      "status": "RENDER_ORGANIZATION_ABA_VERIFIED_NOT_PERFORMANCE",
+      "policy": {
+        "max_renderpass_objects": 1,
+        "require_performance": true
+      },
+      "decision": {
+        "fallback": "renderpass",
+        "limitations": [
+          "Application object-count policy, not driver memory or speed.",
+          "CPU endpoint scene only; no tile/local-read/whole-frame performance."
+        ],
+        "rule_id": "C2.render-organization.bounded19",
+        "selected": null,
+        "status": "NEEDS_MEASUREMENT"
+      }
+    }
+  },
+  "source_sha256": {
+    "cases19/render_organization/main.frag": "942a036d52928762e8e159f274b3503919f5bf6138ec90e663ab2dbf45663894",
+    "cases19/render_organization/main.vert": "e8142502ef2d27a81852522359115999bcb3e6435c83297dcc3e96fa9d15b6c0",
+    "cases19/render_organization/normative.json": "5cc95e239c970ece7967977263eab4474c0e08f5f94c3a7e0a02276e8ed5ed5d",
+    "cases19/render_organization/probe.c": "64bbb0bb627b4d5638121b8856cbd3409accc82ae786d90ade44e7f1e1cb7504",
+    "cases19/render_organization/run.py": "3fa8c874b5b1e8b3386f03945eb4e9bc05eeb1eb1edc5bdc69436a9fd1c9298b",
+    "tools/dynamic_color19.py": "27c4adbe32c2b202a5a746ecf81dde1f67f34540bbec1f84715331832f9de9aa",
+    "tools/dynamic_draw19.py": "a3b679a7c7aefd26d12201660317b9540725c61f8e302e9ebb260b2712003f1e",
+    "tools/render_organization19.py": "a52cec0902bde7fc342421240f1e763db49ce2cc43fc7279edce0b539b3b7027"
+  },
+  "tools_sha256": {
+    "gcc": "a23ecab8ff08f09ad8c80602c2c5df7f49e09c25905cb8975902e101bf72635f",
+    "glslangValidator": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+    "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+    "icd_manifest": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+    "layer_library": "25002892d69ff2719fdd7a92a454a15c2d271a17186bc70b625aafaf2df49a05",
+    "layer_manifest": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+    "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+    "spirv-dis": "3ace20d898230836c111aac904a1c566f2f9df58e75dc72ccce1897513fb5449",
+    "spirv-val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea"
+  },
+  "normative": {
+    "commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "limits": "Frozen raw source references, no include/conditional expansion. No normative performance or budget thresholds. Host write barrier is conservative, not asserted mandatory for coherent pre-submit writes.",
+    "sources": [
+      {
+        "anchors": [
+          "memory-device-hostaccess",
+          "memory-device-hostaccess-hazards",
+          "memory-device-bitmask-list"
+        ],
+        "path": "chapters/memory.adoc",
+        "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d",
+        "slices": [
+          {
+            "anchor": "memory-device-hostaccess",
+            "line_end": 5084,
+            "line_start": 5024,
+            "sha256": "c9ad723217ee59a3219c99a25e2a809357131e305a2ccfa9e16e741795990071"
+          },
+          {
+            "anchor": "memory-device-hostaccess-hazards",
+            "line_end": 5440,
+            "line_start": 5085,
+            "sha256": "ed457eb9d3c074bca0ce6a27cb15e732361917cca772c08f83c1dbc19cc2e6b3"
+          },
+          {
+            "anchor": "memory-device-bitmask-list",
+            "line_end": 1118,
+            "line_start": 597,
+            "sha256": "78c459ee06393e70a9f69e00c87b6e95fe01d1e9327e472262de9d8c66adb455"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "synchronization-dependencies-memory",
+          "synchronization-buffer-memory-barriers",
+          "synchronization-submission-host-writes"
+        ],
+        "path": "chapters/synchronization.adoc",
+        "sha256": "7748c88e48007820179681ef4f82c1d2244afc5482b5bc0c13d370ef64821909",
+        "slices": [
+          {
+            "anchor": "synchronization-dependencies-memory",
+            "line_end": 148,
+            "line_start": 137,
+            "sha256": "0db30cb63e1d7099d48cb72fc36582d177c698cf960ec33db231441c40b3316d"
+          },
+          {
+            "anchor": "synchronization-buffer-memory-barriers",
+            "line_end": 7332,
+            "line_start": 7128,
+            "sha256": "b4b8a2234d659a299832432f40fe74a330b7a9c46d08adec18a0fbd58d1d9ff4"
+          },
+          {
+            "anchor": "synchronization-submission-host-writes",
+            "line_end": 8437,
+            "line_start": 8404,
+            "sha256": "02ccebd0ff665619962cce52dd675a21d7635c4e511389b05ffec03bd8d80135"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "resources-association"
+        ],
+        "path": "chapters/resources.adoc",
+        "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a",
+        "slices": [
+          {
+            "anchor": "resources-association",
+            "line_end": 12223,
+            "line_start": 10319,
+            "sha256": "09c6997fa7d4cf36905b426d476b01dc4543c7080b4ee845414adfbc946ebd99"
+          }
+        ]
+      },
+      {
+        "anchors": [
+          "renderpass",
+          "renderpass-objects",
+          "renderpass-layout-transitions",
+          "renderpass-load-operations",
+          "renderpass-store-operations"
+        ],
+        "path": "chapters/renderpass.adoc",
+        "sha256": "6f434da8a5cf251a33d1e4a9d39a76a42a021ace6c6857b7e34a3e825f44f287",
+        "slices": [
+          {
+            "anchor": "renderpass",
+            "line_end": 1030,
+            "line_start": 4,
+            "sha256": "5564e7f0e854528b0ae97d823100ba34155f801319db3465db9efd997d88dc76"
+          },
+          {
+            "anchor": "renderpass-objects",
+            "line_end": 2284,
+            "line_start": 2265,
+            "sha256": "ff3b06941356e0e3dc9a994c706433049840a5ecc1991722cd4441e5ffdad1dd"
+          },
+          {
+            "anchor": "renderpass-layout-transitions",
+            "line_end": 5319,
+            "line_start": 3924,
+            "sha256": "4b71abad6c3e7447a520165310c037be6603c0af8c2935fb495e820c8ae72182"
+          },
+          {
+            "anchor": "renderpass-load-operations",
+            "line_end": 6513,
+            "line_start": 6428,
+            "sha256": "c8d45679441539c5370b59e0c0067e07b3086fd1da762ddb85a777bac6fc3cbd"
+          },
+          {
+            "anchor": "renderpass-store-operations",
+            "line_end": 6623,
+            "line_start": 6531,
+            "sha256": "ac32fb95559ced31dfd86bbcd01ad166c7bced2c1cb2802a10b32a8a0c30a7b7"
+          }
+        ]
+      }
+    ],
+    "version": "1.4.368"
+  },
+  "common_results": [
+    {
+      "label": "baseline",
+      "identity": {
+        "apiVersion": 4210993,
+        "deviceID": 0,
+        "deviceType": 4,
+        "driverVersion": 1,
+        "kind": "identity",
+        "layerImplementation": 1,
+        "layerSpec": 4210997,
+        "queueFamily": 0,
+        "queueFlags": 15,
+        "timestampPeriod": 1,
+        "timestampValidBits": 64,
+        "vendorID": 65541
+      },
+      "cost": {
+        "drawCalls": 1,
+        "dynamicBeginCalls": 0,
+        "framebufferObjects": 1,
+        "kind": "organization",
+        "path": "renderpass",
+        "pipelineObjects": 1,
+        "renderPassBeginCalls": 1,
+        "renderPassObjects": 1
+      },
+      "pixels_sha256": "8d8fa74d4df621b293778ef4656f1c47cdd3daf739780b88191de6c873b6029f"
+    },
+    {
+      "label": "dynamic",
+      "identity": {
+        "apiVersion": 4210993,
+        "deviceID": 0,
+        "deviceType": 4,
+        "driverVersion": 1,
+        "kind": "identity",
+        "layerImplementation": 1,
+        "layerSpec": 4210997,
+        "queueFamily": 0,
+        "queueFlags": 15,
+        "timestampPeriod": 1,
+        "timestampValidBits": 64,
+        "vendorID": 65541
+      },
+      "cost": {
+        "drawCalls": 1,
+        "dynamicBeginCalls": 1,
+        "framebufferObjects": 0,
+        "kind": "organization",
+        "path": "dynamic",
+        "pipelineObjects": 1,
+        "renderPassBeginCalls": 0,
+        "renderPassObjects": 0
+      },
+      "pixels_sha256": "8d8fa74d4df621b293778ef4656f1c47cdd3daf739780b88191de6c873b6029f"
+    },
+    {
+      "label": "recovery",
+      "identity": {
+        "apiVersion": 4210993,
+        "deviceID": 0,
+        "deviceType": 4,
+        "driverVersion": 1,
+        "kind": "identity",
+        "layerImplementation": 1,
+        "layerSpec": 4210997,
+        "queueFamily": 0,
+        "queueFlags": 15,
+        "timestampPeriod": 1,
+        "timestampValidBits": 64,
+        "vendorID": 65541
+      },
+      "cost": {
+        "drawCalls": 1,
+        "dynamicBeginCalls": 0,
+        "framebufferObjects": 1,
+        "kind": "organization",
+        "path": "renderpass",
+        "pipelineObjects": 1,
+        "renderPassBeginCalls": 1,
+        "renderPassObjects": 1
+      },
+      "pixels_sha256": "8d8fa74d4df621b293778ef4656f1c47cdd3daf739780b88191de6c873b6029f"
+    },
+    {
+      "label": "renderpass-wrong",
+      "identity": {
+        "apiVersion": 4210993,
+        "deviceID": 0,
+        "deviceType": 4,
+        "driverVersion": 1,
+        "kind": "identity",
+        "layerImplementation": 1,
+        "layerSpec": 4210997,
+        "queueFamily": 0,
+        "queueFlags": 15,
+        "timestampPeriod": 1,
+        "timestampValidBits": 64,
+        "vendorID": 65541
+      },
+      "cost": {
+        "drawCalls": 1,
+        "dynamicBeginCalls": 0,
+        "framebufferObjects": 1,
+        "kind": "organization",
+        "path": "renderpass",
+        "pipelineObjects": 1,
+        "renderPassBeginCalls": 1,
+        "renderPassObjects": 1
+      },
+      "pixels_sha256": "8d8fa74d4df621b293778ef4656f1c47cdd3daf739780b88191de6c873b6029f"
+    },
+    {
+      "label": "dynamic-wrong",
+      "identity": {
+        "apiVersion": 4210993,
+        "deviceID": 0,
+        "deviceType": 4,
+        "driverVersion": 1,
+        "kind": "identity",
+        "layerImplementation": 1,
+        "layerSpec": 4210997,
+        "queueFamily": 0,
+        "queueFlags": 15,
+        "timestampPeriod": 1,
+        "timestampValidBits": 64,
+        "vendorID": 65541
+      },
+      "cost": {
+        "drawCalls": 1,
+        "dynamicBeginCalls": 1,
+        "framebufferObjects": 0,
+        "kind": "organization",
+        "path": "dynamic",
+        "pipelineObjects": 1,
+        "renderPassBeginCalls": 0,
+        "renderPassObjects": 0
+      },
+      "pixels_sha256": "8d8fa74d4df621b293778ef4656f1c47cdd3daf739780b88191de6c873b6029f"
+    }
+  ]
+}

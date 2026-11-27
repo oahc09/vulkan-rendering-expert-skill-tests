@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "numeric": {
+    "glyph_quads": 3,
+    "vertices": 18,
+    "max_linear_error": 7.152557379708213e-08,
+    "max_roi_error": 7.152557379708213e-08,
+    "max_background_error": 1.1920928966180355e-08,
+    "clipped_nonzero_source_pixels": 20,
+    "roi_pixels": 191,
+    "tolerance": 1e-06,
+    "sentinels": "UNCHANGED"
+  },
+  "negative_checks": [
+    "actual one-texel UV shift rejected by independent reference",
+    "out-of-range UV rejected before GPU"
+  ],
+  "scope": "real font coverage packed into atlas; actual vertex quad UV draws with integer 1:1 nearest sampling",
+  "unverified": [
+    "fractional scale/filtering",
+    "full text shaping layout",
+    "MSDF",
+    "target platforms",
+    "performance"
+  ]
+}

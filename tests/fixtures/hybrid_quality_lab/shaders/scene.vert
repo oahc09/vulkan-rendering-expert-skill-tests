@@ -2,6 +2,9 @@
 layout(push_constant) uniform Push { uint n,capacity,mode,flags,width,height,level,tick;float viewX,zoom;uint base,unused; } p;
 layout(location=0) out vec2 uv;
 layout(location=1) flat out uint material;
+#ifdef GRID_STABLE
+layout(location=2) flat out ivec2 cutoutColumns;
+#endif
 void main(){
  vec2 q[6]=vec2[](vec2(-1,-1),vec2(1,-1),vec2(1,1),vec2(-1,-1),vec2(1,1),vec2(-1,1));
  uv=q[gl_VertexIndex]*.5+.5; material=uint(gl_InstanceIndex);
@@ -12,5 +15,14 @@ void main(){
  float z=material==0u?.6:material==1u?.35:.2;
  float lightShear=p.zoom;
  vec2 lightXY=center+q[gl_VertexIndex]*extent+vec2(lightShear*(.8-z),0);
+ #ifdef GRID_STABLE
+ // Fixture-only integer shadow-grid contract: edges lie on texel boundaries,
+ // never near sample centers. Remove for ordinary arbitrary caster transforms.
+ vec2 size=vec2(p.width,p.height);
+ vec2 low=floor((center-extent+vec2(lightShear*(.8-z),0)+1.)*.5*size+.5);
+ vec2 high=floor((center+extent+vec2(lightShear*(.8-z),0)+1.)*.5*size+.5);
+ lightXY=mix(low,high,uv)*2./size-1.;
+ cutoutColumns=ivec2(low.x,high.x);
+ #endif
  gl_Position=vec4(lightXY,z,1);
 }

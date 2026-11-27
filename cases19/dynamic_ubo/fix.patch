@@ -1,0 +1,5 @@
+--- baseline.c
++++ fixed.c
+@@ -1 +1 @@
+-#define SWAP_OFFSETS 1
++#define SWAP_OFFSETS 0

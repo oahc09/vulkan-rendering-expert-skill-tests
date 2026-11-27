@@ -1,0 +1,233 @@
+{
+  "schema": "simulation-choice19-local-prepublication-summary",
+  "execution_provenance": {
+    "skill": {
+      "dirty": "",
+      "head": "2ac4a0955b5690afa1f51385648cac93f822d1a8"
+    },
+    "tests": {
+      "dirty": "",
+      "head": "d094d20556747da5e84a88c4d51fff6c9958c401"
+    }
+  },
+  "published": false,
+  "scope": "unchanged Simulation Lab; CPU numerical comparison, no complete independent trajectory or performance",
+  "reports": {
+    "default": {
+      "sha256": "3ecefb98629ece5999508a60b2f46cd006e177db8b6eb5fa6186ced350922602",
+      "status": "SIMULATION_LAB_QUALITY_VERIFIED_NOT_PERFORMANCE",
+      "decision": "NEEDS_QUALITY_TARGET",
+      "policy": {
+        "baseline": "colored",
+        "quality_targets": null,
+        "require_performance": false
+      },
+      "original_verification": {
+        "android": "UNVERIFIED",
+        "draws": 52,
+        "max_bounds_error": 5.287607877102474e-07,
+        "max_normal_error": 1.0778674586209291e-07,
+        "max_position_or_velocity_error": 1.1620781203980357e-06,
+        "max_residual_difference": 1.4909920351413586e-06,
+        "numerical_cases": 144,
+        "shader_artifacts": 15,
+        "status": "PASS"
+      }
+    },
+    "illustrative": {
+      "sha256": "4735a699b5d3a4abe6051887cfcee1deb9d4e567ba15d37355abe696f2758357",
+      "status": "SIMULATION_LAB_QUALITY_VERIFIED_NOT_PERFORMANCE",
+      "decision": "KEEP_BASELINE",
+      "policy": {
+        "baseline": "colored",
+        "quality_targets": {
+          "cloth": {
+            "max_absolute_residual": 1,
+            "max_penetration": 1e-05
+          },
+          "rope": {
+            "max_absolute_residual": 1,
+            "max_penetration": 1e-05
+          }
+        },
+        "require_performance": false
+      },
+      "original_verification": {
+        "android": "UNVERIFIED",
+        "draws": 52,
+        "max_bounds_error": 5.287607877102474e-07,
+        "max_normal_error": 1.0778674586209291e-07,
+        "max_position_or_velocity_error": 1.1620781203980357e-06,
+        "max_residual_difference": 1.4909920351413586e-06,
+        "numerical_cases": 144,
+        "shader_artifacts": 15,
+        "status": "PASS"
+      }
+    },
+    "performance": {
+      "sha256": "e365aed8edf640b755297c48f4cab6d24007bdf9cd87df132cdec86fde92f943",
+      "status": "SIMULATION_LAB_QUALITY_VERIFIED_NOT_PERFORMANCE",
+      "decision": "NEEDS_MEASUREMENT",
+      "policy": {
+        "baseline": "colored",
+        "quality_targets": {
+          "cloth": {
+            "max_absolute_residual": 1,
+            "max_penetration": 1e-05
+          },
+          "rope": {
+            "max_absolute_residual": 1,
+            "max_penetration": 1e-05
+          }
+        },
+        "require_performance": true
+      },
+      "original_verification": {
+        "android": "UNVERIFIED",
+        "draws": 52,
+        "max_bounds_error": 5.287607877102474e-07,
+        "max_normal_error": 1.0778674586209291e-07,
+        "max_position_or_velocity_error": 1.1620781203980357e-06,
+        "max_residual_difference": 1.4909920351413586e-06,
+        "numerical_cases": 144,
+        "shader_artifacts": 15,
+        "status": "PASS"
+      }
+    }
+  },
+  "sources": {
+    "checks19/process_supervisor19.py": "9c5454c9befcf9da4218988b35ce4329cfca31fb2d60e060c99dab9e4276059c",
+    "checks19/run_simulation_choice.py": "172297c736979d745f1f1fb6da75ae31b4299a412383b622c140e2fae8a1bd94",
+    "coverage/v1.0.19/pair.json": "1d2c7c3068369fb310db4c6f7bac2fa8e16536793f3b499ba1787bf9487feaed",
+    "docs/v1.0.19-original-plan.md": "b28086a1c1b5d390ad5826c10740fbced15a7e5d3efb5628922147d0a6fa955b",
+    "tests/fixtures/engine_scale_lab/.gitignore": "6cf68f361ed9af9c89f8304b81604d87347c3d38348e90f1e5bef55ea8fa99a5",
+    "tests/fixtures/engine_scale_lab/README.md": "a9b5ed22f7edb05d3348beb8a1fb8759c5075ddfc794abf99cffaef3f2c93cdc",
+    "tests/fixtures/engine_scale_lab/build.sh": "fd93673ea44d545885a9d33596e9a379a0a200615cdb0eaa324444d194c40337",
+    "tests/fixtures/engine_scale_lab/host_contracts.cpp": "3c495b0d8f6b68ae1b08f84c2552e6797924dd14028d64f70661b08031abd277",
+    "tests/fixtures/engine_scale_lab/main.cpp": "2a37dc1bbcbcc8d763f2a2b19239ed4fc8585810cccc5cad43678af7d5d109fc",
+    "tests/fixtures/engine_scale_lab/run_matrix.py": "117333ea51fe730cc10aa0aaeb432f3ab89f66e2ad440eb8014653cf52a0ce9a",
+    "tests/fixtures/engine_scale_lab/shaders/common.glsl": "df82422b9598f4a0e80cb20123230c0a2213bb792f15123cbc5240c7a1cfae2a",
+    "tests/fixtures/engine_scale_lab/shaders/cull.comp": "bf4539c055e3ff5c77cc35b842759035c34a4afde47abc522ed0b9021186b2c2",
+    "tests/fixtures/engine_scale_lab/shaders/finalize.comp": "5d57b68c15e32aeebd62db20927ae6e799600dccc20a3817b5e2267395e8f846",
+    "tests/fixtures/engine_scale_lab/shaders/hiz.comp": "59b7a43b26609810eed4bd27c5ef05f5e1a2946d6d05024c6536c91fdf3a2271",
+    "tests/fixtures/engine_scale_lab/shaders/scene.frag": "6cf9f024d53b124438945958f26ba7b82020c33087aa54f1e90e6e600104d8ba",
+    "tests/fixtures/engine_scale_lab/shaders/scene.vert": "06ffb163471e8c6a3041b1c3e1067edc882f7b7f6fb3a2e061a297bc25a7f923",
+    "tests/fixtures/engine_scale_lab/shaders/update.comp": "26570cfb0e8ab151648d93f22e02edc5939b4799e2bec1530f6511b014468ac2",
+    "tests/fixtures/engine_scale_lab/verify_spirv.py": "a896f87e0b4b8547769883b1dfbc33e211ee3bb1a4157e69599cbceba11ff6eb",
+    "tests/fixtures/simulation_lab/README.md": "0f2c27ff6fe45bc6b89080f4d841bddba09c7a7db256567edd17011b87394dc7",
+    "tests/fixtures/simulation_lab/build.sh": "763ee5d93e7ffd1737c3006c585e8d19d7a6b7281f612e84d96825fc45495a7b",
+    "tests/fixtures/simulation_lab/build_manifest.py": "e865bb2c56e192cf557a73e9a6c9d75a25da5e85d1b316a912f6f742ab2ff0bd",
+    "tests/fixtures/simulation_lab/main.cpp": "9a8066374bd8d0da9bf25f99e4d4eb5700a68b836e056f8f93d446e3f3cf5a3f",
+    "tests/fixtures/simulation_lab/run_matrix.py": "222e3e93287d203fbcb49c989074fd8a9823f373aad202634b186f9a8d6a00a0",
+    "tests/fixtures/simulation_lab/shaders/bounds.comp": "936db921086eb94a6b21e51a9f2034f44ed874a54b7328438bfffd42a746d61e",
+    "tests/fixtures/simulation_lab/shaders/collision.comp": "94ca90c7211769c38528e70221f2c537ee7793f02230f0a4f3f9ea6662936651",
+    "tests/fixtures/simulation_lab/shaders/gather.comp": "3210344d1845aead947c30847d95095cbf5916c4bd743206d1b006d803cbd6f5",
+    "tests/fixtures/simulation_lab/shaders/inject.comp": "5f0f10724bd39f415158fea7bc813d6ec799dc3329dfea808860655efba48b91",
+    "tests/fixtures/simulation_lab/shaders/integrate.comp": "872cf018cb8b791ce539068be7f4a4266a0e65cc6edaae1e08c9eb993e170735",
+    "tests/fixtures/simulation_lab/shaders/publish.comp": "fd1adaee07c49d0f2c8e904c5490ed415a3d6dcdbe5c217779df87dbaea19760",
+    "tests/fixtures/simulation_lab/shaders/reset_lambda.comp": "fadc041a8092d304d334ee9e85d1019532d07511835e31646d596e62fd594361",
+    "tests/fixtures/simulation_lab/shaders/scene.frag": "6cf9f024d53b124438945958f26ba7b82020c33087aa54f1e90e6e600104d8ba",
+    "tests/fixtures/simulation_lab/shaders/scene.vert": "026fbd598f59104f2a5ee5dc994b83a54bd294e7328ef5193f4e8216b436838a",
+    "tests/fixtures/simulation_lab/shaders/sim.glsl": "90695bd04360b27a4347eb11481b01856e974d65f51f0b6ef5b069c4b1848e54",
+    "tests/fixtures/simulation_lab/shaders/solve.comp": "0ab725d7e0461266fc73e4fdd1f66894f9e6df5db1b9f89757def8085ba3f691",
+    "tests/fixtures/simulation_lab/shaders/wave.comp": "2a39edd87843de33a557476e28bd8520d83426b5a1e17b388c62d6fb6ed082bb",
+    "tests/fixtures/simulation_lab/verify_artifacts.py": "d88faf23c6d0d2d39e1dc1ca5b6c66f2052e2ffd77f4cf76ad4d9d3586e11200",
+    "tools/simulation_choice19.py": "30ec6227e0ba3fe99bdc05bba96f1b0687dff02beb66be0dcac11f743df006b2"
+  },
+  "tools": {
+    "build_python": "889c603f0d17cb54060951bcf4c4f9b8c9ebd9e52b392c70209bbb9755d797d9",
+    "cxx": "6b3696e4dcb85e1c949c732a02befa50e3983ecf94ce7e8e58d9d503b954b79d",
+    "env": "eb1c64bbc9908afcdf8cb48524f17112d8dd76a249f80dee2f01da14747b3b6e",
+    "glslang": "3a4fb1feabbe3f2a61a42f067d67c0d2ee6a982ea863fb02c66b7aa271f830eb",
+    "icd": "9a6a0d616f3f2efc2d227f89653047e5330ff634b0519ffbf1b2c60dc1c0e0e7",
+    "icd_library": "0004262f4dc95585492d55925face67a79a7c869ad8760b42ae01bd0bdb807a2",
+    "layer_library": "25002892d69ff2719fdd7a92a454a15c2d271a17186bc70b625aafaf2df49a05",
+    "layer_manifest": "b8b48ce0b6971af875f67cc8bf2634c71e2b7742ed6dc4b9f5ebc20046ed2c08",
+    "ldd": "7bcd61a279946cb376d36fd91f4938ab4f4aba48e793c652a9797319d23f8dd3",
+    "loader": "bbd6827e9fe418e9b9740aea57ce6d21fcea03e9876b4b17835c5a9c58f849fc",
+    "python": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+    "shell": "a6f559e00b69a4aa4d8cb607be18d9386c5aee55c509e2c075549dcf00e00fc7",
+    "spirv_val": "f386e67676bc134802b6bfec6d96fff0f9437d0f60e4c97ee0afa59ab4f1c4ea"
+  },
+  "headers_digest": "e80145f4b521de5a3bc3e770de19270591a6845943f0a99de3bc715fe2b44932",
+  "quality_metrics": {
+    "cloth": {
+      "colored": {
+        "max_absolute_residual": 0.5574095198745602,
+        "max_cpu_match_error": 1.1620781203980357e-06,
+        "max_penetration": 1.2432045448651508e-08,
+        "ticks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "jacobi": {
+        "max_absolute_residual": 0.5666731844813608,
+        "max_cpu_match_error": 6.70281692594088e-07,
+        "max_penetration": 1.5013964654864154e-08,
+        "ticks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    },
+    "rope": {
+      "colored": {
+        "max_absolute_residual": 5.46698254187683e-07,
+        "max_cpu_match_error": 5.7769105832328194e-08,
+        "max_penetration": 0.0,
+        "ticks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      },
+      "jacobi": {
+        "max_absolute_residual": 5.46698254187683e-07,
+        "max_cpu_match_error": 4.7534108149616117e-08,
+        "max_penetration": 0.0,
+        "ticks": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ]
+      }
+    }
+  },
+  "negative_controls": {
+    "duplicate_edge": "REJECTED_HOST_CORRUPTION",
+    "duplicate_snapshot": "REJECTED_HOST_CORRUPTION",
+    "gpu_tamper": "REJECTED_HOST_CORRUPTION",
+    "missing_edge": "REJECTED_HOST_CORRUPTION",
+    "missing_snapshot": "REJECTED_HOST_CORRUPTION",
+    "residual_tamper": "REJECTED_HOST_CORRUPTION",
+    "stale_generation": "REJECTED_HOST_CORRUPTION"
+  },
+  "limitations": [
+    "Illustrative policy residual1 is not a product recommendation or original-plan acceptance target.",
+    "C++ CPU per-algorithm trajectories, not Python full-trajectory recalculation.",
+    "52 draw coverage checks are not golden image/physical/mobile performance."
+  ]
+}

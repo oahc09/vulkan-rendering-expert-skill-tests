@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "validation_enabled": true,
+  "positive_draws": 3,
+  "positive_renderpasses": 1,
+  "positive_submissions": 1,
+  "active_color_attachments": 3,
+  "numeric": {
+    "max_error": 2.26497650079871e-08,
+    "tolerance": 1e-06,
+    "roi_pixels": {
+      "pre_only": 2705,
+      "overlay_visible": 160,
+      "post_over_overlay": 8,
+      "post_without_overlay": 312
+    }
+  },
+  "negatives": [
+    {
+      "mode": "pipeline",
+      "max_error": 0.17200000405311583,
+      "changed_pixels": 320
+    },
+    {
+      "mode": "descriptor",
+      "max_error": 0.56,
+      "changed_pixels": 320
+    },
+    {
+      "mode": "vertex",
+      "max_error": 0.4000000190734863,
+      "changed_pixels": 140
+    },
+    {
+      "mode": "viewport",
+      "max_error": 0.4000000190734863,
+      "changed_pixels": 124
+    },
+    {
+      "mode": "scissor",
+      "max_error": 0.4000000190734863,
+      "changed_pixels": 304
+    },
+    {
+      "mode": "all",
+      "max_error": 0.4000000190734863,
+      "changed_pixels": 480
+    }
+  ],
+  "scope": "synthetic coverage, explicit compatible state handoff, single software Vulkan pass; no depth or general renderer certification"
+}

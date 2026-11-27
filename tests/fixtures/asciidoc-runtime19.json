@@ -1,0 +1,250 @@
+{
+  "origin": "Debian official signed snapshot 20261103T013555Z",
+  "keyring_sha256": "506b815cbb32d9b6066b4a2aa524071e071761e7e7f68c3ac74f3061ba852017",
+  "signed_releases": [
+    {
+      "file": "snapshot.debian.org_archive_debian-security_20261103T013555Z_dists_trixie-security_InRelease",
+      "sha256": "a8e217418cb4c361b5c3a3eb76804f78633491e995b18735f3862aaaece070b4",
+      "signature_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "snapshot.debian.org_archive_debian_20261103T013555Z_dists_trixie-updates_InRelease",
+      "sha256": "bdbf565ac25279597518e1a51fcef6b3f2bb65f915788566edcffee9ba6efe99",
+      "signature_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "snapshot.debian.org_archive_debian_20261103T013555Z_dists_trixie_InRelease",
+      "sha256": "0584fba32e13e0ab8285fb16c27adea1ec03a73669c18702821094fd6ca86675",
+      "signature_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "packages": [
+    {
+      "package": "asciidoctor",
+      "version": "2.0.23-1",
+      "deb": "asciidoctor_2.0.23-1_all.deb",
+      "sha256": "259834037a915d97c898b90df85eeab8fc8adf8cc54497d4e237d2deff4692f7",
+      "metadata_sha256": "b88b38672650101757b0bbcbf4e4bb89a2b517252529dd2d3cff552d59a5ed07"
+    },
+    {
+      "package": "ca-certificates",
+      "version": "20250419+deb13u1",
+      "deb": "ca-certificates_20250419+deb13u1_all.deb",
+      "sha256": "c10585ac22c7f617a73d394eea29ba71d0356f350ae973b19043d1b017f80f54",
+      "metadata_sha256": "68c92a57683e345961b94265f2735dc8ac7e8b04dbcfb66c9794629ad1db66e8"
+    },
+    {
+      "package": "debconf",
+      "version": "1.5.91",
+      "deb": "debconf_1.5.91_all.deb",
+      "sha256": "1ddc7e6c5925f748eefb7ca811d98e049f18c158bb21fbc7e122262ce6011e49",
+      "metadata_sha256": "fcedc427ad41b4d8ad4abce1936156de0c5227a9414f7b4d7d7f5e57634b5fc4"
+    },
+    {
+      "package": "gcc-14-base",
+      "version": "14.2.0-19",
+      "deb": "gcc-14-base_14.2.0-19_amd64.deb",
+      "sha256": "5b6825de4263824b78c4c51f6476414f3b4e89c2ab63e81dc8b9b5501e867cf6",
+      "metadata_sha256": "4ac42cc0c135d17c12171c141f9c188ae48562afdb235f44280ac60b43107a93"
+    },
+    {
+      "package": "libc6",
+      "version": "2.41-12+deb13u4",
+      "deb": "libc6_2.41-12+deb13u4_amd64.deb",
+      "sha256": "967aa62605721081c3eb2a17650611a792aa802d76a6511d1840242623d204c9",
+      "metadata_sha256": "e51c5b3117a528496019e2d9364b723e3380cb3c0bab9477e21b5dd13e12e1d2"
+    },
+    {
+      "package": "libcrypt1",
+      "version": "1:4.4.38-1",
+      "deb": "libcrypt1_1%3a4.4.38-1_amd64.deb",
+      "sha256": "0ebc144d662e3197982d1bf3a7b8b35ca845e54c68811de0328b1f0d7c67585c",
+      "metadata_sha256": "be024255c12f94c8b15106e4793b0c72835946468e7a5214574a97ca2c5f899e"
+    },
+    {
+      "package": "libffi8",
+      "version": "3.4.8-2",
+      "deb": "libffi8_3.4.8-2_amd64.deb",
+      "sha256": "0ebdc340de33333639c3c63874cd4b15ac2e83dfa1ef3053b7eefaf4919f4f68",
+      "metadata_sha256": "0b047c3ab33e9c7711850cf48a3d301300280a30d47bd6ab6abed18e7eadd24d"
+    },
+    {
+      "package": "libgcc-s1",
+      "version": "14.2.0-19",
+      "deb": "libgcc-s1_14.2.0-19_amd64.deb",
+      "sha256": "3c71917b490d1a17aed43196a2787a256ecf060526cdb20216a74bedc061b150",
+      "metadata_sha256": "d8a5f9db6080083174d4d8c24a00db2381c692b138f926935abf8f6f10438f3e"
+    },
+    {
+      "package": "libgmp10",
+      "version": "2:6.3.0+dfsg-3",
+      "deb": "libgmp10_2%3a6.3.0+dfsg-3_amd64.deb",
+      "sha256": "d0d0265eb01770f17afd0f7c8c0622f80479dcfbbe13653a0debeec61464e622",
+      "metadata_sha256": "f3be8574960ebc48cf0059ee839f07ac3a2a9b699f3fc8ff06e2fd80f1b8d359"
+    },
+    {
+      "package": "libruby3.3",
+      "version": "3.3.8-2",
+      "deb": "libruby3.3_3.3.8-2_amd64.deb",
+      "sha256": "033d7f7359da6353d29e5cb87ef411357d3841c02fd7d1089897653fec665289",
+      "metadata_sha256": "79ffe04ab1e6f32c9944699fd8e2d6a770f8a39c1439e0daf643131a1c3b6d32"
+    },
+    {
+      "package": "libruby",
+      "version": "1:3.3+b1",
+      "deb": "libruby_1%3a3.3+b1_amd64.deb",
+      "sha256": "3548d8ef339f73c59c556f2c397b3222cecb56d726e61e9d6d1eb8495e2e4179",
+      "metadata_sha256": "1f899ef93c095b1d1472d28699d2c9abf08ac251c9904360e7cbf9ffa4e80e8c"
+    },
+    {
+      "package": "libssl3t64",
+      "version": "3.5.7-1~deb13u3",
+      "deb": "libssl3t64_3.5.7-1~deb13u3_amd64.deb",
+      "sha256": "ff16bc048bcd7d1b256094450b79c77947d8e76fe2a24bd99b91021d591fa074",
+      "metadata_sha256": "0a6e822877cdc9b6a1ecfe62f73604c7848a80b47e52bcb6a339a16538e66546"
+    },
+    {
+      "package": "libyaml-0-2",
+      "version": "0.2.5-2",
+      "deb": "libyaml-0-2_0.2.5-2_amd64.deb",
+      "sha256": "8a5475402801de445a17887bb72d03613565a6a84b216b4b606d1462c613eeb2",
+      "metadata_sha256": "04d6d0d18b840ba722dbbbe2251fd7243852d45090c23382766f958d5c5ecce5"
+    },
+    {
+      "package": "libzstd1",
+      "version": "1.5.7+dfsg-1",
+      "deb": "libzstd1_1.5.7+dfsg-1_amd64.deb",
+      "sha256": "2f6a2aeacfc925eba8b00ac9139bc4bfccf8cacb09eb93de067074b26948eef9",
+      "metadata_sha256": "7ee56439457633966294275e0c89a7501b3f601c752d5be9f652b56a11ab60d2"
+    },
+    {
+      "package": "node-escape-string-regexp",
+      "version": "4.0.0-2",
+      "deb": "node-escape-string-regexp_4.0.0-2_all.deb",
+      "sha256": "92319d456de35527be3314c891b2f980cef11723929f53d24ab0cb3da19bdfaf",
+      "metadata_sha256": "f3c6336492acd0880c59d910b61cc29aa068afb46ee9f89332cfc4b12dfec15b"
+    },
+    {
+      "package": "node-he",
+      "version": "1.2.0-4",
+      "deb": "node-he_1.2.0-4_all.deb",
+      "sha256": "315529c6991a532ec6581493f09cbce9eb4a1fe253dfb6083da01c936689304c",
+      "metadata_sha256": "b3f0bd782c5fc027ec8dc54bbcc0cfdd1822eab28a1b05aaaa57ba71d93667d8"
+    },
+    {
+      "package": "openssl-provider-legacy",
+      "version": "3.5.7-1~deb13u3",
+      "deb": "openssl-provider-legacy_3.5.7-1~deb13u3_amd64.deb",
+      "sha256": "c12e0266c4780749a4702b8959ac979689f4182e18eed85a8a5eb90ed0e16eab",
+      "metadata_sha256": "ecf0b9948eb094a99adb0186ba7fc84c17e127932646c3f0554cf26cf441cea6"
+    },
+    {
+      "package": "openssl",
+      "version": "3.5.7-1~deb13u3",
+      "deb": "openssl_3.5.7-1~deb13u3_amd64.deb",
+      "sha256": "43a9cbcf2a8a0e1f0a1c3f5a33ee1f56b269690e7a2129f2b2d0582e789589d7",
+      "metadata_sha256": "d8f92d274f041bdd3f2ecae5e56d98302077cfa7da703c6c219db599778a1e69"
+    },
+    {
+      "package": "rake",
+      "version": "13.2.1-1",
+      "deb": "rake_13.2.1-1_all.deb",
+      "sha256": "6080dff69fe4fa4f1419d2326a2004e21cc696b37a03c0c96e5e8c42c3e9e477",
+      "metadata_sha256": "dde65d959997f11e13e9cce734b7d94ed159b9805a74b784da6a9cfdfbb5f356"
+    },
+    {
+      "package": "ruby-asciidoctor",
+      "version": "2.0.23-1",
+      "deb": "ruby-asciidoctor_2.0.23-1_all.deb",
+      "sha256": "d3f069fbdb6da7da2a86e8be7b6744b22d89a2dd4474a78c6daff0f41fc3f083",
+      "metadata_sha256": "c436b2142d0e399986606227d2a8873a43213a1fd672572bd04b675d49e7b94b"
+    },
+    {
+      "package": "ruby-csv",
+      "version": "3.3.4-1",
+      "deb": "ruby-csv_3.3.4-1_all.deb",
+      "sha256": "6367f942bcffb869ba78996a2be4b4f12c93ad2b345f5750a3112a1127293125",
+      "metadata_sha256": "1a307060e17bc0fb2dfb54a96fb759bd535431fcc80e356002e4c8bbfe7e6635"
+    },
+    {
+      "package": "ruby-did-you-mean",
+      "version": "1.6.3-2",
+      "deb": "ruby-did-you-mean_1.6.3-2_all.deb",
+      "sha256": "8c193ed0b6fa3a803b7643dd840cab1a6d1e665bcc212accce8a8ea1deeee615",
+      "metadata_sha256": "5822b61f779335f10afd81de44ab872775e15eeda5090e79262902535d7abfbb"
+    },
+    {
+      "package": "ruby-net-telnet",
+      "version": "0.2.0-1",
+      "deb": "ruby-net-telnet_0.2.0-1_all.deb",
+      "sha256": "e8a5b95e359894fbca0fa1cc70cdd349c125f43e883775491735a44ced957256",
+      "metadata_sha256": "2c3d0fec5729e8b68d39f624ab017410bb18cb6e78f8840fcdd6dd76366b08ae"
+    },
+    {
+      "package": "ruby-rouge",
+      "version": "4.5.1-1",
+      "deb": "ruby-rouge_4.5.1-1_all.deb",
+      "sha256": "c1121ed45f9fd7ff9d83970b402a82b21a9a7757f8e34429579d484478fe06c2",
+      "metadata_sha256": "e3f165957e75eef20d853a4254cddb0f01e161a44bfca9ab1ea6f2fdd9b4bb96"
+    },
+    {
+      "package": "ruby-ruby2-keywords",
+      "version": "0.0.5-1",
+      "deb": "ruby-ruby2-keywords_0.0.5-1_all.deb",
+      "sha256": "a2806f226a72c5be7cfd33eb35fbcf1aa33c136d48802af7fcd5897f54417b8b",
+      "metadata_sha256": "59804f403e9a28468f1c809f7e72273f8dd8590f225c6e4594703e11ada5dd92"
+    },
+    {
+      "package": "ruby-rubygems",
+      "version": "3.6.7-2",
+      "deb": "ruby-rubygems_3.6.7-2_all.deb",
+      "sha256": "a585dd934ffc58516c468cc06fe10141d1383f96bf1113a25397f0ac043253a1",
+      "metadata_sha256": "6cb62362946aa4ca80754e7b8fa451d2f09ca5359fc8f9b4f964f81e76a3cae1"
+    },
+    {
+      "package": "ruby-webrick",
+      "version": "1.9.1-1",
+      "deb": "ruby-webrick_1.9.1-1_all.deb",
+      "sha256": "e8eff1ea6cb255ad89e4820db763c23facdad634615cab08a8fe883d9640ab7b",
+      "metadata_sha256": "ae410f8f4c5917fba3066a4676ce883ee56eeb2b5d6a4accc8813da45cf7d388"
+    },
+    {
+      "package": "ruby-xmlrpc",
+      "version": "0.3.3-2",
+      "deb": "ruby-xmlrpc_0.3.3-2_all.deb",
+      "sha256": "c2735a4c93ea68e453108c3524506796663a74975df63fc3cffb2847e3c30b0b",
+      "metadata_sha256": "a186395039dfbbc786dfbbdc8a86d4c9c514007f8e1f690648175ac4517ecbbc"
+    },
+    {
+      "package": "ruby3.3",
+      "version": "3.3.8-2",
+      "deb": "ruby3.3_3.3.8-2_amd64.deb",
+      "sha256": "10798ffe8edc86d7f9491655a115049a7a77dfbef5dc909dc13803cbb6c47f9b",
+      "metadata_sha256": "deac88004c173993fcd260ad73ea7bafc27524bd00930f1e3721c3ad27cdab5e"
+    },
+    {
+      "package": "ruby",
+      "version": "1:3.3+b1",
+      "deb": "ruby_1%3a3.3+b1_amd64.deb",
+      "sha256": "3d67e2079ac7e1842f4abecfa2ac8263a6761daa91f06559d6d2d1f897d0576d",
+      "metadata_sha256": "6a1bc75ed5431097a63ff5ebb6d37a5bf7da97392ff4bf22fb1717b05ec3ead2"
+    },
+    {
+      "package": "rubygems-integration",
+      "version": "1.19",
+      "deb": "rubygems-integration_1.19_all.deb",
+      "sha256": "ca8c600505bd4c5046b2c60fbf964d6f4eb08db86eb77526a3de0315f1222afe",
+      "metadata_sha256": "09d32fcbfc53888d9d8ae3777a4ac57ced1e9dac975dd23ef489468f461ee4bb"
+    },
+    {
+      "package": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "deb": "zlib1g_1%3a1.3.dfsg+really1.3.1-1+b1_amd64.deb",
+      "sha256": "015be740d6236ad114582dea500c1d907f29e16d6db00566ca32fb68d71ac90d",
+      "metadata_sha256": "d5bea83c27abe77b4e3a062d3eb0eecdb9556cd5ff34e20817822518f4001dc0"
+    }
+  ],
+  "installation": "download-only; private extraction; no package scripts/system installation",
+  "runtime_tree_sha256": "e671705e714c0ccbd9113a18a97c8d22a18d0af4326dc4108940b72e3bb2e709",
+  "scope": "Package authentication receipt; not all packages are executed. Runtime uses only private libruby plus system-resolved dependencies, not extracted libc/loader."
+}

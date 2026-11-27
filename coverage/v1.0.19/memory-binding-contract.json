@@ -1,0 +1,438 @@
+{
+  "case_count": 26,
+  "evidence_kind": "CALLER_FACTS_HOST_CONTROLS_NOT_GPU",
+  "implementation_sha256": {
+    "checks19/run_memory_binding_contracts.py": "0002dcb76851a79c9ea31ff8eeeeda1dc4ca1a8211c8e466752ff94172f3d116",
+    "tools/diagnostic_spec19.py": "6f49d7008d47cf0b70a43e6d343ec315134aff910a48eb26fcd40a1dd5534f7e",
+    "tools/memory_binding_contract19.py": "8502442043761a11a09c6929d9742ba5f3eba8741a809e9e4618d6a08d71868a",
+    "tools/memory_binding_prose19.py": "d6eeab16ca1148331a12364e7ba0bce04c755cf983c671bcd56568c3e7a466dd"
+  },
+  "prose": {
+    "limits": [
+      "Raw bounded sections, not evaluated includes/outer conditional applicability.",
+      "Separate from fixed309 VUID coordinates; not full normative closure."
+    ],
+    "slices": [
+      {
+        "bytes": 15063,
+        "conditional_directives": [
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "endif::VK_ANDROID_external_memory_android_hardware_buffer[]",
+          "ifdef::VK_KHR_external_memory_win32,VK_EXT_external_memory_metal[]",
+          "ifdef::VK_KHR_external_memory_win32[]",
+          "endif::VK_KHR_external_memory_win32[]",
+          "ifdef::VK_EXT_external_memory_metal[]",
+          "endif::VK_EXT_external_memory_metal[]",
+          "endif::VK_KHR_external_memory_win32,VK_EXT_external_memory_metal[]",
+          "ifdef::VK_KHR_get_memory_requirements2[]",
+          "endif::VK_KHR_get_memory_requirements2[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifndef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifndef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "ifdef::VK_EXT_image_tiling_control[]",
+          "endif::VK_EXT_image_tiling_control[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "ifdef::VK_BASE_VERSION_1_1[]",
+          "endif::VK_BASE_VERSION_1_1[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "ifdef::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+          "endif::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_1[]",
+          "endif::VK_BASE_VERSION_1_1[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_device_group[]",
+          "ifdef::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+          "endif::VK_BASE_VERSION_1_4,VK_EXT_host_image_copy[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_bind_memory2[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_bind_memory2[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_get_memory_requirements2[]"
+        ],
+        "line_end": 10792,
+        "line_start": 10504,
+        "marker": "[open,refpage='VkMemoryRequirements',",
+        "sha256": "16fff14decd2146d5a52810efc1524fe1c45cd058b144e024e34496ab7217b0c",
+        "source": "resources"
+      },
+      {
+        "bytes": 6014,
+        "conditional_directives": [
+          "ifdef::VK_KHR_dedicated_allocation[]",
+          "endif::VK_KHR_dedicated_allocation[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "endif::VK_BASE_VERSION_1_3,VK_KHR_maintenance4[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifndef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory[]",
+          "ifdef::VK_EXT_image_drm_format_modifier[]",
+          "endif::VK_EXT_image_drm_format_modifier[]",
+          "ifdef::VK_BASE_VERSION_1_1,VK_KHR_external_memory,VK_EXT_image_drm_format_modifier[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_external_memory,VK_EXT_image_drm_format_modifier[]",
+          "ifdef::VK_ARM_tensors[]",
+          "ifdef::VK_ARM_tensor_controls[]",
+          "endif::VK_ARM_tensor_controls[]",
+          "ifdef::VK_ARM_tensor_controls[]",
+          "endif::VK_ARM_tensor_controls[]",
+          "endif::VK_ARM_tensors[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]"
+        ],
+        "line_end": 11291,
+        "line_start": 11170,
+        "marker": "[open,refpage='VkMemoryDedicatedRequirements',",
+        "sha256": "e9e7a4306479b216b1d86a07e3da4b58a052aa2dc911cacdad57ab90f3cb72cb",
+        "source": "resources"
+      },
+      {
+        "bytes": 2464,
+        "conditional_directives": [
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]",
+          "ifdef::VK_ARM_tensors[]",
+          "endif::VK_ARM_tensors[]"
+        ],
+        "line_end": 12293,
+        "line_start": 12224,
+        "marker": "[[resources-bufferimagegranularity]]",
+        "sha256": "9c88b66fa9bf452f289ad5b862c786320b329e53d6766815b2acc4ef95d5f32e",
+        "source": "resources"
+      },
+      {
+        "bytes": 7060,
+        "conditional_directives": [
+          "ifdef::VK_KHR_dedicated_allocation[]",
+          "endif::VK_KHR_dedicated_allocation[]",
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer[Android Hardware Buffer]",
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer+VK_QNX_external_memory_screen_buffer[or an imported]",
+          "ifdef::VK_QNX_external_memory_screen_buffer[QNX Screen buffer]",
+          "endif::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer[Android Hardware Buffer]",
+          "ifdef::VK_ANDROID_external_memory_android_hardware_buffer+VK_QNX_external_memory_screen_buffer[or an imported]",
+          "ifdef::VK_QNX_external_memory_screen_buffer[QNX Screen buffer]",
+          "endif::VK_ANDROID_external_memory_android_hardware_buffer,VK_QNX_external_memory_screen_buffer[]",
+          "ifdef::VK_KHR_external_memory_win32[]",
+          "endif::VK_KHR_external_memory_win32[]",
+          "ifdef::VK_KHR_external_memory_fd[]",
+          "endif::VK_KHR_external_memory_fd[]",
+          "ifdef::VK_KHR_sampler_ycbcr_conversion[]",
+          "endif::VK_KHR_sampler_ycbcr_conversion[]",
+          "ifdef::VK_FUCHSIA_external_memory[]",
+          "endif::VK_FUCHSIA_external_memory[]",
+          "endif::VK_BASE_VERSION_1_1,VK_KHR_dedicated_allocation[]",
+          "ifdef::VK_QCOM_tile_memory_heap[]"
+        ],
+        "line_end": 2101,
+        "line_start": 1975,
+        "marker": "[open,refpage='VkMemoryDedicatedAllocateInfo',",
+        "sha256": "6870da015a4cdc9d7594ee64dc8d34dd2eb19fd596ec59165e3608a5492efd9b",
+        "source": "memory"
+      },
+      {
+        "bytes": 2197,
+        "conditional_directives": [
+          "endif::VKSC_VERSION_1_0[]"
+        ],
+        "line_end": 5034,
+        "line_start": 4974,
+        "marker": "[open,refpage='vkFreeMemory',",
+        "sha256": "f557327c651cc39af681015da93fe61eb475abbf141cb3915f715aa413e14739",
+        "source": "memory"
+      }
+    ],
+    "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "sources": {
+      "memory": {
+        "api_version": "1.4.368",
+        "license": "CC-BY-4.0",
+        "path": "chapters/memory.adoc",
+        "sha256": "a7f291992b45e3c783afd7f379361a1b20471c0d0675267b841e24395c3c593d"
+      },
+      "resources": {
+        "api_version": "1.4.368",
+        "license": "CC-BY-4.0",
+        "path": "chapters/resources.adoc",
+        "sha256": "de7c50943e022c508b369a605ce05b20cc7376274d1e4ecb1d67234698732a7a"
+      }
+    },
+    "status": "EXACT_RAW_PROSE_SLICE_MAP"
+  },
+  "release_status": "BLOCKED",
+  "semantic_completion": "UNKNOWN_NOT_INFERRED",
+  "status": "SOURCE_PAIRED_MEMORY_BINDING_HOST_CONTROLS",
+  "vuid_coordinates": [
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be less than the size of <code>memory</code>",
+      "vuid": "VUID-vkBindBufferMemory-memoryOffset-01031"
+    },
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>memory</code> <strong class=\"purple\">must</strong> have been allocated using one of the memory types allowed in the <code>memoryTypeBits</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <code>vkGetBufferMemoryRequirements</code> with <code>buffer</code>",
+      "vuid": "VUID-vkBindBufferMemory-memory-01035"
+    },
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be an integer multiple of the <code>alignment</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <code>vkGetBufferMemoryRequirements</code> with <code>buffer</code>",
+      "vuid": "VUID-vkBindBufferMemory-memoryOffset-01036"
+    },
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "The <code>size</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <code>vkGetBufferMemoryRequirements</code> with <code>buffer</code> <strong class=\"purple\">must</strong> be less than or equal to the size of <code>memory</code> minus <code>memoryOffset</code>",
+      "vuid": "VUID-vkBindBufferMemory-size-01037"
+    },
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>buffer</code> <strong class=\"purple\">must</strong> not have been bound to a memory object",
+      "vuid": "VUID-vkBindBufferMemory-buffer-07459"
+    },
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "If <code>buffer</code> requires a dedicated allocation (as reported by <a href=\"#vkGetBufferMemoryRequirements2\">vkGetBufferMemoryRequirements2</a> in <a href=\"#VkMemoryDedicatedRequirements\">VkMemoryDedicatedRequirements</a>::<code>requiresDedicatedAllocation</code> for <code>buffer</code>), <code>memory</code> <strong class=\"purple\">must</strong> have been allocated with <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>buffer</code> equal to <code>buffer</code>",
+      "vuid": "VUID-vkBindBufferMemory-buffer-01444"
+    },
+    {
+      "api_owner": "vkBindBufferMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "If the <code>VkMemoryAllocateInfo</code> provided when <code>memory</code> was allocated included a <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a> structure in its <code>pNext</code> chain, and <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>buffer</code> was not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, then <code>buffer</code> <strong class=\"purple\">must</strong> equal <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>buffer</code>, and <code>memoryOffset</code> <strong class=\"purple\">must</strong> be zero",
+      "vuid": "VUID-vkBindBufferMemory-memory-01508"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be less than the size of <code>memory</code>",
+      "vuid": "VUID-vkBindImageMemory-memoryOffset-01046"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>memory</code> <strong class=\"purple\">must</strong> have been allocated using one of the memory types allowed in the <code>memoryTypeBits</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <a href=\"#vkGetImageMemoryRequirements\">vkGetImageMemoryRequirements</a> with <code>image</code>",
+      "vuid": "VUID-vkBindImageMemory-memory-01047"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>memoryOffset</code> <strong class=\"purple\">must</strong> be an integer multiple of the <code>alignment</code> member of the <code>VkMemoryRequirements</code> structure returned from a call to <a href=\"#vkGetImageMemoryRequirements\">vkGetImageMemoryRequirements</a> with <code>image</code>",
+      "vuid": "VUID-vkBindImageMemory-memoryOffset-01048"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "The difference of the size of <code>memory</code> and <code>memoryOffset</code> <strong class=\"purple\">must</strong> be greater than or equal to the <code>size</code> member of the <a href=\"#VkMemoryRequirements\">VkMemoryRequirements</a> structure returned from a call to <a href=\"#vkGetImageMemoryRequirements\">vkGetImageMemoryRequirements</a> with the same <code>image</code>",
+      "vuid": "VUID-vkBindImageMemory-size-01049"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "<code>image</code> <strong class=\"purple\">must</strong> not have been bound to a memory object",
+      "vuid": "VUID-vkBindImageMemory-image-07460"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "If <code>image</code> requires a dedicated allocation (as reported by <a href=\"#vkGetImageMemoryRequirements2\">vkGetImageMemoryRequirements2</a> in <a href=\"#VkMemoryDedicatedRequirements\">VkMemoryDedicatedRequirements</a>::<code>requiresDedicatedAllocation</code> for <code>image</code>), <code>memory</code> <strong class=\"purple\">must</strong> have been created with <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>image</code> equal to <code>image</code>",
+      "vuid": "VUID-vkBindImageMemory-image-01445"
+    },
+    {
+      "api_owner": "vkBindImageMemory",
+      "condition_key": "core",
+      "page": "chapters/resources.html",
+      "text_html": "If the <a href=\"#features-dedicatedAllocationImageAliasing\"><code>dedicatedAllocationImageAliasing</code></a> feature is not enabled, and the <code>VkMemoryAllocateInfo</code> provided when <code>memory</code> was allocated included a <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a> structure in its <code>pNext</code> chain, and <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>image</code> was not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>, then <code>image</code> <strong class=\"purple\">must</strong> equal <a href=\"#VkMemoryDedicatedAllocateInfo\">VkMemoryDedicatedAllocateInfo</a>::<code>image</code> and <code>memoryOffset</code> <strong class=\"purple\">must</strong> be zero",
+      "vuid": "VUID-vkBindImageMemory-memory-02628"
+    },
+    {
+      "api_owner": "vkFreeMemory",
+      "condition_key": "core",
+      "page": "chapters/memory.html",
+      "text_html": "All submitted commands that refer to <code>memory</code> (via images or buffers) <strong class=\"purple\">must</strong> have completed execution",
+      "vuid": "VUID-vkFreeMemory-memory-00677"
+    },
+    {
+      "api_owner": "VkMemoryDedicatedAllocateInfo",
+      "condition_key": "core",
+      "page": "chapters/memory.html",
+      "text_html": "If <code>image</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>     and the memory is not an imported Android Hardware Buffer or an imported QNX Screen buffer     , <code>VkMemoryAllocateInfo</code>::<code>allocationSize</code> <strong class=\"purple\">must</strong> equal the     <code>VkMemoryRequirements</code>::<code>size</code> of the image",
+      "vuid": "VUID-VkMemoryDedicatedAllocateInfo-image-02964"
+    },
+    {
+      "api_owner": "VkMemoryDedicatedAllocateInfo",
+      "condition_key": "core",
+      "page": "chapters/memory.html",
+      "text_html": "If <code>buffer</code> is not <a href=\"#VK_NULL_HANDLE\">VK_NULL_HANDLE</a>     and the memory is not an imported Android Hardware Buffer or an imported QNX Screen buffer     , <code>VkMemoryAllocateInfo</code>::<code>allocationSize</code> <strong class=\"purple\">must</strong> equal the     <code>VkMemoryRequirements</code>::<code>size</code> of the buffer",
+      "vuid": "VUID-VkMemoryDedicatedAllocateInfo-buffer-02965"
+    }
+  ],
+  "vuid_source": {
+    "api_version": "1.4.309",
+    "file": "validusage.json",
+    "schema_version": 2,
+    "separate_from_vk_xml_api": "1.4.368",
+    "sha256": "f61afea8ca6097342cae1b65bfab81675ee7fdc2d809403e083329b7d56597a7",
+    "source_commit": "43d153dd7f9f5e8b9f79d26d868c82a82b9ef80b",
+    "source_kind": "official Debian Vulkan headers registry snapshot"
+  },
+  "controls": [
+    {
+      "name": "buffer-valid-requirements",
+      "expected": "BIND_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "buffer-offset",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "buffer-memory_type_index",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "buffer-requirements_size",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "buffer-already_bound",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "buffer-requires_dedicated",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "buffer-prefers-not-required",
+      "expected": "BIND_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "buffer-dedicated-correct",
+      "expected": "BIND_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "buffer-oversized-dedicated-1.4.309",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "buffer-oversized-dedicated-1.4.368",
+      "expected": "DEDICATED_SIZE_CONDITION_SATISFIED"
+    },
+    {
+      "name": "image-valid-requirements",
+      "expected": "BIND_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "image-offset",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "image-memory_type_index",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "image-requirements_size",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "image-already_bound",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "image-requires_dedicated",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "image-prefers-not-required",
+      "expected": "BIND_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "image-dedicated-correct",
+      "expected": "BIND_CONDITIONS_WITHIN_SCOPE"
+    },
+    {
+      "name": "image-oversized-dedicated-1.4.309",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "image-oversized-dedicated-1.4.368",
+      "expected": "DEDICATED_SIZE_CONDITION_SATISFIED"
+    },
+    {
+      "name": "disjoint-same-page-aliasing",
+      "expected": "ALIASING_RISK_NOT_BIND_VUID"
+    },
+    {
+      "name": "page-boundary-not-min-distance",
+      "expected": "MIXED_PAGE_SEPARATION_SATISFIED"
+    },
+    {
+      "name": "not-simultaneous",
+      "expected": "NO_MIXED_SIMULTANEOUS_PAGE_CONDITION"
+    },
+    {
+      "name": "bound-objects-do-not-forbid-free",
+      "expected": "FREE_LIFETIME_OBLIGATIONS_DECLARED"
+    },
+    {
+      "name": "pending-uses-forbid-free",
+      "expected": "REJECTED"
+    },
+    {
+      "name": "future-bound-use-not-proven",
+      "expected": "LIFETIME_OBLIGATIONS_NOT_ESTABLISHED"
+    }
+  ],
+  "report_sha256": "dc7536b564bb3e19aed47c701ef1ea8e7790b100abd79c40b6dc8a4f770e2b45",
+  "cohort": "prepublication exact implementation; not final tests head"
+}

@@ -1,0 +1,210 @@
+{
+  "authority": "FIXED_SOURCE_COHORT_NOT_PER_XREF_SOURCE_LOCATION",
+  "source_commit": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+  "full_spec_html_sha256": "715f636ba42747b0af8b4404b7e7c4a9fc06c3e3ea3b64d0b3199f089c9b75a5",
+  "counts": {
+    "dynamic-state-lifetime": 1873,
+    "dynamic-state-current-value": 2708
+  },
+  "sources": {
+    "chapters/pipelines.adoc": "2375781805093fb79a19fea888f183e99928e7af05af71e95a06b09371f70e62",
+    "chapters/commonvalidity/draw_common.adoc": "52b3d48e51f6595b89fb810907eafab13a65906f20be377e67637ad4670cd39e",
+    "chapters/commonvalidity/draw_vertex_binding.adoc": "a83003c11ed0d4077f51dc3c423b97f1d192507f6f46e08caf640f4eece8350b",
+    "scripts/genRef.py": "9ecf50f4209757d2c89c92958c8b882bf07fb86100aa42e329afb0ab5963f2cf",
+    "Makefile": "62c567ba6933c55b2138301109d1550ba158358625748a03f3925269128f47f2"
+  },
+  "pages": {
+    "vkCmdDraw": {
+      "source_sha256": "bc1022e3356aa6fdd62287b3de8b6fbab9d82ec4afe6a26aab1d03ef7ff515a1",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawClusterHUAWEI": {
+      "source_sha256": "590b0e8912dd2ebf5bbb81935614c4f80c7604532ad492ebe307dc010243b679",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawClusterIndirectHUAWEI": {
+      "source_sha256": "893b2dbb0726713a1fa4181bda5a5aef7ecd94fe0cffc3fedc87bee23a6cdd34",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawIndexed": {
+      "source_sha256": "e06ceec6664fb8e403623d675fd528bddd6daae82348e665d477f7befde272ea",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndexedIndirect": {
+      "source_sha256": "d595d29c000d55810c440c26fd10f723589b0fdac219c5bdaa96293290b8b75c",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndexedIndirect2KHR": {
+      "source_sha256": "c7446bf98afcf637fec16fb1f5ef389a966448cefd2eaa3fbc52a765b5f5d89d",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndexedIndirectCount": {
+      "source_sha256": "4ca207a5d72f188d25614538a563620b742b08a50e92cf3db134c9d37e629dc6",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndexedIndirectCount2KHR": {
+      "source_sha256": "0bfaa3f2d9ec0a925a16d6cb2b8f633d44b7f44295ee82847150833fc5d13186",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndirect": {
+      "source_sha256": "80312eb1b79543614ae1630295586462f5fb67d8144a5f16b76e4aab047b0ce8",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndirect2KHR": {
+      "source_sha256": "e9a2ca986326b1be627291bfa8331570ff98cf56568b33954ebb1f7b2afd2a9f",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndirectByteCount2EXT": {
+      "source_sha256": "338894cae32e4b91f621d669c693d623a32db1240daa45f78c90bf1434ff665c",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndirectByteCountEXT": {
+      "source_sha256": "fd1330a28cdd843f4cb2add38959554d5f871426a3e01b383d8d2aa8acd8c63c",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndirectCount": {
+      "source_sha256": "9216e23e82bbdc130260ba1c259b242f9792db36ffc8391e8f5e774ec6676148",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawIndirectCount2KHR": {
+      "source_sha256": "78a2c19ae81ffee1d768add726920d659af0eb7f9c76a937ab0595114916120c",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawMeshTasksEXT": {
+      "source_sha256": "34642f9deb900bd0b45e965a7354199e3cad32a259cc8c9fe57298aad9145756",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksIndirect2EXT": {
+      "source_sha256": "cd972ea80c8aeaae10e18417333d7dfe19e7365de2bce94a115c01248ca9e361",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksIndirectCount2EXT": {
+      "source_sha256": "7042793b9518c9ef61633e874f701d560e79e2d284dd6035d0ffbe773f51cd8a",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksIndirectCountEXT": {
+      "source_sha256": "08fdaade6cb6c9aafbe26bd0ae86cd8af609f3619a2170131acccec6bf6c83d9",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksIndirectCountNV": {
+      "source_sha256": "db98bbc12718ad487be2570d570f467589caad4aaffee15ca2aa36b592b58da4",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksIndirectEXT": {
+      "source_sha256": "13575eae6a2da0276c67ede66e6950890d43f155689e6fc9dca66eec4e5cab44",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksIndirectNV": {
+      "source_sha256": "07ccd3de29ac6206280ffdf1e8728f2b55d425ebf9e5e255dc53ef2fd05cd289",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMeshTasksNV": {
+      "source_sha256": "3f7d4eaf22d1bbc2d46678ae513b1b0f66b7342619f99ce921e444eb24cbe7e7",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdDrawMultiEXT": {
+      "source_sha256": "adb10407439b0dd927539874fd81f77c7ccd189f938686cd973e9254974b71e4",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdDrawMultiIndexedEXT": {
+      "source_sha256": "03dba5855c28e6eef48ac41355278b8b8499b84ac831704989f94f825897c06a",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    },
+    "vkCmdExecuteGeneratedCommandsEXT": {
+      "source_sha256": "4f02a58091f57e6fc3bd6f4993bc81a2ab0c1f80bd551c13756a76e1784a051c",
+      "counts": {
+        "dynamic-state-lifetime": 68,
+        "dynamic-state-current-value": 103
+      }
+    },
+    "vkCmdExecuteGeneratedCommandsNV": {
+      "source_sha256": "295d5fe48aa35065f1f642485ffa8ea2e20bd770c751da5712cdca15ee5ca0ce",
+      "counts": {
+        "dynamic-state-lifetime": 75,
+        "dynamic-state-current-value": 105
+      }
+    }
+  },
+  "definition_spans": [
+    {
+      "lines": [
+        10169,
+        10216
+      ],
+      "sha256": "2b7afd145a348ad9d356ec4140fd94bd59fd25e41ece0a34a827207c35cb5171",
+      "text": "== Dynamic State\n\nWhen a pipeline object is bound, any pipeline object state that is not\nspecified as dynamic is applied to the command buffer state.\nPipeline object state that is specified as dynamic is not applied to the\ncommand buffer state at this time.\n\n[[dynamic-state-lifetime]]\nInstead, dynamic state can: be modified at any time and persists for the\nlifetime of the command buffer, or until modified by another dynamic state\nsetting command, or made invalid by binding a pipeline in which that state\nis statically specified.\n\nifdef::VK_NV_command_buffer_inheritance[]\nIf the <<features-commandBufferInheritance,pname:commandBufferInheritance>>\nfeature is enabled, all valid state from the previously executed command\nbuffer in the queue is inherited into the next command buffer executed in\nthe same queue.\nThis inherited state does not need to be set again before draw or dispatch\ncommands.\nendif::VK_NV_command_buffer_inheritance[]\n\n[[dynamic-state-current-value]]\nWhen a pipeline object is bound, the following applies to each state\nparameter:\n\n  * If the state is not specified as dynamic in the new pipeline object,\n    then that command buffer state is overwritten by the state in the new\n    pipeline object.\n    Before any draw or dispatch call with this pipeline there must: not have\n    been any calls to any of the corresponding dynamic state setting\n    commands after this pipeline was bound.\n  * If the state is specified as dynamic in the new pipeline object, then\n    that command buffer state is not disturbed.\n    Before any draw or dispatch call with this pipeline there must: have\n    been at least one call to each of the corresponding dynamic state\n    setting commands.\n    The state-setting commands must: be recorded after command buffer\n    recording was begun, or after the last command binding a pipeline object\n    with that state specified as static, whichever was the latter.\n  * If the state is not included (corresponding pointer in\n    slink:VkGraphicsPipelineCreateInfo was `NULL` or was ignored) in the new\n    pipeline object, then that command buffer state is not disturbed.\nifdef::VK_NV_mesh_shader,VK_EXT_mesh_shader[]\n    For example, mesh shading pipelines do not include vertex input state\n    and therefore do not disturb any such command buffer state.\nendif::VK_NV_mesh_shader,VK_EXT_mesh_shader[]\n\n"
+    }
+  ]
+}

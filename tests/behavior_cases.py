@@ -248,3 +248,11 @@ CASES.update(ENG13_CASES)
 # v1.0.14 independent visual-quality cohort.
 from visual_cases import VIS14_CASES
 CASES.update(VIS14_CASES)
+
+# v1.0.15 independent transparency cohort.
+from transparency_cases import TRAN15_CASES
+CASES.update(TRAN15_CASES)
+
+# Independent GPU simulation cohort; previous transparency cases remain frozen.
+from simulation_cases import SIM16_CASES
+CASES.update(SIM16_CASES)

@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "candidate_version": "1.0.17-reconstructed-tests",
+  "skill_sha": "068a967038ce92a0d4f7c28e4dcdc70a1a3c7c4c",
+  "skill_content_commit": "91393220aaf0ed9ab7aa089053598d988fcf609a",
+  "tests_base_sha": "528ba9ea7b417684c1066aceabd9a79cae4cd05b",
+  "plan_sha256": "2e72dfa5c46a29ccd02294dc01897c57aeda4d64c6df15c4c0afc8021d8e3470",
+  "provenance": "new reconstruction from original plan; missing historical tests were not recovered",
+  "legacy_prompts": 120,
+  "new_prompts": 24,
+  "equivalent_reuse": 0,
+  "partial_legacy_links": 6,
+  "release_status": "BLOCKED",
+  "unclosed": ["complete Registry transitive dependency and L0 routing", "L1/L2 semantic coverage", "CORE17 executable GPU/host expansion", "Live behavior and actual host", "target devices", "predecessor tests branches not in main"]
+}
