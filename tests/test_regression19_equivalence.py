@@ -2,8 +2,10 @@
 Historical SHA/version assertions remain unchanged in their original cohorts.
 These checks establish packaging/routing integrity, not capability acceptance.
 """
+import hashlib
 import importlib.util
 import json
+import os
 import re
 import subprocess
 import sys
@@ -32,11 +34,21 @@ def git(*args):
     return subprocess.check_output(['git', '-C', str(PROJECT_ROOT), *args], text=True).strip()
 
 
+def selected_pair():
+    name = os.environ.get('VULKAN_REGRESSION_PAIR', 'historical-v1.0.19')
+    file, expected_version = {
+        'historical-v1.0.19': ('coverage/v1.0.19/pair.json', '1.0.19'),
+        'postmerge16-v1.0.20': ('coverage/v1.0.20/postmerge-pair.json', '1.0.20'),
+        'current-v1.0.20': ('coverage/v1.0.20/current-pair.json', '1.0.20'),
+    }[name]
+    return json.loads((ROOT / file).read_text()), expected_version
+
+
 def test_current19_identity_and_preserved_diagnosis_routing():
-    pair = json.loads((ROOT / 'coverage/v1.0.19/pair.json').read_text())
+    pair, expected_version = selected_pair()
     assert git('rev-parse', 'HEAD') == pair['skill_sha']
     skill = (PROJECT_ROOT / 'SKILL.md').read_text()
-    assert re.search(r'^\s*version:\s*1\.0\.19\s*$', skill, re.M)
+    assert re.search(r'^\s*version:\s*' + re.escape(expected_version) + r'\s*$', skill, re.M)
     assert 'task_routing_rules.md' in skill
     routing = (PROJECT_ROOT / 'references/07_integration_pack/task_routing_rules.md').read_text()
     assert 'project_diagnosis.md' in routing
@@ -54,7 +66,7 @@ def test_current19_retains_text18_on_demand_authority(path, anchor):
 
 
 def test_current19_reproducible_package_crc_and_knowledge_budget(tmp_path):
-    pair = json.loads((ROOT / 'coverage/v1.0.19/pair.json').read_text())
+    pair, _ = selected_pair()
     baseline_contract = json.loads((ROOT / 'release-contract.json').read_text())
     sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
     try:
@@ -74,6 +86,12 @@ def test_current19_reproducible_package_crc_and_knowledge_budget(tmp_path):
     assert a['package_files'] == b['package_files'] == len(packaged) <= baseline_contract['max_runtime_files']
     assert packaged == {item['path'] for item in b['files']}
     assert packaged == {p for p in tracked if p in packer.REQUIRED or p.startswith('references/')}
+    if 'package_manifest_sha256' in pair:
+        assert a['package_files'] == b['package_files'] == pair['package_files'] <= pair['package_file_limit']
+        for report in (a, b):
+            canonical = json.dumps(sorted(report['files'], key=lambda item: item['path']),
+                                   sort_keys=True, separators=(',', ':')).encode()
+            assert hashlib.sha256(canonical).hexdigest() == pair['package_manifest_sha256']
     assert a['zip']['crc_verified'] and b['zip']['crc_verified']
     baseline = set(git('ls-tree', '-r', '--name-only', baseline_contract['knowledge_baseline_sha']).splitlines())
     assert {p for p in tracked if p.startswith('references/')} == (

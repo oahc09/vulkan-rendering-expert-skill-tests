@@ -1,0 +1,12 @@
+{
+  "skill_sha": "ebdd217eb5a332aa45a0e601ce12d97f17563a3a",
+  "skill_tree": "eaa70e6e938aa6c44910daa1c2c2bdd2a64db446",
+  "skill_version": "1.0.20",
+  "tests_baseline": "8dc3f3266e22cae2833ed0bbb44859d4f3b0618a",
+  "plan_sha256": "b28086a1c1b5d390ad5826c10740fbced15a7e5d3efb5628922147d0a6fa955b",
+  "task_registry_sha256": "9d908797e07a77910e778f1ab8e513e949a0fcf4de83b3f12302946561506c55",
+  "release_status": "BLOCKED",
+  "package_file_limit": 200,
+  "package_files": 200,
+  "package_manifest_sha256": "71e44b5609aa400563bf661f442fb2a87290dd161c5fb4b14d3d1575c3ccd810"
+}
