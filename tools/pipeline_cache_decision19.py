@@ -56,7 +56,10 @@ def decide(cache,measurement,policy):
  b,c=measurement['baseline'],measurement['candidate']
  if b['cohort']!=c['cohort'] or any(len(b[k])!=len(c[k]) for k in ('creation_cpu_ns','first_frame_ns','steady_frame_ns')):return result('NEEDS_MEASUREMENT','noncomparable cohort/trials')
  bm,cm=statistics.median(b['first_frame_ns']),statistics.median(c['first_frame_ns'])
- if cm>bm or max(c['first_frame_ns'])>max(b['first_frame_ns']) or max(c['steady_frame_ns'])>max(b['steady_frame_ns'])*(1+policy['max_steady_regression']):return result('REVOKE_TO_BASELINE','first-frame/observed worst-frame regression outweighs creation speed')
+ steady_limit=1+policy['max_steady_regression']
+ if statistics.median(c['steady_frame_ns'])>statistics.median(b['steady_frame_ns'])*steady_limit:
+  return result('REVOKE_TO_BASELINE','median steady-frame regression outweighs creation speed')
+ if cm>bm or max(c['first_frame_ns'])>max(b['first_frame_ns']) or max(c['steady_frame_ns'])>max(b['steady_frame_ns'])*steady_limit:return result('REVOKE_TO_BASELINE','first-frame/observed worst-frame regression outweighs creation speed')
  if not policy['other_objectives_satisfied']:return result('NEEDS_MEASUREMENT','memory/quality/latency/power tradeoffs unresolved')
  if cm>=bm or (bm-cm)/bm<policy['minimum_first_frame_gain']:return result('KEEP_BASELINE','no qualified first-frame improvement')
  return result('SELECT_DECLARED_PERSISTED_CACHE','declared paired full costs satisfy bounded policy; no general speed guarantee','PERSISTED_CACHE')
