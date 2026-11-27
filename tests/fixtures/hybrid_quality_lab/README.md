@@ -106,3 +106,56 @@ message, and unchanged target-file hashes. Timeouts are never accepted.
 All GPU readback components and CPU oracle intermediates are checked finite
 before comparisons or integer image conversion. Query checks all four expected
 RGBA channels, including both hits and misses.
+
+## Opt-in cross-driver shadow coverage QA
+
+This pair is separate from the legacy matrix (and from the ALL19/E2E19
+evidence). Both variants keep the 65×49 courtyard, 12 frames, moving alpha
+cutout, camera/light changes and history controls. They add the same fixed
+light-space shear jitter: 0, ±1/8 and ±1/4 shadow texel.
+
+- `--shadow-jitter` preserves the original floating-point geometry and
+  interpolated cutout. Use it to inspect edge-sensitive differences, not as a
+  cross-driver byte equality gate.
+- `--shadow-golden` places this authored axis-aligned fixture's projected
+  edges on texel boundaries and tests alpha coverage at the integer texel
+  center with a rational seven-stripe rule. It enables a strict golden check
+  without requiring the float stress path to become artificially identical.
+  Do not snap arbitrary production meshes to reproduce this result.
+
+Neither flag changes the default build. Query execution is disabled by the
+variant binary itself; its separate algorithm uses the original material.
+
+With the same compiler, loader and layer, run each on two installed ICDs,
+substituting actual manifest paths. Use fresh output directories and preserve
+both stdout and stderr:
+
+```sh
+L=tests/fixtures/hybrid_quality_lab
+"$L/build.sh" /tmp/shadow-float-build --shadow-jitter
+"$L/build.sh" /tmp/shadow-golden-build --shadow-golden
+VK_DRIVER_FILES="$ICD_A" /tmp/shadow-float-build/hybrid_quality_lab /tmp/shadow-float-build/shaders /tmp/shadow-float-a
+VK_DRIVER_FILES="$ICD_B" /tmp/shadow-float-build/hybrid_quality_lab /tmp/shadow-float-build/shaders /tmp/shadow-float-b
+VK_DRIVER_FILES="$ICD_A" /tmp/shadow-golden-build/hybrid_quality_lab /tmp/shadow-golden-build/shaders /tmp/shadow-golden-a
+VK_DRIVER_FILES="$ICD_B" /tmp/shadow-golden-build/hybrid_quality_lab /tmp/shadow-golden-build/shaders /tmp/shadow-golden-b
+python3 "$L/check_integer_shadow_oracle.py" /tmp/shadow-golden-a --second-driver /tmp/shadow-golden-b
+```
+
+The CPU oracle derives depth independently from rectangle coverage, rational
+texel-center alpha and nearest blocker ordering. It checks all 38,220
+shadow-depth preview texels per driver. With a second driver the checker also
+requires all 96 previews (eight per frame) to match byte for byte. This checks
+the fixture's 8-bit readback previews, not arbitrary float buffers or display
+quality. Require two identified ICDs for a cross-driver claim and an enabled
+validation layer for the zero-validation-error claim. The source and logs can
+establish which drivers ran; a pair of directory names cannot.
+
+In a replay on Lavapipe and SwiftShader, the golden lane and independent
+oracle matched. The float lane differed by up to 204/255 in shadow depth and
+40/255 in filtered RGB channels at the selected inputs. Neither is a
+performance measurement or a production quality threshold. As a sensitivity
+check, compile only the golden fragment shader with its discard removed
+(to a separate build directory): the two drivers can still agree while the
+CPU oracle rejects the lost cutout. A GPU-only comparison cannot detect a
+shared bug. These bounded checks do not validate Android, cascades, morph
+shadows, arbitrary filter inputs or a second physical GPU.
