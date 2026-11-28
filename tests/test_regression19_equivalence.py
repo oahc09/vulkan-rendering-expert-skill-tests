@@ -36,12 +36,13 @@ def git(*args):
 
 def selected_pair():
     name = os.environ.get('VULKAN_REGRESSION_PAIR', 'historical-v1.0.19')
-    file, expected_version = {
-        'historical-v1.0.19': ('coverage/v1.0.19/pair.json', '1.0.19'),
-        'postmerge16-v1.0.20': ('coverage/v1.0.20/postmerge-pair.json', '1.0.20'),
-        'current-v1.0.20': ('coverage/v1.0.20/current-pair.json', '1.0.20'),
-    }[name]
-    return json.loads((ROOT / file).read_text()), expected_version
+    sys.path.insert(0, str(ROOT / 'checks19'))
+    try:
+        from check_pair import load_pair
+        pair = load_pair(name)
+    finally:
+        sys.path.pop(0)
+    return pair, '1.0.19' if name == 'historical-v1.0.19' else pair['skill_version']
 
 
 def test_current19_identity_and_preserved_diagnosis_routing():

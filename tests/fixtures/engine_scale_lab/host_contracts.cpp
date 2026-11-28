@@ -10,6 +10,7 @@
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include "visibility_contract.h"
 
 struct Upload {
   enum State {
@@ -177,9 +178,24 @@ int main() {
   assert(!validRange(4, 4, 16, 64));
   assert(!validRange(0, UINT64_MAX, 16, 64));
   assert(validRange(64, 0, 16, 64));
+  const std::vector<uint32_t> visible{3, 5, 9};
+  assert(compareScopedVisibility({9, 3, 5}, visible, 7, 7, true) ==
+         VisibilityResult::Match);
+  assert(compareScopedVisibility({3, 9}, visible, 7, 7, true) ==
+         VisibilityResult::Different);
+  assert(compareScopedVisibility({3, 5, 5, 9}, visible, 7, 7, true) ==
+         VisibilityResult::Duplicate);
+  assert(compareScopedVisibility({3, 5, 9}, visible, 6, 7, true) ==
+         VisibilityResult::Different);
+  assert(compareScopedVisibility({3, 5, 9}, visible, std::nullopt, 7, true) ==
+         VisibilityResult::Insufficient);
+  assert(compareScopedVisibility({9, 3, 5}, visible, 7, 7, false) ==
+         VisibilityResult::Insufficient);
+  std::vector<uint32_t> clipped{3, 9};
+  assert(compareOpaqueIds(clipped, visible, true) == VisibilityResult::Insufficient);
   std::cout << "{\"layer\":\"HostUnit\",\"status\":\"PASS\",\"scenarios\":["
                "\"upload-cancel\",\"late-generation\",\"shared-owner\","
                "\"budget-peak\",\"cache-envelope-rejection\",\"resident-LOD\","
                "\"mip-not-allocation\",\"bounds\",\"HiZ-hole\",\"indirect-"
-               "range\"],\"driver_failure_injected\":false}\n";
+               "range\",\"scoped-visible-ids\"],\"driver_failure_injected\":false}\n";
 }

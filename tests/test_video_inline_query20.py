@@ -132,7 +132,7 @@ def test_a_separately_admissible_encode_feedback_pool_is_not_a_decode_pool():
     ]
 
 
-@pytest.mark.parametrize("pool_chroma", [0, 1, 4, 0xFFFFFFFF])
+@pytest.mark.parametrize("pool_chroma", [0, 1, 4, 0x15])
 def test_monochrome_ignores_the_chroma_depth_field(pool_chroma):
     plan = facts()
     plan["session_profile"].update(chroma_subsampling=1, chroma_bit_depth=0)
@@ -147,3 +147,15 @@ def test_color_profile_chroma_bit_depth_still_participates_in_compatibility():
     plan = facts()
     plan["pool"]["profile"]["chroma_bit_depth"] = 4
     assert assess(**plan)["vuids"] == ["VUID-vkCmdDecodeVideoKHR-queryPool-08368"]
+
+
+def test_monochrome_ignored_semantics_do_not_admit_unregistered_flag_bits():
+    plan = facts()
+    plan["session_profile"]["chroma_subsampling"] = 1
+    plan["pool"]["profile"] = copy.deepcopy(plan["session_profile"])
+    plan["pool"]["profile"]["chroma_bit_depth"] = 0xFFFFFFFF
+    with pytest.raises(ValueError, match="unregistered Vulkan flag bits"):
+        assess(**plan)
+    plan["pool"]["profile"]["chroma_bit_depth"] = 4
+    plan["target_slot_available"] = None
+    assert assess(**plan)["status"] == "INLINE_QUERY_SLOT_STATE_UNKNOWN"

@@ -40,3 +40,26 @@ def test_current_pair_does_not_promote_original_task_acceptance():
     assert sum(row["id"].startswith("ALL19-") for row in rows) == 24
     assert sum(row["id"].startswith("E2E19-") for row in rows) == 12
     assert all(row["status"] == "UNVERIFIED" for row in rows)
+
+
+def test_v21_cannot_repin_inherited_plan_or_tasks(monkeypatch, tmp_path):
+    sys.path.insert(0, str(ROOT / "checks19"))
+    try:
+        import check_pair
+    finally:
+        sys.path.pop(0)
+    monkeypatch.setattr(check_pair, "ROOT", tmp_path)
+    path = tmp_path / check_pair.PAIRS[check_pair.V21]
+    path.parent.mkdir(parents=True)
+    config = {
+        "skill_sha": "a" * 40, "skill_tree": "b" * 40, "tests_baseline": "c" * 40,
+        "skill_version": "1.0.21", "package_manifest_sha256": "d" * 64,
+        "package_files": 200, "package_file_limit": 200, "release_status": "BLOCKED",
+        "plan_sha256": check_pair.FROZEN_PLAN, "task_registry_sha256": check_pair.FROZEN_TASKS,
+    }
+    path.write_text(json.dumps(config), encoding="utf-8")
+    assert check_pair.load_pair(check_pair.V21) == config
+    for field in ("plan_sha256", "task_registry_sha256"):
+        path.write_text(json.dumps(config | {field: "e" * 64}), encoding="utf-8")
+        with pytest.raises(ValueError, match="frozen inherited"):
+            check_pair.load_pair(check_pair.V21)

@@ -10,6 +10,9 @@ STATUS_ONLY = "VK_QUERY_TYPE_RESULT_STATUS_ONLY_KHR"
 ENCODE_FEEDBACK = "VK_QUERY_TYPE_VIDEO_ENCODE_FEEDBACK_KHR"
 U32_MAX = 2**32 - 1
 MONOCHROME = 1  # VK_VIDEO_CHROMA_SUBSAMPLING_MONOCHROME_BIT_KHR
+# Registered bits in the frozen Vulkan 1.4.368 scope.
+CHROMA_SUBSAMPLINGS = 0x0F
+COMPONENT_DEPTHS = 0x15
 PROFILE_FIELDS = {
     "codec_operation", "chroma_subsampling", "luma_bit_depth", "chroma_bit_depth", "profile_chain"
 }
@@ -58,6 +61,9 @@ def canonical_profile(profile, direction):
         raise ValueError("profile codec operation must match command direction")
     for key in ("chroma_subsampling", "luma_bit_depth", "chroma_bit_depth"):
         uint32(profile[key], key)
+        valid_bits = CHROMA_SUBSAMPLINGS if key == "chroma_subsampling" else COMPONENT_DEPTHS
+        if profile[key] & ~valid_bits:
+            raise ValueError(f"{key} contains unregistered Vulkan flag bits")
         if key == "chroma_bit_depth" and profile["chroma_subsampling"] == MONOCHROME:
             continue
         if not profile[key] or (profile[key] & (profile[key] - 1)):

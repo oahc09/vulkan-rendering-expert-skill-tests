@@ -16,6 +16,7 @@
 #include <string>
 #include <vector>
 #include <vulkan/vulkan.h>
+#include "visibility_contract.h"
 #define VK(call)                                                               \
   do {                                                                         \
     VkResult checked_result_ = (call);                                         \
@@ -890,6 +891,8 @@ Result run(Vulkan &v, const std::vector<Object> &scene, Push p,
       expectedIds.push_back(i);
   }
   bool gpu = mode == "fixed" || mode == "count";
+  if (gpu && standardAlpha)
+    throw std::runtime_error("Order-dependent alpha needs the ordered CPU path");
   bool compact = mode == "count" && v.countEnabled;
   if (mode == "count" && !compact)
     std::cout << "{\"fallback\":\"Count unavailable -> fixed slots\"}\n";
@@ -1073,14 +1076,12 @@ Result run(Vulkan &v, const std::vector<Object> &scene, Push p,
           throw std::runtime_error("GPU command/visibility/residency mismatch");
         result.ids.push_back(id);
       }
-    auto sorted = expectedIds;
-    std::sort(sorted.begin(), sorted.end());
-    std::sort(result.ids.begin(), result.ids.end());
-    if (!result.overflow && result.ids != sorted)
-      throw std::runtime_error("CPU/GPU visible IDs differ");
-    if (std::adjacent_find(result.ids.begin(), result.ids.end()) !=
-        result.ids.end())
+    const auto membership =
+        compareOpaqueIds(result.ids, expectedIds, result.overflow != 0);
+    if (membership == VisibilityResult::Duplicate)
       throw std::runtime_error("Duplicate compact IDs");
+    if (membership == VisibilityResult::Different)
+      throw std::runtime_error("CPU/GPU visible IDs differ");
     if (((uint32_t *)v.buffers[2].map)[(v.n + 1) * 4] != 0x7f7f7f7f ||
         ids[v.n] != 0xffffffffu)
       throw std::runtime_error("OOB guard changed");

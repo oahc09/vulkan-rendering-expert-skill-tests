@@ -11,6 +11,21 @@ GAPS_ZH=['仅CPU软件ICD及coherent内存；noncoherent、移动GPU与性能收
 GAPS_EN=['CPU software ICD and coherent memory only; noncoherent visibility, mobile GPUs and performance gains remain unverified.','Single queue and bounded shaders/formats/extents; not all Vulkan or SC capability coverage.','SyncVal shader accesses use a static heuristic. The disabled-heuristic miss remains non-PASS.','Perfetto measures CPU subprocess duration, not GPU time; no cross-chain resource or causal timeline join.','A normative VUID match does not establish root cause, sufficient repair or every condition of applicability.','External blind engineering tasks, real-model comparisons, complete semantic acceptance and final release gates remain open.','Process control covers this group only, not setsid escape, GPU hangs or device loss.']
 
 def digest(data):return hashlib.sha256(data).hexdigest()
+
+def engine_next_check(stage, reason, result):
+    """Suggest a discriminating observation for one scoped engine event."""
+    if stage == 'submit' and result == 'rejected':
+        return 'Inspect the submit return code and recording branch before checking presentation.'
+    if stage in ('present_request', 'display_feedback') and reason:
+        return 'Verify the output generation, linked submission and independent display feedback.'
+    if stage == 'display_feedback':
+        return 'Compare actual output pixels with composition, alpha and color-space settings.'
+    if stage == 'present_request':
+        return 'Obtain display feedback for this request; API acceptance alone does not show display.'
+    if reason:
+        return 'Obtain the missing source, stream or submission identity at the recorded call site.'
+    return None
+
 def safe_relative(value):
     if not isinstance(value,str) or not re.fullmatch(r'[A-Za-z0-9_./-]+',value):raise ValueError('nonportable artifact path')
     p=pathlib.PurePosixPath(value)

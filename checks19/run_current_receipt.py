@@ -11,9 +11,12 @@ import time
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
-from check_pair import ROOT, git, load_pair
+from check_pair import CANDIDATE_PAIRS, ROOT, git, load_pair
 
 PAIR = "current-v1.0.20"
+OFFLINE_MODE = "offline-candidate"
+OFFLINE_DISABLED_PREFIXES = ("VULKAN_", "VK_")
+OFFLINE_DISABLED_KEYS = {"PYTEST_ADDOPTS", "PYTEST_PLUGINS"}
 OUTPUTS = {"pair-final.log",
     "pair.log", "skill-static.log", "skill-host.log", "skill-unittest.log",
     "regression.log", "regression.xml", "package.json", "candidate.zip",
@@ -21,6 +24,32 @@ OUTPUTS = {"pair-final.log",
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def offline_environment(source):
+    removed = sorted(key for key in source
+                     if key.upper() in OFFLINE_DISABLED_KEYS
+                     or key.upper().startswith(OFFLINE_DISABLED_PREFIXES))
+    env = {key: value for key, value in source.items() if key not in removed}
+    env.update(PYTHONDONTWRITEBYTECODE="1", PYTHONUTF8="1", PYTEST_DISABLE_PLUGIN_AUTOLOAD="1")
+    return env, removed
+
+
+def checkout_identity(root):
+    return {
+        "sha": git(root, "rev-parse", "HEAD"),
+        "tree": git(root, "rev-parse", "HEAD^{tree}"),
+        "clean": not git(root, "status", "--porcelain=v1", "--untracked-files=all",
+                         "--ignore-submodules=none"),
+    }
+
+
+def require_unchanged(before, after):
+    for repo, initial in before.items():
+        current = after[repo]
+        if not current["clean"]:
+            raise ValueError(f"{repo} checkout is not clean at receipt completion")
+        if current != initial:
+            raise ValueError(f"{repo} identity changed during candidate run")
 
 
 def junit_counts(path):
@@ -49,16 +78,18 @@ def package_identity(path, out, pair):
     return {"files": len(files), "manifest_sha256": manifest_hash, "zip_sha256": digest(out / "candidate.zip")}
 
 
-def run(skill, tests_sha, out):
+def run(skill, tests_sha, out, pair=PAIR, mode=OFFLINE_MODE):
+    if pair not in CANDIDATE_PAIRS or mode != OFFLINE_MODE:
+        raise ValueError("exact offline candidate pair and supported mode required")
     skill = skill.resolve(strict=True)
     out = out.resolve()
     if any(out == root or root in out.parents for root in (ROOT, skill)):
         raise ValueError("Output directory must be outside both checkouts")
     out.mkdir(parents=True, exist_ok=False)
-    env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
-    for k in ("VULKAN_LIVE_RUN_DIR", "PYTEST_ADDOPTS"):
-        env.pop(k, None)
-    receipt = {"schema": 1, "scope": "OFFLINE_CANDIDATE_REGRESSION_ONLY", "pair": PAIR,
+    env, removed = offline_environment(os.environ)
+    receipt = {"schema": 2, "scope": "OFFLINE_CANDIDATE_REGRESSION_ONLY", "pair": pair,
+               "requested_mode": mode, "effective_mode": OFFLINE_MODE,
+               "removed_opt_in_variable_names": removed, "pytest_plugin_autoload": False,
                "status": "FAILED_OR_INCOMPLETE", "release_status": "BLOCKED",
                "live_execution": "NOT_RUN", "physical_device_acceptance": "NOT_RUN",
                "expected_tests_sha": tests_sha, "runner": platform.platform(), "python": platform.python_version(),
@@ -77,14 +108,18 @@ def run(skill, tests_sha, out):
             raise ValueError(f"{name} failed (exit {rc})")
 
     try:
-        config = load_pair(PAIR)
-        receipt["tests_sha"] = git(ROOT, "rev-parse", "HEAD")
-        receipt["tests_tree"] = git(ROOT, "rev-parse", "HEAD^{tree}")
-        receipt["skill_sha"] = git(skill, "rev-parse", "HEAD")
-        receipt["skill_tree"] = git(skill, "rev-parse", "HEAD^{tree}")
+        config = load_pair(pair)
+        initial = receipt["initial_identity"] = {
+            "tests": checkout_identity(ROOT), "skill": checkout_identity(skill),
+        }
+        for repo, identity in initial.items():
+            receipt[f"{repo}_sha"] = identity["sha"]
+            receipt[f"{repo}_tree"] = identity["tree"]
+            if not identity["clean"]:
+                raise ValueError(f"{repo} checkout is not clean at receipt start")
         if receipt["tests_sha"] != tests_sha:
             raise ValueError("Tests SHA does not match requested checkout")
-        pair_args = ["--skill", str(skill), "--pair", PAIR]
+        pair_args = ["--skill", str(skill), "--pair", pair]
         launch("pair.log", [sys.executable, "checks19/check_pair.py", *pair_args], ROOT)
         launch("skill-static.log", ["node", "scripts/check-skill.mjs"], skill)
         launch("skill-host.log", [sys.executable, "scripts/host_contract.py"], skill)
@@ -98,13 +133,22 @@ def run(skill, tests_sha, out):
                                 "--out", str(out / "candidate.zip")], skill)
         receipt["package"] = package_identity(out / "package.json", out, config)
         launch("pair-final.log", [sys.executable, "checks19/check_pair.py", *pair_args], ROOT)
-        if git(ROOT, "rev-parse", "HEAD") != tests_sha or git(ROOT, "rev-parse", "HEAD^{tree}") != receipt["tests_tree"]:
-            raise ValueError("Tests identity changed during candidate run")
+        final = receipt["final_identity"] = {
+            "tests": checkout_identity(ROOT), "skill": checkout_identity(skill),
+        }
+        require_unchanged(initial, final)
         receipt["status"] = "PASSED_OFFLINE_CANDIDATE"
     except (ValueError, OSError, KeyError, subprocess.CalledProcessError, ET.ParseError) as exc:
         receipt["error"] = str(exc)
         print(str(exc), file=sys.stderr)
     finally:
+        if "initial_identity" in receipt and "final_identity" not in receipt:
+            try:
+                receipt["final_identity"] = {
+                    "tests": checkout_identity(ROOT), "skill": checkout_identity(skill),
+                }
+            except (OSError, subprocess.CalledProcessError) as exc:
+                receipt["final_identity_error"] = str(exc)
         if "junit" not in receipt and (out / "regression.xml").is_file():
             try:
                 receipt["junit"] = junit_counts(out / "regression.xml")
@@ -120,5 +164,7 @@ if __name__ == "__main__":
     cli.add_argument("--skill", type=Path, required=True)
     cli.add_argument("--tests-sha", required=True)
     cli.add_argument("--out", type=Path, required=True)
+    cli.add_argument("--pair", choices=sorted(CANDIDATE_PAIRS), default=PAIR)
+    cli.add_argument("--mode", choices=[OFFLINE_MODE], default=OFFLINE_MODE)
     args = cli.parse_args()
-    raise SystemExit(run(args.skill, args.tests_sha, args.out))
+    raise SystemExit(run(args.skill, args.tests_sha, args.out, args.pair, args.mode))

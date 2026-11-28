@@ -1,0 +1,15 @@
+{
+  "scope": "V21-03 HOST ORACLE REGISTERED BEFORE IMPLEMENTATION",
+  "cases": [
+    {"name": "unrelated guide prose", "after": {"documentation": "v2"}, "required": [], "insufficient": [], "historical": [], "package_recheck": true},
+    {"name": "shader binding changes", "after": {"shader_interface": "v2"}, "required": ["descriptor", "pipeline", "visual", "hot_update"], "insufficient": [], "historical": [], "package_recheck": false},
+    {"name": "attachment format or sample changes", "after": {"attachment": "v2"}, "required": ["pipeline", "visual", "compositing"], "insufficient": [], "historical": [], "package_recheck": false},
+    {"name": "retirement and surface generation change", "after": {"retirement": "v2"}, "required": ["lifetime", "pending", "cancel", "surface_recreate"], "insufficient": [], "historical": [], "package_recheck": false},
+    {"name": "compile target or macros change", "after": {"shader_compile": "v2"}, "required": ["artifact", "descriptor", "pipeline", "cache", "target_platform"], "insufficient": [], "historical": [], "package_recheck": false},
+    {"name": "driver changes independently", "after": {"driver": "v2"}, "required": ["device_execution"], "insufficient": [], "historical": [], "package_recheck": false},
+    {"name": "VVL changes independently", "after": {"validation_layer": "v2"}, "required": ["tool_diagnostic"], "insufficient": [], "historical": [], "package_recheck": false},
+    {"name": "norm changes and experience is revoked", "after": {"spec_rule": "v2", "experience": "revoked"}, "required": ["recommendation"], "insufficient": [], "historical": ["workaround"], "package_recheck": false},
+    {"name": "renamed or unknown source", "after": {"unclassified_change": "new path"}, "required": [], "insufficient": ["descriptor", "pipeline", "visual", "hot_update", "compositing", "lifetime", "pending", "cancel", "surface_recreate", "artifact", "cache", "target_platform", "device_execution", "tool_diagnostic", "recommendation", "workaround"], "historical": [], "package_recheck": false},
+    {"name": "missing compiler identity", "after": {"shader_compile": null}, "required": [], "insufficient": ["artifact", "descriptor", "pipeline", "cache", "target_platform"], "historical": [], "package_recheck": false}
+  ]
+}

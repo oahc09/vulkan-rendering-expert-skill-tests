@@ -9,7 +9,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 CHECKS = ROOT / "checks19"
 sys.path.insert(0, str(CHECKS))
-from run_current_receipt import junit_counts, package_identity  # noqa: E402
+from run_current_receipt import (junit_counts, offline_environment, package_identity,
+                                require_unchanged)  # noqa: E402
 sys.path.pop(0)
 
 
@@ -89,3 +90,26 @@ def test_package_identity_rejects_manifest_drift(tmp_path):
     path.write_text(json.dumps(report))
     with pytest.raises(ValueError, match="does not match"):
         package_identity(path, tmp_path, pair)
+
+
+def test_offline_runtime_flags_are_removed_and_names_only_are_recorded():
+    source = {"PATH": "/tools", "VULKAN_LIVE_RUN_DIR": "/private",
+              "VULKAN_TEXT18_LAB": "1", "VK_DRIVER_FILES": "/driver",
+              "PYTEST_ADDOPTS": "--ignore tests", "PYTEST_PLUGINS": "local_callback"}
+    env, removed = offline_environment(source)
+    assert env == {"PATH": "/tools", "PYTHONDONTWRITEBYTECODE": "1", "PYTHONUTF8": "1",
+                   "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1"}
+    assert removed == sorted(set(source) - {"PATH"})
+
+
+@pytest.mark.parametrize(("repo", "delta", "message"), [
+    ("skill", {"sha": "new"}, "skill identity changed"),
+    ("tests", {"tree": "new"}, "tests identity changed"),
+    ("tests", {"clean": False}, "tests checkout is not clean"),
+])
+def test_end_check_refuses_drift_after_a_green_child_process(repo, delta, message):
+    before = {name: {"sha": "head", "tree": "tree", "clean": True} for name in ("skill", "tests")}
+    require_unchanged(before, before)
+    after = before | {repo: before[repo] | delta}
+    with pytest.raises(ValueError, match=message):
+        require_unchanged(before, after)
