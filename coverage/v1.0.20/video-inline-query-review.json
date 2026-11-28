@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "domain": "VK15",
+  "task_map": ["V20-06", "V20-12", "V20-13", "CONTENT20-12", "COMBO20-06"],
+  "domain_complete": false,
+  "review_level": "TARGETED_L1_L2_OFFLINE",
+  "device_execution": "NOT_RUN",
+  "release_status": "BLOCKED",
+  "upstream": {
+    "spec_version": "1.4.368",
+    "docs_revision": "fa30d4e312e843193601be7cb926c7e25d9ec885",
+    "headers_ref": "v1.4.368",
+    "registry_sha256": "d56ff7f1613c36b820998dbd8e184b79ec49dc44db63390185205fa15ebcd444",
+    "docs": {
+      "chapters/videocoding.adoc": {"sha256": "d44ca9ae1427dfdc8bb4731fc9fb5c2848e24971fb5f8b7a80a2a855eacdc438", "lines": ["1403-1406", "3932-3991"]},
+      "chapters/video/decode.adoc": {"sha256": "57f21d81371fce6a2846c9a6bbb59652313b461cbf067e6fcb66e2da8b45350a", "lines": ["492-534"]},
+      "chapters/video/encode.adoc": {"sha256": "4e611b164adab950319764602d5574d104d821cb53cc18e8f7675c1023916161", "lines": ["1078-1121"]}
+    }
+  },
+  "scope": "One ordinary decode or encode operation, valid declared pool handle, explicit normalized complete profiles and ordered target-slot availability. Admission does not perform any command or validate caller truth.",
+  "rule": "tools/video_inline_query20.py",
+  "test": "tests/test_video_inline_query20.py",
+  "remaining": [
+    "Source availability is not a feature-enable receipt; application must record actual extension, profile, queue and feature queries and chosen device configuration.",
+    "Execute both applicable positive Vulkan paths with a supported target backend and independent result/validation evidence; platform fallback is not a substitute.",
+    "Protected content, query-pool creation and lifetime/reset synchronization, full encode-feedback flag/data layout, rate control and codec bitstreams are outside this preflight.",
+    "Other maintenance1 cases, remaining auxiliary extensions, Vulkan SC L1/L2 and production media lifecycle remain open."
+  ]
+}
