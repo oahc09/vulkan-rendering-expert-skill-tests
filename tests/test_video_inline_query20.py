@@ -132,8 +132,18 @@ def test_a_separately_admissible_encode_feedback_pool_is_not_a_decode_pool():
     ]
 
 
-def test_monochrome_does_not_require_a_chroma_depth_bit():
+@pytest.mark.parametrize("pool_chroma", [0, 1, 4, 0xFFFFFFFF])
+def test_monochrome_ignores_the_chroma_depth_field(pool_chroma):
     plan = facts()
     plan["session_profile"].update(chroma_subsampling=1, chroma_bit_depth=0)
     plan["pool"]["profile"] = copy.deepcopy(plan["session_profile"])
+    plan["pool"]["profile"]["chroma_bit_depth"] = pool_chroma
+    original = copy.deepcopy(plan)
     assert assess(**plan)["status"] == "INLINE_QUERY_METADATA_ADMISSIBLE"
+    assert plan == original
+
+
+def test_color_profile_chroma_bit_depth_still_participates_in_compatibility():
+    plan = facts()
+    plan["pool"]["profile"]["chroma_bit_depth"] = 4
+    assert assess(**plan)["vuids"] == ["VUID-vkCmdDecodeVideoKHR-queryPool-08368"]

@@ -14,7 +14,7 @@ from pathlib import Path
 from check_pair import ROOT, git, load_pair
 
 PAIR = "current-v1.0.20"
-OUTPUTS = {
+OUTPUTS = {"pair-final.log",
     "pair.log", "skill-static.log", "skill-host.log", "skill-unittest.log",
     "regression.log", "regression.xml", "package.json", "candidate.zip",
 }
@@ -97,6 +97,9 @@ def run(skill, tests_sha, out):
         launch("package.json", [sys.executable, "scripts/agensi_audit_and_pack.py", str(skill),
                                 "--out", str(out / "candidate.zip")], skill)
         receipt["package"] = package_identity(out / "package.json", out, config)
+        launch("pair-final.log", [sys.executable, "checks19/check_pair.py", *pair_args], ROOT)
+        if git(ROOT, "rev-parse", "HEAD") != tests_sha or git(ROOT, "rev-parse", "HEAD^{tree}") != receipt["tests_tree"]:
+            raise ValueError("Tests identity changed during candidate run")
         receipt["status"] = "PASSED_OFFLINE_CANDIDATE"
     except (ValueError, OSError, KeyError, subprocess.CalledProcessError, ET.ParseError) as exc:
         receipt["error"] = str(exc)
