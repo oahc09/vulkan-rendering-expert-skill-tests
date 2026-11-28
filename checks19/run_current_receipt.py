@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""Run the current exact offline pair; save inspectable logs even on failure."""
+import argparse
+import hashlib
+import json
+import os
+import platform
+import subprocess
+import sys
+import time
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+from check_pair import ROOT, git, load_pair
+
+PAIR = "current-v1.0.20"
+OUTPUTS = {
+    "pair.log", "skill-static.log", "skill-host.log", "skill-unittest.log",
+    "regression.log", "regression.xml", "package.json", "candidate.zip",
+}
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def junit_counts(path):
+    root = ET.parse(path).getroot()
+    suites = [root] if root.tag == "testsuite" else root.findall("testsuite")
+    counts = {k: sum(int(s.attrib.get(k, "0")) for s in suites)
+              for k in ("tests", "errors", "failures", "skipped")}
+    cases = root.findall(".//testcase")
+    if not suites or not cases or len(cases) != counts["tests"]:
+        raise ValueError("JUnit cases or counts are missing/inconsistent")
+    counts["passed"] = counts["tests"] - sum(counts[k] for k in ("errors", "failures", "skipped"))
+    return counts
+
+
+def package_identity(path, out, pair):
+    report = json.loads(path.read_text())
+    files = report["files"]
+    by_path = {entry["path"]: entry["sha256"] for entry in files}
+    canonical = json.dumps(sorted(files, key=lambda item: item["path"]), sort_keys=True, separators=(",", ":")).encode()
+    manifest_hash = hashlib.sha256(canonical).hexdigest()
+    if not (report["status"] == "PASS" and report["revision"] == pair["skill_sha"]
+            and len(files) == len(by_path) == report["package_files"] == pair["package_files"]
+            and manifest_hash == pair["package_manifest_sha256"]
+            and report["zip"]["crc_verified"]):
+        raise ValueError("Package identity does not match the current pair")
+    return {"files": len(files), "manifest_sha256": manifest_hash, "zip_sha256": digest(out / "candidate.zip")}
+
+
+def run(skill, tests_sha, out):
+    skill = skill.resolve(strict=True)
+    out = out.resolve()
+    if any(out == root or root in out.parents for root in (ROOT, skill)):
+        raise ValueError("Output directory must be outside both checkouts")
+    out.mkdir(parents=True, exist_ok=False)
+    env = dict(os.environ, PYTHONDONTWRITEBYTECODE="1")
+    for k in ("VULKAN_LIVE_RUN_DIR", "PYTEST_ADDOPTS"):
+        env.pop(k, None)
+    receipt = {"schema": 1, "scope": "OFFLINE_CANDIDATE_REGRESSION_ONLY", "pair": PAIR,
+               "status": "FAILED_OR_INCOMPLETE", "release_status": "BLOCKED",
+               "live_execution": "NOT_RUN", "physical_device_acceptance": "NOT_RUN",
+               "expected_tests_sha": tests_sha, "runner": platform.platform(), "python": platform.python_version(),
+               "github_run_id": os.getenv("GITHUB_RUN_ID"), "github_run_attempt": os.getenv("GITHUB_RUN_ATTEMPT"),
+               "commands": []}
+
+    def launch(name, argv, cwd):
+        start = time.monotonic()
+        target = out / name
+        with target.open("xb") as handle:
+            rc = subprocess.run(argv, cwd=cwd, env=env, stdout=handle, stderr=subprocess.STDOUT,
+                                check=False).returncode
+        receipt["commands"].append({"log": name, "exit": rc, "elapsed_seconds": round(time.monotonic() - start, 3)})
+        print(f"{name}: exit {rc}", flush=True)
+        if rc:
+            raise ValueError(f"{name} failed (exit {rc})")
+
+    try:
+        config = load_pair(PAIR)
+        receipt["tests_sha"] = git(ROOT, "rev-parse", "HEAD")
+        receipt["tests_tree"] = git(ROOT, "rev-parse", "HEAD^{tree}")
+        receipt["skill_sha"] = git(skill, "rev-parse", "HEAD")
+        receipt["skill_tree"] = git(skill, "rev-parse", "HEAD^{tree}")
+        if receipt["tests_sha"] != tests_sha:
+            raise ValueError("Tests SHA does not match requested checkout")
+        pair_args = ["--skill", str(skill), "--pair", PAIR]
+        launch("pair.log", [sys.executable, "checks19/check_pair.py", *pair_args], ROOT)
+        launch("skill-static.log", ["node", "scripts/check-skill.mjs"], skill)
+        launch("skill-host.log", [sys.executable, "scripts/host_contract.py"], skill)
+        launch("skill-unittest.log", [sys.executable, "-m", "unittest", "discover", "-s", "scripts"], skill)
+        launch("regression.log", [sys.executable, "checks19/run_regression.py", *pair_args,
+                                  "--junit", str(out / "regression.xml")], ROOT)
+        receipt["junit"] = junit_counts(out / "regression.xml")
+        if receipt["junit"]["errors"] or receipt["junit"]["failures"] or not receipt["junit"]["passed"]:
+            raise ValueError("Non-green or empty candidate JUnit")
+        launch("package.json", [sys.executable, "scripts/agensi_audit_and_pack.py", str(skill),
+                                "--out", str(out / "candidate.zip")], skill)
+        receipt["package"] = package_identity(out / "package.json", out, config)
+        receipt["status"] = "PASSED_OFFLINE_CANDIDATE"
+    except (ValueError, OSError, KeyError, subprocess.CalledProcessError, ET.ParseError) as exc:
+        receipt["error"] = str(exc)
+        print(str(exc), file=sys.stderr)
+    finally:
+        if "junit" not in receipt and (out / "regression.xml").is_file():
+            try:
+                receipt["junit"] = junit_counts(out / "regression.xml")
+            except (ValueError, OSError, ET.ParseError):
+                pass
+        receipt["sha256"] = {n: digest(out / n) for n in sorted(OUTPUTS) if (out / n).is_file()}
+        (out / "receipt.json").write_text(json.dumps(receipt, indent=2) + "\n", encoding="utf-8")
+    return int(receipt["status"] != "PASSED_OFFLINE_CANDIDATE")
+
+
+if __name__ == "__main__":
+    cli = argparse.ArgumentParser(description=__doc__)
+    cli.add_argument("--skill", type=Path, required=True)
+    cli.add_argument("--tests-sha", required=True)
+    cli.add_argument("--out", type=Path, required=True)
+    args = cli.parse_args()
+    raise SystemExit(run(args.skill, args.tests_sha, args.out))
