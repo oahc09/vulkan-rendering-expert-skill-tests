@@ -19,6 +19,7 @@ def ids(prefix, size):
 
 def test_r3_index_maps_scope_without_marking_original_tasks_complete():
     index = json.loads((ROOT / "coverage/v1.0.20/r3-execution-index.json").read_text())
+    assert index["schema"] == 2
     assert index["scope"] == "R3_EXECUTION_INDEX_NOT_ACCEPTANCE"
     assert index["plan"]["sha256"] == "3c321d8b577afae6ee7edfdbe29e76a98dc85863e7b5b735e1f05c48947938c3"
     assert index["plan"]["implementation_prompt_sha256"] == "9c91255a3543bd657bbace38c7bb1dcf7be149801ebdbdc366c84facbb2ec259"
@@ -37,13 +38,31 @@ def test_r3_index_maps_scope_without_marking_original_tasks_complete():
     for _, title, refs, gate in index["combo"]:
         assert title and refs and gate and set(refs) <= tasks.keys()
     assert len(set(row[0] for row in index["engines"])) == len(index["engines"]) == 6
-    for title, refs, combo, gate in index["engines"]:
+    planned = {
+        "UE Mobile 5.7": {4},
+        "UE RDG 5.7": {4, 8},
+        "UE GPUScene / Unity BRG and GPU Resident Drawer": {2, 3, 8},
+        "Godot 4.5 rendering methods": {4, 7},
+        "Filament async loader and pacing": {1, 7, 8},
+        "Cocos Creator 3.8 Native batching": {5, 7},
+    }
+    assert {row[0] for row in index["engines"]} == set(planned)
+    for title, refs, combos, gate in index["engines"]:
         assert title and gate and refs and set(refs) <= ids("CONTENT20", 14)
-        assert combo in ids("COMBO20", 8)
+        assert len(combos) == len(set(combos))
+        assert set(combos) == {f"COMBO20-{n:02d}" for n in planned[title]}
     assert len(set(row[0] for row in index["gpus"])) == len(index["gpus"]) == 9
     assert [row[0] for row in index["experiments"]] == list("ABCD")
-    for _, refs, path, gate in index["experiments"]:
-        assert gate and refs and set(refs) <= ids("COMBO20", 8) and (ROOT / path).is_file()
+    for _, refs, navigation, gate in index["experiments"]:
+        assert gate and refs and set(refs) <= ids("COMBO20", 8)
+        assert set(navigation) == {"primary", "supporting"} and navigation["primary"]
+        paths = navigation["primary"] + navigation["supporting"]
+        assert len(paths) == len(set(paths)) and all((ROOT / path).is_file() for path in paths)
+    lab_b = next(row[2] for row in index["experiments"] if row[0] == "B")
+    assert {Path(path).parent.name for path in lab_b["primary"]} == {
+        "transparent_scene_lab", "text_temporal_hdr_lab", "scene_c_service_lab",
+    }
+    assert [Path(path).parent.name for path in lab_b["supporting"]] == ["hybrid_quality_lab"]
 
 
 def test_junit_preserves_skips_and_rejects_empty_reports(tmp_path):

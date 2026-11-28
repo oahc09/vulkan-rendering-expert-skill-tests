@@ -67,7 +67,10 @@ def canonical_profile(profile, direction):
         raise ValueError("normalized codec-specific profile chain required")
     # Dictionary content represents complete pNext semantics, not pointer identity
     # or a caller-chosen profile label. Distinguish JSON booleans from integers.
-    return json.dumps(profile, sort_keys=True, separators=(",", ":"), allow_nan=False)
+    normalized = dict(profile)
+    if normalized["chroma_subsampling"] == MONOCHROME:
+        normalized["chroma_bit_depth"] = 0  # Vulkan ignores it for monochrome profiles.
+    return json.dumps(normalized, sort_keys=True, separators=(",", ":"), allow_nan=False)
 
 
 def assess(*, direction, extension_supported, extension_enabled, feature_supported,

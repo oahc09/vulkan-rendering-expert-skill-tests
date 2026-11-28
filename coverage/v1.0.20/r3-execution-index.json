@@ -1,5 +1,5 @@
 {
-  "schema": 1,
+  "schema": 2,
   "scope": "R3_EXECUTION_INDEX_NOT_ACCEPTANCE",
   "plan": {
     "version": 2,
@@ -455,7 +455,9 @@
         "CONTENT20-06",
         "CONTENT20-09"
       ],
-      "COMBO20-04",
+      [
+        "COMBO20-04"
+      ],
       "Freeze required quality and compare suitable pipeline paths in the target workload."
     ],
     [
@@ -464,7 +466,10 @@
         "CONTENT20-08",
         "CONTENT20-13"
       ],
-      "COMBO20-08",
+      [
+        "COMBO20-04",
+        "COMBO20-08"
+      ],
       "Map imported/transient resources and catch missing graph-external consumers or illegal aliasing."
     ],
     [
@@ -474,7 +479,11 @@
         "CONTENT20-07",
         "CONTENT20-13"
       ],
-      "COMBO20-02",
+      [
+        "COMBO20-02",
+        "COMBO20-03",
+        "COMBO20-08"
+      ],
       "Verify dirty ranges, stable identity reuse and draw dependencies against equal output."
     ],
     [
@@ -485,7 +494,10 @@
         "CONTENT20-09",
         "CONTENT20-14"
       ],
-      "COMBO20-07",
+      [
+        "COMBO20-04",
+        "COMBO20-07"
+      ],
       "Distinguish backend from feature tier; do not count Compatibility as Vulkan positive evidence."
     ],
     [
@@ -495,7 +507,11 @@
         "CONTENT20-13",
         "CONTENT20-14"
       ],
-      "COMBO20-01",
+      [
+        "COMBO20-01",
+        "COMBO20-07",
+        "COMBO20-08"
+      ],
       "Cancel stale uploads, prove atomic publish and separate correct-frame timing from presentation."
     ],
     [
@@ -505,7 +521,10 @@
         "CONTENT20-11",
         "CONTENT20-14"
       ],
-      "COMBO20-05",
+      [
+        "COMBO20-05",
+        "COMBO20-07"
+      ],
       "Preserve mask, blend and order; reject an incorrect material-only reorder."
     ]
   ],
@@ -554,7 +573,12 @@
         "COMBO20-06",
         "COMBO20-07"
       ],
-      "tests/fixtures/scene_c_service_lab/README.md",
+      {
+        "primary": [
+          "tests/fixtures/scene_c_service_lab/README.md"
+        ],
+        "supporting": []
+      },
       "Target generation and resizes, present/pacing and resource trends. Offscreen is not Surface lifecycle."
     ],
     [
@@ -562,8 +586,17 @@
       [
         "COMBO20-05"
       ],
-      "tests/fixtures/hybrid_quality_lab/README.md",
-      "Independent transparency/coverage, text ROI and equal-quality full-frame comparison."
+      {
+        "primary": [
+          "tests/fixtures/transparent_scene_lab/README.md",
+          "tests/fixtures/text_temporal_hdr_lab/README.md",
+          "tests/fixtures/scene_c_service_lab/README.md"
+        ],
+        "supporting": [
+          "tests/fixtures/hybrid_quality_lab/README.md"
+        ]
+      },
+      "Inspect transparency, bounded volume and Gaussian coverage plus text/Scene C ROI. Hybrid quality is shadow, history and query support only; navigation is not acceptance."
     ],
     [
       "C",
@@ -571,7 +604,12 @@
         "COMBO20-02",
         "COMBO20-03"
       ],
-      "tests/fixtures/engine_scale_lab/README.md",
+      {
+        "primary": [
+          "tests/fixtures/engine_scale_lab/README.md"
+        ],
+        "supporting": []
+      },
       "Independent visible set/image, sparse updates and real whole-chain queue costs."
     ],
     [
@@ -581,7 +619,12 @@
         "COMBO20-05",
         "COMBO20-07"
       ],
-      "tests/fixtures/hybrid_quality_lab/README.md",
+      {
+        "primary": [
+          "tests/fixtures/hybrid_quality_lab/README.md"
+        ],
+        "supporting": []
+      },
       "Attachment/history/thermal under fixed quality; only include neural resources where selected."
     ]
   ]
