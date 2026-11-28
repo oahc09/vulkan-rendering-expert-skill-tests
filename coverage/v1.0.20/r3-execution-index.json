@@ -1,0 +1,588 @@
+{
+  "schema": 1,
+  "scope": "R3_EXECUTION_INDEX_NOT_ACCEPTANCE",
+  "plan": {
+    "version": 2,
+    "size_bytes": 143539,
+    "sha256": "3c321d8b577afae6ee7edfdbe29e76a98dc85863e7b5b735e1f05c48947938c3",
+    "implementation_prompt_sha256": "9c91255a3543bd657bbace38c7bb1dcf7be149801ebdbdc366c84facbb2ec259"
+  },
+  "inherited": {
+    "path": "coverage/v1.0.19/tasks.json",
+    "sha256": "9d908797e07a77910e778f1ab8e513e949a0fcf4de83b3f12302946561506c55"
+  },
+  "main": [
+    [
+      "V20-01",
+      "分支依赖与实施基线",
+      "docs/v1.0.20-postmerge-pair.md",
+      "Keep main/tree and integration provenance; refresh older Skill guidance separately."
+    ],
+    [
+      "V20-02",
+      "当前版本清单与配对验证入口",
+      "coverage/v1.0.20/current-pair.json",
+      "Keep exact pair and review current receipts, failures and skips separately from historical CI."
+    ],
+    [
+      "V20-03",
+      "完整规范与验收分母冻结",
+      "coverage/v1.0.19/registry-denominator.json",
+      "Freeze the complete Vulkan semantic denominator; this work index alone is not that denominator."
+    ],
+    [
+      "V20-04",
+      "L0/L1/L2 审查矩阵",
+      "coverage/v1.0.19/domains.json",
+      "Review each frozen domain's L0/L1/L2, source and counterexamples."
+    ],
+    [
+      "V20-05",
+      "同步—资源—Descriptor—WSI 交叉规则",
+      "coverage/v1.0.19/synchronization-contract.json",
+      "Map actual asset, view, Surface and async resource retirement in a target project."
+    ],
+    [
+      "V20-06",
+      "Video、SC 与其余领域补齐",
+      "coverage/v1.0.19/sc-core-delta.json",
+      "Complete Video auxiliary contracts and SC L1/L2; execute selected positive branches."
+    ],
+    [
+      "V20-07",
+      "跨卡片冲突与失败分支审查",
+      "coverage/v1.0.19/semantic-card-corrections.json",
+      "Review engine-policy boundaries and cross-pass material, color and pose consistency."
+    ],
+    [
+      "V20-08",
+      "原任务输入与独立评审包",
+      "coverage/v1.0.19/tasks.json",
+      "Stage all original solver inputs with isolated reviewer oracles and branch inventory."
+    ],
+    [
+      "V20-09",
+      "用户输入到工具证据的实际路径",
+      "coverage/v1.0.19/import-validation-diagnostics.json",
+      "Retain actual workload validation, profiling/capture and repro-to-original records."
+    ],
+    [
+      "V20-10",
+      "实际最小补丁与恢复对照",
+      "coverage/v1.0.19/external-amber951.json",
+      "Run the minimal fix, rollback and negative comparison in the target workload."
+    ],
+    [
+      "V20-11",
+      "错误修复反例与经验提炼",
+      "coverage/v1.0.19/external-suite-controls.json",
+      "Validate workaround scope, off/unknown driver alternatives and withdrawal."
+    ],
+    [
+      "V20-12",
+      "十类决策的具体规则",
+      "coverage/v1.0.19/binding-choice.json",
+      "Link each decision to an explicit workload, preconditions and rejection criteria."
+    ],
+    [
+      "V20-13",
+      "设备能力到实际启用和使用",
+      "coverage/v1.0.19/capability-scene.json",
+      "Retain actual supported/requested/enabled/used target evidence."
+    ],
+    [
+      "V20-14",
+      "同场景选型与 A/B 决策",
+      "coverage/v1.0.19/pipeline-cache-cost.json",
+      "Compare equal-quality whole frames, startup and steady behavior with frozen budgets."
+    ],
+    [
+      "V20-15",
+      "真实模型与宿主执行记录",
+      "tests/README.md",
+      "Retain actual model version, tool/read trace, raw answers and usage."
+    ],
+    [
+      "V20-16",
+      "原 36 项最终任务验收",
+      "coverage/v1.0.19/tasks.json",
+      "Retain independent reviews of the original 24 ALL19 + 12 E2E19 entries."
+    ],
+    [
+      "V20-17",
+      "原 12 题效率与质量对照",
+      "tests/README.md",
+      "Run the original 12 same-model cases and retain quality and actual usage."
+    ],
+    [
+      "V20-18",
+      "Android 工程与生命周期基线",
+      "tests/fixtures/scene_c_service_lab/README.md",
+      "Use authorized Android app/WallpaperService Engine lifecycle with real Surface callbacks."
+    ],
+    [
+      "V20-19",
+      "第二设备或驱动对照",
+      "tests/fixtures/hybrid_quality_lab/README.md",
+      "Run a relevant second device or driver comparison; software is scoped narrow evidence."
+    ],
+    [
+      "V20-20",
+      "画质、持续帧表现与预算",
+      "coverage/v1.0.19/pipeline-cache-cost.json",
+      "Retain full-frame quality, budgets and at least three independent physical sustained runs."
+    ],
+    [
+      "V20-21",
+      "路由可达性与按需读取",
+      "coverage/v1.0.19/reference-links.json",
+      "Prove actual task routing/read traces and rerun original efficiency cases."
+    ],
+    [
+      "V20-22",
+      "当前状态摘要与历史说明",
+      "docs/v1.0.20-postmerge-pair.md",
+      "Retain integration history; update stale current Skill entries and domain summary."
+    ],
+    [
+      "V20-23",
+      "368→369 差分账",
+      "coverage/v1.0.19/registry-summary.json",
+      "Close each pinned 368→369 delta with source, landing point and test impact."
+    ],
+    [
+      "V20-24",
+      "关键规则与诊断兼容修订",
+      "coverage/v1.0.19/headless-wsi.json",
+      "Run positive and negative tool/protocol compatibility checks for the applicable versions."
+    ],
+    [
+      "V20-25",
+      "新能力观察与维护分流",
+      "docs/v1.0.19-gap-priorities.md",
+      "Record source/version, business impact, trigger and status for selected observations."
+    ],
+    [
+      "V20-26",
+      "固定源码与运行时包",
+      "coverage/v1.0.20/current-pair.json",
+      "Reproduce final exact package and retain clean host installation/discovery evidence."
+    ],
+    [
+      "V20-27",
+      "四项封板评审",
+      "docs/v1.0.19-gap-priorities.md",
+      "Independently review four seals only after required evidence is present."
+    ],
+    [
+      "V20-28",
+      "维护交接与后续入口",
+      "docs/v1.0.19-gap-priorities.md",
+      "Map inputs, outcomes, invalidation triggers and retest ownership for handoff."
+    ]
+  ],
+  "content": [
+    [
+      "CONTENT20-01",
+      "资产与场景语义",
+      [
+        "V20-04",
+        "V20-07",
+        "V20-10",
+        "V20-12"
+      ],
+      "合法小资产实际绘制；错误索引、缺必要数据、取消迟到不发布半成品"
+    ],
+    [
+      "CONTENT20-02",
+      "纹理内容与mip",
+      [
+        "V20-04",
+        "V20-05",
+        "V20-14",
+        "V20-20"
+      ],
+      "检查实际采样与关键ROI；远距闪烁、接缝、mask轮廓、压缩回退可量化"
+    ],
+    [
+      "CONTENT20-03",
+      "材质与Shader ABI",
+      [
+        "V20-04",
+        "V20-07",
+        "V20-10",
+        "V20-12"
+      ],
+      "数值参考和图像一致；接口失败保留旧完整材质；相关depth/shadow/history同步变化"
+    ],
+    [
+      "CONTENT20-04",
+      "动画、仿真与动态几何",
+      [
+        "V20-04",
+        "V20-05",
+        "V20-10",
+        "V20-20"
+      ],
+      "CPU小参考核对形变；主颜色、阴影、剔除和motion消费同代数据；暂停/跳转正确"
+    ],
+    [
+      "CONTENT20-05",
+      "多光源与环境照明",
+      [
+        "V20-04",
+        "V20-12",
+        "V20-14",
+        "V20-20"
+      ],
+      "穷举参考校验灯光归属；拥挤分区不静默漏灯；画质和整帧成本同基线比较"
+    ],
+    [
+      "CONTENT20-06",
+      "阴影与混合光照",
+      [
+        "V20-05",
+        "V20-08",
+        "V20-13",
+        "V20-20"
+      ],
+      "动相机/灯光/投射者不错误闪烁；独立shadow判据；光栅与query证据分开"
+    ],
+    [
+      "CONTENT20-07",
+      "GPU-driven规模化与算法选择",
+      [
+        "V20-12",
+        "V20-13",
+        "V20-14",
+        "V20-20"
+      ],
+      "可见集合、容量/溢出、ID换代和画面独立验证；物理GPU上统计全链成本，不预设胜过CPU"
+    ],
+    [
+      "CONTENT20-08",
+      "Render Graph与跨队列组合",
+      [
+        "V20-05",
+        "V20-07",
+        "V20-10",
+        "V20-14"
+      ],
+      "与人工明确基线对照；遗漏消费者/错误alias被发现；关闭pass/resize后重新推导"
+    ],
+    [
+      "CONTENT20-09",
+      "颜色、完整后处理与时域",
+      [
+        "V20-04",
+        "V20-12",
+        "V20-14",
+        "V20-20"
+      ],
+      "高亮/暗部/渐变/曝光突变的中间值与连续帧；重复编码/旧history必须失败"
+    ],
+    [
+      "CONTENT20-10",
+      "透明、体积与3DGS组合",
+      [
+        "V20-05",
+        "V20-10",
+        "V20-14",
+        "V20-20"
+      ],
+      "有界参考核对前后关系、颜色与透射；近不透明/低alpha/相机运动下无双重合成"
+    ],
+    [
+      "CONTENT20-11",
+      "文字、矢量与2D/3D融合",
+      [
+        "V20-05",
+        "V20-08",
+        "V20-10",
+        "V20-20"
+      ],
+      "连续更新、缩放、透视、遮挡、resize；保护非目标附件与旧代资源；实际可读性"
+    ],
+    [
+      "CONTENT20-12",
+      "外部内容与可选能力接缝",
+      [
+        "V20-06",
+        "V20-09",
+        "V20-13",
+        "V20-18"
+      ],
+      "多消费者结束前不释放；暂停/退出/恢复有结果；无能力时合法回退，正路径状态保留"
+    ],
+    [
+      "CONTENT20-13",
+      "首帧与内容切换调度",
+      [
+        "V20-10",
+        "V20-12",
+        "V20-14",
+        "V20-20"
+      ],
+      "首个正确帧、内容稳定可用、首次切换、典型/最坏稳定帧分别测量；无无界积压"
+    ],
+    [
+      "CONTENT20-14",
+      "移动产品长期运行",
+      [
+        "V20-18",
+        "V20-19",
+        "V20-20",
+        "V20-28"
+      ],
+      "一路退出不拖坏另一路；对象/内存趋势稳定；质量降档有记录和恢复，物理设备实测"
+    ]
+  ],
+  "combo": [
+    [
+      "COMBO20-01",
+      "资产到材质画面",
+      [
+        "E2E19-01",
+        "E2E19-05",
+        "E2E19-08",
+        "ALL19-04",
+        "ALL19-09",
+        "ALL19-10",
+        "ALL19-11"
+      ],
+      "通道/法线/alpha参考、缺资源不发布、合法Vulkan draw/readback；交换通道或旧版本必须被发现"
+    ],
+    [
+      "COMBO20-02",
+      "大场景与并行列表",
+      [
+        "E2E19-06",
+        "E2E19-07",
+        "E2E19-08",
+        "E2E19-12",
+        "ALL19-05",
+        "ALL19-06",
+        "ALL19-12"
+      ],
+      "CPU集合/count/命令与最终画面；尾线程、容量、迟到上传、空列表"
+    ],
+    [
+      "COMBO20-03",
+      "动态几何与历史",
+      [
+        "E2E19-07",
+        "E2E19-09",
+        "E2E19-11",
+        "ALL19-10",
+        "ALL19-16",
+        "ALL19-22"
+      ],
+      "独立几何参考、每view历史时点、跨pass同代；故意旧bounds/pose/history失败"
+    ],
+    [
+      "COMBO20-04",
+      "混合光照与完整后处理",
+      [
+        "E2E19-03",
+        "E2E19-05",
+        "E2E19-09",
+        "E2E19-11",
+        "ALL19-11",
+        "ALL19-13",
+        "ALL19-16"
+      ],
+      "承接#14 shadow oracle；增加颜色/曝光/时域独立判据；浮点压力与integer golden分开"
+    ],
+    [
+      "COMBO20-05",
+      "透明动态内容与文字",
+      [
+        "E2E19-06",
+        "E2E19-11",
+        "ALL19-06",
+        "ALL19-09",
+        "ALL19-13"
+      ],
+      "有界合成参考、非目标附件sentinel、透明边缘/细字ROI与连续帧；不得只比截图相似"
+    ],
+    [
+      "COMBO20-06",
+      "外部帧与多输出",
+      [
+        "E2E19-04",
+        "E2E19-10",
+        "ALL19-15",
+        "ALL19-17",
+        "ALL19-18",
+        "ALL19-19"
+      ],
+      "帧owner/时点/颜色、全部消费者退休、拒绝不支持路径；protected输入不强行回读"
+    ],
+    [
+      "COMBO20-07",
+      "Android产品运行",
+      [
+        "E2E19-02",
+        "E2E19-03",
+        "E2E19-04",
+        "E2E19-08",
+        "E2E19-12",
+        "ALL19-07",
+        "ALL19-08",
+        "ALL19-15"
+      ],
+      "首个正确帧、另一输出继续、资源/队列趋势与实际pacing；进程重启和设备丢失分开"
+    ],
+    [
+      "COMBO20-08",
+      "热更新与缓存失效",
+      [
+        "E2E19-05",
+        "E2E19-08",
+        "E2E19-12",
+        "ALL19-09",
+        "ALL19-11",
+        "ALL19-24"
+      ],
+      "完整旧版本回退、无pending释放；复用#15拒绝典型帧退化；真实输出与测量关联"
+    ]
+  ],
+  "engines": [
+    [
+      "UE Mobile 5.7",
+      [
+        "CONTENT20-05",
+        "CONTENT20-06",
+        "CONTENT20-09"
+      ],
+      "COMBO20-04",
+      "Freeze required quality and compare suitable pipeline paths in the target workload."
+    ],
+    [
+      "UE RDG 5.7",
+      [
+        "CONTENT20-08",
+        "CONTENT20-13"
+      ],
+      "COMBO20-08",
+      "Map imported/transient resources and catch missing graph-external consumers or illegal aliasing."
+    ],
+    [
+      "UE GPUScene / Unity BRG and GPU Resident Drawer",
+      [
+        "CONTENT20-03",
+        "CONTENT20-07",
+        "CONTENT20-13"
+      ],
+      "COMBO20-02",
+      "Verify dirty ranges, stable identity reuse and draw dependencies against equal output."
+    ],
+    [
+      "Godot 4.5 rendering methods",
+      [
+        "CONTENT20-05",
+        "CONTENT20-08",
+        "CONTENT20-09",
+        "CONTENT20-14"
+      ],
+      "COMBO20-07",
+      "Distinguish backend from feature tier; do not count Compatibility as Vulkan positive evidence."
+    ],
+    [
+      "Filament async loader and pacing",
+      [
+        "CONTENT20-01",
+        "CONTENT20-13",
+        "CONTENT20-14"
+      ],
+      "COMBO20-01",
+      "Cancel stale uploads, prove atomic publish and separate correct-frame timing from presentation."
+    ],
+    [
+      "Cocos Creator 3.8 Native batching",
+      [
+        "CONTENT20-08",
+        "CONTENT20-11",
+        "CONTENT20-14"
+      ],
+      "COMBO20-05",
+      "Preserve mask, blend and order; reject an incorrect material-only reorder."
+    ]
+  ],
+  "gpus": [
+    [
+      "Arm Mali/Immortalis",
+      "Attachment working set and accurate tile/DRAM evidence; qualify scope by generation."
+    ],
+    [
+      "Qualcomm Adreno",
+      "Prove QCOM features, heap and valid scope; retain ordinary-memory fallback."
+    ],
+    [
+      "Imagination PowerVR",
+      "Treat opaque HSR separately from transparency, coverage and replay overhead."
+    ],
+    [
+      "Samsung Xclipse",
+      "Record exact generation/tool identity; do not infer capabilities from brand."
+    ],
+    [
+      "AMD Radeon/RDNA",
+      "Use actual UMA/VRAM, residency, async and whole-frame measurements."
+    ],
+    [
+      "Intel Xe",
+      "Evaluate workload on supported tools; occupancy is not speed and GPA is historical."
+    ],
+    [
+      "NVIDIA GeForce/RTX",
+      "Keep queue and shader claims scoped to actual architecture, driver and trace."
+    ],
+    [
+      "Apple/MoltenVK",
+      "Identify GPU, translation layer and device features; capture portability and native tooling boundaries."
+    ],
+    [
+      "Huawei/Maleoon/HarmonyOS",
+      "Qualify actual SDK/device/driver and OHOS window and external-memory interfaces."
+    ]
+  ],
+  "experiments": [
+    [
+      "A",
+      [
+        "COMBO20-06",
+        "COMBO20-07"
+      ],
+      "tests/fixtures/scene_c_service_lab/README.md",
+      "Target generation and resizes, present/pacing and resource trends. Offscreen is not Surface lifecycle."
+    ],
+    [
+      "B",
+      [
+        "COMBO20-05"
+      ],
+      "tests/fixtures/hybrid_quality_lab/README.md",
+      "Independent transparency/coverage, text ROI and equal-quality full-frame comparison."
+    ],
+    [
+      "C",
+      [
+        "COMBO20-02",
+        "COMBO20-03"
+      ],
+      "tests/fixtures/engine_scale_lab/README.md",
+      "Independent visible set/image, sparse updates and real whole-chain queue costs."
+    ],
+    [
+      "D",
+      [
+        "COMBO20-04",
+        "COMBO20-05",
+        "COMBO20-07"
+      ],
+      "tests/fixtures/hybrid_quality_lab/README.md",
+      "Attachment/history/thermal under fixed quality; only include neural resources where selected."
+    ]
+  ]
+}
