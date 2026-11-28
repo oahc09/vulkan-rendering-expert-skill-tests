@@ -1,0 +1,53 @@
+name: Vulkan current v1.0.21 offline candidate
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  current-pair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: tests
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - id: pair
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha="$(python tests/checks19/check_pair.py --resolve --pair current-v1.0.21)"
+          printf 'sha=%s\n' "$sha" >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@v4
+        with:
+          repository: oahc09/vulkan-rendering-expert-skill
+          ref: ${{ steps.pair.outputs.sha }}
+          path: skill
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python -m pip install pytest pyyaml
+      - run: sudo apt-get update && sudo apt-get install -y glslang-tools spirv-tools
+      - name: Verify and capture the exact offline pair
+        env:
+          TESTS_HEAD: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: >-
+          python tests/checks19/run_current_receipt.py
+          --pair current-v1.0.21 --mode offline-candidate --skill skill
+          --tests-sha "$TESTS_HEAD" --out "$RUNNER_TEMP/current21-evidence"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: current21-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/current21-evidence/
+          if-no-files-found: warn
